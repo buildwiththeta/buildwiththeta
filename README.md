@@ -1,4 +1,4 @@
-<img src="https://ymvwltogicatbkjlaswo.supabase.co/storage/v1/object/public/assets/branding/website_cover.jpg" width="400" alt="Theta cover"/>
+<img src="./docs/assets/website_cover.jpg" width="400" alt="Theta cover"/>
 
 # Build with Theta
 [Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
