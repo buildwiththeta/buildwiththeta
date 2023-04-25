@@ -11,10 +11,10 @@
 Learn about Theta on [docs.buildwiththeta.com]()
 
 ## Support
-- GitHub Discussions: Ideal for general questions, Q&A, help for the product usage, discussions about best practices.
-- GitHub Issues: Ideal for reporting bugs and problems while using Theta
+- [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, help for the product usage, discussions about best practices.
+- [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
 - Email Support: Ideal for reporting problems with your personal projects.
-- Discord: Ideal to share your projects and portfolios with the community.
+- [Discord](https://discord.gg/BdhDRZb7tu): Ideal to share your projects and portfolios with the community.
 
 ## Status
 - [x] Alpha: Experimental.
@@ -22,5 +22,5 @@ Learn about Theta on [docs.buildwiththeta.com]()
 - [ ] Beta: Still pretty stable, no expected break changes in future.
 - [ ] Stable: Production-ready.
 
-Check [Releases]() to see our current status and all updates.
+Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
 
