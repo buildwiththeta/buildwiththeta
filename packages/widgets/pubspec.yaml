@@ -1,7 +1,6 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 version: 0.0.16
-homepage:
 publish_to: none
 
 environment:
@@ -152,8 +151,6 @@ dependencies:
 
   flutter_box_transform:
   styled_widget: ^0.4.1
-
-dependency_overrides:
 
 dev_dependencies:
   flutter_test:

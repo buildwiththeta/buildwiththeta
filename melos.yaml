@@ -15,4 +15,30 @@ ide:
 
 scripts:
   analyze:
-    exec: dart analyze .
+    description: Analyze Dart code.
+    exec: dart analyze . --fatal-infos --fatal-warnings
+  pub-get:
+    description: Run `pub get` for all packages.
+    exec: flutter pub get
+  test:
+    description: Run `test` for all packages.
+    run: flutter test .
+    env:
+      MELOS_TEST: true
+  lcov:
+    run: |
+      cd packages/analytics
+      dart pub run coverage:test_with_coverage
+      dart pub run coverage:format_coverage --packages=.dart_tool/package_config.json --lcov -i coverage/coverage.json -o coverage/lcov.info
+    env:
+      MELOS_TEST: true
+  cov:
+    run: |
+      cd packages/analytics
+      dart pub global run coverage:test_with_coverage
+      dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --lcov -i coverage/coverage.json -o coverage/lcov.info
+      genhtml coverage/lcov.info -o coverage/html
+    env:
+      MELOS_TEST: true
+  open_cov:
+    run: open packages/analytics/coverage/html/index.html

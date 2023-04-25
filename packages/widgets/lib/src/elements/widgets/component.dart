@@ -1,20 +1,18 @@
 // Flutter imports:
 // ignore_for_file: public_member_api_docs, lines_longer_than_80_chars, avoid_dynamic_calls
 
+import 'package:collection/collection.dart';
 // Package imports:
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:light_logger/light_logger.dart';
+import 'package:projects_db/projects_db.dart';
+// Project imports:
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_classes/theta_open_classes.dart';
-import 'package:theta_open_widgets/src/reflectable/index.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
-// Project imports:
-import 'package:webviewx/webviewx.dart';
-import 'package:theta_models/theta_models.dart';
-import 'package:projects_db/projects_db.dart';
 
 class OpenWComponent extends StatefulWidget {
   /// Returns a Component
@@ -35,7 +33,6 @@ class OpenWComponent extends StatefulWidget {
 
 class _WComponentState extends State<OpenWComponent> {
   PageObject? component;
-  WebViewXController? webViewController;
   late ProjectObject prj;
   bool isLoaded = false;
   final String _paramsString = '';

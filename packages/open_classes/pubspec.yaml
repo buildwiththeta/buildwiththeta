@@ -62,6 +62,4 @@ dev_dependencies:
     sdk: flutter
   flutter_lints:
 
-dependency_overrides:
-
 flutter:
