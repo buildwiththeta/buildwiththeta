@@ -1,0 +1,25 @@
+{
+  "name": "Theta",
+  "description": "Streamline app creation and testing with dynamic UIs, without the need for rebuilding.",
+  "logo": "/assets/logo.png",
+  "logoDark": "/assets/logo-dark.png",
+  "favicon": "/assets/logo-dark.png",
+  "theme": "#4B9EF4",
+  "googleTagManager": "",
+  "zoomImagesDefault": true,
+  "anchors": [
+    {
+      "title": "Website",
+      "icon": "arrow-up-right-from-square",
+      "link": "https://buildwiththeta.com"
+    },
+    {
+      "title": "Report a bug",
+      "icon": "bug",
+      "link": "https://github.com/buildwiththeta/buildwiththeta/issues/new"
+    }
+  ],
+  "sidebar": [
+    ["Overview", "/"],
+  ]
+}
