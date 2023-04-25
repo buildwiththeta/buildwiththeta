@@ -1,6 +1,7 @@
 <img src="./docs/assets/website_cover.jpg" width="400" alt="Theta cover"/>
 
 # Build with Theta
+
 [Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
 
 - [ ] Theta Studio: no-code visual editor for reponsive and modern UIs. [Docs]()
@@ -24,3 +25,5 @@ Learn about Theta on [docs.buildwiththeta.com]()
 
 Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
 
+
+[![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/buildwiththeta/buildwiththeta)

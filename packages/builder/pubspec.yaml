@@ -21,17 +21,20 @@ dependencies:
 
   theta_models:
     git:
-      url: https://github.com/teta-so/theta_models.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/models
       ref: main
 
   theta_rendering:
     git:
-      url: https://github.com/teta-so/theta_rendering.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/rendering
       ref: main
 
   theta_open_classes:
     git:
-      url: https://github.com/teta-so/theta_open_classes.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/open_classes
       ref: main
 
   projects_db:
@@ -41,7 +44,8 @@ dependencies:
 
   theta_open_widgets:
     git:
-      url: https://github.com/teta-so/theta_open_widgets.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/open_widgets
       ref: main
 
   clear_response:

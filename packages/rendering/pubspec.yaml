@@ -12,7 +12,8 @@ dependencies:
   # Theta packages
   theta_models:
     git:
-      url: https://github.com/teta-so/theta_models.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/models
       ref: main
 
   light_logger:

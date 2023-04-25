@@ -14,7 +14,8 @@ dependencies:
 
   theta_models:
     git:
-      url: https://github.com/teta-so/theta_models.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/models
       ref: main
 
   # Old 'Teta CMS'
@@ -30,17 +31,20 @@ dependencies:
 
   theta_design_system:
     git:
-      url: https://github.com/teta-so/theta_design_system.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/DS
       ref: main
 
   theta_open_classes:
     git:
-      url: https://github.com/teta-so/theta_open_classes.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/open_classes
       ref: main
 
   theta_rendering:
     git:
-      url: https://github.com/teta-so/theta_rendering.git
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/rendering
       ref: main
 
   flutter_polyline_points:
