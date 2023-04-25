@@ -23,10 +23,8 @@
     ["UI Studio", "/"],
     [
       "Code Builder", [
-        "Flutter", [
-          ["Getting started", "/"],
-          ["Installing", "/"]
-        ]
+        ["Getting started", "/"],
+        ["Installing", "/"]
       ]
     ]
   ]
