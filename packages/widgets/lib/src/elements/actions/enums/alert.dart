@@ -1,0 +1,3 @@
+enum ActionAlert{
+  snackbar,
+}
