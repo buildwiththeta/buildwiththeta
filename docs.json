@@ -1,8 +1,8 @@
 {
   "name": "Theta docs",
   "description": "Streamline app creation and testing with dynamic UIs, without the need for rebuilding.",
-  "logo": "/assets/logo_light.svg",
-  "logoDark": "/assets/logo_dark.svg",
+  "logo": "/assets/logo_dark.svg",
+  "logoDark": "/assets/logo_light.svg",
   "favicon": "/assets/logo_light.svg",
   "theme": "#9A55FE",
   "zoomImagesDefault": true,
