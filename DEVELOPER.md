@@ -9,7 +9,7 @@ and run the following commands:
 dart pub global activate melos
 ```
 
-2. Setup the project with melos.
+2. Getting started with melos.
 
 ```bash
 melos bootstrap
@@ -25,15 +25,19 @@ melos run pub-get
 
 Now you can run the example app. See `melos.yaml` for more commands.
 
+---
+
 ### Running test
 
 ```bash
-melos run analyze
+melos run test
 ```
 
-### Running tests with coverage report.
+---
 
-1. Install genhtml:
+### Running tests with coverage report
+
+1. Install lcov:
 
 ```bash
 brew install lcov
