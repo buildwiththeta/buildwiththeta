@@ -20,14 +20,13 @@
   ],
   "sidebar": [
       "Overview", "/",
-    ["UI Studio", "/"],
-    ["Code Builder",
+    "UI Studio", "/",
+    "Code Builder",
       [
         "Flutter", [
           ["Getting started", "/"],
           ["Installing", "/"]
         ]
       ]
-    ]
   ]
 }
