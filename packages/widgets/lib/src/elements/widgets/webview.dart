@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
-import 'package:theta_models/theta_models.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
+import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 
 class OpenWWebViewXPage extends StatefulWidget {
   /// Returns a WebView widget in Teta
@@ -40,7 +40,7 @@ class _WWebViewXPageState extends State<OpenWWebViewXPage> {
 
   @override
   void dispose() {
-    variable?.webViewController?.dispose();
+    //variable?.webViewController?.dispose();
     super.dispose();
   }
 

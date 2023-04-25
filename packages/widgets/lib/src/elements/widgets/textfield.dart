@@ -1,11 +1,12 @@
 import 'dart:async';
+
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_classes/theta_open_classes.dart';
-import 'package:theta_design_system/theta_design_system.dart';
+import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 
 class OpenWTextField extends StatefulWidget {
   /// Returns a TextField widget in Teta
@@ -116,7 +117,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
     final hintOpacity =
         tempHintOpacity >= 0 && tempHintOpacity <= 1 ? tempHintOpacity : 1.0;
     return Center(
-      child: TContainer(
+      child: Container(
         margin: widget.margins.get(
           context: context,
           state: state,
