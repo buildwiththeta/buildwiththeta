@@ -1,0 +1,59 @@
+name: ui_builder
+description: Build visual components on demand.
+version: 0.0.2
+publish_to: none
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  theta_models:
+    git:
+      url: https://github.com/teta-so/theta_models.git
+      ref: main
+
+  theta_rendering:
+    git:
+      url: https://github.com/teta-so/theta_rendering.git
+      ref: main
+
+  theta_open_classes:
+    git:
+      url: https://github.com/teta-so/theta_open_classes.git
+      ref: main
+
+  projects_db:
+    git:
+      url: https://github.com/teta-so/projects_db.git
+      ref: main
+
+  theta_open_widgets:
+    git:
+      url: https://github.com/teta-so/theta_open_widgets.git
+      ref: main
+
+  clear_response:
+  flutter_localization: ^0.1.9
+  device_frame: ^1.0.0
+  equatable: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+
+dependency_overrides:
+
+flutter:
