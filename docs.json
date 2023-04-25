@@ -3,7 +3,7 @@
   "description": "Streamline app creation and testing with dynamic UIs, without the need for rebuilding.",
   "logo": "/assets/logo_dark.svg",
   "logoDark": "/assets/logo_light.svg",
-  "favicon": "/assets/logo_light.svg",
+  "favicon": "/assets/favicon.svg",
   "theme": "#9A55FE",
   "zoomImagesDefault": true,
   "anchors": [
