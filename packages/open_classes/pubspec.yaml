@@ -21,7 +21,7 @@ dependencies:
 
   theta_db_flutter:
     git:
-      url: https://github.com/buildwiththeta/theta_db_flutter.git
+      url: https://github.com/teta-so/theta_db_flutter.git
       ref: main
 
   theta_open_widgets:
@@ -32,7 +32,7 @@ dependencies:
 
   projects_db:
     git:
-      url: https://github.com/buildwiththeta/projects_db.git
+      url: https://github.com/teta-so/projects_db.git
       ref: main
 
   theta_models:
