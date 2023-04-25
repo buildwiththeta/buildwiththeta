@@ -1,0 +1,44 @@
+name: theta_models
+description: A new Flutter package project.
+version: 0.0.1
+homepage:
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  theta_design_system:
+    git:
+      url: https://github.com/teta-so/theta_design_system.git
+      ref: main
+
+  camera:
+  enum_to_string:
+  equatable:
+  just_audio:
+  map:
+  recase:
+  responsive_builder:
+  device_frame:
+  intl: ^0.17.0
+  transition: ^2.0.2
+  universal_platform: ^1.0.0+1
+  flutter_localization:
+  light_logger: ^0.0.1
+  reflectable: ^4.0.5
+
+dependency_overrides:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+  build_runner: any  
+  built_value_generator: any
+  source_gen: any
+  analyzer: any

@@ -1,0 +1,21 @@
+targets:
+  $default:
+    builders:
+      reflectable:
+        generate_for:
+          - lib/main.dart
+        options:
+          formatted: true
+      theta_models|intrinsic_state_builder:
+        generate_for:
+          - lib/src/widgets/intrinsic_states/classes/*.dart
+        options:
+          formatted: true
+
+builders:
+  intrinsic_state_builder:
+    import: 'package:theta_models/src/generators/intrinsic_state_builder.dart'
+    builder_factories: ['intrinsicStateBuilder']
+    build_extensions: {'.dart': ['.g.dart']}
+    auto_apply: dependents
+    runs_before: ['source_gen|combining_builder']

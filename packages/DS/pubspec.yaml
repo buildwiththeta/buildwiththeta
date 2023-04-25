@@ -1,0 +1,49 @@
+name: theta_design_system
+description: Design system basics for Theta
+version: 0.0.1
+homepage: "https://teta.so"
+publish_to: none
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Theta packages
+  clear_response:
+  light_logger:
+
+  google_fonts:
+  equatable:
+  sa3_liquid: ^1.0.1
+  extended_image: ^7.0.2
+  themed: ^4.0.0
+  hovering: ^1.0.4
+  flutter_feather_icons: ^2.0.0+1
+  gap: ^3.0.0
+  lottie: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+  
+
+dependency_overrides:
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assest_constants/
