@@ -18,8 +18,8 @@ Learn about Theta on [docs.buildwiththeta.com]()
 - [Discord](https://discord.gg/BdhDRZb7tu): Ideal for sharing projects and portfolios with the community.
 
 ## Status
-- [x] Alpha: Experimental.
-- [x] Closed Beta: Still under development. Except bugs and errors.
+- [x] Alpha: Experimental. Under intense development.
+- [ ] Closed Beta: Still under development. Except bugs and errors.
 - [ ] Beta: Still pretty stable, no expected break changes in future.
 - [ ] Stable: Production-ready.
 
