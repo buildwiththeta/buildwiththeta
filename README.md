@@ -8,8 +8,10 @@
 - [ ] Theta Builder: Stream your UIs inside your clients. [Docs]()
   - [x] Flutter support. [Docs](). [Pub.dev]().
 
+<!--
 ## Documentation
 Learn about Theta on [docs.buildwiththeta.com]()
+-->
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
