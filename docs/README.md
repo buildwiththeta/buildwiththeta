@@ -2,6 +2,11 @@
 
 Theta Docs uses [docs.page](https://docs.page).
 
+## How to contribute
+
+Before contributing, read [Contributing]() and [Code of Conduct]().
+To edit our docs, update a file in the /docs folder. Any update will be automatically posted to readable web docs as well.
+
 ## Types of docs
 
 We organize docs in 4 types:
