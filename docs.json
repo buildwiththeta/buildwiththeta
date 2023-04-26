@@ -20,7 +20,9 @@
   ],
   "sidebar": [
     ["Overview", "/"],
-    ["UI Studio", "/"],
+    ["UI Studio", [
+      ["Teams", "/studio/teams.mdx"]
+    ],
     [
       "Code Builder", [
         ["Getting started", "/"],
