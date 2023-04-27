@@ -1,14 +1,16 @@
 // ignore_for_file: public_member_api_docs
+import 'index.dart';
+
 class FunctionModel {
   const FunctionModel({
-    this.id = 0,
-    this.prjId = 0,
+    this.id = '',
+    this.prjId = '',
     this.name = 'Default',
     this.code,
   });
 
-  final int id;
-  final int prjId;
+  final ID id;
+  final ProjectID prjId;
   final String name;
   final String? code;
 
@@ -21,8 +23,8 @@ class FunctionModel {
     final Map<String, dynamic> json,
   ) {
     return FunctionModel(
-      id: json['id'] as int,
-      prjId: json['prj_id'] as int,
+      id: json['id'] as String,
+      prjId: json['prj_id'] as String,
       name: json['name'] as String,
       code: json['code'] as String?,
     );

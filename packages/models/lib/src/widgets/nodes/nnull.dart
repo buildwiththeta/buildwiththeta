@@ -20,7 +20,7 @@ class NNull extends CNode {
     final Map<String, dynamic> doc,
   ) =>
       NNull(
-        nid: 0,
+        nid: '',
         intrinsicState: IntrinsicState.basic,
       );
 
@@ -37,8 +37,8 @@ class NNull extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    NodeID? id,
+    NodeID? parent,
     CNode? child,
     List<CNode>? children,
     String? name,

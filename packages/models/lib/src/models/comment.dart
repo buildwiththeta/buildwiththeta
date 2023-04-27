@@ -4,11 +4,12 @@
 // Package imports:
 import 'package:equatable/equatable.dart';
 import '../widgets/nodes/key_constants.dart';
+import 'index.dart';
 
 class CommentObject extends Equatable {
   /// Object to show a single comment.
   const CommentObject({
-    this.id = 0,
+    this.id = '',
     this.isDone,
     this.pageId,
     this.userId,
@@ -19,10 +20,10 @@ class CommentObject extends Equatable {
     this.cursor = const [],
   });
 
-  final int id;
+  final ID id;
   final bool? isDone;
-  final int? pageId;
-  final int? userId;
+  final PageID? pageId;
+  final UserID? userId;
   final String? firstName;
   final String? lastName;
   final String? text;
@@ -39,10 +40,10 @@ class CommentObject extends Equatable {
     }
 
     return CommentObject(
-      id: json[DBKeys.id] as int,
+      id: json[DBKeys.id] as String,
       isDone: json['done'] as bool? ?? false,
-      pageId: json['pg'] as int?,
-      userId: json['uid'] as int?,
+      pageId: json['pg'] as String?,
+      userId: json['uid'] as String?,
       firstName: json['fN'] as String?,
       lastName: json['lN'] as String?,
       date: json['date'] as String?,

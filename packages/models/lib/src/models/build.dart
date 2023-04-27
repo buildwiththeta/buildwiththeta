@@ -1,3 +1,5 @@
+import 'index.dart';
+
 /// Class to wrap a build in a prj
 class BuildObject {
   /// A BuildObject is a build made in prj
@@ -10,16 +12,16 @@ class BuildObject {
 
   /// From json map
   BuildObject.fromJson(final Map<String, dynamic> json)
-      : id = json['id'] as int,
-        prjId = json['prjId'] as int,
+      : id = json['id'] as String,
+        prjId = json['prjId'] as String,
         link = json['link'] as String,
         platform = json['platform'] as String;
 
   /// id of the build
-  final int id;
+  final ID id;
 
   /// prj id
-  final int prjId;
+  final ProjectID prjId;
 
   /// link to find the build. Attention: this is only the id part of the link
   final String link;

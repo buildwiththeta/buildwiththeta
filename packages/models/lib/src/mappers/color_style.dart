@@ -12,8 +12,8 @@ class ColorStylesMapper {
   /// For a single instance
   ColorStyleModel fromJson({required final Map<String, dynamic> json}) =>
       ColorStyleModel(
-        id: json[_idKey] as int,
-        channelId: json[_channelKey] as int,
+        id: json[_idKey] as ID,
+        channelId: json[_channelKey] as ChannelID,
         name: json[_nameKey] as String,
         fill: json[_darkKey] != null
             ? FFill.fromJson(json[_darkKey] as Map<String, dynamic>)

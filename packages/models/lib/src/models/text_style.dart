@@ -6,11 +6,12 @@ import 'package:equatable/equatable.dart';
 
 import '../widgets/features/font_size.dart';
 import '../widgets/features/font_weight.dart';
+import 'index.dart';
 
 class TextStyleModel extends Equatable {
   /// Constructor
   const TextStyleModel({
-    this.id = 0,
+    this.id = '',
     required this.channelId,
     required this.name,
     required this.fontFamily,
@@ -20,9 +21,9 @@ class TextStyleModel extends Equatable {
 
   TextStyleModel.fromJson({
     required final Map<String, dynamic> json,
-    final int? channelId,
-  })  : id = json['_id'] as int? ?? json['id'] as int,
-        channelId = channelId ?? json['channel_id'] as int,
+    final String? channelId,
+  })  : id = json['_id'] as String? ?? json['id'] as String,
+        channelId = channelId ?? json['channel_id'] as String,
         name = json['name'] as String,
         fontFamily = json['family'] as String,
         fontSize = json['size'] != null
@@ -33,16 +34,16 @@ class TextStyleModel extends Equatable {
         );
 
   const TextStyleModel.ready()
-      : id = 0,
-        channelId = 0,
+      : id = '',
+        channelId = '',
         name = 'Text Style',
         fontFamily = 'Poppins',
         fontSize = const FFontSize(),
         fontWeight = const FFontWeight();
 
   TextStyleModel copyWith({
-    final int? id,
-    final int? channelId,
+    final String? id,
+    final String? channelId,
     final String? name,
     final String? fontFamily,
     final FFontSize? fontSize,
@@ -57,8 +58,8 @@ class TextStyleModel extends Equatable {
         fontWeight: fontWeight ?? this.fontWeight,
       );
 
-  final int id;
-  final int channelId;
+  final ID id;
+  final ChannelID channelId;
   final String name;
   final String fontFamily;
   final FFontSize fontSize;

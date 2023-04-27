@@ -11,8 +11,8 @@ class ChannelMapper {
   /// For a single instance
   ChannelObject fromJson({required final Map<String, dynamic> json}) =>
       ChannelObject(
-        id: json[_idKey] as int,
-        prjId: json[_prjId] as int,
+        id: json[_idKey] as ChannelID,
+        prjId: json[_prjId] as ProjectID,
         name: json[_nameKey] as String,
       );
 

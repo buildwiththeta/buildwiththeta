@@ -5,6 +5,8 @@ import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 
+import 'index.dart';
+
 /// Class to use authors data in Teta
 class AuthorObject extends Equatable {
   /// Returns a object to save and use authors' data
@@ -22,7 +24,7 @@ class AuthorObject extends Equatable {
   });
 
   /// The author / user id.
-  final int? id;
+  final UserID? id;
 
   /// Indicates if author is online.
   final bool? isOnline;
@@ -64,7 +66,7 @@ class AuthorObject extends Equatable {
     }
 
     return AuthorObject(
-      id: json['id'] as int,
+      id: json['id'] as String,
       isOnline: (json['isOnline'] ?? false) as bool,
       focusNode: json['focusNode'] as int?,
       hoverNode: json['hoverNode'] as int?,
@@ -105,7 +107,7 @@ class AuthorObject extends Equatable {
       );
 
   AuthorObject copyWith({
-    final int? id,
+    final String? id,
     final bool? isOnline,
     final int? focusNode,
     final int? hoverNode,

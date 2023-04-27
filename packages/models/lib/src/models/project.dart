@@ -59,7 +59,7 @@ class ProjectObject extends Equatable {
   //this field keep track of the project duplicated (from the original one).
   //used to call the update marketplace from the project (if this is not null).
   //don't have team_id or user_uid so will be undetectable
-  final int? artifactId;
+  final ID? artifactId;
 
   //use to track the marketplace item in an immutable way
   final String? idMarketplaceKey;

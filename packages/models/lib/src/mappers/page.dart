@@ -35,10 +35,10 @@ class PageMapper {
       }
     }
     return PageObject(
-      id: json[_oldIdKey] as int? ?? json[_idKey] as int,
-      channelId: json[_channelKey] as int? ?? 0,
+      id: json[_oldIdKey] as PageID? ?? json[_idKey] as PageID,
+      channelId: json[_channelKey] as ChannelID? ?? '',
       scaffold: NNull(
-        nid: 0,
+        nid: '',
         intrinsicState: IntrinsicState.basic,
       ),
       flatList: const [],

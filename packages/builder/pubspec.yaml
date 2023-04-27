@@ -45,7 +45,7 @@ dependencies:
   theta_open_widgets:
     git:
       url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/open_widgets
+      path: packages/widgets
       ref: main
 
   clear_response:

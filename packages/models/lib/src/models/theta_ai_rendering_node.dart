@@ -1,5 +1,7 @@
+import 'index.dart';
+
 class ThetaAIRenderingNode {
-  final int id;
+  final ID id;
   final String type;
   final Map<String, dynamic>? body;
   final List<int> childrenIDs;

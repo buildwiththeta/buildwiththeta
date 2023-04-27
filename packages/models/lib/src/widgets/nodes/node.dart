@@ -18,7 +18,7 @@ abstract class CNode extends Equatable {
     this.name,
     this.description,
     this.parent,
-    this.id = 0,
+    this.id = '',
     this.child,
     this.children = const [],
     this.index = 0,
@@ -64,7 +64,7 @@ abstract class CNode extends Equatable {
   final IntrinsicState intrinsicState;
 
   /// The parent's id of the node
-  final int? parent;
+  final NodeID? parent;
 
   /// The id of the node (node-id)
   final NodeID id;
@@ -114,8 +114,8 @@ abstract class CNode extends Equatable {
 
   /// Copy the node with new attributes
   CNode copyWith({
-    int? id,
-    int? parent,
+    NodeID? id,
+    NodeID? parent,
     CNode? child,
     List<CNode>? children,
     String? name,

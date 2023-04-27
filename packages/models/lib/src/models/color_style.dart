@@ -5,18 +5,20 @@
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/src/widgets/features/index.dart';
 
+import 'index.dart';
+
 class ColorStyleModel extends Equatable {
   /// Constructor
   const ColorStyleModel({
-    this.id = 0,
+    this.id = '',
     required this.channelId,
     required this.name,
     required this.fill,
     required this.light,
   });
 
-  final int id;
-  final int channelId;
+  final ID id;
+  final ChannelID channelId;
   final String name;
   final FFill fill;
   final FFill light;

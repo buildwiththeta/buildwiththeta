@@ -2,6 +2,8 @@
 
 import 'package:equatable/equatable.dart';
 
+import 'index.dart';
+
 class InviteModel extends Equatable {
   /// Constructor
   const InviteModel({
@@ -11,16 +13,16 @@ class InviteModel extends Equatable {
     required this.email,
   });
 
-  final int id;
-  final int userId;
-  final int teamId;
+  final ID id;
+  final UserID userId;
+  final TeamID teamId;
   final String email;
 
   static InviteModel fromJson(final Map<String, dynamic> json) {
     return InviteModel(
-      id: json['id'] as int,
-      userId: json['user_uid'] as int,
-      teamId: json['team_id'] as int,
+      id: json['id'] as String,
+      userId: json['user_uid'] as String,
+      teamId: json['team_id'] as String,
       email: json['email'] as String,
     );
   }
