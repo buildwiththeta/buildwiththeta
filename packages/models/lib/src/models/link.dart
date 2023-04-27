@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import 'index.dart';
+
 class CustomLinkObject extends Equatable {
   const CustomLinkObject({
     required this.id,
@@ -12,18 +14,18 @@ class CustomLinkObject extends Equatable {
 
   factory CustomLinkObject.fromJson(final Map<String, dynamic> json) =>
       CustomLinkObject(
-        id: json['id'] as int,
+        id: json['id'] as String,
         name: json['name'] as String,
         password: json['password'] as String?,
-        prjId: json['prj_id'] as int,
+        prjId: json['prj_id'] as String,
         isValid: json['is_valid'] as bool,
         visits: json['visits'] as int,
       );
 
-  final int id;
+  final ID id;
   final String name;
   final String? password;
-  final int prjId;
+  final ProjectID prjId;
   final bool isValid;
   final int visits;
 
@@ -34,10 +36,10 @@ class CustomLinkObject extends Equatable {
       };
 
   CustomLinkObject copyWith({
-    final int? id,
+    final String? id,
     final String? name,
     final String? password,
-    final int? prjId,
+    final String? prjId,
     final bool? isValid,
     final int? visits,
   }) =>

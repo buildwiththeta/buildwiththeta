@@ -44,7 +44,7 @@ class FChildrenIds extends Equatable {
     if (json == null) return const FChildrenIds(ids: []);
     try {
       return FChildrenIds(
-        ids: json.cast<int>(),
+        ids: json.cast<String>(),
       );
     } catch (e) {
       return const FChildrenIds(ids: []);
@@ -53,7 +53,7 @@ class FChildrenIds extends Equatable {
 
   /// Convert [FChildrenIds] to Json
   /// Returns a List<String> with all ids
-  List<int> toJson() {
+  List<String> toJson() {
     return ids.toSet().toList();
   }
 

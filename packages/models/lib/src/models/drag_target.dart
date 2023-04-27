@@ -4,6 +4,7 @@
 // Package imports:
 import 'package:equatable/equatable.dart';
 import '../widgets/nodes/node.dart';
+import 'index.dart';
 
 //salva il vecchio valore di un attributo per poterlo ripristinare
 //se l'utente vuole ritornare indietro di una o più azioni
@@ -54,7 +55,7 @@ class DragTargetSectionModel extends DragTargetModel {
     this.firstNodeId,
   );
 
-  final int firstNodeId;
+  final NodeID firstNodeId;
 
   @override
   List<Object> get props => [firstNodeId];

@@ -1,9 +1,11 @@
+import 'index.dart';
+
 /// Template of a project, MarketPlace & Duplication
 class TemplatePrjObject {
   /// ctor
   TemplatePrjObject({
-    this.id = 0, //setted after -> on supa - auto
-    this.prjId = 0, //setted after -> publish repository
+    this.id = '', //setted after -> on supa - auto
+    this.prjId = '', //setted after -> publish repository
     required this.title,
     required this.description,
     required this.version,
@@ -24,15 +26,15 @@ class TemplatePrjObject {
 
   /// From json
   TemplatePrjObject.fromJson(final Map<String, dynamic> json)
-      : id = json['id'] as int,
-        prjId = json['prj_id'] as int,
-        origPrjId = json['orig_prj_id'] as int?,
+      : id = json['id'] as String,
+        prjId = json['prj_id'] as String,
+        origPrjId = json['orig_prj_id'] as String?,
         idKey = json['id_key'] as String?,
         title = json['title'] as String?,
         description = json['description'] as String?,
         version = json['version'] as String?,
         link = json['link'] as String?,
-        authorId = json['author_id'] as int?,
+        authorId = json['author_id'] as String?,
         authorName = json['author_name'] as String?,
         image = json['image'] as String?,
         coverImage = json['cover_image'] as String?,
@@ -69,15 +71,15 @@ class TemplatePrjObject {
 
   ///copy with
   TemplatePrjObject copyWith({
-    final int? id,
-    final int? prjId,
-    final int? origPrjId,
+    final String? id,
+    final String? prjId,
+    final String? origPrjId,
     final String? idKey,
     final String? title,
     final String? description,
     final String? version,
     final String? link,
-    final int? authorId,
+    final String? authorId,
     final String? authorName,
     final String? image,
     final String? coverImage,
@@ -110,17 +112,17 @@ class TemplatePrjObject {
       );
 
   /// Template's id
-  final int id;
+  final ID id;
 
   ///Unique immutable Template identifiable key (Uuid)
   final String? idKey;
 
   /// Template's  project id this is the artifact_id of original project
   /// or if are Teta made, the original project
-  final int? prjId;
+  final ProjectID? prjId;
 
   ///original project id, used for cms initialize in try now
-  final int? origPrjId;
+  final ProjectID? origPrjId;
 
   ///Cms token of the original project, used for cms initialize in try now
   final String? origCmsToken;
@@ -138,7 +140,7 @@ class TemplatePrjObject {
   final String? link;
 
   /// Template's reference to author (user_id of who created this)
-  final int? authorId;
+  final UserID? authorId;
 
   ///Author Name
   final String? authorName;

@@ -1,5 +1,7 @@
 import 'package:theta_models/src/models/min_project.dart';
 
+import '../models/index.dart';
+
 /// Mapper for color styles
 class MinProjectModelMapper {
   const MinProjectModelMapper();
@@ -12,7 +14,7 @@ class MinProjectModelMapper {
   /// For a single instance
   MinProjectModel fromJson({required final Map<String, dynamic> json}) =>
       MinProjectModel(
-        id: json[_idKey] as int,
+        id: json[_idKey] as ProjectID,
         name: json[_nameKey] as String,
         image: json[_iconUrlKey] as String?,
         updatedAt: DateTime.tryParse(json[_updatedAtKey] as String? ?? '') ??
@@ -39,7 +41,7 @@ class MinProjectModelMapper {
   /// Copy with new values
   MinProjectModel copyWith({
     required final MinProjectModel originalModel,
-    final int? id,
+    final String? id,
     final String? name,
     final String? image,
     final DateTime? updatedAt,

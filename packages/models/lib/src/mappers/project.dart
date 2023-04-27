@@ -10,13 +10,13 @@ class ProjectMapper {
     final pages = <PageObject>[];
 
     return ProjectObject(
-      id: json['id'] as int,
-      userId: json['user_id'] != null ? json['user_id'] as int : 0,
+      id: json['id'] as ProjectID,
+      userId: json['user_id'] != null ? json['user_id'] as UserID : '',
       name: json['name'] as String? ?? '',
       link: json['link'] != null ? json['link'] as String : '',
-      artifactId: json['artifact_id'] as int?,
+      artifactId: json['artifact_id'] as ID?,
       idMarketplaceKey: json['id_marketplace_key'] as String?,
-      teamId: json['team_id'] as int,
+      teamId: json['team_id'] as TeamID,
       updatedAt: DateTime.tryParse(json['updated_at'] as String? ?? '') ??
           DateTime.now(),
       createdAt: DateTime.tryParse(json['created_at'] as String? ?? '') ??
@@ -62,9 +62,9 @@ class ProjectMapper {
 
   ProjectObject copyWith({
     required final ProjectObject e,
-    final int? id,
-    final int? userId,
-    final int? teamId,
+    final String? id,
+    final String? userId,
+    final String? teamId,
     final List<String>? authors,
     final String? name,
     final String? link,
@@ -81,7 +81,7 @@ class ProjectMapper {
     final String? iconUrl,
     final String? marketplaceCoverUrl,
     final String? splashImageUrl,
-    final int? artifactId,
+    final String? artifactId,
     final String? idMarketplaceKey,
     final bool? isUnderReview,
     final bool? isArtifact,

@@ -8,6 +8,8 @@ import 'package:uuid/uuid.dart';
 // Project imports:
 import 'package:theta_models/src/models/backup.dart';
 
+import 'index.dart';
+
 enum CommitType {
   change,
   delete,
@@ -28,8 +30,8 @@ class CommitBackup extends Equatable {
     type ??= CommitType.change;
   }
 
-  final String id = const Uuid().v1();
-  final String? prj;
+  final ID id = const Uuid().v1();
+  final ProjectID? prj;
   final String? page;
   List<Backup>? backups;
   CommitType? type;

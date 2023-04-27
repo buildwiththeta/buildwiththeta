@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_constructors_over_static_methods
+import 'index.dart';
+
 /// User Library model
 class UpvoteObject {
   /// ctor
   UpvoteObject({
-    this.id = 0,
+    this.id = '',
     required this.userId,
     required this.idMarketplaceKey,
   });
@@ -11,8 +13,8 @@ class UpvoteObject {
   /// From json
   static UpvoteObject fromJson(final Map<String, dynamic> json) {
     return UpvoteObject(
-      id: json['id'] as int,
-      userId: json['user_id'] as int,
+      id: json['id'] as String,
+      userId: json['user_id'] as String,
       idMarketplaceKey: json['id_marketplace_key'] as String,
     );
   }
@@ -27,8 +29,8 @@ class UpvoteObject {
 
   ///copy with
   UpvoteObject copyWith({
-    final int? id,
-    final int? userId,
+    final String? id,
+    final String? userId,
     final String? idMarketplaceKey,
   }) =>
       UpvoteObject(
@@ -38,10 +40,10 @@ class UpvoteObject {
       );
 
   /// id
-  final int? id;
+  final ID? id;
 
   ///user id
-  final int? userId;
+  final UserID? userId;
 
   ///item identifier
   final String? idMarketplaceKey;

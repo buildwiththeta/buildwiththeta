@@ -49,7 +49,7 @@ class TreeState extends Equatable {
   final List<DatasetObject> dataset;
 
   /// The page id
-  final int pageId;
+  final PageID pageId;
 
   /// Is this a page or a component?
   final bool isPage;
@@ -92,7 +92,7 @@ class TreeState extends Equatable {
     final List<VariableObject>? states,
     final List<DatasetObject>? dataset,
     final bool? isVertical,
-    final int? pageId,
+    final PageID? pageId,
     final bool? isPage,
     final List<ColorStyleModel>? colorStyles,
     final List<TextStyleModel>? textStyles,

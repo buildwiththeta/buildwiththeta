@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs
 
+import 'index.dart';
+
 class TreeObject {
   /// Constructor
   TreeObject({
@@ -10,7 +12,7 @@ class TreeObject {
     required this.loop,
   });
 
-  final int id;
+  final ID id;
   final String name;
   final String value;
   final double level;

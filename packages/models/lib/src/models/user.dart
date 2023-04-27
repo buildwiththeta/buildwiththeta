@@ -19,7 +19,8 @@ enum JobRole {
 class UserObject extends Equatable {
   /// Constructor
   const UserObject({
-    this.id = 0,
+    this.id = '',
+    this.userUID = '',
     this.email,
     this.avatar,
     this.firstName,
@@ -29,7 +30,8 @@ class UserObject extends Equatable {
   });
 
   UserObject.fromJson(final Map<String, dynamic> json)
-      : id = json['id'] as int? ?? 0,
+      : id = json['id'] as String? ?? '',
+        userUID = json['user_uid'] as String? ?? '',
         email = json['email'] as String? ?? '',
         avatar = json['avatar_url'] as String?,
         firstName = json['firstName'] as String? ?? '',
@@ -43,6 +45,7 @@ class UserObject extends Equatable {
         isStudent = json['isStudent'] as bool? ?? false;
 
   final UserID id;
+  final UserID userUID;
   final String? email;
   final String? avatar;
   final String? firstName;
@@ -53,7 +56,8 @@ class UserObject extends Equatable {
   static const empty = UserObject();
 
   UserObject copyWith({
-    final int? id,
+    final String? id,
+    final String? userUID,
     final String? email,
     final String? avatar,
     final String? firstName,
@@ -63,6 +67,7 @@ class UserObject extends Equatable {
   }) =>
       UserObject(
         id: id ?? this.id,
+        userUID: userUID ?? this.userUID,
         email: email ?? this.email,
         avatar: avatar ?? this.avatar,
         firstName: firstName ?? this.firstName,
@@ -73,6 +78,7 @@ class UserObject extends Equatable {
 
   Map<String, dynamic> toJson() => <String, dynamic>{
         'id': id,
+        'user_uid': userUID,
         'email': email,
         'avatar_url': avatar,
         'firstName': firstName,
@@ -84,6 +90,7 @@ class UserObject extends Equatable {
   @override
   List<Object?> get props => [
         id,
+        userUID,
         email,
         avatar,
         firstName,

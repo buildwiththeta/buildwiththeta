@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_constructors_over_static_methods
+import 'index.dart';
+
 /// Tag for marketplace model
 class TagObject {
   /// ctor
   TagObject({
-    this.id = 0,
+    this.id = '',
     required this.tag,
     required this.idMarketplaceKey,
     required this.authorId,
@@ -12,10 +14,10 @@ class TagObject {
   /// From json
   static TagObject fromJson(final Map<String, dynamic> json) {
     return TagObject(
-      id: json['id'] as int,
+      id: json['id'] as String,
       tag: json['tag'] as String,
       idMarketplaceKey: json['id_marketplace_key'] as String,
-      authorId: json['author_id'] as int,
+      authorId: json['author_id'] as String,
     );
   }
 
@@ -30,9 +32,9 @@ class TagObject {
 
   ///copy with
   TagObject copyWith({
-    final int? id,
+    final String? id,
     final String? tag,
-    final int? authorId,
+    final String? authorId,
     final String? idMarketplaceKey,
   }) =>
       TagObject(
@@ -43,7 +45,7 @@ class TagObject {
       );
 
   /// id
-  final int? id;
+  final ID? id;
 
   ///tag
   final String? tag;
@@ -52,7 +54,7 @@ class TagObject {
   final String? idMarketplaceKey;
 
   /// id
-  final int? authorId;
+  final UserID? authorId;
 
   @override
   String toString() =>

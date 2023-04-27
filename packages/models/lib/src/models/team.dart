@@ -37,7 +37,7 @@ class TeamObject extends Equatable {
             b.updatedAt.compareTo(a.updatedAt),
       );
     return TeamObject(
-      id: json['team']?['id'] as int? ?? 0,
+      id: json['team']?['id'] as String? ?? '',
       name: json['team']?['name'] as String,
       website: json['team']?['website'] as String?,
       authorId: json['team']?['author_uid'] as int,

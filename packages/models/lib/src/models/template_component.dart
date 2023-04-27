@@ -1,3 +1,5 @@
+import 'index.dart';
+
 /// Template of a component
 class TemplateComponentObject {
   /// Template of a component
@@ -12,11 +14,11 @@ class TemplateComponentObject {
 
   /// From json
   TemplateComponentObject.fromJson(final Map<String, dynamic> json)
-      : id = json['id'] as int,
-        nodeId = json['node_id'] as int,
+      : id = json['id'] as String,
+        nodeId = json['node_id'] as String,
         title = json['title'] as String?,
         description = json['description'] as String?,
-        author = json['author'] as int?,
+        author = json['author'] as String?,
         image = json['image'] as String?;
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -29,10 +31,10 @@ class TemplateComponentObject {
       };
 
   /// Component's id
-  final int id;
+  final ID id;
 
   /// Component's original node id
-  final int nodeId;
+  final NodeID nodeId;
 
   /// Component's title
   final String? title;
@@ -41,7 +43,7 @@ class TemplateComponentObject {
   final String? description;
 
   /// Component's reference to author (user)
-  final int? author;
+  final UserID? author;
 
   /// Component's image
   final String? image;

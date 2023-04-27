@@ -8,6 +8,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import 'index.dart';
+
 /// Salva il vecchio valore di un attributo per poterlo ripristinare
 /// se l'utente vuole ritornare indietro di una o più azioni
 
@@ -23,10 +25,10 @@ class Backup extends Equatable {
     required this.context,
   });
 
-  final String id;
-  final int prj;
-  final int page;
-  final int nodeId;
+  final ID id;
+  final ProjectID prj;
+  final PageID page;
+  final NodeID nodeId;
   final String? component;
   final Map<String, dynamic>? attribute;
   final BuildContext context;

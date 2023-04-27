@@ -7,6 +7,8 @@ import 'package:equatable/equatable.dart';
 import 'package:theta_models/src/models/variable.dart';
 import 'package:theta_models/src/widgets/nodes/node.dart';
 
+import 'index.dart';
+
 enum PageEnum {
   empty,
   splash,
@@ -41,8 +43,8 @@ class PageObject extends Equatable {
     this.code,
   });
 
-  final int id;
-  final int channelId;
+  final PageID id;
+  final ChannelID channelId;
   final String name;
   final CNode scaffold;
   final List<CNode> flatList;
@@ -85,8 +87,8 @@ class PageObject extends Equatable {
       'PageObject { id: $id, name: $name, isPrimary: $isPrimary, isPage: $isPage, route: $route, isHardCoded: $isHardCoded, runUrl: $runUrl, code: $code}';
 
   PageObject copyWith({
-    final int? id,
-    final int? channelId,
+    final String? id,
+    final String? channelId,
     final String? name,
     final CNode? scaffold,
     final List<CNode>? flatList,

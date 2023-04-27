@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_constructors_over_static_methods
+import 'index.dart';
+
 /// User Library model
 class UserLibraryObject {
   /// ctor
   UserLibraryObject({
-    this.id = 0,
+    this.id = '',
     required this.userId,
     required this.idMarketplaceKey,
   });
@@ -11,8 +12,8 @@ class UserLibraryObject {
   /// From json
   static UserLibraryObject fromJson(final Map<String, dynamic> json) {
     return UserLibraryObject(
-      id: json['id'] as int,
-      userId: json['user_id'] as int,
+      id: json['id'] as String,
+      userId: json['user_id'] as String,
       idMarketplaceKey: json['id_marketplace_key'] as String,
     );
   }
@@ -27,8 +28,8 @@ class UserLibraryObject {
 
   ///copy with
   UserLibraryObject copyWith({
-    final int? id,
-    final int? userId,
+    final String? id,
+    final String? userId,
     final String? idMarketplaceKey,
   }) =>
       UserLibraryObject(
@@ -38,10 +39,10 @@ class UserLibraryObject {
       );
 
   /// User's library id
-  final int? id;
+  final ID? id;
 
   ///user id
-  final int? userId;
+  final UserID? userId;
 
   ///user library identifier
   final String? idMarketplaceKey;

@@ -1,8 +1,10 @@
+import 'index.dart';
+
 /// Review of a Marketplace item,
 class ReviewObject {
   /// ctor
   ReviewObject({
-    this.id = 0,
+    this.id = '',
     required this.authorId,
     required this.authorName,
     required this.idMarketplaceKey,
@@ -12,8 +14,8 @@ class ReviewObject {
 
   /// From json
   ReviewObject.fromJson(final Map<String, dynamic> json)
-      : id = json['id'] as int,
-        authorId = json['author_id'] as int?,
+      : id = json['id'] as String,
+        authorId = json['author_id'] as String?,
         authorName = json['author_name'] as String?,
         idMarketplaceKey = json['id_marketplace_key'] as String?,
         description = json['description'] as String?,
@@ -32,8 +34,8 @@ class ReviewObject {
 
   ///copy with
   ReviewObject copyWith({
-    final int? id,
-    final int? authorId,
+    final String? id,
+    final String? authorId,
     final String? idMarketplaceKey,
     final String? title,
     final String? description,
@@ -50,13 +52,13 @@ class ReviewObject {
       );
 
   /// Review's id
-  final int id;
+  final ID id;
 
   ///Unique immutable Template identifiable key (Uuid)
   final String? idMarketplaceKey;
 
   /// UserId of who made this review
-  final int? authorId;
+  final UserID? authorId;
 
   /// Author name
   final String? authorName;
