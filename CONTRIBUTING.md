@@ -11,7 +11,8 @@ We expect all contributors to adhere to the highest standards of professionalism
 There are several ways to contribute to our project:
 
 - Create an issue: If you encounter any problems or have suggestions for improvements, please create an issue. We will respond as soon as possible.
-- Submit a pull request: If you would like to contribute directly to the code, you can submit a pull request. Please make sure that your code adheres to our style guide and passes our tests. We will review your pull request and provide feedback as necessary. All code must be written in our repositories, and pushes must be made using pull requests with an authorized review from an advisor.
+- Submit a pull request: If you would like to contribute directly to the code, you can submit a pull request. Please make sure that your code adheres to our style guide and passes our tests. We will review your pull request and provide feedback as necessary. 
+- All code must be written in our team repositories under the **buildwiththeta** owner, and pushes must be made using pull requests with an authorized review from an advisor.
 - Test and review pull requests: You can also contribute by testing and reviewing pull requests submitted by other contributors. Your feedback is invaluable and greatly appreciated.
 
 ## Pull Request Guidelines
