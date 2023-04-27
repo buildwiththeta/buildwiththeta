@@ -1,10 +1,10 @@
 # Contributing Guidelines
 
-We welcome contributions from expert developers who are interested in improving our project. By contributing to this project, you agree to abide by our code of conduct and to contribute under the terms of the Apache License 2.0.
+We welcome contributions from expert developers who are interested in improving our project. By contributing to this project, you agree to abide by our code of conduct and to contribute under the terms of the **Apache License 2.0**.
 
 ## Code of Conduct
 
-We expect all contributors to adhere to the highest standards of professionalism, ethics, and respect for all members of our community. We have adopted the Contributor Covenant Code of Conduct and expect all contributors to follow it.
+We expect all contributors to adhere to the highest standards of professionalism, ethics, and respect for all members of our community. We have adopted the [Contributor Covenant Code of Conduct](https://github.com/buildwiththeta/buildwiththeta/blob/main/CODE_OF_CONDUCT.md) and expect all contributors to follow it.
 
 ## How to Contribute
 
@@ -28,6 +28,6 @@ Employee Only: We ask that employees do not deploy any code to our online servic
 
 ## License
 
-By contributing to our project, you agree that your contributions will be licensed under the Apache License 2.0, which can be found in the LICENSE file.
+By contributing to our project, you agree that your contributions will be licensed under the Apache License 2.0, which can be found in the [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE.md) file.
 
 Thank you for contributing to our project!
