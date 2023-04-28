@@ -20,15 +20,10 @@
   ],
   "sidebar": [
     ["Overview", "/"],
+    ["Migration", "/migration"],
     [
       "UI Studio", [
         ["Teams", "/studio/teams"]
-      ]
-    ],
-    [
-      "Code Builder", [
-        ["Getting started", "/"],
-        ["Installing", "/"]
       ]
     ]
   ]
