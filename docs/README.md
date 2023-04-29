@@ -4,7 +4,7 @@ Theta Docs uses [docs.page](https://docs.page).
 
 ## How to contribute
 
-Before contributing, read [Contributing]() and [Code of Conduct]().
+Before contributing, read [Contributing](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) and [Code of Conduct](https://github.com/buildwiththeta/buildwiththeta/blob/main/CODE_OF_CONDUCT.md).
 To edit our docs, update a file in the /docs folder. Any update will be automatically posted to readable web docs as well.
 
 ## Types of docs
