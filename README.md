@@ -27,8 +27,8 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 ## Languages supported in docs
 
-- [EN](docs.page/buildwiththeta/buildwiththeta/en)
-- [IT](docs.page/buildwiththeta/buildwiththeta/it)
+- [en](docs.page/buildwiththeta/buildwiththeta/en)
+- [it](docs.page/buildwiththeta/buildwiththeta/it)
 
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/buildwiththeta/buildwiththeta)
 [![Discord](https://img.shields.io/discord/892332931966697472.svg?logo=discord&color=blue)](https://discord.gg/BdhDRZb7tu)
