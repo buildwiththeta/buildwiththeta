@@ -18,13 +18,26 @@
       "link": "https://github.com/buildwiththeta/buildwiththeta/issues/new"
     }
   ],
-  "sidebar": [
-    ["Overview", "/"],
-    ["Migration", "/migration"],
-    [
-      "UI Studio", [
-        ["Teams", "/studio/teams"]
-      ]
+  "sidebar": {
+    "en": [
+      ["Overview", "/en/"],
+      ["Migration", "/en/support/migration"],
+      [
+        "UI Studio", [
+          ["Teams", "/en/studio/teams"]
+        ]
+      ],
+      ["Languages", "/languages"]
+    ],
+    "it": [
+      ["Introduzione", "/it/"],
+      ["Migrazione", "/it/support/migration"],
+      [
+        "UI Studio", [
+          ["Team", "/it/studio/teams"]
+        ]
+      ],
+      ["Lingue", "/languages"]
     ]
-  ]
+  }
 }
