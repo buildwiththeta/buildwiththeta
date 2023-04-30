@@ -20,20 +20,20 @@
   ],
   "sidebar": {
     "en": [
-      ["Overview", "/en/"],
-      ["Migration", "/en/support/migration"],
+      ["Overview", "/"],
+      ["Migration", "/support/migration"],
       [
         "UI Studio", [
-          ["Teams", "/en/studio/teams"]
+          ["Teams", "/studio/teams"]
         ]
       ]
     ],
     "it": [
-      ["Introduzione", "/it/"],
-      ["Migrazione", "/it/support/migration"],
+      ["Introduzione", "/"],
+      ["Migrazione", "/support/migration"],
       [
         "UI Studio", [
-          ["Team", "/it/studio/teams"]
+          ["Team", "/studio/teams"]
         ]
       ]
     ]
