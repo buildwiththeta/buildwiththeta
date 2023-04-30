@@ -27,8 +27,8 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 ## Languages supported in docs
 
-- [en](docs.page/buildwiththeta/buildwiththeta/en)
-- [it](docs.page/buildwiththeta/buildwiththeta/it)
+- [en](https://docs.page/buildwiththeta/buildwiththeta/en)
+- [it](https://docs.page/buildwiththeta/buildwiththeta/it)
 
 ---
 
