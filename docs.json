@@ -26,8 +26,7 @@
         "UI Studio", [
           ["Teams", "/en/studio/teams"]
         ]
-      ],
-      ["Languages", "/languages"]
+      ]
     ],
     "it": [
       ["Introduzione", "/it/"],
@@ -36,8 +35,7 @@
         "UI Studio", [
           ["Team", "/it/studio/teams"]
         ]
-      ],
-      ["Lingue", "/languages"]
+      ]
     ]
   }
 }
