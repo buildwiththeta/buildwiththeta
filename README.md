@@ -8,10 +8,8 @@
 - [ ] Theta Builder: Stream your UIs inside your clients. Under development. <!-- [Docs]() -->
   - [ ] Flutter support. Under development. <!-- [Docs](). [Pub.dev](). -->
 
-<!--
 ## Documentation
-Learn about Theta on [docs.buildwiththeta.com]()
--->
+Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththeta)
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
@@ -27,6 +25,10 @@ Learn about Theta on [docs.buildwiththeta.com]()
 
 Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
 
+## Languages supported in docs
+
+- [EN](docs.page/buildwiththeta/buildwiththeta/en)
+- [IT](docs.page/buildwiththeta/buildwiththeta/it)
 
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/buildwiththeta/buildwiththeta)
 [![Discord](https://img.shields.io/discord/892332931966697472.svg?logo=discord&color=blue)](https://discord.gg/BdhDRZb7tu)
