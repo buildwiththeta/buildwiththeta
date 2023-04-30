@@ -30,10 +30,10 @@
     ],
     "it": [
       ["Introduzione", "/"],
-      ["Migrazione", "/support/migration"],
+      ["Migrazione", "/support/migratione"],
       [
         "UI Studio", [
-          ["Team", "/studio/teams"]
+          ["Team", "/studio/team"]
         ]
       ]
     ]
