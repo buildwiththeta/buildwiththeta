@@ -31,15 +31,15 @@ class FTextStyle extends Equatable {
     this.textDirection = const FTextDirection(),
   });
 
-  final FFill? fill;
-  final FFontSize? fontSize;
-  final String? fontFamily;
-  final FFontWeight? fontWeight;
-  final FTextDecoration? textDecoration;
-  final FTextAlign? textAlign;
-  final FFontStyle? fontStyle;
+  final FFill fill;
+  final FFontSize fontSize;
+  final String fontFamily;
+  final FFontWeight fontWeight;
+  final FTextDecoration textDecoration;
+  final FTextAlign textAlign;
+  final FFontStyle fontStyle;
   final String? textStyleModel;
-  final FTextDirection? textDirection;
+  final FTextDirection textDirection;
 
   @override
   List<Object?> get props => [
@@ -58,23 +58,19 @@ class FTextStyle extends Equatable {
     final TreeState state,
     final BuildContext context,
     final bool forPlay,
-    final TextStyleModel? model,
+    final TextStyleEntity? model,
   ) {
     return TetaTextStyles.get(
       state: state,
       context: context,
       model: model,
       forPlay: forPlay,
-      fill: fill ??
-          const FFill(
-            type: FFillType.solid,
-            levels: [FFillElement(color: '000000', stop: 0)],
-          ),
-      fontFamily: fontFamily ?? 'Poppins',
-      fontSize: fontSize ?? const FFontSize(),
-      fontWeight: fontWeight ?? const FFontWeight(),
-      textDecoration: textDecoration ?? const FTextDecoration(),
-      fontStyle: fontStyle ?? const FFontStyle(),
+      fill: fill,
+      fontFamily: fontFamily,
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      textDecoration: textDecoration,
+      fontStyle: fontStyle,
     );
   }
 
@@ -105,7 +101,7 @@ class FTextStyle extends Equatable {
             ? FTextAlign.fromJson(doc[DBKeys.textAlign] as String)
             : const FTextAlign(),
         fontStyle: doc[DBKeys.fontStyle] != null
-            ? FFontStyle.fromJson(doc[DBKeys.fontStyle] as String)
+            ? FFontStyle.fromJson(doc[DBKeys.fontStyle])
             : const FFontStyle(),
         textDirection: doc[DBKeys.textDirection] != null
             ? FTextDirection.fromJson(doc[DBKeys.textDirection] as String)
@@ -130,31 +126,14 @@ class FTextStyle extends Equatable {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-        DBKeys.fill: (fill != null)
-            ? fill!.toJson()
-            : const FFill(
-                type: FFillType.solid,
-                levels: [FFillElement(color: '000000', stop: 0)],
-              ).toJson(),
-        DBKeys.fontSize: (fontSize != null)
-            ? fontSize!.toJson()
-            : const FFontSize().toJson(),
-        DBKeys.fontFamily: fontFamily ?? 'Poppins',
-        DBKeys.fontWeight: (fontWeight != null)
-            ? fontWeight!.toJson()
-            : const FFontWeight().toJson(),
-        DBKeys.textDecoration: (textDecoration != null)
-            ? textDecoration!.toJson()
-            : const FTextDecoration().toJson(),
-        DBKeys.textAlign: (textAlign != null)
-            ? textAlign!.toJson()
-            : const FTextAlign().toJson(),
-        DBKeys.fontStyle: (fontStyle != null)
-            ? fontStyle!.toJson()
-            : const FFontStyle().toJson(),
-        DBKeys.textDirection: (textDirection != null)
-            ? textDirection!.toJson()
-            : const FTextDirection().toJson(),
+        DBKeys.fill: fill.toJson(),
+        DBKeys.fontSize: fontSize.toJson(),
+        DBKeys.fontFamily: fontFamily,
+        DBKeys.fontWeight: fontWeight.toJson(),
+        DBKeys.textDecoration: textDecoration.toJson(),
+        DBKeys.textAlign: textAlign.toJson(),
+        DBKeys.fontStyle: fontStyle.toJson(),
+        DBKeys.textDirection: textDirection.toJson(),
         DBKeys.textStyleModel: textStyleModel,
       };
 
@@ -170,28 +149,27 @@ class FTextStyle extends Equatable {
   /// ),
   /// textAlign: TextAlign.center,
   /// ```
-  String toCode(final BuildContext context, List<TextStyleModel> textStyles,
-      List<ColorStyleModel> colorStyles) {
-    TextStyleModel? model;
+  String toCode(final BuildContext context, TextStyles textStyles,
+      ColorStyles colorStyles) {
+    TextStyleEntity? model;
     if (textStyleModel != null) {
       for (var element in textStyles) {
         if (element.name == textStyleModel) model = element;
       }
     }
 
-    final rc = ReCase((model?.fontFamily ?? fontFamily) ?? 'Poppins');
-
-    final align = textAlign?.toCode();
-    final size = (model?.fontSize ?? fontSize)?.toCode();
-    final weight = (model?.fontWeight ?? fontWeight)?.toCode();
-    final style = fontStyle?.toCode();
-    final decoration = textDecoration?.toCode();
-    final direction = textDirection?.toCode();
+    final rc = ReCase(model?.fontFamily ?? fontFamily);
+    final align = textAlign.toCode();
+    final size = (model?.fontSize ?? fontSize).toCode();
+    final weight = (model?.fontWeight ?? fontWeight).toCode();
+    final style = fontStyle.toCode();
+    final decoration = textDecoration.toCode();
+    final direction = textDirection.toCode();
 
     return '''
     style: GoogleFonts.${rc.camelCase}(
       textStyle: TextStyle(
-        ${FFill.toCode(fill!, context, colorStyles: colorStyles)}
+        ${FFill.toCode(fill, context, colorStyles: colorStyles)}
         fontWeight: $weight,
         fontSize: $size,
         fontStyle: $style,
@@ -215,30 +193,25 @@ class FTextStyle extends Equatable {
   /// ),
 
   String toCodeTextStyleOnly(
-      final BuildContext context,
-      final List<TextStyleModel> textStyles,
-      List<ColorStyleModel> colorStyles) {
-    TextStyleModel? model;
+      BuildContext context, TextStyles textStyles, ColorStyles colorStyles) {
+    TextStyleEntity? model;
     if (textStyleModel != null) {
       for (var element in textStyles) {
         if (element.name == textStyleModel) model = element;
       }
     }
 
-    final rc = ReCase((model?.fontFamily ?? fontFamily) ?? 'Poppins');
-
-    final align = textAlign?.toCode();
-    final size = (model?.fontSize ?? fontSize)?.toCode();
-    final weight = (model?.fontWeight ?? fontWeight)?.toCode();
-    final style = fontStyle?.toCode();
-    final decoration = textDecoration?.toCode();
-    final direction = textDirection?.toCode();
+    final rc = ReCase(model?.fontFamily ?? fontFamily);
+    final size = (model?.fontSize ?? fontSize).toCode();
+    final weight = (model?.fontWeight ?? fontWeight).toCode();
+    final style = fontStyle.toCode();
+    final decoration = textDecoration.toCode();
 
     return '''
     style: GoogleFonts.${rc.camelCase}(
       textStyle: TextStyle(
         ${FFill.toCode(
-      fill!,
+      fill,
       context,
       colorStyles: colorStyles,
     )}

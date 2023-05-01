@@ -7,26 +7,26 @@ import 'package:theta_models/src/widgets/features/index.dart';
 
 import 'index.dart';
 
-class ColorStyleModel extends Equatable {
+class ColorStyleEntity extends Equatable {
   /// Constructor
-  const ColorStyleModel({
+  const ColorStyleEntity({
     this.id = '',
-    required this.channelId,
+    required this.branchID,
     required this.name,
-    required this.fill,
+    required this.dark,
     required this.light,
   });
 
   final ID id;
-  final ChannelID channelId;
+  final BranchID branchID;
   final String name;
-  final FFill fill;
+  final FFill dark;
   final FFill light;
 
   @override
-  List<Object> get props => [id, channelId, name, fill, light];
+  List<Object> get props => [id, branchID, name, dark, light];
 
   @override
   String toString() =>
-      'ColorStyleModel { id: $id, channel_id: $channelId, name: $name, fill: ${fill.toString()} }';
+      'ColorStyleModel { id: $id, branch_id: $branchID, name: $name }';
 }

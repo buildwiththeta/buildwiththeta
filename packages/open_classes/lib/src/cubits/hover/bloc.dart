@@ -6,13 +6,14 @@
 import 'package:bloc/bloc.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:theta_models/theta_models.dart';
 // Project imports:
 import 'index.dart';
 
 /// Bloc to set the hover gesture
-class HoverBloc extends Bloc<HoverEvent, int> {
+class HoverBloc extends Bloc<HoverEvent, NodeID?> {
   ///
-  HoverBloc(this.context) : super(0) {
+  HoverBloc(this.context) : super(null) {
     on<OnHover>((final event, final emit) {
       emit(event.node.id);
     });

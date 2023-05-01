@@ -94,7 +94,6 @@ class FFill extends Equatable {
     this.radius,
     this.boxFit,
     this.paletteStyle,
-    this.file,
     this.levels = const [FFillElement(color: '000000', stop: 0)],
   });
 
@@ -106,7 +105,6 @@ class FFill extends Equatable {
   final double? radius;
   final FBoxFit? boxFit;
   final dynamic paletteStyle;
-  final AssetFile? file;
 
   @override
   List<Object?> get props => [
@@ -118,12 +116,11 @@ class FFill extends Equatable {
         radius,
         boxFit,
         paletteStyle,
-        file,
       ];
 
   FFill get(
     final BuildContext context,
-    final List<ColorStyleModel> styles,
+    final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
     if (paletteStyle == null) {
@@ -138,13 +135,13 @@ class FFill extends Equatable {
         paletteStyle: paletteStyle,
       );
     } else {
-      ColorStyleModel? model;
+      ColorStyleEntity? model;
       for (var element in styles) {
         if (element.id == paletteStyle) model = element;
         if (element.name == paletteStyle) model = element;
       }
       if (model != null) {
-        return themeMode == ThemeMode.light ? model.light : model.fill;
+        return themeMode == ThemeMode.light ? model.light : model.dark;
       } else {
         return const FFill().ready(FFillType.solid);
       }
@@ -156,7 +153,7 @@ class FFill extends Equatable {
   /// String is uppercased.
   String getHexColor(
     final BuildContext context,
-    final List<ColorStyleModel> styles,
+    final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
     FFill fill;
@@ -171,7 +168,7 @@ class FFill extends Equatable {
         boxFit: boxFit,
       );
     } else {
-      ColorStyleModel? model;
+      ColorStyleEntity? model;
       for (var element in styles) {
         if (element.id == paletteStyle) model = element;
         if (element.name == paletteStyle) model = element;
@@ -179,7 +176,7 @@ class FFill extends Equatable {
       fill = (model != null)
           ? themeMode == ThemeMode.light
               ? model.light
-              : model.fill
+              : model.dark
           : const FFill().ready(FFillType.solid);
     }
     return fill.levels.first.color.toUpperCase();
@@ -247,7 +244,7 @@ class FFill extends Equatable {
             stop: 0,
           ),
         ],
-        boxFit: const FBoxFit(fit: BoxFit.cover),
+        boxFit: const FBoxFit(value: BoxFit.cover),
         type: type,
       );
     }
@@ -332,7 +329,7 @@ class FFill extends Equatable {
         'pltt': paletteStyle,
         'bF': (boxFit != null)
             ? boxFit!.toJson()
-            : const FBoxFit(fit: BoxFit.cover).toJson(),
+            : const FBoxFit(value: BoxFit.cover).toJson(),
       }..removeWhere((final String key, final dynamic value) => value == null);
     } else {
       return <String, dynamic>{
@@ -394,9 +391,9 @@ class FFill extends Equatable {
     final FFill fill,
     final BuildContext context, {
     final bool? flagConst,
-    required final List<ColorStyleModel> colorStyles,
+    required final List<ColorStyleEntity> colorStyles,
   }) {
-    ColorStyleModel? currentPaletteElement;
+    ColorStyleEntity? currentPaletteElement;
 
     for (final e in colorStyles) {
       if (e.id == fill.paletteStyle || e.name == fill.paletteStyle) {

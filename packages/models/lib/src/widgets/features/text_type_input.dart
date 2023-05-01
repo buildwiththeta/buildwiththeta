@@ -8,20 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:recase/recase.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Set of func to use text string in Teta's widgets
-enum FTextTypeEnum {
-  text,
-  imageUrl,
-  param,
-  state,
-  dataset,
-  asset,
-  combined,
-  languages
-}
+enum FTextTypeEnum { text, imageUrl, param, state, combined, languages }
 
 /// Result type of [FTextTypeInput]
 enum ResultTypeEnum {
@@ -30,10 +20,6 @@ enum ResultTypeEnum {
   int,
   double,
   bool,
-  audioPlayer,
-  webviewController,
-  mapController,
-  googleMapsController,
 }
 
 /// Type of [FTextTypeInput] for [ResultTypeEnum.dateTime]
@@ -116,13 +102,10 @@ class FTextTypeInput {
     this.valueDesktop = '',
     this.paramName,
     this.stateName,
-    this.datasetName,
-    this.datasetAttr,
     this.datasetSubListData,
     this.datasetSubMapData,
     this.datasetLength,
     this.locale,
-    this.file,
     this.combination,
     this.resultType = ResultTypeEnum.string,
     this.typeDateTimeFormat,
@@ -134,13 +117,10 @@ class FTextTypeInput {
   final String? valueDesktop;
   final String? paramName;
   final String? stateName;
-  final String? datasetName;
   final String? datasetLength;
-  final String? datasetAttr;
   final String? datasetSubListData;
   final String? datasetSubMapData;
   final String? locale;
-  final AssetFile? file;
   final List<FTextTypeInput>? combination;
   final ResultTypeEnum resultType;
   final TypeDateTimeFormat? typeDateTimeFormat;
@@ -154,19 +134,16 @@ class FTextTypeInput {
       calc(
         state: state,
         loop: loop,
-        placeholder: datasetAttr ?? '',
+        placeholder: '',
         context: context,
       ).toString();
 
   String getStateValue(
-    final List<VariableObject> states,
+    final Variables states,
   ) {
     if (type == FTextTypeEnum.state) {
       final state =
           states.firstWhereOrNull((final element) => element.name == stateName);
-      if (state?.type == VariableType.file) {
-        return '${state?.file}';
-      }
       return '${state?.get}';
     } else {
       return 'null';
@@ -244,50 +221,15 @@ class FTextTypeInput {
       try {
         final variable = state.params
             .firstWhereOrNull((final element) => element.name == paramName);
-        if (variable?.type == VariableType.file) {
-          return variable?.file;
-        }
+
         return variable?.get;
       } catch (_) {}
     }
     if (type == FTextTypeEnum.state) {
       final variable = state.states
           .firstWhereOrNull((final element) => element.name == stateName);
-      if (variable?.type == VariableType.file) {
-        return variable?.file;
-      }
-      return variable?.get;
-    }
-    if (type == FTextTypeEnum.dataset) {
-      Map<String, dynamic>? db = <String, dynamic>{};
-      final dbLength = state.dataset
-          .firstWhereOrNull((final element) => element.getName == datasetName)
-          ?.getMap
-          .length;
-      if (dbLength == 1) {
-        db = state.dataset
-            .firstWhereOrNull((final element) => element.getName == datasetName)
-            ?.getMap[0];
-      } else {
-        db = state.dataset
-            .firstWhereOrNull((final element) => element.getName == datasetName)
-            ?.getMap[loop ?? 0];
-      }
 
-      if (db != null) {
-        if (db[datasetAttr] is Map) {
-          return '${db[datasetAttr][datasetSubMapData]}';
-        } else if (db[datasetAttr] is List) {
-          return '${db[datasetAttr][loop ?? 0][datasetSubListData]}';
-        } else {
-          return '${db[datasetAttr]}';
-        }
-      } else {
-        return placeholder;
-      }
-    }
-    if (type == FTextTypeEnum.asset) {
-      return file?.url ?? '';
+      return variable?.get;
     }
     if (type == FTextTypeEnum.combined) {
       final string = StringBuffer();
@@ -355,13 +297,10 @@ class FTextTypeInput {
     FTextTypeEnum? type,
     String? paramName,
     String? stateName,
-    String? datasetName,
-    String? datasetAttr,
     String? datasetSubMapData,
     String? datasetSubListData,
     String? locale,
     List<FTextTypeInput>? combination,
-    AssetFile? file,
   }) {
     return FTextTypeInput(
       value: value ?? this.value,
@@ -370,13 +309,10 @@ class FTextTypeInput {
       type: type ?? this.type,
       paramName: paramName ?? this.paramName,
       stateName: stateName ?? this.stateName,
-      datasetName: datasetName ?? this.datasetName,
-      datasetAttr: datasetAttr ?? this.datasetAttr,
       datasetSubMapData: datasetSubMapData ?? this.datasetSubMapData,
       datasetSubListData: datasetSubListData ?? this.datasetSubListData,
       locale: locale ?? this.locale,
       combination: combination ?? this.combination,
-      file: file ?? this.file,
     );
   }
 
@@ -402,37 +338,16 @@ class FTextTypeInput {
   static FTextTypeInput fromJson(final Map<String, dynamic>? json) {
     try {
       return FTextTypeInput(
-        type: json?['t'] == 'text'
-            ? FTextTypeEnum.text
-            : json?['t'] == 'imageUrl'
-                ? FTextTypeEnum.imageUrl
-                : json?['t'] == 'param'
-                    ? FTextTypeEnum.param
-                    : json?['t'] == 'state'
-                        ? FTextTypeEnum.state
-                        : json?['t'] == 'dataset'
-                            ? FTextTypeEnum.dataset
-                            : json?['t'] == 'asset'
-                                ? FTextTypeEnum.asset
-                                : json?['t'] == 'combined'
-                                    ? FTextTypeEnum.combined
-                                    : json?['t'] == 'languages'
-                                        ? FTextTypeEnum.languages
-                                        : FTextTypeEnum.text,
+        type: EnumToString.fromString(FTextTypeEnum.values, json?['t']),
         value: json?['v'] as String?,
         valueTablet: json?['vt'] as String?,
         valueDesktop: json?['vd'] as String?,
         paramName: json?['pN'] as String?,
         stateName: json?['sN'] as String?,
-        datasetName: json?['dN'] as String?,
-        datasetAttr: json?['dA'] as String?,
         datasetSubListData: json?['dAO'] as String?,
         datasetSubMapData: json?['dAT'] as String?,
         datasetLength: json?['dL'] as String?,
         locale: json?['kTrans'] as String?,
-        file: json?['f'] != null
-            ? AssetFile.fromJson(json?['f'] as Map<String, dynamic>?)
-            : null,
         combination: json?['cmb'] != null
             ? (json?['cmb'] as List<dynamic>)
                 .map(
@@ -459,28 +374,12 @@ class FTextTypeInput {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-        't': type == FTextTypeEnum.asset
-            ? 'asset'
-            : type == FTextTypeEnum.dataset
-                ? 'dataset'
-                : type == FTextTypeEnum.param
-                    ? 'param'
-                    : type == FTextTypeEnum.state
-                        ? 'state'
-                        : type == FTextTypeEnum.imageUrl
-                            ? 'imageUrl'
-                            : type == FTextTypeEnum.combined
-                                ? 'combined'
-                                : type == FTextTypeEnum.languages
-                                    ? 'languages'
-                                    : 'text',
+        't': EnumToString.convertToString(type),
         'v': value,
         'vt': valueTablet,
         'vd': valueDesktop,
         'pN': paramName,
         'sN': stateName,
-        'dN': datasetName,
-        'dA': datasetAttr,
         'dAO': datasetSubListData,
         'dAT': datasetSubMapData,
         'dL': datasetLength,
@@ -490,7 +389,6 @@ class FTextTypeInput {
         'tDateTime': typeDateTimeFormat != null
             ? EnumToString.convertToString(typeDateTimeFormat)
             : EnumToString.convertToString(TypeDateTimeFormat.dateWithTime),
-        if (file != null) 'f': file!.toJson(),
       }..removeWhere((final String key, final dynamic value) => value == null);
 
   /*String toCode(
@@ -653,37 +551,6 @@ getValueForScreenType<$type>(
       } else {
         return '\$${state.camelCase}';
       }
-    }
-    // The value is a dataset
-    if (type == FTextTypeEnum.dataset) {
-      if (resultType == ResultTypeEnum.string) {
-        if (datasetSubListData != null && datasetSubListData != '') {
-          //Dataset->List->Data
-          return "this.datasets[${_calcStringType(datasetName)}]?[${'0'}]?[${_calcStringType(datasetAttr)}]?[${'index'}]?[${_calcStringType(datasetSubListData)}]?.toString() ?? ''";
-        } else if (datasetSubMapData != null && datasetSubMapData != '') {
-          //Dataset->Map->Data
-          return "this.datasets[${_calcStringType(datasetName)}]?[${'0'}]?[${_calcStringType(datasetAttr)}]?[${_calcStringType(datasetSubMapData)}]?.toString() ?? ''";
-        } else {
-          //this dataset has one element
-          if (datasetLength == '1') {
-            return "this.datasets[${_calcStringType(datasetName)}]?[index]?[${_calcStringType(datasetAttr)}]?.toString() ?? ''";
-          } else {
-            //this dataset has one then more element
-            //Dataset->Data
-            return "this.datasets[${_calcStringType(datasetName)}]?[${datasetName == 'Teta Auth User' ? '0' : 'index'}]?[${_calcStringType(datasetAttr)}]?.toString() ?? ''";
-          }
-        }
-      } else if (resultType == ResultTypeEnum.int) {
-        return '0';
-      } else if (resultType == ResultTypeEnum.double) {
-        return '0.0';
-      } else if (resultType == ResultTypeEnum.bool) {
-        return 'true';
-      }
-    }
-    // The value is an asset
-    if (type == FTextTypeEnum.asset) {
-      return file?.url ?? '';
     }
     if (type == FTextTypeEnum.combined) {
       if (resultType == ResultTypeEnum.string) {

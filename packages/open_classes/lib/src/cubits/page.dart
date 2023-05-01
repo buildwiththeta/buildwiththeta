@@ -468,7 +468,7 @@ class PageCubit extends Cubit<PageState> {
   }
 
   Future<ClearResponse<List<CNode>?, ClearErrorResponse?>> fetchNodesByPage(
-    final int pageId,
+    final PageID pageId,
   ) async {
     final res = await ProjectsDB.I.client.selectList(
       'nodes',

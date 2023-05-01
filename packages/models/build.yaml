@@ -1,6 +1,11 @@
 targets:
   $default:
     builders:
+      freezed:
+        generate_for:
+          - lib/src/models/*.dart
+        options:
+          formatted: true
       reflectable:
         generate_for:
           - lib/main.dart

@@ -2,14 +2,10 @@
 
 // Package imports:
 import 'package:equatable/equatable.dart';
-import 'package:theta_models/src/models/constants_model.dart';
-import 'package:theta_models/src/models/package.dart';
 import 'package:theta_models/src/widgets/actions/enums/gestures.dart';
-import 'package:theta_models/src/widgets/actions/enums/permissions.dart';
 import 'package:theta_models/src/widgets/nodes/categories.dart';
 import 'package:theta_models/src/widgets/nodes/children_enum.dart';
 import 'package:theta_models/src/widgets/nodes/node_type.dart';
-import 'package:theta_models/src/widgets/nodes/suggestion.dart';
 
 // Project imports:
 class IntrinsicState extends Equatable {
@@ -24,17 +20,6 @@ class IntrinsicState extends Equatable {
     this.blockedTypes = const [],
     this.addChildLabels = const [],
     this.gestures = const [],
-    this.permissions = const [],
-    this.packages = const [],
-    this.constants = const [],
-    this.suggestionsTitle = 'Need Help with this Widget?',
-    this.suggestions = const [
-      Suggestion(
-        title: 'Docs',
-        description: 'Docs',
-        linkToOpen: 'https://docs.teta.so/teta-docs/',
-      )
-    ],
   });
 
   /// Icon of the node.
@@ -69,23 +54,6 @@ class IntrinsicState extends Equatable {
   /// List of gesture supported by node.
   final List<Trigger> gestures;
 
-  /// List of permissions to support in the released app -> dynamic based on node needs
-  final List<Permissions> permissions;
-
-  ///List of all packages required for this node to work
-  final List<PackageModel> packages;
-
-  ///List of all constants required for this node to work
-  final List<ConstantsModel> constants;
-
-  ///The headline for suggestions, label
-  final String suggestionsTitle;
-
-  /// Get all node suggestion.
-  /// suggestion are the articles showed on right bar,
-  /// used to let the user know how the node work
-  final List<Suggestion> suggestions;
-
   bool get canHaveChildren => canHave == ChildrenEnum.children;
   bool get canHaveChild => canHave == ChildrenEnum.child;
 
@@ -99,14 +67,11 @@ class IntrinsicState extends Equatable {
         category: NodeCategories.unclassified,
         canHave: ChildrenEnum.none,
         addChildLabels: [],
-        gestures: <Trigger>[],
-        permissions: <Permissions>[],
-        packages: <PackageModel>[],
       );
 
   @override
   String toString() {
-    return 'IntrinsicState: ntype: $type  packages: $packages';
+    return 'IntrinsicState: ntype: $type';
   }
 
   @override
@@ -121,10 +86,5 @@ class IntrinsicState extends Equatable {
         canHave,
         addChildLabels,
         gestures,
-        permissions,
-        packages,
-        constants,
-        suggestionsTitle,
-        suggestions,
       ];
 }

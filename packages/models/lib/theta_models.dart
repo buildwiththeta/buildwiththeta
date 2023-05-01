@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 export './src/models/index.dart';
 export './src/mappers/index.dart';
+export './src/enums/index.dart';
 export './src/widgets/features/index.dart';
 export './src/widgets/nodes/index.dart';
 export './src/controls/index.dart';
