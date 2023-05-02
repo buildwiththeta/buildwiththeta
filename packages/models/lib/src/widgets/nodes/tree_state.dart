@@ -24,7 +24,6 @@ class TreeState extends Equatable {
     required this.forPlay,
     required this.params,
     required this.states,
-    required this.dataset,
     required this.pageId,
     required this.isPage,
     required this.colorStyles,
@@ -40,13 +39,10 @@ class TreeState extends Equatable {
   final bool forPlay;
 
   /// The params of Scaffold
-  final List<VariableObject> params;
+  final List<VariableEntity> params;
 
   /// The states of Scaffold
-  final List<VariableObject> states;
-
-  /// The dataset list created by other widgets inside the same page
-  final List<DatasetObject> dataset;
+  final List<VariableEntity> states;
 
   /// The page id
   final PageID pageId;
@@ -55,10 +51,10 @@ class TreeState extends Equatable {
   final bool isPage;
 
   /// The color styles
-  final List<ColorStyleModel> colorStyles;
+  final List<ColorStyleEntity> colorStyles;
 
   /// The text styles
-  final List<TextStyleModel> textStyles;
+  final List<TextStyleEntity> textStyles;
 
   /// Device type
   final DeviceInfo deviceInfo;
@@ -88,14 +84,13 @@ class TreeState extends Equatable {
     final CNode? node,
     final bool? forPlay,
     final int? loop,
-    final List<VariableObject>? params,
-    final List<VariableObject>? states,
-    final List<DatasetObject>? dataset,
+    final List<VariableEntity>? params,
+    final List<VariableEntity>? states,
     final bool? isVertical,
     final PageID? pageId,
     final bool? isPage,
-    final List<ColorStyleModel>? colorStyles,
-    final List<TextStyleModel>? textStyles,
+    final List<ColorStyleEntity>? colorStyles,
+    final List<TextStyleEntity>? textStyles,
     final DeviceInfo? deviceInfo,
     final FlutterLocalization? localization,
     final ThemeMode? theme,
@@ -106,7 +101,6 @@ class TreeState extends Equatable {
       forPlay: forPlay ?? this.forPlay,
       params: params ?? this.params,
       states: states ?? this.states,
-      dataset: dataset ?? this.dataset,
       pageId: pageId ?? this.pageId,
       isPage: isPage ?? this.isPage,
       colorStyles: colorStyles ?? this.colorStyles,
@@ -124,7 +118,6 @@ class TreeState extends Equatable {
         forPlay,
         params,
         states,
-        dataset,
         pageId,
         isPage,
         colorStyles,

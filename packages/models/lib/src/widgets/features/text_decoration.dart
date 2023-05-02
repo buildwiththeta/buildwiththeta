@@ -49,22 +49,7 @@ class FTextDecoration extends Equatable {
     return decoration;
   }
 
-  static String _convertValueToCode(final TextDecoration? value) {
-    var decoration = 'TextDecoration.none';
-    if (value == TextDecoration.none) decoration = 'TextDecoration.none';
-    if (value == TextDecoration.underline) {
-      decoration = 'TextDecoration.underline';
-    }
-    if (value == TextDecoration.lineThrough) {
-      decoration = 'TextDecoration.lineThrough';
-    }
-    if (value == TextDecoration.overline) {
-      decoration = 'TextDecoration.overline';
-    }
-    return decoration;
-  }
-
-  String toCode() => _convertValueToCode(textDecoration);
+  String toCode() => textDecoration.toString();
 
   /*String toCode() =>
       "FTextDecoration(textDecorations: [${convertValueToCode(textDecorations?[0])},${convertValueToCode(textDecorations?[1])},${convertValueToCode(textDecorations?[2])},],)";*/

@@ -55,7 +55,7 @@ class FBorder extends Equatable {
     final BuildContext context, {
     required final bool forPlay,
     required final DeviceType deviceType,
-    required final List<ColorStyleModel> colorStyles,
+    required final List<ColorStyleEntity> colorStyles,
     required final ThemeMode theme,
   }) {
     final values =
@@ -66,25 +66,25 @@ class FBorder extends Equatable {
       left: BorderSide(
         color: HexColor(fill.getHexColor(context, colorStyles, theme))
             .withOpacity(opacity),
-        style: style.style,
+        style: style.value,
         width: values[0],
       ),
       top: BorderSide(
         color: HexColor(fill.getHexColor(context, colorStyles, theme))
             .withOpacity(opacity),
-        style: style.style,
+        style: style.value,
         width: values[1],
       ),
       right: BorderSide(
         color: HexColor(fill.getHexColor(context, colorStyles, theme))
             .withOpacity(opacity),
-        style: style.style,
+        style: style.value,
         width: values[2],
       ),
       bottom: BorderSide(
         color: HexColor(fill.getHexColor(context, colorStyles, theme))
             .withOpacity(opacity),
-        style: style.style,
+        style: style.value,
         width: values[3],
       ),
     );
@@ -101,7 +101,7 @@ class FBorder extends Equatable {
     } catch (e) {
       return const FBorder(
         style: FBorderStyle(
-          style: BorderStyle.none,
+          value: BorderStyle.none,
         ),
         width: FMargins(
           margins: [0, 0, 0, 0],
@@ -134,39 +134,40 @@ class FBorder extends Equatable {
 
   /// Export code String
   String toCode(
-      final BuildContext context, final List<ColorStyleModel> colorStyles) {
-    String _valueToCode(final List<double> values) {
-      final color = FFill.toCode(fill, context, colorStyles: colorStyles);
-      // if (style?.get != BorderStyle.none) return '';
-      if (values.indexWhere((final element) => element != 0) == -1) {
-        return 'null';
-      }
-      return '''
-    Border(
-      left:
-          BorderSide(width: ${values[0]}, ${style.style != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      top:
-          BorderSide(width: ${values[1]}, ${style.style != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      right:
-          BorderSide(width: ${values[2]}, ${style.style != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      bottom:
-          BorderSide(width: ${values[3]}, ${style.style != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-    )
-  ''';
-    }
-
+      final BuildContext context, final List<ColorStyleEntity> colorStyles) {
     if (listEquals(width.margins, width.marginsTablet ?? width.margins) &&
         listEquals(width.margins, width.marginsDesktop ?? width.margins)) {
-      return _valueToCode(width.margins!);
+      return _valueToCode(width.margins!, context, colorStyles);
     }
 
     return '''
 getValueForScreenType<Border>(
   context: context,
-  mobile: ${_valueToCode(width.margins!)},
-  tablet: ${_valueToCode(width.marginsTablet ?? width.margins!)},
-  desktop: ${_valueToCode(width.marginsDesktop ?? width.margins!)},
+  mobile: ${_valueToCode(width.margins!, context, colorStyles)},
+  tablet: ${_valueToCode(width.marginsTablet ?? width.margins!, context, colorStyles)},
+  desktop: ${_valueToCode(width.marginsDesktop ?? width.margins!, context, colorStyles)},
 )
 ''';
+  }
+
+  String _valueToCode(final List<double> values, final BuildContext context,
+      final List<ColorStyleEntity> colorStyles) {
+    final color = FFill.toCode(fill, context, colorStyles: colorStyles);
+    // if (style?.get != BorderStyle.none) return '';
+    if (values.indexWhere((final element) => element != 0) == -1) {
+      return 'null';
+    }
+    return '''
+    Border(
+      left:
+          BorderSide(width: ${values[0]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
+      top:
+          BorderSide(width: ${values[1]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
+      right:
+          BorderSide(width: ${values[2]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
+      bottom:
+          BorderSide(width: ${values[3]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
+    )
+  ''';
   }
 }

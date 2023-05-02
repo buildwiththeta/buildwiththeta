@@ -21,7 +21,6 @@ class IntrinsicStateUtils {
     NType.container: ContainerIntrinsicStates(),
     NType.divider: DividerIntrinsicStates(),
     NType.expanded: ExpandedIntrinsicStates(),
-    NType.googleMaps: GoogleMapsIntrinsicStates(),
     NType.gestureDetector: GestureDetectorIntrinsicStates(),
     NType.gridView: GridViewIntrinsicStates(),
     NType.gridViewBuilder: GridViewBuilderIntrinsicStates(),

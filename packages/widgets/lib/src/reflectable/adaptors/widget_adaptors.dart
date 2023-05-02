@@ -7,9 +7,7 @@ import 'package:theta_open_widgets/src/elements/widgets/google_maps/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/http_requests/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/https_requests_custom_backend/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/navigation/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/qonversion/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/responsive/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/revenuecat/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/supabase/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/teta_cms/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/teta_store/index.dart';
@@ -2578,44 +2576,6 @@ class DrawerAdapter extends WidgetAdapter {
   DrawerAdapter.create() : this();
 }
 
-/// Qonversion Products
-@dynamicAdapter
-@NodeKey(NType.qonversionProducts)
-class QonversionProductsAdapter extends WidgetAdapter {
-  const QonversionProductsAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWQonversionProductsList(
-        state: state,
-        child: state.node.child,
-      );
-
-  QonversionProductsAdapter.create() : this();
-}
-
-/// Qonversion Sub Status
-@dynamicAdapter
-@NodeKey(NType.qonversionSubStatus)
-class QonversionSubStatusAdapter extends WidgetAdapter {
-  const QonversionSubStatusAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWQonversionSingleSubStatus(
-        state: state,
-        entitlementInfo:
-            state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        child: state.node.child,
-      );
-
-  QonversionSubStatusAdapter.create() : this();
-}
-
 /// Wrapper
 @dynamicAdapter
 @NodeKey(NType.wrapper)
@@ -2633,44 +2593,6 @@ class WrapperAdapter extends WidgetAdapter {
       );
 
   WrapperAdapter.create() : this();
-}
-
-/// RevenueCat Products
-@dynamicAdapter
-@NodeKey(NType.revenueCatProducts)
-class RevenueCatProductsAdapter extends WidgetAdapter {
-  const RevenueCatProductsAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWRevenueCatProductsList(
-        state: state,
-        child: state.node.child,
-      );
-
-  RevenueCatProductsAdapter.create() : this();
-}
-
-/// RevenueCat Sub Status
-@dynamicAdapter
-@NodeKey(NType.revenueCatSubStatus)
-class RevenueCatSubStatusAdapter extends WidgetAdapter {
-  const RevenueCatSubStatusAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWRevenueCatSingleSubStatus(
-        state: state,
-        entitlementInfo:
-            state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        child: state.node.child,
-      );
-
-  RevenueCatSubStatusAdapter.create() : this();
 }
 
 /// Supabase Future Builder

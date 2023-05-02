@@ -6,7 +6,7 @@ import 'package:theta_models/src/widgets/nodes/node_type.dart';
 class NodeRendering {
   const NodeRendering();
 
-  CNode buildTree(List<CNode> list, int nodeId) {
+  CNode buildTree(List<CNode> list, String nodeId) {
     final node = list.firstWhereOrNull((n) => n.id == nodeId);
 
     if (node == null) {

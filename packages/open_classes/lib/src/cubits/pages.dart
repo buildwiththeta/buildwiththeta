@@ -148,7 +148,7 @@ class PagesCubit extends Cubit<List<PageObject>> {
   Future<void> duplicatePage(
     final PageID pageId,
   ) async {
-    final res = await ProjectsDB.instance.client.duplicatePage(
+    /*final res = await ProjectsDB.instance.client.duplicatePage(
       pageId,
       channelId,
     );
@@ -167,7 +167,7 @@ class PagesCubit extends Cubit<List<PageObject>> {
         'name': '${list[index].name}Copy',
         'isPrimary': false,
       },
-    );
+    );*/
   }
 
   void _listenEvents() {

@@ -190,7 +190,7 @@ class Core {
             screenSize: const Size(0, 0),
           ),
           workflows: workflows ?? const [],
-          config: const ProjectConfigModel(prjId: 0),
+          config: const ProjectConfigModel(),
         ),
         child: res.data!.toWidget(
           context: context,

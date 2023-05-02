@@ -11,8 +11,8 @@ part of 'nodes_classes.dart';
 @NodeKey(NType.align)
 class AlignOpenNode extends CNode {
   AlignOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -40,8 +40,8 @@ class AlignOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -66,32 +66,22 @@ class AlignOpenNode extends CNode {
     if (widgetType != NType.align) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AlignOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of AlignOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AlignOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -104,8 +94,8 @@ class AlignOpenNode extends CNode {
 @NodeKey(NType.aspectRatio)
 class AspectRatioOpenNode extends CNode {
   AspectRatioOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -133,8 +123,8 @@ class AspectRatioOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -159,32 +149,22 @@ class AspectRatioOpenNode extends CNode {
     if (widgetType != NType.aspectRatio) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AspectRatioOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of AspectRatioOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AspectRatioOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -197,8 +177,8 @@ class AspectRatioOpenNode extends CNode {
 @NodeKey(NType.audioPlayer)
 class AudioPlayerOpenNode extends CNode {
   AudioPlayerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -226,8 +206,8 @@ class AudioPlayerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -252,32 +232,22 @@ class AudioPlayerOpenNode extends CNode {
     if (widgetType != NType.audioPlayer) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AudioPlayerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of AudioPlayerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AudioPlayerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -290,8 +260,8 @@ class AudioPlayerOpenNode extends CNode {
 @NodeKey(NType.audioPlayerProgressIndicator)
 class AudioPlayerProgressIndicatorOpenNode extends CNode {
   AudioPlayerProgressIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -320,8 +290,8 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -346,33 +316,22 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     if (widgetType != NType.audioPlayerProgressIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AudioPlayerProgressIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of AudioPlayerProgressIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AudioPlayerProgressIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -385,8 +344,8 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.audioPlayerVolumeIndicator)
 class AudioPlayerVolumeIndicatorOpenNode extends CNode {
   AudioPlayerVolumeIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -415,8 +374,8 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -441,33 +400,22 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     if (widgetType != NType.audioPlayerVolumeIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AudioPlayerVolumeIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of AudioPlayerVolumeIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AudioPlayerVolumeIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -480,8 +428,8 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
 @NodeKey(NType.badge)
 class BadgeOpenNode extends CNode {
   BadgeOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -509,8 +457,8 @@ class BadgeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -535,32 +483,22 @@ class BadgeOpenNode extends CNode {
     if (widgetType != NType.badge) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return BadgeOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of BadgeOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return BadgeOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -573,8 +511,8 @@ class BadgeOpenNode extends CNode {
 @NodeKey(NType.barcode)
 class BarcodeOpenNode extends CNode {
   BarcodeOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -602,8 +540,8 @@ class BarcodeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -628,32 +566,22 @@ class BarcodeOpenNode extends CNode {
     if (widgetType != NType.barcode) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return BarcodeOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of BarcodeOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return BarcodeOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -666,8 +594,8 @@ class BarcodeOpenNode extends CNode {
 @NodeKey(NType.bottombaritem)
 class BottomBarItemOpenNode extends CNode {
   BottomBarItemOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -695,8 +623,8 @@ class BottomBarItemOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -721,32 +649,22 @@ class BottomBarItemOpenNode extends CNode {
     if (widgetType != NType.bottombaritem) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return BottomBarItemOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of BottomBarItemOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return BottomBarItemOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -759,8 +677,8 @@ class BottomBarItemOpenNode extends CNode {
 @NodeKey(NType.bouncingWidget)
 class BouncingWidgetOpenNode extends CNode {
   BouncingWidgetOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -788,8 +706,8 @@ class BouncingWidgetOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -814,33 +732,22 @@ class BouncingWidgetOpenNode extends CNode {
     if (widgetType != NType.bouncingWidget) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return BouncingWidgetOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of BouncingWidgetOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return BouncingWidgetOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -853,8 +760,8 @@ class BouncingWidgetOpenNode extends CNode {
 @NodeKey(NType.button)
 class ButtonOpenNode extends CNode {
   ButtonOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -882,8 +789,8 @@ class ButtonOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -908,32 +815,22 @@ class ButtonOpenNode extends CNode {
     if (widgetType != NType.button) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ButtonOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ButtonOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ButtonOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -946,8 +843,8 @@ class ButtonOpenNode extends CNode {
 @NodeKey(NType.calendar)
 class CalendarOpenNode extends CNode {
   CalendarOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -975,8 +872,8 @@ class CalendarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1001,32 +898,22 @@ class CalendarOpenNode extends CNode {
     if (widgetType != NType.calendar) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CalendarOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CalendarOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CalendarOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1039,8 +926,8 @@ class CalendarOpenNode extends CNode {
 @NodeKey(NType.calendarV2)
 class CalendarV2OpenNode extends CNode {
   CalendarV2OpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1068,8 +955,8 @@ class CalendarV2OpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1094,32 +981,22 @@ class CalendarV2OpenNode extends CNode {
     if (widgetType != NType.calendarV2) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CalendarV2OpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CalendarV2OpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CalendarV2OpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1132,8 +1009,8 @@ class CalendarV2OpenNode extends CNode {
 @NodeKey(NType.card)
 class CardOpenNode extends CNode {
   CardOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1161,8 +1038,8 @@ class CardOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1187,32 +1064,22 @@ class CardOpenNode extends CNode {
     if (widgetType != NType.card) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CardOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CardOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CardOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1225,8 +1092,8 @@ class CardOpenNode extends CNode {
 @NodeKey(NType.center)
 class CenterOpenNode extends CNode {
   CenterOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1254,8 +1121,8 @@ class CenterOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1280,32 +1147,22 @@ class CenterOpenNode extends CNode {
     if (widgetType != NType.center) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CenterOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CenterOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CenterOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1318,8 +1175,8 @@ class CenterOpenNode extends CNode {
 @NodeKey(NType.checkbox)
 class CheckboxOpenNode extends CNode {
   CheckboxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1347,8 +1204,8 @@ class CheckboxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1373,32 +1230,22 @@ class CheckboxOpenNode extends CNode {
     if (widgetType != NType.checkbox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CheckboxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CheckboxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CheckboxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1411,8 +1258,8 @@ class CheckboxOpenNode extends CNode {
 @NodeKey(NType.circularProgressIndicator)
 class CircularProgressIndicatorOpenNode extends CNode {
   CircularProgressIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1441,8 +1288,8 @@ class CircularProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1467,33 +1314,22 @@ class CircularProgressIndicatorOpenNode extends CNode {
     if (widgetType != NType.circularProgressIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CircularProgressIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CircularProgressIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CircularProgressIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1506,8 +1342,8 @@ class CircularProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.clipOval)
 class ClipOvalOpenNode extends CNode {
   ClipOvalOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1535,8 +1371,8 @@ class ClipOvalOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1561,32 +1397,22 @@ class ClipOvalOpenNode extends CNode {
     if (widgetType != NType.clipOval) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ClipOvalOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ClipOvalOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ClipOvalOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1599,8 +1425,8 @@ class ClipOvalOpenNode extends CNode {
 @NodeKey(NType.clipRect)
 class ClipRectOpenNode extends CNode {
   ClipRectOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1628,8 +1454,8 @@ class ClipRectOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1654,32 +1480,22 @@ class ClipRectOpenNode extends CNode {
     if (widgetType != NType.clipRect) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ClipRectOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ClipRectOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ClipRectOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1692,8 +1508,8 @@ class ClipRectOpenNode extends CNode {
 @NodeKey(NType.clipRoundedRect)
 class ClipRRectOpenNode extends CNode {
   ClipRRectOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1721,8 +1537,8 @@ class ClipRRectOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1747,32 +1563,22 @@ class ClipRRectOpenNode extends CNode {
     if (widgetType != NType.clipRoundedRect) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ClipRRectOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ClipRRectOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ClipRRectOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1785,8 +1591,8 @@ class ClipRRectOpenNode extends CNode {
 @NodeKey(NType.column)
 class ColumnOpenNode extends CNode {
   ColumnOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1814,8 +1620,8 @@ class ColumnOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1840,32 +1646,22 @@ class ColumnOpenNode extends CNode {
     if (widgetType != NType.column) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ColumnOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ColumnOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ColumnOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1878,8 +1674,8 @@ class ColumnOpenNode extends CNode {
 @NodeKey(NType.component)
 class ComponentOpenNode extends CNode {
   ComponentOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -1907,8 +1703,8 @@ class ComponentOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -1933,32 +1729,22 @@ class ComponentOpenNode extends CNode {
     if (widgetType != NType.component) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ComponentOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ComponentOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ComponentOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -1971,8 +1757,8 @@ class ComponentOpenNode extends CNode {
 @NodeKey(NType.row)
 class RowOpenNode extends CNode {
   RowOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2000,8 +1786,8 @@ class RowOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2026,32 +1812,22 @@ class RowOpenNode extends CNode {
     if (widgetType != NType.row) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RowOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of RowOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RowOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2064,8 +1840,8 @@ class RowOpenNode extends CNode {
 @NodeKey(NType.concentricPageView)
 class ConcentricPageViewOpenNode extends CNode {
   ConcentricPageViewOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2094,8 +1870,8 @@ class ConcentricPageViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2120,33 +1896,22 @@ class ConcentricPageViewOpenNode extends CNode {
     if (widgetType != NType.concentricPageView) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ConcentricPageViewOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of ConcentricPageViewOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ConcentricPageViewOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2159,8 +1924,8 @@ class ConcentricPageViewOpenNode extends CNode {
 @NodeKey(NType.condition)
 class ConditionOpenNode extends CNode {
   ConditionOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2188,8 +1953,8 @@ class ConditionOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2214,32 +1979,22 @@ class ConditionOpenNode extends CNode {
     if (widgetType != NType.condition) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ConditionOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ConditionOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ConditionOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2252,8 +2007,8 @@ class ConditionOpenNode extends CNode {
 @NodeKey(NType.container)
 class ContainerOpenNode extends CNode {
   ContainerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2281,8 +2036,8 @@ class ContainerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2307,32 +2062,22 @@ class ContainerOpenNode extends CNode {
     if (widgetType != NType.container) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ContainerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ContainerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ContainerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2345,8 +2090,8 @@ class ContainerOpenNode extends CNode {
 @NodeKey(NType.constrainedBox)
 class ConstrainedBoxOpenNode extends CNode {
   ConstrainedBoxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2374,8 +2119,8 @@ class ConstrainedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2400,33 +2145,22 @@ class ConstrainedBoxOpenNode extends CNode {
     if (widgetType != NType.constrainedBox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ConstrainedBoxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of ConstrainedBoxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ConstrainedBoxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2439,8 +2173,8 @@ class ConstrainedBoxOpenNode extends CNode {
 @NodeKey(NType.limitedBox)
 class LimitedBoxOpenNode extends CNode {
   LimitedBoxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2468,8 +2202,8 @@ class LimitedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2494,32 +2228,22 @@ class LimitedBoxOpenNode extends CNode {
     if (widgetType != NType.limitedBox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LimitedBoxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of LimitedBoxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LimitedBoxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2532,8 +2256,8 @@ class LimitedBoxOpenNode extends CNode {
 @NodeKey(NType.sizedBox)
 class SizedBoxOpenNode extends CNode {
   SizedBoxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2561,8 +2285,8 @@ class SizedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2587,32 +2311,22 @@ class SizedBoxOpenNode extends CNode {
     if (widgetType != NType.sizedBox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SizedBoxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of SizedBoxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SizedBoxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2625,8 +2339,8 @@ class SizedBoxOpenNode extends CNode {
 @NodeKey(NType.decoratedBox)
 class DecoratedBoxOpenNode extends CNode {
   DecoratedBoxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2654,8 +2368,8 @@ class DecoratedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2680,32 +2394,22 @@ class DecoratedBoxOpenNode extends CNode {
     if (widgetType != NType.decoratedBox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return DecoratedBoxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of DecoratedBoxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return DecoratedBoxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2718,8 +2422,8 @@ class DecoratedBoxOpenNode extends CNode {
 @NodeKey(NType.image)
 class ImageOpenNode extends CNode {
   ImageOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2747,8 +2451,8 @@ class ImageOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2773,32 +2477,22 @@ class ImageOpenNode extends CNode {
     if (widgetType != NType.image) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ImageOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ImageOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ImageOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2811,8 +2505,8 @@ class ImageOpenNode extends CNode {
 @NodeKey(NType.cupertinoPicker)
 class CupertinoPickerOpenNode extends CNode {
   CupertinoPickerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2840,8 +2534,8 @@ class CupertinoPickerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2866,33 +2560,22 @@ class CupertinoPickerOpenNode extends CNode {
     if (widgetType != NType.cupertinoPicker) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CupertinoPickerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CupertinoPickerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CupertinoPickerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -2905,8 +2588,8 @@ class CupertinoPickerOpenNode extends CNode {
 @NodeKey(NType.cupertinoSegmentedControl)
 class CupertinoSegmentedControlOpenNode extends CNode {
   CupertinoSegmentedControlOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -2935,8 +2618,8 @@ class CupertinoSegmentedControlOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -2961,33 +2644,22 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     if (widgetType != NType.cupertinoSegmentedControl) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CupertinoSegmentedControlOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CupertinoSegmentedControlOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CupertinoSegmentedControlOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3000,8 +2672,8 @@ class CupertinoSegmentedControlOpenNode extends CNode {
 @NodeKey(NType.cupertinoSwitch)
 class CupertinoSwitchOpenNode extends CNode {
   CupertinoSwitchOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3029,8 +2701,8 @@ class CupertinoSwitchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3055,33 +2727,22 @@ class CupertinoSwitchOpenNode extends CNode {
     if (widgetType != NType.cupertinoSwitch) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CupertinoSwitchOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CupertinoSwitchOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CupertinoSwitchOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3094,8 +2755,8 @@ class CupertinoSwitchOpenNode extends CNode {
 @NodeKey(NType.divider)
 class DividerOpenNode extends CNode {
   DividerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3123,8 +2784,8 @@ class DividerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3149,32 +2810,22 @@ class DividerOpenNode extends CNode {
     if (widgetType != NType.divider) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return DividerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of DividerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return DividerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3187,8 +2838,8 @@ class DividerOpenNode extends CNode {
 @NodeKey(NType.dotsIndicator)
 class DotsIndicatorOpenNode extends CNode {
   DotsIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3216,8 +2867,8 @@ class DotsIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3242,32 +2893,22 @@ class DotsIndicatorOpenNode extends CNode {
     if (widgetType != NType.dotsIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return DotsIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of DotsIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return DotsIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3280,8 +2921,8 @@ class DotsIndicatorOpenNode extends CNode {
 @NodeKey(NType.expanded)
 class ExpandedOpenNode extends CNode {
   ExpandedOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3309,8 +2950,8 @@ class ExpandedOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3335,32 +2976,22 @@ class ExpandedOpenNode extends CNode {
     if (widgetType != NType.expanded) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ExpandedOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ExpandedOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ExpandedOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3373,8 +3004,8 @@ class ExpandedOpenNode extends CNode {
 @NodeKey(NType.adMobBanner)
 class AdMobBannerOpenNode extends CNode {
   AdMobBannerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3402,8 +3033,8 @@ class AdMobBannerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3428,32 +3059,22 @@ class AdMobBannerOpenNode extends CNode {
     if (widgetType != NType.adMobBanner) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AdMobBannerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of AdMobBannerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AdMobBannerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3466,8 +3087,8 @@ class AdMobBannerOpenNode extends CNode {
 @NodeKey(NType.googleMaps)
 class GoogleMapsOpenNode extends CNode {
   GoogleMapsOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3495,8 +3116,8 @@ class GoogleMapsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3521,32 +3142,22 @@ class GoogleMapsOpenNode extends CNode {
     if (widgetType != NType.googleMaps) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return GoogleMapsOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of GoogleMapsOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return GoogleMapsOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3559,8 +3170,8 @@ class GoogleMapsOpenNode extends CNode {
 @NodeKey(NType.gridView)
 class GridViewOpenNode extends CNode {
   GridViewOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3588,8 +3199,8 @@ class GridViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3614,32 +3225,22 @@ class GridViewOpenNode extends CNode {
     if (widgetType != NType.gridView) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return GridViewOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of GridViewOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return GridViewOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3652,8 +3253,8 @@ class GridViewOpenNode extends CNode {
 @NodeKey(NType.gridViewBuilder)
 class GridViewBuilderOpenNode extends CNode {
   GridViewBuilderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3681,8 +3282,8 @@ class GridViewBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3707,33 +3308,22 @@ class GridViewBuilderOpenNode extends CNode {
     if (widgetType != NType.gridViewBuilder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return GridViewBuilderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of GridViewBuilderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return GridViewBuilderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3746,8 +3336,8 @@ class GridViewBuilderOpenNode extends CNode {
 @NodeKey(NType.hero)
 class HeroOpenNode extends CNode {
   HeroOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3775,8 +3365,8 @@ class HeroOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3801,32 +3391,22 @@ class HeroOpenNode extends CNode {
     if (widgetType != NType.hero) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return HeroOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of HeroOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return HeroOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3839,8 +3419,8 @@ class HeroOpenNode extends CNode {
 @NodeKey(NType.icon)
 class IconOpenNode extends CNode {
   IconOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3868,8 +3448,8 @@ class IconOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3894,32 +3474,22 @@ class IconOpenNode extends CNode {
     if (widgetType != NType.icon) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return IconOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of IconOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return IconOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -3932,8 +3502,8 @@ class IconOpenNode extends CNode {
 @NodeKey(NType.ignorePointer)
 class IgnorePointerOpenNode extends CNode {
   IgnorePointerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -3961,8 +3531,8 @@ class IgnorePointerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -3987,32 +3557,22 @@ class IgnorePointerOpenNode extends CNode {
     if (widgetType != NType.ignorePointer) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return IgnorePointerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of IgnorePointerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return IgnorePointerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4025,8 +3585,8 @@ class IgnorePointerOpenNode extends CNode {
 @NodeKey(NType.indexedStack)
 class IndexedStackOpenNode extends CNode {
   IndexedStackOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4054,8 +3614,8 @@ class IndexedStackOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4080,32 +3640,22 @@ class IndexedStackOpenNode extends CNode {
     if (widgetType != NType.indexedStack) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return IndexedStackOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of IndexedStackOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return IndexedStackOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4118,8 +3668,8 @@ class IndexedStackOpenNode extends CNode {
 @NodeKey(NType.linearProgressIndicator)
 class LinearProgressIndicatorOpenNode extends CNode {
   LinearProgressIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4148,8 +3698,8 @@ class LinearProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4174,33 +3724,22 @@ class LinearProgressIndicatorOpenNode extends CNode {
     if (widgetType != NType.linearProgressIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LinearProgressIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LinearProgressIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LinearProgressIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4213,8 +3752,8 @@ class LinearProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.liquidSwipe)
 class LiquidSwipeOpenNode extends CNode {
   LiquidSwipeOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4242,8 +3781,8 @@ class LiquidSwipeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4268,32 +3807,22 @@ class LiquidSwipeOpenNode extends CNode {
     if (widgetType != NType.liquidSwipe) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LiquidSwipeOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of LiquidSwipeOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LiquidSwipeOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4306,8 +3835,8 @@ class LiquidSwipeOpenNode extends CNode {
 @NodeKey(NType.listTile)
 class ListTileOpenNode extends CNode {
   ListTileOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4335,8 +3864,8 @@ class ListTileOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4361,32 +3890,22 @@ class ListTileOpenNode extends CNode {
     if (widgetType != NType.listTile) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ListTileOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ListTileOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ListTileOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4399,8 +3918,8 @@ class ListTileOpenNode extends CNode {
 @NodeKey(NType.listView)
 class ListViewOpenNode extends CNode {
   ListViewOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4428,8 +3947,8 @@ class ListViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4454,32 +3973,22 @@ class ListViewOpenNode extends CNode {
     if (widgetType != NType.listView) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ListViewOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ListViewOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ListViewOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4492,8 +4001,8 @@ class ListViewOpenNode extends CNode {
 @NodeKey(NType.listViewBuilder)
 class ListViewBuilderOpenNode extends CNode {
   ListViewBuilderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4521,8 +4030,8 @@ class ListViewBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4547,33 +4056,22 @@ class ListViewBuilderOpenNode extends CNode {
     if (widgetType != NType.listViewBuilder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ListViewBuilderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of ListViewBuilderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ListViewBuilderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4586,8 +4084,8 @@ class ListViewBuilderOpenNode extends CNode {
 @NodeKey(NType.lottie)
 class LottieOpenNode extends CNode {
   LottieOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4615,8 +4113,8 @@ class LottieOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4641,32 +4139,22 @@ class LottieOpenNode extends CNode {
     if (widgetType != NType.lottie) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LottieOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of LottieOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LottieOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4679,8 +4167,8 @@ class LottieOpenNode extends CNode {
 @NodeKey(NType.map)
 class MapOpenNode extends CNode {
   MapOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4708,8 +4196,8 @@ class MapOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4734,32 +4222,22 @@ class MapOpenNode extends CNode {
     if (widgetType != NType.map) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return MapOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of MapOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return MapOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4772,8 +4250,8 @@ class MapOpenNode extends CNode {
 @NodeKey(NType.marker)
 class MarkerOpenNode extends CNode {
   MarkerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4801,8 +4279,8 @@ class MarkerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4827,32 +4305,22 @@ class MarkerOpenNode extends CNode {
     if (widgetType != NType.marker) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return MarkerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of MarkerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return MarkerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4865,8 +4333,8 @@ class MarkerOpenNode extends CNode {
 @NodeKey(NType.opacity)
 class OpacityOpenNode extends CNode {
   OpacityOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4894,8 +4362,8 @@ class OpacityOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -4920,32 +4388,22 @@ class OpacityOpenNode extends CNode {
     if (widgetType != NType.opacity) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return OpacityOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of OpacityOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return OpacityOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -4958,8 +4416,8 @@ class OpacityOpenNode extends CNode {
 @NodeKey(NType.padding)
 class PaddingOpenNode extends CNode {
   PaddingOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -4987,8 +4445,8 @@ class PaddingOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5013,32 +4471,22 @@ class PaddingOpenNode extends CNode {
     if (widgetType != NType.padding) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return PaddingOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of PaddingOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return PaddingOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5051,8 +4499,8 @@ class PaddingOpenNode extends CNode {
 @NodeKey(NType.pageView)
 class PageViewOpenNode extends CNode {
   PageViewOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5080,8 +4528,8 @@ class PageViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5106,32 +4554,22 @@ class PageViewOpenNode extends CNode {
     if (widgetType != NType.pageView) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return PageViewOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of PageViewOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return PageViewOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5144,8 +4582,8 @@ class PageViewOpenNode extends CNode {
 @NodeKey(NType.placeholder)
 class PlaceholderOpenNode extends CNode {
   PlaceholderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5173,8 +4611,8 @@ class PlaceholderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5199,32 +4637,22 @@ class PlaceholderOpenNode extends CNode {
     if (widgetType != NType.placeholder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return PlaceholderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of PlaceholderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return PlaceholderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5237,8 +4665,8 @@ class PlaceholderOpenNode extends CNode {
 @NodeKey(NType.positioned)
 class PositionedOpenNode extends CNode {
   PositionedOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5266,8 +4694,8 @@ class PositionedOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5292,32 +4720,22 @@ class PositionedOpenNode extends CNode {
     if (widgetType != NType.positioned) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return PositionedOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of PositionedOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return PositionedOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5330,8 +4748,8 @@ class PositionedOpenNode extends CNode {
 @NodeKey(NType.safeArea)
 class SafeAreaOpenNode extends CNode {
   SafeAreaOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5359,8 +4777,8 @@ class SafeAreaOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5385,32 +4803,22 @@ class SafeAreaOpenNode extends CNode {
     if (widgetType != NType.safeArea) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SafeAreaOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of SafeAreaOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SafeAreaOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5423,8 +4831,8 @@ class SafeAreaOpenNode extends CNode {
 @NodeKey(NType.qrScanner)
 class QRScannerOpenNode extends CNode {
   QRScannerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5452,8 +4860,8 @@ class QRScannerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5478,32 +4886,22 @@ class QRScannerOpenNode extends CNode {
     if (widgetType != NType.qrScanner) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return QRScannerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of QRScannerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return QRScannerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5516,8 +4914,8 @@ class QRScannerOpenNode extends CNode {
 @NodeKey(NType.qrCode)
 class QRCodeOpenNode extends CNode {
   QRCodeOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5545,8 +4943,8 @@ class QRCodeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5571,32 +4969,22 @@ class QRCodeOpenNode extends CNode {
     if (widgetType != NType.qrCode) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return QRCodeOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of QRCodeOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return QRCodeOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5609,8 +4997,8 @@ class QRCodeOpenNode extends CNode {
 @NodeKey(NType.radio)
 class RadioOpenNode extends CNode {
   RadioOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5638,8 +5026,8 @@ class RadioOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5664,32 +5052,22 @@ class RadioOpenNode extends CNode {
     if (widgetType != NType.radio) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RadioOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of RadioOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RadioOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5702,8 +5080,8 @@ class RadioOpenNode extends CNode {
 @NodeKey(NType.refreshIndicator)
 class RefreshIndicatorOpenNode extends CNode {
   RefreshIndicatorOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5731,8 +5109,8 @@ class RefreshIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5757,33 +5135,22 @@ class RefreshIndicatorOpenNode extends CNode {
     if (widgetType != NType.refreshIndicator) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RefreshIndicatorOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of RefreshIndicatorOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RefreshIndicatorOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5796,8 +5163,8 @@ class RefreshIndicatorOpenNode extends CNode {
 @NodeKey(NType.responsiveCondition)
 class ResponsiveConditionOpenNode extends CNode {
   ResponsiveConditionOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5826,8 +5193,8 @@ class ResponsiveConditionOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5852,33 +5219,22 @@ class ResponsiveConditionOpenNode extends CNode {
     if (widgetType != NType.responsiveCondition) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ResponsiveConditionOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of ResponsiveConditionOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ResponsiveConditionOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5891,8 +5247,8 @@ class ResponsiveConditionOpenNode extends CNode {
 @NodeKey(NType.rotatedBox)
 class RotatedBoxOpenNode extends CNode {
   RotatedBoxOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -5920,8 +5276,8 @@ class RotatedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -5946,32 +5302,22 @@ class RotatedBoxOpenNode extends CNode {
     if (widgetType != NType.rotatedBox) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RotatedBoxOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of RotatedBoxOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RotatedBoxOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -5984,8 +5330,8 @@ class RotatedBoxOpenNode extends CNode {
 @NodeKey(NType.scaffold)
 class ScaffoldOpenNode extends CNode {
   ScaffoldOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6013,8 +5359,8 @@ class ScaffoldOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6039,32 +5385,22 @@ class ScaffoldOpenNode extends CNode {
     if (widgetType != NType.scaffold) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ScaffoldOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ScaffoldOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ScaffoldOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6077,8 +5413,8 @@ class ScaffoldOpenNode extends CNode {
 @NodeKey(NType.spacer)
 class SpacerOpenNode extends CNode {
   SpacerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6106,8 +5442,8 @@ class SpacerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6132,32 +5468,22 @@ class SpacerOpenNode extends CNode {
     if (widgetType != NType.spacer) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SpacerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of SpacerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SpacerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6170,8 +5496,8 @@ class SpacerOpenNode extends CNode {
 @NodeKey(NType.stack)
 class StackOpenNode extends CNode {
   StackOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6199,8 +5525,8 @@ class StackOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6225,32 +5551,22 @@ class StackOpenNode extends CNode {
     if (widgetType != NType.stack) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return StackOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of StackOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return StackOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6263,8 +5579,8 @@ class StackOpenNode extends CNode {
 @NodeKey(NType.tcard)
 class TCardOpenNode extends CNode {
   TCardOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6292,8 +5608,8 @@ class TCardOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6318,32 +5634,22 @@ class TCardOpenNode extends CNode {
     if (widgetType != NType.tcard) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return TCardOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of TCardOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return TCardOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6356,8 +5662,8 @@ class TCardOpenNode extends CNode {
 @NodeKey(NType.tcardBuilder)
 class TCardBuilderOpenNode extends CNode {
   TCardBuilderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6385,8 +5691,8 @@ class TCardBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6411,32 +5717,22 @@ class TCardBuilderOpenNode extends CNode {
     if (widgetType != NType.tcardBuilder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return TCardBuilderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of TCardBuilderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return TCardBuilderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6449,8 +5745,8 @@ class TCardBuilderOpenNode extends CNode {
 @NodeKey(NType.text)
 class TextOpenNode extends CNode {
   TextOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6478,8 +5774,8 @@ class TextOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6504,32 +5800,22 @@ class TextOpenNode extends CNode {
     if (widgetType != NType.text) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return TextOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of TextOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return TextOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6542,8 +5828,8 @@ class TextOpenNode extends CNode {
 @NodeKey(NType.textField)
 class TextFieldOpenNode extends CNode {
   TextFieldOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6571,8 +5857,8 @@ class TextFieldOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6597,32 +5883,22 @@ class TextFieldOpenNode extends CNode {
     if (widgetType != NType.textField) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return TextFieldOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of TextFieldOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return TextFieldOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6635,8 +5911,8 @@ class TextFieldOpenNode extends CNode {
 @NodeKey(NType.tooltip)
 class TooltipOpenNode extends CNode {
   TooltipOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6664,8 +5940,8 @@ class TooltipOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6690,32 +5966,22 @@ class TooltipOpenNode extends CNode {
     if (widgetType != NType.tooltip) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return TooltipOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of TooltipOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return TooltipOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6728,8 +5994,8 @@ class TooltipOpenNode extends CNode {
 @NodeKey(NType.video)
 class VideoOpenNode extends CNode {
   VideoOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6757,8 +6023,8 @@ class VideoOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6783,32 +6049,22 @@ class VideoOpenNode extends CNode {
     if (widgetType != NType.video) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return VideoOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of VideoOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return VideoOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6821,8 +6077,8 @@ class VideoOpenNode extends CNode {
 @NodeKey(NType.visibility)
 class VisibilityOpenNode extends CNode {
   VisibilityOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6850,8 +6106,8 @@ class VisibilityOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6876,32 +6132,22 @@ class VisibilityOpenNode extends CNode {
     if (widgetType != NType.visibility) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return VisibilityOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of VisibilityOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return VisibilityOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -6914,8 +6160,8 @@ class VisibilityOpenNode extends CNode {
 @NodeKey(NType.webview)
 class WebviewOpenNode extends CNode {
   WebviewOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -6943,8 +6189,8 @@ class WebviewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -6969,32 +6215,22 @@ class WebviewOpenNode extends CNode {
     if (widgetType != NType.webview) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return WebviewOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of WebviewOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return WebviewOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7007,8 +6243,8 @@ class WebviewOpenNode extends CNode {
 @NodeKey(NType.wrap)
 class WrapOpenNode extends CNode {
   WrapOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7036,8 +6272,8 @@ class WrapOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7062,32 +6298,22 @@ class WrapOpenNode extends CNode {
     if (widgetType != NType.wrap) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return WrapOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of WrapOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return WrapOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7100,8 +6326,8 @@ class WrapOpenNode extends CNode {
 @NodeKey(NType.animationConfigGrid)
 class AnimationConfigGridOpenNode extends CNode {
   AnimationConfigGridOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7130,8 +6356,8 @@ class AnimationConfigGridOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7156,33 +6382,22 @@ class AnimationConfigGridOpenNode extends CNode {
     if (widgetType != NType.animationConfigGrid) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AnimationConfigGridOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of AnimationConfigGridOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AnimationConfigGridOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7195,8 +6410,8 @@ class AnimationConfigGridOpenNode extends CNode {
 @NodeKey(NType.animationConfigList)
 class AnimationConfigListOpenNode extends CNode {
   AnimationConfigListOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7225,8 +6440,8 @@ class AnimationConfigListOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7251,33 +6466,22 @@ class AnimationConfigListOpenNode extends CNode {
     if (widgetType != NType.animationConfigList) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AnimationConfigListOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of AnimationConfigListOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AnimationConfigListOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7290,8 +6494,8 @@ class AnimationConfigListOpenNode extends CNode {
 @NodeKey(NType.fadeInAnimation)
 class FadeInAnimationOpenNode extends CNode {
   FadeInAnimationOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7319,8 +6523,8 @@ class FadeInAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7345,33 +6549,22 @@ class FadeInAnimationOpenNode extends CNode {
     if (widgetType != NType.fadeInAnimation) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return FadeInAnimationOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of FadeInAnimationOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return FadeInAnimationOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7384,8 +6577,8 @@ class FadeInAnimationOpenNode extends CNode {
 @NodeKey(NType.scaleAnimation)
 class ScaleAnimationOpenNode extends CNode {
   ScaleAnimationOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7413,8 +6606,8 @@ class ScaleAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7439,33 +6632,22 @@ class ScaleAnimationOpenNode extends CNode {
     if (widgetType != NType.scaleAnimation) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ScaleAnimationOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of ScaleAnimationOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ScaleAnimationOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7478,8 +6660,8 @@ class ScaleAnimationOpenNode extends CNode {
 @NodeKey(NType.slideAnimation)
 class SlideAnimationOpenNode extends CNode {
   SlideAnimationOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7507,8 +6689,8 @@ class SlideAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7533,33 +6715,22 @@ class SlideAnimationOpenNode extends CNode {
     if (widgetType != NType.slideAnimation) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SlideAnimationOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of SlideAnimationOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SlideAnimationOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7572,8 +6743,8 @@ class SlideAnimationOpenNode extends CNode {
 @NodeKey(NType.apiCallsFetch)
 class ApiCallsFetchOpenNode extends CNode {
   ApiCallsFetchOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7601,8 +6772,8 @@ class ApiCallsFetchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7627,32 +6798,22 @@ class ApiCallsFetchOpenNode extends CNode {
     if (widgetType != NType.apiCallsFetch) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return ApiCallsFetchOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of ApiCallsFetchOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return ApiCallsFetchOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7665,8 +6826,8 @@ class ApiCallsFetchOpenNode extends CNode {
 @NodeKey(NType.loginWithApple)
 class LoginWithAppleOpenNode extends CNode {
   LoginWithAppleOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7694,8 +6855,8 @@ class LoginWithAppleOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7720,33 +6881,22 @@ class LoginWithAppleOpenNode extends CNode {
     if (widgetType != NType.loginWithApple) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithAppleOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithAppleOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithAppleOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7759,8 +6909,8 @@ class LoginWithAppleOpenNode extends CNode {
 @NodeKey(NType.loginWithFacebook)
 class LoginWithFacebookOpenNode extends CNode {
   LoginWithFacebookOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7789,8 +6939,8 @@ class LoginWithFacebookOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7815,33 +6965,22 @@ class LoginWithFacebookOpenNode extends CNode {
     if (widgetType != NType.loginWithFacebook) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithFacebookOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithFacebookOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithFacebookOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7854,8 +6993,8 @@ class LoginWithFacebookOpenNode extends CNode {
 @NodeKey(NType.loginWithGoogle)
 class LoginWithGoogleOpenNode extends CNode {
   LoginWithGoogleOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7883,8 +7022,8 @@ class LoginWithGoogleOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -7909,33 +7048,22 @@ class LoginWithGoogleOpenNode extends CNode {
     if (widgetType != NType.loginWithGoogle) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithGoogleOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithGoogleOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithGoogleOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -7948,8 +7076,8 @@ class LoginWithGoogleOpenNode extends CNode {
 @NodeKey(NType.loginWithTwitter)
 class LoginWithTwitterOpenNode extends CNode {
   LoginWithTwitterOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -7977,8 +7105,8 @@ class LoginWithTwitterOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8003,33 +7131,22 @@ class LoginWithTwitterOpenNode extends CNode {
     if (widgetType != NType.loginWithTwitter) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithTwitterOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithTwitterOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithTwitterOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8042,8 +7159,8 @@ class LoginWithTwitterOpenNode extends CNode {
 @NodeKey(NType.loginWithGitHub)
 class LoginWithGithubOpenNode extends CNode {
   LoginWithGithubOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8071,8 +7188,8 @@ class LoginWithGithubOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8097,33 +7214,22 @@ class LoginWithGithubOpenNode extends CNode {
     if (widgetType != NType.loginWithGitHub) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithGithubOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithGithubOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithGithubOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8136,8 +7242,8 @@ class LoginWithGithubOpenNode extends CNode {
 @NodeKey(NType.loginWithMicrosoft)
 class LoginWithMicrosoftOpenNode extends CNode {
   LoginWithMicrosoftOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8166,8 +7272,8 @@ class LoginWithMicrosoftOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8192,33 +7298,22 @@ class LoginWithMicrosoftOpenNode extends CNode {
     if (widgetType != NType.loginWithMicrosoft) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithMicrosoftOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithMicrosoftOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithMicrosoftOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8231,8 +7326,8 @@ class LoginWithMicrosoftOpenNode extends CNode {
 @NodeKey(NType.loginWithLinkedin)
 class LoginWithLinkedinOpenNode extends CNode {
   LoginWithLinkedinOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8261,8 +7356,8 @@ class LoginWithLinkedinOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8287,33 +7382,22 @@ class LoginWithLinkedinOpenNode extends CNode {
     if (widgetType != NType.loginWithLinkedin) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithLinkedinOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithLinkedinOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithLinkedinOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8326,8 +7410,8 @@ class LoginWithLinkedinOpenNode extends CNode {
 @NodeKey(NType.loginWithBitBucket)
 class LoginWithBitbucketOpenNode extends CNode {
   LoginWithBitbucketOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8356,8 +7440,8 @@ class LoginWithBitbucketOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8382,33 +7466,22 @@ class LoginWithBitbucketOpenNode extends CNode {
     if (widgetType != NType.loginWithBitBucket) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithBitbucketOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithBitbucketOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithBitbucketOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8421,8 +7494,8 @@ class LoginWithBitbucketOpenNode extends CNode {
 @NodeKey(NType.loginWithDiscord)
 class LoginWithDiscordOpenNode extends CNode {
   LoginWithDiscordOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8450,8 +7523,8 @@ class LoginWithDiscordOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8476,33 +7549,22 @@ class LoginWithDiscordOpenNode extends CNode {
     if (widgetType != NType.loginWithDiscord) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithDiscordOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithDiscordOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithDiscordOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8515,8 +7577,8 @@ class LoginWithDiscordOpenNode extends CNode {
 @NodeKey(NType.loginWithTwitch)
 class LoginWithTwitchOpenNode extends CNode {
   LoginWithTwitchOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8544,8 +7606,8 @@ class LoginWithTwitchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8570,33 +7632,22 @@ class LoginWithTwitchOpenNode extends CNode {
     if (widgetType != NType.loginWithTwitch) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithTwitchOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithTwitchOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithTwitchOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8609,8 +7660,8 @@ class LoginWithTwitchOpenNode extends CNode {
 @NodeKey(NType.loginWithGitlab)
 class LoginWithGitlabOpenNode extends CNode {
   LoginWithGitlabOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8638,8 +7689,8 @@ class LoginWithGitlabOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8664,33 +7715,22 @@ class LoginWithGitlabOpenNode extends CNode {
     if (widgetType != NType.loginWithGitlab) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return LoginWithGitlabOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of LoginWithGitlabOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return LoginWithGitlabOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8703,8 +7743,8 @@ class LoginWithGitlabOpenNode extends CNode {
 @NodeKey(NType.httpRequest)
 class HttpRequestOpenNode extends CNode {
   HttpRequestOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8732,8 +7772,8 @@ class HttpRequestOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8758,32 +7798,22 @@ class HttpRequestOpenNode extends CNode {
     if (widgetType != NType.httpRequest) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return HttpRequestOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of HttpRequestOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return HttpRequestOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8796,8 +7826,8 @@ class HttpRequestOpenNode extends CNode {
 @NodeKey(NType.customHttpRequest)
 class CustomHttpRequestOpenNode extends CNode {
   CustomHttpRequestOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8826,8 +7856,8 @@ class CustomHttpRequestOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8852,33 +7882,22 @@ class CustomHttpRequestOpenNode extends CNode {
     if (widgetType != NType.customHttpRequest) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CustomHttpRequestOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CustomHttpRequestOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CustomHttpRequestOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8891,8 +7910,8 @@ class CustomHttpRequestOpenNode extends CNode {
 @NodeKey(NType.appBar)
 class AppBarOpenNode extends CNode {
   AppBarOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -8920,8 +7939,8 @@ class AppBarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -8946,32 +7965,22 @@ class AppBarOpenNode extends CNode {
     if (widgetType != NType.appBar) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return AppBarOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of AppBarOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return AppBarOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -8984,8 +7993,8 @@ class AppBarOpenNode extends CNode {
 @NodeKey(NType.bottomBar)
 class BottomBarOpenNode extends CNode {
   BottomBarOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9013,8 +8022,8 @@ class BottomBarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9039,32 +8048,22 @@ class BottomBarOpenNode extends CNode {
     if (widgetType != NType.bottomBar) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return BottomBarOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of BottomBarOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return BottomBarOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9077,8 +8076,8 @@ class BottomBarOpenNode extends CNode {
 @NodeKey(NType.drawer)
 class DrawerOpenNode extends CNode {
   DrawerOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9106,8 +8105,8 @@ class DrawerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9132,32 +8131,22 @@ class DrawerOpenNode extends CNode {
     if (widgetType != NType.drawer) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return DrawerOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of DrawerOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return DrawerOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9170,8 +8159,8 @@ class DrawerOpenNode extends CNode {
 @NodeKey(NType.qonversionProducts)
 class QonversionProductsOpenNode extends CNode {
   QonversionProductsOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9200,8 +8189,8 @@ class QonversionProductsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9226,33 +8215,22 @@ class QonversionProductsOpenNode extends CNode {
     if (widgetType != NType.qonversionProducts) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return QonversionProductsOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of QonversionProductsOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return QonversionProductsOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9265,8 +8243,8 @@ class QonversionProductsOpenNode extends CNode {
 @NodeKey(NType.qonversionSubStatus)
 class QonversionSubStatusOpenNode extends CNode {
   QonversionSubStatusOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9295,8 +8273,8 @@ class QonversionSubStatusOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9321,33 +8299,22 @@ class QonversionSubStatusOpenNode extends CNode {
     if (widgetType != NType.qonversionSubStatus) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return QonversionSubStatusOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of QonversionSubStatusOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return QonversionSubStatusOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9360,8 +8327,8 @@ class QonversionSubStatusOpenNode extends CNode {
 @NodeKey(NType.revenueCatProducts)
 class RevenueCatProductsOpenNode extends CNode {
   RevenueCatProductsOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9390,8 +8357,8 @@ class RevenueCatProductsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9416,33 +8383,22 @@ class RevenueCatProductsOpenNode extends CNode {
     if (widgetType != NType.revenueCatProducts) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RevenueCatProductsOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of RevenueCatProductsOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RevenueCatProductsOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9455,8 +8411,8 @@ class RevenueCatProductsOpenNode extends CNode {
 @NodeKey(NType.revenueCatSubStatus)
 class RevenueCatSubStatusOpenNode extends CNode {
   RevenueCatSubStatusOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9485,8 +8441,8 @@ class RevenueCatSubStatusOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9511,33 +8467,22 @@ class RevenueCatSubStatusOpenNode extends CNode {
     if (widgetType != NType.revenueCatSubStatus) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return RevenueCatSubStatusOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of RevenueCatSubStatusOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return RevenueCatSubStatusOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9550,8 +8495,8 @@ class RevenueCatSubStatusOpenNode extends CNode {
 @NodeKey(NType.wrapper)
 class WrapperOpenNode extends CNode {
   WrapperOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9579,8 +8524,8 @@ class WrapperOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9605,32 +8550,22 @@ class WrapperOpenNode extends CNode {
     if (widgetType != NType.wrapper) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return WrapperOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of WrapperOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return WrapperOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9643,8 +8578,8 @@ class WrapperOpenNode extends CNode {
 @NodeKey(NType.supabaseFutureBuilder)
 class SupabaseFutureBuilderOpenNode extends CNode {
   SupabaseFutureBuilderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9673,8 +8608,8 @@ class SupabaseFutureBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9699,33 +8634,22 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     if (widgetType != NType.supabaseFutureBuilder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SupabaseFutureBuilderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of SupabaseFutureBuilderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SupabaseFutureBuilderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9738,8 +8662,8 @@ class SupabaseFutureBuilderOpenNode extends CNode {
 @NodeKey(NType.supabaseStreamBuilder)
 class SupabaseStreamBuilderOpenNode extends CNode {
   SupabaseStreamBuilderOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9768,8 +8692,8 @@ class SupabaseStreamBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9794,33 +8718,22 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     if (widgetType != NType.supabaseStreamBuilder) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SupabaseStreamBuilderOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of SupabaseStreamBuilderOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SupabaseStreamBuilderOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9833,8 +8746,8 @@ class SupabaseStreamBuilderOpenNode extends CNode {
 @NodeKey(NType.supabaseLoggedUser)
 class SupabaseLoggedUserOpenNode extends CNode {
   SupabaseLoggedUserOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9863,8 +8776,8 @@ class SupabaseLoggedUserOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9889,33 +8802,22 @@ class SupabaseLoggedUserOpenNode extends CNode {
     if (widgetType != NType.supabaseLoggedUser) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return SupabaseLoggedUserOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of SupabaseLoggedUserOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return SupabaseLoggedUserOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -9928,8 +8830,8 @@ class SupabaseLoggedUserOpenNode extends CNode {
 @NodeKey(NType.cmsCount)
 class CMSCountOpenNode extends CNode {
   CMSCountOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -9957,8 +8859,8 @@ class CMSCountOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -9983,32 +8885,22 @@ class CMSCountOpenNode extends CNode {
     if (widgetType != NType.cmsCount) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CMSCountOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CMSCountOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CMSCountOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -10021,8 +8913,8 @@ class CMSCountOpenNode extends CNode {
 @NodeKey(NType.cmsCustomQuery)
 class CMSCustomQueryOpenNode extends CNode {
   CMSCustomQueryOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -10050,8 +8942,8 @@ class CMSCustomQueryOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -10076,33 +8968,22 @@ class CMSCustomQueryOpenNode extends CNode {
     if (widgetType != NType.cmsCustomQuery) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CMSCustomQueryOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg =
-          'Invalid fromJson method of CMSCustomQueryOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CMSCustomQueryOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -10115,8 +8996,8 @@ class CMSCustomQueryOpenNode extends CNode {
 @NodeKey(NType.cmsFetch)
 class CMSFetchOpenNode extends CNode {
   CMSFetchOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -10144,8 +9025,8 @@ class CMSFetchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -10170,32 +9051,22 @@ class CMSFetchOpenNode extends CNode {
     if (widgetType != NType.cmsFetch) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CMSFetchOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CMSFetchOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CMSFetchOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -10208,8 +9079,8 @@ class CMSFetchOpenNode extends CNode {
 @NodeKey(NType.cmsStream)
 class CMSStreamOpenNode extends CNode {
   CMSStreamOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -10237,8 +9108,8 @@ class CMSStreamOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -10263,32 +9134,22 @@ class CMSStreamOpenNode extends CNode {
     if (widgetType != NType.cmsStream) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CMSStreamOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CMSStreamOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CMSStreamOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override
@@ -10301,8 +9162,8 @@ class CMSStreamOpenNode extends CNode {
 @NodeKey(NType.cmsLoggedUser)
 class CMSLoggedUserOpenNode extends CNode {
   CMSLoggedUserOpenNode({
-    required final int id,
-    final int? parent,
+    required final String id,
+    final String? parent,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
@@ -10330,8 +9191,8 @@ class CMSLoggedUserOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    int? id,
-    int? parent,
+    String? id,
+    String? parent,
     CNode? child,
     List<CNode>? children,
     String? name,
@@ -10356,32 +9217,22 @@ class CMSLoggedUserOpenNode extends CNode {
     if (widgetType != NType.cmsLoggedUser) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] =
-              const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] =
+            const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return CMSLoggedUserOpenNode(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of CMSLoggedUserOpenNode, error: $e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+
+    return CMSLoggedUserOpenNode(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override

@@ -27,8 +27,8 @@ class NodeGenerator extends GeneratorForAnnotation<NodeInfo> {
 @NodeKey(NType.$type)
 class $generatedClassName extends CNode {
   $generatedClassName(
-      {required final int id,
-      final int? parent,
+      {required final String id,
+      final String? parent,
       final CNode? child,
       final List<CNode>? children,
       final String? name,
@@ -55,8 +55,8 @@ class $generatedClassName extends CNode {
 
   @override
   CNode copyWith(
-          {int? id,
-          int? parent,
+          {String? id,
+          String? parent,
           CNode? child,
           List<CNode>? children,
           String? name,
@@ -81,31 +81,21 @@ class $generatedClassName extends CNode {
     if (widgetType != NType.$type) {
       throw Exception('Invalid widget type');
     }
-    try {
-      final id = json['_id'] as int;
-      final ids = FChildrenIds.fromJson(json[DBKeys.childrenIds]);
-      final name = json['name'] as String?;
-      final description = json['description'] as String?;
-      final attributes = <String, dynamic>{};
 
-      if (json['body'] != null) {
-        for (final entry in (json['body'] as Map<String, dynamic>).entries) {
-          attributes[entry.key] = const DynamicAttributes().fromJson(entry.key, entry.value);
-        }
+    final attributes = <String, dynamic>{};
+    if (json['body'] != null) {
+      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+        attributes[entry.key] = const DynamicAttributes().fromJson(entry.key, entry.value);
       }
-
-      return $generatedClassName(
-        id: id,
-        name: name,
-        description: description,
-        childrenIds: ids,
-        attributes: attributes,
-      );
-    } catch (e) {
-      final msg = 'Invalid fromJson method of $generatedClassName, error: \$e';
-      Logger.printError(msg);
-      throw Exception(msg);
     }
+    
+    return $generatedClassName(
+      id: json['id'],
+      name: json['name'],
+      description: json['description'],
+      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      attributes: attributes,
+    );
   }
 
   @override

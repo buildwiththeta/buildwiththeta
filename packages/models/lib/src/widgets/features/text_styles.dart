@@ -21,7 +21,7 @@ class TetaTextStyles {
     required final FTextDecoration textDecoration,
     required final FFontStyle fontStyle,
     required final bool forPlay,
-    final TextStyleModel? model,
+    final TextStyleEntity? model,
   }) {
     final tempOpacity = fill.levels.first.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
@@ -53,7 +53,7 @@ class TetaTextStyles {
             ),
       ).withOpacity(opacity),
       decoration: textDecoration.textDecoration,
-      fontStyle: fontStyle.style,
+      fontStyle: fontStyle.value,
     );
   }
 }

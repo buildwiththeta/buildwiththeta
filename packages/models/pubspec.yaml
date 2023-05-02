@@ -43,3 +43,6 @@ dev_dependencies:
   built_value_generator: any
   source_gen: any
   analyzer: any
+  freezed: any
+  freezed_annotation: any
+  json_serializable: any

@@ -1,4 +1,3 @@
-import 'package:theta_models/src/models/maps/constants_export.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Align
@@ -14,15 +13,6 @@ class AlignIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Align in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Align in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/align',
-            )
-          ],
         );
   AlignIntrinsicStates.create() : this();
 }
@@ -42,7 +32,6 @@ class AudioPlayerIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          packages: const [pJustAudio],
         );
   AudioPlayerIntrinsicStates.create() : this();
 }
@@ -62,7 +51,6 @@ class AudioPlayerProgressIndicatorIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
-          packages: const [pRxDart],
         );
   AudioPlayerProgressIndicatorIntrinsicStates.create() : this();
 }
@@ -82,7 +70,6 @@ class AudioPlayerVolumeIndicatorIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
-          packages: const [pRxDart],
         );
   AudioPlayerVolumeIndicatorIntrinsicStates.create() : this();
 }
@@ -100,16 +87,6 @@ class BadgeIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          packages: const [pBadges],
-          suggestionsTitle: 'Why use Badge in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Badge in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/badge',
-            )
-          ],
         );
   BadgeIntrinsicStates.create() : this();
 }
@@ -170,16 +147,6 @@ class BouncingWidgetIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.onTap,
           ],
-          packages: const [pBouncingWidget],
-          suggestionsTitle: 'Why use Button in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Button in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/animated-widgets/bouncing-widget',
-            )
-          ],
         );
   BouncingWidgetIntrinsicStates.create() : this();
 }
@@ -204,17 +171,6 @@ class ButtonIntrinsicStates extends IntrinsicState {
             Trigger.onLongPress,
             Trigger.onDoubleTap
           ],
-          permissions: const [],
-          packages: const [],
-          suggestionsTitle: 'Why use Button in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Button in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/input-widgets/button',
-            )
-          ],
         );
   ButtonIntrinsicStates.create() : this();
 }
@@ -237,19 +193,6 @@ class CalendarIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.onMonthLoaded,
             Trigger.onDayPressed,
-          ],
-          permissions: const [
-            Permissions.calendar,
-          ],
-          packages: const [pPagedVerticalCalendar, pIntl],
-          suggestionsTitle: 'Why use Calendar in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Calendar in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/calendar',
-            )
           ],
         );
   CalendarIntrinsicStates.create() : this();
@@ -275,19 +218,6 @@ class CalendarV2IntrinsicStates extends IntrinsicState {
           gestures: const [
             // Trigger.onMonthLoaded,
             Trigger.onDayPressed,
-          ],
-          permissions: const [
-            Permissions.calendar,
-          ],
-          packages: const [pTableCalendar, pIntl],
-          suggestionsTitle: 'Why use CalendarV2 in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use CalendarV2 in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/calendarv2',
-            )
           ],
         );
   CalendarV2IntrinsicStates.create() : this();
@@ -324,15 +254,6 @@ class CenterIntrinsicStates extends IntrinsicState {
           category: NodeCategories.basic,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Center in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Center in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/center',
-            )
-          ],
         );
   CenterIntrinsicStates.create() : this();
 }
@@ -410,15 +331,6 @@ class ColumnIntrinsicStates extends IntrinsicState {
           category: NodeCategories.basic,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          suggestionsTitle: 'Why use Column in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Column in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/column',
-            )
-          ],
         );
   ColumnIntrinsicStates.create() : this();
 }
@@ -436,15 +348,6 @@ class ComponentIntrinsicStates extends IntrinsicState {
           category: NodeCategories.unclassified,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Component in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Component in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/component',
-            )
-          ],
         );
   ComponentIntrinsicStates.create() : this();
 }
@@ -462,16 +365,6 @@ class ConcentricPageViewIntrinsicStates extends IntrinsicState {
           category: NodeCategories.layout,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          packages: const [pConcentricTransition],
-          suggestionsTitle: 'Why use Concentric PageView in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Concentric PageView in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/concentric-pageview',
-            )
-          ],
         );
   ConcentricPageViewIntrinsicStates.create() : this();
 }
@@ -512,15 +405,6 @@ class ContainerIntrinsicStates extends IntrinsicState {
           category: NodeCategories.basic,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Container in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Container in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/container',
-            )
-          ],
         );
   ContainerIntrinsicStates.create() : this();
 }
@@ -618,15 +502,6 @@ class DividerIntrinsicStates extends IntrinsicState {
           category: NodeCategories.basic,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Divider in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Divider in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/divider',
-            )
-          ],
         );
   DividerIntrinsicStates.create() : this();
 }
@@ -661,15 +536,6 @@ class ExpandedIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Expanded in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Expanded in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/expanded',
-            )
-          ],
         );
   ExpandedIntrinsicStates.create() : this();
 }
@@ -694,17 +560,6 @@ class GestureDetectorIntrinsicStates extends IntrinsicState {
             Trigger.onLongPress,
             Trigger.onDoubleTap,
           ],
-          permissions: const [],
-          packages: const [],
-          suggestionsTitle: 'Why use Gesture Detector in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Gesture Detector in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/input-widgets/gesture-detector',
-            )
-          ],
         );
   GestureDetectorIntrinsicStates.create() : this();
 }
@@ -725,64 +580,8 @@ class GoogleAdMobBannerAdIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: [],
           gestures: [],
-          permissions: [],
-          packages: [pGoogleMobileAds, pIO],
-          suggestionsTitle: 'Why use Ad mob banner in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use Ad mob banner in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/ad-mob-banner',
-            )
-          ],
         );
   GoogleAdMobBannerAdIntrinsicStates.create() : this();
-}
-
-/// GoogleMaps
-@nodeTypeISKey
-@NodeKey(NType.googleMaps)
-class GoogleMapsIntrinsicStates extends IntrinsicState {
-  GoogleMapsIntrinsicStates()
-      : super(
-          nodeIcon: Assets.wIcons.maps.path,
-          synonymous: ['map', 'google maps', 'maps', 'google'],
-          displayName: NodeType.name(NType.googleMaps),
-          type: NType.googleMaps,
-          category: NodeCategories.advanced,
-          maxChildren: 0,
-          canHave: ChildrenEnum.none,
-          permissions: [
-            Permissions.location,
-          ],
-          packages: [
-            pGoogleMaps,
-            pFlutterCacheManager,
-            pGeolocator,
-            pDartz,
-            pPolyLinesPoints,
-            pEquatable,
-          ],
-          constants: [
-            kMapStyleStandard,
-            kMapStyleSilver,
-            kMapStyleRetro,
-            kMapStyleDark,
-            kMapStyleNight,
-            kMapStyleAubergine,
-          ],
-          suggestionsTitle: 'Why use Google Maps in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use Google Maps in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/map-widgets/google-maps',
-            )
-          ],
-        );
-  GoogleMapsIntrinsicStates.create() : this();
 }
 
 /// GridView
@@ -797,15 +596,6 @@ class GridViewBuilderIntrinsicStates extends IntrinsicState {
           type: NType.gridViewBuilder,
           category: NodeCategories.layout,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use GridView Builder in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use GridView Builder in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/gridview-builder',
-            )
-          ],
         );
   GridViewBuilderIntrinsicStates.create() : this();
 }
@@ -826,17 +616,6 @@ class GridViewIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.children,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
-          suggestionsTitle: 'Why use GridView in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use GridView in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/gridview',
-            )
-          ],
         );
   GridViewIntrinsicStates.create() : this();
 }
@@ -859,15 +638,6 @@ class HeroIntrinsicStates extends IntrinsicState {
           category: NodeCategories.animations,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Hero in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Hero in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/animated-widgets/hero',
-            )
-          ],
         );
   HeroIntrinsicStates.create() : this();
 }
@@ -884,16 +654,6 @@ class FeatherIconIntrinsicStates extends IntrinsicState {
           type: NType.featherIcon,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          packages: [pFeatherIcons],
-          suggestionsTitle: 'Why use Feather Icon in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use Feather Icon in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/icon-widgets/feather-icon',
-            )
-          ],
         );
   FeatherIconIntrinsicStates.create() : this();
 }
@@ -910,16 +670,6 @@ class FontAwesomeIconIntrinsicStates extends IntrinsicState {
           type: NType.fontAwesomeIcon,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          packages: [pFontAwesomeNamed],
-          suggestionsTitle: 'Why use FA Icon in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use FA Icon in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/icon-widgets/fa-icon',
-            )
-          ],
         );
   FontAwesomeIconIntrinsicStates.create() : this();
 }
@@ -936,16 +686,6 @@ class LineIconIntrinsicStates extends IntrinsicState {
           type: NType.lineIcon,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          packages: [pLineIcons],
-          suggestionsTitle: 'Why use Line Icons in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use Line Icons in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/icon-widgets/line-icons',
-            )
-          ],
         );
   LineIconIntrinsicStates.create() : this();
 }
@@ -962,15 +702,6 @@ class IconIntrinsicStates extends IntrinsicState {
           type: NType.icon,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Material Icon in Teta?',
-          suggestions: [
-            const Suggestion(
-              title: 'Why use Material Icon in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/icon-widgets/material-icon',
-            )
-          ],
         );
   IconIntrinsicStates.create() : this();
 }
@@ -988,15 +719,6 @@ class IgnorePointerIntrinsicStates extends IntrinsicState {
           category: NodeCategories.visibility,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Ignore Pointer in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Ignore Pointer in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/logic-widgets/ignore-pointer',
-            )
-          ],
         );
   IgnorePointerIntrinsicStates.create() : this();
 }
@@ -1013,15 +735,6 @@ class ImageIntrinsicStates extends IntrinsicState {
           type: NType.image,
           category: NodeCategories.basic,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Image in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Image in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/image',
-            )
-          ],
         );
   ImageIntrinsicStates.create() : this();
 }
@@ -1039,15 +752,6 @@ class IndexedStackIntrinsicStates extends IntrinsicState {
           category: NodeCategories.layout,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          suggestionsTitle: 'Why use Indexed Stack in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Indexed Stack in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/logic-widgets/indexed-stack',
-            )
-          ],
         );
   IndexedStackIntrinsicStates.create() : this();
 }
@@ -1064,15 +768,6 @@ class LinearProgressIndicatorIntrinsicStates extends IntrinsicState {
           type: NType.linearProgressIndicator,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Linear Progress Indicator in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Linear Progress Indicator in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/linear-progress-indicator',
-            )
-          ],
         );
   LinearProgressIndicatorIntrinsicStates.create() : this();
 }
@@ -1096,7 +791,6 @@ class LiquidSwipeIntrinsicStates extends IntrinsicState {
           type: NType.liquidSwipe,
           category: NodeCategories.unclassified,
           canHave: ChildrenEnum.children,
-          packages: const [pLiquidSwipe],
         );
   LiquidSwipeIntrinsicStates.create() : this();
 }
@@ -1146,15 +840,6 @@ class ListViewBuilderIntrinsicStates extends IntrinsicState {
             Trigger.scrollToTop,
             Trigger.scrollToBottom,
           ],
-          suggestionsTitle: 'Why use ListView Builder in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use ListView Builder in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/listview-builder',
-            )
-          ],
         );
   ListViewBuilderIntrinsicStates.create() : this();
 }
@@ -1176,17 +861,6 @@ class ListViewIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.children,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
-          suggestionsTitle: 'Why use ListView in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use ListView in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/listview',
-            )
-          ],
         );
   ListViewIntrinsicStates.create() : this();
 }
@@ -1208,17 +882,6 @@ class LottieIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [pLottie],
-          suggestionsTitle: 'Why use Lottie in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Lottie in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/lottie',
-            )
-          ],
         );
   LottieIntrinsicStates.create() : this();
 }
@@ -1241,10 +904,6 @@ class MapBuilderIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.onDoubleTap,
           ],
-          permissions: const [
-            Permissions.location,
-          ],
-          packages: const [pMap, pLatLang],
         );
   MapBuilderIntrinsicStates.create() : this();
 }
@@ -1267,10 +926,6 @@ class MapIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.onDoubleTap,
           ],
-          permissions: const [
-            Permissions.location,
-          ],
-          packages: const [pMap, pLatLang],
         );
   MapIntrinsicStates.create() : this();
 }
@@ -1291,17 +946,6 @@ class MarkerIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.child,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
-          suggestionsTitle: 'Why use Marker in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Marker in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/map-widgets/marker',
-            )
-          ],
         );
   MarkerIntrinsicStates.create() : this();
 }
@@ -1332,8 +976,6 @@ class MaterialAppBarIntrinsicStates extends IntrinsicState {
             'Add Action'
           ],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   MaterialAppBarIntrinsicStates.create() : this();
 }
@@ -1377,15 +1019,6 @@ class OpacityIntrinsicStates extends IntrinsicState {
           category: NodeCategories.visibility,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Opacity in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Opacity in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/logic-widgets/opacity',
-            )
-          ],
         );
   OpacityIntrinsicStates.create() : this();
 }
@@ -1405,15 +1038,6 @@ class PageViewIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.onChange,
           ],
-          suggestionsTitle: 'Why use PageView in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use PageView in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/pageview',
-            )
-          ],
         );
   PageViewIntrinsicStates.create() : this();
 }
@@ -1430,15 +1054,6 @@ class PlaceholderIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Placeholder in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Placeholder in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/placeholder',
-            )
-          ],
         );
   PlaceholderIntrinsicStates.create() : this();
 }
@@ -1491,7 +1106,6 @@ class QrCodeIntrinsicStates extends IntrinsicState {
           type: NType.qrCode,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          packages: const [pQrFlutter],
         );
   QrCodeIntrinsicStates.create() : this();
 }
@@ -1589,15 +1203,6 @@ class RotatedBoxIntrinsicStates extends IntrinsicState {
           category: NodeCategories.unclassified,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Rotated Box in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Rotated Box in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/rotated-box',
-            )
-          ],
         );
   RotatedBoxIntrinsicStates.create() : this();
 }
@@ -1614,15 +1219,6 @@ class RowIntrinsicStates extends IntrinsicState {
           category: NodeCategories.basic,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          suggestionsTitle: 'Why use Row in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Row in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/row',
-            )
-          ],
         );
   RowIntrinsicStates.create() : this();
 }
@@ -1639,15 +1235,6 @@ class SafeAreaIntrinsicStates extends IntrinsicState {
           category: NodeCategories.advanced,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Safe Area in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Safe Area in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/safe-area',
-            )
-          ],
         );
   SafeAreaIntrinsicStates.create() : this();
 }
@@ -1673,8 +1260,6 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
           gestures: const [
             Trigger.initState,
           ],
-          permissions: const [],
-          packages: const [],
         );
   ScaffoldIntrinsicStates.create() : this();
 }
@@ -1734,16 +1319,6 @@ class TCardBuilderIntrinsicStates extends IntrinsicState {
             Trigger.swipeRight,
             Trigger.onEnd,
           ],
-          packages: const [pTCard],
-          suggestionsTitle: 'Why use Tcard Builder in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Tcard Builder in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/tcard-builder',
-            )
-          ],
         );
   TCardBuilderIntrinsicStates.create() : this();
 }
@@ -1771,16 +1346,6 @@ class TCardIntrinsicStates extends IntrinsicState {
             Trigger.swipeRight,
             Trigger.onEnd,
           ],
-          packages: const [pTCard],
-          suggestionsTitle: 'Why use Tcard in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Tcard in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/list-widgets/tcard',
-            )
-          ],
         );
   TCardIntrinsicStates.create() : this();
 }
@@ -1796,15 +1361,6 @@ class TextIntrinsicStates extends IntrinsicState {
           type: NType.text,
           category: NodeCategories.basic,
           canHave: ChildrenEnum.none,
-          suggestionsTitle: 'Why use Text in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Text in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/text',
-            )
-          ],
         );
   TextIntrinsicStates.create() : this();
 }
@@ -1821,15 +1377,6 @@ class TextFieldIntrinsicStates extends IntrinsicState {
           category: NodeCategories.form,
           canHave: ChildrenEnum.none,
           gestures: const [Trigger.onChange, Trigger.onSubmitted],
-          suggestionsTitle: 'Why use Textfield in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Textfield in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/input-widgets/textfield',
-            )
-          ],
         );
   TextFieldIntrinsicStates.create() : this();
 }
@@ -1846,15 +1393,6 @@ class TooltipIntrinsicStates extends IntrinsicState {
           category: NodeCategories.form,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Tooltip in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Tooltip in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/input-widgets/tooltip',
-            )
-          ],
         );
   TooltipIntrinsicStates.create() : this();
 }
@@ -1870,16 +1408,6 @@ class VideoIntrinsicStates extends IntrinsicState {
           type: NType.video,
           category: NodeCategories.basic,
           canHave: ChildrenEnum.none,
-          packages: const [pYoutubePlayerIframe],
-          suggestionsTitle: 'Why use Video in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Video in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/basic-widgets/video',
-            )
-          ],
         );
   VideoIntrinsicStates.create() : this();
 }
@@ -1896,15 +1424,6 @@ class VisibilityIntrinsicStates extends IntrinsicState {
           category: NodeCategories.visibility,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          suggestionsTitle: 'Why use Visibility in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Visibility in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/logic-widgets/visibility',
-            )
-          ],
         );
   VisibilityIntrinsicStates.create() : this();
 }
@@ -1920,16 +1439,6 @@ class WebviewIntrinsicStates extends IntrinsicState {
           type: NType.webview,
           category: NodeCategories.advanced,
           canHave: ChildrenEnum.none,
-          packages: const [pWebviewX],
-          suggestionsTitle: 'Why use Webview in Teta?',
-          suggestions: const [
-            Suggestion(
-              title: 'Why use Webview in Teta?',
-              description: 'Test',
-              linkToOpen:
-                  'https://docs.teta.so/teta-docs/widget/advanced-widgets/webview',
-            )
-          ],
         );
   WebviewIntrinsicStates.create() : this();
 }
@@ -1953,8 +1462,6 @@ class AnimationConfigGridIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.child,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [pFlutterStaggeredAnimations],
         );
   AnimationConfigGridIntrinsicStates.create() : this();
 }
@@ -1974,7 +1481,6 @@ class AnimationConfigListIntrinsicStates extends IntrinsicState {
           type: NType.animationConfigList,
           category: NodeCategories.animations,
           canHave: ChildrenEnum.child,
-          packages: const [pFlutterStaggeredAnimations],
         );
   AnimationConfigListIntrinsicStates.create() : this();
 }
@@ -1994,7 +1500,6 @@ class FadeInAnimationIntrinsicStates extends IntrinsicState {
           type: NType.fadeInAnimation,
           category: NodeCategories.animations,
           canHave: ChildrenEnum.child,
-          packages: const [pFlutterStaggeredAnimations],
         );
   FadeInAnimationIntrinsicStates.create() : this();
 }
@@ -2014,7 +1519,6 @@ class ScaleAnimationIntrinsicStates extends IntrinsicState {
           type: NType.scaleAnimation,
           category: NodeCategories.animations,
           canHave: ChildrenEnum.child,
-          packages: const [pFlutterStaggeredAnimations],
         );
   ScaleAnimationIntrinsicStates.create() : this();
 }
@@ -2034,7 +1538,6 @@ class SlideAnimationIntrinsicStates extends IntrinsicState {
           type: NType.slideAnimation,
           category: NodeCategories.animations,
           canHave: ChildrenEnum.child,
-          packages: const [pFlutterStaggeredAnimations],
         );
   SlideAnimationIntrinsicStates.create() : this();
 }
@@ -2067,8 +1570,6 @@ class ApiCallsFetchIntrinsicStates extends IntrinsicState {
             'Add new if empty or failed',
           ],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   ApiCallsFetchIntrinsicStates.create() : this();
 }
@@ -2088,8 +1589,6 @@ class LoginAppleIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const <Trigger>[Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginAppleIntrinsicStates.create() : this();
 }
@@ -2110,8 +1609,6 @@ class LoginBitBucketIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pFontAwesomeNamed],
         );
   LoginBitBucketIntrinsicStates.create() : this();
 }
@@ -2132,8 +1629,6 @@ class LoginDiscordIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pFontAwesomeNamed],
         );
   LoginDiscordIntrinsicStates.create() : this();
 }
@@ -2153,8 +1648,6 @@ class LoginFacebookIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginFacebookIntrinsicStates.create() : this();
 }
@@ -2174,8 +1667,6 @@ class LoginGitHubIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginGitHubIntrinsicStates.create() : this();
 }
@@ -2195,8 +1686,6 @@ class LoginGitlabIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pFontAwesomeNamed],
         );
   LoginGitlabIntrinsicStates.create() : this();
 }
@@ -2216,8 +1705,6 @@ class LoginGoogleIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginGoogleIntrinsicStates.create() : this();
 }
@@ -2237,8 +1724,6 @@ class LoginLinkedinIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pFontAwesomeNamed],
         );
   LoginLinkedinIntrinsicStates.create() : this();
 }
@@ -2256,8 +1741,6 @@ class LoginMicrosoftIntrinsicStates extends IntrinsicState {
           maxChildren: 0,
           canHave: ChildrenEnum.none,
           gestures: const <Trigger>[Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginMicrosoftIntrinsicStates.create() : this();
 }
@@ -2277,8 +1760,6 @@ class LoginTwitchIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pFontAwesomeNamed],
         );
   LoginTwitchIntrinsicStates.create() : this();
 }
@@ -2298,8 +1779,6 @@ class LoginTwitterIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.none,
           addChildLabels: const [],
           gestures: const [Trigger.onTap, Trigger.onLongPress],
-          permissions: const [],
-          packages: const [pAuthButton],
         );
   LoginTwitterIntrinsicStates.create() : this();
 }
@@ -2323,8 +1802,6 @@ class HttpRequestFutureBuilderIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.children,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   HttpRequestFutureBuilderIntrinsicStates.create() : this();
 }
@@ -2355,8 +1832,6 @@ class CustomHttpRequestIntrinsicStates extends IntrinsicState {
             'Add new if empty or failed',
           ],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   CustomHttpRequestIntrinsicStates.create() : this();
 }
@@ -2376,8 +1851,6 @@ class AppBarIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.child,
           addChildLabels: const ['Add AppBar Widget'],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   AppBarIntrinsicStates.create() : this();
 }
@@ -2397,8 +1870,6 @@ class BottomBarIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.child,
           addChildLabels: ['Add BottomBar Widget'],
           gestures: [],
-          permissions: [],
-          packages: [],
         );
   BottomBarIntrinsicStates.create() : this();
 }
@@ -2418,8 +1889,6 @@ class DrawerIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.child,
           addChildLabels: ['Add Widget To Drawer'],
           gestures: [],
-          permissions: [],
-          packages: [],
         );
   DrawerIntrinsicStates.create() : this();
 }
@@ -2446,9 +1915,6 @@ class QonversionProductIntrinsicStates extends IntrinsicState {
           category: NodeCategories.subscriptions,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          permissions: [
-            Permissions.billing,
-          ],
         );
   QonversionProductIntrinsicStates.create() : this();
 }
@@ -2475,9 +1941,6 @@ class QonversionSubStatusIntrinsicStates extends IntrinsicState {
           category: NodeCategories.subscriptions,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          permissions: const [
-            Permissions.billing,
-          ],
         );
   QonversionSubStatusIntrinsicStates.create() : this();
 }
@@ -2518,9 +1981,6 @@ class RevenueCatProductIntrinsicStates extends IntrinsicState {
           category: NodeCategories.subscriptions,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          permissions: [
-            Permissions.billing,
-          ],
         );
   RevenueCatProductIntrinsicStates.create() : this();
 }
@@ -2547,10 +2007,6 @@ class RevenueCatSubStatusIntrinsicStates extends IntrinsicState {
           category: NodeCategories.subscriptions,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
-          permissions: const [
-            Permissions.billing,
-          ],
-          packages: const [],
         );
   RevenueCatSubStatusIntrinsicStates.create() : this();
 }
@@ -2668,8 +2124,6 @@ class CmsCustomQueryIntrinsicStates extends IntrinsicState {
           canHave: ChildrenEnum.children,
           addChildLabels: const [],
           gestures: const [],
-          permissions: const [],
-          packages: const [],
         );
   CmsCustomQueryIntrinsicStates.create() : this();
 }

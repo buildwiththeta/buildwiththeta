@@ -139,7 +139,7 @@ class _LocalImage extends StatefulWidget {
     final Key? key,
   }) : super(key: key);
 
-  final int nid;
+  final String nid;
   final int? loop;
   final dynamic result;
   final Uint8List? bytes;
@@ -163,7 +163,6 @@ class _LocalImageState extends State<_LocalImage> {
                 fit: widget.fit,
               )
         : CNetworkImage(
-            nid: widget.nid,
             src: widget.result == ''
                 ? 'https://ymvwltogicatbkjlaswo.supabase.co/storage/v1/object/public/assets/Frame%203.jpg'
                 : '${widget.result}',

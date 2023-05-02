@@ -1,7 +1,5 @@
 // ignore_for_file: public_member_api_docs
 
-import 'index.dart';
-
 class TreeObject {
   /// Constructor
   TreeObject({
@@ -12,12 +10,12 @@ class TreeObject {
     required this.loop,
   });
 
-  final ID id;
+  final int id;
   final String name;
   final String value;
   final double level;
   final int loop;
-  List<TreeObject> children = [];
+  final List<TreeObject> children = [];
 
   @override
   String toString() => '$name: $value';

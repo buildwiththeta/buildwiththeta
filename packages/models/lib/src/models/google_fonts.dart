@@ -6,13 +6,13 @@ class CGoogleFonts {
 
   /// Sort Constructor
   CGoogleFonts fromJson(final Map<String, dynamic> json) {
-    final _items = <Items>[];
+    final items = <Items>[];
     if (json['items'] != null) {
       for (final e in json['items'] as List<Map<String, dynamic>>) {
-        _items.add(Items.fromJson(e));
+        items.add(Items.fromJson(e));
       }
     }
-    return CGoogleFonts(kind: json['kind'] as String?, items: _items);
+    return CGoogleFonts(kind: json['kind'] as String?, items: items);
   }
 
   final String? kind;

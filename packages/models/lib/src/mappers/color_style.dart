@@ -1,44 +1,56 @@
+import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class ColorStylesMapper {
+class ColorStylesMapper extends Mapper<ColorStyleEntity> {
   const ColorStylesMapper();
   static const _idKey = '_id';
-  static const _channelKey = 'channel_id';
+  static const _branchKey = 'branch_id';
   static const _nameKey = 'name';
+  static const _propertiesKey = 'properties';
   static const _darkKey = 'value';
   static const _lightKey = 'light';
+  static const _typeKey = 'type';
 
   /// For a single instance
-  ColorStyleModel fromJson({required final Map<String, dynamic> json}) =>
-      ColorStyleModel(
-        id: json[_idKey] as ID,
-        channelId: json[_channelKey] as ChannelID,
-        name: json[_nameKey] as String,
-        fill: json[_darkKey] != null
-            ? FFill.fromJson(json[_darkKey] as Map<String, dynamic>)
+  @override
+  ColorStyleEntity fromJson(Map<String, dynamic> json) => ColorStyleEntity(
+        id: json[_idKey],
+        branchID: json[_branchKey],
+        name: json[_nameKey],
+        dark: json[_propertiesKey][_darkKey] != null
+            ? FFill.fromJson(json[_propertiesKey][_darkKey])
             : const FFill(),
-        light: json[_lightKey] != null
-            ? FFill.fromJson(json[_lightKey] as Map<String, dynamic>)
-            : json[_darkKey] != null
-                ? FFill.fromJson(json[_darkKey] as Map<String, dynamic>)
+        light: json[_propertiesKey][_lightKey] != null
+            ? FFill.fromJson(json[_propertiesKey][_lightKey])
+            : json[_propertiesKey][_darkKey] != null
+                ? FFill.fromJson(json[_propertiesKey][_darkKey])
                 : const FFill(),
       );
 
-  /// Get a list of color styles from json
-  List<ColorStyleModel> listFromJson(final List<dynamic>? list) {
-    return (list ?? <dynamic>[])
-        .map(
-          (final dynamic e) => fromJson(json: e as Map<String, dynamic>),
-        )
-        .toList();
-  }
-
   /// Return a json from this instance
-  Map<String, dynamic> toJson(final ColorStyleModel model) => <String, dynamic>{
-        _channelKey: model.channelId,
+  @override
+  Map<String, dynamic> toJson(ColorStyleEntity model) => {
+        _typeKey: 'color',
+        _branchKey: model.branchID,
         _nameKey: model.name,
-        _darkKey: model.fill.toJson(),
-        _lightKey: model.light.toJson(),
+        _propertiesKey: {
+          _darkKey: model.dark.toJson(),
+          _lightKey: model.light.toJson(),
+        }
       };
+
+  ColorStyleEntity copyWith(final ColorStyleEntity e,
+          {final String? id,
+          final String? branchID,
+          final String? name,
+          final FFill? light,
+          final FFill? fill}) =>
+      ColorStyleEntity(
+        id: id ?? e.id,
+        branchID: branchID ?? e.branchID,
+        name: name ?? e.name,
+        dark: fill ?? e.dark,
+        light: light ?? e.light,
+      );
 }

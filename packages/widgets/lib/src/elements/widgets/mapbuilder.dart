@@ -239,7 +239,6 @@ class _WMapBuilderState extends State<WMapBuilder> {
                             final darkUrl =
                                 'https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/$z/$x/$y?access_token=${config.mapboxKey}';
                             return CNetworkImage(
-                              nid: widget.state.node.id,
                               src: widget.flag ? darkUrl : url,
                               loop: widget.state.loop,
                               width: double.maxFinite,
