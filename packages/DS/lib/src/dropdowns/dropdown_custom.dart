@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hovering/hovering.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
 class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
@@ -21,7 +20,6 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     return HoverWidget(
-      onHover: (final e) {},
       hoverChild: Container(
         padding: const EdgeInsets.all(1),
         decoration: const BoxDecoration(

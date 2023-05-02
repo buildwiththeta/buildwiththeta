@@ -15,9 +15,9 @@ class BranchEntity extends Equatable {
 
   final BranchID id;
   final ProjectID projectID;
-  final PageID entryPointPageID;
+  final PageID? entryPointPageID;
   final String name;
-  final String description;
+  final String? description;
   final DateTime createdAt;
 
   @override
