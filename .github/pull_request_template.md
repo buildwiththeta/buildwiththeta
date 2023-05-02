@@ -20,7 +20,7 @@ Please ensure that you have completed the following items before submitting this
 - [ ] Code has been tested and documented.
 - [ ] New and/or updated unit tests have been written.
 - [ ] All existing unit tests pass successfully.
-- [ ] The app runs successfully on Android and iOS devices.
+- [ ] The app runs successfully on Web (Chrome).
 - [ ] Commit messages are clear and concise.
 
 ## Additional Information
