@@ -8,6 +8,8 @@ import '../widgets/features/font_size.dart';
 import '../widgets/features/font_weight.dart';
 import 'index.dart';
 
+/// Entity for a text style.
+/// Uses a Mapper to serialize/deserialize.
 class TextStyleEntity extends Equatable {
   const TextStyleEntity({
     this.id = '',

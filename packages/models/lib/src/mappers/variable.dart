@@ -1,7 +1,7 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:theta_models/theta_models.dart';
 
-class VariableMapper {
+class VariableMapper extends Mapper<VariableEntity> {
   const VariableMapper();
 
   static const _idField = 'id';
@@ -11,6 +11,7 @@ class VariableMapper {
   static const _defaultValueField = 'default_value';
 
   /// For a single instance
+  @override
   VariableEntity fromJson(final Map<String, dynamic> json) => VariableEntity(
         id: json[_idField],
         pageID: json[_pageIdField],
@@ -22,13 +23,7 @@ class VariableMapper {
         defaultValue: json[_defaultValueField],
       );
 
-  /// Get a list of color styles from json
-  List<VariableEntity> listFromJson(final List<dynamic> list) => list
-      .map(
-        (final e) => fromJson(e),
-      )
-      .toList();
-
+  @override
   Map<String, dynamic> toJson(VariableEntity e) => {
         _idField: e.id,
         _typeField: EnumToString.convertToString(e.type),

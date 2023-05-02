@@ -7,6 +7,8 @@ import 'package:theta_models/src/widgets/features/index.dart';
 
 import 'index.dart';
 
+/// Entity for a color style.
+/// Uses a Mapper to serialize/deserialize.
 class ColorStyleEntity extends Equatable {
   /// Constructor
   const ColorStyleEntity({

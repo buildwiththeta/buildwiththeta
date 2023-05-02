@@ -1,7 +1,8 @@
+import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class BranchMapper {
+class BranchMapper extends Mapper<BranchEntity> {
   const BranchMapper();
 
   static const _idKey = '_id';
@@ -12,8 +13,8 @@ class BranchMapper {
   static const _createdAtKey = 'created_at';
 
   /// For a single instance.
-  BranchEntity fromJson({required final Map<String, dynamic> json}) =>
-      BranchEntity(
+  @override
+  BranchEntity fromJson(Map<String, dynamic> json) => BranchEntity(
         id: json[_idKey],
         projectID: json[_prjIdKey],
         name: json[_nameKey],
@@ -21,15 +22,6 @@ class BranchMapper {
         description: json[_descriptionKey],
         createdAt: DateTime.parse(json[_createdAtKey]),
       );
-
-  /// Get a list of color styles from json.
-  List<BranchEntity> listFromJson(final List<dynamic> list) {
-    return list
-        .map(
-          (final e) => fromJson(json: e),
-        )
-        .toList();
-  }
 
   /// Return a complete json from this instance.
   ///
@@ -41,7 +33,8 @@ class BranchMapper {
   ///   'entry_point_page_id': ...,
   ///   'created_at': ..., // ISO 8601
   /// }
-  Map<String, dynamic> toCompleteJson(final BranchEntity branch) => {
+  @override
+  Map<String, dynamic> toJson(final BranchEntity branch) => {
         _prjIdKey: branch.projectID,
         _nameKey: branch.name,
         _descriptionKey: branch.description,
@@ -60,4 +53,22 @@ class BranchMapper {
         _prjIdKey: branch.projectID,
         _nameKey: '${branch.name} copy',
       };
+
+  BranchEntity copyWith(
+    final BranchEntity e, {
+    final String? id,
+    final String? projectID,
+    final String? name,
+    final String? entryPointPageID,
+    final String? description,
+    final DateTime? createdAt,
+  }) =>
+      BranchEntity(
+        id: id ?? e.id,
+        projectID: projectID ?? e.projectID,
+        name: name ?? e.name,
+        entryPointPageID: entryPointPageID ?? e.entryPointPageID,
+        description: description ?? e.description,
+        createdAt: createdAt ?? e.createdAt,
+      );
 }

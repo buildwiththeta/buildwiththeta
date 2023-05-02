@@ -1,7 +1,8 @@
+import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class PageMapper {
+class PageMapper extends Mapper<PageEntity> {
   const PageMapper();
 
   static const _idKey = 'id';
@@ -9,21 +10,13 @@ class PageMapper {
   static const _nameKey = 'name';
 
   /// For a single instance
-  PageEntity fromJson({required final Map<String, dynamic> json}) {
+  @override
+  PageEntity fromJson(Map<String, dynamic> json) {
     return PageEntity(
       id: json[_idKey],
       branchID: json[_branchIdKey],
       name: json[_nameKey] as String,
     );
-  }
-
-  /// Get a list of color styles from json
-  List<PageEntity> listFromJson(final List<dynamic>? list) {
-    return (list ?? <dynamic>[])
-        .map(
-          (final dynamic e) => fromJson(json: e as Map<String, dynamic>),
-        )
-        .toList();
   }
 
   /// Return a json from this instance
@@ -35,8 +28,17 @@ class PageMapper {
   ///   "name": ...,
   /// }
   /// ```
+  @override
   Map<String, dynamic> toJson(final PageEntity page) => {
         _branchIdKey: page.branchID,
         _nameKey: page.name,
       };
+
+  PageEntity copyWith(final PageEntity e,
+          {final String? id, final String? branchID, final String? name}) =>
+      PageEntity(
+        id: id ?? e.id,
+        branchID: branchID ?? e.branchID,
+        name: name ?? e.name,
+      );
 }

@@ -1,7 +1,8 @@
+import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class ColorStylesMapper {
+class ColorStylesMapper extends Mapper<ColorStyleEntity> {
   const ColorStylesMapper();
   static const _idKey = '_id';
   static const _branchKey = 'branch_id';
@@ -12,6 +13,7 @@ class ColorStylesMapper {
   static const _typeKey = 'type';
 
   /// For a single instance
+  @override
   ColorStyleEntity fromJson(Map<String, dynamic> json) => ColorStyleEntity(
         id: json[_idKey],
         branchID: json[_branchKey],
@@ -26,12 +28,8 @@ class ColorStylesMapper {
                 : const FFill(),
       );
 
-  /// Get a list of color styles from json
-  List<ColorStyleEntity> listFromJson(List<dynamic> list) {
-    return list.map((e) => fromJson(e)).toList();
-  }
-
   /// Return a json from this instance
+  @override
   Map<String, dynamic> toJson(ColorStyleEntity model) => {
         _typeKey: 'color',
         _branchKey: model.branchID,

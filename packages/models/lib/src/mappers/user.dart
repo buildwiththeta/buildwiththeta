@@ -1,6 +1,6 @@
 import 'package:theta_models/theta_models.dart';
 
-class UserMapper {
+class UserMapper extends Mapper<UserEntity> {
   const UserMapper();
 
   static const _idKey = 'id';
@@ -11,6 +11,7 @@ class UserMapper {
   static const _lastName = 'last_name';
 
   /// For a single instance
+  @override
   UserEntity fromJson(final Map<String, dynamic> json) => UserEntity(
       id: json[_idKey],
       userUID: json[_userUID],
@@ -19,15 +20,7 @@ class UserMapper {
       firstName: json[_firstName],
       lastName: json[_lastName]);
 
-  /// Get a list of color styles from json
-  List<UserEntity> listFromJson(final List<dynamic> list) {
-    return list
-        .map(
-          (final e) => fromJson(e),
-        )
-        .toList();
-  }
-
+  @override
   Map<String, dynamic> toJson(UserEntity e) => {
         _idKey: e.id,
         _userUID: e.userUID,

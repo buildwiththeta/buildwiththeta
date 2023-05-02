@@ -7,6 +7,8 @@ import 'package:equatable/equatable.dart';
 
 import 'index.dart';
 
+/// Entity for a page inside a project.
+/// Uses a Mapper to serialize/deserialize.
 class PageEntity extends Equatable {
   const PageEntity({
     required this.id,

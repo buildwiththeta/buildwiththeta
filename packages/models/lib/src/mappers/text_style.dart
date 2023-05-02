@@ -1,44 +1,47 @@
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class TextStylesMapper {
+class TextStylesMapper extends Mapper<TextStyleEntity> {
   const TextStylesMapper();
-  static const _idKey = 'id';
-  static const _typeKey = 'type';
-  static const _branchKey = 'branch_id';
-  static const _propertiesKey = 'properties';
-  static const _nameKey = 'name';
-  static const _familyKey = 'family';
-  static const _sizeKey = 'size';
-  static const _weightKey = 'weight';
+  static const idKey = 'id';
+  static const typeKey = 'type';
+  static const branchKey = 'branch_id';
+  static const propertiesKey = 'properties';
+  static const nameKey = 'name';
+  static const familyKey = 'family';
+  static const sizeKey = 'size';
+  static const weightKey = 'weight';
 
   /// For a single instance
+  @override
   TextStyleEntity fromJson(final Map<String, dynamic> json) => TextStyleEntity(
-      id: json[_idKey],
-      branchID: json[_branchKey],
-      name: json[_nameKey],
-      fontFamily: json[_propertiesKey][_familyKey],
-      fontSize: json[_propertiesKey][_sizeKey] != null
-          ? FFontSize.fromJson(json[_propertiesKey][_sizeKey])
+      id: json[idKey],
+      branchID: json[branchKey],
+      name: json[nameKey],
+      fontFamily: json[propertiesKey][familyKey],
+      fontSize: json[propertiesKey][sizeKey] != null
+          ? FFontSize.fromJson(json[propertiesKey][sizeKey])
           : const FFontSize(),
       fontWeight: FFontWeight.fromJson(
-        '${json[_propertiesKey][_weightKey]}',
+        '${json[propertiesKey][weightKey]}',
       ));
 
   /// Get a list of color styles from json
+  @override
   List<TextStyleEntity> listFromJson(final List<dynamic> list) {
     return list.map((e) => fromJson(e)).toList();
   }
 
   /// Return a json from this instance
+  @override
   Map<String, dynamic> toJson(final TextStyleEntity e) => {
-        _typeKey: 'text',
-        _branchKey: e.branchID,
-        _nameKey: e.name,
-        _propertiesKey: {
-          _familyKey: e.fontFamily,
-          _sizeKey: e.fontSize.toJson(),
-          _weightKey: e.fontWeight.toJson()
+        typeKey: 'text',
+        branchKey: e.branchID,
+        nameKey: e.name,
+        propertiesKey: {
+          familyKey: e.fontFamily,
+          sizeKey: e.fontSize.toJson(),
+          weightKey: e.fontWeight.toJson()
         }
       };
 

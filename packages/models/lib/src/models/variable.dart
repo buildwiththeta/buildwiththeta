@@ -1,8 +1,3 @@
-// [%>;{* is the symbol to identify element in list
-
-// ignore_for_file: public_member_api_docs
-
-// Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -14,6 +9,8 @@ enum VariableType {
   json,
 }
 
+/// Entity for a variable inside a project.
+/// Uses a Mapper to serialize/deserialize.
 class VariableEntity extends Equatable {
   const VariableEntity({
     required this.id,

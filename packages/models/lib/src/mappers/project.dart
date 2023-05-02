@@ -1,7 +1,8 @@
+import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
-class ProjectMapper {
+class ProjectMapper extends Mapper<ProjectEntity> {
   const ProjectMapper();
 
   static const _idField = 'id';
@@ -12,7 +13,8 @@ class ProjectMapper {
   static const _createdAtField = 'created_at';
 
   /// For a single instance
-  static ProjectEntity fromJson(final Map<String, dynamic> json) {
+  @override
+  ProjectEntity fromJson(final Map<String, dynamic> json) {
     return ProjectEntity(
       id: json[_idField],
       name: json[_nameField],
@@ -23,15 +25,7 @@ class ProjectMapper {
     );
   }
 
-  /// Get a list of color styles from json
-  List<ProjectEntity> listFromJson(final List<dynamic> list) {
-    return list
-        .map(
-          (final e) => fromJson(e),
-        )
-        .toList();
-  }
-
+  @override
   Map<String, dynamic> toJson(final ProjectEntity e) => <String, dynamic>{
         _teamIdField: e.teamId,
         _nameField: e.name,

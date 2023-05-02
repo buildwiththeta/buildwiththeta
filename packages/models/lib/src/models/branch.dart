@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/src/models/typedefs.dart';
 
+/// Entity for a branch.
+/// Uses BranchMapper to serialize/deserialize.
 class BranchEntity extends Equatable {
   const BranchEntity({
     required this.id,

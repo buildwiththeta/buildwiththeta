@@ -5,6 +5,8 @@ import 'package:theta_models/theta_models.dart';
 /// Identifies a public user in [buildwiththeta.com](https://buildwiththeta.com).
 ///
 /// Read [internal docs](https://github.com/buildwiththeta/backend/blob/main/docs/supabase_db/tables.md#users) about the structure. Need a team access.
+///
+/// Uses a Mapper to serialize/deserialize.
 class UserEntity extends Equatable {
   const UserEntity({
     required this.id,

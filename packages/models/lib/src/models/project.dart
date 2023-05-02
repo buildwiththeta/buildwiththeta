@@ -9,6 +9,8 @@ import 'package:theta_models/theta_models.dart';
 /// Identifies a project in [buildwiththeta.com](https://buildwiththeta.com).
 ///
 /// Read [internal docs](https://github.com/buildwiththeta/backend/blob/main/docs/supabase_db/tables.md#projects) about projects structure. Need a team access.
+///
+/// Uses a Mapper to serialize/deserialize.
 class ProjectEntity extends Equatable {
   const ProjectEntity({
     required this.id,

@@ -1,5 +1,6 @@
 export 'branch.dart';
 export 'color_style.dart';
+export 'mapper.dart';
 export 'page.dart';
 export 'project.dart';
 export 'project_config.dart';
