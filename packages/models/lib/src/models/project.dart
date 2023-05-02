@@ -14,7 +14,6 @@ import 'package:theta_models/theta_models.dart';
 class ProjectEntity extends Equatable {
   const ProjectEntity({
     required this.id,
-    required this.slug,
     required this.teamId,
     required this.name,
     required this.updatedAt,
@@ -24,7 +23,6 @@ class ProjectEntity extends Equatable {
   final ProjectID id;
   final TeamID teamId;
   final String name;
-  final String slug;
   final DateTime createdAt;
   final DateTime updatedAt;
 
@@ -32,13 +30,11 @@ class ProjectEntity extends Equatable {
   List<Object?> get props => [
         id,
         name,
-        slug,
         teamId,
         createdAt,
         updatedAt,
       ];
 
   @override
-  String toString() =>
-      'ProjectObject { id: $id, slug: $slug, team_id: $teamId }';
+  String toString() => 'ProjectObject { id: $id, team_id: $teamId }';
 }
