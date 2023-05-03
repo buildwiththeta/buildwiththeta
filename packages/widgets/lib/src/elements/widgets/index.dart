@@ -50,8 +50,6 @@ export 'list_tile.dart';
 export 'listview.dart';
 export 'listview_builder.dart';
 export 'lottie.dart';
-export 'map.dart';
-export 'mapbuilder.dart' hide d2r;
 export 'marker.dart';
 export 'material_appbar.dart';
 export 'material_bottombar.dart';
