@@ -1,4 +1,3 @@
-import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
@@ -8,7 +7,7 @@ class BranchMapper extends Mapper<BranchEntity> {
   static const _idKey = '_id';
   static const _nameKey = 'name';
   static const _prjIdKey = 'project_id';
-  static const _entryPointPageIdKey = 'entry_point_page_id';
+  static const _defaultPageIdKey = 'default_page_id';
   static const _descriptionKey = 'description';
   static const _createdAtKey = 'created_at';
 
@@ -18,7 +17,7 @@ class BranchMapper extends Mapper<BranchEntity> {
         id: json[_idKey],
         projectID: json[_prjIdKey],
         name: json[_nameKey],
-        entryPointPageID: json[_entryPointPageIdKey],
+        defaultPageID: json[_defaultPageIdKey],
         description: json[_descriptionKey],
         createdAt: DateTime.parse(json[_createdAtKey]),
       );
@@ -38,7 +37,7 @@ class BranchMapper extends Mapper<BranchEntity> {
         _prjIdKey: branch.projectID,
         _nameKey: branch.name,
         _descriptionKey: branch.description,
-        _entryPointPageIdKey: branch.entryPointPageID,
+        _defaultPageIdKey: branch.defaultPageID,
         _createdAtKey: branch.createdAt.toIso8601String(),
       };
 
@@ -51,15 +50,16 @@ class BranchMapper extends Mapper<BranchEntity> {
   /// }
   Map<String, dynamic> toJsonForDuplication(final BranchEntity branch) => {
         _prjIdKey: branch.projectID,
+        _defaultPageIdKey: branch.defaultPageID,
         _nameKey: '${branch.name} copy',
       };
 
   BranchEntity copyWith(
     final BranchEntity e, {
-    final String? id,
-    final String? projectID,
+    final ID? id,
+    final ProjectID? projectID,
     final String? name,
-    final String? entryPointPageID,
+    final PageID? defaultPageID,
     final String? description,
     final DateTime? createdAt,
   }) =>
@@ -67,7 +67,7 @@ class BranchMapper extends Mapper<BranchEntity> {
         id: id ?? e.id,
         projectID: projectID ?? e.projectID,
         name: name ?? e.name,
-        entryPointPageID: entryPointPageID ?? e.entryPointPageID,
+        defaultPageID: defaultPageID ?? e.defaultPageID,
         description: description ?? e.description,
         createdAt: createdAt ?? e.createdAt,
       );

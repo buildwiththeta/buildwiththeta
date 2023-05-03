@@ -13,3 +13,5 @@ typedef Variables = List<VariableEntity>;
 typedef ColorStyles = List<ColorStyleEntity>;
 typedef TextStyles = List<TextStyleEntity>;
 typedef Nodes = List<CNode>;
+typedef Pages = List<PageEntity>;
+typedef Branches = List<BranchEntity>;

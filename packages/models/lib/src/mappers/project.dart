@@ -7,7 +7,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
   static const _idField = 'id';
   static const _teamIdField = 'team_id';
   static const _nameField = 'name';
-  static const _slugField = 'slug';
+  static const _defaultBranchIdField = 'default_branch_id';
   static const _updatedAtField = 'updated_at';
   static const _createdAtField = 'created_at';
 
@@ -18,6 +18,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
       id: json[_idField],
       name: json[_nameField],
       teamId: json[_teamIdField],
+      defaultBranchId: json[_defaultBranchIdField],
       updatedAt: DateTime.parse(json[_updatedAtField]),
       createdAt: DateTime.parse(json[_createdAtField]),
     );
@@ -26,6 +27,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
   @override
   Map<String, dynamic> toJson(final ProjectEntity e) => <String, dynamic>{
         _teamIdField: e.teamId,
+        _defaultBranchIdField: e.defaultBranchId,
         _nameField: e.name,
       };
 
@@ -33,6 +35,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
     required final ProjectEntity e,
     final ID? id,
     final TeamID? teamId,
+    final BranchID? defaultBranchId,
     final String? name,
     final DateTime? updatedAt,
     final DateTime? createdAt,
@@ -40,6 +43,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
     return ProjectEntity(
       id: id ?? e.id,
       teamId: teamId ?? e.teamId,
+      defaultBranchId: defaultBranchId ?? e.defaultBranchId,
       name: name ?? e.name,
       updatedAt: updatedAt ?? e.updatedAt,
       createdAt: createdAt ?? e.createdAt,

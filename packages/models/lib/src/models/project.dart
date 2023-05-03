@@ -15,6 +15,7 @@ class ProjectEntity extends Equatable {
   const ProjectEntity({
     required this.id,
     required this.teamId,
+    required this.defaultBranchId,
     required this.name,
     required this.updatedAt,
     required this.createdAt,
@@ -22,6 +23,7 @@ class ProjectEntity extends Equatable {
 
   final ProjectID id;
   final TeamID teamId;
+  final BranchID? defaultBranchId;
   final String name;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -31,6 +33,7 @@ class ProjectEntity extends Equatable {
         id,
         name,
         teamId,
+        defaultBranchId,
         createdAt,
         updatedAt,
       ];

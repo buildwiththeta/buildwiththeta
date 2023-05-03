@@ -7,7 +7,7 @@ class BranchEntity extends Equatable {
   const BranchEntity({
     required this.id,
     required this.projectID,
-    required this.entryPointPageID,
+    required this.defaultPageID,
     required this.name,
     required this.description,
     required this.createdAt,
@@ -15,12 +15,12 @@ class BranchEntity extends Equatable {
 
   final BranchID id;
   final ProjectID projectID;
-  final PageID? entryPointPageID;
+  final PageID? defaultPageID;
   final String name;
   final String? description;
   final DateTime createdAt;
 
   @override
   List<Object?> get props =>
-      [id, projectID, entryPointPageID, name, description, createdAt];
+      [id, projectID, defaultPageID, name, description, createdAt];
 }
