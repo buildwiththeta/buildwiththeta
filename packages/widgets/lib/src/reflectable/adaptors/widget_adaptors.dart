@@ -4,7 +4,6 @@ import 'package:theta_open_widgets/src/elements/widgets/animations/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/apicalls/api_calls_fetch.dart';
 import 'package:theta_open_widgets/src/elements/widgets/cta/social_button_login.dart';
 import 'package:theta_open_widgets/src/elements/widgets/google_maps/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/http_requests/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/https_requests_custom_backend/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/navigation/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/responsive/index.dart';
@@ -1356,108 +1355,6 @@ class LottieAdapter extends WidgetAdapter {
   LottieAdapter.create() : this();
 }
 
-/// Map Builder
-@dynamicAdapter
-@NodeKey(NType.mapBuilder)
-class MapBuilderAdapter extends WidgetAdapter {
-  const MapBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      WMapBuilder(
-        state: state,
-        child: state.node.child,
-        datasetInput: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        controller:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-        //action: state.node.getAttributes[DBKeys.action] as NodeGestureActions,
-        flag: state.node.getAttributes[DBKeys.flag] as bool? ?? false,
-      );
-
-  MapBuilderAdapter.create() : this();
-}
-
-/// Map
-@dynamicAdapter
-@NodeKey(NType.map)
-class MapAdapter extends WidgetAdapter {
-  const MapAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      WMap(
-        state: state,
-        children: state.node.children ?? [],
-        controller:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-        flag: state.node.getAttributes[DBKeys.flag] as bool? ?? false,
-      );
-
-  MapAdapter.create() : this();
-}
-
-/// Marker
-@dynamicAdapter
-@NodeKey(NType.marker)
-class MarkerAdapter extends WidgetAdapter {
-  const MarkerAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWMarker(
-        state: state,
-        child: state.node.child,
-        latitude: state.node.getAttributes[DBKeys.latitude] as FTextTypeInput,
-        longitude: state.node.getAttributes[DBKeys.longitude] as FTextTypeInput,
-      );
-
-  MarkerAdapter.create() : this();
-}
-
-/// Material App Bar
-@dynamicAdapter
-@NodeKey(NType.materialAppBar)
-class MaterialAppBarAdapter extends WidgetAdapter {
-  const MaterialAppBarAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWMaterialAppBar(
-        state: state,
-        children: state.node.children ?? [],
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-      );
-
-  MaterialAppBarAdapter.create() : this();
-}
-
-/// Material Bottom Bar
-@dynamicAdapter
-@NodeKey(NType.materialBottomBar)
-class MaterialBottomBarAdapter extends WidgetAdapter {
-  const MaterialBottomBarAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWMaterialBottomBar(
-        nodeState: state,
-        children: state.node.children ?? [],
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-      );
-
-  MaterialBottomBarAdapter.create() : this();
-}
-
 /// Offstage
 @dynamicAdapter
 @NodeKey(NType.offStage)
@@ -2477,25 +2374,6 @@ class LoginWithTwitterAdapter extends WidgetAdapter {
       );
 
   LoginWithTwitterAdapter.create() : this();
-}
-
-/// HttpRequest
-@dynamicAdapter
-@NodeKey(NType.httpRequest)
-class HttpRequestFutureBuilderAdapter extends WidgetAdapter {
-  const HttpRequestFutureBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWHTTPRequestFutureBuilder(
-        state: state,
-        children: state.node.children ?? [],
-        from: state.node.getAttributes[DBKeys.supabaseFrom] as FTextTypeInput,
-      );
-
-  HttpRequestFutureBuilderAdapter.create() : this();
 }
 
 /// CustomHttpRequest

@@ -37,11 +37,6 @@ dependencies:
       path: packages/open_classes
       ref: main
 
-  projects_db:
-    git:
-      url: https://github.com/teta-so/projects_db.git
-      ref: main
-
   theta_open_widgets:
     git:
       url: https://github.com/buildwiththeta/buildwiththeta.git
