@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_classes/theta_open_classes.dart';
 
 // ignore_for_file: public_member_api_docs
 
@@ -68,8 +66,7 @@ class OpenWButton extends NodeWidget {
             decoration: TetaBoxDecoration.get(
               state: state,
               context: context,
-              fill: fill.get(context, context.watch<ColorStylesCubit>().state,
-                  context.watch<ThemeCubit>().state),
+              fill: fill.get(context, state.colorStyles, state.theme),
               borderRadius: borderRadius,
             ),
             child: Center(

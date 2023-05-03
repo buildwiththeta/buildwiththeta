@@ -38,21 +38,6 @@ class AspectRatioDefaultAttributes extends DefaultAttributesAdapter {
   AspectRatioDefaultAttributes.create() : this();
 }
 
-/// Audio Player
-@dynamicDefaultAttribute
-@NodeKey(NType.audioPlayer)
-class AudioPlayerDefaultAttributes extends DefaultAttributesAdapter {
-  const AudioPlayerDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.value: FTextTypeInput(type: FTextTypeEnum.state),
-        DBKeys.datasetInput: FDataset(),
-      };
-
-  AudioPlayerDefaultAttributes.create() : this();
-}
-
 /// Audio Player Progress Indicator
 @dynamicDefaultAttribute
 @NodeKey(NType.audioPlayerProgressIndicator)
@@ -211,7 +196,7 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.textStyle: FTextStyle(
           textAlign: FTextAlign(
-            align: TextAlign.center,
+            value: TextAlign.center,
           ),
           fill: FFill(
             levels: [
@@ -225,112 +210,6 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
       };
 
   ButtonDefaultAttributes.create() : this();
-}
-
-/// Calendar
-@dynamicDefaultAttribute
-@NodeKey(NType.calendar)
-class CalendarDefaultAttributes extends DefaultAttributesAdapter {
-  const CalendarDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.datasetInput: FDataset(),
-        DBKeys.textStyle: FTextStyle(),
-        DBKeys.textStyle2: FTextStyle(),
-        DBKeys.margins: FMargins(
-          margins: [0, 0, 0, 0],
-          marginsTablet: [0, 0, 0, 0],
-          marginsDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.padding: FMargins(
-          margins: [0, 0, 0, 0],
-          marginsTablet: [0, 0, 0, 0],
-          marginsDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.borderRadius: FBorderRadius(
-          radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.shadows: FShadow(
-          x: FTextTypeInput(value: '0'),
-          y: FTextTypeInput(value: '0'),
-          spread: FTextTypeInput(value: '8'),
-          blur: FTextTypeInput(value: '16'),
-          fill: FFill(type: FFillType.none),
-          opacity: FSize(
-            size: '0',
-            sizeTablet: '0',
-            sizeDesktop: '0',
-          ),
-        ),
-        DBKeys.fill: FFill(type: FFillType.none),
-        DBKeys.bgFill: FFill(),
-        DBKeys.bgTwoFill: FFill(),
-        DBKeys.selectedItemName: FTextTypeInput(),
-        DBKeys.borderRadiusTwo: FBorderRadius(
-          radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.width: FSize(
-          size: '0',
-          sizeTablet: '0',
-          sizeDesktop: '0',
-        ),
-        DBKeys.height: FSize(
-          size: '0',
-          sizeTablet: '0',
-          sizeDesktop: '0',
-        ),
-      };
-
-  CalendarDefaultAttributes.create() : this();
-}
-
-/// CalendarV2
-@dynamicDefaultAttribute
-@NodeKey(NType.calendarV2)
-class CalendarV2DefaultAttributes extends DefaultAttributesAdapter {
-  const CalendarV2DefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.datasetInput: FDataset(),
-        DBKeys.dropdownItem: 'month',
-        DBKeys.textStyle: FTextStyle(),
-        DBKeys.textStyle2: FTextStyle(),
-        DBKeys.fill: FFill(type: FFillType.none),
-        DBKeys.bgFill: FFill(type: FFillType.none),
-        DBKeys.borderRadius: FBorderRadius(
-          radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.borderRadiusTwo: FBorderRadius(
-          radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
-        ),
-        DBKeys.shadows: FShadow(
-          x: FTextTypeInput(value: '0'),
-          y: FTextTypeInput(value: '0'),
-          spread: FTextTypeInput(value: '8'),
-          blur: FTextTypeInput(value: '16'),
-          fill: FFill(type: FFillType.none),
-          opacity: FSize(
-            size: '0',
-            sizeTablet: '0',
-            sizeDesktop: '0',
-          ),
-        ),
-        DBKeys.fill2: FFill(),
-        DBKeys.fill3: FFill(),
-        DBKeys.selectedItemName: FTextTypeInput(),
-      };
-
-  CalendarV2DefaultAttributes.create() : this();
 }
 
 /// Card
@@ -446,13 +325,13 @@ class FlexDefaultAttributes extends DefaultAttributesAdapter {
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.mainAxisAlignment: FMainAxisAlignment(
-          align: MainAxisAlignment.start,
+          value: MainAxisAlignment.start,
         ),
         DBKeys.crossAxisAlignment: FCrossAxisAlignment(
           value: CrossAxisAlignment.start,
         ),
         DBKeys.mainAxisSize: FMainAxisSize(
-          size: MainAxisSize.max,
+          value: MainAxisSize.max,
         ),
       };
 
@@ -583,7 +462,7 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
             marginsDesktop: [0, 0, 0, 0],
           ),
           style: FBorderStyle(
-            style: BorderStyle.none,
+            value: BorderStyle.none,
           ),
         ),
         DBKeys.image: FTextTypeInput(),
@@ -720,7 +599,7 @@ class DotsIndicatorDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.fill: FFill(levels: [FFillElement(color: 'a1a1a1', stop: 0)]),
         DBKeys.bgFill: FFill(levels: [FFillElement(color: '444444', stop: 0)]),
         DBKeys.borderStyle: FBorderStyle(
-          style: BorderStyle.none,
+          value: BorderStyle.none,
         ),
         DBKeys.borders: FBorder(
           fill: FFill(),
@@ -730,7 +609,7 @@ class DotsIndicatorDefaultAttributes extends DefaultAttributesAdapter {
             marginsDesktop: [0, 0, 0, 0],
           ),
           style: FBorderStyle(
-            style: BorderStyle.none,
+            value: BorderStyle.none,
           ),
         ),
         DBKeys.activeBorders: FBorder(
@@ -741,7 +620,7 @@ class DotsIndicatorDefaultAttributes extends DefaultAttributesAdapter {
             marginsDesktop: [0, 0, 0, 0],
           ),
           style: FBorderStyle(
-            style: BorderStyle.none,
+            value: BorderStyle.none,
           ),
         ),
         DBKeys.shadows: FShadow(
@@ -789,40 +668,6 @@ class AdMobBannerDefaultAttributes extends DefaultAttributesAdapter {
   AdMobBannerDefaultAttributes.create() : this();
 }
 
-/// Google Maps
-@dynamicDefaultAttribute
-@NodeKey(NType.googleMaps)
-class GoogleMapsDefaultAttributes extends DefaultAttributesAdapter {
-  const GoogleMapsDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.googleMapsController: FTextTypeInput(type: FTextTypeEnum.state),
-        DBKeys.googleMapsCubitController:
-            FTextTypeInput(type: FTextTypeEnum.state),
-        DBKeys.datasetInput: FDataset(),
-        DBKeys.markerId: FDataset(),
-        DBKeys.markerLatitude: FDataset(),
-        DBKeys.markerLongitude: FDataset(),
-        DBKeys.markerIconUrl: FDataset(),
-        DBKeys.markerIconWidth: FDataset(),
-        DBKeys.markerIconHeight: FDataset(),
-        DBKeys.mapCustomStyle: FGoogleMapsMapStyle(),
-        DBKeys.mapCustomInitialZoomLevel:
-            FTextTypeInput(value: '12', resultType: ResultTypeEnum.double),
-        DBKeys.mapInitialPositionLat: FTextTypeInput(
-            value: '41.889221', resultType: ResultTypeEnum.double),
-        DBKeys.mapInitialPositionLng: FTextTypeInput(
-            value: '12.493421', resultType: ResultTypeEnum.double),
-        DBKeys.markerDrawPathToUserCurrentLocation: FDataset(),
-        DBKeys.mapConfigShowMyLocationMarker: false,
-        DBKeys.mapConfigTrackMyLocation: false,
-        DBKeys.fill: FFill(),
-      };
-
-  GoogleMapsDefaultAttributes.create() : this();
-}
-
 /// GridView, GridView.builder
 @dynamicDefaultAttribute
 @NodeKey(NType.gridView)
@@ -839,7 +684,6 @@ class GridViewDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.crossAxisCount: FTextTypeInput(value: '2'),
         DBKeys.crossAxisSpacing: FTextTypeInput(value: '2'),
         DBKeys.childAspectRatio: FTextTypeInput(value: '1'),
-        DBKeys.datasetInput: FDataset(),
         DBKeys.value: FTextTypeInput(value: '0'),
         DBKeys.valueOfCondition: FTextTypeInput(),
       };
@@ -962,7 +806,6 @@ class ListViewDefaultAttributes extends DefaultAttributesAdapter {
 
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.datasetInput: FDataset(),
         DBKeys.isVertical: true,
         DBKeys.flag: true,
         DBKeys.isPrimary: true,
@@ -997,42 +840,11 @@ class LottieDefaultAttributes extends DefaultAttributesAdapter {
           value: 'https://assets6.lottiefiles.com/packages/lf20_c7mbzzus.json',
         ),
         DBKeys.boxFit: FBoxFit(
-          fit: BoxFit.cover,
+          value: BoxFit.cover,
         ),
       };
 
   LottieDefaultAttributes.create() : this();
-}
-
-/// Map
-@dynamicDefaultAttribute
-@NodeKey(NType.map)
-class MapDefaultAttributes extends DefaultAttributesAdapter {
-  const MapDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.datasetInput: FDataset(),
-        DBKeys.flag: true,
-        DBKeys.valueOfCondition: FTextTypeInput(),
-      };
-
-  MapDefaultAttributes.create() : this();
-}
-
-/// Marker
-@dynamicDefaultAttribute
-@NodeKey(NType.marker)
-class MarkerDefaultAttributes extends DefaultAttributesAdapter {
-  const MarkerDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.latitude: FTextTypeInput(value: '41.90'),
-        DBKeys.longitude: FTextTypeInput(value: '12.49'),
-      };
-
-  MarkerDefaultAttributes.create() : this();
 }
 
 /// Opacity
@@ -1290,7 +1102,6 @@ class TCardDefaultAttributes extends DefaultAttributesAdapter {
 
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.datasetInput: FDataset(),
         DBKeys.flag: false,
         DBKeys.width: FSize(
           size: '400',
@@ -1501,23 +1312,6 @@ class AnimationDefaultAttributes extends DefaultAttributesAdapter {
   AnimationDefaultAttributes.create() : this();
 }
 
-/// Api Calls Fetch
-@dynamicDefaultAttribute
-@NodeKey(NType.apiCallsFetch)
-class ApiCallsFetchDefaultAttributes extends DefaultAttributesAdapter {
-  const ApiCallsFetchDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.requestName: '',
-        DBKeys.apiCallsResponseName: FTextTypeInput(),
-        DBKeys.apiCallsDynamicValue: <MapElement>[],
-        DBKeys.apiCallsSelectedRequest: <String, dynamic>{},
-      };
-
-  ApiCallsFetchDefaultAttributes.create() : this();
-}
-
 /// Social login
 @dynamicDefaultAttribute
 @NodeKey(NType.loginWithApple)
@@ -1565,22 +1359,6 @@ class HttpRequestFutureBuilderDefaultAttributes
       };
 
   HttpRequestFutureBuilderDefaultAttributes.create() : this();
-}
-
-/// CustomHttpRequest
-@dynamicDefaultAttribute
-@NodeKey(NType.customHttpRequest)
-class CustomHttpRequestDefaultAttributes extends DefaultAttributesAdapter {
-  const CustomHttpRequestDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.customHttpRequestURL: FTextTypeInput(),
-        DBKeys.customHttpRequestList: <MapElement>[],
-        DBKeys.customHttpRequestHeader: <MapElement>[],
-      };
-
-  CustomHttpRequestDefaultAttributes.create() : this();
 }
 
 /// AppBar, BottomBar, Drawer

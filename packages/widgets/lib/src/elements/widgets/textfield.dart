@@ -2,10 +2,8 @@ import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_classes/theta_open_classes.dart';
 import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 
 class OpenWTextField extends StatefulWidget {
@@ -95,11 +93,11 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
       forPlay: state.forPlay,
       deviceType: state.deviceType,
     );
-    TextStyleModel? model;
+    TextStyleEntity? model;
     if (widget.textStyle.textStyleModel != null) {
-      BlocProvider.of<TextStylesCubit>(context).state.forEach((final element) {
+      for (var element in state.textStyles) {
         if (element.name == widget.textStyle.textStyleModel) model = element;
-      });
+      }
     }
     final tempOpacity = widget.fill.levels.first.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
@@ -136,14 +134,14 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             filled: true,
             fillColor: HexColor(widget.fill.getHexColor(
               context,
-              context.watch<ColorStylesCubit>().state,
-              context.watch<ThemeCubit>().state,
+              state.colorStyles,
+              state.theme,
             )).withOpacity(opacity),
             counterStyle: TextStyle(
               color: HexColor(widget.fill.getHexColor(
                 context,
-                context.watch<ColorStylesCubit>().state,
-                context.watch<ThemeCubit>().state,
+                state.colorStyles,
+                state.theme,
               )).withOpacity(opacity),
             ),
             border: OutlineInputBorder(
@@ -155,8 +153,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
                     ? HexColor(
                         widget.enabledBorderColor.getHexColor(
                           context,
-                          context.watch<ColorStylesCubit>().state,
-                          context.watch<ThemeCubit>().state,
+                          state.colorStyles,
+                          state.theme,
                         ),
                       ).withOpacity(
                         borderOpacity,
@@ -178,9 +176,10 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
                 color: widget.showBorders
                     ? HexColor(
                         widget.focusedBorderColor.getHexColor(
-                            context,
-                            context.watch<ColorStylesCubit>().state,
-                            context.watch<ThemeCubit>().state),
+                          context,
+                          state.colorStyles,
+                          state.theme,
+                        ),
                       ).withOpacity(
                         focusOpacity,
                       )
@@ -205,8 +204,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               color: HexColor(
                 widget.hintTextColor.getHexColor(
                   context,
-                  context.watch<ColorStylesCubit>().state,
-                  context.watch<ThemeCubit>().state,
+                  state.colorStyles,
+                  state.theme,
                 ),
               ).withOpacity(
                 hintOpacity,
@@ -223,7 +222,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             state.forPlay,
             model,
           ),
-          textAlign: widget.textStyle.textAlign!.align,
+          textAlign: widget.textStyle.textAlign.value,
           autocorrect: widget.autoCorrect,
           obscureText: widget.obscureText,
           maxLength: int.tryParse(

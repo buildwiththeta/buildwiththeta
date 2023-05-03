@@ -34,6 +34,8 @@ const dynamicAttributeReflector = DynamicAttributeReflector();
 
 @DynamicAttributeReflector()
 class DynamicAttributes {
+  static const _variableMapper = VariableMapper();
+
   /// fromJson for each class using Reflectable
   static dynamic fromJson(final String key, final dynamic value) {
     try {
@@ -71,67 +73,26 @@ class DynamicAttributes {
   static dynamic manualFromJson(final String key, final dynamic value) {
     try {
       switch (key) {
-        case DBKeys.mapCustomStyle:
-          return FGoogleMapsMapStyle.fromJson(value as String);
         case 'params':
           {
-            final params = <VariableObject>[];
+            final params = <VariableEntity>[];
             if (value != null) {
               for (final e in value as List<Map<String, dynamic>>) {
-                params.add(VariableObject.fromJson(e));
+                params.add(_variableMapper.fromJson(e));
               }
             }
             return params;
           }
         case 'states':
           {
-            final states = <VariableObject>[];
+            final states = <VariableEntity>[];
             if (value != null) {
               for (final e in value as List<Map<String, dynamic>>) {
-                states.add(VariableObject.fromJson(e));
+                states.add(_variableMapper.fromJson(e));
               }
             }
             return states;
           }
-        case DBKeys.customHttpRequestList:
-          {
-            final list = <MapElement>[];
-            if (value != null) {
-              for (final e in value as List<dynamic>) {
-                list.add(MapElement.fromJson(e as Map<String, dynamic>));
-              }
-            }
-            return list;
-          }
-        case DBKeys.customHttpRequestHeader:
-          {
-            final list = <MapElement>[];
-            if (value != null) {
-              for (final e in value as List<dynamic>) {
-                list.add(MapElement.fromJson(e as Map<String, dynamic>));
-              }
-            }
-            return list;
-          }
-        case DBKeys.apiCallsDynamicValue:
-          {
-            final list = <MapElement>[];
-            if (value != null) {
-              for (final e in value as List<dynamic>) {
-                list.add(MapElement.fromJson(e as Map<String, dynamic>));
-              }
-            }
-            return list;
-          }
-        case DBKeys.apiCallsSelectedRequest:
-          {
-            var map = <String, dynamic>{};
-            if (value != null) {
-              map = value as Map<String, dynamic>;
-            }
-            return map;
-          }
-
         default:
           return value;
       }

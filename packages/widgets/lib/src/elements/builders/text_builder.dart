@@ -47,9 +47,9 @@ class TextBuilder extends StatelessWidget {
         state.forPlay,
         model,
       ),
-      textAlign: textStyle.textAlign!.align,
+      textAlign: textStyle.textAlign.value,
       maxLines: intValue,
-      textDirection: textStyle.textDirection?.dir,
+      textDirection: textStyle.textDirection.value,
     );
   }
 }

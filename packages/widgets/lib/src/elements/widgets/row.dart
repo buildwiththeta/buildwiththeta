@@ -24,9 +24,9 @@ class OpenWRow extends Flex {
                   .map((final e) => e.toWidget(state: state, context: context))
                   .toList()
               : [],
-          mainAxisAlignment: mainAxisAlignment.align,
+          mainAxisAlignment: mainAxisAlignment.value,
           crossAxisAlignment: crossAxisAlignment.value,
-          mainAxisSize: mainAxisSize.get,
+          mainAxisSize: mainAxisSize.value,
         );
 
   @override

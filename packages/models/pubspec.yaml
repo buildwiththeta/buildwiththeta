@@ -34,6 +34,8 @@ dependencies:
   reflectable: ^4.0.5
 
 dependency_overrides:
+  theta_design_system:
+    path: ../DS
 
 dev_dependencies:
   flutter_test:

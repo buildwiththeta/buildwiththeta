@@ -16,6 +16,6 @@ class OpenWFittedBox extends FittedBox {
             state: state,
             child: child,
           ),
-          fit: boxFit.fit,
+          fit: boxFit.value,
         );
 }

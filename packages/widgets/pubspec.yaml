@@ -23,12 +23,6 @@ dependencies:
       path: packages/DS
       ref: main
 
-  theta_open_classes:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/open_classes
-      ref: main
-
   theta_rendering:
     git:
       url: https://github.com/buildwiththeta/buildwiththeta.git
@@ -140,6 +134,14 @@ dependencies:
 
   flutter_box_transform:
   styled_widget: ^0.4.1
+
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_design_system:
+    path: ../DS
+  theta_rendering:
+    path: ../rendering
 
 dev_dependencies:
   flutter_test:

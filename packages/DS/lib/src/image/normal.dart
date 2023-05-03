@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 class CNetworkImage extends StatelessWidget {
   const CNetworkImage({
     final Key? key,
-    required this.nid,
     required this.src,
     this.loop = 0,
     this.width,
@@ -17,7 +16,6 @@ class CNetworkImage extends StatelessWidget {
     this.fit,
   }) : super(key: key);
 
-  final int nid;
   final String src;
   final int loop;
   final double? width;

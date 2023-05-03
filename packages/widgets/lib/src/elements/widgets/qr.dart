@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_classes/theta_open_classes.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
 class OpenWQR extends NodeWidget {
@@ -44,8 +42,8 @@ class OpenWQR extends NodeWidget {
       foregroundColor: HexColor(
         fill.getHexColor(
           context,
-          context.watch<ColorStylesCubit>().state,
-          context.watch<ThemeCubit>().state,
+          state.colorStyles,
+          state.theme,
         ),
       ).withOpacity(opacity),
       embeddedImage: withImage
