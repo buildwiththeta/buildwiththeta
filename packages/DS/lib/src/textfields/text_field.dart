@@ -11,7 +11,8 @@ class ThetaTextField extends CupertinoTextField {
     final bool obscureText = false,
     final bool expands = false,
     final bool enabled = true,
-    final int maxLines = 1,
+    final int? maxLines = 1,
+    final int? minLines,
     final TextInputType keyboardType = TextInputType.text,
     final int? maxLength,
     final Function(String)? onChanged,
@@ -50,6 +51,7 @@ class ThetaTextField extends CupertinoTextField {
           expands: expands,
           enabled: enabled,
           maxLines: maxLines,
+          minLines: minLines,
           maxLength: maxLength,
         );
 }
