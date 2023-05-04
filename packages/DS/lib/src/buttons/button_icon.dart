@@ -36,10 +36,11 @@ class ThetaDesignButtonIcon extends StatelessWidget {
     return Semantics(
       button: true,
       child: CupertinoButton(
-        color: isPrimary ? Palette.buttonColor : Palette.bgGrey,
+        color: isPrimary ? Palette.buttonColor : Palette.bgTertiary,
         onPressed: () => onTap.call(),
         child: Icon(
           iconData,
+          size: 20,
           color: iconColor ?? Colors.white,
         ),
       ),

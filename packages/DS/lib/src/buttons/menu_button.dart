@@ -65,7 +65,7 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
                   color: widget.isSelected
-                      ? Palette.magenta
+                      ? Palette.buttonColor
                       : isHovered
                           ? Palette.bgTertiary
                           : Palette.bgPrimary,
