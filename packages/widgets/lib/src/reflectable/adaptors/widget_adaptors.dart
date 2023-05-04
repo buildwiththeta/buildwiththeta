@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/widgets/animations/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/apicalls/api_calls_fetch.dart';
 import 'package:theta_open_widgets/src/elements/widgets/cta/social_button_login.dart';
-import 'package:theta_open_widgets/src/elements/widgets/google_maps/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/https_requests_custom_backend/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/navigation/index.dart';
 import 'package:theta_open_widgets/src/elements/widgets/responsive/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/supabase/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/teta_cms/index.dart';
-import 'package:theta_open_widgets/src/elements/widgets/teta_store/index.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Align
@@ -52,68 +46,6 @@ class AspectRatioAdapter extends WidgetAdapter {
       );
 
   AspectRatioAdapter.create() : this();
-}
-
-/// Audio Player
-@dynamicAdapter
-@NodeKey(NType.audioPlayer)
-class AudioPlayerAdapter extends WidgetAdapter {
-  const AudioPlayerAdapter();
-
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWAudioPlayer(
-        state: state,
-        controller: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        selectedDataset:
-            state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        child: state.node.child,
-      );
-
-  AudioPlayerAdapter.create() : this();
-}
-
-/// Audio Player Progress Indicator
-@dynamicAdapter
-@NodeKey(NType.audioPlayerProgressIndicator)
-class AudioPlayerProgressIndicatorAdapter extends WidgetAdapter {
-  const AudioPlayerProgressIndicatorAdapter();
-
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWAudioPlayerProgressIndicator(
-        state: state,
-        controller: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        child: state.node.child,
-      );
-
-  AudioPlayerProgressIndicatorAdapter.create() : this();
-}
-
-/// Audio Player Volume Indicator
-@dynamicAdapter
-@NodeKey(NType.audioPlayerVolumeIndicator)
-class AudioPlayerVolumeIndicatorAdapter extends WidgetAdapter {
-  const AudioPlayerVolumeIndicatorAdapter();
-
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWAudioPlayerVolumeIndicator(
-        state: state,
-        controller: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        child: state.node.child,
-      );
-
-  AudioPlayerVolumeIndicatorAdapter.create() : this();
 }
 
 /// Badge
@@ -245,77 +177,6 @@ class ButtonAdapter extends WidgetAdapter {
       );
 
   ButtonAdapter.create() : this();
-}
-
-/// Calendar
-@dynamicAdapter
-@NodeKey(NType.calendar)
-class CalendarAdaptor extends WidgetAdapter {
-  const CalendarAdaptor();
-
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCalendar(
-        state: state,
-        children: state.node.children ?? <CNode>[],
-        selectedItemName:
-            state.node.getAttributes[DBKeys.selectedItemName] as FTextTypeInput,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        textStyle: state.node.getAttributes[DBKeys.textStyle] as FTextStyle,
-        textStyle2: state.node.getAttributes[DBKeys.textStyle2] as FTextStyle,
-        margins: state.node.getAttributes[DBKeys.margins] as FMargins,
-        padding: state.node.getAttributes[DBKeys.padding] as FMargins,
-        borderRadius:
-            state.node.getAttributes[DBKeys.borderRadius] as FBorderRadius,
-        shadows: state.node.getAttributes[DBKeys.shadows] as FShadow,
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-        fill2: state.node.getAttributes[DBKeys.bgFill] as FFill,
-        fillEventCount: state.node.getAttributes[DBKeys.bgTwoFill] as FFill,
-        borderRaiudEventCount:
-            state.node.getAttributes[DBKeys.borderRadiusTwo] as FBorderRadius,
-        widthEventCount: state.node.getAttributes[DBKeys.width] as FSize,
-        heightEventCount: state.node.getAttributes[DBKeys.height] as FSize,
-      );
-
-  CalendarAdaptor.create() : this();
-}
-
-/// Calendar V2
-@dynamicAdapter
-@NodeKey(NType.calendarV2)
-class CalendarV2Adaptor extends WidgetAdapter {
-  const CalendarV2Adaptor();
-
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCalendarV2(
-        nodeState: state,
-        children: state.node.children ?? <CNode>[],
-        calendarEvents:
-            state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        selectedItemName:
-            state.node.getAttributes[DBKeys.selectedItemName] as FTextTypeInput,
-        calendarView: state.node.getAttributes[DBKeys.dropdownItem] as String,
-        textStyle: state.node.getAttributes[DBKeys.textStyle] as FTextStyle,
-        textStyle2: state.node.getAttributes[DBKeys.textStyle2] as FTextStyle,
-        selectedFill: state.node.getAttributes[DBKeys.fill] as FFill,
-        unselectedFill: state.node.getAttributes[DBKeys.bgFill] as FFill,
-        borderRadius:
-            state.node.getAttributes[DBKeys.borderRadius] as FBorderRadius,
-        shadows: state.node.getAttributes[DBKeys.shadows] as FShadow,
-        iconFill: state.node.getAttributes[DBKeys.fill2] as FFill,
-        dotFill: state.node.getAttributes[DBKeys.fill3] as FFill,
-        dotBorderRadius:
-            state.node.getAttributes[DBKeys.borderRadiusTwo] as FBorderRadius,
-      );
-
-  CalendarV2Adaptor.create() : this();
 }
 
 /// Card
@@ -477,26 +338,6 @@ class ColumnAdapter extends WidgetAdapter {
       );
 
   ColumnAdapter.create() : this();
-}
-
-/// Component
-@dynamicAdapter
-@NodeKey(NType.component)
-class ComponentAdapter extends WidgetAdapter {
-  const ComponentAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWComponent(
-        state: state,
-        componentName: state.node.getAttributes[DBKeys.componentName] as String,
-        paramsToSend: state.node.getAttributes[DBKeys.paramsToSend]
-            as Map<String, dynamic>,
-      );
-
-  ComponentAdapter.create() : this();
 }
 
 /// Concentric Page
@@ -795,170 +636,6 @@ class GestureDetectorAdapter extends WidgetAdapter {
   GestureDetectorAdapter.create() : this();
 }
 
-/// Google Admob Banner
-@dynamicAdapter
-@NodeKey(NType.adMobBanner)
-class GoogleAdMobBannerAdapter extends WidgetAdapter {
-  const GoogleAdMobBannerAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWGoogleAdMobBannerAd(
-        state: state,
-        adMobAdIosUnitId: state.node.getAttributes[DBKeys.adMobAdIosUnitId]
-                as FTextTypeInput? ??
-            const FTextTypeInput(),
-        adMobAdAndroidUnitId:
-            state.node.getAttributes[DBKeys.adMobAdAndroidUnitId]
-                    as FTextTypeInput? ??
-                const FTextTypeInput(),
-      );
-
-  GoogleAdMobBannerAdapter.create() : this();
-}
-
-/// Google Maps
-@dynamicAdapter
-@NodeKey(NType.googleMaps)
-class GoogleMapsAdapter extends WidgetAdapter {
-  const GoogleMapsAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      WGoogleMaps(
-        state: state,
-        child: state.node.child,
-        mapControllerName:
-            (state.node.getAttributes[DBKeys.googleMapsController]
-                        as FTextTypeInput)
-                    .stateName ??
-                '',
-        markersDatasetName:
-            (state.node.getAttributes[DBKeys.datasetInput] as FDataset)
-                    .datasetName ??
-                '',
-        markerId: (state.node.getAttributes[DBKeys.markerId] as FDataset)
-                .datasetAttrName ??
-            '',
-        markerLatitude:
-            (state.node.getAttributes[DBKeys.markerLatitude] as FDataset)
-                    .datasetAttrName ??
-                '',
-        markerLongitude:
-            (state.node.getAttributes[DBKeys.markerLongitude] as FDataset)
-                    .datasetAttrName ??
-                '',
-        markerIconUrl:
-            (state.node.getAttributes[DBKeys.markerIconUrl] as FDataset)
-                    .datasetAttrName ??
-                '',
-        markerIconWidth:
-            (state.node.getAttributes[DBKeys.markerIconWidth] as FDataset)
-                    .datasetAttrName ??
-                '',
-        markerIconHeight:
-            (state.node.getAttributes[DBKeys.markerIconHeight] as FDataset)
-                    .datasetAttrName ??
-                '',
-        drawPathFromUserGeolocationToMarker: (state.node.getAttributes[
-                    DBKeys.markerDrawPathToUserCurrentLocation] as FDataset)
-                .datasetAttrName ??
-            '',
-        mapStyle: state.node.getAttributes[DBKeys.mapCustomStyle]
-            as FGoogleMapsMapStyle,
-        initialPositionLat: (state.node
-                .getAttributes[DBKeys.mapInitialPositionLat] as FTextTypeInput)
-            .toCode(state.loop, resultType: ResultTypeEnum.double),
-        initialPositionLng: (state.node
-                .getAttributes[DBKeys.mapInitialPositionLng] as FTextTypeInput)
-            .toCode(state.loop, resultType: ResultTypeEnum.double),
-        showMyLocationMarker: state
-            .node.getAttributes[DBKeys.mapConfigShowMyLocationMarker] as bool,
-        initialZoomLevel:
-            (state.node.getAttributes[DBKeys.mapCustomInitialZoomLevel]
-                    as FTextTypeInput)
-                .toCode(state.loop, resultType: ResultTypeEnum.double),
-        trackMyLocation:
-            state.node.getAttributes[DBKeys.mapConfigTrackMyLocation] as bool,
-        pathColor: state.node.getAttributes[DBKeys.fill] as FFill,
-        cubitName: (state.node.getAttributes[DBKeys.googleMapsCubitController]
-                    as FTextTypeInput)
-                .stateName ??
-            '',
-      );
-
-  GoogleMapsAdapter.create() : this();
-}
-
-// TODO: Implement a generic method 'GeneralGridViewAdapter' to handle both GridView and GridView Builder
-
-/// GridView Builder
-//@NodeKey(NType.gridViewBuilder)
-//@NodeKey(NType.gridView)
-class GenericGridViewAdapter extends WidgetAdapter {
-  const GenericGridViewAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) {
-    if (state.node.getAttributes[DBKeys.datasetInput] != null &&
-        (state.node.getAttributes[DBKeys.datasetInput] as FDataset?)
-                ?.datasetName !=
-            null) {
-      return const GridViewBuilderAdapter().toWidget(
-        context: context,
-        state: state,
-      );
-    } else {
-      return const GridViewAdapter().toWidget(
-        context: context,
-        state: state,
-      );
-    }
-  }
-
-  GenericGridViewAdapter.create() : this();
-}
-
-/// GridView Builder
-@dynamicAdapter
-@NodeKey(NType.gridViewBuilder)
-class GridViewBuilderAdapter extends WidgetAdapter {
-  const GridViewBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWGridViewBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        primary: state.node.getAttributes[DBKeys.isPrimary] as bool,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-        mainAxisSpacing:
-            state.node.getAttributes[DBKeys.mainAxisSpacing] as FTextTypeInput,
-        childAspectRatio:
-            state.node.getAttributes[DBKeys.childAspectRatio] as FTextTypeInput,
-        crossAxisCount:
-            state.node.getAttributes[DBKeys.crossAxisCount] as FTextTypeInput,
-        crossAxisSpacing:
-            state.node.getAttributes[DBKeys.crossAxisSpacing] as FTextTypeInput,
-        startFromIndex:
-            state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        limit:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-      );
-
-  GridViewBuilderAdapter.create() : this();
-}
-
 /// GridView
 @dynamicAdapter
 @NodeKey(NType.gridView)
@@ -1022,7 +699,7 @@ class IconAdapter extends WidgetAdapter {
     required final WidgetState state,
   }) {
     final iconType =
-        (state.node.getAttributes[DBKeys.iconType] as FIconType).library;
+        (state.node.getAttributes[DBKeys.iconType] as FIconType).value;
     if (iconType == IconLibrary.feather) {
       return const IconFeatherAdapter().toWidget(
         context: context,
@@ -1247,65 +924,6 @@ class ListTileAdapter extends WidgetAdapter {
       );
 
   ListTileAdapter.create() : this();
-}
-
-/// Generic ListView
-/// If dataset is set, use ListViewBuilder
-/// else use ListView
-//@NodeKey(NType.listViewBuilder)
-//@NodeKey(NType.listView)
-class ListViewGenericAdapter extends WidgetAdapter {
-  const ListViewGenericAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) {
-    if (state.node.getAttributes[DBKeys.datasetInput] != null &&
-        (state.node.getAttributes[DBKeys.datasetInput] as FDataset)
-                .datasetName !=
-            null) {
-      return const ListViewBuilderAdapter().toWidget(
-        context: context,
-        state: state,
-      );
-    } else {
-      return const ListViewAdapter().toWidget(
-        context: context,
-        state: state,
-      );
-    }
-  }
-
-  ListViewGenericAdapter.create() : this();
-}
-
-/// ListView Builder
-@dynamicAdapter
-@NodeKey(NType.listViewBuilder)
-class ListViewBuilderAdapter extends WidgetAdapter {
-  const ListViewBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWListViewBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-        isReverse: state.node.getAttributes[DBKeys.isFullWidth] as bool,
-        physic: state.node.getAttributes[DBKeys.physic] as FPhysic,
-        //action: state.node.getAttributes[DBKeys.action] as NodeGestureActions,
-        startFromIndex:
-            state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        limit:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-      );
-
-  ListViewBuilderAdapter.create() : this();
 }
 
 /// ListView
@@ -1737,29 +1355,6 @@ class StackAdapter extends WidgetAdapter {
   StackAdapter.create() : this();
 }
 
-/// TCard Builder
-@dynamicAdapter
-@NodeKey(NType.tcardBuilder)
-class TCardBuilderAdapter extends WidgetAdapter {
-  const TCardBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWTCardBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        lockYAxis: state.node.getAttributes[DBKeys.flag] as bool,
-        slideSpeed: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        delaySlideFor:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-      );
-
-  TCardBuilderAdapter.create() : this();
-}
-
 /// TCard
 @dynamicAdapter
 @NodeKey(NType.tcard)
@@ -1962,26 +1557,6 @@ class VisibilityAdapter extends WidgetAdapter {
   VisibilityAdapter.create() : this();
 }
 
-/// Webview
-@dynamicAdapter
-@NodeKey(NType.webview)
-class WebViewAdapter extends WidgetAdapter {
-  const WebViewAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWWebViewXPage(
-        state: state,
-        controller: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        url:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-      );
-
-  WebViewAdapter.create() : this();
-}
-
 /// Wrap
 @dynamicAdapter
 @NodeKey(NType.wrap)
@@ -2095,32 +1670,6 @@ class SlideAdapter extends WidgetAdapter {
       );
 
   SlideAdapter.create() : this();
-}
-
-/// Api Calls Fetch
-@dynamicAdapter
-@NodeKey(NType.apiCallsFetch)
-class ApiCallsFetchAdapter extends WidgetAdapter {
-  const ApiCallsFetchAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWApiCallsFetch(
-        state: state,
-        children: state.node.children ?? [],
-        requestName: state.node.getAttributes[DBKeys.requestName] as String,
-        apiCallsResponseName: state
-            .node.getAttributes[DBKeys.apiCallsResponseName] as FTextTypeInput,
-        apiCallsDynamicValue: state.node
-            .getAttributes[DBKeys.apiCallsDynamicValue] as List<MapElement>,
-        apiCallsSelectedRequest:
-            state.node.getAttributes[DBKeys.apiCallsSelectedRequest]
-                as Map<String, dynamic>,
-      );
-
-  ApiCallsFetchAdapter.create() : this();
 }
 
 /// Login with Apple
@@ -2376,30 +1925,6 @@ class LoginWithTwitterAdapter extends WidgetAdapter {
   LoginWithTwitterAdapter.create() : this();
 }
 
-/// CustomHttpRequest
-@dynamicAdapter
-@NodeKey(NType.customHttpRequest)
-class CustomHttpRequestAdapter extends WidgetAdapter {
-  const CustomHttpRequestAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCustomHttpRequest(
-        state: state,
-        children: state.node.children ?? [],
-        url: state.node.getAttributes[DBKeys.customHttpRequestURL]
-            as FTextTypeInput,
-        addParams: state.node.getAttributes[DBKeys.customHttpRequestList]
-            as List<MapElement>,
-        addHeaders: state.node.getAttributes[DBKeys.customHttpRequestHeader]
-            as List<MapElement>,
-      );
-
-  CustomHttpRequestAdapter.create() : this();
-}
-
 /// AppBar
 @dynamicAdapter
 @NodeKey(NType.appBar)
@@ -2471,278 +1996,4 @@ class WrapperAdapter extends WidgetAdapter {
       );
 
   WrapperAdapter.create() : this();
-}
-
-/// Supabase Future Builder
-@dynamicAdapter
-@NodeKey(NType.supabaseFutureBuilder)
-class SupabaseFutureBuilderAdapter extends WidgetAdapter {
-  const SupabaseFutureBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWSupabaseFutureBuilder(
-        state: state,
-        children: state.node.children ?? [],
-        from: state.node.getAttributes[DBKeys.supabaseFrom] as FTextTypeInput,
-        select:
-            state.node.getAttributes[DBKeys.supabaseSelect] as FTextTypeInput,
-        order: state.node.getAttributes[DBKeys.supabaseOrder] as FTextTypeInput,
-        fromRange: state.node.getAttributes[DBKeys.supabaseFromRange]
-            as FTextTypeInput,
-        toRange:
-            state.node.getAttributes[DBKeys.supabaseToRange] as FTextTypeInput,
-        numberPage: state.node.getAttributes[DBKeys.supabaseNumberPage]
-            as FTextTypeInput,
-        searchName: state.node.getAttributes[DBKeys.supabaseSearchName]
-            as FTextTypeInput,
-        searchValue: state.node.getAttributes[DBKeys.supabaseSearchValue]
-            as FTextTypeInput,
-        eqName:
-            state.node.getAttributes[DBKeys.supabaseEqName] as FTextTypeInput,
-        eqValue:
-            state.node.getAttributes[DBKeys.supabaseEqValue] as FTextTypeInput,
-      );
-
-  SupabaseFutureBuilderAdapter.create() : this();
-}
-
-/// Supabase Stream Builder
-@dynamicAdapter
-@NodeKey(NType.supabaseStreamBuilder)
-class SupabaseStreamBuilderAdapter extends WidgetAdapter {
-  const SupabaseStreamBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWSupabaseStreamBuilder(
-        state: state,
-        children: state.node.children ?? [],
-        from: state.node.getAttributes[DBKeys.supabaseFrom] as FTextTypeInput,
-        order: state.node.getAttributes[DBKeys.supabaseOrder] as FTextTypeInput,
-        fromRange: state.node.getAttributes[DBKeys.supabaseFromRange]
-            as FTextTypeInput,
-      );
-
-  SupabaseStreamBuilderAdapter.create() : this();
-}
-
-/// Supabase Logged
-@dynamicAdapter
-@NodeKey(NType.supabaseLoggedUser)
-class SupabaseLoggedUserAdapter extends WidgetAdapter {
-  const SupabaseLoggedUserAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWSupabaseLoggedUser(
-        state: state,
-        child: state.node.child,
-      );
-
-  SupabaseLoggedUserAdapter.create() : this();
-}
-
-/// Theta DB Count
-@dynamicAdapter
-@NodeKey(NType.cmsCount)
-class CMSCountAdapter extends WidgetAdapter {
-  const CMSCountAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCmsCount(
-        state: state,
-        children: state.node.children ?? [],
-        collection:
-            state.node.getAttributes[DBKeys.cmsCollection] as FTextTypeInput,
-        limit: state.node.getAttributes[DBKeys.cmsLimit] as FTextTypeInput,
-        page: state.node.getAttributes[DBKeys.cmsPage] as FTextTypeInput,
-        keyName: state.node.getAttributes[DBKeys.cmsLikeKey] as FTextTypeInput,
-        keyValue:
-            state.node.getAttributes[DBKeys.cmsLikeValue] as FTextTypeInput,
-        showDrafts: state.node.getAttributes[DBKeys.flag] as bool? ?? false,
-      );
-
-  CMSCountAdapter.create() : this();
-}
-
-/// Theta DB Custom Query
-@dynamicAdapter
-@NodeKey(NType.cmsCustomQuery)
-class CMSCustomQueryAdapter extends WidgetAdapter {
-  const CMSCustomQueryAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCmsCustomQuery(
-        state: state,
-        children: state.node.children ?? [],
-        query: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-      );
-
-  CMSCustomQueryAdapter.create() : this();
-}
-
-/// Theta DB Fetch
-@dynamicAdapter
-@NodeKey(NType.cmsFetch)
-class CMSFetchAdapter extends WidgetAdapter {
-  const CMSFetchAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCmsFetch(
-        state: state,
-        children: state.node.children ?? [],
-        collection:
-            state.node.getAttributes[DBKeys.cmsCollection] as FTextTypeInput,
-        limit: state.node.getAttributes[DBKeys.cmsLimit] as FTextTypeInput,
-        page: state.node.getAttributes[DBKeys.cmsPage] as FTextTypeInput,
-        keyName: state.node.getAttributes[DBKeys.cmsLikeKey] as FTextTypeInput,
-        keyValue:
-            state.node.getAttributes[DBKeys.cmsLikeValue] as FTextTypeInput,
-        showDrafts: state.node.getAttributes[DBKeys.flag] as bool? ?? false,
-      );
-
-  CMSFetchAdapter.create() : this();
-}
-
-/// Theta DB Stream
-@dynamicAdapter
-@NodeKey(NType.cmsStream)
-class CMSStreamAdapter extends WidgetAdapter {
-  const CMSStreamAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCmsStream(
-        state: state,
-        children: state.node.children ?? [],
-        collection:
-            state.node.getAttributes[DBKeys.cmsCollection] as FTextTypeInput,
-        limit: state.node.getAttributes[DBKeys.cmsLimit] as FTextTypeInput,
-        page: state.node.getAttributes[DBKeys.cmsPage] as FTextTypeInput,
-        keyName: state.node.getAttributes[DBKeys.cmsLikeKey] as FTextTypeInput,
-        keyValue:
-            state.node.getAttributes[DBKeys.cmsLikeValue] as FTextTypeInput,
-        showDrafts: state.node.getAttributes[DBKeys.flag] as bool? ?? false,
-      );
-
-  CMSStreamAdapter.create() : this();
-}
-
-/// Theta DB Logged User
-@dynamicAdapter
-@NodeKey(NType.cmsLoggedUser)
-class CMSLoggedUserAdapter extends WidgetAdapter {
-  const CMSLoggedUserAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCMSLoggedUser(
-        state: state,
-        children: state.node.children ?? [],
-      );
-
-  CMSLoggedUserAdapter.create() : this();
-}
-
-/// Theta Store Cart Items Builder
-@dynamicAdapter
-@NodeKey(NType.tetaStoreCartItemsBuilder)
-class TetaStoreCartItemsBuilderAdapter extends WidgetAdapter {
-  const TetaStoreCartItemsBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWTetaStoreCartItemsBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-      );
-
-  TetaStoreCartItemsBuilderAdapter.create() : this();
-}
-
-/// Theta Store Products Builder
-@dynamicAdapter
-@NodeKey(NType.tetaStoreProductsBuilder)
-class TetaStoreProductsBuilderAdapter extends WidgetAdapter {
-  const TetaStoreProductsBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWTetaStoreProductsBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-      );
-
-  TetaStoreProductsBuilderAdapter.create() : this();
-}
-
-/// Theta Store Shipping Builder
-@dynamicAdapter
-@NodeKey(NType.tetaStoreShippingBuilder)
-class TetaStoreShippingBuilderAdapter extends WidgetAdapter {
-  const TetaStoreShippingBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWTetaStoreShippingBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-      );
-
-  TetaStoreShippingBuilderAdapter.create() : this();
-}
-
-/// Theta Store Transaction Builder
-@dynamicAdapter
-@NodeKey(NType.tetaStoreTransactionsBuilder)
-class TetaStoreTransactionBuilderAdapter extends WidgetAdapter {
-  const TetaStoreTransactionBuilderAdapter();
-  @override
-  dynamic toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWTetaStoreTransactionsBuilder(
-        state: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.datasetInput] as FDataset,
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-      );
-  TetaStoreTransactionBuilderAdapter.create() : this();
 }

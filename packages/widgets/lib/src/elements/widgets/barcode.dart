@@ -2,11 +2,9 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_classes/theta_open_classes.dart';
 
 class OpenWBarcode extends NodeWidget {
   /// Returns a [Align] widget in Teta
@@ -63,8 +61,8 @@ class OpenWBarcode extends NodeWidget {
       color: HexColor(
         fill.getHexColor(
           context,
-          context.watch<ColorStylesCubit>().state,
-          context.watch<ThemeCubit>().state,
+          state.colorStyles,
+          state.theme,
         ),
       ).withOpacity(opacity),
     );

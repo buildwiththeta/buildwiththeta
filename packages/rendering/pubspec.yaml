@@ -26,3 +26,5 @@ dev_dependencies:
   flutter_lints: ^2.0.1
 
 dependency_overrides:
+  theta_models:
+    path: ../models

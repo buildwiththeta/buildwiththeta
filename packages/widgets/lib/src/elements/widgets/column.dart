@@ -24,9 +24,9 @@ class OpenWColumn extends Flex {
                   .map((final e) => e.toWidget(context: context, state: state))
                   .toList()
               : [],
-          mainAxisAlignment: mainAxisAlignment.align,
+          mainAxisAlignment: mainAxisAlignment.value,
           crossAxisAlignment: crossAxisAlignment.value,
-          mainAxisSize: mainAxisSize.get,
+          mainAxisSize: mainAxisSize.value,
         );
 
   @override

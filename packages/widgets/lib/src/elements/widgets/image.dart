@@ -120,7 +120,7 @@ class _WImageState extends State<OpenWImage> with AfterLayoutMixin {
             context: context,
             isWidth: false,
           ),
-          fit: widget.boxFit.fit,
+          fit: widget.boxFit.value,
         ),
       ),
     );
@@ -163,7 +163,6 @@ class _LocalImageState extends State<_LocalImage> {
                 fit: widget.fit,
               )
         : CNetworkImage(
-          
             src: widget.result == ''
                 ? 'https://ymvwltogicatbkjlaswo.supabase.co/storage/v1/object/public/assets/Frame%203.jpg'
                 : '${widget.result}',

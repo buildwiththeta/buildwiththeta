@@ -20,6 +20,13 @@ class AlignOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.align,
@@ -49,6 +56,13 @@ class AlignOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AlignOpenNode(
         id: id ?? this.id,
@@ -60,6 +74,15 @@ class AlignOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -103,6 +126,13 @@ class AspectRatioOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.aspectRatio,
@@ -132,6 +162,13 @@ class AspectRatioOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AspectRatioOpenNode(
         id: id ?? this.id,
@@ -143,6 +180,15 @@ class AspectRatioOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -186,6 +232,13 @@ class AudioPlayerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.audioPlayer,
@@ -215,6 +268,13 @@ class AudioPlayerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AudioPlayerOpenNode(
         id: id ?? this.id,
@@ -226,6 +286,15 @@ class AudioPlayerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -269,6 +338,13 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.audioPlayerProgressIndicator,
@@ -299,6 +375,13 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -310,6 +393,15 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -353,6 +445,13 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.audioPlayerVolumeIndicator,
@@ -383,6 +482,13 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
         id: id ?? this.id,
@@ -394,6 +500,15 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -437,6 +552,13 @@ class BadgeOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.badge,
@@ -466,6 +588,13 @@ class BadgeOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       BadgeOpenNode(
         id: id ?? this.id,
@@ -477,6 +606,15 @@ class BadgeOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -520,6 +658,13 @@ class BarcodeOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.barcode,
@@ -549,6 +694,13 @@ class BarcodeOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       BarcodeOpenNode(
         id: id ?? this.id,
@@ -560,6 +712,15 @@ class BarcodeOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -603,6 +764,13 @@ class BottomBarItemOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.bottombaritem,
@@ -632,6 +800,13 @@ class BottomBarItemOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       BottomBarItemOpenNode(
         id: id ?? this.id,
@@ -643,6 +818,15 @@ class BottomBarItemOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -686,6 +870,13 @@ class BouncingWidgetOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.bouncingWidget,
@@ -715,6 +906,13 @@ class BouncingWidgetOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       BouncingWidgetOpenNode(
         id: id ?? this.id,
@@ -726,6 +924,15 @@ class BouncingWidgetOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -769,6 +976,13 @@ class ButtonOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.button,
@@ -798,6 +1012,13 @@ class ButtonOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ButtonOpenNode(
         id: id ?? this.id,
@@ -809,6 +1030,15 @@ class ButtonOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -852,6 +1082,13 @@ class CalendarOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.calendar,
@@ -881,6 +1118,13 @@ class CalendarOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CalendarOpenNode(
         id: id ?? this.id,
@@ -892,6 +1136,15 @@ class CalendarOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -935,6 +1188,13 @@ class CalendarV2OpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.calendarV2,
@@ -964,6 +1224,13 @@ class CalendarV2OpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CalendarV2OpenNode(
         id: id ?? this.id,
@@ -975,6 +1242,15 @@ class CalendarV2OpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1018,6 +1294,13 @@ class CardOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.card,
@@ -1047,6 +1330,13 @@ class CardOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CardOpenNode(
         id: id ?? this.id,
@@ -1058,6 +1348,15 @@ class CardOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1101,6 +1400,13 @@ class CenterOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.center,
@@ -1130,6 +1436,13 @@ class CenterOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CenterOpenNode(
         id: id ?? this.id,
@@ -1141,6 +1454,15 @@ class CenterOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1184,6 +1506,13 @@ class CheckboxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.checkbox,
@@ -1213,6 +1542,13 @@ class CheckboxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CheckboxOpenNode(
         id: id ?? this.id,
@@ -1224,6 +1560,15 @@ class CheckboxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1267,6 +1612,13 @@ class CircularProgressIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.circularProgressIndicator,
@@ -1297,6 +1649,13 @@ class CircularProgressIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CircularProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -1308,6 +1667,15 @@ class CircularProgressIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1351,6 +1719,13 @@ class ClipOvalOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.clipOval,
@@ -1380,6 +1755,13 @@ class ClipOvalOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ClipOvalOpenNode(
         id: id ?? this.id,
@@ -1391,6 +1773,15 @@ class ClipOvalOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1434,6 +1825,13 @@ class ClipRectOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.clipRect,
@@ -1463,6 +1861,13 @@ class ClipRectOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ClipRectOpenNode(
         id: id ?? this.id,
@@ -1474,6 +1879,15 @@ class ClipRectOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1517,6 +1931,13 @@ class ClipRRectOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.clipRoundedRect,
@@ -1546,6 +1967,13 @@ class ClipRRectOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ClipRRectOpenNode(
         id: id ?? this.id,
@@ -1557,6 +1985,15 @@ class ClipRRectOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1600,6 +2037,13 @@ class ColumnOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.column,
@@ -1629,6 +2073,13 @@ class ColumnOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ColumnOpenNode(
         id: id ?? this.id,
@@ -1640,6 +2091,15 @@ class ColumnOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1683,6 +2143,13 @@ class ComponentOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.component,
@@ -1712,6 +2179,13 @@ class ComponentOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ComponentOpenNode(
         id: id ?? this.id,
@@ -1723,6 +2197,15 @@ class ComponentOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1766,6 +2249,13 @@ class RowOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.row,
@@ -1795,6 +2285,13 @@ class RowOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RowOpenNode(
         id: id ?? this.id,
@@ -1806,6 +2303,15 @@ class RowOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1849,6 +2355,13 @@ class ConcentricPageViewOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.concentricPageView,
@@ -1879,6 +2392,13 @@ class ConcentricPageViewOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ConcentricPageViewOpenNode(
         id: id ?? this.id,
@@ -1890,6 +2410,15 @@ class ConcentricPageViewOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1933,6 +2462,13 @@ class ConditionOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.condition,
@@ -1962,6 +2498,13 @@ class ConditionOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ConditionOpenNode(
         id: id ?? this.id,
@@ -1973,6 +2516,15 @@ class ConditionOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2016,6 +2568,13 @@ class ContainerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.container,
@@ -2045,6 +2604,13 @@ class ContainerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ContainerOpenNode(
         id: id ?? this.id,
@@ -2056,6 +2622,15 @@ class ContainerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2099,6 +2674,13 @@ class ConstrainedBoxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.constrainedBox,
@@ -2128,6 +2710,13 @@ class ConstrainedBoxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ConstrainedBoxOpenNode(
         id: id ?? this.id,
@@ -2139,6 +2728,15 @@ class ConstrainedBoxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2182,6 +2780,13 @@ class LimitedBoxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.limitedBox,
@@ -2211,6 +2816,13 @@ class LimitedBoxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LimitedBoxOpenNode(
         id: id ?? this.id,
@@ -2222,6 +2834,15 @@ class LimitedBoxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2265,6 +2886,13 @@ class SizedBoxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.sizedBox,
@@ -2294,6 +2922,13 @@ class SizedBoxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SizedBoxOpenNode(
         id: id ?? this.id,
@@ -2305,6 +2940,15 @@ class SizedBoxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2348,6 +2992,13 @@ class DecoratedBoxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.decoratedBox,
@@ -2377,6 +3028,13 @@ class DecoratedBoxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       DecoratedBoxOpenNode(
         id: id ?? this.id,
@@ -2388,6 +3046,15 @@ class DecoratedBoxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2431,6 +3098,13 @@ class ImageOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.image,
@@ -2460,6 +3134,13 @@ class ImageOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ImageOpenNode(
         id: id ?? this.id,
@@ -2471,6 +3152,15 @@ class ImageOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2514,6 +3204,13 @@ class CupertinoPickerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cupertinoPicker,
@@ -2543,6 +3240,13 @@ class CupertinoPickerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CupertinoPickerOpenNode(
         id: id ?? this.id,
@@ -2554,6 +3258,15 @@ class CupertinoPickerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2597,6 +3310,13 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cupertinoSegmentedControl,
@@ -2627,6 +3347,13 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CupertinoSegmentedControlOpenNode(
         id: id ?? this.id,
@@ -2638,6 +3365,15 @@ class CupertinoSegmentedControlOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2681,6 +3417,13 @@ class CupertinoSwitchOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cupertinoSwitch,
@@ -2710,6 +3453,13 @@ class CupertinoSwitchOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CupertinoSwitchOpenNode(
         id: id ?? this.id,
@@ -2721,6 +3471,15 @@ class CupertinoSwitchOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2764,6 +3523,13 @@ class DividerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.divider,
@@ -2793,6 +3559,13 @@ class DividerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       DividerOpenNode(
         id: id ?? this.id,
@@ -2804,6 +3577,15 @@ class DividerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2847,6 +3629,13 @@ class DotsIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.dotsIndicator,
@@ -2876,6 +3665,13 @@ class DotsIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       DotsIndicatorOpenNode(
         id: id ?? this.id,
@@ -2887,6 +3683,15 @@ class DotsIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2930,6 +3735,13 @@ class ExpandedOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.expanded,
@@ -2959,6 +3771,13 @@ class ExpandedOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ExpandedOpenNode(
         id: id ?? this.id,
@@ -2970,6 +3789,15 @@ class ExpandedOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3013,6 +3841,13 @@ class AdMobBannerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.adMobBanner,
@@ -3042,6 +3877,13 @@ class AdMobBannerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AdMobBannerOpenNode(
         id: id ?? this.id,
@@ -3053,6 +3895,15 @@ class AdMobBannerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3096,6 +3947,13 @@ class GoogleMapsOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.googleMaps,
@@ -3125,6 +3983,13 @@ class GoogleMapsOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       GoogleMapsOpenNode(
         id: id ?? this.id,
@@ -3136,6 +4001,15 @@ class GoogleMapsOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3179,6 +4053,13 @@ class GridViewOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.gridView,
@@ -3208,6 +4089,13 @@ class GridViewOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       GridViewOpenNode(
         id: id ?? this.id,
@@ -3219,6 +4107,15 @@ class GridViewOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3262,6 +4159,13 @@ class GridViewBuilderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.gridViewBuilder,
@@ -3291,6 +4195,13 @@ class GridViewBuilderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       GridViewBuilderOpenNode(
         id: id ?? this.id,
@@ -3302,6 +4213,15 @@ class GridViewBuilderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3345,6 +4265,13 @@ class HeroOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.hero,
@@ -3374,6 +4301,13 @@ class HeroOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       HeroOpenNode(
         id: id ?? this.id,
@@ -3385,6 +4319,15 @@ class HeroOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3428,6 +4371,13 @@ class IconOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.icon,
@@ -3457,6 +4407,13 @@ class IconOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       IconOpenNode(
         id: id ?? this.id,
@@ -3468,6 +4425,15 @@ class IconOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3511,6 +4477,13 @@ class IgnorePointerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.ignorePointer,
@@ -3540,6 +4513,13 @@ class IgnorePointerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       IgnorePointerOpenNode(
         id: id ?? this.id,
@@ -3551,6 +4531,15 @@ class IgnorePointerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3594,6 +4583,13 @@ class IndexedStackOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.indexedStack,
@@ -3623,6 +4619,13 @@ class IndexedStackOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       IndexedStackOpenNode(
         id: id ?? this.id,
@@ -3634,6 +4637,15 @@ class IndexedStackOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3677,6 +4689,13 @@ class LinearProgressIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.linearProgressIndicator,
@@ -3707,6 +4726,13 @@ class LinearProgressIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LinearProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -3718,6 +4744,15 @@ class LinearProgressIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3761,6 +4796,13 @@ class LiquidSwipeOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.liquidSwipe,
@@ -3790,6 +4832,13 @@ class LiquidSwipeOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LiquidSwipeOpenNode(
         id: id ?? this.id,
@@ -3801,6 +4850,15 @@ class LiquidSwipeOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3844,6 +4902,13 @@ class ListTileOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.listTile,
@@ -3873,6 +4938,13 @@ class ListTileOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ListTileOpenNode(
         id: id ?? this.id,
@@ -3884,6 +4956,15 @@ class ListTileOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3927,6 +5008,13 @@ class ListViewOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.listView,
@@ -3956,6 +5044,13 @@ class ListViewOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ListViewOpenNode(
         id: id ?? this.id,
@@ -3967,6 +5062,15 @@ class ListViewOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4010,6 +5114,13 @@ class ListViewBuilderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.listViewBuilder,
@@ -4039,6 +5150,13 @@ class ListViewBuilderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ListViewBuilderOpenNode(
         id: id ?? this.id,
@@ -4050,6 +5168,15 @@ class ListViewBuilderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4093,6 +5220,13 @@ class LottieOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.lottie,
@@ -4122,6 +5256,13 @@ class LottieOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LottieOpenNode(
         id: id ?? this.id,
@@ -4133,6 +5274,15 @@ class LottieOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4176,6 +5326,13 @@ class MapOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.map,
@@ -4205,6 +5362,13 @@ class MapOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       MapOpenNode(
         id: id ?? this.id,
@@ -4216,6 +5380,15 @@ class MapOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4259,6 +5432,13 @@ class MarkerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.marker,
@@ -4288,6 +5468,13 @@ class MarkerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       MarkerOpenNode(
         id: id ?? this.id,
@@ -4299,6 +5486,15 @@ class MarkerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4342,6 +5538,13 @@ class OpacityOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.opacity,
@@ -4371,6 +5574,13 @@ class OpacityOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       OpacityOpenNode(
         id: id ?? this.id,
@@ -4382,6 +5592,15 @@ class OpacityOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4425,6 +5644,13 @@ class PaddingOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.padding,
@@ -4454,6 +5680,13 @@ class PaddingOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       PaddingOpenNode(
         id: id ?? this.id,
@@ -4465,6 +5698,15 @@ class PaddingOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4508,6 +5750,13 @@ class PageViewOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.pageView,
@@ -4537,6 +5786,13 @@ class PageViewOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       PageViewOpenNode(
         id: id ?? this.id,
@@ -4548,6 +5804,15 @@ class PageViewOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4591,6 +5856,13 @@ class PlaceholderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.placeholder,
@@ -4620,6 +5892,13 @@ class PlaceholderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       PlaceholderOpenNode(
         id: id ?? this.id,
@@ -4631,6 +5910,15 @@ class PlaceholderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4674,6 +5962,13 @@ class PositionedOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.positioned,
@@ -4703,6 +5998,13 @@ class PositionedOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       PositionedOpenNode(
         id: id ?? this.id,
@@ -4714,6 +6016,15 @@ class PositionedOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4757,6 +6068,13 @@ class SafeAreaOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.safeArea,
@@ -4786,6 +6104,13 @@ class SafeAreaOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SafeAreaOpenNode(
         id: id ?? this.id,
@@ -4797,6 +6122,15 @@ class SafeAreaOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4840,6 +6174,13 @@ class QRScannerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.qrScanner,
@@ -4869,6 +6210,13 @@ class QRScannerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       QRScannerOpenNode(
         id: id ?? this.id,
@@ -4880,6 +6228,15 @@ class QRScannerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4923,6 +6280,13 @@ class QRCodeOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.qrCode,
@@ -4952,6 +6316,13 @@ class QRCodeOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       QRCodeOpenNode(
         id: id ?? this.id,
@@ -4963,6 +6334,15 @@ class QRCodeOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5006,6 +6386,13 @@ class RadioOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.radio,
@@ -5035,6 +6422,13 @@ class RadioOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RadioOpenNode(
         id: id ?? this.id,
@@ -5046,6 +6440,15 @@ class RadioOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5089,6 +6492,13 @@ class RefreshIndicatorOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.refreshIndicator,
@@ -5118,6 +6528,13 @@ class RefreshIndicatorOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RefreshIndicatorOpenNode(
         id: id ?? this.id,
@@ -5129,6 +6546,15 @@ class RefreshIndicatorOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5172,6 +6598,13 @@ class ResponsiveConditionOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.responsiveCondition,
@@ -5202,6 +6635,13 @@ class ResponsiveConditionOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ResponsiveConditionOpenNode(
         id: id ?? this.id,
@@ -5213,6 +6653,15 @@ class ResponsiveConditionOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5256,6 +6705,13 @@ class RotatedBoxOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.rotatedBox,
@@ -5285,6 +6741,13 @@ class RotatedBoxOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RotatedBoxOpenNode(
         id: id ?? this.id,
@@ -5296,6 +6759,15 @@ class RotatedBoxOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5339,6 +6811,13 @@ class ScaffoldOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.scaffold,
@@ -5368,6 +6847,13 @@ class ScaffoldOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ScaffoldOpenNode(
         id: id ?? this.id,
@@ -5379,6 +6865,15 @@ class ScaffoldOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5422,6 +6917,13 @@ class SpacerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.spacer,
@@ -5451,6 +6953,13 @@ class SpacerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SpacerOpenNode(
         id: id ?? this.id,
@@ -5462,6 +6971,15 @@ class SpacerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5505,6 +7023,13 @@ class StackOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.stack,
@@ -5534,6 +7059,13 @@ class StackOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       StackOpenNode(
         id: id ?? this.id,
@@ -5545,6 +7077,15 @@ class StackOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5588,6 +7129,13 @@ class TCardOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.tcard,
@@ -5617,6 +7165,13 @@ class TCardOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       TCardOpenNode(
         id: id ?? this.id,
@@ -5628,6 +7183,15 @@ class TCardOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5671,6 +7235,13 @@ class TCardBuilderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.tcardBuilder,
@@ -5700,6 +7271,13 @@ class TCardBuilderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       TCardBuilderOpenNode(
         id: id ?? this.id,
@@ -5711,6 +7289,15 @@ class TCardBuilderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5754,6 +7341,13 @@ class TextOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.text,
@@ -5783,6 +7377,13 @@ class TextOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       TextOpenNode(
         id: id ?? this.id,
@@ -5794,6 +7395,15 @@ class TextOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5837,6 +7447,13 @@ class TextFieldOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.textField,
@@ -5866,6 +7483,13 @@ class TextFieldOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       TextFieldOpenNode(
         id: id ?? this.id,
@@ -5877,6 +7501,15 @@ class TextFieldOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5920,6 +7553,13 @@ class TooltipOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.tooltip,
@@ -5949,6 +7589,13 @@ class TooltipOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       TooltipOpenNode(
         id: id ?? this.id,
@@ -5960,6 +7607,15 @@ class TooltipOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6003,6 +7659,13 @@ class VideoOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.video,
@@ -6032,6 +7695,13 @@ class VideoOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       VideoOpenNode(
         id: id ?? this.id,
@@ -6043,6 +7713,15 @@ class VideoOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6086,6 +7765,13 @@ class VisibilityOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.visibility,
@@ -6115,6 +7801,13 @@ class VisibilityOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       VisibilityOpenNode(
         id: id ?? this.id,
@@ -6126,6 +7819,15 @@ class VisibilityOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6169,6 +7871,13 @@ class WebviewOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.webview,
@@ -6198,6 +7907,13 @@ class WebviewOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       WebviewOpenNode(
         id: id ?? this.id,
@@ -6209,6 +7925,15 @@ class WebviewOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6252,6 +7977,13 @@ class WrapOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.wrap,
@@ -6281,6 +8013,13 @@ class WrapOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       WrapOpenNode(
         id: id ?? this.id,
@@ -6292,6 +8031,15 @@ class WrapOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6335,6 +8083,13 @@ class AnimationConfigGridOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.animationConfigGrid,
@@ -6365,6 +8120,13 @@ class AnimationConfigGridOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AnimationConfigGridOpenNode(
         id: id ?? this.id,
@@ -6376,6 +8138,15 @@ class AnimationConfigGridOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6419,6 +8190,13 @@ class AnimationConfigListOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.animationConfigList,
@@ -6449,6 +8227,13 @@ class AnimationConfigListOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AnimationConfigListOpenNode(
         id: id ?? this.id,
@@ -6460,6 +8245,15 @@ class AnimationConfigListOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6503,6 +8297,13 @@ class FadeInAnimationOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.fadeInAnimation,
@@ -6532,6 +8333,13 @@ class FadeInAnimationOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       FadeInAnimationOpenNode(
         id: id ?? this.id,
@@ -6543,6 +8351,15 @@ class FadeInAnimationOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6586,6 +8403,13 @@ class ScaleAnimationOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.scaleAnimation,
@@ -6615,6 +8439,13 @@ class ScaleAnimationOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ScaleAnimationOpenNode(
         id: id ?? this.id,
@@ -6626,6 +8457,15 @@ class ScaleAnimationOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6669,6 +8509,13 @@ class SlideAnimationOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.slideAnimation,
@@ -6698,6 +8545,13 @@ class SlideAnimationOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SlideAnimationOpenNode(
         id: id ?? this.id,
@@ -6709,6 +8563,15 @@ class SlideAnimationOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6752,6 +8615,13 @@ class ApiCallsFetchOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.apiCallsFetch,
@@ -6781,6 +8651,13 @@ class ApiCallsFetchOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       ApiCallsFetchOpenNode(
         id: id ?? this.id,
@@ -6792,6 +8669,15 @@ class ApiCallsFetchOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6835,6 +8721,13 @@ class LoginWithAppleOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithApple,
@@ -6864,6 +8757,13 @@ class LoginWithAppleOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithAppleOpenNode(
         id: id ?? this.id,
@@ -6875,6 +8775,15 @@ class LoginWithAppleOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6918,6 +8827,13 @@ class LoginWithFacebookOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithFacebook,
@@ -6948,6 +8864,13 @@ class LoginWithFacebookOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithFacebookOpenNode(
         id: id ?? this.id,
@@ -6959,6 +8882,15 @@ class LoginWithFacebookOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7002,6 +8934,13 @@ class LoginWithGoogleOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithGoogle,
@@ -7031,6 +8970,13 @@ class LoginWithGoogleOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithGoogleOpenNode(
         id: id ?? this.id,
@@ -7042,6 +8988,15 @@ class LoginWithGoogleOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7085,6 +9040,13 @@ class LoginWithTwitterOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithTwitter,
@@ -7114,6 +9076,13 @@ class LoginWithTwitterOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithTwitterOpenNode(
         id: id ?? this.id,
@@ -7125,6 +9094,15 @@ class LoginWithTwitterOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7168,6 +9146,13 @@ class LoginWithGithubOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithGitHub,
@@ -7197,6 +9182,13 @@ class LoginWithGithubOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithGithubOpenNode(
         id: id ?? this.id,
@@ -7208,6 +9200,15 @@ class LoginWithGithubOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7251,6 +9252,13 @@ class LoginWithMicrosoftOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithMicrosoft,
@@ -7281,6 +9289,13 @@ class LoginWithMicrosoftOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithMicrosoftOpenNode(
         id: id ?? this.id,
@@ -7292,6 +9307,15 @@ class LoginWithMicrosoftOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7335,6 +9359,13 @@ class LoginWithLinkedinOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithLinkedin,
@@ -7365,6 +9396,13 @@ class LoginWithLinkedinOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithLinkedinOpenNode(
         id: id ?? this.id,
@@ -7376,6 +9414,15 @@ class LoginWithLinkedinOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7419,6 +9466,13 @@ class LoginWithBitbucketOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithBitBucket,
@@ -7449,6 +9503,13 @@ class LoginWithBitbucketOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithBitbucketOpenNode(
         id: id ?? this.id,
@@ -7460,6 +9521,15 @@ class LoginWithBitbucketOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7503,6 +9573,13 @@ class LoginWithDiscordOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithDiscord,
@@ -7532,6 +9609,13 @@ class LoginWithDiscordOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithDiscordOpenNode(
         id: id ?? this.id,
@@ -7543,6 +9627,15 @@ class LoginWithDiscordOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7586,6 +9679,13 @@ class LoginWithTwitchOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithTwitch,
@@ -7615,6 +9715,13 @@ class LoginWithTwitchOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithTwitchOpenNode(
         id: id ?? this.id,
@@ -7626,6 +9733,15 @@ class LoginWithTwitchOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7669,6 +9785,13 @@ class LoginWithGitlabOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.loginWithGitlab,
@@ -7698,6 +9821,13 @@ class LoginWithGitlabOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       LoginWithGitlabOpenNode(
         id: id ?? this.id,
@@ -7709,6 +9839,15 @@ class LoginWithGitlabOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7752,6 +9891,13 @@ class HttpRequestOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.httpRequest,
@@ -7781,6 +9927,13 @@ class HttpRequestOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       HttpRequestOpenNode(
         id: id ?? this.id,
@@ -7792,6 +9945,15 @@ class HttpRequestOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7835,6 +9997,13 @@ class CustomHttpRequestOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.customHttpRequest,
@@ -7865,6 +10034,13 @@ class CustomHttpRequestOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CustomHttpRequestOpenNode(
         id: id ?? this.id,
@@ -7876,6 +10052,15 @@ class CustomHttpRequestOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7919,6 +10104,13 @@ class AppBarOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.appBar,
@@ -7948,6 +10140,13 @@ class AppBarOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       AppBarOpenNode(
         id: id ?? this.id,
@@ -7959,6 +10158,15 @@ class AppBarOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8002,6 +10210,13 @@ class BottomBarOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.bottomBar,
@@ -8031,6 +10246,13 @@ class BottomBarOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       BottomBarOpenNode(
         id: id ?? this.id,
@@ -8042,6 +10264,15 @@ class BottomBarOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8085,6 +10316,13 @@ class DrawerOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.drawer,
@@ -8114,6 +10352,13 @@ class DrawerOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       DrawerOpenNode(
         id: id ?? this.id,
@@ -8125,6 +10370,15 @@ class DrawerOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8168,6 +10422,13 @@ class QonversionProductsOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.qonversionProducts,
@@ -8198,6 +10459,13 @@ class QonversionProductsOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       QonversionProductsOpenNode(
         id: id ?? this.id,
@@ -8209,6 +10477,15 @@ class QonversionProductsOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8252,6 +10529,13 @@ class QonversionSubStatusOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.qonversionSubStatus,
@@ -8282,6 +10566,13 @@ class QonversionSubStatusOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       QonversionSubStatusOpenNode(
         id: id ?? this.id,
@@ -8293,6 +10584,15 @@ class QonversionSubStatusOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8336,6 +10636,13 @@ class RevenueCatProductsOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.revenueCatProducts,
@@ -8366,6 +10673,13 @@ class RevenueCatProductsOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RevenueCatProductsOpenNode(
         id: id ?? this.id,
@@ -8377,6 +10691,15 @@ class RevenueCatProductsOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8420,6 +10743,13 @@ class RevenueCatSubStatusOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.revenueCatSubStatus,
@@ -8450,6 +10780,13 @@ class RevenueCatSubStatusOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       RevenueCatSubStatusOpenNode(
         id: id ?? this.id,
@@ -8461,6 +10798,15 @@ class RevenueCatSubStatusOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8504,6 +10850,13 @@ class WrapperOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.wrapper,
@@ -8533,6 +10886,13 @@ class WrapperOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       WrapperOpenNode(
         id: id ?? this.id,
@@ -8544,6 +10904,15 @@ class WrapperOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8587,6 +10956,13 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.supabaseFutureBuilder,
@@ -8617,6 +10993,13 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SupabaseFutureBuilderOpenNode(
         id: id ?? this.id,
@@ -8628,6 +11011,15 @@ class SupabaseFutureBuilderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8671,6 +11063,13 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.supabaseStreamBuilder,
@@ -8701,6 +11100,13 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SupabaseStreamBuilderOpenNode(
         id: id ?? this.id,
@@ -8712,6 +11118,15 @@ class SupabaseStreamBuilderOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8755,6 +11170,13 @@ class SupabaseLoggedUserOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.supabaseLoggedUser,
@@ -8785,6 +11207,13 @@ class SupabaseLoggedUserOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       SupabaseLoggedUserOpenNode(
         id: id ?? this.id,
@@ -8796,6 +11225,15 @@ class SupabaseLoggedUserOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8839,6 +11277,13 @@ class CMSCountOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cmsCount,
@@ -8868,6 +11313,13 @@ class CMSCountOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CMSCountOpenNode(
         id: id ?? this.id,
@@ -8879,6 +11331,15 @@ class CMSCountOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8922,6 +11383,13 @@ class CMSCustomQueryOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cmsCustomQuery,
@@ -8951,6 +11419,13 @@ class CMSCustomQueryOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CMSCustomQueryOpenNode(
         id: id ?? this.id,
@@ -8962,6 +11437,15 @@ class CMSCustomQueryOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9005,6 +11489,13 @@ class CMSFetchOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cmsFetch,
@@ -9034,6 +11525,13 @@ class CMSFetchOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CMSFetchOpenNode(
         id: id ?? this.id,
@@ -9045,6 +11543,15 @@ class CMSFetchOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9088,6 +11595,13 @@ class CMSStreamOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cmsStream,
@@ -9117,6 +11631,13 @@ class CMSStreamOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CMSStreamOpenNode(
         id: id ?? this.id,
@@ -9128,6 +11649,15 @@ class CMSStreamOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9171,6 +11701,13 @@ class CMSLoggedUserOpenNode extends CNode {
     final FChildrenIds? childrenIds,
     final int? index,
     final Map<String, dynamic>? attributes,
+    final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+    final bool flipRectWhileResizing = true,
+    final bool flipChild = true,
+    final bool constraintsEnabled = false,
+    final bool resizable = true,
+    final bool movable = true,
+    final bool hideHandlesWhenNotResizable = true,
   }) : super(
           id: id,
           type: NType.cmsLoggedUser,
@@ -9200,6 +11737,13 @@ class CMSLoggedUserOpenNode extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) =>
       CMSLoggedUserOpenNode(
         id: id ?? this.id,
@@ -9211,6 +11755,15 @@ class CMSLoggedUserOpenNode extends CNode {
         childrenIds: childrenIds ?? this.childrenIds,
         index: index ?? this.index,
         attributes: attributes ?? getAttributes,
+        rect: rect ?? this.rect,
+        flipRectWhileResizing:
+            flipRectWhileResizing ?? this.flipRectWhileResizing,
+        flipChild: flipChild ?? this.flipChild,
+        constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+        resizable: resizable ?? this.resizable,
+        movable: movable ?? this.movable,
+        hideHandlesWhenNotResizable:
+            hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {

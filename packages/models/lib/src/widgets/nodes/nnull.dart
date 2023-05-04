@@ -46,6 +46,13 @@ class NNull extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }

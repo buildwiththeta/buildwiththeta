@@ -22,6 +22,13 @@ abstract class CNode extends Equatable {
     this.child,
     this.children = const [],
     this.index = 0,
+    this.rect = const Rect.fromLTWH(0, 0, 150, 150),
+    this.flipRectWhileResizing = true,
+    this.flipChild = true,
+    this.constraintsEnabled = false,
+    this.resizable = true,
+    this.movable = true,
+    this.hideHandlesWhenNotResizable = true,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _attributesNotifier = ValueNotifier(attributes);
@@ -93,6 +100,14 @@ abstract class CNode extends Equatable {
   /// The node's widget will be rebuilt
   final ValueNotifier<NodeAttributes> _attributesNotifier;
 
+  final Rect rect;
+  final bool flipRectWhileResizing;
+  final bool flipChild;
+  final bool constraintsEnabled;
+  final bool resizable;
+  final bool movable;
+  final bool hideHandlesWhenNotResizable;
+
   /// fromJson method
   static fromJson(String widgetType, Map<String, dynamic> json) {
     throw UnimplementedError('fromJson must be implemented in a sub class');
@@ -123,6 +138,13 @@ abstract class CNode extends Equatable {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
+    Rect? rect,
+    bool? flipRectWhileResizing,
+    bool? flipChild,
+    bool? constraintsEnabled,
+    bool? resizable,
+    bool? movable,
+    bool? hideHandlesWhenNotResizable,
   });
 
   /// Render a Widget from node

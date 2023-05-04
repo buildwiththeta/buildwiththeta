@@ -36,6 +36,13 @@ class $generatedClassName extends CNode {
       final FChildrenIds? childrenIds,
       final int? index,
       final Map<String, dynamic>? attributes,
+      final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
+      final bool flipRectWhileResizing = true,
+      final bool flipChild = true,
+      final bool constraintsEnabled = false,
+      final bool resizable = true,
+      final bool movable = true,
+      final bool hideHandlesWhenNotResizable = true,
       })
       : super(
             id: id,
@@ -64,6 +71,13 @@ class $generatedClassName extends CNode {
           FChildrenIds? childrenIds,
           int? index,
           Map<String, dynamic>? attributes,
+          Rect? rect,
+          bool? flipRectWhileResizing,
+          bool? flipChild,
+          bool? constraintsEnabled,
+          bool? resizable,
+          bool? movable,
+          bool? hideHandlesWhenNotResizable,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -75,6 +89,13 @@ class $generatedClassName extends CNode {
           childrenIds: childrenIds ?? this.childrenIds,
           index: index ?? this.index,
           attributes: attributes ?? getAttributes,
+          rect: rect ?? this.rect,
+          flipRectWhileResizing: flipRectWhileResizing ?? this.flipRectWhileResizing,
+          flipChild: flipChild ?? this.flipChild,
+          constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
+          resizable: resizable ?? this.resizable,
+          movable: movable ?? this.movable,
+          hideHandlesWhenNotResizable: hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
           );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
