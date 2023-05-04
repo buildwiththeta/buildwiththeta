@@ -15,7 +15,6 @@ import 'package:theta_design_system/theta_design_system.dart';
 class CNetworkImage extends StatefulWidget {
   const CNetworkImage({
     final Key? key,
-    required this.nid,
     required this.src,
     this.loop = 0,
     this.width,
@@ -23,7 +22,6 @@ class CNetworkImage extends StatefulWidget {
     this.fit,
   }) : super(key: key);
 
-  final int nid;
   final String src;
   final int loop;
   final double? width;
