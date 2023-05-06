@@ -13,3 +13,4 @@ export 'tree.dart';
 export 'typedefs.dart';
 export 'user.dart';
 export 'variable.dart';
+export 'user_info.dart';
