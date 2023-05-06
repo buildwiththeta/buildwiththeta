@@ -11,10 +11,6 @@ class UserInfoEntity extends Equatable {
     required this.workingCompany,
     required this.jobTitle,
     required this.source,
-    required this.city,
-    required this.country,
-    required this.timezone,
-    required this.currency,
   });
 
   final UserID id;
@@ -22,10 +18,6 @@ class UserInfoEntity extends Equatable {
   final String? workingCompany;
   final String? jobTitle;
   final String? source;
-  final String? city;
-  final String? country;
-  final String? timezone;
-  final String? currency;
 
   @override
   List<Object?> get props => [
@@ -34,9 +26,5 @@ class UserInfoEntity extends Equatable {
         workingCompany,
         jobTitle,
         source,
-        city,
-        country,
-        timezone,
-        currency
       ];
 }
