@@ -4,7 +4,7 @@ import 'package:theta_models/theta_models.dart';
 class BranchMapper extends Mapper<BranchEntity> {
   const BranchMapper();
 
-  static const _idKey = '_id';
+  static const _idKey = 'id';
   static const _nameKey = 'name';
   static const _prjIdKey = 'project_id';
   static const _defaultPageIdKey = 'default_page_id';
