@@ -197,16 +197,18 @@ class FTextTypeInput {
                   ? false
                   : 'Impossible to convert to double type';
         case ResultTypeEnum.dateTime:
-          final date = DateTime.tryParse(result as String);
-          if (date != null) {
-            if (typeDateTimeFormat == TypeDateTimeFormat.dateWithoutTime) {
-              return DateFormat('yyyy-MM-dd').format(date);
+          {
+            final date = DateTime.tryParse(result as String);
+            if (date != null) {
+              if (typeDateTimeFormat == TypeDateTimeFormat.dateWithoutTime) {
+                return DateFormat('yyyy-MM-dd').format(date);
+              }
+              if (typeDateTimeFormat == TypeDateTimeFormat.dateWithTime) {
+                return DateFormat('yyyy-MM-dd hh:mm:ss').format(date);
+              }
             }
-            if (typeDateTimeFormat == TypeDateTimeFormat.dateWithTime) {
-              return DateFormat('yyyy-MM-dd hh:mm:ss').format(date);
-            }
+            return 'Impossible to convert to DateTime type';
           }
-          return 'Impossible to convert to DateTime type';
       }
     }
   }

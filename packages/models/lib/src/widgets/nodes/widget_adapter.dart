@@ -4,7 +4,7 @@ import 'package:theta_models/theta_models.dart';
 abstract class WidgetAdapter {
   const WidgetAdapter();
 
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   });

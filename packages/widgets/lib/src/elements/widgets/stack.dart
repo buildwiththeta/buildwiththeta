@@ -13,15 +13,7 @@ class OpenWStack extends Stack {
           children: children.isNotEmpty
               ? children
                   .map(
-                    (final e) => BoxTransformBuilder(
-                      child: e.toWidget(
-                        context: context,
-                        state: state.copyWith(
-                          node: e,
-                          loop: children.indexOf(e),
-                        ),
-                      ),
-                    ),
+                    (final e) => BoxTransformBuilder(node: e),
                   )
                   .toList()
               : [],

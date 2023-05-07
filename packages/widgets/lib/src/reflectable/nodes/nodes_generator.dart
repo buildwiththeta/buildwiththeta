@@ -1,8 +1,9 @@
 // ignore_for_file: unused_import
 
+import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
-import 'package:analyzer/dart/element/element.dart';
+
 import 'node_annotation_model.dart';
 
 class NodeGenerator extends GeneratorForAnnotation<NodeInfo> {
@@ -36,13 +37,7 @@ class $generatedClassName extends CNode {
       final FChildrenIds? childrenIds,
       final int? index,
       final Map<String, dynamic>? attributes,
-      final Rect rect = const Rect.fromLTWH(0, 0, 150, 150),
-      final bool flipRectWhileResizing = true,
-      final bool flipChild = true,
-      final bool constraintsEnabled = false,
-      final bool resizable = true,
-      final bool movable = true,
-      final bool hideHandlesWhenNotResizable = true,
+      final Map<String, dynamic>? rectProperties,
       })
       : super(
             id: id,
@@ -52,6 +47,7 @@ class $generatedClassName extends CNode {
             intrinsicState: const DynamicIntrinsicState().getStateByType(NType.$type),
             defaultAttributes: const DefaultAttributesParse().getByType(NType.$type),
             attributes: attributes ?? {},
+            rectProperties: rectProperties ?? {},
             adapter: const WidgetAdapterParse().getByType(NType.$type),
             parent: parent,
             description: description,
@@ -71,13 +67,7 @@ class $generatedClassName extends CNode {
           FChildrenIds? childrenIds,
           int? index,
           Map<String, dynamic>? attributes,
-          Rect? rect,
-          bool? flipRectWhileResizing,
-          bool? flipChild,
-          bool? constraintsEnabled,
-          bool? resizable,
-          bool? movable,
-          bool? hideHandlesWhenNotResizable,
+          Map<String, dynamic>? rectProperties,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -89,14 +79,8 @@ class $generatedClassName extends CNode {
           childrenIds: childrenIds ?? this.childrenIds,
           index: index ?? this.index,
           attributes: attributes ?? getAttributes,
-          rect: rect ?? this.rect,
-          flipRectWhileResizing: flipRectWhileResizing ?? this.flipRectWhileResizing,
-          flipChild: flipChild ?? this.flipChild,
-          constraintsEnabled: constraintsEnabled ?? this.constraintsEnabled,
-          resizable: resizable ?? this.resizable,
-          movable: movable ?? this.movable,
-          hideHandlesWhenNotResizable: hideHandlesWhenNotResizable ?? this.hideHandlesWhenNotResizable,
-          );
+          rectProperties: rectProperties ?? getRectProperties,
+        );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.$type) {
@@ -109,6 +93,8 @@ class $generatedClassName extends CNode {
         attributes[entry.key] = const DynamicAttributes().fromJson(entry.key, entry.value);
       }
     }
+
+    final rectProperties = CNode.rectPropertiesFromJson(json['rect_properties']);
     
     return $generatedClassName(
       id: json['id'],
@@ -116,6 +102,7 @@ class $generatedClassName extends CNode {
       description: json['description'],
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
+      rectProperties: rectProperties,
     );
   }
 

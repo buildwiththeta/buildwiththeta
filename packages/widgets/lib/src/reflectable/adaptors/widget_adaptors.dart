@@ -13,7 +13,7 @@ class AlignWidgetAdapter extends WidgetAdapter {
   const AlignWidgetAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -34,7 +34,7 @@ class AspectRatioAdapter extends WidgetAdapter {
   const AspectRatioAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -55,7 +55,7 @@ class BadgeAdapter extends WidgetAdapter {
   const BadgeAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -77,7 +77,7 @@ class BarcodeAdapter extends WidgetAdapter {
   const BarcodeAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -101,7 +101,7 @@ class BottomBarItemAdapter extends WidgetAdapter {
   const BottomBarItemAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -130,7 +130,7 @@ class BouncingAdapter extends WidgetAdapter {
   const BouncingAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -153,7 +153,7 @@ class ButtonAdapter extends WidgetAdapter {
   const ButtonAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -185,7 +185,7 @@ class ButtonAdapter extends WidgetAdapter {
 class CardAdaptor extends WidgetAdapter {
   const CardAdaptor();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -207,7 +207,7 @@ class CardAdaptor extends WidgetAdapter {
 class CenterAdaptor extends WidgetAdapter {
   const CenterAdaptor();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -226,7 +226,7 @@ class CenterAdaptor extends WidgetAdapter {
 class CheckBoxAdaptor extends WidgetAdapter {
   const CheckBoxAdaptor();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -244,7 +244,7 @@ class CheckBoxAdaptor extends WidgetAdapter {
 class CircularProgressIndicatorAdaptor extends WidgetAdapter {
   const CircularProgressIndicatorAdaptor();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -262,7 +262,7 @@ class CircularProgressIndicatorAdaptor extends WidgetAdapter {
 class ClipOvalAdaptor extends WidgetAdapter {
   const ClipOvalAdaptor();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -281,7 +281,7 @@ class ClipOvalAdaptor extends WidgetAdapter {
 class ClipRectAdapter extends WidgetAdapter {
   const ClipRectAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -300,7 +300,7 @@ class ClipRectAdapter extends WidgetAdapter {
 class ClipRRectAdapter extends WidgetAdapter {
   const ClipRRectAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -321,7 +321,7 @@ class ClipRRectAdapter extends WidgetAdapter {
 class ColumnAdapter extends WidgetAdapter {
   const ColumnAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -346,7 +346,7 @@ class ColumnAdapter extends WidgetAdapter {
 class ConcentricPageViewAdapter extends WidgetAdapter {
   const ConcentricPageViewAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -365,7 +365,7 @@ class ConcentricPageViewAdapter extends WidgetAdapter {
 class ConditionAdapter extends WidgetAdapter {
   const ConditionAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -389,7 +389,7 @@ class ConditionAdapter extends WidgetAdapter {
 class ConstrainedBoxAdapter extends WidgetAdapter {
   const ConstrainedBoxAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -412,7 +412,7 @@ class ConstrainedBoxAdapter extends WidgetAdapter {
 class BoxAdapter extends WidgetAdapter {
   const BoxAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -440,7 +440,7 @@ class BoxAdapter extends WidgetAdapter {
 class CupertinoAppBarAdapter extends WidgetAdapter {
   const CupertinoAppBarAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -460,7 +460,7 @@ class CupertinoAppBarAdapter extends WidgetAdapter {
 class CupertinoPickerAdapter extends WidgetAdapter {
   const CupertinoPickerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -481,7 +481,7 @@ class CupertinoPickerAdapter extends WidgetAdapter {
 class CupertinoSegmentedControlAdapter extends WidgetAdapter {
   const CupertinoSegmentedControlAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -504,7 +504,7 @@ class CupertinoSegmentedControlAdapter extends WidgetAdapter {
 class CupertinoSwitchAdapter extends WidgetAdapter {
   const CupertinoSwitchAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -527,7 +527,7 @@ class CupertinoSwitchAdapter extends WidgetAdapter {
 class DecoratedBoxAdapter extends WidgetAdapter {
   const DecoratedBoxAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -550,7 +550,7 @@ class DecoratedBoxAdapter extends WidgetAdapter {
 class DividerAdapter extends WidgetAdapter {
   const DividerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -571,7 +571,7 @@ class DividerAdapter extends WidgetAdapter {
 class DotsIndicatorAdapter extends WidgetAdapter {
   const DotsIndicatorAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -602,7 +602,7 @@ class DotsIndicatorAdapter extends WidgetAdapter {
 class ExpandedAdapter extends WidgetAdapter {
   const ExpandedAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -621,7 +621,7 @@ class ExpandedAdapter extends WidgetAdapter {
 class GestureDetectorAdapter extends WidgetAdapter {
   const GestureDetectorAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -642,7 +642,7 @@ class GestureDetectorAdapter extends WidgetAdapter {
 class GridViewAdapter extends WidgetAdapter {
   const GridViewAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -671,7 +671,7 @@ class GridViewAdapter extends WidgetAdapter {
 class HeroAdapter extends WidgetAdapter {
   const HeroAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -694,7 +694,7 @@ class HeroAdapter extends WidgetAdapter {
 class IconAdapter extends WidgetAdapter {
   const IconAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) {
@@ -732,7 +732,7 @@ class IconAdapter extends WidgetAdapter {
 class IconFeatherAdapter extends WidgetAdapter {
   const IconFeatherAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -752,7 +752,7 @@ class IconFeatherAdapter extends WidgetAdapter {
 class IconFontAwesomeAdapter extends WidgetAdapter {
   const IconFontAwesomeAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -772,7 +772,7 @@ class IconFontAwesomeAdapter extends WidgetAdapter {
 class IconLineAdapter extends WidgetAdapter {
   const IconLineAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -792,7 +792,7 @@ class IconLineAdapter extends WidgetAdapter {
 class MaterialIconAdapter extends WidgetAdapter {
   const MaterialIconAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -812,7 +812,7 @@ class MaterialIconAdapter extends WidgetAdapter {
 class IgnorePointerAdapter extends WidgetAdapter {
   const IgnorePointerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -832,7 +832,7 @@ class IgnorePointerAdapter extends WidgetAdapter {
 class ImageAdapter extends WidgetAdapter {
   const ImageAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -856,7 +856,7 @@ class ImageAdapter extends WidgetAdapter {
 class IndexStackAdapter extends WidgetAdapter {
   const IndexStackAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -875,7 +875,7 @@ class IndexStackAdapter extends WidgetAdapter {
 class LinearProgressIndicatorAdapter extends WidgetAdapter {
   const LinearProgressIndicatorAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -894,7 +894,7 @@ class LinearProgressIndicatorAdapter extends WidgetAdapter {
 class LiquidSwipeAdapter extends WidgetAdapter {
   const LiquidSwipeAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -912,7 +912,7 @@ class LiquidSwipeAdapter extends WidgetAdapter {
 class ListTileAdapter extends WidgetAdapter {
   const ListTileAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -932,7 +932,7 @@ class ListTileAdapter extends WidgetAdapter {
 class ListViewAdapter extends WidgetAdapter {
   const ListViewAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -958,7 +958,7 @@ class ListViewAdapter extends WidgetAdapter {
 class LottieAdapter extends WidgetAdapter {
   const LottieAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -979,7 +979,7 @@ class LottieAdapter extends WidgetAdapter {
 class OffstageAdapter extends WidgetAdapter {
   const OffstageAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -998,7 +998,7 @@ class OffstageAdapter extends WidgetAdapter {
 class OpacityAdapter extends WidgetAdapter {
   const OpacityAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1018,7 +1018,7 @@ class OpacityAdapter extends WidgetAdapter {
 class PaddingAdapter extends WidgetAdapter {
   const PaddingAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1040,7 +1040,7 @@ class PaddingAdapter extends WidgetAdapter {
 class PageViewAdapter extends WidgetAdapter {
   const PageViewAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1060,7 +1060,7 @@ class PageViewAdapter extends WidgetAdapter {
 class PlaceholderAdapter extends WidgetAdapter {
   const PlaceholderAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1082,7 +1082,7 @@ class PlaceholderAdapter extends WidgetAdapter {
 class PositionedAdapter extends WidgetAdapter {
   const PositionedAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1106,7 +1106,7 @@ class PositionedAdapter extends WidgetAdapter {
 class QRScannerAdapter extends WidgetAdapter {
   const QRScannerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1123,7 +1123,7 @@ class QRScannerAdapter extends WidgetAdapter {
 class QRCodeAdapter extends WidgetAdapter {
   const QRCodeAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1145,7 +1145,7 @@ class QRCodeAdapter extends WidgetAdapter {
 class RadioAdapter extends WidgetAdapter {
   const RadioAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1165,7 +1165,7 @@ class RadioAdapter extends WidgetAdapter {
 class RefreshIndicatorAdapter extends WidgetAdapter {
   const RefreshIndicatorAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1187,7 +1187,7 @@ class RefreshIndicatorAdapter extends WidgetAdapter {
 class ResponsiveConditionAdapter extends WidgetAdapter {
   const ResponsiveConditionAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1211,7 +1211,7 @@ class ResponsiveConditionAdapter extends WidgetAdapter {
 class RotatedBoxAdapter extends WidgetAdapter {
   const RotatedBoxAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1231,7 +1231,7 @@ class RotatedBoxAdapter extends WidgetAdapter {
 class RowAdapter extends WidgetAdapter {
   const RowAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1256,7 +1256,7 @@ class RowAdapter extends WidgetAdapter {
 class SafeAreaAdapter extends WidgetAdapter {
   const SafeAreaAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1279,7 +1279,7 @@ class SafeAreaAdapter extends WidgetAdapter {
 class ScaffoldAdapter extends WidgetAdapter {
   const ScaffoldAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1306,7 +1306,7 @@ class ScaffoldAdapter extends WidgetAdapter {
 class SizedBoxAdapter extends WidgetAdapter {
   const SizedBoxAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1327,7 +1327,7 @@ class SizedBoxAdapter extends WidgetAdapter {
 class SpacerAdapter extends WidgetAdapter {
   const SpacerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1342,7 +1342,7 @@ class SpacerAdapter extends WidgetAdapter {
 class StackAdapter extends WidgetAdapter {
   const StackAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1361,7 +1361,7 @@ class StackAdapter extends WidgetAdapter {
 class TCardAdapter extends WidgetAdapter {
   const TCardAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1383,7 +1383,7 @@ class TCardAdapter extends WidgetAdapter {
 class TextAdapter extends WidgetAdapter {
   const TextAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1406,7 +1406,7 @@ class TextAdapter extends WidgetAdapter {
 class TextFieldAdapter extends WidgetAdapter {
   const TextFieldAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1457,7 +1457,7 @@ class TextFieldAdapter extends WidgetAdapter {
 class TooltipAdapter extends WidgetAdapter {
   const TooltipAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1476,7 +1476,7 @@ class TooltipAdapter extends WidgetAdapter {
 class TransformRotateAdapter extends WidgetAdapter {
   const TransformRotateAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1496,7 +1496,7 @@ class TransformRotateAdapter extends WidgetAdapter {
 class TransformAdapter extends WidgetAdapter {
   const TransformAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1518,7 +1518,7 @@ class TransformAdapter extends WidgetAdapter {
 class VideoAdapter extends WidgetAdapter {
   const VideoAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1543,7 +1543,7 @@ class VideoAdapter extends WidgetAdapter {
 class VisibilityAdapter extends WidgetAdapter {
   const VisibilityAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1563,7 +1563,7 @@ class VisibilityAdapter extends WidgetAdapter {
 class WrapAdapter extends WidgetAdapter {
   const WrapAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1582,7 +1582,7 @@ class WrapAdapter extends WidgetAdapter {
 class AnimationConfigGridAdapter extends WidgetAdapter {
   const AnimationConfigGridAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1604,7 +1604,7 @@ class AnimationConfigGridAdapter extends WidgetAdapter {
 class AnimationConfigListAdapter extends WidgetAdapter {
   const AnimationConfigListAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1624,7 +1624,7 @@ class AnimationConfigListAdapter extends WidgetAdapter {
 class FadeInAdapter extends WidgetAdapter {
   const FadeInAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1642,7 +1642,7 @@ class FadeInAdapter extends WidgetAdapter {
 class ScaleAdapter extends WidgetAdapter {
   const ScaleAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1660,7 +1660,7 @@ class ScaleAdapter extends WidgetAdapter {
 class SlideAdapter extends WidgetAdapter {
   const SlideAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1678,7 +1678,7 @@ class SlideAdapter extends WidgetAdapter {
 class LoginWithAppleAdapter extends WidgetAdapter {
   const LoginWithAppleAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1701,7 +1701,7 @@ class LoginWithAppleAdapter extends WidgetAdapter {
 class LoginWithBitBucketAdapter extends WidgetAdapter {
   const LoginWithBitBucketAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1724,7 +1724,7 @@ class LoginWithBitBucketAdapter extends WidgetAdapter {
 class LoginWithDiscordAdapter extends WidgetAdapter {
   const LoginWithDiscordAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1747,7 +1747,7 @@ class LoginWithDiscordAdapter extends WidgetAdapter {
 class LoginWithFacebookAdapter extends WidgetAdapter {
   const LoginWithFacebookAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1770,7 +1770,7 @@ class LoginWithFacebookAdapter extends WidgetAdapter {
 class LoginWithGitHubAdapter extends WidgetAdapter {
   const LoginWithGitHubAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1793,7 +1793,7 @@ class LoginWithGitHubAdapter extends WidgetAdapter {
 class LoginWithGitLabAdapter extends WidgetAdapter {
   const LoginWithGitLabAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1816,7 +1816,7 @@ class LoginWithGitLabAdapter extends WidgetAdapter {
 class LoginWithGoogleAdapter extends WidgetAdapter {
   const LoginWithGoogleAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1839,7 +1839,7 @@ class LoginWithGoogleAdapter extends WidgetAdapter {
 class LoginWithLinkedinAdapter extends WidgetAdapter {
   const LoginWithLinkedinAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1862,7 +1862,7 @@ class LoginWithLinkedinAdapter extends WidgetAdapter {
 class LoginWithMicrosoftAdapter extends WidgetAdapter {
   const LoginWithMicrosoftAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1885,7 +1885,7 @@ class LoginWithMicrosoftAdapter extends WidgetAdapter {
 class LoginWithTwitchAdapter extends WidgetAdapter {
   const LoginWithTwitchAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1908,7 +1908,7 @@ class LoginWithTwitchAdapter extends WidgetAdapter {
 class LoginWithTwitterAdapter extends WidgetAdapter {
   const LoginWithTwitterAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1931,7 +1931,7 @@ class LoginWithTwitterAdapter extends WidgetAdapter {
 class AppBarAdapter extends WidgetAdapter {
   const AppBarAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1949,7 +1949,7 @@ class AppBarAdapter extends WidgetAdapter {
 class BottomBarAdapter extends WidgetAdapter {
   const BottomBarAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1967,7 +1967,7 @@ class BottomBarAdapter extends WidgetAdapter {
 class DrawerAdapter extends WidgetAdapter {
   const DrawerAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
@@ -1985,7 +1985,7 @@ class DrawerAdapter extends WidgetAdapter {
 class WrapperAdapter extends WidgetAdapter {
   const WrapperAdapter();
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
   }) =>
