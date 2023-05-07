@@ -33,6 +33,7 @@ class TreeState extends Equatable {
     required this.deviceInfo,
     required this.workflows,
     required this.config,
+    this.focusedNode,
   });
 
   /// Are we in Play Mode?
@@ -64,6 +65,9 @@ class TreeState extends Equatable {
 
   /// Current theme
   final ThemeMode theme;
+
+  /// Focused node
+  final CNode? focusedNode;
 
   /// Workflows
   /// This is the list of all the workflows

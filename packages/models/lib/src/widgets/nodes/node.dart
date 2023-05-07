@@ -1,3 +1,4 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
@@ -14,6 +15,7 @@ abstract class CNode extends Equatable {
     required this.intrinsicState,
     required final DefaultNodeAttributes defaultAttributes,
     required final NodeAttributes attributes,
+    required final NodeAttributes rectProperties,
     required this.adapter,
     this.name,
     this.description,
@@ -22,20 +24,12 @@ abstract class CNode extends Equatable {
     this.child,
     this.children = const [],
     this.index = 0,
-    this.rect = const Rect.fromLTWH(0, 0, 150, 150),
-    this.flipRectWhileResizing = true,
-    this.flipChild = true,
-    this.constraintsEnabled = false,
-    this.resizable = true,
-    this.movable = true,
-    this.hideHandlesWhenNotResizable = true,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
+        _rectProperties = rectProperties,
         _attributesNotifier = ValueNotifier(attributes);
 
   final Map<String, dynamic> _globalDefaultAttributes = {
-    'x': 0.0,
-    'y': 0.0,
     DBKeys.padding: const FMargins(
       margins: [0, 0, 0, 0],
       marginsTablet: [0, 0, 0, 0],
@@ -48,11 +42,27 @@ abstract class CNode extends Equatable {
     ),
   };
 
+  final Map<String, dynamic> _defaultRectProperties = {
+    'rect': {
+      DeviceType.phone.name: const Rect.fromLTWH(0, 0, 150, 150),
+      DeviceType.tablet.name: null,
+      DeviceType.desktop.name: null,
+    },
+    'flipRectWhileResizing': true,
+    'flipChild': true,
+    'constraintsEnabled': false,
+    'resizable': true,
+    'movable': true,
+    'hideHandlesWhenNotResizable': true,
+  };
+
   /// It returns the node's default attributes
   final DefaultNodeAttributes _defaultAttributes;
 
   /// It returns the node's current attributes
   final NodeAttributes _attributes;
+
+  final NodeAttributes _rectProperties;
 
   /// It returns the node's attributes
   /// It merges the default attributes with the current attributes
@@ -60,6 +70,11 @@ abstract class CNode extends Equatable {
         ..._globalDefaultAttributes,
         ..._defaultAttributes,
         ..._attributes,
+      };
+
+  Map<String, dynamic> get getRectProperties => {
+        ..._defaultRectProperties,
+        ..._rectProperties,
       };
 
   final WidgetAdapter adapter;
@@ -100,13 +115,115 @@ abstract class CNode extends Equatable {
   /// The node's widget will be rebuilt
   final ValueNotifier<NodeAttributes> _attributesNotifier;
 
-  final Rect rect;
-  final bool flipRectWhileResizing;
-  final bool flipChild;
-  final bool constraintsEnabled;
-  final bool resizable;
-  final bool movable;
-  final bool hideHandlesWhenNotResizable;
+  Rect rect(DeviceType deviceType) =>
+      (getRectProperties['rect'][deviceType.name] ??
+          getRectProperties['rect'][DeviceType.phone.name] ??
+          const Rect.fromLTWH(0, 0, 150, 150)) as Rect;
+
+  void setRect(Rect rect, DeviceType deviceType) =>
+      _rectProperties['rect'][deviceType.name] = rect;
+
+  /// Rect from Json
+  Map<String, dynamic> get rectToJson {
+    final map = getRectProperties['rect'] as Map<String, dynamic>;
+    final rectPhone = map[DeviceType.phone.name] as Rect;
+    final rectTablet = map[DeviceType.tablet.name] as Rect?;
+    final rectDesktop = map[DeviceType.desktop.name] as Rect?;
+    return {
+      DeviceType.phone.name: rectSingleTojson(rectPhone),
+      DeviceType.tablet.name: rectSingleTojson(rectTablet),
+      DeviceType.desktop.name: rectSingleTojson(rectDesktop),
+    };
+  }
+
+  Map<String, dynamic>? rectSingleTojson(Rect? rect) {
+    if (rect == null) return null;
+    return {
+      'left': rect.left,
+      'top': rect.top,
+      'right': rect.right,
+      'bottom': rect.bottom,
+    };
+  }
+
+  /// Rect to Json
+  static Map<String, dynamic> rectFromJson(Map<String, dynamic> json) {
+    return {
+      DeviceType.phone.name: rectSingleFromJson(json[DeviceType.phone.name]),
+      DeviceType.tablet.name: rectSingleFromJson(json[DeviceType.tablet.name]),
+      DeviceType.desktop.name:
+          rectSingleFromJson(json[DeviceType.desktop.name]),
+    };
+  }
+
+  static Rect? rectSingleFromJson(Map<String, dynamic>? json) {
+    if (json == null) return null;
+    Rect.fromLTRB(json['left'], json['top'], json['right'], json['bottom']);
+    return null;
+  }
+
+  bool get flipRectWhileResizing =>
+      getRectProperties['flipRectWhileResizing'] as bool;
+  void setFlipRectWhileResizing(bool value) =>
+      _rectProperties['flipRectWhileResizing'] = value;
+
+  bool get flipChild => getRectProperties['flipChild'] as bool;
+  void setFlipChild(bool value) => _rectProperties['flipChild'] = value;
+
+  bool get constraintsEnabled =>
+      getRectProperties['constraintsEnabled'] as bool;
+  void setConstraintsEnabled(bool value) =>
+      _rectProperties['constraintsEnabled'] = value;
+
+  bool get resizable => getRectProperties['resizable'] as bool;
+  void setResizable(bool value) => _rectProperties['resizable'] = value;
+
+  bool get movable => getRectProperties['movable'] as bool;
+  void setMovable(bool value) => _rectProperties['movable'] = value;
+
+  bool get hideHandlesWhenNotResizable =>
+      getRectProperties['hideHandlesWhenNotResizable'] as bool;
+  void setHideHandlesWhenNotResizable(bool value) =>
+      _rectProperties['hideHandlesWhenNotResizable'] = value;
+
+  Map<String, dynamic> rectPropertiesToJson() => {
+        'rect': rectToJson,
+        'flipRectWhileResizing': flipRectWhileResizing,
+        'flipChild': flipChild,
+        'constraintsEnabled': constraintsEnabled,
+        'resizable': resizable,
+        'movable': movable,
+        'hideHandlesWhenNotResizable': hideHandlesWhenNotResizable,
+      };
+
+  static NodeAttributes rectPropertiesFromJson(Map<String, dynamic> json) {
+    if (json.isEmpty) {
+      return {
+        'rect': {
+          DeviceType.phone.name: const Rect.fromLTWH(0, 0, 150, 150),
+          DeviceType.tablet.name: const Rect.fromLTWH(0, 0, 150, 150),
+          DeviceType.desktop.name: const Rect.fromLTWH(0, 0, 150, 150),
+        },
+        'flipRectWhileResizing': true,
+        'flipChild': true,
+        'constraintsEnabled': false,
+        'resizable': true,
+        'movable': true,
+        'hideHandlesWhenNotResizable': true,
+      };
+    }
+    return <String, dynamic>{
+      'rect': rectFromJson(json['rect']),
+      'flipRectWhileResizing': json['flipRectWhileResizing'],
+      'flipChild': json['flipChild'],
+      'constraintsEnabled': json['constraintsEnabled'],
+      'resizable': json['resizable'],
+      'movable': json['movable'],
+      'hideHandlesWhenNotResizable': json['hideHandlesWhenNotResizable'],
+    };
+  }
+
+  void setAttribute(String key, dynamic value) => _attributes[key] = value;
 
   /// fromJson method
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -118,12 +235,12 @@ abstract class CNode extends Equatable {
     final ids = childrenIds.toJson();
     final body = getAttributes;
     return {
-      'id': id,
       'type': type,
       'name': name,
       'description': description,
       'ids': ids,
-      'body': body,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
     };
   }
 
@@ -138,13 +255,7 @@ abstract class CNode extends Equatable {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
-    Rect? rect,
-    bool? flipRectWhileResizing,
-    bool? flipChild,
-    bool? constraintsEnabled,
-    bool? resizable,
-    bool? movable,
-    bool? hideHandlesWhenNotResizable,
+    Map<String, dynamic>? rectProperties,
   });
 
   /// Render a Widget from node
@@ -153,14 +264,18 @@ abstract class CNode extends Equatable {
     required final WidgetState state,
   }) {
     return ValueListenableBuilder(
-        valueListenable: _attributesNotifier,
-        builder: (BuildContext context, NodeAttributes attributes, Widget? _) {
-          final widget = adapter.toWidget(
-            context: context,
-            state: state.copyWith(node: this),
-          );
-          return widget;
-        });
+      valueListenable: _attributesNotifier,
+      builder: (BuildContext context, NodeAttributes attributes, Widget? _) {
+        return adapter.toWidget(
+          context: context,
+          state: state.copyWith(node: this),
+        );
+      },
+      child: adapter.toWidget(
+        context: context,
+        state: state.copyWith(node: this),
+      ),
+    );
   }
 
   @override
@@ -178,6 +293,13 @@ abstract class CNode extends Equatable {
         description,
         childrenIds,
         index,
+        rect,
+        flipRectWhileResizing,
+        flipChild,
+        constraintsEnabled,
+        resizable,
+        movable,
+        hideHandlesWhenNotResizable,
       ];
 
   @override

@@ -6,10 +6,10 @@
 import 'package:collection/collection.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class OpenWScaffold extends NodeWidget {
   /// Returns a Scaffold
@@ -42,18 +42,7 @@ class OpenWScaffold extends NodeWidget {
   @override
   Widget build(final BuildContext context, final TreeState state,
       final WidgetState nodeState) {
-    final isPage = state.isPage;
-    if (!isPage && !state.forPlay) {
-      return SizedBox(
-        child: Center(
-          child: _childWids(context, nodeState),
-        ),
-      );
-    } else if (!isPage && state.forPlay) {
-      return _childWids(context, nodeState);
-    } else {
-      return _scaffold(context, state, nodeState);
-    }
+    return _scaffold(context, state, nodeState);
   }
 
   Widget _scaffold(final BuildContext context, final TreeState state,
@@ -91,11 +80,7 @@ class OpenWScaffold extends NodeWidget {
                         context: context),
                   )
                 : null,
-            body: SizedBox(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              child: _stack(context, state, nodeState),
-            ),
+            body: _stack(context, state, nodeState),
           )
         : Scaffold(
             backgroundColor: HexColor(
@@ -112,13 +97,7 @@ class OpenWScaffold extends NodeWidget {
                       state: nodeState.copyWith(node: appBar), context: context)
                   : const SizedBox(),
             ),
-            body: SizedBox(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              child: IntrinsicHeight(
-                child: _stack(context, state, nodeState),
-              ),
-            ),
+            body: _stack(context, state, nodeState),
           );
   }
 
@@ -187,8 +166,7 @@ class OpenWScaffold extends NodeWidget {
         )
         .map(
           (final e) => BoxTransformBuilder(
-            child: e.toWidget(state: nodeState, context: context),
-          ),
+              key: ValueKey('BoxTransformBuilder ${e.id} ${e.rect}'), node: e),
         )
         .toList();
     return widgets.isNotEmpty

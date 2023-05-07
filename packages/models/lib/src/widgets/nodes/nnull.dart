@@ -13,6 +13,7 @@ class NNull extends CNode {
           intrinsicState: intrinsicState,
           defaultAttributes: const {},
           attributes: const {},
+          rectProperties: const {},
           adapter: const NNullWidgetAdapter(),
         );
 
@@ -46,13 +47,7 @@ class NNull extends CNode {
     FChildrenIds? childrenIds,
     int? index,
     Map<String, dynamic>? attributes,
-    Rect? rect,
-    bool? flipRectWhileResizing,
-    bool? flipChild,
-    bool? constraintsEnabled,
-    bool? resizable,
-    bool? movable,
-    bool? hideHandlesWhenNotResizable,
+    Map<String, dynamic>? rectProperties,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
@@ -62,10 +57,12 @@ class NNullWidgetAdapter extends WidgetAdapter {
   const NNullWidgetAdapter();
 
   @override
-  dynamic toWidget({
+  Widget toWidget({
     required final BuildContext context,
     required final WidgetState state,
     final CNode? child,
     final List<CNode>? children,
-  }) {}
+  }) {
+    return const SizedBox.shrink();
+  }
 }
