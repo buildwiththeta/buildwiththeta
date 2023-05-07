@@ -398,7 +398,8 @@ class ConditionIntrinsicStates extends IntrinsicState {
 class ContainerIntrinsicStates extends IntrinsicState {
   ContainerIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.box.path,
+          nodeIcon:
+              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/container/',
           synonymous: const ['box', 'container', 'square', 'div'],
           displayName: NodeType.name(NType.container),
           type: NType.container,
@@ -729,7 +730,8 @@ class IgnorePointerIntrinsicStates extends IntrinsicState {
 class ImageIntrinsicStates extends IntrinsicState {
   ImageIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.image.path,
+          nodeIcon:
+              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/image/',
           synonymous: const ['image', 'picture', 'photo'],
           displayName: NodeType.name(NType.image),
           type: NType.image,
@@ -1047,7 +1049,8 @@ class PageViewIntrinsicStates extends IntrinsicState {
 class PlaceholderIntrinsicStates extends IntrinsicState {
   PlaceholderIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.placeholder.path,
+          nodeIcon:
+              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/text/',
           synonymous: const ['placeholder', 'text'],
           displayName: NodeType.name(NType.placeholder),
           type: NType.placeholder,
@@ -1355,7 +1358,8 @@ class TCardIntrinsicStates extends IntrinsicState {
 class TextIntrinsicStates extends IntrinsicState {
   TextIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.text.path,
+          nodeIcon:
+              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/text/',
           synonymous: const ['text', 'label', 'title'],
           displayName: NodeType.name(NType.text),
           type: NType.text,
@@ -2159,7 +2163,8 @@ class CmsFetchIntrinsicStates extends IntrinsicState {
 class CmsLoggedUserIntrinsicStates extends IntrinsicState {
   CmsLoggedUserIntrinsicStates()
       : super(
-          nodeIcon: const AssetGenImage('assets/icons/left/auth.png').path,
+          nodeIcon:
+              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/image/',
           synonymous: [
             NodeType.name(NType.cmsLoggedUser),
             'cms',

@@ -176,7 +176,6 @@ class Core {
           forPlay: true,
           params: parameters0,
           states: states0,
-          dataset: const [],
           pageId: _page!.id,
           isPage: _page!.isPage,
           colorStyles: _colorStyles,
