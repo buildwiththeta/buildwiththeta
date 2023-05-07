@@ -7,3 +7,4 @@ export 'project_config.dart';
 export 'text_style.dart';
 export 'user.dart';
 export 'variable.dart';
+export 'user_info.dart';
