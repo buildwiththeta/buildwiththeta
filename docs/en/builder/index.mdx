@@ -1,7 +1,7 @@
-# Theta Builder
+# Theta Flutter Library
 
-## What is Theta Builder?
-Theta Builder is a package designed for rendering dynamic user interfaces seamlessly within your Flutter applications.
+## What is Theta?
+Theta is a platform designed for rendering dynamic user interfaces seamlessly within your Flutter applications.
 - Effortless dynamic UI rendering: Display no-code UIs by eliminating the need to deploy or rebuild the app for each change.
 - Custom code directly from within your app, mixing no-code and code.
 - Test the user interface against various conditions and user properties in real time to help you find the best user experience.
@@ -22,11 +22,8 @@ Public Alpha: No breaking changes expected in future but possible bugs.
 ```dart
 import 'package:theta/theta.dart';
 
-Future<void> main() async {
-    await Theta.initialize(
-        project_id: 0, // Your project id
-        key: 'xyz', // Your token
-    );
+void main() {
+    Theta.initialize('projectReference', 'thetaKey');
 }
 ```
 
