@@ -58,7 +58,6 @@ class _BoxTransformBuilder extends StatefulWidget {
 
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   late final TransformableBoxController controller;
-  Widget child = const SizedBox.shrink();
 
   @override
   void initState() {
@@ -73,12 +72,6 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       actualDeviceSize.width,
       actualDeviceSize.height,
     ));
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      child = widget.node.toWidget(
-        context: context,
-        state: WidgetState(node: widget.node, loop: 0),
-      );
-    });
   }
 
   @override
@@ -99,6 +92,10 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
           );
           setState(() {});
         },
-        contentBuilder: (_, rect, flip) => child);
+        contentBuilder: (_, rect, flip) => widget.node.toWidget(
+        context: context,
+        state: WidgetState(node: widget.node, loop: 0),
+      ),
+    );
   }
 }
