@@ -83,7 +83,9 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                           Icon(
                             widget.icon,
                             size: 16,
-                            color: Palette.txtPrimary,
+                            color: widget.isSelected
+                                ? Colors.white
+                                : Palette.txtPrimary,
                           ),
                         if (widget.icon != null)
                           const SizedBox(width: Grid.medium),
@@ -91,7 +93,9 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                           flex: 5,
                           child: TDetailLabel(
                             widget.title,
-                            color: Palette.txtPrimary,
+                            color: widget.isSelected
+                                ? Colors.white
+                                : Palette.txtPrimary,
                           ),
                         ),
                       ],
@@ -101,7 +105,9 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                         padding: const EdgeInsets.only(top: 4),
                         child: TDetailLabel(
                           widget.subtitle!,
-                          color: Palette.txtPrimary.withOpacity(0.6),
+                          color: widget.isSelected
+                              ? Colors.white.withOpacity(0.6)
+                              : Palette.txtPrimary.withOpacity(0.6),
                         ),
                       ),
                   ],

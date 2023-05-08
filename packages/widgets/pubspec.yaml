@@ -3,6 +3,9 @@ description: Package with all the widgets used in Theta
 version: 0.0.16
 publish_to: none
 
+scripts:
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
+
 environment:
   sdk: ">=2.19.0 <3.0.0"
   flutter: ">=1.17.0"

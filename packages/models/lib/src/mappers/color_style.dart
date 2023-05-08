@@ -1,10 +1,9 @@
-import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles
 class ColorStylesMapper extends Mapper<ColorStyleEntity> {
   const ColorStylesMapper();
-  static const _idKey = '_id';
+  static const _idKey = 'id';
   static const _branchKey = 'branch_id';
   static const _nameKey = 'name';
   static const _propertiesKey = 'properties';

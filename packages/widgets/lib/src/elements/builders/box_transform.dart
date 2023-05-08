@@ -3,33 +3,47 @@ import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
-class BoxTransformBuilder extends StatelessWidget {
+class BoxTransformBuilder extends StatefulWidget {
   const BoxTransformBuilder({super.key, required this.node});
 
   final CNode node;
 
   @override
+  State<BoxTransformBuilder> createState() => _BoxTransformBuilderState();
+}
+
+class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
+  late Rect rect;
+
+  @override
   Widget build(BuildContext context) {
+    final device = TreeGlobalState.state.deviceInfo;
+    rect = widget.node.rect(device.identifier.type);
     if (TreeGlobalState.state.forPlay) {
-      return node.toWidget(
+      return widget.node.toWidget(
         context: context,
-        state: WidgetState(node: node, loop: 0),
+        state: WidgetState(node: widget.node, loop: 0),
       );
     }
-    if (TreeGlobalState.state.focusedNode != node) {
-      return GestureDetector(
-        onTap: () => TreeGlobalState.onNodeFocused(node),
-        child: DecoratedBox(
-          decoration: const BoxDecoration(color: Colors.red),
-          position: DecorationPosition.foreground,
-          child: node.toWidget(
+    if (TreeGlobalState.state.focusedNode != widget.node) {
+      return Positioned(
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: rect.height,
+        child: GestureDetector(
+          onTap: () {
+            TreeGlobalState.onNodeFocused(widget.node);
+            setState(() {});
+          },
+          child: widget.node.toWidget(
             context: context,
-            state: WidgetState(node: node, loop: 0),
+            state: WidgetState(node: widget.node, loop: 0),
           ),
         ),
       );
     }
-    return _BoxTransformBuilder(node: node);
+    return _BoxTransformBuilder(node: widget.node);
   }
 }
 
@@ -39,11 +53,12 @@ class _BoxTransformBuilder extends StatefulWidget {
   final CNode node;
 
   @override
-  State<_BoxTransformBuilder> createState() => _BoxTransformBuilderState();
+  State<_BoxTransformBuilder> createState() => __BoxTransformBuilderState();
 }
 
-class _BoxTransformBuilderState extends State<_BoxTransformBuilder> {
+class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   late final TransformableBoxController controller;
+  Widget child = const SizedBox.shrink();
 
   @override
   void initState() {
@@ -58,6 +73,12 @@ class _BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       actualDeviceSize.width,
       actualDeviceSize.height,
     ));
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      child = widget.node.toWidget(
+        context: context,
+        state: WidgetState(node: widget.node, loop: 0),
+      );
+    });
   }
 
   @override
@@ -69,17 +90,15 @@ class _BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   @override
   Widget build(BuildContext context) {
     return TransformableBox(
-      controller: controller,
-      onChanged: (rect) {
-        TreeGlobalState.onNodeChanged(
-          widget.node,
-          rect,
-          TreeGlobalState.state.deviceInfo.identifier.type,
-        );
-        setState(() {});
-      },
-      contentBuilder: (context, rect, flip) => widget.node.toWidget(
-          context: context, state: WidgetState(node: widget.node, loop: 0)),
-    );
+        controller: controller,
+        onChanged: (rect) {
+          TreeGlobalState.onNodeChanged(
+            widget.node,
+            rect,
+            TreeGlobalState.state.deviceInfo.identifier.type,
+          );
+          setState(() {});
+        },
+        contentBuilder: (_, rect, flip) => child);
   }
 }

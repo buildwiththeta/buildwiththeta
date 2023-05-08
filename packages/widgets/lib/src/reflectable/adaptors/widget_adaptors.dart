@@ -1284,6 +1284,7 @@ class ScaffoldAdapter extends WidgetAdapter {
     required final WidgetState state,
   }) =>
       OpenWScaffold(
+        key: ValueKey(state.node.id),
         nodeState: state,
         children: state.node.children ?? [],
         fill: state.node.getAttributes[DBKeys.fill] as FFill,

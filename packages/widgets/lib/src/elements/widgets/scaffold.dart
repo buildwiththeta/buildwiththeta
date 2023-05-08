@@ -3,7 +3,6 @@
 
 // Package imports:
 
-import 'package:collection/collection.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:theta_design_system/theta_design_system.dart';
@@ -12,7 +11,6 @@ import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class OpenWScaffold extends NodeWidget {
-  /// Returns a Scaffold
   const OpenWScaffold({
     super.key,
     required super.nodeState,
@@ -41,134 +39,21 @@ class OpenWScaffold extends NodeWidget {
 
   @override
   Widget build(final BuildContext context, final TreeState state,
-      final WidgetState nodeState) {
-    return _scaffold(context, state, nodeState);
-  }
-
-  Widget _scaffold(final BuildContext context, final TreeState state,
-      final WidgetState nodeState) {
-    CNode? drawerNode;
-    drawerNode = children.firstWhereOrNull(
-      (final element) => element.type == NType.drawer,
-    );
-
-    CNode? appBar;
-    appBar = children.firstWhereOrNull(
-      (final element) => element.type == NType.appBar,
-    );
-
-    return state.forPlay
-        ? Scaffold(
-            backgroundColor: HexColor(
-              fill.getHexColor(
-                context,
-                state.colorStyles,
-                state.theme,
-              ),
-            ),
-            resizeToAvoidBottomInset: flag,
-            appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(120),
-              child: showAppBar && appBar != null
-                  ? appBar.toWidget(state: nodeState, context: context)
-                  : const SizedBox(),
-            ),
-            drawer: drawerNode != null
-                ? Drawer(
-                    child: drawerNode.toWidget(
-                        state: nodeState.copyWith(node: drawerNode),
-                        context: context),
-                  )
-                : null,
-            body: _stack(context, state, nodeState),
-          )
-        : Scaffold(
-            backgroundColor: HexColor(
-              fill.getHexColor(
-                context,
-                state.colorStyles,
-                state.theme,
-              ),
-            ),
-            appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(120),
-              child: showAppBar && appBar != null
-                  ? appBar.toWidget(
-                      state: nodeState.copyWith(node: appBar), context: context)
-                  : const SizedBox(),
-            ),
-            body: _stack(context, state, nodeState),
-          );
-  }
-
-  /// Returns the body of Scaffold,
-  /// which consists in a Stack with widget.appBar and widget.bottomBar.
-  /// Eventualy, if !forPlay, also widget.drawer
-  Widget _stack(final BuildContext context, final TreeState state,
-      final WidgetState nodeState) {
-    CNode? bottomBar;
-    bottomBar = children.firstWhereOrNull(
-      (final element) => element.type == NType.bottomBar,
-    );
-
-    CNode? drawerNode;
-    drawerNode = children.firstWhereOrNull(
-      (final element) => element.type == NType.drawer,
-    );
-
-    final isPage = state.isPage;
-    if (!isPage) return _childWids(context, nodeState);
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: _childWids(context, nodeState),
+          final WidgetState nodeState) =>
+      ColoredBox(
+        color: HexColor(
+          fill.getHexColor(
+            context,
+            state.colorStyles,
+            state.theme,
+          ),
         ),
-        if (showDrawer && !state.forPlay)
-          Positioned(
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.only(right: 50),
-              decoration: const BoxDecoration(color: Colors.black38),
-              child: Drawer(
-                child: drawerNode != null
-                    ? drawerNode.toWidget(
-                        state: nodeState.copyWith(node: drawerNode),
-                        context: context)
-                    : const SizedBox(),
-              ),
-            ),
-          ),
-        if (showBottomBar)
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: (bottomBar != null)
-                ? bottomBar.toWidget(
-                    state: nodeState.copyWith(node: bottomBar),
-                    context: context)
-                : const SizedBox(),
-          ),
-      ],
-    );
-  }
+        child: _childWids(context, nodeState),
+      );
 
   Widget _childWids(final BuildContext context, final WidgetState nodeState) {
-    final widgets = children
-        .where(
-          (final e) =>
-              e.intrinsicState.type != NType.bottomBar &&
-              e.intrinsicState.type != NType.appBar &&
-              e.intrinsicState.type != NType.drawer,
-        )
-        .map(
-          (final e) => BoxTransformBuilder(
-              key: ValueKey('BoxTransformBuilder ${e.id} ${e.rect}'), node: e),
-        )
-        .toList();
+    final widgets =
+        children.map((final e) => BoxTransformBuilder(node: e)).toList();
     return widgets.isNotEmpty
         ? isBoxed
             ? Center(

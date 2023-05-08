@@ -18,7 +18,7 @@ typedef OnNodeHoveredCallBack = void Function(
 )?;
 
 /// The current state of the widget tree.
-TreeState? _currentState;
+ValueNotifier<TreeState>? _currentState;
 OnNodeChangedCallBack _onNodeChanged;
 OnNodeFocusedCallBack _onNodeFocused;
 OnNodeHoveredCallBack _onNodeHovered;
@@ -67,7 +67,7 @@ class TreeGlobalState extends StatefulWidget {
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
   }) : super(key: _globalKey) {
-    _currentState = state;
+    _currentState = ValueNotifier<TreeState>(state);
     _onNodeChanged = onNodeChanged;
     _onNodeFocused = onNodeFocused;
     _onNodeHovered = onNodeHovered;
@@ -85,7 +85,7 @@ class TreeGlobalState extends StatefulWidget {
       'No state found, be sure there is TreeGlobalState widget in the tree',
     );
     if (_currentState != null) {
-      return _currentState!;
+      return _currentState!.value;
     }
     throw Exception(
       'No state found, be sure there is TreeGlobalState widget in the tree',
@@ -126,25 +126,14 @@ class TreeGlobalState extends StatefulWidget {
 }
 
 class _TreeGlobalState extends State<TreeGlobalState> {
-  /// Each time widget is rebuild it will try to recreate its tree.
   @override
   Widget build(BuildContext context) {
-    _rebuildAllChildren();
-    return _InheritedState(
-      key: ValueKey<Object>(Object()), // ignore: prefer_const_constructors
-      state: this,
-      child: widget.child,
+    return ValueListenableBuilder<TreeState>(
+      valueListenable: _currentState!,
+      builder: (BuildContext context, TreeState state, Widget? child) {
+        return widget.child;
+      },
     );
-  }
-
-  /// See: https://stackoverflow.com/a/58513635/3411681
-  void _rebuildAllChildren() {
-    void rebuild(Element el) {
-      el.markNeedsBuild();
-      el.visitChildren(rebuild);
-    }
-
-    (context as Element).visitChildren(rebuild);
   }
 }
 
