@@ -15,7 +15,7 @@ Public Alpha: No breaking changes expected in future but possible bugs.
 
 ## Usage example
 ### Initializing
-```js
+```dart
 import 'package:ui_builder/ui_builder.dart';
 ​
 Future<void> main() async {
@@ -27,7 +27,7 @@ Future<void> main() async {
 ```
 ### UI basic rendering
 All you have to do is write the name of the UI component inside a UIBox widget.
-```js
+```dart
 /// Your app
 return Scaffold(
     body: Center(
@@ -40,7 +40,7 @@ Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add cus
 1. Select a single UI element based on its id.
 2. Choose the trigger for which the action will start.
 3. Add your code.
-```js
+```dart
 UIBox(
     'CupertinoAppBar',
     workflows: [
@@ -52,7 +52,7 @@ UIBox(
 ```
 ### Parameters and states
 In Theta Studio, you can declare params and states inside your UI interfaces. You can override their values with custom values using UIBox as following:
-```js
+```dart
 UIBox(
     'Component Name',
     parameters: [
@@ -66,7 +66,7 @@ UIBox(
 ```
 ### Loading placeholder and error handling
 You can display a placeholder widget during loading and a custom error widget.
-```js
+```dart
 UIBox(
     'CupertinoAppBar',
     placeholder: CircularProgressIndicator(),
@@ -75,7 +75,7 @@ UIBox(
 ```
 ### Channel versioning (also for AB tests)
 It is possible to have multiple UIs with the same name but different channels (versions).
-```js
+```dart
 UIBox(
     'ArticleCard',
     channel_id: 'Channel id', // You can retrieve it from app.buildwiththeta.com
