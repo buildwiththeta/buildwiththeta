@@ -23,8 +23,13 @@
       ["Overview", "/"],
       ["Migration", "/support/migration"],
       [
-        "UI Studio", [
+        "Theta Studio", [
           ["Teams", "/studio/teams"]
+        ]
+      ],
+      [
+        "Theta Builder", [
+          ["Introduction", "/builder/"]
         ]
       ]
     ],
@@ -32,7 +37,7 @@
       ["Introduzione", "/"],
       ["Migrazione", "/support/migrazione"],
       [
-        "UI Studio", [
+        "Theta Studio", [
           ["Team", "/studio/team"]
         ]
       ]
