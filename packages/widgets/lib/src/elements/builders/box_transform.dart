@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -17,15 +18,16 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    final device = TreeGlobalState.state.deviceInfo;
+    final TreeState state = context.watch<TreeState>();
+    final device = state.deviceInfo;
     rect = widget.node.rect(device.identifier.type);
-    if (TreeGlobalState.state.forPlay) {
+    if (state.forPlay) {
       return widget.node.toWidget(
         context: context,
         state: WidgetState(node: widget.node, loop: 0),
       );
     }
-    if (TreeGlobalState.state.focusedNode != widget.node) {
+    if (state.focusedNode != widget.node) {
       return Positioned(
         top: rect.top,
         left: rect.left,
@@ -57,42 +59,27 @@ class _BoxTransformBuilder extends StatefulWidget {
 }
 
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
-  late final TransformableBoxController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    final device = TreeGlobalState.state.deviceInfo;
-    controller = TransformableBoxController();
-    controller.setRect(widget.node.rect(device.identifier.type));
-    final actualDeviceSize = device.screenSize;
-    controller.setClampingRect(Rect.fromLTWH(
-      0,
-      0,
-      actualDeviceSize.width,
-      actualDeviceSize.height,
-    ));
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final TreeState state = context.watch<TreeState>();
+    final device = state.deviceInfo;
     return TransformableBox(
-        controller: controller,
-        onChanged: (rect) {
-          TreeGlobalState.onNodeChanged(
-            widget.node,
-            rect,
-            TreeGlobalState.state.deviceInfo.identifier.type,
-          );
-          setState(() {});
-        },
-        contentBuilder: (_, rect, flip) => widget.node.toWidget(
+      rect: widget.node.rect(device.identifier.type),
+      clampingRect: Rect.fromLTWH(
+        0,
+        0,
+        device.screenSize.width,
+        device.screenSize.height,
+      ),
+      onChanged: (rect) {
+        TreeGlobalState.onNodeChanged(
+          widget.node,
+          rect,
+          state.deviceInfo.identifier.type,
+        );
+        setState(() {});
+      },
+      contentBuilder: (_, rect, flip) => widget.node.toWidget(
         context: context,
         state: WidgetState(node: widget.node, loop: 0),
       ),

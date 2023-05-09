@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWCupertinoPicker extends CupertinoPicker {
@@ -15,7 +15,7 @@ class OpenWCupertinoPicker extends CupertinoPicker {
           itemExtent: height.get(
                 context: context,
                 isWidth: false,
-                state: TreeGlobalState.state,
+                state: context.watch<TreeState>(),
               ) ??
               44,
           onSelectedItemChanged: (final index) {},

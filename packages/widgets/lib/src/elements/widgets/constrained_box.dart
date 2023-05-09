@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -19,25 +20,25 @@ class OpenWConstrainedBox extends ConstrainedBox {
   }) : super(
           constraints: BoxConstraints(
             minWidth: minWidth.get(
-                  state: TreeGlobalState.state,
+                  state: context.watch<TreeState>(),
                   context: context,
                   isWidth: true,
                 ) ??
                 0,
             minHeight: minHeight.get(
-                  state: TreeGlobalState.state,
+                  state: context.watch<TreeState>(),
                   context: context,
                   isWidth: false,
                 ) ??
                 0,
             maxWidth: maxWidth.get(
-                  state: TreeGlobalState.state,
+                  state: context.watch<TreeState>(),
                   context: context,
                   isWidth: true,
                 ) ??
                 double.infinity,
             maxHeight: maxHeight.get(
-                  state: TreeGlobalState.state,
+                  state: context.watch<TreeState>(),
                   context: context,
                   isWidth: false,
                 ) ??

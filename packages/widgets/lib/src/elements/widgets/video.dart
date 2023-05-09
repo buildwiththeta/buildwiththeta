@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -37,7 +37,7 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
   late final YoutubePlayerController controller;
   @override
   FutureOr<void> afterFirstLayout(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     setState(() {
       controller = YoutubePlayerController(
         initialVideoId: widget.value.get(
@@ -57,7 +57,7 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
 
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     if (UniversalPlatform.isWindows) {
       return Center(
         child: Column(

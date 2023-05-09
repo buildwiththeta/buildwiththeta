@@ -137,6 +137,7 @@ dependencies:
 
   flutter_box_transform:
   styled_widget: ^0.4.1
+  provider: ^6.0.5
 
 dependency_overrides:
   theta_models:

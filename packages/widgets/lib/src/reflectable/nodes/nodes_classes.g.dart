@@ -21,6 +21,7 @@ class AlignOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.align,
@@ -38,6 +39,7 @@ class AlignOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -52,6 +54,7 @@ class AlignOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AlignOpenNode(
         id: id ?? this.id,
@@ -72,8 +75,9 @@ class AlignOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -89,6 +93,7 @@ class AlignOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -112,6 +117,7 @@ class AspectRatioOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.aspectRatio,
@@ -129,6 +135,7 @@ class AspectRatioOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -143,6 +150,7 @@ class AspectRatioOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AspectRatioOpenNode(
         id: id ?? this.id,
@@ -163,8 +171,9 @@ class AspectRatioOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -180,6 +189,7 @@ class AspectRatioOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -203,6 +213,7 @@ class AudioPlayerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.audioPlayer,
@@ -220,6 +231,7 @@ class AudioPlayerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -234,6 +246,7 @@ class AudioPlayerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AudioPlayerOpenNode(
         id: id ?? this.id,
@@ -254,8 +267,9 @@ class AudioPlayerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -271,6 +285,7 @@ class AudioPlayerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -294,6 +309,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.audioPlayerProgressIndicator,
@@ -312,6 +328,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -326,6 +343,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -346,8 +364,9 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -363,6 +382,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -386,6 +406,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.audioPlayerVolumeIndicator,
@@ -404,6 +425,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -418,6 +440,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
         id: id ?? this.id,
@@ -438,8 +461,9 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -455,6 +479,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -478,6 +503,7 @@ class BadgeOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.badge,
@@ -495,6 +521,7 @@ class BadgeOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -509,6 +536,7 @@ class BadgeOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       BadgeOpenNode(
         id: id ?? this.id,
@@ -529,8 +557,9 @@ class BadgeOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -546,6 +575,7 @@ class BadgeOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -569,6 +599,7 @@ class BarcodeOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.barcode,
@@ -586,6 +617,7 @@ class BarcodeOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -600,6 +632,7 @@ class BarcodeOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       BarcodeOpenNode(
         id: id ?? this.id,
@@ -620,8 +653,9 @@ class BarcodeOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -637,6 +671,7 @@ class BarcodeOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -660,6 +695,7 @@ class BottomBarItemOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.bottombaritem,
@@ -677,6 +713,7 @@ class BottomBarItemOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -691,6 +728,7 @@ class BottomBarItemOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       BottomBarItemOpenNode(
         id: id ?? this.id,
@@ -711,8 +749,9 @@ class BottomBarItemOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -728,6 +767,7 @@ class BottomBarItemOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -751,6 +791,7 @@ class BouncingWidgetOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.bouncingWidget,
@@ -768,6 +809,7 @@ class BouncingWidgetOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -782,6 +824,7 @@ class BouncingWidgetOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       BouncingWidgetOpenNode(
         id: id ?? this.id,
@@ -802,8 +845,9 @@ class BouncingWidgetOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -819,6 +863,7 @@ class BouncingWidgetOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -842,6 +887,7 @@ class ButtonOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.button,
@@ -859,6 +905,7 @@ class ButtonOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -873,6 +920,7 @@ class ButtonOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ButtonOpenNode(
         id: id ?? this.id,
@@ -893,8 +941,9 @@ class ButtonOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -910,6 +959,7 @@ class ButtonOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -933,6 +983,7 @@ class CalendarOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.calendar,
@@ -950,6 +1001,7 @@ class CalendarOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -964,6 +1016,7 @@ class CalendarOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CalendarOpenNode(
         id: id ?? this.id,
@@ -984,8 +1037,9 @@ class CalendarOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1001,6 +1055,7 @@ class CalendarOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1024,6 +1079,7 @@ class CalendarV2OpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.calendarV2,
@@ -1041,6 +1097,7 @@ class CalendarV2OpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1055,6 +1112,7 @@ class CalendarV2OpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CalendarV2OpenNode(
         id: id ?? this.id,
@@ -1075,8 +1133,9 @@ class CalendarV2OpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1092,6 +1151,7 @@ class CalendarV2OpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1115,6 +1175,7 @@ class CardOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.card,
@@ -1132,6 +1193,7 @@ class CardOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1146,6 +1208,7 @@ class CardOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CardOpenNode(
         id: id ?? this.id,
@@ -1166,8 +1229,9 @@ class CardOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1183,6 +1247,7 @@ class CardOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1206,6 +1271,7 @@ class CenterOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.center,
@@ -1223,6 +1289,7 @@ class CenterOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1237,6 +1304,7 @@ class CenterOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CenterOpenNode(
         id: id ?? this.id,
@@ -1257,8 +1325,9 @@ class CenterOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1274,6 +1343,7 @@ class CenterOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1297,6 +1367,7 @@ class CheckboxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.checkbox,
@@ -1314,6 +1385,7 @@ class CheckboxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1328,6 +1400,7 @@ class CheckboxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CheckboxOpenNode(
         id: id ?? this.id,
@@ -1348,8 +1421,9 @@ class CheckboxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1365,6 +1439,7 @@ class CheckboxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1388,6 +1463,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.circularProgressIndicator,
@@ -1406,6 +1482,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1420,6 +1497,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CircularProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -1440,8 +1518,9 @@ class CircularProgressIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1457,6 +1536,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1480,6 +1560,7 @@ class ClipOvalOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.clipOval,
@@ -1497,6 +1578,7 @@ class ClipOvalOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1511,6 +1593,7 @@ class ClipOvalOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ClipOvalOpenNode(
         id: id ?? this.id,
@@ -1531,8 +1614,9 @@ class ClipOvalOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1548,6 +1632,7 @@ class ClipOvalOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1571,6 +1656,7 @@ class ClipRectOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.clipRect,
@@ -1588,6 +1674,7 @@ class ClipRectOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1602,6 +1689,7 @@ class ClipRectOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ClipRectOpenNode(
         id: id ?? this.id,
@@ -1622,8 +1710,9 @@ class ClipRectOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1639,6 +1728,7 @@ class ClipRectOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1662,6 +1752,7 @@ class ClipRRectOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.clipRoundedRect,
@@ -1679,6 +1770,7 @@ class ClipRRectOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1693,6 +1785,7 @@ class ClipRRectOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ClipRRectOpenNode(
         id: id ?? this.id,
@@ -1713,8 +1806,9 @@ class ClipRRectOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1730,6 +1824,7 @@ class ClipRRectOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1753,6 +1848,7 @@ class ColumnOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.column,
@@ -1770,6 +1866,7 @@ class ColumnOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1784,6 +1881,7 @@ class ColumnOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ColumnOpenNode(
         id: id ?? this.id,
@@ -1804,8 +1902,9 @@ class ColumnOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1821,6 +1920,7 @@ class ColumnOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1844,6 +1944,7 @@ class ComponentOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.component,
@@ -1861,6 +1962,7 @@ class ComponentOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1875,6 +1977,7 @@ class ComponentOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ComponentOpenNode(
         id: id ?? this.id,
@@ -1895,8 +1998,9 @@ class ComponentOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1912,6 +2016,7 @@ class ComponentOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -1935,6 +2040,7 @@ class RowOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.row,
@@ -1952,6 +2058,7 @@ class RowOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -1966,6 +2073,7 @@ class RowOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RowOpenNode(
         id: id ?? this.id,
@@ -1986,8 +2094,9 @@ class RowOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2003,6 +2112,7 @@ class RowOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2026,6 +2136,7 @@ class ConcentricPageViewOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.concentricPageView,
@@ -2044,6 +2155,7 @@ class ConcentricPageViewOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2058,6 +2170,7 @@ class ConcentricPageViewOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ConcentricPageViewOpenNode(
         id: id ?? this.id,
@@ -2078,8 +2191,9 @@ class ConcentricPageViewOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2095,6 +2209,7 @@ class ConcentricPageViewOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2118,6 +2233,7 @@ class ConditionOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.condition,
@@ -2135,6 +2251,7 @@ class ConditionOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2149,6 +2266,7 @@ class ConditionOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ConditionOpenNode(
         id: id ?? this.id,
@@ -2169,8 +2287,9 @@ class ConditionOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2186,6 +2305,7 @@ class ConditionOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2209,6 +2329,7 @@ class ContainerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.container,
@@ -2226,6 +2347,7 @@ class ContainerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2240,6 +2362,7 @@ class ContainerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ContainerOpenNode(
         id: id ?? this.id,
@@ -2260,8 +2383,9 @@ class ContainerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2277,6 +2401,7 @@ class ContainerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2300,6 +2425,7 @@ class ConstrainedBoxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.constrainedBox,
@@ -2317,6 +2443,7 @@ class ConstrainedBoxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2331,6 +2458,7 @@ class ConstrainedBoxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ConstrainedBoxOpenNode(
         id: id ?? this.id,
@@ -2351,8 +2479,9 @@ class ConstrainedBoxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2368,6 +2497,7 @@ class ConstrainedBoxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2391,6 +2521,7 @@ class LimitedBoxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.limitedBox,
@@ -2408,6 +2539,7 @@ class LimitedBoxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2422,6 +2554,7 @@ class LimitedBoxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LimitedBoxOpenNode(
         id: id ?? this.id,
@@ -2442,8 +2575,9 @@ class LimitedBoxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2459,6 +2593,7 @@ class LimitedBoxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2482,6 +2617,7 @@ class SizedBoxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.sizedBox,
@@ -2499,6 +2635,7 @@ class SizedBoxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2513,6 +2650,7 @@ class SizedBoxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SizedBoxOpenNode(
         id: id ?? this.id,
@@ -2533,8 +2671,9 @@ class SizedBoxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2550,6 +2689,7 @@ class SizedBoxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2573,6 +2713,7 @@ class DecoratedBoxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.decoratedBox,
@@ -2590,6 +2731,7 @@ class DecoratedBoxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2604,6 +2746,7 @@ class DecoratedBoxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       DecoratedBoxOpenNode(
         id: id ?? this.id,
@@ -2624,8 +2767,9 @@ class DecoratedBoxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2641,6 +2785,7 @@ class DecoratedBoxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2664,6 +2809,7 @@ class ImageOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.image,
@@ -2681,6 +2827,7 @@ class ImageOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2695,6 +2842,7 @@ class ImageOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ImageOpenNode(
         id: id ?? this.id,
@@ -2715,8 +2863,9 @@ class ImageOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2732,6 +2881,7 @@ class ImageOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2755,6 +2905,7 @@ class CupertinoPickerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cupertinoPicker,
@@ -2772,6 +2923,7 @@ class CupertinoPickerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2786,6 +2938,7 @@ class CupertinoPickerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CupertinoPickerOpenNode(
         id: id ?? this.id,
@@ -2806,8 +2959,9 @@ class CupertinoPickerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2823,6 +2977,7 @@ class CupertinoPickerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2846,6 +3001,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cupertinoSegmentedControl,
@@ -2864,6 +3020,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2878,6 +3035,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CupertinoSegmentedControlOpenNode(
         id: id ?? this.id,
@@ -2898,8 +3056,9 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2915,6 +3074,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -2938,6 +3098,7 @@ class CupertinoSwitchOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cupertinoSwitch,
@@ -2955,6 +3116,7 @@ class CupertinoSwitchOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -2969,6 +3131,7 @@ class CupertinoSwitchOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CupertinoSwitchOpenNode(
         id: id ?? this.id,
@@ -2989,8 +3152,9 @@ class CupertinoSwitchOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3006,6 +3170,7 @@ class CupertinoSwitchOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3029,6 +3194,7 @@ class DividerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.divider,
@@ -3046,6 +3212,7 @@ class DividerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3060,6 +3227,7 @@ class DividerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       DividerOpenNode(
         id: id ?? this.id,
@@ -3080,8 +3248,9 @@ class DividerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3097,6 +3266,7 @@ class DividerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3120,6 +3290,7 @@ class DotsIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.dotsIndicator,
@@ -3137,6 +3308,7 @@ class DotsIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3151,6 +3323,7 @@ class DotsIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       DotsIndicatorOpenNode(
         id: id ?? this.id,
@@ -3171,8 +3344,9 @@ class DotsIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3188,6 +3362,7 @@ class DotsIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3211,6 +3386,7 @@ class ExpandedOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.expanded,
@@ -3228,6 +3404,7 @@ class ExpandedOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3242,6 +3419,7 @@ class ExpandedOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ExpandedOpenNode(
         id: id ?? this.id,
@@ -3262,8 +3440,9 @@ class ExpandedOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3279,6 +3458,7 @@ class ExpandedOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3302,6 +3482,7 @@ class AdMobBannerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.adMobBanner,
@@ -3319,6 +3500,7 @@ class AdMobBannerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3333,6 +3515,7 @@ class AdMobBannerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AdMobBannerOpenNode(
         id: id ?? this.id,
@@ -3353,8 +3536,9 @@ class AdMobBannerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3370,6 +3554,7 @@ class AdMobBannerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3393,6 +3578,7 @@ class GoogleMapsOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.googleMaps,
@@ -3410,6 +3596,7 @@ class GoogleMapsOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3424,6 +3611,7 @@ class GoogleMapsOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       GoogleMapsOpenNode(
         id: id ?? this.id,
@@ -3444,8 +3632,9 @@ class GoogleMapsOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3461,6 +3650,7 @@ class GoogleMapsOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3484,6 +3674,7 @@ class GridViewOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.gridView,
@@ -3501,6 +3692,7 @@ class GridViewOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3515,6 +3707,7 @@ class GridViewOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       GridViewOpenNode(
         id: id ?? this.id,
@@ -3535,8 +3728,9 @@ class GridViewOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3552,6 +3746,7 @@ class GridViewOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3575,6 +3770,7 @@ class GridViewBuilderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.gridViewBuilder,
@@ -3592,6 +3788,7 @@ class GridViewBuilderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3606,6 +3803,7 @@ class GridViewBuilderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       GridViewBuilderOpenNode(
         id: id ?? this.id,
@@ -3626,8 +3824,9 @@ class GridViewBuilderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3643,6 +3842,7 @@ class GridViewBuilderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3666,6 +3866,7 @@ class HeroOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.hero,
@@ -3683,6 +3884,7 @@ class HeroOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3697,6 +3899,7 @@ class HeroOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       HeroOpenNode(
         id: id ?? this.id,
@@ -3717,8 +3920,9 @@ class HeroOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3734,6 +3938,7 @@ class HeroOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3757,6 +3962,7 @@ class IconOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.icon,
@@ -3774,6 +3980,7 @@ class IconOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3788,6 +3995,7 @@ class IconOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       IconOpenNode(
         id: id ?? this.id,
@@ -3808,8 +4016,9 @@ class IconOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3825,6 +4034,7 @@ class IconOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3848,6 +4058,7 @@ class IgnorePointerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.ignorePointer,
@@ -3865,6 +4076,7 @@ class IgnorePointerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3879,6 +4091,7 @@ class IgnorePointerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       IgnorePointerOpenNode(
         id: id ?? this.id,
@@ -3899,8 +4112,9 @@ class IgnorePointerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3916,6 +4130,7 @@ class IgnorePointerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -3939,6 +4154,7 @@ class IndexedStackOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.indexedStack,
@@ -3956,6 +4172,7 @@ class IndexedStackOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -3970,6 +4187,7 @@ class IndexedStackOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       IndexedStackOpenNode(
         id: id ?? this.id,
@@ -3990,8 +4208,9 @@ class IndexedStackOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4007,6 +4226,7 @@ class IndexedStackOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4030,6 +4250,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.linearProgressIndicator,
@@ -4048,6 +4269,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4062,6 +4284,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LinearProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -4082,8 +4305,9 @@ class LinearProgressIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4099,6 +4323,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4122,6 +4347,7 @@ class LiquidSwipeOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.liquidSwipe,
@@ -4139,6 +4365,7 @@ class LiquidSwipeOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4153,6 +4380,7 @@ class LiquidSwipeOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LiquidSwipeOpenNode(
         id: id ?? this.id,
@@ -4173,8 +4401,9 @@ class LiquidSwipeOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4190,6 +4419,7 @@ class LiquidSwipeOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4213,6 +4443,7 @@ class ListTileOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.listTile,
@@ -4230,6 +4461,7 @@ class ListTileOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4244,6 +4476,7 @@ class ListTileOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ListTileOpenNode(
         id: id ?? this.id,
@@ -4264,8 +4497,9 @@ class ListTileOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4281,6 +4515,7 @@ class ListTileOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4304,6 +4539,7 @@ class ListViewOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.listView,
@@ -4321,6 +4557,7 @@ class ListViewOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4335,6 +4572,7 @@ class ListViewOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ListViewOpenNode(
         id: id ?? this.id,
@@ -4355,8 +4593,9 @@ class ListViewOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4372,6 +4611,7 @@ class ListViewOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4395,6 +4635,7 @@ class ListViewBuilderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.listViewBuilder,
@@ -4412,6 +4653,7 @@ class ListViewBuilderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4426,6 +4668,7 @@ class ListViewBuilderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ListViewBuilderOpenNode(
         id: id ?? this.id,
@@ -4446,8 +4689,9 @@ class ListViewBuilderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4463,6 +4707,7 @@ class ListViewBuilderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4486,6 +4731,7 @@ class LottieOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.lottie,
@@ -4503,6 +4749,7 @@ class LottieOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4517,6 +4764,7 @@ class LottieOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LottieOpenNode(
         id: id ?? this.id,
@@ -4537,8 +4785,9 @@ class LottieOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4554,6 +4803,7 @@ class LottieOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4577,6 +4827,7 @@ class MapOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.map,
@@ -4594,6 +4845,7 @@ class MapOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4608,6 +4860,7 @@ class MapOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       MapOpenNode(
         id: id ?? this.id,
@@ -4628,8 +4881,9 @@ class MapOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4645,6 +4899,7 @@ class MapOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4668,6 +4923,7 @@ class MarkerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.marker,
@@ -4685,6 +4941,7 @@ class MarkerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4699,6 +4956,7 @@ class MarkerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       MarkerOpenNode(
         id: id ?? this.id,
@@ -4719,8 +4977,9 @@ class MarkerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4736,6 +4995,7 @@ class MarkerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4759,6 +5019,7 @@ class OpacityOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.opacity,
@@ -4776,6 +5037,7 @@ class OpacityOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4790,6 +5052,7 @@ class OpacityOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       OpacityOpenNode(
         id: id ?? this.id,
@@ -4810,8 +5073,9 @@ class OpacityOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4827,6 +5091,7 @@ class OpacityOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4850,6 +5115,7 @@ class PaddingOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.padding,
@@ -4867,6 +5133,7 @@ class PaddingOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4881,6 +5148,7 @@ class PaddingOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       PaddingOpenNode(
         id: id ?? this.id,
@@ -4901,8 +5169,9 @@ class PaddingOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4918,6 +5187,7 @@ class PaddingOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -4941,6 +5211,7 @@ class PageViewOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.pageView,
@@ -4958,6 +5229,7 @@ class PageViewOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -4972,6 +5244,7 @@ class PageViewOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       PageViewOpenNode(
         id: id ?? this.id,
@@ -4992,8 +5265,9 @@ class PageViewOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5009,6 +5283,7 @@ class PageViewOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5032,6 +5307,7 @@ class PlaceholderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.placeholder,
@@ -5049,6 +5325,7 @@ class PlaceholderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5063,6 +5340,7 @@ class PlaceholderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       PlaceholderOpenNode(
         id: id ?? this.id,
@@ -5083,8 +5361,9 @@ class PlaceholderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5100,6 +5379,7 @@ class PlaceholderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5123,6 +5403,7 @@ class PositionedOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.positioned,
@@ -5140,6 +5421,7 @@ class PositionedOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5154,6 +5436,7 @@ class PositionedOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       PositionedOpenNode(
         id: id ?? this.id,
@@ -5174,8 +5457,9 @@ class PositionedOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5191,6 +5475,7 @@ class PositionedOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5214,6 +5499,7 @@ class SafeAreaOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.safeArea,
@@ -5231,6 +5517,7 @@ class SafeAreaOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5245,6 +5532,7 @@ class SafeAreaOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SafeAreaOpenNode(
         id: id ?? this.id,
@@ -5265,8 +5553,9 @@ class SafeAreaOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5282,6 +5571,7 @@ class SafeAreaOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5305,6 +5595,7 @@ class QRScannerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.qrScanner,
@@ -5322,6 +5613,7 @@ class QRScannerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5336,6 +5628,7 @@ class QRScannerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       QRScannerOpenNode(
         id: id ?? this.id,
@@ -5356,8 +5649,9 @@ class QRScannerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5373,6 +5667,7 @@ class QRScannerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5396,6 +5691,7 @@ class QRCodeOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.qrCode,
@@ -5413,6 +5709,7 @@ class QRCodeOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5427,6 +5724,7 @@ class QRCodeOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       QRCodeOpenNode(
         id: id ?? this.id,
@@ -5447,8 +5745,9 @@ class QRCodeOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5464,6 +5763,7 @@ class QRCodeOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5487,6 +5787,7 @@ class RadioOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.radio,
@@ -5504,6 +5805,7 @@ class RadioOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5518,6 +5820,7 @@ class RadioOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RadioOpenNode(
         id: id ?? this.id,
@@ -5538,8 +5841,9 @@ class RadioOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5555,6 +5859,7 @@ class RadioOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5578,6 +5883,7 @@ class RefreshIndicatorOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.refreshIndicator,
@@ -5595,6 +5901,7 @@ class RefreshIndicatorOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5609,6 +5916,7 @@ class RefreshIndicatorOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RefreshIndicatorOpenNode(
         id: id ?? this.id,
@@ -5629,8 +5937,9 @@ class RefreshIndicatorOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5646,6 +5955,7 @@ class RefreshIndicatorOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5669,6 +5979,7 @@ class ResponsiveConditionOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.responsiveCondition,
@@ -5687,6 +5998,7 @@ class ResponsiveConditionOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5701,6 +6013,7 @@ class ResponsiveConditionOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ResponsiveConditionOpenNode(
         id: id ?? this.id,
@@ -5721,8 +6034,9 @@ class ResponsiveConditionOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5738,6 +6052,7 @@ class ResponsiveConditionOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5761,6 +6076,7 @@ class RotatedBoxOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.rotatedBox,
@@ -5778,6 +6094,7 @@ class RotatedBoxOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5792,6 +6109,7 @@ class RotatedBoxOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RotatedBoxOpenNode(
         id: id ?? this.id,
@@ -5812,8 +6130,9 @@ class RotatedBoxOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5829,6 +6148,7 @@ class RotatedBoxOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5852,6 +6172,7 @@ class ScaffoldOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.scaffold,
@@ -5869,6 +6190,7 @@ class ScaffoldOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5883,6 +6205,7 @@ class ScaffoldOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ScaffoldOpenNode(
         id: id ?? this.id,
@@ -5903,8 +6226,9 @@ class ScaffoldOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5920,6 +6244,7 @@ class ScaffoldOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -5943,6 +6268,7 @@ class SpacerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.spacer,
@@ -5960,6 +6286,7 @@ class SpacerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -5974,6 +6301,7 @@ class SpacerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SpacerOpenNode(
         id: id ?? this.id,
@@ -5994,8 +6322,9 @@ class SpacerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6011,6 +6340,7 @@ class SpacerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6034,6 +6364,7 @@ class StackOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.stack,
@@ -6051,6 +6382,7 @@ class StackOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6065,6 +6397,7 @@ class StackOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       StackOpenNode(
         id: id ?? this.id,
@@ -6085,8 +6418,9 @@ class StackOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6102,6 +6436,7 @@ class StackOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6125,6 +6460,7 @@ class TCardOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.tcard,
@@ -6142,6 +6478,7 @@ class TCardOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6156,6 +6493,7 @@ class TCardOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       TCardOpenNode(
         id: id ?? this.id,
@@ -6176,8 +6514,9 @@ class TCardOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6193,6 +6532,7 @@ class TCardOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6216,6 +6556,7 @@ class TCardBuilderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.tcardBuilder,
@@ -6233,6 +6574,7 @@ class TCardBuilderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6247,6 +6589,7 @@ class TCardBuilderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       TCardBuilderOpenNode(
         id: id ?? this.id,
@@ -6267,8 +6610,9 @@ class TCardBuilderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6284,6 +6628,7 @@ class TCardBuilderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6307,6 +6652,7 @@ class TextOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.text,
@@ -6324,6 +6670,7 @@ class TextOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6338,6 +6685,7 @@ class TextOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       TextOpenNode(
         id: id ?? this.id,
@@ -6358,8 +6706,9 @@ class TextOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6375,6 +6724,7 @@ class TextOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6398,6 +6748,7 @@ class TextFieldOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.textField,
@@ -6415,6 +6766,7 @@ class TextFieldOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6429,6 +6781,7 @@ class TextFieldOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       TextFieldOpenNode(
         id: id ?? this.id,
@@ -6449,8 +6802,9 @@ class TextFieldOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6466,6 +6820,7 @@ class TextFieldOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6489,6 +6844,7 @@ class TooltipOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.tooltip,
@@ -6506,6 +6862,7 @@ class TooltipOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6520,6 +6877,7 @@ class TooltipOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       TooltipOpenNode(
         id: id ?? this.id,
@@ -6540,8 +6898,9 @@ class TooltipOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6557,6 +6916,7 @@ class TooltipOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6580,6 +6940,7 @@ class VideoOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.video,
@@ -6597,6 +6958,7 @@ class VideoOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6611,6 +6973,7 @@ class VideoOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       VideoOpenNode(
         id: id ?? this.id,
@@ -6631,8 +6994,9 @@ class VideoOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6648,6 +7012,7 @@ class VideoOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6671,6 +7036,7 @@ class VisibilityOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.visibility,
@@ -6688,6 +7054,7 @@ class VisibilityOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6702,6 +7069,7 @@ class VisibilityOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       VisibilityOpenNode(
         id: id ?? this.id,
@@ -6722,8 +7090,9 @@ class VisibilityOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6739,6 +7108,7 @@ class VisibilityOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6762,6 +7132,7 @@ class WebviewOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.webview,
@@ -6779,6 +7150,7 @@ class WebviewOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6793,6 +7165,7 @@ class WebviewOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       WebviewOpenNode(
         id: id ?? this.id,
@@ -6813,8 +7186,9 @@ class WebviewOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6830,6 +7204,7 @@ class WebviewOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6853,6 +7228,7 @@ class WrapOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.wrap,
@@ -6870,6 +7246,7 @@ class WrapOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6884,6 +7261,7 @@ class WrapOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       WrapOpenNode(
         id: id ?? this.id,
@@ -6904,8 +7282,9 @@ class WrapOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6921,6 +7300,7 @@ class WrapOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -6944,6 +7324,7 @@ class AnimationConfigGridOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.animationConfigGrid,
@@ -6962,6 +7343,7 @@ class AnimationConfigGridOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -6976,6 +7358,7 @@ class AnimationConfigGridOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AnimationConfigGridOpenNode(
         id: id ?? this.id,
@@ -6996,8 +7379,9 @@ class AnimationConfigGridOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7013,6 +7397,7 @@ class AnimationConfigGridOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7036,6 +7421,7 @@ class AnimationConfigListOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.animationConfigList,
@@ -7054,6 +7440,7 @@ class AnimationConfigListOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7068,6 +7455,7 @@ class AnimationConfigListOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AnimationConfigListOpenNode(
         id: id ?? this.id,
@@ -7088,8 +7476,9 @@ class AnimationConfigListOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7105,6 +7494,7 @@ class AnimationConfigListOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7128,6 +7518,7 @@ class FadeInAnimationOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.fadeInAnimation,
@@ -7145,6 +7536,7 @@ class FadeInAnimationOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7159,6 +7551,7 @@ class FadeInAnimationOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       FadeInAnimationOpenNode(
         id: id ?? this.id,
@@ -7179,8 +7572,9 @@ class FadeInAnimationOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7196,6 +7590,7 @@ class FadeInAnimationOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7219,6 +7614,7 @@ class ScaleAnimationOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.scaleAnimation,
@@ -7236,6 +7632,7 @@ class ScaleAnimationOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7250,6 +7647,7 @@ class ScaleAnimationOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ScaleAnimationOpenNode(
         id: id ?? this.id,
@@ -7270,8 +7668,9 @@ class ScaleAnimationOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7287,6 +7686,7 @@ class ScaleAnimationOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7310,6 +7710,7 @@ class SlideAnimationOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.slideAnimation,
@@ -7327,6 +7728,7 @@ class SlideAnimationOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7341,6 +7743,7 @@ class SlideAnimationOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SlideAnimationOpenNode(
         id: id ?? this.id,
@@ -7361,8 +7764,9 @@ class SlideAnimationOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7378,6 +7782,7 @@ class SlideAnimationOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7401,6 +7806,7 @@ class ApiCallsFetchOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.apiCallsFetch,
@@ -7418,6 +7824,7 @@ class ApiCallsFetchOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7432,6 +7839,7 @@ class ApiCallsFetchOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       ApiCallsFetchOpenNode(
         id: id ?? this.id,
@@ -7452,8 +7860,9 @@ class ApiCallsFetchOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7469,6 +7878,7 @@ class ApiCallsFetchOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7492,6 +7902,7 @@ class LoginWithAppleOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithApple,
@@ -7509,6 +7920,7 @@ class LoginWithAppleOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7523,6 +7935,7 @@ class LoginWithAppleOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithAppleOpenNode(
         id: id ?? this.id,
@@ -7543,8 +7956,9 @@ class LoginWithAppleOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7560,6 +7974,7 @@ class LoginWithAppleOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7583,6 +7998,7 @@ class LoginWithFacebookOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithFacebook,
@@ -7601,6 +8017,7 @@ class LoginWithFacebookOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7615,6 +8032,7 @@ class LoginWithFacebookOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithFacebookOpenNode(
         id: id ?? this.id,
@@ -7635,8 +8053,9 @@ class LoginWithFacebookOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7652,6 +8071,7 @@ class LoginWithFacebookOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7675,6 +8095,7 @@ class LoginWithGoogleOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithGoogle,
@@ -7692,6 +8113,7 @@ class LoginWithGoogleOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7706,6 +8128,7 @@ class LoginWithGoogleOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithGoogleOpenNode(
         id: id ?? this.id,
@@ -7726,8 +8149,9 @@ class LoginWithGoogleOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7743,6 +8167,7 @@ class LoginWithGoogleOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7766,6 +8191,7 @@ class LoginWithTwitterOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithTwitter,
@@ -7783,6 +8209,7 @@ class LoginWithTwitterOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7797,6 +8224,7 @@ class LoginWithTwitterOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithTwitterOpenNode(
         id: id ?? this.id,
@@ -7817,8 +8245,9 @@ class LoginWithTwitterOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7834,6 +8263,7 @@ class LoginWithTwitterOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7857,6 +8287,7 @@ class LoginWithGithubOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithGitHub,
@@ -7874,6 +8305,7 @@ class LoginWithGithubOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7888,6 +8320,7 @@ class LoginWithGithubOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithGithubOpenNode(
         id: id ?? this.id,
@@ -7908,8 +8341,9 @@ class LoginWithGithubOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7925,6 +8359,7 @@ class LoginWithGithubOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -7948,6 +8383,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithMicrosoft,
@@ -7966,6 +8402,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -7980,6 +8417,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithMicrosoftOpenNode(
         id: id ?? this.id,
@@ -8000,8 +8438,9 @@ class LoginWithMicrosoftOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8017,6 +8456,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8040,6 +8480,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithLinkedin,
@@ -8058,6 +8499,7 @@ class LoginWithLinkedinOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8072,6 +8514,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithLinkedinOpenNode(
         id: id ?? this.id,
@@ -8092,8 +8535,9 @@ class LoginWithLinkedinOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8109,6 +8553,7 @@ class LoginWithLinkedinOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8132,6 +8577,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithBitBucket,
@@ -8150,6 +8596,7 @@ class LoginWithBitbucketOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8164,6 +8611,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithBitbucketOpenNode(
         id: id ?? this.id,
@@ -8184,8 +8632,9 @@ class LoginWithBitbucketOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8201,6 +8650,7 @@ class LoginWithBitbucketOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8224,6 +8674,7 @@ class LoginWithDiscordOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithDiscord,
@@ -8241,6 +8692,7 @@ class LoginWithDiscordOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8255,6 +8707,7 @@ class LoginWithDiscordOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithDiscordOpenNode(
         id: id ?? this.id,
@@ -8275,8 +8728,9 @@ class LoginWithDiscordOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8292,6 +8746,7 @@ class LoginWithDiscordOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8315,6 +8770,7 @@ class LoginWithTwitchOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithTwitch,
@@ -8332,6 +8788,7 @@ class LoginWithTwitchOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8346,6 +8803,7 @@ class LoginWithTwitchOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithTwitchOpenNode(
         id: id ?? this.id,
@@ -8366,8 +8824,9 @@ class LoginWithTwitchOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8383,6 +8842,7 @@ class LoginWithTwitchOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8406,6 +8866,7 @@ class LoginWithGitlabOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.loginWithGitlab,
@@ -8423,6 +8884,7 @@ class LoginWithGitlabOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8437,6 +8899,7 @@ class LoginWithGitlabOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       LoginWithGitlabOpenNode(
         id: id ?? this.id,
@@ -8457,8 +8920,9 @@ class LoginWithGitlabOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8474,6 +8938,7 @@ class LoginWithGitlabOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8497,6 +8962,7 @@ class HttpRequestOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.httpRequest,
@@ -8514,6 +8980,7 @@ class HttpRequestOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8528,6 +8995,7 @@ class HttpRequestOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       HttpRequestOpenNode(
         id: id ?? this.id,
@@ -8548,8 +9016,9 @@ class HttpRequestOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8565,6 +9034,7 @@ class HttpRequestOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8588,6 +9058,7 @@ class CustomHttpRequestOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.customHttpRequest,
@@ -8606,6 +9077,7 @@ class CustomHttpRequestOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8620,6 +9092,7 @@ class CustomHttpRequestOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CustomHttpRequestOpenNode(
         id: id ?? this.id,
@@ -8640,8 +9113,9 @@ class CustomHttpRequestOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8657,6 +9131,7 @@ class CustomHttpRequestOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8680,6 +9155,7 @@ class AppBarOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.appBar,
@@ -8697,6 +9173,7 @@ class AppBarOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8711,6 +9188,7 @@ class AppBarOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       AppBarOpenNode(
         id: id ?? this.id,
@@ -8731,8 +9209,9 @@ class AppBarOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8748,6 +9227,7 @@ class AppBarOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8771,6 +9251,7 @@ class BottomBarOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.bottomBar,
@@ -8788,6 +9269,7 @@ class BottomBarOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8802,6 +9284,7 @@ class BottomBarOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       BottomBarOpenNode(
         id: id ?? this.id,
@@ -8822,8 +9305,9 @@ class BottomBarOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8839,6 +9323,7 @@ class BottomBarOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8862,6 +9347,7 @@ class DrawerOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.drawer,
@@ -8879,6 +9365,7 @@ class DrawerOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8893,6 +9380,7 @@ class DrawerOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       DrawerOpenNode(
         id: id ?? this.id,
@@ -8913,8 +9401,9 @@ class DrawerOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8930,6 +9419,7 @@ class DrawerOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -8953,6 +9443,7 @@ class QonversionProductsOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.qonversionProducts,
@@ -8971,6 +9462,7 @@ class QonversionProductsOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -8985,6 +9477,7 @@ class QonversionProductsOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       QonversionProductsOpenNode(
         id: id ?? this.id,
@@ -9005,8 +9498,9 @@ class QonversionProductsOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9022,6 +9516,7 @@ class QonversionProductsOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9045,6 +9540,7 @@ class QonversionSubStatusOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.qonversionSubStatus,
@@ -9063,6 +9559,7 @@ class QonversionSubStatusOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9077,6 +9574,7 @@ class QonversionSubStatusOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       QonversionSubStatusOpenNode(
         id: id ?? this.id,
@@ -9097,8 +9595,9 @@ class QonversionSubStatusOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9114,6 +9613,7 @@ class QonversionSubStatusOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9137,6 +9637,7 @@ class RevenueCatProductsOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.revenueCatProducts,
@@ -9155,6 +9656,7 @@ class RevenueCatProductsOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9169,6 +9671,7 @@ class RevenueCatProductsOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RevenueCatProductsOpenNode(
         id: id ?? this.id,
@@ -9189,8 +9692,9 @@ class RevenueCatProductsOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9206,6 +9710,7 @@ class RevenueCatProductsOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9229,6 +9734,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.revenueCatSubStatus,
@@ -9247,6 +9753,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9261,6 +9768,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       RevenueCatSubStatusOpenNode(
         id: id ?? this.id,
@@ -9281,8 +9789,9 @@ class RevenueCatSubStatusOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9298,6 +9807,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9321,6 +9831,7 @@ class WrapperOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.wrapper,
@@ -9338,6 +9849,7 @@ class WrapperOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9352,6 +9864,7 @@ class WrapperOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       WrapperOpenNode(
         id: id ?? this.id,
@@ -9372,8 +9885,9 @@ class WrapperOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9389,6 +9903,7 @@ class WrapperOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9412,6 +9927,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.supabaseFutureBuilder,
@@ -9430,6 +9946,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9444,6 +9961,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SupabaseFutureBuilderOpenNode(
         id: id ?? this.id,
@@ -9464,8 +9982,9 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9481,6 +10000,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9504,6 +10024,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.supabaseStreamBuilder,
@@ -9522,6 +10043,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9536,6 +10058,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SupabaseStreamBuilderOpenNode(
         id: id ?? this.id,
@@ -9556,8 +10079,9 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9573,6 +10097,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9596,6 +10121,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.supabaseLoggedUser,
@@ -9614,6 +10140,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9628,6 +10155,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       SupabaseLoggedUserOpenNode(
         id: id ?? this.id,
@@ -9648,8 +10176,9 @@ class SupabaseLoggedUserOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9665,6 +10194,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9688,6 +10218,7 @@ class CMSCountOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cmsCount,
@@ -9705,6 +10236,7 @@ class CMSCountOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9719,6 +10251,7 @@ class CMSCountOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CMSCountOpenNode(
         id: id ?? this.id,
@@ -9739,8 +10272,9 @@ class CMSCountOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9756,6 +10290,7 @@ class CMSCountOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9779,6 +10314,7 @@ class CMSCustomQueryOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cmsCustomQuery,
@@ -9796,6 +10332,7 @@ class CMSCustomQueryOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9810,6 +10347,7 @@ class CMSCustomQueryOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CMSCustomQueryOpenNode(
         id: id ?? this.id,
@@ -9830,8 +10368,9 @@ class CMSCustomQueryOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9847,6 +10386,7 @@ class CMSCustomQueryOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9870,6 +10410,7 @@ class CMSFetchOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cmsFetch,
@@ -9887,6 +10428,7 @@ class CMSFetchOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9901,6 +10443,7 @@ class CMSFetchOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CMSFetchOpenNode(
         id: id ?? this.id,
@@ -9921,8 +10464,9 @@ class CMSFetchOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9938,6 +10482,7 @@ class CMSFetchOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -9961,6 +10506,7 @@ class CMSStreamOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cmsStream,
@@ -9978,6 +10524,7 @@ class CMSStreamOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -9992,6 +10539,7 @@ class CMSStreamOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CMSStreamOpenNode(
         id: id ?? this.id,
@@ -10012,8 +10560,9 @@ class CMSStreamOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10029,6 +10578,7 @@ class CMSStreamOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 
@@ -10052,6 +10602,7 @@ class CMSLoggedUserOpenNode extends CNode {
     final int? index,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
+    final DateTime? updatedAt,
   }) : super(
           id: id,
           type: NType.cmsLoggedUser,
@@ -10069,6 +10620,7 @@ class CMSLoggedUserOpenNode extends CNode {
           index: index ?? 0,
           child: child,
           children: children,
+          updatedAt: updatedAt ?? DateTime.now(),
         );
 
   @override
@@ -10083,6 +10635,7 @@ class CMSLoggedUserOpenNode extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) =>
       CMSLoggedUserOpenNode(
         id: id ?? this.id,
@@ -10103,8 +10656,9 @@ class CMSLoggedUserOpenNode extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry
+          in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10120,6 +10674,7 @@ class CMSLoggedUserOpenNode extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 

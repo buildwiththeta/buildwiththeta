@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Returns a Radio widget in Teta
@@ -24,7 +24,7 @@ class _WRadioState extends State<OpenWRadio> {
   bool val = false;
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     return Radio<String>(
       groupValue: widget.groupValue.get(
         state: state,

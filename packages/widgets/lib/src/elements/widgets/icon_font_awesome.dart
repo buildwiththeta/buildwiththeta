@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter_named/font_awesome_flutter_named.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -17,15 +17,15 @@ class OpenWFontAwesome extends Icon {
   }) : super(
           faIconNameMapping[icon],
           size: width.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: true,
           ),
           color: HexColor(
             fill.getHexColor(
               context,
-              TreeGlobalState.state.colorStyles,
-              TreeGlobalState.state.theme,
+              context.watch<TreeState>().colorStyles,
+              context.watch<TreeState>().theme,
             ),
           ),
         );

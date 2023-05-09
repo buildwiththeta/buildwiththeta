@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -16,13 +16,13 @@ class OpenWDivider extends Divider {
           height: height.get(
             context: context,
             isWidth: false,
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
           ),
           color: HexColor(
             fill.getHexColor(
               context,
-              TreeGlobalState.state.colorStyles,
-              TreeGlobalState.state.theme,
+              context.watch<TreeState>().colorStyles,
+              context.watch<TreeState>().theme,
             ),
           ),
         );

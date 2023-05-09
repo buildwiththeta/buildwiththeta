@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 
 // ignore_for_file: public_member_api_docs
@@ -26,7 +26,7 @@ class _WCheckBoxState extends State<OpenWCheckBox> with AfterLayoutMixin {
 
   @override
   FutureOr<void> afterFirstLayout(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final TreeState state = context.read<TreeState>();
     setState(() {
       val = widget.value.get(
             state: state,
@@ -40,7 +40,7 @@ class _WCheckBoxState extends State<OpenWCheckBox> with AfterLayoutMixin {
   // bool flag = false;
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final TreeState state = context.watch<TreeState>();
     return Checkbox(
       onChanged: (final value) {
         if (state.forPlay) {

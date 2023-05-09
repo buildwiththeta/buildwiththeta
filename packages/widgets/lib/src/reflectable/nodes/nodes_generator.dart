@@ -38,6 +38,7 @@ class $generatedClassName extends CNode {
       final int? index,
       final Map<String, dynamic>? attributes,
       final Map<String, dynamic>? rectProperties,
+      final DateTime? updatedAt,
       })
       : super(
             id: id,
@@ -54,6 +55,7 @@ class $generatedClassName extends CNode {
             index: index ?? 0,
             child: child,
             children: children,
+            updatedAt: updatedAt ?? DateTime.now(),
           );
 
   @override
@@ -68,6 +70,7 @@ class $generatedClassName extends CNode {
           int? index,
           Map<String, dynamic>? attributes,
           Map<String, dynamic>? rectProperties,
+          DateTime? updatedAt,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -88,8 +91,8 @@ class $generatedClassName extends CNode {
     }
 
     final attributes = <String, dynamic>{};
-    if (json['body'] != null) {
-      for (final entry in (json['body'] as Map<String, dynamic>).entries) {
+    if (json['properties'] != null) {
+      for (final entry in (json['properties'] as Map<String, dynamic>).entries) {
         attributes[entry.key] = const DynamicAttributes().fromJson(entry.key, entry.value);
       }
     }
@@ -103,6 +106,7 @@ class $generatedClassName extends CNode {
       childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
       attributes: attributes,
       rectProperties: rectProperties,
+      updatedAt: DateTime.parse(json['updated_at']),
     );
   }
 

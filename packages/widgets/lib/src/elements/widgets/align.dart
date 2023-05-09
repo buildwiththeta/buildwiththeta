@@ -2,7 +2,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 
@@ -24,7 +24,7 @@ class OpenWAlign extends Align {
 
   @override
   RenderPositionedBox createRenderObject(BuildContext context) {
-    final state = TreeGlobalState.state;
+    final TreeState state = context.watch<TreeState>();
     final alignment = align.get(
       context,
       forPlay: state.forPlay,

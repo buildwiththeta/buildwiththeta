@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -14,7 +15,7 @@ class OpenWPadding extends Padding {
     final CNode? child,
   }) : super(
           padding: padding.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
           ),
           child: ChildBuilder(

@@ -5,7 +5,7 @@ import 'dart:async';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 // Package imports:
 import 'package:tcard/tcard.dart';
 import 'package:theta_models/theta_models.dart';
@@ -39,7 +39,7 @@ class _WTCardState extends State<OpenWTCard> {
   @override
   void initState() {
     super.initState();
-    final state = TreeGlobalState.state;
+    final state = context.read<TreeState>();
     list = widget.children
         .map(
           (final e) => e.toWidget(
@@ -78,7 +78,7 @@ class _WTCardState extends State<OpenWTCard> {
 
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     final slideSpeedStr = widget.slideSpeed.get(
       state: state,
       loop: widget.state.loop,

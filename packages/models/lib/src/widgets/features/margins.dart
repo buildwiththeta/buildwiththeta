@@ -92,8 +92,7 @@ class FMargins extends Equatable {
 
   static FMargins fromJson(final dynamic json) {
     if (json is List<dynamic>) {
-      final value =
-          json.map((final dynamic e) => double.tryParse(e) ?? 0).toList();
+      final value = json.map((dynamic e) => double.parse('$e')).toList();
       return FMargins(
         margins: value,
         marginsTablet: value,
@@ -103,13 +102,13 @@ class FMargins extends Equatable {
     try {
       return FMargins(
         margins: (json['m'] as List<dynamic>? ?? [0, 0, 0, 0])
-            .map((final dynamic e) => double.tryParse(e) ?? 0)
+            .map((dynamic e) => double.parse('$e'))
             .toList(),
         marginsTablet: (json['t'] as List<dynamic>? ?? [0, 0, 0, 0])
-            .map((final dynamic e) => double.tryParse(e) ?? 0)
+            .map((dynamic e) => double.parse('$e'))
             .toList(),
         marginsDesktop: (json['d'] as List<dynamic>? ?? [0, 0, 0, 0])
-            .map((final dynamic e) => double.tryParse(e) ?? 0)
+            .map((dynamic e) => double.parse('$e'))
             .toList(),
       );
     } catch (e) {

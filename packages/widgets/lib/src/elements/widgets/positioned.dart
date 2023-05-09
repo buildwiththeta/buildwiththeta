@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -28,7 +28,7 @@ class OpenWPositioned extends Positioned {
               ? margins
                   .get(
                     context: context,
-                    state: TreeGlobalState.state,
+                    state: context.watch<TreeState>(),
                   )
                   .top
               : null,
@@ -36,7 +36,7 @@ class OpenWPositioned extends Positioned {
               ? margins
                   .get(
                     context: context,
-                    state: TreeGlobalState.state,
+                    state: context.watch<TreeState>(),
                   )
                   .bottom
               : null,
@@ -44,7 +44,7 @@ class OpenWPositioned extends Positioned {
               ? margins
                   .get(
                     context: context,
-                    state: TreeGlobalState.state,
+                    state: context.watch<TreeState>(),
                   )
                   .left
               : null,
@@ -52,7 +52,7 @@ class OpenWPositioned extends Positioned {
               ? margins
                   .get(
                     context: context,
-                    state: TreeGlobalState.state,
+                    state: context.watch<TreeState>(),
                   )
                   .right
               : null,

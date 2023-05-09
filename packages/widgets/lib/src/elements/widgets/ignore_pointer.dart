@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -12,7 +13,7 @@ class OpenWIgnorePointer extends IgnorePointer {
     final CNode? child,
   }) : super(
           ignoring: value.get(
-                state: TreeGlobalState.state,
+                state: context.watch<TreeState>(),
                 context: context,
                 loop: state.loop,
               ) ==

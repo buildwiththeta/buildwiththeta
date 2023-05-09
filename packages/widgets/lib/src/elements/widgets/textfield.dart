@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 
 class OpenWTextField extends StatefulWidget {
   /// Returns a TextField widget in Teta
@@ -67,7 +67,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
 
   @override
   FutureOr<void> afterFirstLayout(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.read<TreeState>();
     final valueInput = widget.value.get(
       state: state,
       loop: widget.state.loop,
@@ -78,7 +78,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
 
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     if (!state.forPlay) {
       final valueInput = widget.value.get(
         state: state,

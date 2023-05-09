@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -17,15 +17,15 @@ class OpenWIcon extends Icon {
   }) : super(
           MdiIcons.fromString(icon),
           size: width.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: true,
           ),
           color: HexColor(
             fill.getHexColor(
               context,
-              TreeGlobalState.state.colorStyles,
-              TreeGlobalState.state.theme,
+              context.watch<TreeState>().colorStyles,
+              context.watch<TreeState>().theme,
             ),
           ),
         );

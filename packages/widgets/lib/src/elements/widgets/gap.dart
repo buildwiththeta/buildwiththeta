@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWGap extends Gap {
@@ -12,13 +12,13 @@ class OpenWGap extends Gap {
     required final FSize crossAxisExtent,
   }) : super(
           mainAxisExtent.get(
-                state: TreeGlobalState.state,
+                state: context.watch<TreeState>(),
                 context: context,
                 isWidth: true,
               ) ??
               0,
           crossAxisExtent: crossAxisExtent.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: true,
           ),

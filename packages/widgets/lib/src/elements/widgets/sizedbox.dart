@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 
@@ -19,12 +19,12 @@ class OpenWSizedBox extends SizedBox {
           width: width.get(
             context: context,
             isWidth: true,
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
           ),
           height: height.get(
             context: context,
             isWidth: false,
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
           ),
           child: ChildBuilder(
             context: context,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 
@@ -26,7 +26,7 @@ class OpenWTransformTranslate extends Transform {
               /// Get the value from the state and convert it to a double
               double.tryParse(
                     valueX.get(
-                      state: TreeGlobalState.state,
+                      state: context.watch<TreeState>(),
                       loop: state.loop,
                       context: context,
                     ),
@@ -38,7 +38,7 @@ class OpenWTransformTranslate extends Transform {
               /// Get the value from the state and convert it to a double
               double.tryParse(
                     valueY.get(
-                      state: TreeGlobalState.state,
+                      state: context.watch<TreeState>(),
                       loop: state.loop,
                       context: context,
                     ),

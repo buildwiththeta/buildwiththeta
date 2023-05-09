@@ -15,6 +15,7 @@ class NNull extends CNode {
           attributes: const {},
           rectProperties: const {},
           adapter: const NNullWidgetAdapter(),
+          updatedAt: DateTime.now(),
         );
 
   static NNull fromJson(
@@ -48,6 +49,7 @@ class NNull extends CNode {
     int? index,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
+    DateTime? updatedAt,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }

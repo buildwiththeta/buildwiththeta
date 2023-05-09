@@ -24,7 +24,6 @@ class OpenWConcentricPageView extends NodeWidget {
   @override
   Widget build(final BuildContext context, final TreeState state,
       final WidgetState nodeState) {
-    final state = TreeGlobalState.state;
     return ConcentricPageView(
       colors: [
         HexColor(

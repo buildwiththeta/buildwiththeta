@@ -1,11 +1,10 @@
 import 'package:device_frame/device_frame.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// TreeState is the state of the tree
-class TreeState extends Equatable {
+class TreeState with ChangeNotifier {
   /// Constructor
   /// [forPlay] is true when we are in Play Mode
   /// [params] is the list of params of the Scaffold
@@ -20,7 +19,7 @@ class TreeState extends Equatable {
   /// [deviceInfo] is the device info object
   /// [workflows] is the list of workflows
   /// [config] is the project config object
-  const TreeState({
+  TreeState({
     required this.forPlay,
     required this.params,
     required this.states,
@@ -37,52 +36,97 @@ class TreeState extends Equatable {
   });
 
   /// Are we in Play Mode?
-  final bool forPlay;
+  bool forPlay;
 
   /// The params of Scaffold
-  final List<VariableEntity> params;
+  List<VariableEntity> params;
 
   /// The states of Scaffold
-  final List<VariableEntity> states;
+  List<VariableEntity> states;
 
   /// The page id
-  final PageID pageId;
+  PageID pageId;
 
   /// Is this a page or a component?
-  final bool isPage;
+  bool isPage;
 
   /// The color styles
-  final List<ColorStyleEntity> colorStyles;
+  List<ColorStyleEntity> colorStyles;
 
   /// The text styles
-  final List<TextStyleEntity> textStyles;
+  List<TextStyleEntity> textStyles;
 
   /// Device type
-  final DeviceInfo deviceInfo;
+  DeviceInfo deviceInfo;
 
   /// Localization
-  final FlutterLocalization localization;
+  FlutterLocalization localization;
 
   /// Current theme
-  final ThemeMode theme;
+  ThemeMode theme;
 
   /// Focused node
-  final CNode? focusedNode;
+  CNode? focusedNode;
 
   /// Workflows
   /// This is the list of all the workflows
   /// Workflow = custom code
   /// User can create custom code and add it to the project
   /// This code will be executed when the workflow is called
-  final List<Workflow> workflows;
+  List<Workflow> workflows;
 
   /// Project config
   /// This is the config file of the project
   /// It contains all the properties about the project
   /// Like keys, integrations, etc.
-  final ProjectConfigModel config;
+  ProjectConfigModel config;
 
   DeviceType get deviceType => deviceInfo.identifier.type;
+
+  void onPageIDChanged(PageID pageID) {
+    pageId = pageID;
+    notifyListeners();
+  }
+
+  void onParamsId(Variables params) {
+    this.params = params;
+    notifyListeners();
+  }
+
+  void onStatesId(Variables states) {
+    this.states = states;
+    notifyListeners();
+  }
+
+  void onColorsChanged(ColorStyles colors) {
+    colorStyles = colors;
+    notifyListeners();
+  }
+
+  void onTextsChanged(TextStyles texts) {
+    textStyles = texts;
+    notifyListeners();
+  }
+
+  void onThemeChanged(ThemeMode themeMode) {
+    theme = themeMode;
+    notifyListeners();
+  }
+
+  void onDeviceChanged(DeviceInfo deviceInfo) {
+    this.deviceInfo = deviceInfo;
+    notifyListeners();
+  }
+
+  void onConfigChanged(ProjectConfigModel config) {
+    this.config = config;
+    notifyListeners();
+  }
+
+  void onFocusNodeChanged(CNode? node) {
+    focusedNode = node;
+    notifyListeners();
+  }
 
   TreeState copyWith({
     final CNode? node,

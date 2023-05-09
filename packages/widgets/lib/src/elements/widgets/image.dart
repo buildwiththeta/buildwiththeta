@@ -10,6 +10,7 @@ import 'package:after_layout/after_layout.dart';
 import 'package:cross_file/cross_file.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
@@ -48,7 +49,7 @@ class _WImageState extends State<OpenWImage> with AfterLayoutMixin {
   FutureOr<void> afterFirstLayout(final BuildContext context) {
     setState(() {
       result = widget.image.getImage(
-        state: TreeGlobalState.state,
+        state: context.read<TreeState>(),
         context: context,
         loop: widget.nodeState.loop,
       );
@@ -70,7 +71,7 @@ class _WImageState extends State<OpenWImage> with AfterLayoutMixin {
 
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     if (isLoading) {
       return SizedBox(
         width: widget.width.get(

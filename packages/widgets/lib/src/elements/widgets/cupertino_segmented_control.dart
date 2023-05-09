@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -57,7 +57,7 @@ class _WCupertinoSegmentedControlState
         ),
       );
     }
-    final state = TreeGlobalState.state;
+    final state = context.watch<TreeState>();
     return IgnorePointer(
       ignoring: !state.forPlay,
       child: CupertinoSegmentedControl<int>(

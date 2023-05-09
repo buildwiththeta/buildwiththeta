@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 // Package imports:
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Returns a [Text] widget with all the properties
@@ -23,7 +23,7 @@ class TextBuilder extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final TreeState state = context.watch<TreeState>();
     final model = state.textStyles.firstWhereOrNull(
         (element) => element.name == textStyle.textStyleModel);
     final maxLinesValue = maxLines?.get(

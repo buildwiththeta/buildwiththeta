@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -29,30 +29,30 @@ class OpenWContainer extends Container {
   }) : super(
           child: ChildBuilder(context: context, state: state, child: child),
           width: width.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: true,
           ),
           height: height.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: false,
           ),
           margin: margins.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
           ),
           padding: paddings.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
           ),
           decoration: TetaBoxDecoration.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             fill: fill.get(
               context,
-              TreeGlobalState.state.colorStyles,
-              TreeGlobalState.state.theme,
+              context.watch<TreeState>().colorStyles,
+              context.watch<TreeState>().theme,
             ),
             borderRadius: borderRadius,
             shadow: shadows,

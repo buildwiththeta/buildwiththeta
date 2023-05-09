@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -15,10 +16,10 @@ class OpenWFractionallySizedBox extends FractionallySizedBox {
           widthFactor: widthFactor.get(
             context: context,
             isWidth: true,
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
           ),
           heightFactor: heightFactor.get(
-            state: TreeGlobalState.state,
+            state: context.watch<TreeState>(),
             context: context,
             isWidth: false,
           ),

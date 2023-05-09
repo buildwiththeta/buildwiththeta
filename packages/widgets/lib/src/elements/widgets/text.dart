@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_open_widgets/src/elements/builders/text_builder.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
@@ -39,7 +39,7 @@ class _WTextState extends State<OpenWText> with AfterLayoutMixin {
 
   @override
   FutureOr<void> afterFirstLayout(final BuildContext context) {
-    final state = TreeGlobalState.state;
+    final state = context.read<TreeState>();
 
     /// Set the text controller to the value
     _controller.text = widget.value.get(
