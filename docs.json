@@ -41,6 +41,9 @@
           ["Team", "/studio/team"]
         ]
       ]
+    ],
+    "es": [
+      ["Introducion", "/"],
     ]
   }
 }
