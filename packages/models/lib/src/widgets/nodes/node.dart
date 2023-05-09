@@ -1,4 +1,5 @@
 import 'package:device_frame/device_frame.dart';
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
@@ -16,6 +17,8 @@ final _defaultRProperties = {
   'resizable': true,
   'movable': true,
   'hideHandlesWhenNotResizable': true,
+  'vertical_align': ResponsiveAlignment.start,
+  'horizontal_align': ResponsiveAlignment.start,
 };
 
 /// CNode is the mother of all sub node classes.
@@ -194,6 +197,16 @@ abstract class CNode extends Equatable {
   void setHideHandlesWhenNotResizable(bool value) =>
       _rectProperties['hideHandlesWhenNotResizable'] = value;
 
+  ResponsiveAlignment get verticalAlignment =>
+      getRectProperties['vertical_align'] as ResponsiveAlignment;
+  void setVerticalAlignment(ResponsiveAlignment value) =>
+      _rectProperties['vertical_align'] = value;
+
+  ResponsiveAlignment get horizontalAlignment =>
+      getRectProperties['horizontal_align'] as ResponsiveAlignment;
+  void setHorizontalAlignment(ResponsiveAlignment value) =>
+      _rectProperties['horizontal_align'] = value;
+
   Map<String, dynamic> rectPropertiesToJson() => {
         'rect': rectToJson,
         'flipRectWhileResizing': flipRectWhileResizing,
@@ -202,6 +215,8 @@ abstract class CNode extends Equatable {
         'resizable': resizable,
         'movable': movable,
         'hideHandlesWhenNotResizable': hideHandlesWhenNotResizable,
+        'vertical_align': verticalAlignment.name,
+        'horizontal_align': horizontalAlignment.name,
       };
 
   static NodeAttributes rectPropertiesFromJson(Map<String, dynamic> json) =>
@@ -216,6 +231,12 @@ abstract class CNode extends Equatable {
               'movable': json['movable'],
               'hideHandlesWhenNotResizable':
                   json['hideHandlesWhenNotResizable'],
+              'vertical_align': EnumToString.fromString(
+                  ResponsiveAlignment.values,
+                  json['vertical_align'] ?? 'start'),
+              'horizontal_align': EnumToString.fromString(
+                  ResponsiveAlignment.values,
+                  json['horizontal_align'] ?? 'start'),
             };
 
   void setAttribute(String key, dynamic value) => _attributes[key] = value;
@@ -292,6 +313,8 @@ abstract class CNode extends Equatable {
         index,
         getRectProperties,
         _rectProperties['rect'],
+        verticalAlignment,
+        horizontalAlignment,
         flipRectWhileResizing,
         flipChild,
         constraintsEnabled,
