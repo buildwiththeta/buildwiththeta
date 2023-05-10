@@ -223,6 +223,30 @@ class FTextStyle extends Equatable {
     ),
     ''';
   }
+
+  FTextStyle copyWith({
+    FFill? fill,
+    FFontSize? fontSize,
+    String? fontFamily,
+    FFontWeight? fontWeight,
+    FTextDecoration? textDecoration,
+    FTextAlign? textAlign,
+    FFontStyle? fontStyle,
+    FTextDirection? textDirection,
+    String? textStyleModel,
+  }) {
+    return FTextStyle(
+      fill: fill ?? this.fill,
+      fontSize: fontSize ?? this.fontSize,
+      fontFamily: fontFamily ?? this.fontFamily,
+      fontWeight: fontWeight ?? this.fontWeight,
+      textDecoration: textDecoration ?? this.textDecoration,
+      textAlign: textAlign ?? this.textAlign,
+      fontStyle: fontStyle ?? this.fontStyle,
+      textDirection: textDirection ?? this.textDirection,
+      textStyleModel: textStyleModel ?? this.textStyleModel,
+    );
+  }
 }
 
 Widget example() {
