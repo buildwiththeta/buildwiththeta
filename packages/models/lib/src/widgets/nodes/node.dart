@@ -124,6 +124,9 @@ abstract class CNode extends Equatable {
 
   final DateTime updatedAt;
 
+  bool doesRectExist(DeviceType deviceType) =>
+      getRectProperties['rect'][deviceType.name] != null;
+
   Rect rect(DeviceType deviceType) =>
       getRectProperties['rect'][deviceType.name] ??
       getRectProperties['rect'][DeviceType.phone.name];

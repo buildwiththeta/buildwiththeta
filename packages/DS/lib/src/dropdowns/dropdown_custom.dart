@@ -27,7 +27,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(Grid.small)),
         ),
         child: Container(
-          height: 40,
+          height: 32,
           padding: EI.smH,
           decoration: const BoxDecoration(
             color: Palette.bgPrimary,
@@ -63,7 +63,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
         ),
         child: Container(
-          height: 40,
+          height: 32,
           padding: EI.smH,
           decoration: const BoxDecoration(
             color: Palette.bgPrimary,

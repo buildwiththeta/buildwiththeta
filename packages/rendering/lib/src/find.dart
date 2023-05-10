@@ -2,9 +2,8 @@
 // ignore_for_file: public_member_api_docs
 
 // Package imports:
-import 'package:collection/collection.dart';
 // Project imports:
-import 'package:theta_models/src/widgets/nodes/node.dart';
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
 class FindNodeRendering {
@@ -12,36 +11,37 @@ class FindNodeRendering {
 
   CNode? findParentByChildrenIds({
     required final List<CNode> flatList,
-    required final CNode element,
+    required final NodeID nodeID,
   }) {
     CNode? parent;
-    parent =
-        flatList.firstWhereOrNull((final node) => node.id == element.parent);
-    if (parent == null) {
-      for (final node in flatList) {
-        if (node.childrenIds.ids.isEmpty) {
-          if (node.childrenIds.ids.contains(element.id)) {
-            parent = node;
-            break;
-          }
-        }
+    for (final node in flatList) {
+      if (node.childrenIds.ids.contains(nodeID)) {
+        parent = node;
+        break;
       }
     }
     return parent;
   }
+
+  CNode? findParentByParentID({
+    required final List<CNode> flatList,
+    required final NodeID parentId,
+  }) =>
+      flatList.firstWhere((e) => e.id == parentId);
 
   List<CNode> findParentsOfElement({
     required final List<CNode> flatList,
     required final CNode element,
   }) {
     final nodes = <CNode>[];
-    final node = findParentByChildrenIds(flatList: flatList, element: element);
+    final node =
+        findParentByChildrenIds(flatList: flatList, nodeID: element.id);
     if (node == null) return [];
     nodes.add(node);
     var index = 0;
     do {
       final node =
-          findParentByChildrenIds(flatList: flatList, element: nodes.last);
+          findParentByChildrenIds(flatList: flatList, nodeID: nodes.last.id);
       if (node == null) break;
       nodes.add(node);
       index++;

@@ -1,3 +1,4 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
@@ -16,25 +17,52 @@ class BoxTransformBuilder extends StatefulWidget {
 class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
   late Rect rect;
 
+  bool isStartOrStretchAlign(ResponsiveAlignment v) =>
+      v == ResponsiveAlignment.start || v == ResponsiveAlignment.stretch;
+  bool isEndOrStretchAlign(ResponsiveAlignment v) =>
+      v == ResponsiveAlignment.end || v == ResponsiveAlignment.stretch;
+  bool isStretchAlign(ResponsiveAlignment v) =>
+      v == ResponsiveAlignment.stretch;
+
   @override
   Widget build(BuildContext context) {
     final TreeState state = context.watch<TreeState>();
     final device = state.deviceInfo;
     rect = widget.node.rect(device.identifier.type);
-    if (state.forPlay) {
-      return widget.node.toWidget(
-        context: context,
-        state: WidgetState(node: widget.node, loop: 0),
-      );
-    }
-    if (state.focusedNode != widget.node) {
+    if (state.focusedNode?.id != widget.node.id || state.forPlay) {
+      final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
+          ? device
+          : Devices.ios.iPhone13;
+      final top = isStartOrStretchAlign(widget.node.verticalAlignment)
+          ? rect.top
+          : null;
+      final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
+          ? deviceForChecks.screenSize.height - rect.bottom
+          : null;
+      final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
+          ? rect.left
+          : null;
+      final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
+          ? deviceForChecks.screenSize.width - rect.right
+          : null;
+      final width =
+          isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
+      final height =
+          isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
+
       return Positioned(
-        top: rect.top,
-        left: rect.left,
-        width: rect.width,
-        height: rect.height,
+        top: top,
+        bottom: bottom,
+        left: left,
+        right: right,
+        width: width,
+        height: height,
         child: GestureDetector(
           onTap: () {
+            TreeGlobalState.onNodeFocused(widget.node);
+            setState(() {});
+          },
+          onPanStart: (e) {
             TreeGlobalState.onNodeFocused(widget.node);
             setState(() {});
           },
