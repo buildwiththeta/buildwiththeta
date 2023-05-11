@@ -1,5 +1,5 @@
-name: ui_builder
-description: Build visual components on demand.
+name: theta
+description: Build remote UIs.
 version: 0.0.2
 publish_to: none
 
@@ -31,22 +31,21 @@ dependencies:
       path: packages/rendering
       ref: main
 
-  theta_open_classes:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/open_classes
-      ref: main
-
   theta_open_widgets:
     git:
       url: https://github.com/buildwiththeta/buildwiththeta.git
       path: packages/widgets
       ref: main
 
-  clear_response:
+  light_logger:
+
   flutter_localization: ^0.1.9
   device_frame: ^1.0.0
   equatable: ^2.0.3
+  either_dart: ^0.4.0
+  http: ^0.13.5
+  dart_jsonwebtoken: ^2.7.1
+  get_it: ^7.6.0
 
 dev_dependencies:
   flutter_test:

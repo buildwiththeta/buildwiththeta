@@ -1,7 +1,6 @@
-import 'package:clear_response/clear_response.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:ui_builder/ui_builder.dart';
+import 'package:theta/theta.dart';
 
 class UIBox extends StatefulWidget {
   const UIBox(
@@ -41,7 +40,7 @@ class _UIBoxState extends State<UIBox> {
   }
 
   Future<void> load() async {
-    final res = await UIBuilder.I.build(
+    final res = await Theta.instance.build(
       context,
       widget.componentName,
       workflows: widget.workflows,

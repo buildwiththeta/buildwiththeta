@@ -1,44 +1,42 @@
+
 import 'package:clear_response/clear_response.dart';
 import 'package:collection/collection.dart';
 import 'package:device_frame/device_frame.dart';
+import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 import 'package:projects_db/projects_db.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
-import 'package:ui_builder/ui_builder.dart';
+import 'package:theta/theta.dart';
 
-class Core {
-  Core(
+class ThetaCore {
+  ThetaCore(
     final int channelId,
     final String token,
-  )   : _channelId = channelId,
-        _token = token;
+  ) : _channelId = channelId;
 
   final int _channelId;
-  final String _token;
 
   final nodeRendering = const NodeRendering();
 
-  PageObject? _page;
+  PageEntity? _page;
 
-  List<ColorStyleModel> _colorStyles = [];
-  List<TextStyleModel> _textStyles = [];
+  ColorStyles _colorStyles = [];
+  TextStyles _textStyles = [];
 
-  Future<void> initialize() async {
+  Future<Either<Exception, void>> initialize() async {
     try {
-      Future.wait([
-        _fetchColorStyles(),
-        _fetchTextStyles(),
-      ]);
-    } catch (_) {}
+      return const Right(null);
+    } catch (e) {
+      return Left(e as Exception);
+    }
   }
 
   Future<ClearResponse<CNode?, ClearErrorResponse?>> _fetchComponent(
       final String componentName) async {
-    final res = await ProjectsDB.I.client
-        .selectSingle('pages', match: <String, dynamic>{
+    final res = await ProjectsDB.I.client.selectSingle('pages', match: {
       'name': componentName,
       'channel_id': _channelId,
     });
@@ -57,15 +55,12 @@ class Core {
         ),
       );
     }
-    _page = const PageMapper().fromJson(json: res.data!);
+    _page = const PageMapper().fromJson(res.data!);
     final list = await ProjectsDB.I.client.selectList(
       'nodes',
-      match: <String, dynamic>{'page_id': _page!.id},
+      match: {'page_id': _page!.id},
     );
     if (list.error != null) {
-      UIBuilder.log(
-        'Error fetching component, page id: ${_page!.id}, error: ${list.error?.message}',
-      );
       return ClearResponse(
         data: null,
         error: ClearErrorResponse(
@@ -93,8 +88,7 @@ class Core {
 
   /// Fetches color styles from the database
   Future<void> _fetchColorStyles() async {
-    final res = await ProjectsDB.I.client
-        .selectList('color_styles', match: <String, dynamic>{
+    final res = await ProjectsDB.I.client.selectList('color_styles', match: {
       'channel_id': _channelId,
     });
     if (res.error != null) {
@@ -108,8 +102,7 @@ class Core {
 
   /// Fetches text styles from the database
   Future<void> _fetchTextStyles() async {
-    final res = await ProjectsDB.I.client
-        .selectList('text_styles', match: <String, dynamic>{
+    final res = await ProjectsDB.I.client.selectList('text_styles', match: {
       'channel_id': _channelId,
     });
     if (res.error != null) {
@@ -120,7 +113,7 @@ class Core {
         .toList();
   }
 
-  Future<ClearResponse<Widget?, ClearErrorResponse?>> build(
+  Future<Either<Exception, Widget>> build(
     final BuildContext context,
     final String componentName, {
     final List<Workflow>? workflows,

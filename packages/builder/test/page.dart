@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:theta/src/presentation/ui_box.dart';
+import 'package:theta/theta.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:ui_builder/src/widgets/box.dart';
-import 'package:ui_builder/ui_builder.dart';
 
 Future<void> main() async {
-  await UIBuilder.initialize(
+  await Theta.initialize(
     channelId: 187644,
     prjId: 511853,
     token:
