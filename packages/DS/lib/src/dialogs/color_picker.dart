@@ -28,8 +28,9 @@ class ColorPickerState extends State<ColorPickerDialog> {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return AlertDialog(
-      backgroundColor: Palette.bgPrimary,
+      backgroundColor: theme.bgPrimary,
       contentPadding: EI.lgA,
       content: SizedBox(
         width: 400,
