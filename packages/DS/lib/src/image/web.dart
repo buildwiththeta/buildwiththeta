@@ -8,7 +8,6 @@
 import 'dart:html';
 
 // Flutter imports:
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
@@ -37,7 +36,7 @@ class CNetworkImageState extends State<CNetworkImage> {
 
   @override
   Widget build(final BuildContext context) {
-    return ExtendedImage.network(
+    return Image.network(
       '${Constants.backendTetaProxy}/${Uri.encodeComponent(widget.src)}',
       width: widget.width,
       height: widget.height,

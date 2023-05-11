@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithAppleWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithAppleWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return AppleAuthButton(
+    return const SizedBox
+        .shrink(); /* AppleAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithAppleWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

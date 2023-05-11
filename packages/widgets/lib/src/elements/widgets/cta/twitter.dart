@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithTwitterWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithTwitterWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return TwitterAuthButton(
+    return const SizedBox
+        .shrink(); /*TwitterAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithTwitterWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

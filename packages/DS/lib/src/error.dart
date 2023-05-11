@@ -15,10 +15,10 @@ class TErrorWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
+          Icon(
             Icons.warning,
             size: 40,
-            color: Palette.txtPrimary,
+            color: Theme.of(context).extension<ThetaTheme>()!.txtPrimary,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 8),

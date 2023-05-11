@@ -28,7 +28,7 @@ dependencies:
   recase:
   responsive_builder:
   device_frame:
-  intl: ^0.17.0
+  intl: ^0.18.0
   transition: ^2.0.2
   universal_platform: ^1.0.0+1
   flutter_localization:

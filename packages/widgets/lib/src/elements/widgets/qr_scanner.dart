@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:light_logger/light_logger.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class OpenWQRScanner extends StatelessWidget {
   /// Returns a [Align] widget in Teta
@@ -15,7 +12,8 @@ class OpenWQRScanner extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return MobileScanner(
+    return const SizedBox
+        .shrink(); /* MobileScanner(
       onDetect: (final barcode, final args) async {
         if (barcode.rawValue == null) {
         } else {
@@ -26,6 +24,6 @@ class OpenWQRScanner extends StatelessWidget {
           }
         }
       },
-    );
+    );*/
   }
 }
