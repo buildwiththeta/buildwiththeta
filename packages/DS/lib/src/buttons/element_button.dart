@@ -30,6 +30,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return RepaintBoundary(
       child: Semantics(
         button: true,
@@ -64,11 +65,10 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                 decoration: BoxDecoration(
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
-                  color: widget.isSelected
-                      ? Palette.buttonColor
-                      : Palette.bgTertiary,
+                  color:
+                      widget.isSelected ? theme.buttonColor : theme.bgTertiary,
                   border: Border.all(
-                    color: Palette.txtPrimary,
+                    color: theme.txtPrimary,
                     style: isHovered ? BorderStyle.solid : BorderStyle.none,
                   ),
                 ),
@@ -85,7 +85,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                             size: 16,
                             color: widget.isSelected
                                 ? Colors.white
-                                : Palette.txtPrimary,
+                                : theme.txtPrimary,
                           ),
                         if (widget.icon != null)
                           const SizedBox(width: Grid.medium),
@@ -95,7 +95,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                             widget.title,
                             color: widget.isSelected
                                 ? Colors.white
-                                : Palette.txtPrimary,
+                                : theme.txtPrimary,
                           ),
                         ),
                       ],
@@ -107,7 +107,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                           widget.subtitle!,
                           color: widget.isSelected
                               ? Colors.white.withOpacity(0.6)
-                              : Palette.txtPrimary.withOpacity(0.6),
+                              : theme.txtPrimary.withOpacity(0.6),
                         ),
                       ),
                   ],

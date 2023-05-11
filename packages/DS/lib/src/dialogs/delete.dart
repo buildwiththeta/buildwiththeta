@@ -23,8 +23,9 @@ class _DeleteAlertState extends State<DeleteAlert> {
   bool isLoading = false;
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return AlertDialog(
-      backgroundColor: Palette.bgSecondary,
+      backgroundColor: theme.bgSecondary,
       title: Column(
         children: const [
           Gap(16),
@@ -59,7 +60,7 @@ class _DeleteAlertState extends State<DeleteAlert> {
           const CCircularProgressIndicator()
         else
           ThetaDesignButton(
-            primaryColor: Palette.redError.withOpacity(0.7),
+            primaryColor: theme.redError.withOpacity(0.7),
             'Delete',
             onTap: () async {
               setState(() {

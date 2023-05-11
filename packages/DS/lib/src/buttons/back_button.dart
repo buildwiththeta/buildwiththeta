@@ -11,12 +11,13 @@ class ThetaDesignBackButton extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return Semantics(
       button: true,
       child: BounceForLargeWidgets(
         onTap: () => onTap.call(),
         child: Row(
-          children: const [
+          children: [
             SizedBox(
               width: 24,
               height: 24,
@@ -24,7 +25,7 @@ class ThetaDesignBackButton extends StatelessWidget {
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 24,
-                  color: Palette.txtPrimary,
+                  color: theme.txtPrimary,
                 ),
               ),
             ),

@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithMicrosoftWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithMicrosoftWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return MicrosoftAuthButton(
+    return const SizedBox
+        .shrink(); /*MicrosoftAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithMicrosoftWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

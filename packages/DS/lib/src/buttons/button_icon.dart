@@ -33,10 +33,11 @@ class ThetaDesignButtonIcon extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return Semantics(
       button: true,
       child: CupertinoButton(
-        color: isPrimary ? Palette.buttonColor : Palette.bgTertiary,
+        color: isPrimary ? theme.buttonColor : theme.bgTertiary,
         onPressed: () => onTap.call(),
         child: Icon(
           iconData,

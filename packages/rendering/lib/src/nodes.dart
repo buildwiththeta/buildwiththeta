@@ -6,7 +6,7 @@ import 'package:theta_models/src/widgets/nodes/node_type.dart';
 class NodeRendering {
   const NodeRendering();
 
-  CNode buildTree(List<CNode> list, String nodeId) {
+  CNode buildTree(List<CNode> list, String nodeId, String? parent) {
     final node = list.firstWhereOrNull((n) => n.id == nodeId);
 
     if (node == null) {
@@ -15,17 +15,16 @@ class NodeRendering {
 
     if (node.intrinsicState.canHave == ChildrenEnum.children) {
       final children = node.childrenIds.ids.map((childId) {
-        return buildTree(list, childId);
+        return buildTree(list, childId, nodeId);
       }).toList();
-      return node.copyWith(children: children);
+      return node.copyWith(children: children, parent: parent);
     } else if (node.intrinsicState.canHave == ChildrenEnum.child) {
       if (node.childrenIds.ids.isNotEmpty) {
-        final child = buildTree(list, node.childrenIds.ids.first);
-        return node.copyWith(child: child);
+        final child = buildTree(list, node.childrenIds.ids.first, nodeId);
+        return node.copyWith(child: child, parent: parent);
       }
     }
-
-    return node;
+    return node.copyWith(parent: parent);
   }
 
   CNode renderTree(final List<CNode> list) {
@@ -52,7 +51,7 @@ class NodeRendering {
     }
 
     // Build the tree recursively starting from the scaffold node
-    return buildTree(list, scaffold!.id);
+    return buildTree(list, scaffold!.id, null);
   }
 
   List<CNode> renderFlatList(final CNode scaffold) {

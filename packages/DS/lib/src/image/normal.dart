@@ -3,7 +3,6 @@
 // ignore_for_file: public_member_api_docs
 
 // Flutter imports:
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 class CNetworkImage extends StatelessWidget {
@@ -24,7 +23,7 @@ class CNetworkImage extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return ExtendedImage.network(
+    return Image.network(
       src,
       width: width,
       height: height,

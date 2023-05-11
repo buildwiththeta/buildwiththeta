@@ -27,6 +27,7 @@ class _ThetaElementButtonState extends State<ThetaDesignElementButtonIcon> {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return RepaintBoundary(
       child: Semantics(
         button: true,
@@ -61,11 +62,10 @@ class _ThetaElementButtonState extends State<ThetaDesignElementButtonIcon> {
                 decoration: BoxDecoration(
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
-                  color: widget.isSelected
-                      ? Palette.buttonColor
-                      : Palette.bgTertiary,
+                  color:
+                      widget.isSelected ? theme.buttonColor : theme.bgTertiary,
                   border: Border.all(
-                    color: Palette.txtPrimary,
+                    color: theme.txtPrimary,
                     style: isHovered ? BorderStyle.solid : BorderStyle.none,
                   ),
                 ),
@@ -74,7 +74,7 @@ class _ThetaElementButtonState extends State<ThetaDesignElementButtonIcon> {
                 child: Icon(
                   widget.icon,
                   size: 16,
-                  color: Palette.txtPrimary,
+                  color: theme.txtPrimary,
                 ),
               ),
             ),
