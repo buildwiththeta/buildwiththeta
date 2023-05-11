@@ -34,22 +34,10 @@ class Theta {
   /// Returns if the instance is initialized or not
   static bool get isInitialized => _instance._initialized;
 
-  /// Initialize the current Theta instance
-  ///
-  /// This must be called only once. If called more than once, an
-  /// [AssertionError] is thrown
-  static Future<Theta> initialize({
-    required final int channelId,
-    required final int prjId,
-    required final String token,
-    final bool? debug,
-  }) async {
-    await _instance._init(
-      channelId,
-      token,
-      prjId,
-    );
-    Logger.printSuccess('Theta init completed $_instance');
+  /// Initialize the current Theta instance.
+  static Future<Theta> initialize(String key) async {
+    await _instance._init(key);
+    Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
 
@@ -63,15 +51,14 @@ class Theta {
     await ThetaOpenWidgets.initialize();
   }
 
-  Future<void> _init(
-    final int channelId,
-    final String token,
-    final int prjId,
-  ) async {
-    _initExternalDependencies();
-    await initializeDependencyInjection();
-    _core = ThetaCore(channelId, token);
-    await _core.initialize();
+  Future<void> _initializeCore() async {
+    _core = ThetaCore(getIt(), getIt())..initialize();
+  }
+
+  Future<void> _init(String key) async {
+    await _initExternalDependencies();
+    await initializeDependencyInjection(key);
+    await _initializeCore();
     _initialized = true;
   }
 

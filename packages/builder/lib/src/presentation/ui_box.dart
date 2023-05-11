@@ -1,3 +1,4 @@
+import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta/theta.dart';
@@ -30,8 +31,8 @@ class UIBox extends StatefulWidget {
 
 class _UIBoxState extends State<UIBox> {
   Widget? _widget;
-  ClearErrorResponse? _error;
-  bool _isLoaded = false;
+  String? _error;
+  final bool _isLoaded = false;
 
   @override
   void initState() {
@@ -39,28 +40,32 @@ class _UIBoxState extends State<UIBox> {
     load();
   }
 
-  Future<void> load() async {
-    final res = await Theta.instance.build(
-      context,
-      widget.componentName,
-      workflows: widget.workflows,
-      parameters: widget.parameters,
-      states: widget.states,
-      theme: widget.theme,
-    );
-    setState(() {
-      _error = res.error;
-      _widget = res.data;
-      _isLoaded = true;
-    });
-  }
+  Future<void> load() async => await Theta.instance
+      .build(
+        context,
+        widget.componentName,
+        workflows: widget.workflows,
+        parameters: widget.parameters,
+        states: widget.states,
+        theme: widget.theme,
+      )
+      .fold(
+        (l) => setState(() {
+          _error = l.toString();
+        }),
+        (r) => setState(
+          () {
+            _widget = r;
+          },
+        ),
+      );
 
   @override
   Widget build(BuildContext context) {
     if (_error != null) {
       return _getErrorWidget ??
           Center(
-            child: Text('Something went wrong, error: ${_error?.message}'),
+            child: Text('Something went wrong, error: $_error'),
           );
     }
     if (_isLoaded) {
@@ -78,6 +83,5 @@ class _UIBoxState extends State<UIBox> {
 
   Widget? get _getPlaceholderWidget => widget.placeholder?.call();
 
-  Widget? get _getErrorWidget =>
-      widget.errorWidget?.call(_error!.message ?? '');
+  Widget? get _getErrorWidget => widget.errorWidget?.call(_error!);
 }

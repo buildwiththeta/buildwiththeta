@@ -3,18 +3,22 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
+import 'package:theta/src/data/models/token.dart';
 
 class ComponentService {
-  const ComponentService(this._httpClient);
+  const ComponentService(
+    this._clientToken,
+    this._httpClient,
+  );
 
+  final ClientToken _clientToken;
   final Client _httpClient;
 
-  Future<GetPageResponseEntity> getComponent(
-      String baseUrl, String token, String componentName) async {
+  Future<GetPageResponseEntity> getComponent(String componentName) async {
     final res = await _httpClient.post(
-      Uri.parse('$baseUrl$getComponentPath'),
+      Uri.parse('${_clientToken.baseUrl}$getComponentPath'),
       headers: {
-        'Authorization': 'Bearer $token',
+        'Authorization': 'Bearer ${_clientToken.anonToken}',
         ...defaultHeaders,
       },
       body: json.encode({
