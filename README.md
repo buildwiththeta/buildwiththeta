@@ -5,8 +5,7 @@
 [Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
 
 - [ ] Theta Studio: no-code visual editor for reponsive and modern UIs. Under development. <!-- [Docs]() -->
-- [ ] Theta Builder: Stream your UIs inside your clients. Under development. <!-- [Docs]() -->
-  - [ ] Flutter support. Under development. <!-- [Docs](). [Pub.dev](). -->
+- [ ] Theta Flutter client: Stream your UIs inside your clients. Under development. <!-- [Docs]() -->
 
 ## Documentation
 Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththeta)
@@ -29,6 +28,7 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 - [en](https://docs.page/buildwiththeta/buildwiththeta/en)
 - [it](https://docs.page/buildwiththeta/buildwiththeta/it)
+- [es](https://docs.page/buildwiththeta/buildwiththeta/es)
 
 ---
 
