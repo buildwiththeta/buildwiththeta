@@ -39,6 +39,7 @@ class ThetaDesignButton extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return Semantics(
       button: true,
       child: isTransparent ?? false
@@ -56,7 +57,7 @@ class ThetaDesignButton extends StatelessWidget {
             )
           : CupertinoButton(
               color: primaryColor ??
-                  (isPrimary ? Palette.buttonColor : Palette.bgGrey),
+                  (isPrimary ? theme.buttonColor : theme.bgGrey),
               onPressed: () => onTap.call(),
               child: isLoading == true
                   ? const SizedBox(

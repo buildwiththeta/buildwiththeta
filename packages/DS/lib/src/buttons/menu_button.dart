@@ -30,6 +30,7 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return RepaintBoundary(
       child: Semantics(
         button: true,
@@ -65,10 +66,10 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
                   color: widget.isSelected
-                      ? Palette.buttonColor
+                      ? theme.buttonColor
                       : isHovered
-                          ? Palette.bgTertiary
-                          : Palette.bgPrimary,
+                          ? theme.bgTertiary
+                          : theme.bgPrimary,
                 ),
                 duration: const Duration(milliseconds: 10),
                 curve: Curves.easeInOutCubic,
@@ -81,7 +82,7 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                           Icon(
                             widget.icon,
                             size: 16,
-                            color: Palette.txtPrimary,
+                            color: theme.txtPrimary,
                           ),
                         if (widget.icon != null)
                           const SizedBox(width: Grid.medium),
@@ -89,7 +90,7 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                           flex: 5,
                           child: TDetailLabel(
                             widget.title,
-                            color: Palette.txtPrimary,
+                            color: theme.txtPrimary,
                           ),
                         ),
                       ],
@@ -99,7 +100,7 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                         padding: const EdgeInsets.only(top: 4),
                         child: TDetailLabel(
                           widget.subtitle!,
-                          color: Palette.txtPrimary.withOpacity(0.6),
+                          color: theme.txtPrimary.withOpacity(0.6),
                         ),
                       ),
                   ],

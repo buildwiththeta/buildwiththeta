@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithFacebookWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithFacebookWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return FacebookAuthButton(
+    return const SizedBox
+        .shrink(); /*FacebookAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithFacebookWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

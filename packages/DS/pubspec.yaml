@@ -24,11 +24,9 @@ dependencies:
   clear_response:
   light_logger:
 
-  google_fonts:
+  google_fonts: ^4.0.4
   equatable:
   sa3_liquid: ^1.0.1
-  extended_image: ^7.0.2
-  themed: ^4.0.0
   flutter_feather_icons: ^2.0.0+1
   gap: ^3.0.0
   lottie: ^2.3.2

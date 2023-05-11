@@ -1,38 +1,29 @@
 // ignore_for_file: unused_field
 
-import 'dart:ui';
-
-import 'package:clear_response/clear_response.dart';
-import 'package:flutter/foundation.dart';
+import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
-import 'package:projects_db/projects_db.dart';
+import 'package:light_logger/light_logger.dart';
+import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:ui_builder/src/builder.dart';
-import 'package:ui_builder/ui_builder.dart';
+import 'package:theta/src/core.dart';
+import 'package:theta/theta.dart';
 
-/// UIBuilder instance.
+/// Theta instance.
 ///
-/// It must be initialized before used, otherwise an error is thrown.
+/// ❗️ Initialize before use, otherwise an error is thrown.
 ///
 /// ```dart
-/// await UIBuilder.initialize(...)
+/// await Theta.initialize(...)
 /// ```
-///
-/// Use it:
-///
-/// ```dart
-/// final instance = UIBuilder.I;
-/// ```
-///
-class UIBuilder {
-  UIBuilder._();
+class Theta {
+  Theta._();
 
-  /// Gets the current UIBuilder instance.
+  /// Gets the current Theta instance.
   ///
-  /// An [AssertionError] is thrown if supabase isn't initialized yet.
-  /// Call [TetaCMS.initialize] to initialize it.
-  static UIBuilder get instance {
+  /// An [AssertionError] is thrown if Theta isn't initialized yet.
+  /// Call [Theta.initialize] to initialize it.
+  static Theta get instance {
     assert(
       _instance._initialized,
       'You must initialize the UIBuilder instance before calling UIBuilder.instance',
@@ -40,72 +31,38 @@ class UIBuilder {
     return _instance;
   }
 
-  /// Shortcut to get the current UIBuilder instance.
-  static UIBuilder get I {
-    assert(
-      _instance._initialized,
-      'You must initialize the UIBuilder instance before calling UIBuilder.I',
-    );
-    return _instance;
-  }
-
   /// Returns if the instance is initialized or not
   static bool get isInitialized => _instance._initialized;
 
-  /// Initialize the current UIBuilder instance
-  ///
-  /// This must be called only once. If called more than once, an
-  /// [AssertionError] is thrown
-  static Future<UIBuilder> initialize({
-    required final int channelId,
-    required final int prjId,
-    required final String token,
-    final bool? debug,
-  }) async {
-    await _instance._init(
-      channelId,
-      token,
-      prjId,
-    );
-    UIBuilder.log('***** UIBuilder init completed $_instance');
+  /// Initialize the current Theta instance.
+  static Future<Theta> initialize(String key) async {
+    await _instance._init(key);
+    Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
 
-  static final UIBuilder _instance = UIBuilder._();
+  static final Theta _instance = Theta._();
 
   bool _initialized = false;
 
-  late Core _core;
+  late ThetaCore _core;
 
-  /// Dispose the instance to free up resources.
-  void dispose() {
-    _initialized = false;
+  Future<void> _initExternalDependencies() async {
+    await ThetaOpenWidgets.initialize();
   }
 
-  Future<void> _init(
-    final int channelId,
-    final String token,
-    final int prjId,
-  ) async {
-    try {
-      WidgetsFlutterBinding.ensureInitialized();
-      DartPluginRegistrant.ensureInitialized();
-    } catch (e) {
-      //This can throw unimplemented error on some platforms.
-      UIBuilder.log('Info: $e');
-    }
-    await ThetaOpenWidgets.initialize();
-    _core = Core(channelId, token);
-    await Future.wait(
-      [
-        ProjectsDB.initialize(prjId: prjId, token: token),
-        _core.initialize(),
-      ],
-    );
+  Future<void> _initializeCore() async {
+    _core = ThetaCore(getIt(), getIt())..initialize();
+  }
+
+  Future<void> _init(String key) async {
+    await _initExternalDependencies();
+    await initializeDependencyInjection(key);
+    await _initializeCore();
     _initialized = true;
   }
 
-  Future<ClearResponse<Widget?, ClearErrorResponse?>> build(
+  Future<Either<Exception, Widget>> build(
     final BuildContext context,
     final String componentName, {
     final List<Workflow>? workflows,
@@ -122,16 +79,8 @@ class UIBuilder {
         states: states,
       );
 
-  /// Print only in debug mode
-  static void log(final String msg) {
-    if (kDebugMode) {
-      debugPrint(msg);
-    }
+  void dispose() {
+    disposeDependencies();
+    _initialized = false;
   }
-
-  /// Print a warning message only in debug mode
-  static void printWarning(final String text) => log('\x1B[33m$text\x1B[0m');
-
-  /// Print an error message only in debug mode
-  static void printError(final String text) => log('\x1B[31m$text\x1B[0m');
 }

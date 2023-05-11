@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
+import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 
 class OpenWVideo extends StatefulWidget {
   /// Returns a Video widget in Teta
@@ -80,6 +80,7 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
       );
     }
 
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return state.forPlay
         ? YoutubePlayerIFrame(
             controller: controller,
@@ -99,16 +100,16 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
                   const Gap(Grid.small),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       THeadline2(
                         'See in Play mode',
-                        color: Palette.txtPrimary,
+                        color: theme.txtPrimary,
                       ),
-                      Gap(4),
+                      const Gap(4),
                       Icon(
                         FeatherIcons.externalLink,
                         size: 12,
-                        color: Palette.txtPrimary,
+                        color: theme.txtPrimary,
                       )
                     ],
                   ),
