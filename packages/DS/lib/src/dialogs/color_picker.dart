@@ -18,7 +18,7 @@ class ColorPickerDialog extends StatefulWidget {
 
 class ColorPickerState extends State<ColorPickerDialog> {
   TextEditingController controller = TextEditingController();
-  Color color = Palette.txtPrimary;
+  Color color = Colors.white;
 
   @override
   void initState() {
