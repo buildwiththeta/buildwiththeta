@@ -8,9 +8,10 @@ class CCircularProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return const RepaintBoundary(
+    return RepaintBoundary(
       child: CircularProgressIndicator(
-        valueColor: AlwaysStoppedAnimation<Color>(Palette.txtPrimary),
+        valueColor: AlwaysStoppedAnimation<Color>(
+            Theme.of(context).extension<ThetaTheme>()!.txtPrimary),
       ),
     );
   }

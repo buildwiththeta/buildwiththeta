@@ -19,6 +19,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
     return HoverWidget(
       hoverChild: Container(
         padding: const EdgeInsets.all(1),
@@ -29,14 +30,14 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
         child: Container(
           height: 32,
           padding: EI.smH,
-          decoration: const BoxDecoration(
-            color: Palette.bgPrimary,
-            borderRadius: BorderRadius.all(Radius.circular(Grid.small)),
+          decoration: BoxDecoration(
+            color: theme.bgPrimary,
+            borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
           ),
           alignment: Alignment.centerLeft,
           child: Theme(
             data: Theme.of(context).copyWith(
-              canvasColor: Palette.bgSecondary,
+              canvasColor: theme.bgSecondary,
             ),
             child: DropdownButton<Value>(
               underline: const SizedBox(),
@@ -59,20 +60,20 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          color: Palette.txtPrimary.withOpacity(0.3),
+          color: theme.txtPrimary30,
           borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
         ),
         child: Container(
           height: 32,
           padding: EI.smH,
-          decoration: const BoxDecoration(
-            color: Palette.bgPrimary,
-            borderRadius: BorderRadius.all(Radius.circular(Grid.small)),
+          decoration: BoxDecoration(
+            color: theme.bgPrimary,
+            borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
           ),
           alignment: Alignment.centerLeft,
           child: Theme(
             data: Theme.of(context).copyWith(
-              canvasColor: Palette.bgSecondary,
+              canvasColor: theme.bgSecondary,
             ),
             child: DropdownButton<Value>(
               underline: const SizedBox(),

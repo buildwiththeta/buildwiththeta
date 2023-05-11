@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithGitHubWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithGitHubWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return GithubAuthButton(
+    return const SizedBox
+        .shrink(); /*GithubAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithGitHubWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

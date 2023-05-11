@@ -1,4 +1,3 @@
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithGoogleWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class LoginWithGoogleWidget extends StatelessWidget {
   Widget build(
     final BuildContext context,
   ) {
-    return GoogleAuthButton(
+    return const SizedBox
+        .shrink(); /*GoogleAuthButton(
       onPressed: () {
         onPressed.call();
       },
@@ -26,6 +26,6 @@ class LoginWithGoogleWidget extends StatelessWidget {
       style: const AuthButtonStyle(
         padding: EdgeInsets.symmetric(vertical: 16),
       ),
-    );
+    );*/
   }
 }

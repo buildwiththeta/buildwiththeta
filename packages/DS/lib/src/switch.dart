@@ -3,6 +3,7 @@
 
 // Flutter imports:
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 // Project imports:
 import 'package:theta_design_system/theta_design_system.dart';
 
@@ -17,7 +18,7 @@ class CSwitch extends StatelessWidget {
     return CupertinoSwitch(
       value: value,
       onChanged: callback,
-      activeColor: Palette.buttonColor,
+      activeColor: Theme.of(context).extension<ThetaTheme>()!.buttonColor,
     );
   }
 }
