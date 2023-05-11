@@ -52,5 +52,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_rendering:
+    path: ../rendering
+  theta_open_widgets:
+    path: ../widgets
 
 flutter:

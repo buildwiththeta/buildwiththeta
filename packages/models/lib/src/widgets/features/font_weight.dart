@@ -27,6 +27,11 @@ class FFontWeight extends Equatable {
   /// Returns a String based on [weight] value
   String get getString => _convertValueToDropDown(weight);
 
+  /// returns a [FontWeight] from [Value]
+  static FontWeight convertDropDownToValue(final String key) {
+    return _convertDropDownToValue(key);
+  }
+
   /// Returns a [FFontWeight] from Json
   static FFontWeight fromJson(final String json) {
     try {
