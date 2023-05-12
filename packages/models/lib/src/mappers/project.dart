@@ -10,6 +10,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
   static const _defaultBranchIdField = 'default_branch_id';
   static const _updatedAtField = 'updated_at';
   static const _createdAtField = 'created_at';
+  static const _isPublic = 'is_public';
 
   /// For a single instance
   @override
@@ -21,6 +22,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
       defaultBranchId: json[_defaultBranchIdField],
       updatedAt: DateTime.parse(json[_updatedAtField]),
       createdAt: DateTime.parse(json[_createdAtField]),
+      isPublic: json[_isPublic],
     );
   }
 
@@ -29,6 +31,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
         _teamIdField: e.teamId,
         _defaultBranchIdField: e.defaultBranchId,
         _nameField: e.name,
+        _isPublic: e.isPublic,
       };
 
   ProjectEntity copyWith({
@@ -39,6 +42,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
     final String? name,
     final DateTime? updatedAt,
     final DateTime? createdAt,
+    final bool? isPublic,
   }) {
     return ProjectEntity(
       id: id ?? e.id,
@@ -47,6 +51,7 @@ class ProjectMapper extends Mapper<ProjectEntity> {
       name: name ?? e.name,
       updatedAt: updatedAt ?? e.updatedAt,
       createdAt: createdAt ?? e.createdAt,
+      isPublic: isPublic ?? e.isPublic,
     );
   }
 }

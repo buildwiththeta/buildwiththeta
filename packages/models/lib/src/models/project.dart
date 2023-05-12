@@ -19,6 +19,7 @@ class ProjectEntity extends Equatable {
     required this.name,
     required this.updatedAt,
     required this.createdAt,
+    required this.isPublic,
   });
 
   final ProjectID id;
@@ -27,6 +28,7 @@ class ProjectEntity extends Equatable {
   final String name;
   final DateTime createdAt;
   final DateTime updatedAt;
+  final bool isPublic;
 
   @override
   List<Object?> get props => [
@@ -36,6 +38,7 @@ class ProjectEntity extends Equatable {
         defaultBranchId,
         createdAt,
         updatedAt,
+        isPublic,
       ];
 
   @override
