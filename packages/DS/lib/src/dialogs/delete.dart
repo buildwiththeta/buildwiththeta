@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
@@ -26,11 +26,11 @@ class _DeleteAlertState extends State<DeleteAlert> {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
     return AlertDialog(
       backgroundColor: theme.bgSecondary,
-      title: Column(
-        children: const [
+      title: const Column(
+        children: [
           Gap(16),
           Icon(
-            FeatherIcons.alertTriangle,
+            CupertinoIcons.exclamationmark_triangle,
             size: 24,
             color: Colors.red,
           ),
