@@ -46,7 +46,6 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
             });
           },
           child: BounceForLargeWidgets(
-            message: widget.tooltip,
             child: GestureDetector(
               onTap: () {
                 widget.onTap?.call();
@@ -81,8 +80,10 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                         if (widget.icon != null)
                           Icon(
                             widget.icon,
-                            size: 16,
-                            color: theme.txtPrimary,
+                            size: 20,
+                            color: widget.isSelected
+                                ? Colors.white
+                                : theme.txtPrimary,
                           ),
                         if (widget.icon != null)
                           const SizedBox(width: Grid.medium),
@@ -90,7 +91,9 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                           flex: 5,
                           child: TDetailLabel(
                             widget.title,
-                            color: theme.txtPrimary,
+                            color: widget.isSelected
+                                ? Colors.white
+                                : theme.txtPrimary,
                           ),
                         ),
                       ],
@@ -100,7 +103,9 @@ class _ElementButtonState extends State<ThetaDesignMenuButton> {
                         padding: const EdgeInsets.only(top: 4),
                         child: TDetailLabel(
                           widget.subtitle!,
-                          color: theme.txtPrimary.withOpacity(0.6),
+                          color: widget.isSelected
+                              ? Colors.white
+                              : theme.txtPrimary.withOpacity(0.6),
                         ),
                       ),
                   ],

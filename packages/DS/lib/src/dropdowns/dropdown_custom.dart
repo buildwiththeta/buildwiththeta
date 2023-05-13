@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
@@ -52,7 +53,11 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
               onChanged: onChange,
               isExpanded: expanded ?? false,
               isDense: true,
-              icon: const Icon(Icons.arrow_drop_down),
+              icon: Icon(
+                CupertinoIcons.chevron_up,
+                color: theme.txtPrimary,
+                size: 16,
+              ),
             ),
           ),
         ),
@@ -88,7 +93,11 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
               onChanged: onChange,
               isExpanded: expanded ?? false,
               isDense: true,
-              icon: const Icon(Icons.arrow_drop_down),
+              icon: Icon(
+                CupertinoIcons.chevron_down,
+                color: theme.txtPrimary,
+                size: 16,
+              ),
             ),
           ),
         ),
