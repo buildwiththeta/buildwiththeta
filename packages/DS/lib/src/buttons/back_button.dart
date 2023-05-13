@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
@@ -23,13 +24,13 @@ class ThetaDesignBackButton extends StatelessWidget {
               height: 24,
               child: Center(
                 child: Icon(
-                  Icons.arrow_back_ios,
+                  CupertinoIcons.arrow_left_circle,
                   size: 24,
                   color: theme.txtPrimary,
                 ),
               ),
             ),
-            THeadline3('Back'),
+            const THeadline3('Back'),
           ],
         ),
       ),
