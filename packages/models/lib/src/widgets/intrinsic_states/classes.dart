@@ -6,7 +6,7 @@ import 'package:theta_models/theta_models.dart';
 class AlignIntrinsicStates extends IntrinsicState {
   AlignIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.align.path,
+          nodeIcon: 'nodes/align/',
           synonymous: [NodeType.name(NType.align), 'baseline', 'bottom'],
           displayName: NodeType.name(NType.align),
           type: NType.align,
@@ -324,7 +324,7 @@ class ClipRRectIntrinsicStates extends IntrinsicState {
 class ColumnIntrinsicStates extends IntrinsicState {
   ColumnIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.column.path,
+          nodeIcon: 'nodes/column/',
           synonymous: const ['column', 'list', 'vertical list'],
           displayName: NodeType.name(NType.column),
           type: NType.column,
@@ -398,8 +398,7 @@ class ConditionIntrinsicStates extends IntrinsicState {
 class ContainerIntrinsicStates extends IntrinsicState {
   ContainerIntrinsicStates()
       : super(
-          nodeIcon:
-              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/container/',
+          nodeIcon: 'nodes/container/',
           synonymous: const ['box', 'container', 'square', 'div'],
           displayName: NodeType.name(NType.container),
           type: NType.container,
@@ -697,7 +696,7 @@ class LineIconIntrinsicStates extends IntrinsicState {
 class IconIntrinsicStates extends IntrinsicState {
   IconIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.icon.path,
+          nodeIcon: 'nodes/icon/',
           synonymous: ['icon', 'menu'],
           displayName: 'Material Icon',
           type: NType.icon,
@@ -730,8 +729,7 @@ class IgnorePointerIntrinsicStates extends IntrinsicState {
 class ImageIntrinsicStates extends IntrinsicState {
   ImageIntrinsicStates()
       : super(
-          nodeIcon:
-              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/image/',
+          nodeIcon: 'nodes/image/',
           synonymous: const ['image', 'picture', 'photo'],
           displayName: NodeType.name(NType.image),
           type: NType.image,
@@ -1049,8 +1047,7 @@ class PageViewIntrinsicStates extends IntrinsicState {
 class PlaceholderIntrinsicStates extends IntrinsicState {
   PlaceholderIntrinsicStates()
       : super(
-          nodeIcon:
-              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/text/',
+          nodeIcon: 'nodes/placeholder/',
           synonymous: const ['placeholder', 'text'],
           displayName: NodeType.name(NType.placeholder),
           type: NType.placeholder,
@@ -1215,7 +1212,7 @@ class RotatedBoxIntrinsicStates extends IntrinsicState {
 class RowIntrinsicStates extends IntrinsicState {
   RowIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.row.path,
+          nodeIcon: 'nodes/row/',
           synonymous: const ['row', 'horizontal list'],
           displayName: NodeType.name(NType.row),
           type: NType.row,
@@ -1358,8 +1355,7 @@ class TCardIntrinsicStates extends IntrinsicState {
 class TextIntrinsicStates extends IntrinsicState {
   TextIntrinsicStates()
       : super(
-          nodeIcon:
-              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/text/',
+          nodeIcon: 'nodes/text/',
           synonymous: const ['text', 'label', 'title'],
           displayName: NodeType.name(NType.text),
           type: NType.text,
@@ -2163,8 +2159,7 @@ class CmsFetchIntrinsicStates extends IntrinsicState {
 class CmsLoggedUserIntrinsicStates extends IntrinsicState {
   CmsLoggedUserIntrinsicStates()
       : super(
-          nodeIcon:
-              'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/nodes-assets/image/',
+          nodeIcon: 'nodes/image/',
           synonymous: [
             NodeType.name(NType.cmsLoggedUser),
             'cms',

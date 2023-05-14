@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:gap/gap.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
@@ -59,10 +59,10 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
     if (UniversalPlatform.isWindows) {
-      return Center(
+      return const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Icon(
               Icons.warning,
               size: 40,
@@ -93,7 +93,7 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
-                    FeatherIcons.maximize,
+                    CupertinoIcons.play,
                     size: 48,
                     color: Colors.white,
                   ),
@@ -107,7 +107,7 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
                       ),
                       const Gap(4),
                       Icon(
-                        FeatherIcons.externalLink,
+                        CupertinoIcons.arrow_up_right_circle,
                         size: 12,
                         color: theme.txtPrimary,
                       )

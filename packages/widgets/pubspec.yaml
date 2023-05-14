@@ -60,6 +60,7 @@ dependencies:
   # UI
   sa3_liquid: 1.0.1
   flutter_staggered_animations: 1.0.0
+  feather_icons:
 
   # Share & send
   url_launcher: any
