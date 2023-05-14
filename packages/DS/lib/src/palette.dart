@@ -239,11 +239,11 @@ const lightTheme = ThetaTheme(
 );
 
 const darkTheme = ThetaTheme(
-  bgPrimary: Color(0xFF020202),
+  bgPrimary: Color(0xFF222222),
   bgPrimary60: Color.fromARGB(172, 2, 2, 2),
   bgPrimary30: Color.fromARGB(80, 2, 2, 2),
   bgSecondary: Color(0xFF181818),
-  bgTertiary: Color(0xFF222222),
+  bgTertiary: Color(0xFF383838),
   bgGrey: Color(0xFF333333),
   bgGreyLight: Color(0xFF444444),
   txtPrimary: Color(0xFFF8F8F8),

@@ -134,6 +134,9 @@ abstract class CNode extends Equatable {
   void setRect(Rect rect, DeviceType deviceType) =>
       _rectProperties['rect'][deviceType.name] = rect;
 
+  void resetRect(DeviceType deviceType) =>
+      _rectProperties['rect'][deviceType.name] = null;
+
   /// Rect from Json
   Map<String, dynamic> get rectToJson {
     final map = getRectProperties['rect'] as Map<String, dynamic>;
