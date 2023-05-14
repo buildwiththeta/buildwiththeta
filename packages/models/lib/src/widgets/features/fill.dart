@@ -148,6 +148,28 @@ class FFill extends Equatable {
     }
   }
 
+  FFill copyWith({
+    List<FFillElement>? levels,
+    FFillType? type,
+    Alignment? begin,
+    Alignment? end,
+    Alignment? center,
+    double? radius,
+    FBoxFit? boxFit,
+    dynamic paletteStyle,
+  }) {
+    return FFill(
+      levels: levels ?? this.levels,
+      type: type ?? this.type,
+      begin: begin ?? this.begin,
+      end: end ?? this.end,
+      center: center ?? this.center,
+      radius: radius ?? this.radius,
+      boxFit: boxFit ?? this.boxFit,
+      paletteStyle: paletteStyle ?? this.paletteStyle,
+    );
+  }
+
   /// Get Hex String value.
   /// Includes PaletteStyle checks.
   /// String is uppercased.
