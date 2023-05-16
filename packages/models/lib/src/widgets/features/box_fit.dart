@@ -15,4 +15,10 @@ class FBoxFit extends FeatureWithEnum<BoxFit> {
 
   static FBoxFit fromJson(final String json) =>
       FBoxFit(value: EnumToString.fromString(BoxFit.values, json)!);
+
+  @override
+  FBoxFit copyWith({
+    BoxFit? value,
+  }) =>
+      FBoxFit(value: value ?? this.value);
 }
