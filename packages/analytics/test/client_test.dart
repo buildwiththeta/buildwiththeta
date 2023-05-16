@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:supabase/supabase.dart';
 import 'package:theta_analytics/src/analytics.dart';
 import 'package:theta_analytics/src/models/exception.dart';
 import 'package:theta_analytics/src/service.dart';

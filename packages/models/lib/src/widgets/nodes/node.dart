@@ -29,7 +29,7 @@ abstract class CNode extends Equatable {
   /// Constructor
   CNode({
     required this.type,
-    required this.childrenIds,
+    required this.parentID,
     required this.intrinsicState,
     required final DefaultNodeAttributes defaultAttributes,
     required final NodeAttributes attributes,
@@ -38,11 +38,10 @@ abstract class CNode extends Equatable {
     required this.updatedAt,
     this.name,
     this.description,
-    this.parent,
     this.id = '',
     this.child,
     this.children = const [],
-    this.index = 0,
+    this.childOrder = 0,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -93,7 +92,7 @@ abstract class CNode extends Equatable {
   final IntrinsicState intrinsicState;
 
   /// The parent's id of the node
-  final NodeID? parent;
+  final NodeID? parentID;
 
   /// The id of the node (node-id)
   final NodeID id;
@@ -110,11 +109,8 @@ abstract class CNode extends Equatable {
   /// The children of the node, if they exists
   final List<CNode>? children;
 
-  /// It contains all the ids of the node's child / children
-  final FChildrenIds childrenIds;
-
   /// The index of the node in the parent's children list
-  final int index;
+  final int childOrder;
 
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
@@ -254,29 +250,28 @@ abstract class CNode extends Equatable {
 
   /// toJson method
   Map<String, dynamic> toJson() {
-    final ids = childrenIds.toJson();
     final body = getAttributes;
     return {
       'type': type,
       'name': name,
       'description': description,
-      'ids': ids,
+      'parent_id': parentID,
       'properties': body,
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
     };
   }
 
   /// Copy the node with new attributes
   CNode copyWith({
     NodeID? id,
-    NodeID? parent,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime updatedAt,
@@ -304,7 +299,6 @@ abstract class CNode extends Equatable {
 
   @override
   List<Object?> get props => [
-        parent,
         id,
         child,
         children,
@@ -315,8 +309,8 @@ abstract class CNode extends Equatable {
         getAttributes,
         name,
         description,
-        childrenIds,
-        index,
+        parentID,
+        childOrder,
         getRectProperties,
         _rectProperties['rect'],
         verticalAlignment,
