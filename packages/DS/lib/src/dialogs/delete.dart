@@ -57,7 +57,7 @@ class _DeleteAlertState extends State<DeleteAlert> {
             isPrimary: false,
           ),
         if (isLoading)
-          const CCircularProgressIndicator()
+          const ThetaCircularProgressIndicator()
         else
           ThetaDesignButton(
             primaryColor: theme.redError.withOpacity(0.7),

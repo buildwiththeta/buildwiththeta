@@ -1,6 +1,5 @@
 class ClientToken {
-  ClientToken(this.baseUrl, this.anonToken);
+  ClientToken(this.key);
 
-  String baseUrl;
-  String anonToken;
+  String key;
 }

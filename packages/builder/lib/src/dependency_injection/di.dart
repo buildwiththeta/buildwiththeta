@@ -8,6 +8,8 @@ import 'package:theta/src/data/repositories/component_repository_impl.dart';
 import 'package:theta/src/data/repositories/styles_repository_impl.dart';
 import 'package:theta/src/domain/repositories/component_repository.dart';
 import 'package:theta/src/domain/repositories/styles_repository.dart';
+import 'package:theta/src/domain/usecases/get_component_usecase.dart';
+import 'package:theta/src/domain/usecases/get_styles_usecase.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
@@ -28,6 +30,14 @@ Future<void> initializeDependencyInjection(String key) async {
         () => ComponentRepositoryImpl(getIt()))
     ..registerLazySingleton<StylesRepository>(
         () => StylesRepositoryImpl(getIt()));
+
+  getIt
+    ..registerLazySingleton(() => GetComponentUseCase(
+          getIt(),
+        ))
+    ..registerLazySingleton(() => GetStylesUseCase(
+          getIt(),
+        ));
 
   getIt.registerLazySingleton(() => ThetaCore(getIt(), getIt()));
 }

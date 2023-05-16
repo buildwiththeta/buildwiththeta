@@ -16,9 +16,9 @@ class ComponentService {
 
   Future<GetPageResponseEntity> getComponent(String componentName) async {
     final res = await _httpClient.post(
-      Uri.parse('${_clientToken.baseUrl}$getComponentPath'),
+      Uri.parse('$baseUrl$getComponentPath'),
       headers: {
-        'Authorization': 'Bearer ${_clientToken.anonToken}',
+        'Authorization': 'Bearer ${_clientToken.key}',
         ...defaultHeaders,
       },
       body: json.encode({

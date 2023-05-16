@@ -1,5 +1,6 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta/theta.dart';
 
@@ -41,7 +42,7 @@ class _UIBoxState extends State<UIBox> {
   }
 
   Future<void> load() async => await Theta.instance
-      .build(
+          .build(
         context,
         widget.componentName,
         workflows: widget.workflows,
@@ -49,10 +50,13 @@ class _UIBoxState extends State<UIBox> {
         states: widget.states,
         theme: widget.theme,
       )
-      .fold(
-        (l) => setState(() {
-          _error = l.toString();
-        }),
+          .fold(
+        (l) {
+          Logger.printError(l.toString());
+          setState(() {
+            _error = l.toString();
+          });
+        },
         (r) => setState(
           () {
             _widget = r;

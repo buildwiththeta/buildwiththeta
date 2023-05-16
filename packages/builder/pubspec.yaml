@@ -12,7 +12,7 @@ platforms:
   windows:
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -44,7 +44,6 @@ dependencies:
   equatable: ^2.0.3
   either_dart: ^0.4.0
   http: ^0.13.5
-  dart_jsonwebtoken: ^2.7.1
   get_it: ^7.6.0
   provider: ^6.0.5
 
