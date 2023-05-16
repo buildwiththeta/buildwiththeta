@@ -28,14 +28,13 @@ class NodeGenerator extends GeneratorForAnnotation<NodeInfo> {
 @NodeKey(NType.$type)
 class $generatedClassName extends CNode {
   $generatedClassName(
-      {required final String id,
-      final String? parent,
+      {required final NodeID id,
+      final NodeID? parentID,
       final CNode? child,
       final List<CNode>? children,
       final String? name,
       final String? description,
-      final FChildrenIds? childrenIds,
-      final int? index,
+      final int? childOrder,
       final Map<String, dynamic>? attributes,
       final Map<String, dynamic>? rectProperties,
       final DateTime? updatedAt,
@@ -44,15 +43,14 @@ class $generatedClassName extends CNode {
             id: id,
             type: NType.$type,
             name: name ?? '$displayName',
-            childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+            parentID: parentID,
             intrinsicState: const DynamicIntrinsicState().getStateByType(NType.$type),
             defaultAttributes: const DefaultAttributesParse().getByType(NType.$type),
             attributes: attributes ?? {},
             rectProperties: rectProperties ?? {},
             adapter: const WidgetAdapterParse().getByType(NType.$type),
-            parent: parent,
             description: description,
-            index: index ?? 0,
+            childOrder: childOrder ?? 0,
             child: child,
             children: children,
             updatedAt: updatedAt ?? DateTime.now(),
@@ -60,27 +58,25 @@ class $generatedClassName extends CNode {
 
   @override
   CNode copyWith(
-          {String? id,
-          String? parent,
+          {NodeID? id,
+          NodeID? parentID,
           CNode? child,
           List<CNode>? children,
           String? name,
           String? description,
-          FChildrenIds? childrenIds,
-          int? index,
+          int? childOrder,
           Map<String, dynamic>? attributes,
           Map<String, dynamic>? rectProperties,
           DateTime? updatedAt,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
-          parent: parent ?? this.parent,
+          parentID: parentID ?? this.parentID,
           child: child ?? this.child,
           children: children ?? this.children,
           name: name ?? this.name,
           description: description ?? this.description,
-          childrenIds: childrenIds ?? this.childrenIds,
-          index: index ?? this.index,
+          childOrder: childOrder ?? this.childOrder,
           attributes: attributes ?? getAttributes,
           rectProperties: rectProperties ?? getRectProperties,
         );
@@ -103,15 +99,16 @@ class $generatedClassName extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
-  String toString() => '$generatedClassName { id: \$id, name: \$name, type: \$type, childrenIds: \$childrenIds, attributes: \$getAttributes, parent: \$parent, index: \$index, child: \$child, children: \$children }';
+  String toString() => '$generatedClassName { id: \$id, name: \$name, type: \$type, parentID: \$parentID, attributes: \$getAttributes, childOrder: \$childOrder, child: \$child, children: \$children }';
 }
     ''';
 

@@ -1,57 +1,36 @@
-import 'package:collection/collection.dart';
-import 'package:theta_models/src/widgets/nodes/children_enum.dart';
-import 'package:theta_models/src/widgets/nodes/node.dart';
-import 'package:theta_models/src/widgets/nodes/node_type.dart';
+import 'package:theta_models/theta_models.dart';
 
 class NodeRendering {
   const NodeRendering();
 
-  CNode buildTree(List<CNode> list, String nodeId, String? parent) {
-    final node = list.firstWhereOrNull((n) => n.id == nodeId);
+  Nodes buildTree(List<CNode> list, String? parentID) {
+    final nodes = list.where((n) => n.parentID == parentID).toList();
 
-    if (node == null) {
-      throw Exception('Node with id $nodeId not found in the list');
-    }
+    // Sort nodes based on childOrder
+    nodes.sort((a, b) => a.childOrder.compareTo(b.childOrder));
 
-    if (node.intrinsicState.canHave == ChildrenEnum.children) {
-      final children = node.childrenIds.ids.map((childId) {
-        return buildTree(list, childId, nodeId);
-      }).toList();
-      return node.copyWith(children: children, parent: parent);
-    } else if (node.intrinsicState.canHave == ChildrenEnum.child) {
-      if (node.childrenIds.ids.isNotEmpty) {
-        final child = buildTree(list, node.childrenIds.ids.first, nodeId);
-        return node.copyWith(child: child, parent: parent);
+    Nodes children = [];
+    for (var node in nodes) {
+      if (node.intrinsicState.canHave == ChildrenEnum.children) {
+        final children0 = buildTree(list, node.id);
+        children.add(node.copyWith(
+          children: children0,
+          parentID: parentID,
+        ));
+      } else if (node.intrinsicState.canHave == ChildrenEnum.child) {
+        children.add(node.copyWith(
+            child: buildTree(list, node.id).firstOrNull, parentID: parentID));
+      } else {
+        children.add(node.copyWith(parentID: parentID));
       }
     }
-    return node.copyWith(parent: parent);
+
+    return children;
   }
 
   CNode renderTree(final List<CNode> list) {
-    // Find the scaffold node in the unordered list
-    CNode? scaffold;
-    final scaffoldNodes = list.where((node) => node.type == NType.scaffold);
-
-    /// If there are no scaffold nodes, throw an exception
-    if (scaffoldNodes.isEmpty) {
-      throw Exception('No scaffold node found in the list');
-    }
-
-    /// If there are multiple scaffold nodes, use the first one that has children
-    /// or the first one if none of them have children
-    if (scaffoldNodes.length > 1) {
-      scaffold = scaffoldNodes.firstWhereOrNull(
-              (element) => element.childrenIds.ids.isNotEmpty) ??
-          scaffoldNodes.first;
-    }
-
-    /// If there is only one scaffold node, use it
-    if (scaffoldNodes.length == 1) {
-      scaffold = scaffoldNodes.first;
-    }
-
-    // Build the tree recursively starting from the scaffold node
-    return buildTree(list, scaffold!.id, null);
+    // Build the tree recursively starting from the root node
+    return buildTree(list, null).first;
   }
 
   List<CNode> renderFlatList(final CNode scaffold) {

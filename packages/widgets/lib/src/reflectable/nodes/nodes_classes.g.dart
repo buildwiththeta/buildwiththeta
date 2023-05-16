@@ -11,14 +11,13 @@ part of 'nodes_classes.dart';
 @NodeKey(NType.align)
 class AlignOpenNode extends CNode {
   AlignOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -26,7 +25,7 @@ class AlignOpenNode extends CNode {
           id: id,
           type: NType.align,
           name: name ?? 'Align',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.align),
           defaultAttributes:
@@ -34,9 +33,8 @@ class AlignOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.align),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -44,27 +42,25 @@ class AlignOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AlignOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -90,16 +86,17 @@ class AlignOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AlignOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AlignOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// aspectRatio
@@ -107,14 +104,13 @@ class AlignOpenNode extends CNode {
 @NodeKey(NType.aspectRatio)
 class AspectRatioOpenNode extends CNode {
   AspectRatioOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -122,7 +118,7 @@ class AspectRatioOpenNode extends CNode {
           id: id,
           type: NType.aspectRatio,
           name: name ?? 'AspectRatio',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.aspectRatio),
           defaultAttributes:
@@ -130,9 +126,8 @@ class AspectRatioOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.aspectRatio),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -140,27 +135,25 @@ class AspectRatioOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AspectRatioOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -186,16 +179,17 @@ class AspectRatioOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AspectRatioOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AspectRatioOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// audioPlayer
@@ -203,14 +197,13 @@ class AspectRatioOpenNode extends CNode {
 @NodeKey(NType.audioPlayer)
 class AudioPlayerOpenNode extends CNode {
   AudioPlayerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -218,7 +211,7 @@ class AudioPlayerOpenNode extends CNode {
           id: id,
           type: NType.audioPlayer,
           name: name ?? 'Audio Player',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.audioPlayer),
           defaultAttributes:
@@ -226,9 +219,8 @@ class AudioPlayerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.audioPlayer),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -236,27 +228,25 @@ class AudioPlayerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -282,16 +272,17 @@ class AudioPlayerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AudioPlayerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AudioPlayerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// audioPlayerProgressIndicator
@@ -299,14 +290,13 @@ class AudioPlayerOpenNode extends CNode {
 @NodeKey(NType.audioPlayerProgressIndicator)
 class AudioPlayerProgressIndicatorOpenNode extends CNode {
   AudioPlayerProgressIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -314,7 +304,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
           id: id,
           type: NType.audioPlayerProgressIndicator,
           name: name ?? 'Audio Player Progress Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.audioPlayerProgressIndicator),
           defaultAttributes: const DefaultAttributesParse()
@@ -323,9 +313,8 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse()
               .getByType(NType.audioPlayerProgressIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -333,27 +322,25 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -379,16 +366,17 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AudioPlayerProgressIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AudioPlayerProgressIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// audioPlayerVolumeIndicator
@@ -396,14 +384,13 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.audioPlayerVolumeIndicator)
 class AudioPlayerVolumeIndicatorOpenNode extends CNode {
   AudioPlayerVolumeIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -411,7 +398,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
           id: id,
           type: NType.audioPlayerVolumeIndicator,
           name: name ?? 'Audio Player Volume Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.audioPlayerVolumeIndicator),
           defaultAttributes: const DefaultAttributesParse()
@@ -420,9 +407,8 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse()
               .getByType(NType.audioPlayerVolumeIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -430,27 +416,25 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -476,16 +460,17 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AudioPlayerVolumeIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AudioPlayerVolumeIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// badge
@@ -493,14 +478,13 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
 @NodeKey(NType.badge)
 class BadgeOpenNode extends CNode {
   BadgeOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -508,7 +492,7 @@ class BadgeOpenNode extends CNode {
           id: id,
           type: NType.badge,
           name: name ?? 'Badge',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.badge),
           defaultAttributes:
@@ -516,9 +500,8 @@ class BadgeOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.badge),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -526,27 +509,25 @@ class BadgeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       BadgeOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -572,16 +553,17 @@ class BadgeOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'BadgeOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'BadgeOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// barcode
@@ -589,14 +571,13 @@ class BadgeOpenNode extends CNode {
 @NodeKey(NType.barcode)
 class BarcodeOpenNode extends CNode {
   BarcodeOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -604,7 +585,7 @@ class BarcodeOpenNode extends CNode {
           id: id,
           type: NType.barcode,
           name: name ?? 'Barcode',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.barcode),
           defaultAttributes:
@@ -612,9 +593,8 @@ class BarcodeOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.barcode),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -622,27 +602,25 @@ class BarcodeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       BarcodeOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -668,16 +646,17 @@ class BarcodeOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'BarcodeOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'BarcodeOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// bottombaritem
@@ -685,14 +664,13 @@ class BarcodeOpenNode extends CNode {
 @NodeKey(NType.bottombaritem)
 class BottomBarItemOpenNode extends CNode {
   BottomBarItemOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -700,7 +678,7 @@ class BottomBarItemOpenNode extends CNode {
           id: id,
           type: NType.bottombaritem,
           name: name ?? 'BottomBar Item',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.bottombaritem),
           defaultAttributes:
@@ -708,9 +686,8 @@ class BottomBarItemOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.bottombaritem),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -718,27 +695,25 @@ class BottomBarItemOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       BottomBarItemOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -764,16 +739,17 @@ class BottomBarItemOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'BottomBarItemOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'BottomBarItemOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// bouncingWidget
@@ -781,14 +757,13 @@ class BottomBarItemOpenNode extends CNode {
 @NodeKey(NType.bouncingWidget)
 class BouncingWidgetOpenNode extends CNode {
   BouncingWidgetOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -796,7 +771,7 @@ class BouncingWidgetOpenNode extends CNode {
           id: id,
           type: NType.bouncingWidget,
           name: name ?? 'Bouncing Widget',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.bouncingWidget),
           defaultAttributes:
@@ -804,9 +779,8 @@ class BouncingWidgetOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.bouncingWidget),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -814,27 +788,25 @@ class BouncingWidgetOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       BouncingWidgetOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -860,16 +832,17 @@ class BouncingWidgetOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'BouncingWidgetOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'BouncingWidgetOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// button
@@ -877,14 +850,13 @@ class BouncingWidgetOpenNode extends CNode {
 @NodeKey(NType.button)
 class ButtonOpenNode extends CNode {
   ButtonOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -892,7 +864,7 @@ class ButtonOpenNode extends CNode {
           id: id,
           type: NType.button,
           name: name ?? 'Button',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.button),
           defaultAttributes:
@@ -900,9 +872,8 @@ class ButtonOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.button),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -910,27 +881,25 @@ class ButtonOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ButtonOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -956,16 +925,17 @@ class ButtonOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ButtonOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ButtonOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// calendar
@@ -973,14 +943,13 @@ class ButtonOpenNode extends CNode {
 @NodeKey(NType.calendar)
 class CalendarOpenNode extends CNode {
   CalendarOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -988,7 +957,7 @@ class CalendarOpenNode extends CNode {
           id: id,
           type: NType.calendar,
           name: name ?? 'Calendar',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.calendar),
           defaultAttributes:
@@ -996,9 +965,8 @@ class CalendarOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.calendar),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1006,27 +974,25 @@ class CalendarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CalendarOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1052,16 +1018,17 @@ class CalendarOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CalendarOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CalendarOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// calendarV2
@@ -1069,14 +1036,13 @@ class CalendarOpenNode extends CNode {
 @NodeKey(NType.calendarV2)
 class CalendarV2OpenNode extends CNode {
   CalendarV2OpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1084,7 +1050,7 @@ class CalendarV2OpenNode extends CNode {
           id: id,
           type: NType.calendarV2,
           name: name ?? 'Calendar V2',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.calendarV2),
           defaultAttributes:
@@ -1092,9 +1058,8 @@ class CalendarV2OpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.calendarV2),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1102,27 +1067,25 @@ class CalendarV2OpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CalendarV2OpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1148,16 +1111,17 @@ class CalendarV2OpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CalendarV2OpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CalendarV2OpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// card
@@ -1165,14 +1129,13 @@ class CalendarV2OpenNode extends CNode {
 @NodeKey(NType.card)
 class CardOpenNode extends CNode {
   CardOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1180,7 +1143,7 @@ class CardOpenNode extends CNode {
           id: id,
           type: NType.card,
           name: name ?? 'Card',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.card),
           defaultAttributes:
@@ -1188,9 +1151,8 @@ class CardOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.card),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1198,27 +1160,25 @@ class CardOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CardOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1244,16 +1204,17 @@ class CardOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CardOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CardOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// center
@@ -1261,14 +1222,13 @@ class CardOpenNode extends CNode {
 @NodeKey(NType.center)
 class CenterOpenNode extends CNode {
   CenterOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1276,7 +1236,7 @@ class CenterOpenNode extends CNode {
           id: id,
           type: NType.center,
           name: name ?? 'Center',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.center),
           defaultAttributes:
@@ -1284,9 +1244,8 @@ class CenterOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.center),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1294,27 +1253,25 @@ class CenterOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CenterOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1340,16 +1297,17 @@ class CenterOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CenterOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CenterOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// checkbox
@@ -1357,14 +1315,13 @@ class CenterOpenNode extends CNode {
 @NodeKey(NType.checkbox)
 class CheckboxOpenNode extends CNode {
   CheckboxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1372,7 +1329,7 @@ class CheckboxOpenNode extends CNode {
           id: id,
           type: NType.checkbox,
           name: name ?? 'Checkbox',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.checkbox),
           defaultAttributes:
@@ -1380,9 +1337,8 @@ class CheckboxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.checkbox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1390,27 +1346,25 @@ class CheckboxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CheckboxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1436,16 +1390,17 @@ class CheckboxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CheckboxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CheckboxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// circularProgressIndicator
@@ -1453,14 +1408,13 @@ class CheckboxOpenNode extends CNode {
 @NodeKey(NType.circularProgressIndicator)
 class CircularProgressIndicatorOpenNode extends CNode {
   CircularProgressIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1468,7 +1422,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
           id: id,
           type: NType.circularProgressIndicator,
           name: name ?? 'Circular Progress Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.circularProgressIndicator),
           defaultAttributes: const DefaultAttributesParse()
@@ -1477,9 +1431,8 @@ class CircularProgressIndicatorOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse()
               .getByType(NType.circularProgressIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1487,27 +1440,25 @@ class CircularProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CircularProgressIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1533,16 +1484,17 @@ class CircularProgressIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CircularProgressIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CircularProgressIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// clipOval
@@ -1550,14 +1502,13 @@ class CircularProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.clipOval)
 class ClipOvalOpenNode extends CNode {
   ClipOvalOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1565,7 +1516,7 @@ class ClipOvalOpenNode extends CNode {
           id: id,
           type: NType.clipOval,
           name: name ?? 'Clip Oval',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.clipOval),
           defaultAttributes:
@@ -1573,9 +1524,8 @@ class ClipOvalOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.clipOval),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1583,27 +1533,25 @@ class ClipOvalOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipOvalOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1629,16 +1577,17 @@ class ClipOvalOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ClipOvalOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ClipOvalOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// clipRect
@@ -1646,14 +1595,13 @@ class ClipOvalOpenNode extends CNode {
 @NodeKey(NType.clipRect)
 class ClipRectOpenNode extends CNode {
   ClipRectOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1661,7 +1609,7 @@ class ClipRectOpenNode extends CNode {
           id: id,
           type: NType.clipRect,
           name: name ?? 'Clip Rect',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.clipRect),
           defaultAttributes:
@@ -1669,9 +1617,8 @@ class ClipRectOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.clipRect),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1679,27 +1626,25 @@ class ClipRectOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipRectOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1725,16 +1670,17 @@ class ClipRectOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ClipRectOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ClipRectOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// clipRoundedRect
@@ -1742,14 +1688,13 @@ class ClipRectOpenNode extends CNode {
 @NodeKey(NType.clipRoundedRect)
 class ClipRRectOpenNode extends CNode {
   ClipRRectOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1757,7 +1702,7 @@ class ClipRRectOpenNode extends CNode {
           id: id,
           type: NType.clipRoundedRect,
           name: name ?? 'Clip RRect',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.clipRoundedRect),
           defaultAttributes:
@@ -1765,9 +1710,8 @@ class ClipRRectOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.clipRoundedRect),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1775,27 +1719,25 @@ class ClipRRectOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipRRectOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1821,16 +1763,17 @@ class ClipRRectOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ClipRRectOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ClipRRectOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// column
@@ -1838,14 +1781,13 @@ class ClipRRectOpenNode extends CNode {
 @NodeKey(NType.column)
 class ColumnOpenNode extends CNode {
   ColumnOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1853,7 +1795,7 @@ class ColumnOpenNode extends CNode {
           id: id,
           type: NType.column,
           name: name ?? 'Column',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.column),
           defaultAttributes:
@@ -1861,9 +1803,8 @@ class ColumnOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.column),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1871,27 +1812,25 @@ class ColumnOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ColumnOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -1917,16 +1856,17 @@ class ColumnOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ColumnOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ColumnOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// component
@@ -1934,14 +1874,13 @@ class ColumnOpenNode extends CNode {
 @NodeKey(NType.component)
 class ComponentOpenNode extends CNode {
   ComponentOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -1949,7 +1888,7 @@ class ComponentOpenNode extends CNode {
           id: id,
           type: NType.component,
           name: name ?? 'Component',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.component),
           defaultAttributes:
@@ -1957,9 +1896,8 @@ class ComponentOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.component),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -1967,27 +1905,25 @@ class ComponentOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ComponentOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2013,16 +1949,17 @@ class ComponentOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ComponentOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ComponentOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// row
@@ -2030,14 +1967,13 @@ class ComponentOpenNode extends CNode {
 @NodeKey(NType.row)
 class RowOpenNode extends CNode {
   RowOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2045,7 +1981,7 @@ class RowOpenNode extends CNode {
           id: id,
           type: NType.row,
           name: name ?? 'Row',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.row),
           defaultAttributes:
@@ -2053,9 +1989,8 @@ class RowOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.row),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2063,27 +1998,25 @@ class RowOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RowOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2109,16 +2042,17 @@ class RowOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RowOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RowOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// concentricPageView
@@ -2126,14 +2060,13 @@ class RowOpenNode extends CNode {
 @NodeKey(NType.concentricPageView)
 class ConcentricPageViewOpenNode extends CNode {
   ConcentricPageViewOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2141,7 +2074,7 @@ class ConcentricPageViewOpenNode extends CNode {
           id: id,
           type: NType.concentricPageView,
           name: name ?? 'Concentric Page View',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.concentricPageView),
           defaultAttributes: const DefaultAttributesParse()
@@ -2150,9 +2083,8 @@ class ConcentricPageViewOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.concentricPageView),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2160,27 +2092,25 @@ class ConcentricPageViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConcentricPageViewOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2206,16 +2136,17 @@ class ConcentricPageViewOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ConcentricPageViewOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ConcentricPageViewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// condition
@@ -2223,14 +2154,13 @@ class ConcentricPageViewOpenNode extends CNode {
 @NodeKey(NType.condition)
 class ConditionOpenNode extends CNode {
   ConditionOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2238,7 +2168,7 @@ class ConditionOpenNode extends CNode {
           id: id,
           type: NType.condition,
           name: name ?? 'Condition',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.condition),
           defaultAttributes:
@@ -2246,9 +2176,8 @@ class ConditionOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.condition),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2256,27 +2185,25 @@ class ConditionOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConditionOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2302,16 +2229,17 @@ class ConditionOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ConditionOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ConditionOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// container
@@ -2319,14 +2247,13 @@ class ConditionOpenNode extends CNode {
 @NodeKey(NType.container)
 class ContainerOpenNode extends CNode {
   ContainerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2334,7 +2261,7 @@ class ContainerOpenNode extends CNode {
           id: id,
           type: NType.container,
           name: name ?? 'Container',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.container),
           defaultAttributes:
@@ -2342,9 +2269,8 @@ class ContainerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.container),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2352,27 +2278,25 @@ class ContainerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ContainerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2398,16 +2322,17 @@ class ContainerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ContainerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ContainerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// constrainedBox
@@ -2415,14 +2340,13 @@ class ContainerOpenNode extends CNode {
 @NodeKey(NType.constrainedBox)
 class ConstrainedBoxOpenNode extends CNode {
   ConstrainedBoxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2430,7 +2354,7 @@ class ConstrainedBoxOpenNode extends CNode {
           id: id,
           type: NType.constrainedBox,
           name: name ?? 'Constrained Box',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.constrainedBox),
           defaultAttributes:
@@ -2438,9 +2362,8 @@ class ConstrainedBoxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.constrainedBox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2448,27 +2371,25 @@ class ConstrainedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConstrainedBoxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2494,16 +2415,17 @@ class ConstrainedBoxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ConstrainedBoxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ConstrainedBoxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// limitedBox
@@ -2511,14 +2433,13 @@ class ConstrainedBoxOpenNode extends CNode {
 @NodeKey(NType.limitedBox)
 class LimitedBoxOpenNode extends CNode {
   LimitedBoxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2526,7 +2447,7 @@ class LimitedBoxOpenNode extends CNode {
           id: id,
           type: NType.limitedBox,
           name: name ?? 'Limited Box',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.limitedBox),
           defaultAttributes:
@@ -2534,9 +2455,8 @@ class LimitedBoxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.limitedBox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2544,27 +2464,25 @@ class LimitedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LimitedBoxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2590,16 +2508,17 @@ class LimitedBoxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LimitedBoxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LimitedBoxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// sizedBox
@@ -2607,14 +2526,13 @@ class LimitedBoxOpenNode extends CNode {
 @NodeKey(NType.sizedBox)
 class SizedBoxOpenNode extends CNode {
   SizedBoxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2622,7 +2540,7 @@ class SizedBoxOpenNode extends CNode {
           id: id,
           type: NType.sizedBox,
           name: name ?? 'Sized Box',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.sizedBox),
           defaultAttributes:
@@ -2630,9 +2548,8 @@ class SizedBoxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.sizedBox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2640,27 +2557,25 @@ class SizedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SizedBoxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2686,16 +2601,17 @@ class SizedBoxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SizedBoxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SizedBoxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// decoratedBox
@@ -2703,14 +2619,13 @@ class SizedBoxOpenNode extends CNode {
 @NodeKey(NType.decoratedBox)
 class DecoratedBoxOpenNode extends CNode {
   DecoratedBoxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2718,7 +2633,7 @@ class DecoratedBoxOpenNode extends CNode {
           id: id,
           type: NType.decoratedBox,
           name: name ?? 'Decorated Box',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.decoratedBox),
           defaultAttributes:
@@ -2726,9 +2641,8 @@ class DecoratedBoxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.decoratedBox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2736,27 +2650,25 @@ class DecoratedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       DecoratedBoxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2782,16 +2694,17 @@ class DecoratedBoxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'DecoratedBoxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'DecoratedBoxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// image
@@ -2799,14 +2712,13 @@ class DecoratedBoxOpenNode extends CNode {
 @NodeKey(NType.image)
 class ImageOpenNode extends CNode {
   ImageOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2814,7 +2726,7 @@ class ImageOpenNode extends CNode {
           id: id,
           type: NType.image,
           name: name ?? 'Image',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.image),
           defaultAttributes:
@@ -2822,9 +2734,8 @@ class ImageOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.image),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2832,27 +2743,25 @@ class ImageOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ImageOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2878,16 +2787,17 @@ class ImageOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ImageOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ImageOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cupertinoPicker
@@ -2895,14 +2805,13 @@ class ImageOpenNode extends CNode {
 @NodeKey(NType.cupertinoPicker)
 class CupertinoPickerOpenNode extends CNode {
   CupertinoPickerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -2910,7 +2819,7 @@ class CupertinoPickerOpenNode extends CNode {
           id: id,
           type: NType.cupertinoPicker,
           name: name ?? 'Cupertino Picker',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.cupertinoPicker),
           defaultAttributes:
@@ -2918,9 +2827,8 @@ class CupertinoPickerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cupertinoPicker),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -2928,27 +2836,25 @@ class CupertinoPickerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoPickerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -2974,16 +2880,17 @@ class CupertinoPickerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CupertinoPickerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CupertinoPickerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cupertinoSegmentedControl
@@ -2991,14 +2898,13 @@ class CupertinoPickerOpenNode extends CNode {
 @NodeKey(NType.cupertinoSegmentedControl)
 class CupertinoSegmentedControlOpenNode extends CNode {
   CupertinoSegmentedControlOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3006,7 +2912,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
           id: id,
           type: NType.cupertinoSegmentedControl,
           name: name ?? 'Cupertino Segmented Control',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.cupertinoSegmentedControl),
           defaultAttributes: const DefaultAttributesParse()
@@ -3015,9 +2921,8 @@ class CupertinoSegmentedControlOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse()
               .getByType(NType.cupertinoSegmentedControl),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3025,27 +2930,25 @@ class CupertinoSegmentedControlOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoSegmentedControlOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3071,16 +2974,17 @@ class CupertinoSegmentedControlOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CupertinoSegmentedControlOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CupertinoSegmentedControlOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cupertinoSwitch
@@ -3088,14 +2992,13 @@ class CupertinoSegmentedControlOpenNode extends CNode {
 @NodeKey(NType.cupertinoSwitch)
 class CupertinoSwitchOpenNode extends CNode {
   CupertinoSwitchOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3103,7 +3006,7 @@ class CupertinoSwitchOpenNode extends CNode {
           id: id,
           type: NType.cupertinoSwitch,
           name: name ?? 'Cupertino Switch',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.cupertinoSwitch),
           defaultAttributes:
@@ -3111,9 +3014,8 @@ class CupertinoSwitchOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cupertinoSwitch),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3121,27 +3023,25 @@ class CupertinoSwitchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoSwitchOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3167,16 +3067,17 @@ class CupertinoSwitchOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CupertinoSwitchOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CupertinoSwitchOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// divider
@@ -3184,14 +3085,13 @@ class CupertinoSwitchOpenNode extends CNode {
 @NodeKey(NType.divider)
 class DividerOpenNode extends CNode {
   DividerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3199,7 +3099,7 @@ class DividerOpenNode extends CNode {
           id: id,
           type: NType.divider,
           name: name ?? 'Divider',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.divider),
           defaultAttributes:
@@ -3207,9 +3107,8 @@ class DividerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.divider),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3217,27 +3116,25 @@ class DividerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       DividerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3263,16 +3160,17 @@ class DividerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'DividerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'DividerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// dotsIndicator
@@ -3280,14 +3178,13 @@ class DividerOpenNode extends CNode {
 @NodeKey(NType.dotsIndicator)
 class DotsIndicatorOpenNode extends CNode {
   DotsIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3295,7 +3192,7 @@ class DotsIndicatorOpenNode extends CNode {
           id: id,
           type: NType.dotsIndicator,
           name: name ?? 'Dots Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.dotsIndicator),
           defaultAttributes:
@@ -3303,9 +3200,8 @@ class DotsIndicatorOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.dotsIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3313,27 +3209,25 @@ class DotsIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       DotsIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3359,16 +3253,17 @@ class DotsIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'DotsIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'DotsIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// expanded
@@ -3376,14 +3271,13 @@ class DotsIndicatorOpenNode extends CNode {
 @NodeKey(NType.expanded)
 class ExpandedOpenNode extends CNode {
   ExpandedOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3391,7 +3285,7 @@ class ExpandedOpenNode extends CNode {
           id: id,
           type: NType.expanded,
           name: name ?? 'Expanded',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.expanded),
           defaultAttributes:
@@ -3399,9 +3293,8 @@ class ExpandedOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.expanded),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3409,27 +3302,25 @@ class ExpandedOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ExpandedOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3455,16 +3346,17 @@ class ExpandedOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ExpandedOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ExpandedOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// adMobBanner
@@ -3472,14 +3364,13 @@ class ExpandedOpenNode extends CNode {
 @NodeKey(NType.adMobBanner)
 class AdMobBannerOpenNode extends CNode {
   AdMobBannerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3487,7 +3378,7 @@ class AdMobBannerOpenNode extends CNode {
           id: id,
           type: NType.adMobBanner,
           name: name ?? 'AdMob Banner',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.adMobBanner),
           defaultAttributes:
@@ -3495,9 +3386,8 @@ class AdMobBannerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.adMobBanner),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3505,27 +3395,25 @@ class AdMobBannerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AdMobBannerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3551,16 +3439,17 @@ class AdMobBannerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AdMobBannerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AdMobBannerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// googleMaps
@@ -3568,14 +3457,13 @@ class AdMobBannerOpenNode extends CNode {
 @NodeKey(NType.googleMaps)
 class GoogleMapsOpenNode extends CNode {
   GoogleMapsOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3583,7 +3471,7 @@ class GoogleMapsOpenNode extends CNode {
           id: id,
           type: NType.googleMaps,
           name: name ?? 'Google Maps',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.googleMaps),
           defaultAttributes:
@@ -3591,9 +3479,8 @@ class GoogleMapsOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.googleMaps),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3601,27 +3488,25 @@ class GoogleMapsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       GoogleMapsOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3647,16 +3532,17 @@ class GoogleMapsOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'GoogleMapsOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'GoogleMapsOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// gridView
@@ -3664,14 +3550,13 @@ class GoogleMapsOpenNode extends CNode {
 @NodeKey(NType.gridView)
 class GridViewOpenNode extends CNode {
   GridViewOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3679,7 +3564,7 @@ class GridViewOpenNode extends CNode {
           id: id,
           type: NType.gridView,
           name: name ?? 'Grid View',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.gridView),
           defaultAttributes:
@@ -3687,9 +3572,8 @@ class GridViewOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.gridView),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3697,27 +3581,25 @@ class GridViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       GridViewOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3743,16 +3625,17 @@ class GridViewOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'GridViewOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'GridViewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// gridViewBuilder
@@ -3760,14 +3643,13 @@ class GridViewOpenNode extends CNode {
 @NodeKey(NType.gridViewBuilder)
 class GridViewBuilderOpenNode extends CNode {
   GridViewBuilderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3775,7 +3657,7 @@ class GridViewBuilderOpenNode extends CNode {
           id: id,
           type: NType.gridViewBuilder,
           name: name ?? 'Grid View Builder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.gridViewBuilder),
           defaultAttributes:
@@ -3783,9 +3665,8 @@ class GridViewBuilderOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.gridViewBuilder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3793,27 +3674,25 @@ class GridViewBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       GridViewBuilderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3839,16 +3718,17 @@ class GridViewBuilderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'GridViewBuilderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'GridViewBuilderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// hero
@@ -3856,14 +3736,13 @@ class GridViewBuilderOpenNode extends CNode {
 @NodeKey(NType.hero)
 class HeroOpenNode extends CNode {
   HeroOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3871,7 +3750,7 @@ class HeroOpenNode extends CNode {
           id: id,
           type: NType.hero,
           name: name ?? 'Hero',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.hero),
           defaultAttributes:
@@ -3879,9 +3758,8 @@ class HeroOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.hero),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3889,27 +3767,25 @@ class HeroOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       HeroOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -3935,16 +3811,17 @@ class HeroOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'HeroOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'HeroOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// icon
@@ -3952,14 +3829,13 @@ class HeroOpenNode extends CNode {
 @NodeKey(NType.icon)
 class IconOpenNode extends CNode {
   IconOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -3967,7 +3843,7 @@ class IconOpenNode extends CNode {
           id: id,
           type: NType.icon,
           name: name ?? 'Icon',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.icon),
           defaultAttributes:
@@ -3975,9 +3851,8 @@ class IconOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.icon),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -3985,27 +3860,25 @@ class IconOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       IconOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4031,16 +3904,17 @@ class IconOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'IconOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'IconOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// ignorePointer
@@ -4048,14 +3922,13 @@ class IconOpenNode extends CNode {
 @NodeKey(NType.ignorePointer)
 class IgnorePointerOpenNode extends CNode {
   IgnorePointerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4063,7 +3936,7 @@ class IgnorePointerOpenNode extends CNode {
           id: id,
           type: NType.ignorePointer,
           name: name ?? 'Ignore Pointer',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.ignorePointer),
           defaultAttributes:
@@ -4071,9 +3944,8 @@ class IgnorePointerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.ignorePointer),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4081,27 +3953,25 @@ class IgnorePointerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       IgnorePointerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4127,16 +3997,17 @@ class IgnorePointerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'IgnorePointerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'IgnorePointerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// indexedStack
@@ -4144,14 +4015,13 @@ class IgnorePointerOpenNode extends CNode {
 @NodeKey(NType.indexedStack)
 class IndexedStackOpenNode extends CNode {
   IndexedStackOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4159,7 +4029,7 @@ class IndexedStackOpenNode extends CNode {
           id: id,
           type: NType.indexedStack,
           name: name ?? 'Indexed Stack',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.indexedStack),
           defaultAttributes:
@@ -4167,9 +4037,8 @@ class IndexedStackOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.indexedStack),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4177,27 +4046,25 @@ class IndexedStackOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       IndexedStackOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4223,16 +4090,17 @@ class IndexedStackOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'IndexedStackOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'IndexedStackOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// linearProgressIndicator
@@ -4240,14 +4108,13 @@ class IndexedStackOpenNode extends CNode {
 @NodeKey(NType.linearProgressIndicator)
 class LinearProgressIndicatorOpenNode extends CNode {
   LinearProgressIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4255,7 +4122,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
           id: id,
           type: NType.linearProgressIndicator,
           name: name ?? 'Linear Progress Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.linearProgressIndicator),
           defaultAttributes: const DefaultAttributesParse()
@@ -4264,9 +4131,8 @@ class LinearProgressIndicatorOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse()
               .getByType(NType.linearProgressIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4274,27 +4140,25 @@ class LinearProgressIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LinearProgressIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4320,16 +4184,17 @@ class LinearProgressIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LinearProgressIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LinearProgressIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// liquidSwipe
@@ -4337,14 +4202,13 @@ class LinearProgressIndicatorOpenNode extends CNode {
 @NodeKey(NType.liquidSwipe)
 class LiquidSwipeOpenNode extends CNode {
   LiquidSwipeOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4352,7 +4216,7 @@ class LiquidSwipeOpenNode extends CNode {
           id: id,
           type: NType.liquidSwipe,
           name: name ?? 'Liquid Swipe',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.liquidSwipe),
           defaultAttributes:
@@ -4360,9 +4224,8 @@ class LiquidSwipeOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.liquidSwipe),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4370,27 +4233,25 @@ class LiquidSwipeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LiquidSwipeOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4416,16 +4277,17 @@ class LiquidSwipeOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LiquidSwipeOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LiquidSwipeOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// listTile
@@ -4433,14 +4295,13 @@ class LiquidSwipeOpenNode extends CNode {
 @NodeKey(NType.listTile)
 class ListTileOpenNode extends CNode {
   ListTileOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4448,7 +4309,7 @@ class ListTileOpenNode extends CNode {
           id: id,
           type: NType.listTile,
           name: name ?? 'List Tile',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.listTile),
           defaultAttributes:
@@ -4456,9 +4317,8 @@ class ListTileOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.listTile),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4466,27 +4326,25 @@ class ListTileOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListTileOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4512,16 +4370,17 @@ class ListTileOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ListTileOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ListTileOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// listView
@@ -4529,14 +4388,13 @@ class ListTileOpenNode extends CNode {
 @NodeKey(NType.listView)
 class ListViewOpenNode extends CNode {
   ListViewOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4544,7 +4402,7 @@ class ListViewOpenNode extends CNode {
           id: id,
           type: NType.listView,
           name: name ?? 'List View',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.listView),
           defaultAttributes:
@@ -4552,9 +4410,8 @@ class ListViewOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.listView),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4562,27 +4419,25 @@ class ListViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListViewOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4608,16 +4463,17 @@ class ListViewOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ListViewOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ListViewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// listViewBuilder
@@ -4625,14 +4481,13 @@ class ListViewOpenNode extends CNode {
 @NodeKey(NType.listViewBuilder)
 class ListViewBuilderOpenNode extends CNode {
   ListViewBuilderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4640,7 +4495,7 @@ class ListViewBuilderOpenNode extends CNode {
           id: id,
           type: NType.listViewBuilder,
           name: name ?? 'List View Builder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.listViewBuilder),
           defaultAttributes:
@@ -4648,9 +4503,8 @@ class ListViewBuilderOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.listViewBuilder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4658,27 +4512,25 @@ class ListViewBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListViewBuilderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4704,16 +4556,17 @@ class ListViewBuilderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ListViewBuilderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ListViewBuilderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// lottie
@@ -4721,14 +4574,13 @@ class ListViewBuilderOpenNode extends CNode {
 @NodeKey(NType.lottie)
 class LottieOpenNode extends CNode {
   LottieOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4736,7 +4588,7 @@ class LottieOpenNode extends CNode {
           id: id,
           type: NType.lottie,
           name: name ?? 'Lottie',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.lottie),
           defaultAttributes:
@@ -4744,9 +4596,8 @@ class LottieOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.lottie),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4754,27 +4605,25 @@ class LottieOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LottieOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4800,16 +4649,17 @@ class LottieOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LottieOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LottieOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// map
@@ -4817,14 +4667,13 @@ class LottieOpenNode extends CNode {
 @NodeKey(NType.map)
 class MapOpenNode extends CNode {
   MapOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4832,7 +4681,7 @@ class MapOpenNode extends CNode {
           id: id,
           type: NType.map,
           name: name ?? 'Map',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.map),
           defaultAttributes:
@@ -4840,9 +4689,8 @@ class MapOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.map),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4850,27 +4698,25 @@ class MapOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       MapOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4896,16 +4742,17 @@ class MapOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'MapOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'MapOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// marker
@@ -4913,14 +4760,13 @@ class MapOpenNode extends CNode {
 @NodeKey(NType.marker)
 class MarkerOpenNode extends CNode {
   MarkerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -4928,7 +4774,7 @@ class MarkerOpenNode extends CNode {
           id: id,
           type: NType.marker,
           name: name ?? 'Marker',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.marker),
           defaultAttributes:
@@ -4936,9 +4782,8 @@ class MarkerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.marker),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -4946,27 +4791,25 @@ class MarkerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       MarkerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -4992,16 +4835,17 @@ class MarkerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'MarkerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'MarkerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// opacity
@@ -5009,14 +4853,13 @@ class MarkerOpenNode extends CNode {
 @NodeKey(NType.opacity)
 class OpacityOpenNode extends CNode {
   OpacityOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5024,7 +4867,7 @@ class OpacityOpenNode extends CNode {
           id: id,
           type: NType.opacity,
           name: name ?? 'Opacity',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.opacity),
           defaultAttributes:
@@ -5032,9 +4875,8 @@ class OpacityOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.opacity),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5042,27 +4884,25 @@ class OpacityOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       OpacityOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5088,16 +4928,17 @@ class OpacityOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'OpacityOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'OpacityOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// padding
@@ -5105,14 +4946,13 @@ class OpacityOpenNode extends CNode {
 @NodeKey(NType.padding)
 class PaddingOpenNode extends CNode {
   PaddingOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5120,7 +4960,7 @@ class PaddingOpenNode extends CNode {
           id: id,
           type: NType.padding,
           name: name ?? 'Padding',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.padding),
           defaultAttributes:
@@ -5128,9 +4968,8 @@ class PaddingOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.padding),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5138,27 +4977,25 @@ class PaddingOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       PaddingOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5184,16 +5021,17 @@ class PaddingOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'PaddingOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'PaddingOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// pageView
@@ -5201,14 +5039,13 @@ class PaddingOpenNode extends CNode {
 @NodeKey(NType.pageView)
 class PageViewOpenNode extends CNode {
   PageViewOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5216,7 +5053,7 @@ class PageViewOpenNode extends CNode {
           id: id,
           type: NType.pageView,
           name: name ?? 'Page View',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.pageView),
           defaultAttributes:
@@ -5224,9 +5061,8 @@ class PageViewOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.pageView),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5234,27 +5070,25 @@ class PageViewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       PageViewOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5280,16 +5114,17 @@ class PageViewOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'PageViewOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'PageViewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// placeholder
@@ -5297,14 +5132,13 @@ class PageViewOpenNode extends CNode {
 @NodeKey(NType.placeholder)
 class PlaceholderOpenNode extends CNode {
   PlaceholderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5312,7 +5146,7 @@ class PlaceholderOpenNode extends CNode {
           id: id,
           type: NType.placeholder,
           name: name ?? 'Placeholder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.placeholder),
           defaultAttributes:
@@ -5320,9 +5154,8 @@ class PlaceholderOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.placeholder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5330,27 +5163,25 @@ class PlaceholderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       PlaceholderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5376,16 +5207,17 @@ class PlaceholderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'PlaceholderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'PlaceholderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// positioned
@@ -5393,14 +5225,13 @@ class PlaceholderOpenNode extends CNode {
 @NodeKey(NType.positioned)
 class PositionedOpenNode extends CNode {
   PositionedOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5408,7 +5239,7 @@ class PositionedOpenNode extends CNode {
           id: id,
           type: NType.positioned,
           name: name ?? 'Positioned',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.positioned),
           defaultAttributes:
@@ -5416,9 +5247,8 @@ class PositionedOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.positioned),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5426,27 +5256,25 @@ class PositionedOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       PositionedOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5472,16 +5300,17 @@ class PositionedOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'PositionedOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'PositionedOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// safeArea
@@ -5489,14 +5318,13 @@ class PositionedOpenNode extends CNode {
 @NodeKey(NType.safeArea)
 class SafeAreaOpenNode extends CNode {
   SafeAreaOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5504,7 +5332,7 @@ class SafeAreaOpenNode extends CNode {
           id: id,
           type: NType.safeArea,
           name: name ?? 'Safe Area',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.safeArea),
           defaultAttributes:
@@ -5512,9 +5340,8 @@ class SafeAreaOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.safeArea),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5522,27 +5349,25 @@ class SafeAreaOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SafeAreaOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5568,16 +5393,17 @@ class SafeAreaOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SafeAreaOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SafeAreaOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// qrScanner
@@ -5585,14 +5411,13 @@ class SafeAreaOpenNode extends CNode {
 @NodeKey(NType.qrScanner)
 class QRScannerOpenNode extends CNode {
   QRScannerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5600,7 +5425,7 @@ class QRScannerOpenNode extends CNode {
           id: id,
           type: NType.qrScanner,
           name: name ?? 'QR Scanner',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.qrScanner),
           defaultAttributes:
@@ -5608,9 +5433,8 @@ class QRScannerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.qrScanner),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5618,27 +5442,25 @@ class QRScannerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       QRScannerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5664,16 +5486,17 @@ class QRScannerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'QRScannerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'QRScannerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// qrCode
@@ -5681,14 +5504,13 @@ class QRScannerOpenNode extends CNode {
 @NodeKey(NType.qrCode)
 class QRCodeOpenNode extends CNode {
   QRCodeOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5696,7 +5518,7 @@ class QRCodeOpenNode extends CNode {
           id: id,
           type: NType.qrCode,
           name: name ?? 'QR Code',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.qrCode),
           defaultAttributes:
@@ -5704,9 +5526,8 @@ class QRCodeOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.qrCode),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5714,27 +5535,25 @@ class QRCodeOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       QRCodeOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5760,16 +5579,17 @@ class QRCodeOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'QRCodeOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'QRCodeOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// radio
@@ -5777,14 +5597,13 @@ class QRCodeOpenNode extends CNode {
 @NodeKey(NType.radio)
 class RadioOpenNode extends CNode {
   RadioOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5792,7 +5611,7 @@ class RadioOpenNode extends CNode {
           id: id,
           type: NType.radio,
           name: name ?? 'Radio',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.radio),
           defaultAttributes:
@@ -5800,9 +5619,8 @@ class RadioOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.radio),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5810,27 +5628,25 @@ class RadioOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RadioOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5856,16 +5672,17 @@ class RadioOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RadioOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RadioOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// refreshIndicator
@@ -5873,14 +5690,13 @@ class RadioOpenNode extends CNode {
 @NodeKey(NType.refreshIndicator)
 class RefreshIndicatorOpenNode extends CNode {
   RefreshIndicatorOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5888,7 +5704,7 @@ class RefreshIndicatorOpenNode extends CNode {
           id: id,
           type: NType.refreshIndicator,
           name: name ?? 'Refresh Indicator',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.refreshIndicator),
           defaultAttributes:
@@ -5896,9 +5712,8 @@ class RefreshIndicatorOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.refreshIndicator),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -5906,27 +5721,25 @@ class RefreshIndicatorOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RefreshIndicatorOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -5952,16 +5765,17 @@ class RefreshIndicatorOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RefreshIndicatorOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RefreshIndicatorOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// responsiveCondition
@@ -5969,14 +5783,13 @@ class RefreshIndicatorOpenNode extends CNode {
 @NodeKey(NType.responsiveCondition)
 class ResponsiveConditionOpenNode extends CNode {
   ResponsiveConditionOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -5984,7 +5797,7 @@ class ResponsiveConditionOpenNode extends CNode {
           id: id,
           type: NType.responsiveCondition,
           name: name ?? 'Responsive Condition',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.responsiveCondition),
           defaultAttributes: const DefaultAttributesParse()
@@ -5993,9 +5806,8 @@ class ResponsiveConditionOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.responsiveCondition),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6003,27 +5815,25 @@ class ResponsiveConditionOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ResponsiveConditionOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6049,16 +5859,17 @@ class ResponsiveConditionOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ResponsiveConditionOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ResponsiveConditionOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// rotatedBox
@@ -6066,14 +5877,13 @@ class ResponsiveConditionOpenNode extends CNode {
 @NodeKey(NType.rotatedBox)
 class RotatedBoxOpenNode extends CNode {
   RotatedBoxOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6081,7 +5891,7 @@ class RotatedBoxOpenNode extends CNode {
           id: id,
           type: NType.rotatedBox,
           name: name ?? 'Rotated Box',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.rotatedBox),
           defaultAttributes:
@@ -6089,9 +5899,8 @@ class RotatedBoxOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.rotatedBox),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6099,27 +5908,25 @@ class RotatedBoxOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RotatedBoxOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6145,16 +5952,17 @@ class RotatedBoxOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RotatedBoxOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RotatedBoxOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// scaffold
@@ -6162,14 +5970,13 @@ class RotatedBoxOpenNode extends CNode {
 @NodeKey(NType.scaffold)
 class ScaffoldOpenNode extends CNode {
   ScaffoldOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6177,7 +5984,7 @@ class ScaffoldOpenNode extends CNode {
           id: id,
           type: NType.scaffold,
           name: name ?? 'Scaffold',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.scaffold),
           defaultAttributes:
@@ -6185,9 +5992,8 @@ class ScaffoldOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.scaffold),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6195,27 +6001,25 @@ class ScaffoldOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ScaffoldOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6241,16 +6045,17 @@ class ScaffoldOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ScaffoldOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ScaffoldOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// spacer
@@ -6258,14 +6063,13 @@ class ScaffoldOpenNode extends CNode {
 @NodeKey(NType.spacer)
 class SpacerOpenNode extends CNode {
   SpacerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6273,7 +6077,7 @@ class SpacerOpenNode extends CNode {
           id: id,
           type: NType.spacer,
           name: name ?? 'Spacer',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.spacer),
           defaultAttributes:
@@ -6281,9 +6085,8 @@ class SpacerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.spacer),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6291,27 +6094,25 @@ class SpacerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SpacerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6337,16 +6138,17 @@ class SpacerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SpacerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SpacerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// stack
@@ -6354,14 +6156,13 @@ class SpacerOpenNode extends CNode {
 @NodeKey(NType.stack)
 class StackOpenNode extends CNode {
   StackOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6369,7 +6170,7 @@ class StackOpenNode extends CNode {
           id: id,
           type: NType.stack,
           name: name ?? 'Stack',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.stack),
           defaultAttributes:
@@ -6377,9 +6178,8 @@ class StackOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.stack),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6387,27 +6187,25 @@ class StackOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       StackOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6433,16 +6231,17 @@ class StackOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'StackOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'StackOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// tcard
@@ -6450,14 +6249,13 @@ class StackOpenNode extends CNode {
 @NodeKey(NType.tcard)
 class TCardOpenNode extends CNode {
   TCardOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6465,7 +6263,7 @@ class TCardOpenNode extends CNode {
           id: id,
           type: NType.tcard,
           name: name ?? 'TCard',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.tcard),
           defaultAttributes:
@@ -6473,9 +6271,8 @@ class TCardOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.tcard),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6483,27 +6280,25 @@ class TCardOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       TCardOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6529,16 +6324,17 @@ class TCardOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'TCardOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'TCardOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// tcardBuilder
@@ -6546,14 +6342,13 @@ class TCardOpenNode extends CNode {
 @NodeKey(NType.tcardBuilder)
 class TCardBuilderOpenNode extends CNode {
   TCardBuilderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6561,7 +6356,7 @@ class TCardBuilderOpenNode extends CNode {
           id: id,
           type: NType.tcardBuilder,
           name: name ?? 'TCard Builder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.tcardBuilder),
           defaultAttributes:
@@ -6569,9 +6364,8 @@ class TCardBuilderOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.tcardBuilder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6579,27 +6373,25 @@ class TCardBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       TCardBuilderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6625,16 +6417,17 @@ class TCardBuilderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'TCardBuilderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'TCardBuilderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// text
@@ -6642,14 +6435,13 @@ class TCardBuilderOpenNode extends CNode {
 @NodeKey(NType.text)
 class TextOpenNode extends CNode {
   TextOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6657,7 +6449,7 @@ class TextOpenNode extends CNode {
           id: id,
           type: NType.text,
           name: name ?? 'Text',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.text),
           defaultAttributes:
@@ -6665,9 +6457,8 @@ class TextOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.text),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6675,27 +6466,25 @@ class TextOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       TextOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6721,16 +6510,17 @@ class TextOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'TextOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'TextOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// textField
@@ -6738,14 +6528,13 @@ class TextOpenNode extends CNode {
 @NodeKey(NType.textField)
 class TextFieldOpenNode extends CNode {
   TextFieldOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6753,7 +6542,7 @@ class TextFieldOpenNode extends CNode {
           id: id,
           type: NType.textField,
           name: name ?? 'TextField',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.textField),
           defaultAttributes:
@@ -6761,9 +6550,8 @@ class TextFieldOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.textField),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6771,27 +6559,25 @@ class TextFieldOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       TextFieldOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6817,16 +6603,17 @@ class TextFieldOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'TextFieldOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'TextFieldOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// tooltip
@@ -6834,14 +6621,13 @@ class TextFieldOpenNode extends CNode {
 @NodeKey(NType.tooltip)
 class TooltipOpenNode extends CNode {
   TooltipOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6849,7 +6635,7 @@ class TooltipOpenNode extends CNode {
           id: id,
           type: NType.tooltip,
           name: name ?? 'Tooltip',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.tooltip),
           defaultAttributes:
@@ -6857,9 +6643,8 @@ class TooltipOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.tooltip),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6867,27 +6652,25 @@ class TooltipOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       TooltipOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -6913,16 +6696,17 @@ class TooltipOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'TooltipOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'TooltipOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// video
@@ -6930,14 +6714,13 @@ class TooltipOpenNode extends CNode {
 @NodeKey(NType.video)
 class VideoOpenNode extends CNode {
   VideoOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -6945,7 +6728,7 @@ class VideoOpenNode extends CNode {
           id: id,
           type: NType.video,
           name: name ?? 'Video',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.video),
           defaultAttributes:
@@ -6953,9 +6736,8 @@ class VideoOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.video),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -6963,27 +6745,25 @@ class VideoOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       VideoOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7009,16 +6789,17 @@ class VideoOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'VideoOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'VideoOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// visibility
@@ -7026,14 +6807,13 @@ class VideoOpenNode extends CNode {
 @NodeKey(NType.visibility)
 class VisibilityOpenNode extends CNode {
   VisibilityOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7041,7 +6821,7 @@ class VisibilityOpenNode extends CNode {
           id: id,
           type: NType.visibility,
           name: name ?? 'Visibility',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.visibility),
           defaultAttributes:
@@ -7049,9 +6829,8 @@ class VisibilityOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.visibility),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7059,27 +6838,25 @@ class VisibilityOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       VisibilityOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7105,16 +6882,17 @@ class VisibilityOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'VisibilityOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'VisibilityOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// webview
@@ -7122,14 +6900,13 @@ class VisibilityOpenNode extends CNode {
 @NodeKey(NType.webview)
 class WebviewOpenNode extends CNode {
   WebviewOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7137,7 +6914,7 @@ class WebviewOpenNode extends CNode {
           id: id,
           type: NType.webview,
           name: name ?? 'Webview',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.webview),
           defaultAttributes:
@@ -7145,9 +6922,8 @@ class WebviewOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.webview),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7155,27 +6931,25 @@ class WebviewOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       WebviewOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7201,16 +6975,17 @@ class WebviewOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'WebviewOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'WebviewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// wrap
@@ -7218,14 +6993,13 @@ class WebviewOpenNode extends CNode {
 @NodeKey(NType.wrap)
 class WrapOpenNode extends CNode {
   WrapOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7233,7 +7007,7 @@ class WrapOpenNode extends CNode {
           id: id,
           type: NType.wrap,
           name: name ?? 'Wrap',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.wrap),
           defaultAttributes:
@@ -7241,9 +7015,8 @@ class WrapOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.wrap),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7251,27 +7024,25 @@ class WrapOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       WrapOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7297,16 +7068,17 @@ class WrapOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'WrapOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'WrapOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// animationConfigGrid
@@ -7314,14 +7086,13 @@ class WrapOpenNode extends CNode {
 @NodeKey(NType.animationConfigGrid)
 class AnimationConfigGridOpenNode extends CNode {
   AnimationConfigGridOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7329,7 +7100,7 @@ class AnimationConfigGridOpenNode extends CNode {
           id: id,
           type: NType.animationConfigGrid,
           name: name ?? 'Animation Config Grid',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.animationConfigGrid),
           defaultAttributes: const DefaultAttributesParse()
@@ -7338,9 +7109,8 @@ class AnimationConfigGridOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.animationConfigGrid),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7348,27 +7118,25 @@ class AnimationConfigGridOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AnimationConfigGridOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7394,16 +7162,17 @@ class AnimationConfigGridOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AnimationConfigGridOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AnimationConfigGridOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// animationConfigList
@@ -7411,14 +7180,13 @@ class AnimationConfigGridOpenNode extends CNode {
 @NodeKey(NType.animationConfigList)
 class AnimationConfigListOpenNode extends CNode {
   AnimationConfigListOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7426,7 +7194,7 @@ class AnimationConfigListOpenNode extends CNode {
           id: id,
           type: NType.animationConfigList,
           name: name ?? 'Animation Config List',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.animationConfigList),
           defaultAttributes: const DefaultAttributesParse()
@@ -7435,9 +7203,8 @@ class AnimationConfigListOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.animationConfigList),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7445,27 +7212,25 @@ class AnimationConfigListOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AnimationConfigListOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7491,16 +7256,17 @@ class AnimationConfigListOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AnimationConfigListOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AnimationConfigListOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// fadeInAnimation
@@ -7508,14 +7274,13 @@ class AnimationConfigListOpenNode extends CNode {
 @NodeKey(NType.fadeInAnimation)
 class FadeInAnimationOpenNode extends CNode {
   FadeInAnimationOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7523,7 +7288,7 @@ class FadeInAnimationOpenNode extends CNode {
           id: id,
           type: NType.fadeInAnimation,
           name: name ?? 'Fade In Animation',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.fadeInAnimation),
           defaultAttributes:
@@ -7531,9 +7296,8 @@ class FadeInAnimationOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.fadeInAnimation),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7541,27 +7305,25 @@ class FadeInAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       FadeInAnimationOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7587,16 +7349,17 @@ class FadeInAnimationOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'FadeInAnimationOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'FadeInAnimationOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// scaleAnimation
@@ -7604,14 +7367,13 @@ class FadeInAnimationOpenNode extends CNode {
 @NodeKey(NType.scaleAnimation)
 class ScaleAnimationOpenNode extends CNode {
   ScaleAnimationOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7619,7 +7381,7 @@ class ScaleAnimationOpenNode extends CNode {
           id: id,
           type: NType.scaleAnimation,
           name: name ?? 'Scale Animation',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.scaleAnimation),
           defaultAttributes:
@@ -7627,9 +7389,8 @@ class ScaleAnimationOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.scaleAnimation),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7637,27 +7398,25 @@ class ScaleAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ScaleAnimationOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7683,16 +7442,17 @@ class ScaleAnimationOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ScaleAnimationOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ScaleAnimationOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// slideAnimation
@@ -7700,14 +7460,13 @@ class ScaleAnimationOpenNode extends CNode {
 @NodeKey(NType.slideAnimation)
 class SlideAnimationOpenNode extends CNode {
   SlideAnimationOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7715,7 +7474,7 @@ class SlideAnimationOpenNode extends CNode {
           id: id,
           type: NType.slideAnimation,
           name: name ?? 'Slide Animation',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.slideAnimation),
           defaultAttributes:
@@ -7723,9 +7482,8 @@ class SlideAnimationOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.slideAnimation),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7733,27 +7491,25 @@ class SlideAnimationOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SlideAnimationOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7779,16 +7535,17 @@ class SlideAnimationOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SlideAnimationOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SlideAnimationOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// apiCallsFetch
@@ -7796,14 +7553,13 @@ class SlideAnimationOpenNode extends CNode {
 @NodeKey(NType.apiCallsFetch)
 class ApiCallsFetchOpenNode extends CNode {
   ApiCallsFetchOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7811,7 +7567,7 @@ class ApiCallsFetchOpenNode extends CNode {
           id: id,
           type: NType.apiCallsFetch,
           name: name ?? 'Api Calls Fetch',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.apiCallsFetch),
           defaultAttributes:
@@ -7819,9 +7575,8 @@ class ApiCallsFetchOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.apiCallsFetch),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7829,27 +7584,25 @@ class ApiCallsFetchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       ApiCallsFetchOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7875,16 +7628,17 @@ class ApiCallsFetchOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'ApiCallsFetchOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'ApiCallsFetchOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithApple
@@ -7892,14 +7646,13 @@ class ApiCallsFetchOpenNode extends CNode {
 @NodeKey(NType.loginWithApple)
 class LoginWithAppleOpenNode extends CNode {
   LoginWithAppleOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -7907,7 +7660,7 @@ class LoginWithAppleOpenNode extends CNode {
           id: id,
           type: NType.loginWithApple,
           name: name ?? 'Login With Apple',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithApple),
           defaultAttributes:
@@ -7915,9 +7668,8 @@ class LoginWithAppleOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithApple),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -7925,27 +7677,25 @@ class LoginWithAppleOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithAppleOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -7971,16 +7721,17 @@ class LoginWithAppleOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithAppleOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithAppleOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithFacebook
@@ -7988,14 +7739,13 @@ class LoginWithAppleOpenNode extends CNode {
 @NodeKey(NType.loginWithFacebook)
 class LoginWithFacebookOpenNode extends CNode {
   LoginWithFacebookOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8003,7 +7753,7 @@ class LoginWithFacebookOpenNode extends CNode {
           id: id,
           type: NType.loginWithFacebook,
           name: name ?? 'Login With Facebook',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithFacebook),
           defaultAttributes:
@@ -8012,9 +7762,8 @@ class LoginWithFacebookOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithFacebook),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8022,27 +7771,25 @@ class LoginWithFacebookOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithFacebookOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8068,16 +7815,17 @@ class LoginWithFacebookOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithFacebookOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithFacebookOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithGoogle
@@ -8085,14 +7833,13 @@ class LoginWithFacebookOpenNode extends CNode {
 @NodeKey(NType.loginWithGoogle)
 class LoginWithGoogleOpenNode extends CNode {
   LoginWithGoogleOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8100,7 +7847,7 @@ class LoginWithGoogleOpenNode extends CNode {
           id: id,
           type: NType.loginWithGoogle,
           name: name ?? 'Login With Google',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithGoogle),
           defaultAttributes:
@@ -8108,9 +7855,8 @@ class LoginWithGoogleOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGoogle),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8118,27 +7864,25 @@ class LoginWithGoogleOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGoogleOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8164,16 +7908,17 @@ class LoginWithGoogleOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithGoogleOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithGoogleOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithTwitter
@@ -8181,14 +7926,13 @@ class LoginWithGoogleOpenNode extends CNode {
 @NodeKey(NType.loginWithTwitter)
 class LoginWithTwitterOpenNode extends CNode {
   LoginWithTwitterOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8196,7 +7940,7 @@ class LoginWithTwitterOpenNode extends CNode {
           id: id,
           type: NType.loginWithTwitter,
           name: name ?? 'Login With Twitter',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithTwitter),
           defaultAttributes:
@@ -8204,9 +7948,8 @@ class LoginWithTwitterOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithTwitter),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8214,27 +7957,25 @@ class LoginWithTwitterOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithTwitterOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8260,16 +8001,17 @@ class LoginWithTwitterOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithTwitterOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithTwitterOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithGitHub
@@ -8277,14 +8019,13 @@ class LoginWithTwitterOpenNode extends CNode {
 @NodeKey(NType.loginWithGitHub)
 class LoginWithGithubOpenNode extends CNode {
   LoginWithGithubOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8292,7 +8033,7 @@ class LoginWithGithubOpenNode extends CNode {
           id: id,
           type: NType.loginWithGitHub,
           name: name ?? 'Login With Github',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithGitHub),
           defaultAttributes:
@@ -8300,9 +8041,8 @@ class LoginWithGithubOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGitHub),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8310,27 +8050,25 @@ class LoginWithGithubOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGithubOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8356,16 +8094,17 @@ class LoginWithGithubOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithGithubOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithGithubOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithMicrosoft
@@ -8373,14 +8112,13 @@ class LoginWithGithubOpenNode extends CNode {
 @NodeKey(NType.loginWithMicrosoft)
 class LoginWithMicrosoftOpenNode extends CNode {
   LoginWithMicrosoftOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8388,7 +8126,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
           id: id,
           type: NType.loginWithMicrosoft,
           name: name ?? 'Login With Microsoft',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithMicrosoft),
           defaultAttributes: const DefaultAttributesParse()
@@ -8397,9 +8135,8 @@ class LoginWithMicrosoftOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithMicrosoft),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8407,27 +8144,25 @@ class LoginWithMicrosoftOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithMicrosoftOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8453,16 +8188,17 @@ class LoginWithMicrosoftOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithMicrosoftOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithMicrosoftOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithLinkedin
@@ -8470,14 +8206,13 @@ class LoginWithMicrosoftOpenNode extends CNode {
 @NodeKey(NType.loginWithLinkedin)
 class LoginWithLinkedinOpenNode extends CNode {
   LoginWithLinkedinOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8485,7 +8220,7 @@ class LoginWithLinkedinOpenNode extends CNode {
           id: id,
           type: NType.loginWithLinkedin,
           name: name ?? 'Login With Linkedin',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithLinkedin),
           defaultAttributes:
@@ -8494,9 +8229,8 @@ class LoginWithLinkedinOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithLinkedin),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8504,27 +8238,25 @@ class LoginWithLinkedinOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithLinkedinOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8550,16 +8282,17 @@ class LoginWithLinkedinOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithLinkedinOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithLinkedinOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithBitBucket
@@ -8567,14 +8300,13 @@ class LoginWithLinkedinOpenNode extends CNode {
 @NodeKey(NType.loginWithBitBucket)
 class LoginWithBitbucketOpenNode extends CNode {
   LoginWithBitbucketOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8582,7 +8314,7 @@ class LoginWithBitbucketOpenNode extends CNode {
           id: id,
           type: NType.loginWithBitBucket,
           name: name ?? 'Login With Bitbucket',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithBitBucket),
           defaultAttributes: const DefaultAttributesParse()
@@ -8591,9 +8323,8 @@ class LoginWithBitbucketOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithBitBucket),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8601,27 +8332,25 @@ class LoginWithBitbucketOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithBitbucketOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8647,16 +8376,17 @@ class LoginWithBitbucketOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithBitbucketOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithBitbucketOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithDiscord
@@ -8664,14 +8394,13 @@ class LoginWithBitbucketOpenNode extends CNode {
 @NodeKey(NType.loginWithDiscord)
 class LoginWithDiscordOpenNode extends CNode {
   LoginWithDiscordOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8679,7 +8408,7 @@ class LoginWithDiscordOpenNode extends CNode {
           id: id,
           type: NType.loginWithDiscord,
           name: name ?? 'Login With Discord',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithDiscord),
           defaultAttributes:
@@ -8687,9 +8416,8 @@ class LoginWithDiscordOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithDiscord),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8697,27 +8425,25 @@ class LoginWithDiscordOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithDiscordOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8743,16 +8469,17 @@ class LoginWithDiscordOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithDiscordOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithDiscordOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithTwitch
@@ -8760,14 +8487,13 @@ class LoginWithDiscordOpenNode extends CNode {
 @NodeKey(NType.loginWithTwitch)
 class LoginWithTwitchOpenNode extends CNode {
   LoginWithTwitchOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8775,7 +8501,7 @@ class LoginWithTwitchOpenNode extends CNode {
           id: id,
           type: NType.loginWithTwitch,
           name: name ?? 'Login With Twitch',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithTwitch),
           defaultAttributes:
@@ -8783,9 +8509,8 @@ class LoginWithTwitchOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithTwitch),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8793,27 +8518,25 @@ class LoginWithTwitchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithTwitchOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8839,16 +8562,17 @@ class LoginWithTwitchOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithTwitchOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithTwitchOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// loginWithGitlab
@@ -8856,14 +8580,13 @@ class LoginWithTwitchOpenNode extends CNode {
 @NodeKey(NType.loginWithGitlab)
 class LoginWithGitlabOpenNode extends CNode {
   LoginWithGitlabOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8871,7 +8594,7 @@ class LoginWithGitlabOpenNode extends CNode {
           id: id,
           type: NType.loginWithGitlab,
           name: name ?? 'Login With Gitlab',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.loginWithGitlab),
           defaultAttributes:
@@ -8879,9 +8602,8 @@ class LoginWithGitlabOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGitlab),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8889,27 +8611,25 @@ class LoginWithGitlabOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGitlabOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -8935,16 +8655,17 @@ class LoginWithGitlabOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'LoginWithGitlabOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'LoginWithGitlabOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// httpRequest
@@ -8952,14 +8673,13 @@ class LoginWithGitlabOpenNode extends CNode {
 @NodeKey(NType.httpRequest)
 class HttpRequestOpenNode extends CNode {
   HttpRequestOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -8967,7 +8687,7 @@ class HttpRequestOpenNode extends CNode {
           id: id,
           type: NType.httpRequest,
           name: name ?? 'Http Request',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.httpRequest),
           defaultAttributes:
@@ -8975,9 +8695,8 @@ class HttpRequestOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.httpRequest),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -8985,27 +8704,25 @@ class HttpRequestOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       HttpRequestOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9031,16 +8748,17 @@ class HttpRequestOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'HttpRequestOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'HttpRequestOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// customHttpRequest
@@ -9048,14 +8766,13 @@ class HttpRequestOpenNode extends CNode {
 @NodeKey(NType.customHttpRequest)
 class CustomHttpRequestOpenNode extends CNode {
   CustomHttpRequestOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9063,7 +8780,7 @@ class CustomHttpRequestOpenNode extends CNode {
           id: id,
           type: NType.customHttpRequest,
           name: name ?? 'Custom Http Request',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.customHttpRequest),
           defaultAttributes:
@@ -9072,9 +8789,8 @@ class CustomHttpRequestOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.customHttpRequest),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9082,27 +8798,25 @@ class CustomHttpRequestOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CustomHttpRequestOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9128,16 +8842,17 @@ class CustomHttpRequestOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CustomHttpRequestOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CustomHttpRequestOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// appBar
@@ -9145,14 +8860,13 @@ class CustomHttpRequestOpenNode extends CNode {
 @NodeKey(NType.appBar)
 class AppBarOpenNode extends CNode {
   AppBarOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9160,7 +8874,7 @@ class AppBarOpenNode extends CNode {
           id: id,
           type: NType.appBar,
           name: name ?? 'App Bar',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.appBar),
           defaultAttributes:
@@ -9168,9 +8882,8 @@ class AppBarOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.appBar),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9178,27 +8891,25 @@ class AppBarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       AppBarOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9224,16 +8935,17 @@ class AppBarOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'AppBarOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'AppBarOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// bottomBar
@@ -9241,14 +8953,13 @@ class AppBarOpenNode extends CNode {
 @NodeKey(NType.bottomBar)
 class BottomBarOpenNode extends CNode {
   BottomBarOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9256,7 +8967,7 @@ class BottomBarOpenNode extends CNode {
           id: id,
           type: NType.bottomBar,
           name: name ?? 'Bottom Bar',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.bottomBar),
           defaultAttributes:
@@ -9264,9 +8975,8 @@ class BottomBarOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.bottomBar),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9274,27 +8984,25 @@ class BottomBarOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       BottomBarOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9320,16 +9028,17 @@ class BottomBarOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'BottomBarOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'BottomBarOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// drawer
@@ -9337,14 +9046,13 @@ class BottomBarOpenNode extends CNode {
 @NodeKey(NType.drawer)
 class DrawerOpenNode extends CNode {
   DrawerOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9352,7 +9060,7 @@ class DrawerOpenNode extends CNode {
           id: id,
           type: NType.drawer,
           name: name ?? 'Drawer',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.drawer),
           defaultAttributes:
@@ -9360,9 +9068,8 @@ class DrawerOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.drawer),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9370,27 +9077,25 @@ class DrawerOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       DrawerOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9416,16 +9121,17 @@ class DrawerOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'DrawerOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'DrawerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// qonversionProducts
@@ -9433,14 +9139,13 @@ class DrawerOpenNode extends CNode {
 @NodeKey(NType.qonversionProducts)
 class QonversionProductsOpenNode extends CNode {
   QonversionProductsOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9448,7 +9153,7 @@ class QonversionProductsOpenNode extends CNode {
           id: id,
           type: NType.qonversionProducts,
           name: name ?? 'Qonversion Products',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.qonversionProducts),
           defaultAttributes: const DefaultAttributesParse()
@@ -9457,9 +9162,8 @@ class QonversionProductsOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.qonversionProducts),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9467,27 +9171,25 @@ class QonversionProductsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       QonversionProductsOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9513,16 +9215,17 @@ class QonversionProductsOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'QonversionProductsOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'QonversionProductsOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// qonversionSubStatus
@@ -9530,14 +9233,13 @@ class QonversionProductsOpenNode extends CNode {
 @NodeKey(NType.qonversionSubStatus)
 class QonversionSubStatusOpenNode extends CNode {
   QonversionSubStatusOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9545,7 +9247,7 @@ class QonversionSubStatusOpenNode extends CNode {
           id: id,
           type: NType.qonversionSubStatus,
           name: name ?? 'Qonversion Sub Status',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.qonversionSubStatus),
           defaultAttributes: const DefaultAttributesParse()
@@ -9554,9 +9256,8 @@ class QonversionSubStatusOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.qonversionSubStatus),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9564,27 +9265,25 @@ class QonversionSubStatusOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       QonversionSubStatusOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9610,16 +9309,17 @@ class QonversionSubStatusOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'QonversionSubStatusOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'QonversionSubStatusOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// revenueCatProducts
@@ -9627,14 +9327,13 @@ class QonversionSubStatusOpenNode extends CNode {
 @NodeKey(NType.revenueCatProducts)
 class RevenueCatProductsOpenNode extends CNode {
   RevenueCatProductsOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9642,7 +9341,7 @@ class RevenueCatProductsOpenNode extends CNode {
           id: id,
           type: NType.revenueCatProducts,
           name: name ?? 'RevenueCat Products',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.revenueCatProducts),
           defaultAttributes: const DefaultAttributesParse()
@@ -9651,9 +9350,8 @@ class RevenueCatProductsOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.revenueCatProducts),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9661,27 +9359,25 @@ class RevenueCatProductsOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RevenueCatProductsOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9707,16 +9403,17 @@ class RevenueCatProductsOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RevenueCatProductsOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RevenueCatProductsOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// revenueCatSubStatus
@@ -9724,14 +9421,13 @@ class RevenueCatProductsOpenNode extends CNode {
 @NodeKey(NType.revenueCatSubStatus)
 class RevenueCatSubStatusOpenNode extends CNode {
   RevenueCatSubStatusOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9739,7 +9435,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
           id: id,
           type: NType.revenueCatSubStatus,
           name: name ?? 'RevenueCat Sub Status',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.revenueCatSubStatus),
           defaultAttributes: const DefaultAttributesParse()
@@ -9748,9 +9444,8 @@ class RevenueCatSubStatusOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.revenueCatSubStatus),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9758,27 +9453,25 @@ class RevenueCatSubStatusOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       RevenueCatSubStatusOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9804,16 +9497,17 @@ class RevenueCatSubStatusOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'RevenueCatSubStatusOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'RevenueCatSubStatusOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// wrapper
@@ -9821,14 +9515,13 @@ class RevenueCatSubStatusOpenNode extends CNode {
 @NodeKey(NType.wrapper)
 class WrapperOpenNode extends CNode {
   WrapperOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9836,7 +9529,7 @@ class WrapperOpenNode extends CNode {
           id: id,
           type: NType.wrapper,
           name: name ?? 'Wrapper',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.wrapper),
           defaultAttributes:
@@ -9844,9 +9537,8 @@ class WrapperOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.wrapper),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9854,27 +9546,25 @@ class WrapperOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       WrapperOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9900,16 +9590,17 @@ class WrapperOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'WrapperOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'WrapperOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// supabaseFutureBuilder
@@ -9917,14 +9608,13 @@ class WrapperOpenNode extends CNode {
 @NodeKey(NType.supabaseFutureBuilder)
 class SupabaseFutureBuilderOpenNode extends CNode {
   SupabaseFutureBuilderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -9932,7 +9622,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
           id: id,
           type: NType.supabaseFutureBuilder,
           name: name ?? 'Supabase Future Builder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.supabaseFutureBuilder),
           defaultAttributes: const DefaultAttributesParse()
@@ -9941,9 +9631,8 @@ class SupabaseFutureBuilderOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseFutureBuilder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -9951,27 +9640,25 @@ class SupabaseFutureBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseFutureBuilderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -9997,16 +9684,17 @@ class SupabaseFutureBuilderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SupabaseFutureBuilderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SupabaseFutureBuilderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// supabaseStreamBuilder
@@ -10014,14 +9702,13 @@ class SupabaseFutureBuilderOpenNode extends CNode {
 @NodeKey(NType.supabaseStreamBuilder)
 class SupabaseStreamBuilderOpenNode extends CNode {
   SupabaseStreamBuilderOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10029,7 +9716,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
           id: id,
           type: NType.supabaseStreamBuilder,
           name: name ?? 'Supabase Stream Builder',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.supabaseStreamBuilder),
           defaultAttributes: const DefaultAttributesParse()
@@ -10038,9 +9725,8 @@ class SupabaseStreamBuilderOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseStreamBuilder),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10048,27 +9734,25 @@ class SupabaseStreamBuilderOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseStreamBuilderOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10094,16 +9778,17 @@ class SupabaseStreamBuilderOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SupabaseStreamBuilderOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SupabaseStreamBuilderOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// supabaseLoggedUser
@@ -10111,14 +9796,13 @@ class SupabaseStreamBuilderOpenNode extends CNode {
 @NodeKey(NType.supabaseLoggedUser)
 class SupabaseLoggedUserOpenNode extends CNode {
   SupabaseLoggedUserOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10126,7 +9810,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
           id: id,
           type: NType.supabaseLoggedUser,
           name: name ?? 'Supabase Logged User',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.supabaseLoggedUser),
           defaultAttributes: const DefaultAttributesParse()
@@ -10135,9 +9819,8 @@ class SupabaseLoggedUserOpenNode extends CNode {
           rectProperties: rectProperties ?? {},
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseLoggedUser),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10145,27 +9828,25 @@ class SupabaseLoggedUserOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseLoggedUserOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10191,16 +9872,17 @@ class SupabaseLoggedUserOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'SupabaseLoggedUserOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'SupabaseLoggedUserOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cmsCount
@@ -10208,14 +9890,13 @@ class SupabaseLoggedUserOpenNode extends CNode {
 @NodeKey(NType.cmsCount)
 class CMSCountOpenNode extends CNode {
   CMSCountOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10223,7 +9904,7 @@ class CMSCountOpenNode extends CNode {
           id: id,
           type: NType.cmsCount,
           name: name ?? 'CMS Count',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.cmsCount),
           defaultAttributes:
@@ -10231,9 +9912,8 @@ class CMSCountOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cmsCount),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10241,27 +9921,25 @@ class CMSCountOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSCountOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10287,16 +9965,17 @@ class CMSCountOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CMSCountOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CMSCountOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cmsCustomQuery
@@ -10304,14 +9983,13 @@ class CMSCountOpenNode extends CNode {
 @NodeKey(NType.cmsCustomQuery)
 class CMSCustomQueryOpenNode extends CNode {
   CMSCustomQueryOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10319,7 +9997,7 @@ class CMSCustomQueryOpenNode extends CNode {
           id: id,
           type: NType.cmsCustomQuery,
           name: name ?? 'CMS Custom Query',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState: const DynamicIntrinsicState()
               .getStateByType(NType.cmsCustomQuery),
           defaultAttributes:
@@ -10327,9 +10005,8 @@ class CMSCustomQueryOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cmsCustomQuery),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10337,27 +10014,25 @@ class CMSCustomQueryOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSCustomQueryOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10383,16 +10058,17 @@ class CMSCustomQueryOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CMSCustomQueryOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CMSCustomQueryOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cmsFetch
@@ -10400,14 +10076,13 @@ class CMSCustomQueryOpenNode extends CNode {
 @NodeKey(NType.cmsFetch)
 class CMSFetchOpenNode extends CNode {
   CMSFetchOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10415,7 +10090,7 @@ class CMSFetchOpenNode extends CNode {
           id: id,
           type: NType.cmsFetch,
           name: name ?? 'CMS Fetch',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.cmsFetch),
           defaultAttributes:
@@ -10423,9 +10098,8 @@ class CMSFetchOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cmsFetch),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10433,27 +10107,25 @@ class CMSFetchOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSFetchOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10479,16 +10151,17 @@ class CMSFetchOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CMSFetchOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CMSFetchOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cmsStream
@@ -10496,14 +10169,13 @@ class CMSFetchOpenNode extends CNode {
 @NodeKey(NType.cmsStream)
 class CMSStreamOpenNode extends CNode {
   CMSStreamOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10511,7 +10183,7 @@ class CMSStreamOpenNode extends CNode {
           id: id,
           type: NType.cmsStream,
           name: name ?? 'CMS Stream',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.cmsStream),
           defaultAttributes:
@@ -10519,9 +10191,8 @@ class CMSStreamOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cmsStream),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10529,27 +10200,25 @@ class CMSStreamOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSStreamOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10575,16 +10244,17 @@ class CMSStreamOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CMSStreamOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CMSStreamOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// cmsLoggedUser
@@ -10592,14 +10262,13 @@ class CMSStreamOpenNode extends CNode {
 @NodeKey(NType.cmsLoggedUser)
 class CMSLoggedUserOpenNode extends CNode {
   CMSLoggedUserOpenNode({
-    required final String id,
-    final String? parent,
+    required final NodeID id,
+    final NodeID? parentID,
     final CNode? child,
     final List<CNode>? children,
     final String? name,
     final String? description,
-    final FChildrenIds? childrenIds,
-    final int? index,
+    final int? childOrder,
     final Map<String, dynamic>? attributes,
     final Map<String, dynamic>? rectProperties,
     final DateTime? updatedAt,
@@ -10607,7 +10276,7 @@ class CMSLoggedUserOpenNode extends CNode {
           id: id,
           type: NType.cmsLoggedUser,
           name: name ?? 'CMS Logged User',
-          childrenIds: childrenIds ?? const FChildrenIds(ids: []),
+          parentID: parentID,
           intrinsicState:
               const DynamicIntrinsicState().getStateByType(NType.cmsLoggedUser),
           defaultAttributes:
@@ -10615,9 +10284,8 @@ class CMSLoggedUserOpenNode extends CNode {
           attributes: attributes ?? {},
           rectProperties: rectProperties ?? {},
           adapter: const WidgetAdapterParse().getByType(NType.cmsLoggedUser),
-          parent: parent,
           description: description,
-          index: index ?? 0,
+          childOrder: childOrder ?? 0,
           child: child,
           children: children,
           updatedAt: updatedAt ?? DateTime.now(),
@@ -10625,27 +10293,25 @@ class CMSLoggedUserOpenNode extends CNode {
 
   @override
   CNode copyWith({
-    String? id,
-    String? parent,
+    NodeID? id,
+    NodeID? parentID,
     CNode? child,
     List<CNode>? children,
     String? name,
     String? description,
-    FChildrenIds? childrenIds,
-    int? index,
+    int? childOrder,
     Map<String, dynamic>? attributes,
     Map<String, dynamic>? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSLoggedUserOpenNode(
         id: id ?? this.id,
-        parent: parent ?? this.parent,
+        parentID: parentID ?? this.parentID,
         child: child ?? this.child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
-        childrenIds: childrenIds ?? this.childrenIds,
-        index: index ?? this.index,
+        childOrder: childOrder ?? this.childOrder,
         attributes: attributes ?? getAttributes,
         rectProperties: rectProperties ?? getRectProperties,
       );
@@ -10671,14 +10337,15 @@ class CMSLoggedUserOpenNode extends CNode {
       id: json['id'],
       name: json['name'],
       description: json['description'],
-      childrenIds: FChildrenIds.fromJson(json[DBKeys.childrenIds]),
+      parentID: json['parent_id'],
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
+      childOrder: json['child_order'],
     );
   }
 
   @override
   String toString() =>
-      'CMSLoggedUserOpenNode { id: $id, name: $name, type: $type, childrenIds: $childrenIds, attributes: $getAttributes, parent: $parent, index: $index, child: $child, children: $children }';
+      'CMSLoggedUserOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
