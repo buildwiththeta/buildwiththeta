@@ -1,6 +1,5 @@
 library theta_analytics;
 
-import 'package:supabase/supabase.dart';
 import 'package:theta_analytics/src/analytics.dart';
 import 'package:theta_analytics/src/service.dart';
 import 'package:theta_analytics/src/utils/info.dart';
@@ -30,14 +29,14 @@ class ThetaAnalytics {
   ///   prjId: 1,
   ///   token: 'xyz',
   /// );
-  static Future<void> initialize(final SupabaseClient supabase) async {
+  static Future<void> initialize() async {
     assert(!_instance._isInitialized, 'Theta Analytics is already initialized');
-    await _instance._initialized(supabase);
+    await _instance._initialized();
   }
 
-  Future<void> _initialized(final SupabaseClient supabase) async {
+  Future<void> _initialized() async {
     final deviceInfo = await const DeviceInfoUtils().get();
-    client = AnalyticsClient(AnalyticsService(supabase, deviceInfo));
+    client = AnalyticsClient(AnalyticsService(deviceInfo));
     _isInitialized = true;
   }
 

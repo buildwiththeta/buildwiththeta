@@ -13,13 +13,8 @@ void main() {
     test(
       'Initializing and inserting a new event',
       () async {
-        final supabase = SupabaseClient(
-          'url',
-          'key',
-        );
         client = AnalyticsClient(
           AnalyticsService(
-            supabase,
             const DeviceInfo(
               'os_name',
               'os_version',
@@ -29,7 +24,7 @@ void main() {
             ),
           ),
         );
-        final response = await client.logEvent(
+        final response = client.logEvent(
             title: 'test_event',
             projectId: 0,
             description: 'test',

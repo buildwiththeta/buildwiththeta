@@ -13,8 +13,8 @@ class StylesService {
 
   Future<GetStylesResponseEntity> fetch() async {
     final res = await _httpClient.post(
-      Uri.parse('${_clientToken.baseUrl}$getStylesPath'),
-      headers: {'Authorization': 'Bearer ${_clientToken.anonToken}'},
+      Uri.parse('$baseUrl$getStylesPath'),
+      headers: {'Authorization': 'Bearer ${_clientToken.key}'},
     );
 
     if (res.statusCode != 200) {

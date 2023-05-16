@@ -1,3 +1,4 @@
 const defaultHeaders = {'Content-Type': 'application/json'};
-const getComponentPath = 'get_component';
+const baseUrl = 'https://fftefqqvfkkewuokofds.functions.supabase.co/';
+const getComponentPath = 'get_project';
 const getStylesPath = 'get_styles';

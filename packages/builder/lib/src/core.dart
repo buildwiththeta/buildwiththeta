@@ -2,6 +2,7 @@ import 'package:device_frame/device_frame.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/domain/usecases/base_usecase.dart';
@@ -22,7 +23,10 @@ class ThetaCore {
 
   Future<Either<Exception, void>> initialize() async =>
       await _getStylesUseCase(Params.empty).fold(
-        (l) => Left(l),
+        (l) {
+          Logger.printError(l.toString());
+          return Left(l);
+        },
         (r) {
           _colorStyles = r.colorStyles;
           _textStyles = r.textStyles;

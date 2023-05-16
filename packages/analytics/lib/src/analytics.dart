@@ -37,57 +37,22 @@ class AnalyticsClient {
   ///   },
   /// );
   /// ```
-  Future<Either<Exception, void>> logEvent({
+  Either<Exception, Map<String, dynamic>> logEvent({
     required final String title,
     required final int? projectId,
     required final String? description,
     final Map<String, dynamic>? props,
-  }) async {
+  }) {
     try {
-      _service.logEvent(
+      return Right(_service.logEvent(
           title: title,
           prjId: projectId,
           description: description,
-          props: props);
-      return const Right(null);
+          props: props));
     } catch (e, trace) {
       return Left(
         AnalyticsException(
           'Error while inserting event: $e',
-          stackTrace: trace,
-        ),
-      );
-    }
-  }
-
-  /// Create a new account delete reason.
-  /// It's used to document why a user deletes its account.
-  ///
-  /// How to use:
-  /// ```dart
-  /// analyticsClient.logDeleteReason(
-  ///   delete_reasons: 'test',
-  ///   comment: 'test',
-  ///   properties: <String, dynamic>{
-  ///     'test': 'test',
-  ///   },
-  /// );
-  /// ```
-  Future<Either<Exception, void>> logDeleteReason({
-    required final String reason,
-    required final String? comment,
-    required final int? projectId,
-    required final String? description,
-    required final Map<String, dynamic>? props,
-  }) async {
-    try {
-      _service.logDeleteReason(
-          reason: reason, comment: comment, prjId: projectId, props: props);
-      return const Right(null);
-    } catch (e, trace) {
-      return Left(
-        AnalyticsException(
-          'Error while inserting an account delete reason: $e',
           stackTrace: trace,
         ),
       );
@@ -107,16 +72,15 @@ class AnalyticsClient {
   ///   );
   /// }
   /// ```
-  Future<Either<Exception, void>> logException({
+  Either<Exception, Map<String, dynamic>> logException({
     required final String message,
     required final String? stackTrace,
-  }) async {
+  }) {
     try {
-      _service.logException(
+      return Right(_service.logException(
         message: message,
         stackTrace: stackTrace,
-      );
-      return const Right(null);
+      ));
     } catch (e, trace) {
       return Left(
         AnalyticsException(
