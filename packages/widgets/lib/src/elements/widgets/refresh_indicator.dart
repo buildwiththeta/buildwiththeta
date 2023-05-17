@@ -1,4 +1,3 @@
-import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
@@ -36,7 +35,8 @@ class OpenWRefreshIndicator extends NodeWidget {
         150;
 
     /// Returns a [CustomRefreshIndicator] widget
-    return CustomRefreshIndicator(
+    return const SizedBox
+        .shrink(); /*CustomRefreshIndicator(
       offsetToArmed: val,
       child: children.isNotEmpty
           ? children[0].toWidget(
@@ -78,6 +78,6 @@ class OpenWRefreshIndicator extends NodeWidget {
         );
       },
       onRefresh: () async {},
-    );
+    );*/
   }
 }

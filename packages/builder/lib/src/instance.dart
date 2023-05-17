@@ -1,13 +1,13 @@
 // ignore_for_file: unused_field
 
 import 'package:either_dart/either.dart';
-import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:theta/src/core.dart';
+import 'package:theta/src/client.dart';
+import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
-import 'package:theta/theta.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
+import '../main.reflectable.dart' as theta;
 
 /// Theta instance.
 ///
@@ -35,8 +35,8 @@ class Theta {
   static bool get isInitialized => _instance._initialized;
 
   /// Initialize the current Theta instance.
-  static Future<Theta> initialize(String key) async {
-    await _instance._init(key);
+  static Future<Theta> initialize({required String anonKey}) async {
+    await _instance._init(anonKey);
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
@@ -45,10 +45,13 @@ class Theta {
 
   bool _initialized = false;
 
-  late Core _core;
+  late ThetaClient _core;
 
-  Future<void> _initExternalDependencies() async =>
-      await ThetaOpenWidgets.initialize();
+  Future<void> _initExternalDependencies() async {
+    await ThetaModels.initialize();
+    await ThetaOpenWidgets.initialize();
+    theta.initializeReflectable();
+  }
 
   void _initializeCore() async => _core = getIt();
 
@@ -59,22 +62,9 @@ class Theta {
     _initialized = true;
   }
 
-  Future<Either<Exception, Widget>> build(
-    final BuildContext context,
-    final String componentName, {
-    final List<Workflow>? workflows,
-    final ThemeMode? theme,
-    final List<Var>? parameters,
-    final List<Var>? states,
-  }) =>
-      _core.build(
-        context,
-        componentName,
-        workflows: workflows,
-        theme: theme,
-        parameters: parameters,
-        states: states,
-      );
+  Future<Either<Exception, GetPageResponseEntity>> build(
+          final String componentName) =>
+      _core.build(componentName);
 
   void dispose() {
     disposeDependencies();

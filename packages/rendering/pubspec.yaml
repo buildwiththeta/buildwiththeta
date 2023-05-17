@@ -17,7 +17,6 @@ dependencies:
       ref: main
 
   light_logger:
-  graphview:
   collection:
 
 dev_dependencies:

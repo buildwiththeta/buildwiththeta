@@ -38,12 +38,6 @@ dependencies:
       ref: web
   
   light_logger:
-  clear_response:
-
-  # DB & Services
-  supabase_flutter: ^1.4.0
-  http: 0.13.5
-  socket_io_client: 2.0.0
 
   # Bloc
   flutter_bloc: ^8.1.2
@@ -53,44 +47,16 @@ dependencies:
   google_fonts: ^4.0.4
   flutter_feather_icons: 2.0.0+1
   material_design_icons_flutter: 5.0.6595
-  flutter_svg:
   font_awesome_flutter_named: 1.1.1
   line_icons: 2.0.1
-
-  # UI
-  sa3_liquid: 1.0.1
   flutter_staggered_animations: 1.0.0
   feather_icons:
-
-  # Share & send
-  url_launcher: any
-
-  # Widgets
   lottie: ^2.3.2
-  youtube_player_iframe: 2.3.0
-  custom_refresh_indicator: 1.2.1
-  liquid_swipe: 2.1.1
-  badges: 2.0.3
-  tcard: any
-  concentric_transition: 1.0.3
-  bouncing_widget: 2.0.0
-  qr_flutter: 4.0.0
-  barcode_widget: 2.0.1
   gap: any
-
-  # Utils
-  math_expressions: 2.3.1
   after_layout: 1.2.0
-  recase: 4.0.0
   enum_to_string: 2.0.1
   universal_platform: 1.0.0+1
-
-  # Responsive values / builder
-  responsive_builder: ^0.4.3
   collection: ^1.17.0
-  #flutter_stripe:
-  #flutter_stripe_web:
-
   flutter_box_transform:
   provider: ^6.0.5
 

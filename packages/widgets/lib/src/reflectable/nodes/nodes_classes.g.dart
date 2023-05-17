@@ -72,8 +72,9 @@ class AlignOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -165,8 +166,9 @@ class AspectRatioOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -258,8 +260,9 @@ class AudioPlayerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -352,8 +355,9 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -446,8 +450,9 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -539,8 +544,9 @@ class BadgeOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -632,8 +638,9 @@ class BarcodeOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -725,8 +732,9 @@ class BottomBarItemOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -818,8 +826,9 @@ class BouncingWidgetOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -911,8 +920,9 @@ class ButtonOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1004,8 +1014,9 @@ class CalendarOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1097,8 +1108,9 @@ class CalendarV2OpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1190,8 +1202,9 @@ class CardOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1283,8 +1296,9 @@ class CenterOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1376,8 +1390,9 @@ class CheckboxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1470,8 +1485,9 @@ class CircularProgressIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1563,8 +1579,9 @@ class ClipOvalOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1656,8 +1673,9 @@ class ClipRectOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1749,8 +1767,9 @@ class ClipRRectOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1842,8 +1861,9 @@ class ColumnOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -1935,8 +1955,9 @@ class ComponentOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2028,8 +2049,9 @@ class RowOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2122,8 +2144,9 @@ class ConcentricPageViewOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2215,8 +2238,9 @@ class ConditionOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2308,8 +2332,9 @@ class ContainerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2401,8 +2426,9 @@ class ConstrainedBoxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2494,8 +2520,9 @@ class LimitedBoxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2587,8 +2614,9 @@ class SizedBoxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2680,8 +2708,9 @@ class DecoratedBoxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2773,8 +2802,9 @@ class ImageOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2866,8 +2896,9 @@ class CupertinoPickerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -2960,8 +2991,9 @@ class CupertinoSegmentedControlOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3053,8 +3085,9 @@ class CupertinoSwitchOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3146,8 +3179,9 @@ class DividerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3239,8 +3273,9 @@ class DotsIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3332,8 +3367,9 @@ class ExpandedOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3425,8 +3461,9 @@ class AdMobBannerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3518,8 +3555,9 @@ class GoogleMapsOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3611,8 +3649,9 @@ class GridViewOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3704,8 +3743,9 @@ class GridViewBuilderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3797,8 +3837,9 @@ class HeroOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3890,8 +3931,9 @@ class IconOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -3983,8 +4025,9 @@ class IgnorePointerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4076,8 +4119,9 @@ class IndexedStackOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4170,8 +4214,9 @@ class LinearProgressIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4263,8 +4308,9 @@ class LiquidSwipeOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4356,8 +4402,9 @@ class ListTileOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4449,8 +4496,9 @@ class ListViewOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4542,8 +4590,9 @@ class ListViewBuilderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4635,8 +4684,9 @@ class LottieOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4728,8 +4778,9 @@ class MapOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4821,8 +4872,9 @@ class MarkerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -4914,8 +4966,9 @@ class OpacityOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5007,8 +5060,9 @@ class PaddingOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5100,8 +5154,9 @@ class PageViewOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5193,8 +5248,9 @@ class PlaceholderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5286,8 +5342,9 @@ class PositionedOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5379,8 +5436,9 @@ class SafeAreaOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5472,8 +5530,9 @@ class QRScannerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5565,8 +5624,9 @@ class QRCodeOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5658,8 +5718,9 @@ class RadioOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5751,8 +5812,9 @@ class RefreshIndicatorOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5845,8 +5907,9 @@ class ResponsiveConditionOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -5938,8 +6001,9 @@ class RotatedBoxOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6031,8 +6095,9 @@ class ScaffoldOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6124,8 +6189,9 @@ class SpacerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6217,8 +6283,9 @@ class StackOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6310,8 +6377,9 @@ class TCardOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6403,8 +6471,9 @@ class TCardBuilderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6496,8 +6565,9 @@ class TextOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6589,8 +6659,9 @@ class TextFieldOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6682,8 +6753,9 @@ class TooltipOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6775,8 +6847,9 @@ class VideoOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6868,8 +6941,9 @@ class VisibilityOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -6961,8 +7035,9 @@ class WebviewOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7054,8 +7129,9 @@ class WrapOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7148,8 +7224,9 @@ class AnimationConfigGridOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7242,8 +7319,9 @@ class AnimationConfigListOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7335,8 +7413,9 @@ class FadeInAnimationOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7428,8 +7507,9 @@ class ScaleAnimationOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7521,8 +7601,9 @@ class SlideAnimationOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7614,8 +7695,9 @@ class ApiCallsFetchOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7707,8 +7789,9 @@ class LoginWithAppleOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7801,8 +7884,9 @@ class LoginWithFacebookOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7894,8 +7978,9 @@ class LoginWithGoogleOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -7987,8 +8072,9 @@ class LoginWithTwitterOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8080,8 +8166,9 @@ class LoginWithGithubOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8174,8 +8261,9 @@ class LoginWithMicrosoftOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8268,8 +8356,9 @@ class LoginWithLinkedinOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8362,8 +8451,9 @@ class LoginWithBitbucketOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8455,8 +8545,9 @@ class LoginWithDiscordOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8548,8 +8639,9 @@ class LoginWithTwitchOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8641,8 +8733,9 @@ class LoginWithGitlabOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8734,8 +8827,9 @@ class HttpRequestOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8828,8 +8922,9 @@ class CustomHttpRequestOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -8921,8 +9016,9 @@ class AppBarOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9014,8 +9110,9 @@ class BottomBarOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9107,8 +9204,9 @@ class DrawerOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9201,8 +9299,9 @@ class QonversionProductsOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9295,8 +9394,9 @@ class QonversionSubStatusOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9389,8 +9489,9 @@ class RevenueCatProductsOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9483,8 +9584,9 @@ class RevenueCatSubStatusOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9576,8 +9678,9 @@ class WrapperOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9670,8 +9773,9 @@ class SupabaseFutureBuilderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9764,8 +9868,9 @@ class SupabaseStreamBuilderOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9858,8 +9963,9 @@ class SupabaseLoggedUserOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -9951,8 +10057,9 @@ class CMSCountOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10044,8 +10151,9 @@ class CMSCustomQueryOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10137,8 +10245,9 @@ class CMSFetchOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10230,8 +10339,9 @@ class CMSStreamOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }
@@ -10323,8 +10433,9 @@ class CMSLoggedUserOpenNode extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry
-          in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>)
+          .entries
+          .where((e) => e.value != null)) {
         attributes[entry.key] =
             const DynamicAttributes().fromJson(entry.key, entry.value);
       }

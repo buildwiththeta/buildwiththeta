@@ -64,7 +64,7 @@ class WidgetAdapterParse {
       return instance;
     } catch (e) {
       Logger.printError(
-        'Error in DynamicAttributes, key: $key error: $e',
+        'Error in WidgetAttributes, key: $key error: $e',
       );
     }
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWLiquidSwipe extends StatelessWidget {
@@ -15,7 +14,8 @@ class OpenWLiquidSwipe extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    return LiquidSwipe.builder(
+    return const SizedBox
+        .shrink(); /*LiquidSwipe.builder(
       itemCount: children.isNotEmpty ? children.length : 3,
       itemBuilder: (final context, final index) {
         if (children.isEmpty) {
@@ -29,6 +29,6 @@ class OpenWLiquidSwipe extends StatelessWidget {
           ),
         );
       },
-    );
+    );*/
   }
 }

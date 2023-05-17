@@ -75,54 +75,36 @@ class FTextStyle extends Equatable {
   }
 
   static FTextStyle fromJson(final Map<String, dynamic> doc) {
-    try {
-      return FTextStyle(
-        fill: doc[DBKeys.fill] ?? doc['fill'] != null
-            ? FFill.fromJson(
-                (doc[DBKeys.fill] ?? doc['fill']) as Map<String, dynamic>)
-            : const FFill(
-                type: FFillType.solid,
-                levels: [FFillElement(color: '000000', stop: 0)],
-              ),
-        fontSize: doc[DBKeys.fontSize] ?? doc['size'] != null
-            ? FFontSize.fromJson(doc[DBKeys.fontSize] ?? doc['size'])
-            : const FFontSize(),
-        fontFamily: doc[DBKeys.fontFamily] as String? ??
-            doc['family'] as String? ??
-            'Poppins',
-        fontWeight: doc[DBKeys.fontWeight] ?? doc['weight'] != null
-            ? FFontWeight.fromJson(
-                doc[DBKeys.fontWeight] as String? ?? doc['weight'] as String)
-            : const FFontWeight(),
-        textDecoration: doc[DBKeys.textDecoration] != null
-            ? FTextDecoration.fromJson(doc[DBKeys.textDecoration] as String)
-            : const FTextDecoration(),
-        textAlign: doc[DBKeys.textAlign] != null
-            ? FTextAlign.fromJson(doc[DBKeys.textAlign] as String)
-            : const FTextAlign(),
-        fontStyle: doc[DBKeys.fontStyle] != null
-            ? FFontStyle.fromJson(doc[DBKeys.fontStyle])
-            : const FFontStyle(),
-        textDirection: doc[DBKeys.textDirection] != null
-            ? FTextDirection.fromJson(doc[DBKeys.textDirection] as String)
-            : const FTextDirection(),
-        textStyleModel: doc[DBKeys.textStyleModel] as String?,
-      );
-    } catch (e) {
-      return const FTextStyle(
-        fill: FFill(
-          type: FFillType.solid,
-          levels: [FFillElement(color: '000000', stop: 0)],
-        ),
-        fontSize: FFontSize(),
-        fontFamily: 'Poppins',
-        fontWeight: FFontWeight(),
-        textDecoration: FTextDecoration(),
-        textAlign: FTextAlign(),
-        fontStyle: FFontStyle(),
-        textDirection: FTextDirection(),
-      );
-    }
+    return FTextStyle(
+      fill: doc[DBKeys.fill] != null
+          ? FFill.fromJson(doc[DBKeys.fill] as Map<String, dynamic>)
+          : const FFill(
+              type: FFillType.solid,
+              levels: [FFillElement(color: '000000', stop: 0)],
+            ),
+      fontSize: doc[DBKeys.fontSize] != null
+          ? FFontSize.fromJson(doc[DBKeys.fontSize])
+          : const FFontSize(),
+      fontFamily: doc[DBKeys.fontFamily] as String? ??
+          doc['family'] as String? ??
+          'Poppins',
+      fontWeight: doc[DBKeys.fontWeight] != null
+          ? FFontWeight.fromJson(doc[DBKeys.fontWeight])
+          : const FFontWeight(),
+      textDecoration: doc[DBKeys.textDecoration] != null
+          ? FTextDecoration.fromJson(doc[DBKeys.textDecoration] as String)
+          : const FTextDecoration(),
+      textAlign: doc[DBKeys.textAlign] != null
+          ? FTextAlign.fromJson(doc[DBKeys.textAlign] as String)
+          : const FTextAlign(),
+      fontStyle: doc[DBKeys.fontStyle] != null
+          ? FFontStyle.fromJson(doc[DBKeys.fontStyle])
+          : const FFontStyle(),
+      textDirection: doc[DBKeys.textDirection] != null
+          ? FTextDirection.fromJson(doc[DBKeys.textDirection] as String)
+          : const FTextDirection(),
+      textStyleModel: doc[DBKeys.textStyleModel] as String?,
+    );
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{

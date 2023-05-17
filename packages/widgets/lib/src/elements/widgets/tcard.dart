@@ -1,13 +1,6 @@
-// ignore_for_file: public_member_api_docs, avoid_dynamic_calls
-
-// Dart imports:
 import 'dart:async';
-
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// Package imports:
-import 'package:tcard/tcard.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWTCard extends StatefulWidget {
@@ -32,7 +25,7 @@ class OpenWTCard extends StatefulWidget {
 }
 
 class _WTCardState extends State<OpenWTCard> {
-  final _controller = TCardController();
+  //final _controller = TCardController();
   List<Widget> list = <Widget>[];
   Timer? _timer;
 
@@ -63,7 +56,7 @@ class _WTCardState extends State<OpenWTCard> {
             )
             .toList();
         if (!state.forPlay) {
-          _controller.reset(cards: list);
+          //_controller.reset(cards: list);
         }
       });
     }
@@ -71,7 +64,7 @@ class _WTCardState extends State<OpenWTCard> {
 
   @override
   void dispose() {
-    _controller.dispose();
+    //_controller.dispose();
     _timer?.cancel();
     super.dispose();
   }
@@ -91,7 +84,8 @@ class _WTCardState extends State<OpenWTCard> {
       context: context,
     );
     final delay = int.tryParse(delayStr) ?? 500;
-    return IgnorePointer(
+    return const SizedBox
+        .shrink(); /*IgnorePointer(
       ignoring: !state.forPlay,
       child: TCard(
         controller: _controller,
@@ -102,6 +96,6 @@ class _WTCardState extends State<OpenWTCard> {
         slideSpeed: slideSpeed,
         delaySlideFor: delay,
       ),
-    );
+    );*/
   }
 }
