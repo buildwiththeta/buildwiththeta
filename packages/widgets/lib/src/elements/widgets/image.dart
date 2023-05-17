@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:universal_platform/universal_platform.dart';
 
 class OpenWImage extends StatelessWidget {
   /// Returns a Image
@@ -34,11 +35,14 @@ class OpenWImage extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
-    final result = image.getImage(
+    final img = image.getImage(
       state: state,
       context: context,
       loop: nodeState.loop,
-    );
+    ) as String;
+    final result = img.isNotEmpty
+        ? img
+        : 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png';
     return ClipRRect(
       borderRadius: borderRadius.get(
         context,
@@ -56,52 +60,23 @@ class OpenWImage extends StatelessWidget {
           context: context,
           isWidth: false,
         ),
-        child: CNetworkImage(
-          src: result == ''
-              ? 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png'
-              : result,
-          loop: nodeState.loop,
-          width: width.get(state: state, context: context, isWidth: true),
-          height: height.get(state: state, context: context, isWidth: false),
-          fit: boxFit.value,
-        ),
+
+        child: UniversalPlatform.isWeb
+            ? Image.network(
+                '${Constants.backendTetaProxy}/${Uri.encodeComponent(result)}',
+                width: width.get(state: state, context: context, isWidth: true),
+                height:
+                    height.get(state: state, context: context, isWidth: false),
+                fit: boxFit.value,
+              )
+            : Image.network(
+                result,
+                width: width.get(state: state, context: context, isWidth: true),
+                height:
+                    height.get(state: state, context: context, isWidth: false),
+                fit: boxFit.value,
+              ),
       ),
-    );
-  }
-}
-
-class _LocalImage extends StatefulWidget {
-  const _LocalImage({
-    required this.nid,
-    required this.result,
-    required this.width,
-    required this.height,
-    required this.fit,
-    required this.loop,
-    final Key? key,
-  }) : super(key: key);
-
-  final String nid;
-  final int? loop;
-  final String result;
-  final double? width, height;
-  final BoxFit fit;
-
-  @override
-  State<_LocalImage> createState() => _LocalImageState();
-}
-
-class _LocalImageState extends State<_LocalImage> {
-  @override
-  Widget build(final BuildContext context) {
-    return CNetworkImage(
-      src: widget.result == ''
-          ? 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png'
-          : widget.result,
-      loop: widget.loop ?? 0,
-      width: widget.width,
-      height: widget.height,
-      fit: widget.fit,
     );
   }
 }
