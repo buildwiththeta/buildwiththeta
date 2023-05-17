@@ -3,7 +3,9 @@ import 'package:theta/theta.dart';
 import 'package:theta_models/theta_models.dart';
 
 Future<void> main() async {
-  await Theta.initialize(anonKey: 'Your token');
+  await Theta.initialize(
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI4NGJjNDE3Yi1kMTRjLTQwODQtYjE5MC0yY2RkNDgxMWU4ZWIiLCJhbm9uX2tleSI6IjRhZDZhNDVlLWU3YWMtNGQzOC05OGVmLThjODVjODE3NzAyMiIsImlhdCI6MTY4NDMyMjkxNSwiZXhwIjoxNzE1ODgwNTE1LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.12z5tUsLedXOga0hM344ZJCL3dIcHyqUfPAim1iaVek');
   runApp(const MyApp());
 }
 

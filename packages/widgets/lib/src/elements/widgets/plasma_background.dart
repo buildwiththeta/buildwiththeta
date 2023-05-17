@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:sa3_liquid/liquid/plasma/plasma.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 
 class OpenWPlasmaBackground extends NodeWidget {
   const OpenWPlasmaBackground({
@@ -35,7 +33,8 @@ class OpenWPlasmaBackground extends NodeWidget {
         isWidth: false,
         state: state,
       ),
-      child: PlasmaRenderer(
+      child:
+          null, /*PlasmaRenderer(
         fps: 50,
         color: HexColor(
             firstColor.getHexColor(context, state.colorStyles, state.theme)),
@@ -56,7 +55,7 @@ class OpenWPlasmaBackground extends NodeWidget {
             child: child,
           ),
         ),
-      ),
+      ),*/
     );
   }
 }
