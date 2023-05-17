@@ -796,12 +796,26 @@ class MaterialIconAdapter extends WidgetAdapter {
     required final BuildContext context,
     required final WidgetState state,
   }) =>
-      OpenWIcon(
-        context: context,
-        width: state.node.getAttributes[DBKeys.width] as FSize,
-        icon: state.node.getAttributes[DBKeys.faIcon] as String? ?? 'plus',
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-      );
+      state.node.getAttributes[DBKeys.featherIcon] != null
+          ? OpenWFeatherIcon(
+              context: context,
+              width: state.node.getAttributes[DBKeys.width] as FSize,
+              icon: state.node.getAttributes[DBKeys.featherIcon] ?? 'plus',
+              fill: state.node.getAttributes[DBKeys.fill] as FFill,
+            )
+          : state.node.getAttributes[DBKeys.faIcon] != null
+              ? OpenWFontAwesome(
+                  context: context,
+                  width: state.node.getAttributes[DBKeys.width] as FSize,
+                  icon: state.node.getAttributes[DBKeys.faIcon] ?? 'plus',
+                  fill: state.node.getAttributes[DBKeys.fill] as FFill,
+                )
+              : OpenWIcon(
+                  context: context,
+                  width: state.node.getAttributes[DBKeys.width] as FSize,
+                  icon: state.node.getAttributes[DBKeys.icon] ?? 'plus',
+                  fill: state.node.getAttributes[DBKeys.fill] as FFill,
+                );
 
   MaterialIconAdapter.create() : this();
 }
