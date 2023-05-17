@@ -1,8 +1,10 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:theta_models/theta_models.dart';
+import 'package:theta/src/core.dart';
+import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/theta.dart';
+import 'package:theta_models/theta_models.dart';
 
 class UIBox extends StatefulWidget {
   const UIBox(
@@ -41,7 +43,7 @@ class _UIBoxState extends State<UIBox> {
     load();
   }
 
-  Future<void> load() async => await Theta.instance
+  Future<void> load() async => await getIt<Core>()
           .build(
         context,
         widget.componentName,

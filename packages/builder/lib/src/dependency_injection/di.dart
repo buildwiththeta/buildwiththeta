@@ -10,6 +10,7 @@ import 'package:theta/src/domain/repositories/component_repository.dart';
 import 'package:theta/src/domain/repositories/styles_repository.dart';
 import 'package:theta/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
@@ -17,6 +18,8 @@ GetIt get getIt => GetIt.instance;
 
 Future<void> initializeDependencyInjection(String key) async {
   getIt.registerLazySingleton(() => const NodesParse());
+  getIt.registerLazySingleton(() => const ColorStylesMapper());
+  getIt.registerLazySingleton(() => const TextStylesMapper());
   getIt.registerLazySingleton(() => const NodeRendering());
   getIt.registerLazySingleton(() => const ClientMapper().mapToken(key));
   getIt.registerLazySingleton(() => Client());
@@ -39,7 +42,9 @@ Future<void> initializeDependencyInjection(String key) async {
           getIt(),
         ));
 
-  getIt.registerLazySingleton(() => ThetaCore(getIt(), getIt()));
+  getIt.registerLazySingleton(() => Core(
+        getIt(),
+      ));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();

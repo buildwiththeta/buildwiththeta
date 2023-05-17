@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/packages/analytics/melos_theta_analytics.iml" filepath="$PROJECT_DIR$/packages/analytics/melos_theta_analytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/DS/melos_theta_design_system.iml" filepath="$PROJECT_DIR$/packages/DS/melos_theta_design_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/models/melos_theta_models.iml" filepath="$PROJECT_DIR$/packages/models/melos_theta_models.iml" />
-      <module fileurl="file://$PROJECT_DIR$/packages/open_classes/melos_theta_open_classes.iml" filepath="$PROJECT_DIR$/packages/open_classes/melos_theta_open_classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/widgets/melos_theta_open_widgets.iml" filepath="$PROJECT_DIR$/packages/widgets/melos_theta_open_widgets.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/rendering/melos_theta_rendering.iml" filepath="$PROJECT_DIR$/packages/rendering/melos_theta_rendering.iml" />
       <module fileurl="file://$PROJECT_DIR$/packages/builder/melos_ui_builder.iml" filepath="$PROJECT_DIR$/packages/builder/melos_ui_builder.iml" />

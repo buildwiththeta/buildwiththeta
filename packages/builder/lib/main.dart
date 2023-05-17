@@ -5,7 +5,7 @@ import 'package:theta_models/theta_models.dart';
 
 Future<void> main() async {
   await Theta.initialize(
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI2MzRhNGMyZi1lNDQxLTQ1YWMtYTg3Ni0xNGQzZjliODZlYzkiLCJhbm9uX2tleSI6IjRhZDZhNDVlLWU3YWMtNGQzOC05OGVmLThjODVjODE3NzAyMiIsImlhdCI6MTY4NDE2NjAxOCwiZXhwIjoxNzE1NzIzNjE4LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.xWfFrv02t636GMA8XOSOXByqaeYP1_i46Ls9iEVDIA0');
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI4NGJjNDE3Yi1kMTRjLTQwODQtYjE5MC0yY2RkNDgxMWU4ZWIiLCJhbm9uX2tleSI6IjRhZDZhNDVlLWU3YWMtNGQzOC05OGVmLThjODVjODE3NzAyMiIsImlhdCI6MTY4NDI3MzQ4OSwiZXhwIjoxNzE1ODMxMDg5LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.o5JVlME_O2Ldi6703iE4dZepx1PlF6XjyILunqbfw0M');
   runApp(const MyApp());
 }
 
