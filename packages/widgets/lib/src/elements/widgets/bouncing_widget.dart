@@ -1,4 +1,3 @@
-import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
@@ -32,7 +31,8 @@ class OpenWBouncingWidget extends NodeWidget {
       context: context,
       loop: nodeState.loop,
     );
-    return BouncingWidget(
+    return const SizedBox
+        .shrink(); /*BouncingWidget(
       duration: Duration(milliseconds: int.tryParse(val) ?? 200),
       scaleFactor: double.tryParse(scale) ?? 1,
       onPressed: () {
@@ -43,6 +43,6 @@ class OpenWBouncingWidget extends NodeWidget {
         state: nodeState,
         child: child,
       ),
-    );
+    );*/
   }
 }

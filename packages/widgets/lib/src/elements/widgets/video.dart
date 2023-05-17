@@ -1,14 +1,8 @@
-import 'dart:async';
-
-import 'package:after_layout/after_layout.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:universal_platform/universal_platform.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class OpenWVideo extends StatefulWidget {
   /// Returns a Video widget in Teta
@@ -33,28 +27,7 @@ class OpenWVideo extends StatefulWidget {
   State<OpenWVideo> createState() => _WVideoState();
 }
 
-class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
-  late final YoutubePlayerController controller;
-  @override
-  FutureOr<void> afterFirstLayout(final BuildContext context) {
-    final state = context.watch<TreeState>();
-    setState(() {
-      controller = YoutubePlayerController(
-        initialVideoId: widget.value.get(
-          state: state,
-          loop: widget.state.loop,
-          context: context,
-        ),
-        params: YoutubePlayerParams(
-          startAt: Duration(seconds: widget.startAt),
-          showControls: widget.showControls,
-          showFullscreenButton: widget.showFullScreen,
-          loop: widget.loopVideo,
-        ),
-      );
-    });
-  }
-
+class _WVideoState extends State<OpenWVideo> {
   @override
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
@@ -81,7 +54,8 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
     }
 
     final theme = Theme.of(context).extension<ThetaTheme>()!;
-    return state.forPlay
+    return const SizedBox
+        .shrink(); /*state.forPlay
         ? YoutubePlayerIFrame(
             controller: controller,
           )
@@ -116,6 +90,6 @@ class _WVideoState extends State<OpenWVideo> with AfterLayoutMixin {
                 ],
               ),
             ),
-          );
+          );*/
   }
 }

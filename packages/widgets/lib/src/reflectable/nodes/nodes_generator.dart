@@ -88,7 +88,7 @@ class $generatedClassName extends CNode {
 
     final attributes = <String, dynamic>{};
     if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>).entries) {
+      for (final entry in (json['properties'] as Map<String, dynamic>).entries.where((e) => e.value != null)) {
         attributes[entry.key] = const DynamicAttributes().fromJson(entry.key, entry.value);
       }
     }

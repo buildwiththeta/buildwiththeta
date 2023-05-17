@@ -1249,14 +1249,7 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
           displayName: 'Page (Scaffold)',
           type: NType.scaffold,
           category: NodeCategories.unclassified,
-          maxChildren: 4,
           canHave: ChildrenEnum.children,
-          addChildLabels: const [
-            'Add In Page',
-            'Add In Page',
-            'Add In Page',
-            'Add In Page'
-          ],
           gestures: const [
             Trigger.initState,
           ],

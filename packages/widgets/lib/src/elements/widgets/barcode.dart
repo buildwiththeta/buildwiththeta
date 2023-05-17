@@ -1,9 +1,5 @@
-// Flutter imports:
-import 'package:barcode_widget/barcode_widget.dart';
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWBarcode extends NodeWidget {
@@ -31,7 +27,8 @@ class OpenWBarcode extends NodeWidget {
       final WidgetState nodeState) {
     final tempOpacity = fill.levels.first.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-    return BarcodeWidget(
+    return const SizedBox
+        .shrink(); /*BarcodeWidget(
       barcode: Barcode.fromType(
         EnumToString.fromString(
               BarcodeType.values,
@@ -65,6 +62,6 @@ class OpenWBarcode extends NodeWidget {
           state.theme,
         ),
       ).withOpacity(opacity),
-    );
+    );*/
   }
 }

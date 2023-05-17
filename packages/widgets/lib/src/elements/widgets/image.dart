@@ -2,20 +2,15 @@
 // ignore_for_file: public_member_api_docs
 
 // Dart imports:
-import 'dart:async';
-import 'dart:typed_data';
 
 // Package imports:
-import 'package:after_layout/after_layout.dart';
-import 'package:cross_file/cross_file.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
-class OpenWImage extends StatefulWidget {
+class OpenWImage extends StatelessWidget {
   /// Returns a Image
   const OpenWImage({
     super.key,
@@ -37,91 +32,38 @@ class OpenWImage extends StatefulWidget {
   final FShadow shadows;
 
   @override
-  State<OpenWImage> createState() => _WImageState();
-}
-
-class _WImageState extends State<OpenWImage> with AfterLayoutMixin {
-  dynamic result;
-  Uint8List? bytes;
-  bool isLoading = false;
-
-  @override
-  FutureOr<void> afterFirstLayout(final BuildContext context) {
-    setState(() {
-      result = widget.image.getImage(
-        state: context.read<TreeState>(),
-        context: context,
-        loop: widget.nodeState.loop,
-      );
-    });
-    if (result is XFile) {
-      calc();
-    }
-  }
-
-  Future<void> calc() async {
-    if (bytes == null) {
-      final b = await (result as XFile).readAsBytes();
-      setState(() {
-        result = result;
-        bytes = b;
-      });
-    }
-  }
-
-  @override
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
-    if (isLoading) {
-      return SizedBox(
-        width: widget.width.get(
-          state: state,
-          context: context,
-          isWidth: true,
-        ),
-        height: widget.height.get(
-          state: state,
-          context: context,
-          isWidth: false,
-        ),
-        child: const CircularProgressIndicator(),
-      );
-    }
-
+    final result = image.getImage(
+      state: state,
+      context: context,
+      loop: nodeState.loop,
+    );
     return ClipRRect(
-      borderRadius: widget.borderRadius.get(
+      borderRadius: borderRadius.get(
         context,
         forPlay: state.forPlay,
         deviceType: state.deviceType,
       ),
       child: SizedBox(
-        width: widget.width.get(
+        width: width.get(
           state: state,
           context: context,
           isWidth: true,
         ),
-        height: widget.height.get(
+        height: height.get(
           state: state,
           context: context,
           isWidth: false,
         ),
-        child: _LocalImage(
-          key: ValueKey('Image ${widget.nodeState.node.id} $bytes $result'),
-          nid: widget.nodeState.node.id,
-          result: result,
-          bytes: bytes,
-          loop: widget.nodeState.loop,
-          width: widget.width.get(
-            state: state,
-            context: context,
-            isWidth: true,
-          ),
-          height: widget.height.get(
-            state: state,
-            context: context,
-            isWidth: false,
-          ),
-          fit: widget.boxFit.value,
+        child: CNetworkImage(
+          src: result == ''
+              ? 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png'
+              : result,
+          loop: nodeState.loop,
+          width: width.get(state: state, context: context, isWidth: true),
+          height: height.get(state: state, context: context, isWidth: false),
+          fit: boxFit.value,
         ),
       ),
     );
@@ -132,7 +74,6 @@ class _LocalImage extends StatefulWidget {
   const _LocalImage({
     required this.nid,
     required this.result,
-    required this.bytes,
     required this.width,
     required this.height,
     required this.fit,
@@ -142,8 +83,7 @@ class _LocalImage extends StatefulWidget {
 
   final String nid;
   final int? loop;
-  final dynamic result;
-  final Uint8List? bytes;
+  final String result;
   final double? width, height;
   final BoxFit fit;
 
@@ -154,23 +94,14 @@ class _LocalImage extends StatefulWidget {
 class _LocalImageState extends State<_LocalImage> {
   @override
   Widget build(final BuildContext context) {
-    return widget.result is XFile
-        ? widget.bytes == null
-            ? const SizedBox()
-            : Image.memory(
-                widget.bytes!,
-                width: widget.width,
-                height: widget.height,
-                fit: widget.fit,
-              )
-        : CNetworkImage(
-            src: widget.result == ''
-                ? 'https://ymvwltogicatbkjlaswo.supabase.co/storage/v1/object/public/assets/Frame%203.jpg'
-                : '${widget.result}',
-            loop: widget.loop ?? 0,
-            width: widget.width,
-            height: widget.height,
-            fit: widget.fit,
-          );
+    return CNetworkImage(
+      src: widget.result == ''
+          ? 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png'
+          : widget.result,
+      loop: widget.loop ?? 0,
+      width: widget.width,
+      height: widget.height,
+      fit: widget.fit,
+    );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
-import 'package:theta/src/core.dart';
+import 'package:theta/src/client.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
 import 'package:theta/src/data/models/client_mapper.dart';
@@ -42,7 +42,7 @@ Future<void> initializeDependencyInjection(String key) async {
           getIt(),
         ));
 
-  getIt.registerLazySingleton(() => Core(
+  getIt.registerLazySingleton(() => ThetaClient(
         getIt(),
       ));
 }

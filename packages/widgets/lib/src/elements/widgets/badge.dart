@@ -1,15 +1,6 @@
-// Flutter imports:
-
-// Package imports:
-import 'package:badges/badges.dart';
-// Flutter imports:
 import 'package:flutter/material.dart' hide Badge;
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-// Project imports:
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-
-// ignore_for_file: public_member_api_docs
 
 class OpenWBadge extends NodeWidget {
   /// Returns a [Badge] widget in Teta
@@ -33,7 +24,8 @@ class OpenWBadge extends NodeWidget {
     final TreeState state,
     final WidgetState nodeState,
   ) {
-    return Badge(
+    return const SizedBox
+        .shrink(); /*Badge(
       badgeContent: TextBuilder(
         textStyle: textStyle,
         value: value,
@@ -51,6 +43,6 @@ class OpenWBadge extends NodeWidget {
         state: nodeState,
         child: child,
       ),
-    );
+    );*/
   }
 }

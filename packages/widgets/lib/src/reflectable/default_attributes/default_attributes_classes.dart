@@ -466,6 +466,7 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
           ),
         ),
         DBKeys.image: FTextTypeInput(),
+        DBKeys.boxFit: FBoxFit(),
       };
 
   BoxDefaultAttributes.create() : this();
