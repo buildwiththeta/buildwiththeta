@@ -60,6 +60,7 @@ class OpenWImage extends StatelessWidget {
           context: context,
           isWidth: false,
         ),
+
         child: UniversalPlatform.isWeb
             ? Image.network(
                 '${Constants.backendTetaProxy}/${Uri.encodeComponent(result)}',
@@ -76,42 +77,6 @@ class OpenWImage extends StatelessWidget {
                 fit: boxFit.value,
               ),
       ),
-    );
-  }
-}
-
-class _LocalImage extends StatefulWidget {
-  const _LocalImage({
-    required this.nid,
-    required this.result,
-    required this.width,
-    required this.height,
-    required this.fit,
-    required this.loop,
-    final Key? key,
-  }) : super(key: key);
-
-  final String nid;
-  final int? loop;
-  final String result;
-  final double? width, height;
-  final BoxFit fit;
-
-  @override
-  State<_LocalImage> createState() => _LocalImageState();
-}
-
-class _LocalImageState extends State<_LocalImage> {
-  @override
-  Widget build(final BuildContext context) {
-    return CNetworkImage(
-      src: widget.result == ''
-          ? 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png'
-          : widget.result,
-      loop: widget.loop ?? 0,
-      width: widget.width,
-      height: widget.height,
-      fit: widget.fit,
     );
   }
 }
