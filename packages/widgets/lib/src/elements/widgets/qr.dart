@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 
 class OpenWQR extends NodeWidget {
   /// Returns a QR widget in Teta
@@ -27,7 +25,8 @@ class OpenWQR extends NodeWidget {
       final WidgetState nodeState) {
     final tempOpacity = fill.levels.first.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-    return QrImage(
+    return const SizedBox
+        .shrink(); /*QrImage(
       data: content.get(
         state: state,
         loop: nodeState.loop,
@@ -55,6 +54,6 @@ class OpenWQR extends NodeWidget {
               ),
             )
           : null,
-    );
+    );*/
   }
 }

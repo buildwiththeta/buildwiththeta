@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:theta/src/presentation/ui_box.dart';
 import 'package:theta/theta.dart';
 import 'package:theta_models/theta_models.dart';
 
 Future<void> main() async {
-  await Theta.initialize('Your token');
+  await Theta.initialize(anonKey: 'Your token');
   runApp(const MyApp());
 }
 

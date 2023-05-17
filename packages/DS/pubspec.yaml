@@ -26,7 +26,6 @@ dependencies:
 
   google_fonts: ^4.0.4
   equatable:
-  sa3_liquid: ^1.0.1
   gap: ^3.0.0
   lottie: ^2.3.2
   flutter_colorpicker: 1.0.3

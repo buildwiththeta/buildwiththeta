@@ -1,11 +1,4 @@
-// Flutter imports:
-// ignore_for_file: public_member_api_docs
-
-// Flutter imports:
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:sa3_liquid/liquid/plasma/plasma.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 
 class AnimatedBackground extends StatelessWidget {
   const AnimatedBackground({final Key? key}) : super(key: key);
@@ -16,7 +9,8 @@ class AnimatedBackground extends StatelessWidget {
       child: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
-        child: PlasmaRenderer(
+        child:
+            null, /*PlasmaRenderer(
           fps: 50,
           color: Palette.purple,
           blur: 0.36,
@@ -30,7 +24,7 @@ class AnimatedBackground extends StatelessWidget {
             size: 0.87,
             blendMode: BlendMode.lighten,
           ),
-        ),
+        ),*/
       ),
     );
   }

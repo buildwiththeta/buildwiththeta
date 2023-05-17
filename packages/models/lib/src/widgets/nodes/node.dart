@@ -45,7 +45,9 @@ abstract class CNode extends Equatable {
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
-        _attributesNotifier = ValueNotifier(attributes);
+        _attributesNotifier = ValueNotifier(attributes),
+        childNotifier = ValueNotifier(child),
+        childrenNotifier = ValueNotifier(children);
 
   final Map<String, dynamic> _globalDefaultAttributes = {
     DBKeys.padding: const FMargins(
@@ -117,6 +119,9 @@ abstract class CNode extends Equatable {
   /// the node's attributes to the node's widget
   /// The node's widget will be rebuilt
   final ValueNotifier<NodeAttributes> _attributesNotifier;
+
+  final ValueNotifier<CNode?> childNotifier;
+  final ValueNotifier<Nodes?> childrenNotifier;
 
   final DateTime updatedAt;
 

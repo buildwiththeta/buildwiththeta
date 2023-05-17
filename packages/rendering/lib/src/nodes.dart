@@ -34,7 +34,8 @@ class NodeRendering {
   }
 
   List<CNode> renderFlatList(final CNode scaffold) {
-    final nodes = findAllChildren(scaffold);
+    final nodes = findAllChildren(scaffold)
+      ..sort((a, b) => a.childOrder.compareTo(b.childOrder));
     return nodes
         .toSet()
         .toList(); // Remove duplicates by converting to a Set and back to List

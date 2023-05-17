@@ -52,6 +52,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
+  reflectable:
+  build_runner:
+  source_gen:
+
 dependency_overrides:
   theta_models:
     path: ../models

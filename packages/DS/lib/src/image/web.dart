@@ -5,13 +5,12 @@
 
 // Dart imports:
 // ignore: avoid_web_libraries_in_flutter
-import 'dart:html';
 
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 
-class CNetworkImage extends StatefulWidget {
+class CNetworkImage extends StatelessWidget {
   const CNetworkImage({
     final Key? key,
     required this.src,
@@ -28,21 +27,12 @@ class CNetworkImage extends StatefulWidget {
   final BoxFit? fit;
 
   @override
-  CNetworkImageState createState() => CNetworkImageState();
-}
-
-class CNetworkImageState extends State<CNetworkImage> {
-  ImageElement? image;
-
-  @override
   Widget build(final BuildContext context) {
     return Image.network(
-      '${Constants.backendTetaProxy}/${Uri.encodeComponent(widget.src)}',
-      width: widget.width,
-      height: widget.height,
-      cacheWidth: widget.width?.toInt(),
-      cacheHeight: widget.height?.toInt(),
-      fit: widget.fit ?? BoxFit.cover,
+      '${Constants.backendTetaProxy}/${Uri.encodeComponent(src)}',
+      width: width,
+      height: height,
+      fit: fit ?? BoxFit.cover,
     );
   }
 }
