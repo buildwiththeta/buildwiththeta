@@ -36,7 +36,7 @@ class $generatedClassName extends CNode {
       final String? description,
       final int? childOrder,
       final Map<String, dynamic>? attributes,
-      final Map<String, dynamic>? rectProperties,
+      final RectProperties? rectProperties,
       final DateTime? updatedAt,
       })
       : super(
@@ -47,7 +47,7 @@ class $generatedClassName extends CNode {
             intrinsicState: const DynamicIntrinsicState().getStateByType(NType.$type),
             defaultAttributes: const DefaultAttributesParse().getByType(NType.$type),
             attributes: attributes ?? {},
-            rectProperties: rectProperties ?? {},
+            rectProperties: rectProperties ?? CNode.defaultRProperties,
             adapter: const WidgetAdapterParse().getByType(NType.$type),
             description: description,
             childOrder: childOrder ?? 0,
@@ -66,7 +66,7 @@ class $generatedClassName extends CNode {
           String? description,
           int? childOrder,
           Map<String, dynamic>? attributes,
-          Map<String, dynamic>? rectProperties,
+          RectProperties? rectProperties,
           DateTime? updatedAt,
         }) =>
       $generatedClassName(
@@ -93,7 +93,7 @@ class $generatedClassName extends CNode {
       }
     }
 
-    final rectProperties = CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
     
     return $generatedClassName(
       id: json['id'],

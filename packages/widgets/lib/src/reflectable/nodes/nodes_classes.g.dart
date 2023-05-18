@@ -19,7 +19,7 @@ class AlignOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -31,7 +31,7 @@ class AlignOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.align),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.align),
           description: description,
           childOrder: childOrder ?? 0,
@@ -50,7 +50,7 @@ class AlignOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AlignOpenNode(
@@ -80,8 +80,7 @@ class AlignOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AlignOpenNode(
       id: json['id'],
@@ -113,7 +112,7 @@ class AspectRatioOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -125,7 +124,7 @@ class AspectRatioOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.aspectRatio),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.aspectRatio),
           description: description,
           childOrder: childOrder ?? 0,
@@ -144,7 +143,7 @@ class AspectRatioOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AspectRatioOpenNode(
@@ -174,8 +173,7 @@ class AspectRatioOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AspectRatioOpenNode(
       id: json['id'],
@@ -207,7 +205,7 @@ class AudioPlayerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -219,7 +217,7 @@ class AudioPlayerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.audioPlayer),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.audioPlayer),
           description: description,
           childOrder: childOrder ?? 0,
@@ -238,7 +236,7 @@ class AudioPlayerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerOpenNode(
@@ -268,8 +266,7 @@ class AudioPlayerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AudioPlayerOpenNode(
       id: json['id'],
@@ -301,7 +298,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -313,7 +310,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.audioPlayerProgressIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse()
               .getByType(NType.audioPlayerProgressIndicator),
           description: description,
@@ -333,7 +330,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
@@ -363,8 +360,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AudioPlayerProgressIndicatorOpenNode(
       id: json['id'],
@@ -396,7 +392,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -408,7 +404,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.audioPlayerVolumeIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse()
               .getByType(NType.audioPlayerVolumeIndicator),
           description: description,
@@ -428,7 +424,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
@@ -458,8 +454,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AudioPlayerVolumeIndicatorOpenNode(
       id: json['id'],
@@ -491,7 +486,7 @@ class BadgeOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -503,7 +498,7 @@ class BadgeOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.badge),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.badge),
           description: description,
           childOrder: childOrder ?? 0,
@@ -522,7 +517,7 @@ class BadgeOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       BadgeOpenNode(
@@ -552,8 +547,7 @@ class BadgeOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return BadgeOpenNode(
       id: json['id'],
@@ -585,7 +579,7 @@ class BarcodeOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -597,7 +591,7 @@ class BarcodeOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.barcode),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.barcode),
           description: description,
           childOrder: childOrder ?? 0,
@@ -616,7 +610,7 @@ class BarcodeOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       BarcodeOpenNode(
@@ -646,8 +640,7 @@ class BarcodeOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return BarcodeOpenNode(
       id: json['id'],
@@ -679,7 +672,7 @@ class BottomBarItemOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -691,7 +684,7 @@ class BottomBarItemOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.bottombaritem),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.bottombaritem),
           description: description,
           childOrder: childOrder ?? 0,
@@ -710,7 +703,7 @@ class BottomBarItemOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       BottomBarItemOpenNode(
@@ -740,8 +733,7 @@ class BottomBarItemOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return BottomBarItemOpenNode(
       id: json['id'],
@@ -773,7 +765,7 @@ class BouncingWidgetOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -785,7 +777,7 @@ class BouncingWidgetOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.bouncingWidget),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.bouncingWidget),
           description: description,
           childOrder: childOrder ?? 0,
@@ -804,7 +796,7 @@ class BouncingWidgetOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       BouncingWidgetOpenNode(
@@ -834,8 +826,7 @@ class BouncingWidgetOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return BouncingWidgetOpenNode(
       id: json['id'],
@@ -867,7 +858,7 @@ class ButtonOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -879,7 +870,7 @@ class ButtonOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.button),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.button),
           description: description,
           childOrder: childOrder ?? 0,
@@ -898,7 +889,7 @@ class ButtonOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ButtonOpenNode(
@@ -928,8 +919,7 @@ class ButtonOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ButtonOpenNode(
       id: json['id'],
@@ -961,7 +951,7 @@ class CalendarOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -973,7 +963,7 @@ class CalendarOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.calendar),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.calendar),
           description: description,
           childOrder: childOrder ?? 0,
@@ -992,7 +982,7 @@ class CalendarOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CalendarOpenNode(
@@ -1022,8 +1012,7 @@ class CalendarOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CalendarOpenNode(
       id: json['id'],
@@ -1055,7 +1044,7 @@ class CalendarV2OpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1067,7 +1056,7 @@ class CalendarV2OpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.calendarV2),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.calendarV2),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1086,7 +1075,7 @@ class CalendarV2OpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CalendarV2OpenNode(
@@ -1116,8 +1105,7 @@ class CalendarV2OpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CalendarV2OpenNode(
       id: json['id'],
@@ -1149,7 +1137,7 @@ class CardOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1161,7 +1149,7 @@ class CardOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.card),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.card),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1180,7 +1168,7 @@ class CardOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CardOpenNode(
@@ -1210,8 +1198,7 @@ class CardOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CardOpenNode(
       id: json['id'],
@@ -1243,7 +1230,7 @@ class CenterOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1255,7 +1242,7 @@ class CenterOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.center),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.center),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1274,7 +1261,7 @@ class CenterOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CenterOpenNode(
@@ -1304,8 +1291,7 @@ class CenterOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CenterOpenNode(
       id: json['id'],
@@ -1337,7 +1323,7 @@ class CheckboxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1349,7 +1335,7 @@ class CheckboxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.checkbox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.checkbox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1368,7 +1354,7 @@ class CheckboxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CheckboxOpenNode(
@@ -1398,8 +1384,7 @@ class CheckboxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CheckboxOpenNode(
       id: json['id'],
@@ -1431,7 +1416,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1443,7 +1428,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.circularProgressIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse()
               .getByType(NType.circularProgressIndicator),
           description: description,
@@ -1463,7 +1448,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CircularProgressIndicatorOpenNode(
@@ -1493,8 +1478,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CircularProgressIndicatorOpenNode(
       id: json['id'],
@@ -1526,7 +1510,7 @@ class ClipOvalOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1538,7 +1522,7 @@ class ClipOvalOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.clipOval),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.clipOval),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1557,7 +1541,7 @@ class ClipOvalOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipOvalOpenNode(
@@ -1587,8 +1571,7 @@ class ClipOvalOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ClipOvalOpenNode(
       id: json['id'],
@@ -1620,7 +1603,7 @@ class ClipRectOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1632,7 +1615,7 @@ class ClipRectOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.clipRect),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.clipRect),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1651,7 +1634,7 @@ class ClipRectOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipRectOpenNode(
@@ -1681,8 +1664,7 @@ class ClipRectOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ClipRectOpenNode(
       id: json['id'],
@@ -1714,7 +1696,7 @@ class ClipRRectOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1726,7 +1708,7 @@ class ClipRRectOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.clipRoundedRect),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.clipRoundedRect),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1745,7 +1727,7 @@ class ClipRRectOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ClipRRectOpenNode(
@@ -1775,8 +1757,7 @@ class ClipRRectOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ClipRRectOpenNode(
       id: json['id'],
@@ -1808,7 +1789,7 @@ class ColumnOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1820,7 +1801,7 @@ class ColumnOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.column),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.column),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1839,7 +1820,7 @@ class ColumnOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ColumnOpenNode(
@@ -1869,8 +1850,7 @@ class ColumnOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ColumnOpenNode(
       id: json['id'],
@@ -1902,7 +1882,7 @@ class ComponentOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -1914,7 +1894,7 @@ class ComponentOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.component),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.component),
           description: description,
           childOrder: childOrder ?? 0,
@@ -1933,7 +1913,7 @@ class ComponentOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ComponentOpenNode(
@@ -1963,8 +1943,7 @@ class ComponentOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ComponentOpenNode(
       id: json['id'],
@@ -1996,7 +1975,7 @@ class RowOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2008,7 +1987,7 @@ class RowOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.row),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.row),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2027,7 +2006,7 @@ class RowOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RowOpenNode(
@@ -2057,8 +2036,7 @@ class RowOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RowOpenNode(
       id: json['id'],
@@ -2090,7 +2068,7 @@ class ConcentricPageViewOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2102,7 +2080,7 @@ class ConcentricPageViewOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.concentricPageView),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.concentricPageView),
           description: description,
@@ -2122,7 +2100,7 @@ class ConcentricPageViewOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConcentricPageViewOpenNode(
@@ -2152,8 +2130,7 @@ class ConcentricPageViewOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ConcentricPageViewOpenNode(
       id: json['id'],
@@ -2185,7 +2162,7 @@ class ConditionOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2197,7 +2174,7 @@ class ConditionOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.condition),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.condition),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2216,7 +2193,7 @@ class ConditionOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConditionOpenNode(
@@ -2246,8 +2223,7 @@ class ConditionOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ConditionOpenNode(
       id: json['id'],
@@ -2279,7 +2255,7 @@ class ContainerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2291,7 +2267,7 @@ class ContainerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.container),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.container),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2310,7 +2286,7 @@ class ContainerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ContainerOpenNode(
@@ -2340,8 +2316,7 @@ class ContainerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ContainerOpenNode(
       id: json['id'],
@@ -2373,7 +2348,7 @@ class ConstrainedBoxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2385,7 +2360,7 @@ class ConstrainedBoxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.constrainedBox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.constrainedBox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2404,7 +2379,7 @@ class ConstrainedBoxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ConstrainedBoxOpenNode(
@@ -2434,8 +2409,7 @@ class ConstrainedBoxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ConstrainedBoxOpenNode(
       id: json['id'],
@@ -2467,7 +2441,7 @@ class LimitedBoxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2479,7 +2453,7 @@ class LimitedBoxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.limitedBox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.limitedBox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2498,7 +2472,7 @@ class LimitedBoxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LimitedBoxOpenNode(
@@ -2528,8 +2502,7 @@ class LimitedBoxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LimitedBoxOpenNode(
       id: json['id'],
@@ -2561,7 +2534,7 @@ class SizedBoxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2573,7 +2546,7 @@ class SizedBoxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.sizedBox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.sizedBox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2592,7 +2565,7 @@ class SizedBoxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SizedBoxOpenNode(
@@ -2622,8 +2595,7 @@ class SizedBoxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SizedBoxOpenNode(
       id: json['id'],
@@ -2655,7 +2627,7 @@ class DecoratedBoxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2667,7 +2639,7 @@ class DecoratedBoxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.decoratedBox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.decoratedBox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2686,7 +2658,7 @@ class DecoratedBoxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       DecoratedBoxOpenNode(
@@ -2716,8 +2688,7 @@ class DecoratedBoxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return DecoratedBoxOpenNode(
       id: json['id'],
@@ -2749,7 +2720,7 @@ class ImageOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2761,7 +2732,7 @@ class ImageOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.image),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.image),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2780,7 +2751,7 @@ class ImageOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ImageOpenNode(
@@ -2810,8 +2781,7 @@ class ImageOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ImageOpenNode(
       id: json['id'],
@@ -2843,7 +2813,7 @@ class CupertinoPickerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2855,7 +2825,7 @@ class CupertinoPickerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cupertinoPicker),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cupertinoPicker),
           description: description,
           childOrder: childOrder ?? 0,
@@ -2874,7 +2844,7 @@ class CupertinoPickerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoPickerOpenNode(
@@ -2904,8 +2874,7 @@ class CupertinoPickerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CupertinoPickerOpenNode(
       id: json['id'],
@@ -2937,7 +2906,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -2949,7 +2918,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.cupertinoSegmentedControl),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse()
               .getByType(NType.cupertinoSegmentedControl),
           description: description,
@@ -2969,7 +2938,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoSegmentedControlOpenNode(
@@ -2999,8 +2968,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CupertinoSegmentedControlOpenNode(
       id: json['id'],
@@ -3032,7 +3000,7 @@ class CupertinoSwitchOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3044,7 +3012,7 @@ class CupertinoSwitchOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cupertinoSwitch),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cupertinoSwitch),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3063,7 +3031,7 @@ class CupertinoSwitchOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CupertinoSwitchOpenNode(
@@ -3093,8 +3061,7 @@ class CupertinoSwitchOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CupertinoSwitchOpenNode(
       id: json['id'],
@@ -3126,7 +3093,7 @@ class DividerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3138,7 +3105,7 @@ class DividerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.divider),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.divider),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3157,7 +3124,7 @@ class DividerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       DividerOpenNode(
@@ -3187,8 +3154,7 @@ class DividerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return DividerOpenNode(
       id: json['id'],
@@ -3220,7 +3186,7 @@ class DotsIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3232,7 +3198,7 @@ class DotsIndicatorOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.dotsIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.dotsIndicator),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3251,7 +3217,7 @@ class DotsIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       DotsIndicatorOpenNode(
@@ -3281,8 +3247,7 @@ class DotsIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return DotsIndicatorOpenNode(
       id: json['id'],
@@ -3314,7 +3279,7 @@ class ExpandedOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3326,7 +3291,7 @@ class ExpandedOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.expanded),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.expanded),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3345,7 +3310,7 @@ class ExpandedOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ExpandedOpenNode(
@@ -3375,8 +3340,7 @@ class ExpandedOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ExpandedOpenNode(
       id: json['id'],
@@ -3408,7 +3372,7 @@ class AdMobBannerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3420,7 +3384,7 @@ class AdMobBannerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.adMobBanner),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.adMobBanner),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3439,7 +3403,7 @@ class AdMobBannerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AdMobBannerOpenNode(
@@ -3469,8 +3433,7 @@ class AdMobBannerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AdMobBannerOpenNode(
       id: json['id'],
@@ -3502,7 +3465,7 @@ class GoogleMapsOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3514,7 +3477,7 @@ class GoogleMapsOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.googleMaps),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.googleMaps),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3533,7 +3496,7 @@ class GoogleMapsOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       GoogleMapsOpenNode(
@@ -3563,8 +3526,7 @@ class GoogleMapsOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return GoogleMapsOpenNode(
       id: json['id'],
@@ -3596,7 +3558,7 @@ class GridViewOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3608,7 +3570,7 @@ class GridViewOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.gridView),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.gridView),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3627,7 +3589,7 @@ class GridViewOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       GridViewOpenNode(
@@ -3657,8 +3619,7 @@ class GridViewOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return GridViewOpenNode(
       id: json['id'],
@@ -3690,7 +3651,7 @@ class GridViewBuilderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3702,7 +3663,7 @@ class GridViewBuilderOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.gridViewBuilder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.gridViewBuilder),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3721,7 +3682,7 @@ class GridViewBuilderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       GridViewBuilderOpenNode(
@@ -3751,8 +3712,7 @@ class GridViewBuilderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return GridViewBuilderOpenNode(
       id: json['id'],
@@ -3784,7 +3744,7 @@ class HeroOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3796,7 +3756,7 @@ class HeroOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.hero),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.hero),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3815,7 +3775,7 @@ class HeroOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       HeroOpenNode(
@@ -3845,8 +3805,7 @@ class HeroOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return HeroOpenNode(
       id: json['id'],
@@ -3878,7 +3837,7 @@ class IconOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3890,7 +3849,7 @@ class IconOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.icon),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.icon),
           description: description,
           childOrder: childOrder ?? 0,
@@ -3909,7 +3868,7 @@ class IconOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       IconOpenNode(
@@ -3939,8 +3898,7 @@ class IconOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return IconOpenNode(
       id: json['id'],
@@ -3972,7 +3930,7 @@ class IgnorePointerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -3984,7 +3942,7 @@ class IgnorePointerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.ignorePointer),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.ignorePointer),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4003,7 +3961,7 @@ class IgnorePointerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       IgnorePointerOpenNode(
@@ -4033,8 +3991,7 @@ class IgnorePointerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return IgnorePointerOpenNode(
       id: json['id'],
@@ -4066,7 +4023,7 @@ class IndexedStackOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4078,7 +4035,7 @@ class IndexedStackOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.indexedStack),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.indexedStack),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4097,7 +4054,7 @@ class IndexedStackOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       IndexedStackOpenNode(
@@ -4127,8 +4084,7 @@ class IndexedStackOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return IndexedStackOpenNode(
       id: json['id'],
@@ -4160,7 +4116,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4172,7 +4128,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.linearProgressIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse()
               .getByType(NType.linearProgressIndicator),
           description: description,
@@ -4192,7 +4148,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LinearProgressIndicatorOpenNode(
@@ -4222,8 +4178,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LinearProgressIndicatorOpenNode(
       id: json['id'],
@@ -4255,7 +4210,7 @@ class LiquidSwipeOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4267,7 +4222,7 @@ class LiquidSwipeOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.liquidSwipe),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.liquidSwipe),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4286,7 +4241,7 @@ class LiquidSwipeOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LiquidSwipeOpenNode(
@@ -4316,8 +4271,7 @@ class LiquidSwipeOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LiquidSwipeOpenNode(
       id: json['id'],
@@ -4349,7 +4303,7 @@ class ListTileOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4361,7 +4315,7 @@ class ListTileOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.listTile),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.listTile),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4380,7 +4334,7 @@ class ListTileOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListTileOpenNode(
@@ -4410,8 +4364,7 @@ class ListTileOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ListTileOpenNode(
       id: json['id'],
@@ -4443,7 +4396,7 @@ class ListViewOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4455,7 +4408,7 @@ class ListViewOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.listView),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.listView),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4474,7 +4427,7 @@ class ListViewOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListViewOpenNode(
@@ -4504,8 +4457,7 @@ class ListViewOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ListViewOpenNode(
       id: json['id'],
@@ -4537,7 +4489,7 @@ class ListViewBuilderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4549,7 +4501,7 @@ class ListViewBuilderOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.listViewBuilder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.listViewBuilder),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4568,7 +4520,7 @@ class ListViewBuilderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ListViewBuilderOpenNode(
@@ -4598,8 +4550,7 @@ class ListViewBuilderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ListViewBuilderOpenNode(
       id: json['id'],
@@ -4631,7 +4582,7 @@ class LottieOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4643,7 +4594,7 @@ class LottieOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.lottie),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.lottie),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4662,7 +4613,7 @@ class LottieOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LottieOpenNode(
@@ -4692,8 +4643,7 @@ class LottieOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LottieOpenNode(
       id: json['id'],
@@ -4725,7 +4675,7 @@ class MapOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4737,7 +4687,7 @@ class MapOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.map),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.map),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4756,7 +4706,7 @@ class MapOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       MapOpenNode(
@@ -4786,8 +4736,7 @@ class MapOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return MapOpenNode(
       id: json['id'],
@@ -4819,7 +4768,7 @@ class MarkerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4831,7 +4780,7 @@ class MarkerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.marker),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.marker),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4850,7 +4799,7 @@ class MarkerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       MarkerOpenNode(
@@ -4880,8 +4829,7 @@ class MarkerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return MarkerOpenNode(
       id: json['id'],
@@ -4913,7 +4861,7 @@ class OpacityOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -4925,7 +4873,7 @@ class OpacityOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.opacity),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.opacity),
           description: description,
           childOrder: childOrder ?? 0,
@@ -4944,7 +4892,7 @@ class OpacityOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       OpacityOpenNode(
@@ -4974,8 +4922,7 @@ class OpacityOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return OpacityOpenNode(
       id: json['id'],
@@ -5007,7 +4954,7 @@ class PaddingOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5019,7 +4966,7 @@ class PaddingOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.padding),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.padding),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5038,7 +4985,7 @@ class PaddingOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       PaddingOpenNode(
@@ -5068,8 +5015,7 @@ class PaddingOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return PaddingOpenNode(
       id: json['id'],
@@ -5101,7 +5047,7 @@ class PageViewOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5113,7 +5059,7 @@ class PageViewOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.pageView),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.pageView),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5132,7 +5078,7 @@ class PageViewOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       PageViewOpenNode(
@@ -5162,8 +5108,7 @@ class PageViewOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return PageViewOpenNode(
       id: json['id'],
@@ -5195,7 +5140,7 @@ class PlaceholderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5207,7 +5152,7 @@ class PlaceholderOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.placeholder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.placeholder),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5226,7 +5171,7 @@ class PlaceholderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       PlaceholderOpenNode(
@@ -5256,8 +5201,7 @@ class PlaceholderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return PlaceholderOpenNode(
       id: json['id'],
@@ -5289,7 +5233,7 @@ class PositionedOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5301,7 +5245,7 @@ class PositionedOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.positioned),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.positioned),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5320,7 +5264,7 @@ class PositionedOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       PositionedOpenNode(
@@ -5350,8 +5294,7 @@ class PositionedOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return PositionedOpenNode(
       id: json['id'],
@@ -5383,7 +5326,7 @@ class SafeAreaOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5395,7 +5338,7 @@ class SafeAreaOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.safeArea),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.safeArea),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5414,7 +5357,7 @@ class SafeAreaOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SafeAreaOpenNode(
@@ -5444,8 +5387,7 @@ class SafeAreaOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SafeAreaOpenNode(
       id: json['id'],
@@ -5477,7 +5419,7 @@ class QRScannerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5489,7 +5431,7 @@ class QRScannerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.qrScanner),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.qrScanner),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5508,7 +5450,7 @@ class QRScannerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       QRScannerOpenNode(
@@ -5538,8 +5480,7 @@ class QRScannerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return QRScannerOpenNode(
       id: json['id'],
@@ -5571,7 +5512,7 @@ class QRCodeOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5583,7 +5524,7 @@ class QRCodeOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.qrCode),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.qrCode),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5602,7 +5543,7 @@ class QRCodeOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       QRCodeOpenNode(
@@ -5632,8 +5573,7 @@ class QRCodeOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return QRCodeOpenNode(
       id: json['id'],
@@ -5665,7 +5605,7 @@ class RadioOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5677,7 +5617,7 @@ class RadioOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.radio),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.radio),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5696,7 +5636,7 @@ class RadioOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RadioOpenNode(
@@ -5726,8 +5666,7 @@ class RadioOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RadioOpenNode(
       id: json['id'],
@@ -5759,7 +5698,7 @@ class RefreshIndicatorOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5771,7 +5710,7 @@ class RefreshIndicatorOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.refreshIndicator),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.refreshIndicator),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5790,7 +5729,7 @@ class RefreshIndicatorOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RefreshIndicatorOpenNode(
@@ -5820,8 +5759,7 @@ class RefreshIndicatorOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RefreshIndicatorOpenNode(
       id: json['id'],
@@ -5853,7 +5791,7 @@ class ResponsiveConditionOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5865,7 +5803,7 @@ class ResponsiveConditionOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.responsiveCondition),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.responsiveCondition),
           description: description,
@@ -5885,7 +5823,7 @@ class ResponsiveConditionOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ResponsiveConditionOpenNode(
@@ -5915,8 +5853,7 @@ class ResponsiveConditionOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ResponsiveConditionOpenNode(
       id: json['id'],
@@ -5948,7 +5885,7 @@ class RotatedBoxOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -5960,7 +5897,7 @@ class RotatedBoxOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.rotatedBox),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.rotatedBox),
           description: description,
           childOrder: childOrder ?? 0,
@@ -5979,7 +5916,7 @@ class RotatedBoxOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RotatedBoxOpenNode(
@@ -6009,8 +5946,7 @@ class RotatedBoxOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RotatedBoxOpenNode(
       id: json['id'],
@@ -6042,7 +5978,7 @@ class ScaffoldOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6054,7 +5990,7 @@ class ScaffoldOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.scaffold),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.scaffold),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6073,7 +6009,7 @@ class ScaffoldOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ScaffoldOpenNode(
@@ -6103,8 +6039,7 @@ class ScaffoldOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ScaffoldOpenNode(
       id: json['id'],
@@ -6136,7 +6071,7 @@ class SpacerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6148,7 +6083,7 @@ class SpacerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.spacer),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.spacer),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6167,7 +6102,7 @@ class SpacerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SpacerOpenNode(
@@ -6197,8 +6132,7 @@ class SpacerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SpacerOpenNode(
       id: json['id'],
@@ -6230,7 +6164,7 @@ class StackOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6242,7 +6176,7 @@ class StackOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.stack),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.stack),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6261,7 +6195,7 @@ class StackOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       StackOpenNode(
@@ -6291,8 +6225,7 @@ class StackOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return StackOpenNode(
       id: json['id'],
@@ -6324,7 +6257,7 @@ class TCardOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6336,7 +6269,7 @@ class TCardOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.tcard),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.tcard),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6355,7 +6288,7 @@ class TCardOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       TCardOpenNode(
@@ -6385,8 +6318,7 @@ class TCardOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return TCardOpenNode(
       id: json['id'],
@@ -6418,7 +6350,7 @@ class TCardBuilderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6430,7 +6362,7 @@ class TCardBuilderOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.tcardBuilder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.tcardBuilder),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6449,7 +6381,7 @@ class TCardBuilderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       TCardBuilderOpenNode(
@@ -6479,8 +6411,7 @@ class TCardBuilderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return TCardBuilderOpenNode(
       id: json['id'],
@@ -6512,7 +6443,7 @@ class TextOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6524,7 +6455,7 @@ class TextOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.text),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.text),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6543,7 +6474,7 @@ class TextOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       TextOpenNode(
@@ -6573,8 +6504,7 @@ class TextOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return TextOpenNode(
       id: json['id'],
@@ -6606,7 +6536,7 @@ class TextFieldOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6618,7 +6548,7 @@ class TextFieldOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.textField),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.textField),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6637,7 +6567,7 @@ class TextFieldOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       TextFieldOpenNode(
@@ -6667,8 +6597,7 @@ class TextFieldOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return TextFieldOpenNode(
       id: json['id'],
@@ -6700,7 +6629,7 @@ class TooltipOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6712,7 +6641,7 @@ class TooltipOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.tooltip),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.tooltip),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6731,7 +6660,7 @@ class TooltipOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       TooltipOpenNode(
@@ -6761,8 +6690,7 @@ class TooltipOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return TooltipOpenNode(
       id: json['id'],
@@ -6794,7 +6722,7 @@ class VideoOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6806,7 +6734,7 @@ class VideoOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.video),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.video),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6825,7 +6753,7 @@ class VideoOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       VideoOpenNode(
@@ -6855,8 +6783,7 @@ class VideoOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return VideoOpenNode(
       id: json['id'],
@@ -6888,7 +6815,7 @@ class VisibilityOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6900,7 +6827,7 @@ class VisibilityOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.visibility),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.visibility),
           description: description,
           childOrder: childOrder ?? 0,
@@ -6919,7 +6846,7 @@ class VisibilityOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       VisibilityOpenNode(
@@ -6949,8 +6876,7 @@ class VisibilityOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return VisibilityOpenNode(
       id: json['id'],
@@ -6982,7 +6908,7 @@ class WebviewOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -6994,7 +6920,7 @@ class WebviewOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.webview),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.webview),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7013,7 +6939,7 @@ class WebviewOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       WebviewOpenNode(
@@ -7043,8 +6969,7 @@ class WebviewOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return WebviewOpenNode(
       id: json['id'],
@@ -7076,7 +7001,7 @@ class WrapOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7088,7 +7013,7 @@ class WrapOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.wrap),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.wrap),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7107,7 +7032,7 @@ class WrapOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       WrapOpenNode(
@@ -7137,8 +7062,7 @@ class WrapOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return WrapOpenNode(
       id: json['id'],
@@ -7170,7 +7094,7 @@ class AnimationConfigGridOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7182,7 +7106,7 @@ class AnimationConfigGridOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.animationConfigGrid),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.animationConfigGrid),
           description: description,
@@ -7202,7 +7126,7 @@ class AnimationConfigGridOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AnimationConfigGridOpenNode(
@@ -7232,8 +7156,7 @@ class AnimationConfigGridOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AnimationConfigGridOpenNode(
       id: json['id'],
@@ -7265,7 +7188,7 @@ class AnimationConfigListOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7277,7 +7200,7 @@ class AnimationConfigListOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.animationConfigList),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.animationConfigList),
           description: description,
@@ -7297,7 +7220,7 @@ class AnimationConfigListOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AnimationConfigListOpenNode(
@@ -7327,8 +7250,7 @@ class AnimationConfigListOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AnimationConfigListOpenNode(
       id: json['id'],
@@ -7360,7 +7282,7 @@ class FadeInAnimationOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7372,7 +7294,7 @@ class FadeInAnimationOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.fadeInAnimation),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.fadeInAnimation),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7391,7 +7313,7 @@ class FadeInAnimationOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       FadeInAnimationOpenNode(
@@ -7421,8 +7343,7 @@ class FadeInAnimationOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return FadeInAnimationOpenNode(
       id: json['id'],
@@ -7454,7 +7375,7 @@ class ScaleAnimationOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7466,7 +7387,7 @@ class ScaleAnimationOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.scaleAnimation),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.scaleAnimation),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7485,7 +7406,7 @@ class ScaleAnimationOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ScaleAnimationOpenNode(
@@ -7515,8 +7436,7 @@ class ScaleAnimationOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ScaleAnimationOpenNode(
       id: json['id'],
@@ -7548,7 +7468,7 @@ class SlideAnimationOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7560,7 +7480,7 @@ class SlideAnimationOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.slideAnimation),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.slideAnimation),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7579,7 +7499,7 @@ class SlideAnimationOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SlideAnimationOpenNode(
@@ -7609,8 +7529,7 @@ class SlideAnimationOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SlideAnimationOpenNode(
       id: json['id'],
@@ -7642,7 +7561,7 @@ class ApiCallsFetchOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7654,7 +7573,7 @@ class ApiCallsFetchOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.apiCallsFetch),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.apiCallsFetch),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7673,7 +7592,7 @@ class ApiCallsFetchOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       ApiCallsFetchOpenNode(
@@ -7703,8 +7622,7 @@ class ApiCallsFetchOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return ApiCallsFetchOpenNode(
       id: json['id'],
@@ -7736,7 +7654,7 @@ class LoginWithAppleOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7748,7 +7666,7 @@ class LoginWithAppleOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithApple),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithApple),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7767,7 +7685,7 @@ class LoginWithAppleOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithAppleOpenNode(
@@ -7797,8 +7715,7 @@ class LoginWithAppleOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithAppleOpenNode(
       id: json['id'],
@@ -7830,7 +7747,7 @@ class LoginWithFacebookOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7842,7 +7759,7 @@ class LoginWithFacebookOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithFacebook),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithFacebook),
           description: description,
@@ -7862,7 +7779,7 @@ class LoginWithFacebookOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithFacebookOpenNode(
@@ -7892,8 +7809,7 @@ class LoginWithFacebookOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithFacebookOpenNode(
       id: json['id'],
@@ -7925,7 +7841,7 @@ class LoginWithGoogleOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -7937,7 +7853,7 @@ class LoginWithGoogleOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithGoogle),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGoogle),
           description: description,
           childOrder: childOrder ?? 0,
@@ -7956,7 +7872,7 @@ class LoginWithGoogleOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGoogleOpenNode(
@@ -7986,8 +7902,7 @@ class LoginWithGoogleOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithGoogleOpenNode(
       id: json['id'],
@@ -8019,7 +7934,7 @@ class LoginWithTwitterOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8031,7 +7946,7 @@ class LoginWithTwitterOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithTwitter),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithTwitter),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8050,7 +7965,7 @@ class LoginWithTwitterOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithTwitterOpenNode(
@@ -8080,8 +7995,7 @@ class LoginWithTwitterOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithTwitterOpenNode(
       id: json['id'],
@@ -8113,7 +8027,7 @@ class LoginWithGithubOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8125,7 +8039,7 @@ class LoginWithGithubOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithGitHub),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGitHub),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8144,7 +8058,7 @@ class LoginWithGithubOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGithubOpenNode(
@@ -8174,8 +8088,7 @@ class LoginWithGithubOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithGithubOpenNode(
       id: json['id'],
@@ -8207,7 +8120,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8219,7 +8132,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.loginWithMicrosoft),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithMicrosoft),
           description: description,
@@ -8239,7 +8152,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithMicrosoftOpenNode(
@@ -8269,8 +8182,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithMicrosoftOpenNode(
       id: json['id'],
@@ -8302,7 +8214,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8314,7 +8226,7 @@ class LoginWithLinkedinOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithLinkedin),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithLinkedin),
           description: description,
@@ -8334,7 +8246,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithLinkedinOpenNode(
@@ -8364,8 +8276,7 @@ class LoginWithLinkedinOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithLinkedinOpenNode(
       id: json['id'],
@@ -8397,7 +8308,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8409,7 +8320,7 @@ class LoginWithBitbucketOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.loginWithBitBucket),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.loginWithBitBucket),
           description: description,
@@ -8429,7 +8340,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithBitbucketOpenNode(
@@ -8459,8 +8370,7 @@ class LoginWithBitbucketOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithBitbucketOpenNode(
       id: json['id'],
@@ -8492,7 +8402,7 @@ class LoginWithDiscordOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8504,7 +8414,7 @@ class LoginWithDiscordOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithDiscord),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithDiscord),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8523,7 +8433,7 @@ class LoginWithDiscordOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithDiscordOpenNode(
@@ -8553,8 +8463,7 @@ class LoginWithDiscordOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithDiscordOpenNode(
       id: json['id'],
@@ -8586,7 +8495,7 @@ class LoginWithTwitchOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8598,7 +8507,7 @@ class LoginWithTwitchOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithTwitch),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithTwitch),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8617,7 +8526,7 @@ class LoginWithTwitchOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithTwitchOpenNode(
@@ -8647,8 +8556,7 @@ class LoginWithTwitchOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithTwitchOpenNode(
       id: json['id'],
@@ -8680,7 +8588,7 @@ class LoginWithGitlabOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8692,7 +8600,7 @@ class LoginWithGitlabOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.loginWithGitlab),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.loginWithGitlab),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8711,7 +8619,7 @@ class LoginWithGitlabOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       LoginWithGitlabOpenNode(
@@ -8741,8 +8649,7 @@ class LoginWithGitlabOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return LoginWithGitlabOpenNode(
       id: json['id'],
@@ -8774,7 +8681,7 @@ class HttpRequestOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8786,7 +8693,7 @@ class HttpRequestOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.httpRequest),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.httpRequest),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8805,7 +8712,7 @@ class HttpRequestOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       HttpRequestOpenNode(
@@ -8835,8 +8742,7 @@ class HttpRequestOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return HttpRequestOpenNode(
       id: json['id'],
@@ -8868,7 +8774,7 @@ class CustomHttpRequestOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8880,7 +8786,7 @@ class CustomHttpRequestOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.customHttpRequest),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.customHttpRequest),
           description: description,
@@ -8900,7 +8806,7 @@ class CustomHttpRequestOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CustomHttpRequestOpenNode(
@@ -8930,8 +8836,7 @@ class CustomHttpRequestOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CustomHttpRequestOpenNode(
       id: json['id'],
@@ -8963,7 +8868,7 @@ class AppBarOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -8975,7 +8880,7 @@ class AppBarOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.appBar),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.appBar),
           description: description,
           childOrder: childOrder ?? 0,
@@ -8994,7 +8899,7 @@ class AppBarOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       AppBarOpenNode(
@@ -9024,8 +8929,7 @@ class AppBarOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return AppBarOpenNode(
       id: json['id'],
@@ -9057,7 +8961,7 @@ class BottomBarOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9069,7 +8973,7 @@ class BottomBarOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.bottomBar),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.bottomBar),
           description: description,
           childOrder: childOrder ?? 0,
@@ -9088,7 +8992,7 @@ class BottomBarOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       BottomBarOpenNode(
@@ -9118,8 +9022,7 @@ class BottomBarOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return BottomBarOpenNode(
       id: json['id'],
@@ -9151,7 +9054,7 @@ class DrawerOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9163,7 +9066,7 @@ class DrawerOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.drawer),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.drawer),
           description: description,
           childOrder: childOrder ?? 0,
@@ -9182,7 +9085,7 @@ class DrawerOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       DrawerOpenNode(
@@ -9212,8 +9115,7 @@ class DrawerOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return DrawerOpenNode(
       id: json['id'],
@@ -9245,7 +9147,7 @@ class QonversionProductsOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9257,7 +9159,7 @@ class QonversionProductsOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.qonversionProducts),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.qonversionProducts),
           description: description,
@@ -9277,7 +9179,7 @@ class QonversionProductsOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       QonversionProductsOpenNode(
@@ -9307,8 +9209,7 @@ class QonversionProductsOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return QonversionProductsOpenNode(
       id: json['id'],
@@ -9340,7 +9241,7 @@ class QonversionSubStatusOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9352,7 +9253,7 @@ class QonversionSubStatusOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.qonversionSubStatus),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.qonversionSubStatus),
           description: description,
@@ -9372,7 +9273,7 @@ class QonversionSubStatusOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       QonversionSubStatusOpenNode(
@@ -9402,8 +9303,7 @@ class QonversionSubStatusOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return QonversionSubStatusOpenNode(
       id: json['id'],
@@ -9435,7 +9335,7 @@ class RevenueCatProductsOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9447,7 +9347,7 @@ class RevenueCatProductsOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.revenueCatProducts),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.revenueCatProducts),
           description: description,
@@ -9467,7 +9367,7 @@ class RevenueCatProductsOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RevenueCatProductsOpenNode(
@@ -9497,8 +9397,7 @@ class RevenueCatProductsOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RevenueCatProductsOpenNode(
       id: json['id'],
@@ -9530,7 +9429,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9542,7 +9441,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.revenueCatSubStatus),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.revenueCatSubStatus),
           description: description,
@@ -9562,7 +9461,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       RevenueCatSubStatusOpenNode(
@@ -9592,8 +9491,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return RevenueCatSubStatusOpenNode(
       id: json['id'],
@@ -9625,7 +9523,7 @@ class WrapperOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9637,7 +9535,7 @@ class WrapperOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.wrapper),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.wrapper),
           description: description,
           childOrder: childOrder ?? 0,
@@ -9656,7 +9554,7 @@ class WrapperOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       WrapperOpenNode(
@@ -9686,8 +9584,7 @@ class WrapperOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return WrapperOpenNode(
       id: json['id'],
@@ -9719,7 +9616,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9731,7 +9628,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.supabaseFutureBuilder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseFutureBuilder),
           description: description,
@@ -9751,7 +9648,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseFutureBuilderOpenNode(
@@ -9781,8 +9678,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SupabaseFutureBuilderOpenNode(
       id: json['id'],
@@ -9814,7 +9710,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9826,7 +9722,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.supabaseStreamBuilder),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseStreamBuilder),
           description: description,
@@ -9846,7 +9742,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseStreamBuilderOpenNode(
@@ -9876,8 +9772,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SupabaseStreamBuilderOpenNode(
       id: json['id'],
@@ -9909,7 +9804,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -9921,7 +9816,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
           defaultAttributes: const DefaultAttributesParse()
               .getByType(NType.supabaseLoggedUser),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter:
               const WidgetAdapterParse().getByType(NType.supabaseLoggedUser),
           description: description,
@@ -9941,7 +9836,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       SupabaseLoggedUserOpenNode(
@@ -9971,8 +9866,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return SupabaseLoggedUserOpenNode(
       id: json['id'],
@@ -10004,7 +9898,7 @@ class CMSCountOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -10016,7 +9910,7 @@ class CMSCountOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cmsCount),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cmsCount),
           description: description,
           childOrder: childOrder ?? 0,
@@ -10035,7 +9929,7 @@ class CMSCountOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSCountOpenNode(
@@ -10065,8 +9959,7 @@ class CMSCountOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CMSCountOpenNode(
       id: json['id'],
@@ -10098,7 +9991,7 @@ class CMSCustomQueryOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -10110,7 +10003,7 @@ class CMSCustomQueryOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cmsCustomQuery),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cmsCustomQuery),
           description: description,
           childOrder: childOrder ?? 0,
@@ -10129,7 +10022,7 @@ class CMSCustomQueryOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSCustomQueryOpenNode(
@@ -10159,8 +10052,7 @@ class CMSCustomQueryOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CMSCustomQueryOpenNode(
       id: json['id'],
@@ -10192,7 +10084,7 @@ class CMSFetchOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -10204,7 +10096,7 @@ class CMSFetchOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cmsFetch),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cmsFetch),
           description: description,
           childOrder: childOrder ?? 0,
@@ -10223,7 +10115,7 @@ class CMSFetchOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSFetchOpenNode(
@@ -10253,8 +10145,7 @@ class CMSFetchOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CMSFetchOpenNode(
       id: json['id'],
@@ -10286,7 +10177,7 @@ class CMSStreamOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -10298,7 +10189,7 @@ class CMSStreamOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cmsStream),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cmsStream),
           description: description,
           childOrder: childOrder ?? 0,
@@ -10317,7 +10208,7 @@ class CMSStreamOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSStreamOpenNode(
@@ -10347,8 +10238,7 @@ class CMSStreamOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CMSStreamOpenNode(
       id: json['id'],
@@ -10380,7 +10270,7 @@ class CMSLoggedUserOpenNode extends CNode {
     final String? description,
     final int? childOrder,
     final Map<String, dynamic>? attributes,
-    final Map<String, dynamic>? rectProperties,
+    final RectProperties? rectProperties,
     final DateTime? updatedAt,
   }) : super(
           id: id,
@@ -10392,7 +10282,7 @@ class CMSLoggedUserOpenNode extends CNode {
           defaultAttributes:
               const DefaultAttributesParse().getByType(NType.cmsLoggedUser),
           attributes: attributes ?? {},
-          rectProperties: rectProperties ?? {},
+          rectProperties: rectProperties ?? CNode.defaultRProperties,
           adapter: const WidgetAdapterParse().getByType(NType.cmsLoggedUser),
           description: description,
           childOrder: childOrder ?? 0,
@@ -10411,7 +10301,7 @@ class CMSLoggedUserOpenNode extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) =>
       CMSLoggedUserOpenNode(
@@ -10441,8 +10331,7 @@ class CMSLoggedUserOpenNode extends CNode {
       }
     }
 
-    final rectProperties =
-        CNode.rectPropertiesFromJson(json['rect_properties']);
+    final rectProperties = RectProperties.fromJson(json['rect_properties']);
 
     return CMSLoggedUserOpenNode(
       id: json['id'],

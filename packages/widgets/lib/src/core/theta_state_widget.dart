@@ -12,6 +12,7 @@ typedef OnNodeChangedCallBack = void Function(
 typedef OnNodeAddedCallBack = void Function(
   CNode node,
   CNode parent,
+  Offset offset,
 )?;
 
 typedef OnNodeFocusedCallBack = void Function(
@@ -48,8 +49,9 @@ class TreeGlobalState extends StatefulWidget {
   static void onNodeAdded(
     CNode node,
     CNode parent,
+    Offset offset,
   ) =>
-      _onNodeAdded!.call(node, parent);
+      _onNodeAdded!.call(node, parent, offset);
 
   static void onNodeChanged(
     CNode node,
