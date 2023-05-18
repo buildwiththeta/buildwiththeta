@@ -822,39 +822,18 @@ class ListTileIntrinsicStates extends IntrinsicState {
   ListTileIntrinsicStates.create() : this();
 }
 
-/// ListViewBuilder
-/// https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html
-@nodeTypeISKey
-@NodeKey(NType.listViewBuilder)
-class ListViewBuilderIntrinsicStates extends IntrinsicState {
-  ListViewBuilderIntrinsicStates()
-      : super(
-          nodeIcon: Assets.wIcons.list.path,
-          synonymous: const ['listview builder', 'scroll', 'vertical list'],
-          displayName: NodeType.name(NType.listViewBuilder),
-          type: NType.listViewBuilder,
-          category: NodeCategories.layout,
-          maxChildren: 1,
-          canHave: ChildrenEnum.child,
-          gestures: const <Trigger>[
-            Trigger.scrollToTop,
-            Trigger.scrollToBottom,
-          ],
-        );
-  ListViewBuilderIntrinsicStates.create() : this();
-}
-
 /// ListView
 /// https://api.flutter.dev/flutter/widgets/ListView-class.html
 @nodeTypeISKey
 @NodeKey(NType.listView)
+@NodeKey(NType.gridView)
 class ListViewIntrinsicStates extends IntrinsicState {
   ListViewIntrinsicStates()
       : super(
           nodeIcon: Assets.wIcons.list.path,
           blockedTypes: const [],
           synonymous: const ['scroll', 'vertical list', 'listview'],
-          displayName: NodeType.name(NType.listView),
+          displayName: 'Collection',
           type: NType.listView,
           category: NodeCategories.layout,
           maxChildren: null,
