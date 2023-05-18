@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theta_models/src/widgets/nodes/rect_properties.dart';
 import 'package:theta_models/theta_models.dart';
 
 class NNull extends CNode {
@@ -13,7 +14,7 @@ class NNull extends CNode {
           intrinsicState: intrinsicState,
           defaultAttributes: const {},
           attributes: const {},
-          rectProperties: const {},
+          rectProperties: CNode.defaultRProperties,
           adapter: const NNullWidgetAdapter(),
           updatedAt: DateTime.now(),
         );
@@ -47,7 +48,7 @@ class NNull extends CNode {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime? updatedAt,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');

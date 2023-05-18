@@ -1,25 +1,7 @@
 import 'package:device_frame/device_frame.dart';
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
-
-const _defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
-final _defaultRProperties = {
-  'rect': {
-    DeviceType.phone.name: _defaultRectForMobile,
-    DeviceType.tablet.name: null,
-    DeviceType.desktop.name: null,
-  },
-  'flipRectWhileResizing': true,
-  'flipChild': true,
-  'constraintsEnabled': false,
-  'resizable': true,
-  'movable': true,
-  'hideHandlesWhenNotResizable': true,
-  'vertical_align': ResponsiveAlignment.start,
-  'horizontal_align': ResponsiveAlignment.start,
-};
 
 /// CNode is the mother of all sub node classes.
 /// CNode = Custom Node.
@@ -33,7 +15,7 @@ abstract class CNode extends Equatable {
     required this.intrinsicState,
     required final DefaultNodeAttributes defaultAttributes,
     required final NodeAttributes attributes,
-    required final NodeAttributes rectProperties,
+    required final RectProperties rectProperties,
     required this.adapter,
     required this.updatedAt,
     this.name,
@@ -62,7 +44,24 @@ abstract class CNode extends Equatable {
     ),
   };
 
-  final Map<String, dynamic> _defaultRectProperties = _defaultRProperties;
+  static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
+  static const defaultRProperties = RectProperties(
+    rect: ResponsiveRect(
+      rectPhone: defaultRectForMobile,
+      rectTablet: null,
+      rectDesktop: null,
+    ),
+    flipRectWhileResizing: true,
+    flipChild: true,
+    constraintsEnabled: false,
+    resizable: true,
+    movable: true,
+    hideHandlesWhenNotResizable: true,
+    verticalAlign: ResponsiveAlignment.start,
+    horizontalAlign: ResponsiveAlignment.start,
+  );
+
+  final RectProperties _defaultRectProperties = defaultRProperties;
 
   /// It returns the node's default attributes
   final DefaultNodeAttributes _defaultAttributes;
@@ -70,7 +69,7 @@ abstract class CNode extends Equatable {
   /// It returns the node's current attributes
   final NodeAttributes _attributes;
 
-  final NodeAttributes _rectProperties;
+  final RectProperties _rectProperties;
 
   /// It returns the node's attributes
   /// It merges the default attributes with the current attributes
@@ -80,10 +79,10 @@ abstract class CNode extends Equatable {
         ..._attributes,
       };
 
-  Map<String, dynamic> get getRectProperties => {
-        ..._defaultRectProperties,
-        ..._rectProperties,
-      };
+  RectProperties get getRectProperties => RectProperties.fromJson({
+        ..._defaultRectProperties.toJson(),
+        ..._rectProperties.toJson(),
+      });
 
   final WidgetAdapter adapter;
 
@@ -125,126 +124,69 @@ abstract class CNode extends Equatable {
 
   final DateTime updatedAt;
 
-  bool doesRectExist(DeviceType deviceType) =>
-      getRectProperties['rect'][deviceType.name] != null;
+  bool doesRectExist(DeviceType deviceType) => deviceType == DeviceType.tablet
+      ? getRectProperties.rect.rectTablet != null
+      : deviceType == DeviceType.desktop
+          ? getRectProperties.rect.rectDesktop != null
+          : true;
 
   Rect rect(DeviceType deviceType) =>
-      getRectProperties['rect'][deviceType.name] ??
-      getRectProperties['rect'][DeviceType.phone.name];
+      getRectProperties.rect.getByDeviceType(deviceType);
 
-  void setRect(Rect rect, DeviceType deviceType) =>
-      _rectProperties['rect'][deviceType.name] = rect;
+  RectProperties setRect(Rect rect, DeviceType deviceType) =>
+      getRectProperties.copyWith(
+          rect: getRectProperties.rect
+              .copyWithNewRectByDeviceType(deviceType, rect));
 
-  void resetRect(DeviceType deviceType) =>
-      _rectProperties['rect'][deviceType.name] = null;
+  RectProperties resetRect(DeviceType deviceType) => getRectProperties.copyWith(
+      rect: getRectProperties.rect.copyWithResettingRect(deviceType));
 
   /// Rect from Json
-  Map<String, dynamic> get rectToJson {
-    final map = getRectProperties['rect'] as Map<String, dynamic>;
-    final rectPhone = map[DeviceType.phone.name] as Rect;
-    final rectTablet = map[DeviceType.tablet.name] as Rect?;
-    final rectDesktop = map[DeviceType.desktop.name] as Rect?;
-    return {
-      DeviceType.phone.name: rectSingleTojson(rectPhone),
-      DeviceType.tablet.name: rectSingleTojson(rectTablet),
-      DeviceType.desktop.name: rectSingleTojson(rectDesktop),
-    };
-  }
-
-  Map<String, dynamic>? rectSingleTojson(Rect? rect) {
-    if (rect == null) return null;
-    return {
-      'left': rect.left,
-      'top': rect.top,
-      'right': rect.right,
-      'bottom': rect.bottom,
-    };
-  }
+  Map<String, dynamic> get rectToJson => getRectProperties.rect.toJson();
 
   /// Rect to Json
-  static Map<String, dynamic> rectFromJson(Map<String, dynamic> json) {
-    return {
-      DeviceType.phone.name: rectSingleFromJson(
-            json[DeviceType.phone.name],
-          ) ??
-          _defaultRectForMobile,
-      DeviceType.tablet.name: rectSingleFromJson(json[DeviceType.tablet.name]),
-      DeviceType.desktop.name:
-          rectSingleFromJson(json[DeviceType.desktop.name]),
-    };
-  }
+  static ResponsiveRect rectFromJson(Map<String, dynamic> json) =>
+      ResponsiveRect.fromJson(json);
 
-  static Rect? rectSingleFromJson(Map<String, dynamic>? json) {
-    if (json == null) return null;
-    return Rect.fromLTRB(
-        json['left'], json['top'], json['right'], json['bottom']);
-  }
+  bool get flipRectWhileResizing => getRectProperties.flipRectWhileResizing;
 
-  bool get flipRectWhileResizing =>
-      getRectProperties['flipRectWhileResizing'] as bool;
-  void setFlipRectWhileResizing(bool value) =>
-      _rectProperties['flipRectWhileResizing'] = value;
+  RectProperties setFlipRectWhileResizing(bool value) =>
+      getRectProperties.copyWith(flipRectWhileResizing: value);
 
-  bool get flipChild => getRectProperties['flipChild'] as bool;
-  void setFlipChild(bool value) => _rectProperties['flipChild'] = value;
+  bool get flipChild => getRectProperties.flipChild;
+  void setFlipChild(bool value) => getRectProperties.copyWith(flipChild: value);
 
-  bool get constraintsEnabled =>
-      getRectProperties['constraintsEnabled'] as bool;
+  bool get constraintsEnabled => getRectProperties.constraintsEnabled;
   void setConstraintsEnabled(bool value) =>
-      _rectProperties['constraintsEnabled'] = value;
+      getRectProperties.copyWith(constraintsEnabled: value);
 
-  bool get resizable => getRectProperties['resizable'] as bool;
-  void setResizable(bool value) => _rectProperties['resizable'] = value;
+  bool get resizable => getRectProperties.resizable;
+  void setResizable(bool value) => getRectProperties.copyWith(resizable: value);
 
-  bool get movable => getRectProperties['movable'] as bool;
-  void setMovable(bool value) => _rectProperties['movable'] = value;
+  bool get movable => getRectProperties.movable;
+  void setMovable(bool value) => getRectProperties.copyWith(movable: value);
 
   bool get hideHandlesWhenNotResizable =>
-      getRectProperties['hideHandlesWhenNotResizable'] as bool;
-  void setHideHandlesWhenNotResizable(bool value) =>
-      _rectProperties['hideHandlesWhenNotResizable'] = value;
+      getRectProperties.hideHandlesWhenNotResizable;
 
-  ResponsiveAlignment get verticalAlignment =>
-      getRectProperties['vertical_align'] as ResponsiveAlignment;
-  void setVerticalAlignment(ResponsiveAlignment value) =>
-      _rectProperties['vertical_align'] = value;
+  void setHideHandlesWhenNotResizable(bool value) =>
+      getRectProperties.copyWith(hideHandlesWhenNotResizable: value);
+
+  ResponsiveAlignment get verticalAlignment => getRectProperties.verticalAlign;
+
+  CNode setVerticalAlignment(ResponsiveAlignment value) => copyWith(
+      rectProperties: getRectProperties.copyWith(verticalAlign: value));
 
   ResponsiveAlignment get horizontalAlignment =>
-      getRectProperties['horizontal_align'] as ResponsiveAlignment;
-  void setHorizontalAlignment(ResponsiveAlignment value) =>
-      _rectProperties['horizontal_align'] = value;
+      getRectProperties.horizontalAlign;
 
-  Map<String, dynamic> rectPropertiesToJson() => {
-        'rect': rectToJson,
-        'flipRectWhileResizing': flipRectWhileResizing,
-        'flipChild': flipChild,
-        'constraintsEnabled': constraintsEnabled,
-        'resizable': resizable,
-        'movable': movable,
-        'hideHandlesWhenNotResizable': hideHandlesWhenNotResizable,
-        'vertical_align': verticalAlignment.name,
-        'horizontal_align': horizontalAlignment.name,
-      };
+  CNode setHorizontalAlignment(ResponsiveAlignment value) => copyWith(
+      rectProperties: getRectProperties.copyWith(horizontalAlign: value));
 
-  static NodeAttributes rectPropertiesFromJson(Map<String, dynamic> json) =>
-      json.entries.isEmpty
-          ? _defaultRProperties
-          : {
-              'rect': rectFromJson(json['rect']),
-              'flipRectWhileResizing': json['flipRectWhileResizing'],
-              'flipChild': json['flipChild'],
-              'constraintsEnabled': json['constraintsEnabled'],
-              'resizable': json['resizable'],
-              'movable': json['movable'],
-              'hideHandlesWhenNotResizable':
-                  json['hideHandlesWhenNotResizable'],
-              'vertical_align': EnumToString.fromString(
-                  ResponsiveAlignment.values,
-                  json['vertical_align'] ?? 'start'),
-              'horizontal_align': EnumToString.fromString(
-                  ResponsiveAlignment.values,
-                  json['horizontal_align'] ?? 'start'),
-            };
+  Map<String, dynamic> rectPropertiesToJson() => getRectProperties.toJson();
+
+  RectProperties rectPropertiesFromJson(Map<String, dynamic> json) =>
+      RectProperties.fromJson(json);
 
   void setAttribute(String key, dynamic value) => _attributes[key] = value;
 
@@ -278,7 +220,7 @@ abstract class CNode extends Equatable {
     String? description,
     int? childOrder,
     Map<String, dynamic>? attributes,
-    Map<String, dynamic>? rectProperties,
+    RectProperties? rectProperties,
     DateTime updatedAt,
   });
 
@@ -317,7 +259,7 @@ abstract class CNode extends Equatable {
         parentID,
         childOrder,
         getRectProperties,
-        _rectProperties['rect'],
+        _rectProperties,
         verticalAlignment,
         horizontalAlignment,
         flipRectWhileResizing,
