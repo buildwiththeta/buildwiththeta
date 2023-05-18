@@ -13,5 +13,6 @@ export './src/textfields/text_field.dart';
 export './src/typography/index.dart';
 export './src/dropdowns/index.dart';
 export './src/dialogs/index.dart';
+export './src/snackbar/index.dart';
 export 'constants.dart';
 export 'assets_constants.dart';
