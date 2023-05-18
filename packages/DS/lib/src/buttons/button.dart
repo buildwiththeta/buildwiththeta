@@ -43,32 +43,40 @@ class ThetaDesignButton extends StatelessWidget {
     return Semantics(
       button: true,
       child: isTransparent ?? false
-          ? CupertinoButton(
-              onPressed: () => onTap.call(),
-              child: isLoading == true
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(),
-                    )
-                  : TActionLabel(
-                      label,
-                    ),
+          ? SizedBox(
+              height: 40,
+              child: CupertinoButton(
+                padding: const EdgeInsets.symmetric(horizontal: Grid.small),
+                onPressed: () => onTap.call(),
+                child: isLoading == true
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
+                      )
+                    : TDetailLabel(
+                        label,
+                      ),
+              ),
             )
-          : CupertinoButton(
-              color: primaryColor ??
-                  (isPrimary ? theme.buttonColor : theme.bgGrey),
-              onPressed: () => onTap.call(),
-              child: isLoading == true
-                  ? const SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: CircularProgressIndicator(),
-                    )
-                  : TActionLabel(
-                      label,
-                      color: Colors.white,
-                    ),
+          : SizedBox(
+              height: 40,
+              child: CupertinoButton(
+                color: primaryColor ??
+                    (isPrimary ? theme.buttonColor : theme.bgGrey),
+                onPressed: () => onTap.call(),
+                padding: const EdgeInsets.symmetric(horizontal: Grid.small),
+                child: isLoading == true
+                    ? const SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
+                      )
+                    : TDetailLabel(
+                        label,
+                        color: isPrimary ? Colors.white : theme.txtPrimary,
+                      ),
+              ),
             ),
     );
   }

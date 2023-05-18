@@ -1,4 +1,3 @@
-import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for color styles

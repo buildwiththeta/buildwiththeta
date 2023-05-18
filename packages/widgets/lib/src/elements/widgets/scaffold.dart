@@ -39,8 +39,9 @@ class OpenWScaffold extends NodeWidget {
 
   @override
   Widget build(final BuildContext context, final TreeState state,
-          final WidgetState nodeState) =>
-      ColoredBox(
+      final WidgetState nodeState) {
+    if (state.forPlay) {
+      return ColoredBox(
         color: HexColor(
           fill.getHexColor(
             context,
@@ -50,6 +51,24 @@ class OpenWScaffold extends NodeWidget {
         ),
         child: _childWids(context, nodeState),
       );
+    }
+    return DragTarget<DragTargetSingleNodeModel>(
+      onAccept: (data) => TreeGlobalState.onNodeAdded(
+        data.node,
+        nodeState.node,
+      ),
+      builder: (context, _, __) => ColoredBox(
+        color: HexColor(
+          fill.getHexColor(
+            context,
+            state.colorStyles,
+            state.theme,
+          ),
+        ),
+        child: _childWids(context, nodeState),
+      ),
+    );
+  }
 
   Widget _childWids(final BuildContext context, final WidgetState nodeState) {
     final widgets =
