@@ -68,6 +68,18 @@ class FFillElement extends Equatable {
         'stop': stop,
         'opacity': opacity,
       };
+
+  FFillElement copyWith({
+    String? color,
+    double? opacity,
+    double? stop,
+  }) {
+    return FFillElement(
+      color: color ?? this.color,
+      opacity: opacity ?? this.opacity,
+      stop: stop ?? this.stop,
+    );
+  }
 }
 
 /// Class to use solid colors, gradients, images inside Teta
