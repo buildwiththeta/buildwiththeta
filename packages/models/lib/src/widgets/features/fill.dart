@@ -104,7 +104,7 @@ class FFill extends Equatable {
   final Alignment? center;
   final double? radius;
   final FBoxFit? boxFit;
-  final dynamic paletteStyle;
+  final String? paletteStyle;
 
   @override
   List<Object?> get props => [
@@ -166,7 +166,7 @@ class FFill extends Equatable {
       center: center ?? this.center,
       radius: radius ?? this.radius,
       boxFit: boxFit ?? this.boxFit,
-      paletteStyle: paletteStyle ?? this.paletteStyle,
+      paletteStyle: paletteStyle,
     );
   }
 
@@ -273,59 +273,55 @@ class FFill extends Equatable {
   }
 
   static FFill fromJson(final Map<String, dynamic> json) {
-    try {
-      if (json['color'] != null) {
-        return FFill(
-          levels: [
-            FFillElement(
-              color: (json['color'] as String).replaceAll('#', ''),
-              stop: 0,
-            ),
-          ],
-          type: FFillType.solid,
-        );
+    if (json['color'] != null) {
+      return FFill(
+        levels: [
+          FFillElement(
+            color: (json['color'] as String).replaceAll('#', ''),
+            stop: 0,
+          ),
+        ],
+        type: FFillType.solid,
+      );
+    }
+    if (json['pltt'] == null) {
+      final levels = <FFillElement>[];
+      var type = FFillType.solid;
+      Alignment? begin, end, center;
+      if (json['l'] != null) {
+        for (final e in json['l'] as List<dynamic>) {
+          levels.add(FFillElement.fromJson(json: e as Map<String, dynamic>));
+        }
       }
-      if (json['pltt'] == null) {
-        final levels = <FFillElement>[];
-        var type = FFillType.solid;
-        Alignment? begin, end, center;
-        if (json['l'] != null) {
-          for (final e in json['l'] as List<dynamic>) {
-            levels.add(FFillElement.fromJson(json: e as Map<String, dynamic>));
-          }
-        }
-        if (json['t'] != null) {
-          if (json['t'] == 's') type = FFillType.solid;
-          if (json['t'] == 'l') type = FFillType.linearGradient;
-          if (json['t'] == 'r') type = FFillType.radialGradient;
-          if (json['t'] == 'i') type = FFillType.image;
-          if (json['t'] == 'n') type = FFillType.none;
-        } else {
-          type = FFillType.solid;
-        }
-        if (json['b'] != null) begin = alignFromJson(json, 'b');
-        if (json['e'] != null) end = alignFromJson(json, 'e');
-        if (json['c'] != null) center = alignFromJson(json, 'c');
-        return FFill(
-          levels: levels,
-          type: type,
-          begin: begin,
-          end: end,
-          center: center,
-          radius: double.tryParse('${json['r']}') ?? 0,
-          boxFit: FBoxFit.fromJson(json['bF'] as String),
-        );
+      if (json['t'] != null) {
+        if (json['t'] == 's') type = FFillType.solid;
+        if (json['t'] == 'l') type = FFillType.linearGradient;
+        if (json['t'] == 'r') type = FFillType.radialGradient;
+        if (json['t'] == 'i') type = FFillType.image;
+        if (json['t'] == 'n') type = FFillType.none;
       } else {
-        var value = json['pltt'] as String;
-        if (value == 'Background / Blank') {
-          value = 'Background / Primary';
-        }
-        return FFill(
-          paletteStyle: value,
-        );
+        type = FFillType.solid;
       }
-    } catch (e) {
-      return const FFill();
+      if (json['b'] != null) begin = alignFromJson(json, 'b');
+      if (json['e'] != null) end = alignFromJson(json, 'e');
+      if (json['c'] != null) center = alignFromJson(json, 'c');
+      return FFill(
+        levels: levels,
+        type: type,
+        begin: begin,
+        end: end,
+        center: center,
+        radius: double.tryParse('${json['r']}') ?? 0,
+        boxFit: FBoxFit.fromJson(json['bF'] as String),
+      );
+    } else {
+      var value = json['pltt'] as String;
+      if (value == 'Background / Blank') {
+        value = 'Background / Primary';
+      }
+      return FFill(
+        paletteStyle: value,
+      );
     }
   }
 
