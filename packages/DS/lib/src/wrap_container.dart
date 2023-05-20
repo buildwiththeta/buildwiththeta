@@ -14,16 +14,22 @@ class WrapperContainer extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: child,
           );
-        } else if (constrains.maxWidth < 1200) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: child,
+        } else if (constrains.maxWidth < 1000) {
+          return SizedBox(
+            width: 800,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: child,
+            ),
           );
         } else {
           return Center(
             child: SizedBox(
-              width: 1200,
-              child: child,
+              width: 900,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: child,
+              ),
             ),
           );
         }
