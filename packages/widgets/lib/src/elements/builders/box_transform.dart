@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class BoxTransformBuilder extends StatefulWidget {
@@ -57,15 +58,16 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
         right: right,
         width: width,
         height: height,
-        child: GestureDetector(
+        child: NodeBuilder(
           onTap: () {
             TreeGlobalState.onNodeFocused(widget.node);
             setState(() {});
           },
-          onPanStart: (e) {
+          onPanStart: () {
             TreeGlobalState.onNodeFocused(widget.node);
             setState(() {});
           },
+          node: widget.node,
           child: widget.node.toWidget(
             context: context,
             state: WidgetState(node: widget.node, loop: 0),
@@ -107,9 +109,20 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         );
         setState(() {});
       },
-      contentBuilder: (_, rect, flip) => widget.node.toWidget(
-        context: context,
-        state: WidgetState(node: widget.node, loop: 0),
+      contentBuilder: (_, rect, flip) => NodeBuilder(
+        onTap: () {
+          TreeGlobalState.onNodeFocused(widget.node);
+          setState(() {});
+        },
+        onPanStart: () {
+          TreeGlobalState.onNodeFocused(widget.node);
+          setState(() {});
+        },
+        node: widget.node,
+        child: widget.node.toWidget(
+          context: context,
+          state: WidgetState(node: widget.node, loop: 0),
+        ),
       ),
     );
   }
