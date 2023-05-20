@@ -11,6 +11,9 @@ platforms:
   web:
   windows:
 
+scripts:
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
+
 environment:
   sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"

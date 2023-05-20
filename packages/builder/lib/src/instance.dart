@@ -7,6 +7,7 @@ import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
+
 import '../main.reflectable.dart' as theta;
 
 /// Theta instance.
@@ -45,7 +46,7 @@ class Theta {
 
   bool _initialized = false;
 
-  late ThetaClient _core;
+  late ThetaClient _client;
 
   Future<void> _initExternalDependencies() async {
     await ThetaModels.initialize();
@@ -53,18 +54,21 @@ class Theta {
     theta.initializeReflectable();
   }
 
-  void _initializeCore() async => _core = getIt();
+  Future<void> _initializeCore() async {
+    _client = getIt();
+    await _client.initialize();
+  }
 
   Future<void> _init(String key) async {
     await _initExternalDependencies();
     await initializeDependencyInjection(key);
-    _initializeCore();
+    await _initializeCore();
     _initialized = true;
   }
 
   Future<Either<Exception, GetPageResponseEntity>> build(
           final String componentName) =>
-      _core.build(componentName);
+      _client.build(componentName);
 
   void dispose() {
     disposeDependencies();

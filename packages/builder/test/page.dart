@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:theta/src/presentation/theta_provider.dart';
 import 'package:theta/theta.dart';
-import 'package:theta_models/theta_models.dart';
 
 Future<void> main() async {
   await Theta.initialize(
@@ -20,20 +20,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(
-              height: 72,
-              child: UIBox(
-                'Homepage',
-                placeholder: () => const CircularProgressIndicator(),
-                errorWidget: (error) => Text(error),
-                theme: ThemeMode.light,
-                workflows: [Workflow('node_id', Trigger.onTap, () {})],
-              ),
-            ),
-          ],
+      home: ThetaProvider(
+        theme: ThemeMode.light,
+        child: Scaffold(
+          body: UIBox(
+            'Homepage',
+            placeholder: () => const CircularProgressIndicator(),
+            errorWidget: (error) => Text(error),
+          ),
         ),
       ),
     );

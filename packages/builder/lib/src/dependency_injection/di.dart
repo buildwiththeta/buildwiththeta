@@ -35,16 +35,10 @@ Future<void> initializeDependencyInjection(String key) async {
         () => StylesRepositoryImpl(getIt()));
 
   getIt
-    ..registerLazySingleton(() => GetComponentUseCase(
-          getIt(),
-        ))
-    ..registerLazySingleton(() => GetStylesUseCase(
-          getIt(),
-        ));
+    ..registerLazySingleton(() => GetComponentUseCase(getIt()))
+    ..registerLazySingleton(() => GetStylesUseCase(getIt()));
 
-  getIt.registerLazySingleton(() => ThetaClient(
-        getIt(),
-      ));
+  getIt.registerLazySingleton(() => ThetaClient(getIt(), getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();

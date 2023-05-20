@@ -1178,7 +1178,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'boxFit', 67240965, 9,
             const prefix0.DynamicAttributeKey(), 5, -1, -1, null, const []),
-        r.VariableMirrorImpl(r'paletteStyle', 67142661, 9,
+        r.VariableMirrorImpl(r'paletteStyle', 67240965, 9,
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'values', 151127045, 10,
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),
@@ -4963,10 +4963,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {
-              r'': (bool b) =>
-                  () => b ? const prefix0.DynamicAttributes() : null
-            },
+            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
             -1,
             -1,
             const <int>[-1],
@@ -10861,8 +10858,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10939,7 +10935,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       [])
 };
 
-const _memberSymbolMap = null;
+final _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;
