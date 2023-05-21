@@ -28,6 +28,12 @@ dependencies:
       path: packages/analytics
       ref: main
 
+  theta_models:
+    git:
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/models
+      ref: main
+
   theta_rendering:
     git:
       url: https://github.com/buildwiththeta/buildwiththeta.git
