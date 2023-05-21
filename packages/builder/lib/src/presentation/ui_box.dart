@@ -1,7 +1,6 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
@@ -68,8 +67,6 @@ class __LogicBoxState extends State<_LogicBox> {
           });
         },
         (r) {
-          context.read<TreeState>().onColorsChanged(r.colors);
-          context.read<TreeState>().onTextsChanged(r.texts);
           setState(
             () {
               _widget = r.treeNodes;

@@ -20,7 +20,7 @@ class StylesService {
       Uri.parse('$baseUrl$getStylesPath'),
       headers: {'Authorization': 'Bearer ${_clientToken.key}'},
       body: json.encode({
-        if (log.isRight) 'log': {log.right},
+        if (log.isRight) 'log': {...log.right},
       }),
     );
 

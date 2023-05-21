@@ -27,6 +27,7 @@ class ComponentRepositoryImpl implements ComponentRepository {
       _localComponentService.saveResponse(componentName, res);
       return Right(res);
     } catch (e) {
+      _localComponentService.clearCache();
       return Left(Exception(e.toString()));
     }
   }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:hive/hive.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 
 class LocalStylesService {
@@ -12,17 +13,31 @@ class LocalStylesService {
   Future<Box> getBox() async => Hive.openBox('styles_cache');
 
   Future<GetStylesResponseEntity?> getLocalStyles() async {
+    if (!isCacheEnabled) {
+      return null;
+    }
+
     final box = await getBox();
+
+    if (box.get('styles') == null) {
+      return null;
+    }
+
     final cachedJson = json.decode(box.get('styles'));
 
+    Logger.printWarning('cachedJson: $cachedJson');
+
+    if (cachedJson == null) {
+      return null;
+    }
+
     // if the cached component is older than [cacheExtentionInSeconds] in seconds, return null
-    if (isCacheEnabled) {
-      final createdAt = cachedJson['created_at'];
-      final now = DateTime.now().millisecondsSinceEpoch;
-      final diff = now - createdAt;
-      if (diff > 1000 * cacheExtentionInSeconds) {
-        return null;
-      }
+
+    final createdAt = cachedJson['created_at'];
+    final now = DateTime.now().millisecondsSinceEpoch;
+    final diff = now - createdAt;
+    if (diff > 1000 * cacheExtentionInSeconds) {
+      return null;
     }
 
     // if the cache is not expired, return it
@@ -40,5 +55,10 @@ class LocalStylesService {
           ...getStylesResponseEntity.toJson(),
           'created_at': DateTime.now().millisecondsSinceEpoch,
         }));
+  }
+
+  void clearCache() async {
+    final box = await getBox();
+    box.clear();
   }
 }

@@ -27,7 +27,7 @@ class ComponentService {
       },
       body: json.encode({
         'component_name': componentName,
-        if (log.isRight) 'log': {log.right},
+        if (log.isRight) 'log': {...log.right},
       }),
     );
 

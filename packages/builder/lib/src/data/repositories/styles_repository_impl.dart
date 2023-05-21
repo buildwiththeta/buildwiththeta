@@ -24,6 +24,7 @@ class StylesRepositoryImpl implements StylesRepository {
       _localStylesService.saveResponse(res);
       return Right(res);
     } catch (e) {
+      _localStylesService.clearCache();
       return Left(Exception(e.toString()));
     }
   }

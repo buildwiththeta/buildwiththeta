@@ -3,8 +3,10 @@ import 'package:theta/theta.dart';
 
 Future<void> main() async {
   await Theta.initialize(
-      anonKey:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI4NGJjNDE3Yi1kMTRjLTQwODQtYjE5MC0yY2RkNDgxMWU4ZWIiLCJhbm9uX2tleSI6IjRhZDZhNDVlLWU3YWMtNGQzOC05OGVmLThjODVjODE3NzAyMiIsImlhdCI6MTY4NDMzODgzMywiZXhwIjoxNzE1ODk2NDMzLCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.I_tD_V4YG0Nzn-q7NC3cbKu5LasUXsKfQGJyx4Zt75M');
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI4NGJjNDE3Yi1kMTRjLTQwODQtYjE5MC0yY2RkNDgxMWU4ZWIiLCJhbm9uX2tleSI6IjRhZDZhNDVlLWU3YWMtNGQzOC05OGVmLThjODVjODE3NzAyMiIsImlhdCI6MTY4NDMzODgzMywiZXhwIjoxNzE1ODk2NDMzLCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.I_tD_V4YG0Nzn-q7NC3cbKu5LasUXsKfQGJyx4Zt75M',
+    cacheEnabled: false,
+  );
   runApp(const MyApp());
 }
 
