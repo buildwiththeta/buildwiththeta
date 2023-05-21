@@ -20,19 +20,17 @@ dependencies:
       path: packages/DS
       ref: main
 
-  camera:
+  light_logger: ^0.0.3
+
   enum_to_string:
   equatable:
-  just_audio:
-  map:
   recase:
   responsive_builder:
   device_frame:
   intl: ^0.18.0
   transition: ^2.0.2
   universal_platform: ^1.0.0+1
-  flutter_localization:
-  light_logger: ^0.0.1
+  
   reflectable: ^4.0.5
 
 dependency_overrides:

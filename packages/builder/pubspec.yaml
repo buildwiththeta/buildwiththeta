@@ -1,6 +1,6 @@
 name: theta
 description: Build remote UIs.
-version: 0.0.2
+version: 0.0.5
 publish_to: none
 
 platforms:
@@ -11,6 +11,9 @@ platforms:
   web:
   windows:
 
+scripts:
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
+
 environment:
   sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
@@ -18,6 +21,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  theta_analytics:
+    git:
+      url: https://github.com/buildwiththeta/buildwiththeta.git
+      path: packages/analytics
+      ref: main
 
   theta_models:
     git:
@@ -39,7 +48,6 @@ dependencies:
 
   light_logger:
 
-  flutter_localization: ^0.1.9
   device_frame: ^1.0.0
   equatable: ^2.0.3
   either_dart: ^0.4.0
@@ -47,6 +55,7 @@ dependencies:
   get_it: ^7.6.0
   provider: ^6.0.5
   collection: ^1.17.1
+  hive: ^2.2.3
 
 dev_dependencies:
   flutter_test:
@@ -57,8 +66,8 @@ dev_dependencies:
   source_gen:
 
 dependency_overrides:
-  theta_models:
-    path: ../models
+  theta_analytics:
+    path: ../analytics
   theta_rendering:
     path: ../rendering
   theta_open_widgets:

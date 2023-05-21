@@ -1,11 +1,9 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/dependency_injection/di.dart';
-import 'package:theta/src/presentation/notifier_provider.dart';
-import 'package:theta/theta.dart';
+import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta_models/theta_models.dart';
 
 class UIBox extends StatelessWidget {
@@ -14,36 +12,20 @@ class UIBox extends StatelessWidget {
     super.key,
     this.placeholder,
     this.errorWidget,
-    this.channelId,
-    this.workflows,
-    this.parameters,
-    this.states,
-    this.theme = ThemeMode.light,
   });
 
   final String componentName;
-  final int? channelId;
   final Widget Function()? placeholder;
   final Widget Function(String)? errorWidget;
-  final List<Workflow>? workflows;
-  final List<Var>? parameters;
-  final List<Var>? states;
-  final ThemeMode theme;
 
   @override
   Widget build(BuildContext context) {
-    return ThetaNotifierProvider(
-      theme: theme,
-      workflows: workflows,
+    return LocalNotifierProvider(
+      workflows: const [],
       child: _LogicBox(
         componentName,
         placeholder: placeholder,
         errorWidget: errorWidget,
-        channelId: channelId,
-        workflows: workflows,
-        parameters: parameters,
-        states: states,
-        theme: theme,
       ),
     );
   }
@@ -54,21 +36,11 @@ class _LogicBox extends StatefulWidget {
     this.componentName, {
     this.placeholder,
     this.errorWidget,
-    this.channelId,
-    this.workflows,
-    this.parameters,
-    this.states,
-    this.theme = ThemeMode.light,
   });
 
   final String componentName;
-  final int? channelId;
   final Widget Function()? placeholder;
   final Widget Function(String)? errorWidget;
-  final List<Workflow>? workflows;
-  final List<Var>? parameters;
-  final List<Var>? states;
-  final ThemeMode theme;
 
   @override
   State<_LogicBox> createState() => __LogicBoxState();
@@ -95,8 +67,6 @@ class __LogicBoxState extends State<_LogicBox> {
           });
         },
         (r) {
-          context.read<TreeState>().onColorsChanged(r.colors);
-          context.read<TreeState>().onTextsChanged(r.texts);
           setState(
             () {
               _widget = r.treeNodes;

@@ -1219,7 +1219,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'boxFit', 67240965, 9,
             const prefix0.DynamicAttributeKey(), 5, -1, -1, null, const []),
-        r.VariableMirrorImpl(r'paletteStyle', 67142661, 9,
+        r.VariableMirrorImpl(r'paletteStyle', 67240965, 9,
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'values', 151127045, 10,
             const prefix0.DynamicAttributeKey(), -1, -1, -1, null, const []),

@@ -10,6 +10,8 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
     required this.onChange,
     this.expanded = false,
     this.background,
+    this.height,
+    this.isDense,
   }) : super(key: key);
 
   final Value? value;
@@ -17,6 +19,8 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
   final Function(Value?) onChange;
   final bool? expanded;
   final Color? background;
+  final double? height;
+  final bool? isDense;
 
   @override
   Widget build(final BuildContext context) {
@@ -29,7 +33,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(Grid.small)),
         ),
         child: Container(
-          height: 32,
+          height: height ?? 32,
           padding: EI.smH,
           decoration: BoxDecoration(
             color: theme.bgPrimary,
@@ -52,7 +56,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
               }).toList(),
               onChanged: onChange,
               isExpanded: expanded ?? false,
-              isDense: true,
+              isDense: isDense ?? true,
               icon: Icon(
                 CupertinoIcons.chevron_up,
                 color: theme.txtPrimary,
@@ -69,7 +73,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
         ),
         child: Container(
-          height: 32,
+          height: height ?? 32,
           padding: EI.smH,
           decoration: BoxDecoration(
             color: theme.bgPrimary,
@@ -92,7 +96,7 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
               }).toList(),
               onChanged: onChange,
               isExpanded: expanded ?? false,
-              isDense: true,
+              isDense: isDense ?? true,
               icon: Icon(
                 CupertinoIcons.chevron_down,
                 color: theme.txtPrimary,

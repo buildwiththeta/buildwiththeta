@@ -1,7 +1,7 @@
 // Flutter imports:
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
 

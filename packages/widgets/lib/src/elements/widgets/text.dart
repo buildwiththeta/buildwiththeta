@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/text_builder.dart';

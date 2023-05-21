@@ -1,7 +1,7 @@
 import 'package:feather_icons/feather_icons.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 

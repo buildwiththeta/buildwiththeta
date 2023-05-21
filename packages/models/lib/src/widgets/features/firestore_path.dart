@@ -3,7 +3,6 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
 // Project imports:
@@ -43,9 +42,7 @@ class FFirestorePath {
 
   /// Convert [FFirestorePath] to Json
   List<dynamic> toJson() {
-    return values != null
-        ? values.map((final e) => e.toJson()).toList()
-        : <Map<String, dynamic>>[const FTextTypeInput().toJson()];
+    return values.map((final e) => e.toJson()).toList();
   }
 
   /// Transforms [values] to a single Firestore path string
@@ -85,44 +82,5 @@ class FFirestorePath {
       }
     }
     return finalPath.toString();
-  }
-
-  /// Returns FirebaseFirestore complete path
-  ///
-  /// e.g.
-  /// ```eg
-  /// FirebaseFirestore.instance.doc(x).get()
-  /// ```
-  /// or
-  /// ```dart
-  /// FirebaseFirestore.instance.collection(x).get()
-  /// ```
-  String toCode(
-    final BuildContext context,
-    final int? loop, {
-    required final bool isStream,
-  }) {
-    final fPath = StringBuffer()..write('');
-    final temp = values != null
-        ? values
-            .map(
-              (final value) => value.toCode(
-                null,
-                resultType: ResultTypeEnum.string,
-              ),
-            )
-            .toList()
-        : <String>[];
-    for (final e in temp) {
-      if (temp.indexOf(e) != temp.length - 1) {
-        fPath.write('$e/');
-      } else {
-        fPath.write(e);
-      }
-    }
-    const prefix = 'FirebaseFirestore.instance';
-    final end = isStream ? '.snapshots()' : '.get()';
-    final func = (temp.length.isEven) ? 'doc' : 'collection';
-    return "$prefix.$func('${fPath.toString()}')$end";
   }
 }

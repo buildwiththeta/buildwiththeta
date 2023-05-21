@@ -1,12 +1,10 @@
 import 'dart:convert';
 
-import 'package:camera/camera.dart';
 import 'package:collection/collection.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:recase/recase.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -177,10 +175,7 @@ class FTextTypeInput {
       context: context,
     );
 
-    if (result.runtimeType == XFile ||
-        result.runtimeType.toString().contains('Map')) {
-      return result;
-    } else if (result.runtimeType == String) {
+    if (result.runtimeType == String) {
       switch (resultType) {
         case ResultTypeEnum.string:
           return result;
@@ -245,11 +240,6 @@ class FTextTypeInput {
         );
       }
       return string.toString();
-    }
-    if (type == FTextTypeEnum.languages) {
-      if (locale != null) {
-        return state.localization.translate(locale!);
-      }
     }
     if (state.forPlay) {
       return getValueForScreenType<String>(
@@ -402,27 +392,6 @@ class FTextTypeInput {
           int? loop,) =>
       calc(params, states, dataset, forPlay, loop, '');*/
 
-  String toCode(
-    final int? loop, {
-    required final ResultTypeEnum resultType,
-    final String? defaultValue,
-    final bool? whiteSpace,
-    final bool? wrapInString,
-  }) {
-    if (type == FTextTypeEnum.languages) {
-      return "FlutterLocalization.instance.translate('''$locale''')";
-    }
-
-    final code =
-        getRawToCode(loop, resultType: resultType, defaultValue: defaultValue);
-
-    if (type == FTextTypeEnum.combined || whiteSpace == false) {
-      return code;
-    }
-
-    return convertType(code, resType: resultType);
-  }
-
   String _calcStringType(final String? value) {
     const ls = LineSplitter();
     final masForUsing = ls.convert(value ?? '');
@@ -437,148 +406,6 @@ class FTextTypeInput {
       }
       return "'''$value'''";
     }
-  }
-
-  String getRawToCode(
-    final int? loop, {
-    required final ResultTypeEnum resultType,
-    final String? defaultValue,
-  }) {
-    // The value is a hard coded text
-    if (type == FTextTypeEnum.text) {
-      final v = (value?.replaceAll(' ', '').isNotEmpty ?? false)
-          ? value
-          : (defaultValue ?? '0');
-      final vT = valueTablet != null && valueTablet != ''
-          ? (valueTablet?.replaceAll(' ', '').isNotEmpty ?? false)
-              ? valueTablet
-              : v ?? (defaultValue ?? '0')
-          : (value?.replaceAll(' ', '').isNotEmpty ?? false)
-              ? value
-              : v ?? (defaultValue ?? '0');
-      final vD = valueDesktop != null && valueDesktop != ''
-          ? (valueDesktop?.replaceAll(' ', '').isNotEmpty ?? false)
-              ? valueDesktop
-              : v ?? (defaultValue ?? '0')
-          : (value?.replaceAll(' ', '').isNotEmpty ?? false)
-              ? value
-              : v ?? (defaultValue ?? '0');
-
-      if (resultType == ResultTypeEnum.string) {
-        final type = defaultValue != 'null' && defaultValue != null
-            ? 'String'
-            : 'String?';
-        if (v == vT && v == vD) {
-          return _calcStringType(v);
-        }
-        return '''
-getValueForScreenType<$type>(
-  context: context,
-  mobile: ${_calcStringType(v)},
-  tablet: ${_calcStringType(vT)},
-  desktop: ${_calcStringType(vD)},
-)''';
-      } else if (resultType == ResultTypeEnum.int) {
-        final type =
-            defaultValue != 'null' && defaultValue != null ? 'int' : 'int?';
-        if (v == vT && v == vD) {
-          return int.tryParse('$v') != null ? '$v' : (defaultValue ?? '1');
-        }
-        return """
-getValueForScreenType<$type>(
-  context: context,
-  mobile:  ${int.tryParse('$v') != null ? '$v' : (defaultValue ?? '1')},
-  tablet: ${int.tryParse('$vT') != null ? '$vT' : (defaultValue ?? '1')},
-  desktop: ${int.tryParse('$vD') != null ? '$vD' : (defaultValue ?? '1')},
-)""";
-      } else if (resultType == ResultTypeEnum.double) {
-        final type = defaultValue != 'null' && defaultValue != null
-            ? 'double'
-            : 'double?';
-        if (v == vT && v == vD) {
-          return double.tryParse('$v') != null ? '$v' : (defaultValue ?? '1');
-        }
-        return """
-getValueForScreenType<double>(
-  context: context,
-  mobile: ${double.tryParse('$v') != null ? '$v' : (defaultValue ?? '1')},
-  tablet: ${double.tryParse('$vT') != null ? '$vT' : (defaultValue ?? '1')},
-  desktop: ${double.tryParse('$vD') != null ? '$vD' : (defaultValue ?? '1')},
-)""";
-      } else if (resultType == ResultTypeEnum.bool) {
-        final type =
-            defaultValue != 'null' && defaultValue != null ? 'bool' : 'bool?';
-        if (v == vT && v == vD) {
-          return '$v'.toLowerCase() == 'true' || '$v'.toLowerCase() == 'false'
-              ? '$v'.toLowerCase()
-              : "'$v' == 'true'".toLowerCase();
-        }
-        return """
-getValueForScreenType<$type>(
-  context: context,
-  mobile: ${'$v'.toLowerCase() == 'true' || '$v'.toLowerCase() == 'false' ? '$v'.toLowerCase() : "'$v' == 'true'".toLowerCase()},
-  tablet: ${'$vT'.toLowerCase() == 'true' || '$vT'.toLowerCase() == 'false' ? '$vT'.toLowerCase() : "'$vT' == 'true'".toLowerCase()},
-  desktop: ${'$vD'.toLowerCase() == 'true' || '$vD'.toLowerCase() == 'false' ? '$vD'.toLowerCase() : "'$vD' == 'true'".toLowerCase()},
-)""";
-      }
-    }
-    // The value is a param
-    if (type == FTextTypeEnum.param) {
-      if (paramName?.isEmpty ?? true) return "''";
-      final param = ReCase(paramName ?? '');
-      if (resultType == ResultTypeEnum.string) {
-        return "'''\${widget.${param.camelCase}}'''";
-      } else if (resultType == ResultTypeEnum.int) {
-        return "int.tryParse('\${widget.${param.camelCase}}') ?? ${defaultValue ?? '0'}";
-      } else if (resultType == ResultTypeEnum.double) {
-        return "double.tryParse('\${widget.${param.camelCase}}') ?? ${defaultValue ?? '0.0'}";
-      } else if (resultType == ResultTypeEnum.bool) {
-        return "'\${widget.${param.camelCase}}' == 'true'";
-      } else {
-        return "'''\${widget.${param.camelCase}}'''";
-      }
-    }
-    // The value is a state
-    if (type == FTextTypeEnum.state) {
-      if (stateName?.isEmpty ?? true) return "''";
-      final state = ReCase(stateName ?? '');
-      if (resultType == ResultTypeEnum.string) {
-        return "'\${${state.camelCase}}'";
-      } else if (resultType == ResultTypeEnum.int) {
-        return "int.tryParse('\${${state.camelCase}}') ?? ${defaultValue ?? '0'}";
-      } else if (resultType == ResultTypeEnum.double) {
-        return "double.tryParse('\${${state.camelCase}}') ?? ${defaultValue ?? '0.0'}";
-      } else if (resultType == ResultTypeEnum.bool) {
-        return "'\${${state.camelCase}}' == 'true'";
-      } else {
-        return '\$${state.camelCase}';
-      }
-    }
-    if (type == FTextTypeEnum.combined) {
-      if (resultType == ResultTypeEnum.string) {
-        final string = StringBuffer("'''");
-        for (final element in combination ?? <FTextTypeInput>[]) {
-          final code = convertType(
-            element
-                .toCode(loop, resultType: resultType, wrapInString: false)
-                .replaceAll("'''", '')
-                .replaceAll("' ", '')
-                .replaceAll("'", ''),
-            resType: resultType,
-          ).replaceAll("'''", '');
-          string.write(code);
-        }
-        string.write("'''");
-        return string.toString();
-      } else if (resultType == ResultTypeEnum.int) {
-        return '0';
-      } else if (resultType == ResultTypeEnum.double) {
-        return '0.0';
-      } else if (resultType == ResultTypeEnum.bool) {
-        return 'true';
-      }
-    }
-    return value ?? '';
   }
 
   String convertType(

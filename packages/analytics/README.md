@@ -15,10 +15,7 @@ Since you call the .initialize method, you are able to use **ThetaAnalytics.inst
 import 'package:theta_analytics/theta_analytics.dart';
 
 Future<void> main() {
-  await ThetaAnalytics.initialize(
-    token: prjToken,
-    prjId: prjId,
-  );
+  await ThetaAnalytics.initialize();
   
   runApp(
     // Your app...
@@ -32,28 +29,12 @@ Future<void> main() {
 ```dart
 /// Your button
 onTap: () {
-  await ThetaAnalytics.instance.client.insert(
-    'test',
+  final info = await ThetaAnalytics.instance.client.logEvent(
+    title: 'test',
     description: 'test',
     props: <String, dynamic>{
       'test': 'test',
     },
   );
 }
-```
-
-### Error handling
-```dart
-final res = await ThetaAnalytics.I.client.insert(
-    'test',
-    description: 'test',
-    props: <String, dynamic>{
-      'test': 'test',
-    },
-  );
-  if (res.error != null) {
-    Logger.printError('${res.error!.message}');
-  } else {
-    final resMessage = res.data!.message; // OK
-  }
 ```

@@ -3,10 +3,8 @@
 
 // Package imports:
 
-import 'package:device_frame/device_frame.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
@@ -42,22 +40,8 @@ class OpenWScaffold extends NodeWidget {
   @override
   Widget build(final BuildContext context, final TreeState state,
       final WidgetState nodeState) {
-    Logger.printWarning(' ');
-    Logger.printWarning('--------------------');
-    Logger.printWarning(' ');
-    for (final e in children) {
-      Logger.printWarning('${e.hashCode}');
-    }
     final widgets =
         children.map((final e) => BoxTransformBuilder(node: e)).toList();
-    Logger.printWarning(' ');
-    for (final e in widgets) {
-      Logger.printWarning('${e.hashCode}');
-    }
-    Logger.printWarning(' ');
-    for (final e in children) {
-      Logger.printWarning('${e.rect(DeviceType.phone)}');
-    }
     if (state.forPlay) {
       return ColoredBox(
         color: HexColor(

@@ -41,7 +41,6 @@ class AnalyticsService {
   /// ❗️ This method should be wrapped in a try/catch block.
   Map<String, dynamic> logEvent({
     required final String title,
-    required final int? prjId,
     required final String? description,
     required final Map<String, dynamic>? props,
   }) =>
@@ -49,7 +48,6 @@ class AnalyticsService {
         'session_id': _getSessionId(),
         'title': title,
         'description': description,
-        'project_id': prjId,
         'properties': props,
         'device_info': _deviceInfo.toJson(),
       };

@@ -119,50 +119,6 @@ class FTextStyle extends Equatable {
         DBKeys.textStyleModel: textStyleModel,
       };
 
-  /// Returns style (TextStyle) and textAlign (TextAlign) property
-  /// ```dart
-  /// style: TextStyle(
-  ///   color: Colors.black,
-  ///   fontWeight: FontWeight.normal,
-  ///   fontSize: 16,
-  ///   fontFamily: '',
-  ///   fontStyle: FontStyle.normal,
-  ///   decoration: TextDecoration.none,
-  /// ),
-  /// textAlign: TextAlign.center,
-  /// ```
-  String toCode(final BuildContext context, TextStyles textStyles,
-      ColorStyles colorStyles) {
-    TextStyleEntity? model;
-    if (textStyleModel != null) {
-      for (var element in textStyles) {
-        if (element.name == textStyleModel) model = element;
-      }
-    }
-
-    final rc = ReCase(model?.fontFamily ?? fontFamily);
-    final align = textAlign.toCode();
-    final size = (model?.fontSize ?? fontSize).toCode();
-    final weight = (model?.fontWeight ?? fontWeight).toCode();
-    final style = fontStyle.toCode();
-    final decoration = textDecoration.toCode();
-    final direction = textDirection.toCode();
-
-    return '''
-    style: GoogleFonts.${rc.camelCase}(
-      textStyle: TextStyle(
-        ${FFill.toCode(fill, context, colorStyles: colorStyles)}
-        fontWeight: $weight,
-        fontSize: $size,
-        fontStyle: $style,
-        decoration: $decoration,
-      ),
-    ),
-    textAlign: $align,
-    textDirection: $direction,
-    ''';
-  }
-
   /// Returns style (TextStyle) only
   /// ```dart
   /// TextStyle(

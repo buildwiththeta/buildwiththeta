@@ -3,6 +3,8 @@ import 'package:http/http.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
+import 'package:theta/src/data/datasources/local_component_service.dart';
+import 'package:theta/src/data/datasources/local_styles_service.dart';
 import 'package:theta/src/data/models/client_mapper.dart';
 import 'package:theta/src/data/repositories/component_repository_impl.dart';
 import 'package:theta/src/data/repositories/styles_repository_impl.dart';
@@ -16,7 +18,8 @@ import 'package:theta_rendering/theta_rendering.dart';
 
 GetIt get getIt => GetIt.instance;
 
-Future<void> initializeDependencyInjection(String key) async {
+Future<void> initializeDependencyInjection(
+    String key, int cacheExtension, bool cacheEnabled) async {
   getIt.registerLazySingleton(() => const NodesParse());
   getIt.registerLazySingleton(() => const ColorStylesMapper());
   getIt.registerLazySingleton(() => const TextStylesMapper());
@@ -26,25 +29,23 @@ Future<void> initializeDependencyInjection(String key) async {
 
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
-    ..registerLazySingleton(() => StylesService(getIt(), getIt()));
+    ..registerLazySingleton(
+        () => LocalComponentService(cacheExtension, cacheEnabled))
+    ..registerLazySingleton(() => StylesService(getIt(), getIt()))
+    ..registerLazySingleton(
+        () => LocalStylesService(cacheExtension, cacheEnabled));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
-        () => ComponentRepositoryImpl(getIt()))
+        () => ComponentRepositoryImpl(getIt(), getIt()))
     ..registerLazySingleton<StylesRepository>(
-        () => StylesRepositoryImpl(getIt()));
+        () => StylesRepositoryImpl(getIt(), getIt()));
 
   getIt
-    ..registerLazySingleton(() => GetComponentUseCase(
-          getIt(),
-        ))
-    ..registerLazySingleton(() => GetStylesUseCase(
-          getIt(),
-        ));
+    ..registerLazySingleton(() => GetComponentUseCase(getIt()))
+    ..registerLazySingleton(() => GetStylesUseCase(getIt()));
 
-  getIt.registerLazySingleton(() => ThetaClient(
-        getIt(),
-      ));
+  getIt.registerLazySingleton(() => ThetaClient(getIt(), getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();
