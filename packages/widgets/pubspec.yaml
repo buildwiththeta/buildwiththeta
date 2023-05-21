@@ -31,11 +31,6 @@ dependencies:
       url: https://github.com/buildwiththeta/buildwiththeta.git
       path: packages/rendering
       ref: main
-
-  flutter_polyline_points:
-    git:
-      url: https://github.com/andreabuttarelli/flutter_polyline_points.git
-      ref: web
   
   light_logger:
 

@@ -1,6 +1,6 @@
 name: theta
 description: Build remote UIs.
-version: 0.0.3
+version: 0.0.4
 publish_to: none
 
 platforms:
@@ -21,12 +21,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  theta_models:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/models
-      ref: main
 
   theta_rendering:
     git:
@@ -60,8 +54,6 @@ dev_dependencies:
   source_gen:
 
 dependency_overrides:
-  theta_models:
-    path: ../models
   theta_rendering:
     path: ../rendering
   theta_open_widgets:

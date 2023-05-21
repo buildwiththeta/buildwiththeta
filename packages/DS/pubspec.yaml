@@ -21,7 +21,6 @@ dependencies:
     sdk: flutter
 
   # Theta packages
-  clear_response:
   light_logger:
 
   google_fonts: ^4.0.4

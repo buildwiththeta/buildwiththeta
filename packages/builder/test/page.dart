@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theta/src/presentation/theta_provider.dart';
 import 'package:theta/theta.dart';
 
 Future<void> main() async {

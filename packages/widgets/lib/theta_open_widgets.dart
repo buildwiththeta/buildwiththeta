@@ -1,5 +1,6 @@
 library theta_open_widgets;
 
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/main.reflectable.dart';
 
 export './src/core/index.dart';
@@ -27,6 +28,7 @@ class ThetaOpenWidgets {
   ThetaOpenWidgets._();
 
   static Future<void> initialize() async {
+    await ThetaModels.initialize();
     initializeReflectable();
     _instance.isInitialized = true;
   }
