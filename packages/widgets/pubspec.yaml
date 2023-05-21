@@ -34,18 +34,17 @@ dependencies:
   
   light_logger:
 
-  # Bloc
-  flutter_bloc: ^8.1.2
+  # State
   equatable: 2.0.3
+  provider: ^6.0.5
 
-  # Typography & Icons
+  # UI
   google_fonts: ^4.0.4
-  flutter_feather_icons: 2.0.0+1
+  feather_icons: 
   material_design_icons_flutter: 5.0.6595
   font_awesome_flutter_named: 1.1.1
   line_icons: 2.0.1
   flutter_staggered_animations: 1.0.0
-  feather_icons:
   lottie: ^2.3.2
   gap: any
   after_layout: 1.2.0
@@ -53,7 +52,7 @@ dependencies:
   universal_platform: 1.0.0+1
   collection: ^1.17.0
   flutter_box_transform:
-  provider: ^6.0.5
+  
 
 dependency_overrides:
   theta_models:
@@ -66,7 +65,6 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  import_sorter: 4.6.0
   flutter_gen_runner:
   flutter_lints: ^2.0.1
   build_runner: any  
@@ -74,12 +72,3 @@ dev_dependencies:
   source_gen: any
   analyzer: any
   reflectable: any
-
-flutter:
-  assets:
-    - assets/images/standard.png
-    - assets/images/dark.png
-    - assets/images/night.png
-    - assets/images/retro.png
-    - assets/images/silver.png
-    - assets/images/aubergine.png

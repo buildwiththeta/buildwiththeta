@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Returns a [WClipRRect] widget in Theta
 class OpenWClipRRect extends SingleChildRenderObjectWidget {

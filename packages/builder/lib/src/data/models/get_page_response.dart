@@ -34,4 +34,12 @@ class GetPageResponseEntity {
       texts: getIt<TextStylesMapper>().listFromJson(json['texts']),
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        'page_id': pageID,
+        'nodes': getIt<NodeRendering>().renderFlatList(treeNodes).toList(),
+        'colors':
+            colors.map((e) => getIt<ColorStylesMapper>().toJson(e)).toList(),
+        'texts': texts.map((e) => getIt<TextStylesMapper>().toJson(e)).toList(),
+      };
 }

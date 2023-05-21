@@ -5,6 +5,7 @@ import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
+import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 import '../main.reflectable.dart' as theta;
@@ -81,7 +82,7 @@ class Theta {
     /// This can cause an increase of consume-based billing.
     bool cacheEnabled = true,
   }) async {
-    await _instance._init(anonKey);
+    await _instance._init(anonKey, cacheExtension, cacheEnabled);
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
@@ -95,6 +96,7 @@ class Theta {
   Future<void> _initExternalDependencies() async {
     await ThetaOpenWidgets.initialize();
     theta.initializeReflectable();
+    await ThetaAnalytics.initialize();
   }
 
   Future<void> _initializeCore() async {
@@ -102,9 +104,9 @@ class Theta {
     await _client.initialize();
   }
 
-  Future<void> _init(String key) async {
+  Future<void> _init(String key, int cacheExtension, bool cacheEnabled) async {
     await _initExternalDependencies();
-    await initializeDependencyInjection(key);
+    await initializeDependencyInjection(key, cacheExtension, cacheEnabled);
     await _initializeCore();
     _initialized = true;
   }

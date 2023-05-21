@@ -1,6 +1,5 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localization/flutter_localization.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// TreeState is the state of the tree
@@ -27,7 +26,6 @@ class TreeState with ChangeNotifier {
     required this.isPage,
     required this.colorStyles,
     required this.textStyles,
-    required this.localization,
     required this.theme,
     required this.deviceInfo,
     required this.workflows,
@@ -58,9 +56,6 @@ class TreeState with ChangeNotifier {
 
   /// Device type
   DeviceInfo deviceInfo;
-
-  /// Localization
-  FlutterLocalization localization;
 
   /// Current theme
   ThemeMode theme;
@@ -140,7 +135,6 @@ class TreeState with ChangeNotifier {
     final List<ColorStyleEntity>? colorStyles,
     final List<TextStyleEntity>? textStyles,
     final DeviceInfo? deviceInfo,
-    final FlutterLocalization? localization,
     final ThemeMode? theme,
     final List<Workflow>? workflows,
     final ProjectConfigModel? config,
@@ -154,7 +148,6 @@ class TreeState with ChangeNotifier {
       colorStyles: colorStyles ?? this.colorStyles,
       textStyles: textStyles ?? this.textStyles,
       deviceInfo: deviceInfo ?? this.deviceInfo,
-      localization: localization ?? this.localization,
       theme: theme ?? this.theme,
       workflows: workflows ?? this.workflows,
       config: config ?? this.config,
@@ -171,7 +164,6 @@ class TreeState with ChangeNotifier {
         colorStyles,
         textStyles,
         deviceInfo,
-        localization,
         theme,
         config,
         workflows,

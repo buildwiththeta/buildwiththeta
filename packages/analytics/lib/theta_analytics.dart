@@ -20,9 +20,6 @@ class ThetaAnalytics {
     return _instance;
   }
 
-  /// Shortcut for [instance]
-  static ThetaAnalytics get I => instance;
-
   /// Initialize analytics client
   /// ```dart
   /// await ThetaAnalytics.initialize(

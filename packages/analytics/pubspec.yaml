@@ -22,12 +22,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  clear_response:
   light_logger:
 
   http: ^0.13.5
   uuid: ^3.0.6
-  cross_file:
   device_info_plus: ^8.1.0
   package_info_plus: ^3.0.3
   universal_platform: ^1.0.0+1
@@ -36,5 +34,4 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner:
   flutter_lints: ^2.0.1

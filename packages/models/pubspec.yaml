@@ -30,7 +30,6 @@ dependencies:
   intl: ^0.18.0
   transition: ^2.0.2
   universal_platform: ^1.0.0+1
-  flutter_localization:
   
   reflectable: ^4.0.5
 
