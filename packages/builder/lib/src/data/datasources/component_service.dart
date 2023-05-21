@@ -4,6 +4,7 @@ import 'package:http/http.dart';
 import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/data/models/token.dart';
+import 'package:theta_analytics/theta_analytics.dart';
 
 class ComponentService {
   const ComponentService(
@@ -14,7 +15,10 @@ class ComponentService {
   final ClientToken _clientToken;
   final Client _httpClient;
 
+  static final _analytics = ThetaAnalytics.instance.client;
+
   Future<GetPageResponseEntity> getComponent(String componentName) async {
+    final log = _analytics.logEvent(title: 'Get component', description: null);
     final res = await _httpClient.post(
       Uri.parse('$baseUrl$getComponentPath'),
       headers: {
@@ -23,6 +27,7 @@ class ComponentService {
       },
       body: json.encode({
         'component_name': componentName,
+        if (log.isRight) 'log': {log.right},
       }),
     );
 

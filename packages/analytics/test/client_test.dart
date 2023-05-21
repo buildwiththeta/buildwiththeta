@@ -24,10 +24,7 @@ void main() {
           ),
         );
         final response = client.logEvent(
-            title: 'test_event',
-            projectId: 0,
-            description: 'test',
-            props: {'key': 'value'});
+            title: 'test_event', description: 'test', props: {'key': 'value'});
         if (response.isLeft) {
           debugPrint((response.left as AnalyticsException).message);
           expect(response.left, isA<AnalyticsException>());

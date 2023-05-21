@@ -31,7 +31,6 @@ class AnalyticsClient {
   /// analyticsClient.logEvent(
   ///   title: 'test',
   ///   description: 'test',
-  ///   projectId: 1,
   ///   properties: {
   ///     'test': 'test',
   ///   },
@@ -39,16 +38,12 @@ class AnalyticsClient {
   /// ```
   Either<Exception, Map<String, dynamic>> logEvent({
     required final String title,
-    required final int? projectId,
     required final String? description,
     final Map<String, dynamic>? props,
   }) {
     try {
       return Right(_service.logEvent(
-          title: title,
-          prjId: projectId,
-          description: description,
-          props: props));
+          title: title, description: description, props: props));
     } catch (e, trace) {
       return Left(
         AnalyticsException(

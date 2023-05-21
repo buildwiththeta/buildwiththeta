@@ -241,11 +241,6 @@ class FTextTypeInput {
       }
       return string.toString();
     }
-    if (type == FTextTypeEnum.languages) {
-      if (locale != null) {
-        return state.localization.translate(locale!);
-      }
-    }
     if (state.forPlay) {
       return getValueForScreenType<String>(
         context: context,

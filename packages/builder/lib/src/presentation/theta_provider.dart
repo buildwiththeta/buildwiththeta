@@ -1,6 +1,5 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localization/flutter_localization.dart';
 import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
@@ -46,7 +45,6 @@ class _ThetaProviderState extends State<ThetaProvider> {
         isPage: true,
         colorStyles: _styles.colorStyles,
         textStyles: _styles.textStyles,
-        localization: FlutterLocalization.instance,
         theme: widget.theme ?? ThemeMode.light,
         deviceInfo: Devices.ios.iPhone13,
         workflows: [],
