@@ -38,7 +38,7 @@ class _ThetaProviderState extends State<ThetaProvider> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TreeState(
-        forPlay: false,
+        forPlay: true,
         params: [],
         states: [],
         pageId: '',

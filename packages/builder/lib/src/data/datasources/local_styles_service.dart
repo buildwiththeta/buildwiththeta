@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:hive/hive.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 
 class LocalStylesService {
@@ -24,8 +23,6 @@ class LocalStylesService {
     }
 
     final cachedJson = json.decode(box.get('styles'));
-
-    Logger.printWarning('cachedJson: $cachedJson');
 
     if (cachedJson == null) {
       return null;
