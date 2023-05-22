@@ -109,19 +109,21 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         );
         setState(() {});
       },
-      contentBuilder: (_, rect, flip) => NodeBuilder(
-        onTap: () {
-          TreeGlobalState.onNodeFocused(widget.node);
-          setState(() {});
-        },
-        onPanStart: () {
-          TreeGlobalState.onNodeFocused(widget.node);
-          setState(() {});
-        },
-        node: widget.node,
-        child: widget.node.toWidget(
-          context: context,
-          state: WidgetState(node: widget.node, loop: 0),
+      contentBuilder: (_, rect, flip) => IgnorePointer(
+        child: NodeBuilder(
+          onTap: () {
+            TreeGlobalState.onNodeFocused(widget.node);
+            setState(() {});
+          },
+          onPanStart: () {
+            TreeGlobalState.onNodeFocused(widget.node);
+            setState(() {});
+          },
+          node: widget.node,
+          child: widget.node.toWidget(
+            context: context,
+            state: WidgetState(node: widget.node, loop: 0),
+          ),
         ),
       ),
     );

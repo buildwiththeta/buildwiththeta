@@ -7,7 +7,6 @@ export './src/mappers/index.dart';
 export './src/enums/index.dart';
 export './src/widgets/features/index.dart';
 export './src/widgets/nodes/index.dart';
-export './src/controls/index.dart';
 export 'src/widgets/actions/enums/index.dart';
 export './src/gen/assets.gen.dart';
 import 'main.reflectable.dart';

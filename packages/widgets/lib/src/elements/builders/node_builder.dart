@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 
 class NodeBuilder extends StatefulWidget {
   const NodeBuilder({
@@ -75,21 +76,25 @@ class _NodeBuilderState extends State<NodeBuilder> {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
-    return Padding(
-      padding: _handleMargins(state),
-      child: DecoratedBox(
-        decoration: _handleDecorationChange(state.focusedNode),
-        position: DecorationPosition.foreground,
-        child: Transform.rotate(
-          angle: _handleRotation(state),
-          child: Visibility(
-            visible: _handleVisibility(state),
+    return Visibility(
+      visible: _handleVisibility(state),
+      child: Padding(
+        padding: _handleMargins(state),
+        child: DecoratedBox(
+          decoration: _handleDecorationChange(state.focusedNode),
+          position: DecorationPosition.foreground,
+          child: Transform.rotate(
+            angle: _handleRotation(state),
             child: Padding(
               padding: _handlePadding(state),
-              child: GestureDetector(
-                onTap: widget.onTap,
-                onPanStart: (e) => widget.onPanStart(),
-                child: widget.child,
+              child: Listener(
+                onPointerDown: (e) =>
+                    TreeGlobalState.onRightClick(e, widget.node),
+                child: GestureDetector(
+                  onTap: widget.onTap,
+                  onPanStart: (e) => widget.onPanStart(),
+                  child: widget.child,
+                ),
               ),
             ),
           ),

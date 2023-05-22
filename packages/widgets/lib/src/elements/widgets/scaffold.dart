@@ -5,7 +5,6 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -43,17 +42,8 @@ class OpenWScaffold extends NodeWidget {
     final widgets =
         children.map((final e) => BoxTransformBuilder(node: e)).toList();
     if (state.forPlay) {
-      return ColoredBox(
-        color: HexColor(
-          fill.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
-        ),
-        child: Stack(
-          children: widgets,
-        ),
+      return Stack(
+        children: widgets,
       );
     }
     return DragTarget<DragTargetSingleNodeModel>(
@@ -66,17 +56,8 @@ class OpenWScaffold extends NodeWidget {
           offsetLocalRelative,
         );
       },
-      builder: (context, _, __) => ColoredBox(
-        color: HexColor(
-          fill.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
-        ),
-        child: Stack(
-          children: widgets,
-        ),
+      builder: (context, _, __) => Stack(
+        children: widgets,
       ),
     );
   }
