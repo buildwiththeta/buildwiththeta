@@ -25,6 +25,7 @@
       [
         "Theta Studio", [
           ["Teams", "/studio/teams"],
+          ["Positioning & resizing", "/studio/positioning & resizing"],
           ["Constraints", "/studio/constraints"]
         ]
       ],
