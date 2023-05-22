@@ -53,6 +53,22 @@ class NNull extends CNode {
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) {
+    throw UnimplementedError('copyWithWithNull not implemented in NNull class');
+  }
 }
 
 class NNullWidgetAdapter extends WidgetAdapter {

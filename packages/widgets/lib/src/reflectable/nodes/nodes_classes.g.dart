@@ -65,6 +65,31 @@ class AlignOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AlignOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.align) {
       throw Exception('Invalid widget type');
@@ -158,6 +183,31 @@ class AspectRatioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AspectRatioOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.aspectRatio) {
       throw Exception('Invalid widget type');
@@ -243,6 +293,31 @@ class AudioPlayerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AudioPlayerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -345,6 +420,31 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AudioPlayerProgressIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.audioPlayerProgressIndicator) {
       throw Exception('Invalid widget type');
@@ -431,6 +531,31 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AudioPlayerVolumeIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -532,6 +657,31 @@ class BadgeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      BadgeOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.badge) {
       throw Exception('Invalid widget type');
@@ -617,6 +767,31 @@ class BarcodeOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      BarcodeOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -718,6 +893,31 @@ class BottomBarItemOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      BottomBarItemOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.bottombaritem) {
       throw Exception('Invalid widget type');
@@ -803,6 +1003,31 @@ class BouncingWidgetOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      BouncingWidgetOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -904,6 +1129,31 @@ class ButtonOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ButtonOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.button) {
       throw Exception('Invalid widget type');
@@ -989,6 +1239,31 @@ class CalendarOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CalendarOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -1090,6 +1365,31 @@ class CalendarV2OpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CalendarV2OpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.calendarV2) {
       throw Exception('Invalid widget type');
@@ -1175,6 +1475,31 @@ class CardOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CardOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -1276,6 +1601,31 @@ class CenterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CenterOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.center) {
       throw Exception('Invalid widget type');
@@ -1361,6 +1711,31 @@ class CheckboxOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CheckboxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -1463,6 +1838,31 @@ class CircularProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CircularProgressIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.circularProgressIndicator) {
       throw Exception('Invalid widget type');
@@ -1548,6 +1948,31 @@ class ClipOvalOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ClipOvalOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -1649,6 +2074,31 @@ class ClipRectOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ClipRectOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.clipRect) {
       throw Exception('Invalid widget type');
@@ -1734,6 +2184,31 @@ class ClipRRectOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ClipRRectOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -1835,6 +2310,31 @@ class ColumnOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ColumnOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.column) {
       throw Exception('Invalid widget type');
@@ -1928,6 +2428,31 @@ class ComponentOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ComponentOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.component) {
       throw Exception('Invalid widget type');
@@ -2013,6 +2538,31 @@ class RowOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RowOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -2115,6 +2665,31 @@ class ConcentricPageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ConcentricPageViewOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.concentricPageView) {
       throw Exception('Invalid widget type');
@@ -2200,6 +2775,31 @@ class ConditionOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ConditionOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -2301,6 +2901,31 @@ class ContainerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ContainerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.container) {
       throw Exception('Invalid widget type');
@@ -2386,6 +3011,31 @@ class ConstrainedBoxOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ConstrainedBoxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -2487,6 +3137,31 @@ class LimitedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LimitedBoxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.limitedBox) {
       throw Exception('Invalid widget type');
@@ -2572,6 +3247,31 @@ class SizedBoxOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SizedBoxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -2673,6 +3373,31 @@ class DecoratedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      DecoratedBoxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.decoratedBox) {
       throw Exception('Invalid widget type');
@@ -2766,6 +3491,31 @@ class ImageOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ImageOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.image) {
       throw Exception('Invalid widget type');
@@ -2851,6 +3601,31 @@ class CupertinoPickerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CupertinoPickerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -2953,6 +3728,31 @@ class CupertinoSegmentedControlOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CupertinoSegmentedControlOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.cupertinoSegmentedControl) {
       throw Exception('Invalid widget type');
@@ -3038,6 +3838,31 @@ class CupertinoSwitchOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CupertinoSwitchOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -3139,6 +3964,31 @@ class DividerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      DividerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.divider) {
       throw Exception('Invalid widget type');
@@ -3224,6 +4074,31 @@ class DotsIndicatorOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      DotsIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -3325,6 +4200,31 @@ class ExpandedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ExpandedOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.expanded) {
       throw Exception('Invalid widget type');
@@ -3410,6 +4310,31 @@ class AdMobBannerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AdMobBannerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -3511,6 +4436,31 @@ class GoogleMapsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      GoogleMapsOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.googleMaps) {
       throw Exception('Invalid widget type');
@@ -3596,6 +4546,31 @@ class GridViewOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      GridViewOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -3697,6 +4672,31 @@ class GridViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      GridViewBuilderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.gridViewBuilder) {
       throw Exception('Invalid widget type');
@@ -3782,6 +4782,31 @@ class HeroOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      HeroOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -3883,6 +4908,31 @@ class IconOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      IconOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.icon) {
       throw Exception('Invalid widget type');
@@ -3976,6 +5026,31 @@ class IgnorePointerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      IgnorePointerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.ignorePointer) {
       throw Exception('Invalid widget type');
@@ -4061,6 +5136,31 @@ class IndexedStackOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      IndexedStackOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -4163,6 +5263,31 @@ class LinearProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LinearProgressIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.linearProgressIndicator) {
       throw Exception('Invalid widget type');
@@ -4248,6 +5373,31 @@ class LiquidSwipeOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LiquidSwipeOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -4349,6 +5499,31 @@ class ListTileOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ListTileOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.listTile) {
       throw Exception('Invalid widget type');
@@ -4434,6 +5609,31 @@ class ListViewOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ListViewOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -4535,6 +5735,31 @@ class ListViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ListViewBuilderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.listViewBuilder) {
       throw Exception('Invalid widget type');
@@ -4620,6 +5845,31 @@ class LottieOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LottieOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -4721,6 +5971,31 @@ class MapOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      MapOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.map) {
       throw Exception('Invalid widget type');
@@ -4806,6 +6081,31 @@ class MarkerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      MarkerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -4907,6 +6207,31 @@ class OpacityOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      OpacityOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.opacity) {
       throw Exception('Invalid widget type');
@@ -4992,6 +6317,31 @@ class PaddingOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      PaddingOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -5093,6 +6443,31 @@ class PageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      PageViewOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.pageView) {
       throw Exception('Invalid widget type');
@@ -5178,6 +6553,31 @@ class PlaceholderOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      PlaceholderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -5279,6 +6679,31 @@ class PositionedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      PositionedOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.positioned) {
       throw Exception('Invalid widget type');
@@ -5364,6 +6789,31 @@ class SafeAreaOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SafeAreaOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -5465,6 +6915,31 @@ class QRScannerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      QRScannerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.qrScanner) {
       throw Exception('Invalid widget type');
@@ -5550,6 +7025,31 @@ class QRCodeOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      QRCodeOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -5651,6 +7151,31 @@ class RadioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RadioOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.radio) {
       throw Exception('Invalid widget type');
@@ -5736,6 +7261,31 @@ class RefreshIndicatorOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RefreshIndicatorOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -5838,6 +7388,31 @@ class ResponsiveConditionOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ResponsiveConditionOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.responsiveCondition) {
       throw Exception('Invalid widget type');
@@ -5923,6 +7498,31 @@ class RotatedBoxOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RotatedBoxOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6024,6 +7624,31 @@ class ScaffoldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ScaffoldOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.scaffold) {
       throw Exception('Invalid widget type');
@@ -6109,6 +7734,31 @@ class SpacerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SpacerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6210,6 +7860,31 @@ class StackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      StackOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.stack) {
       throw Exception('Invalid widget type');
@@ -6295,6 +7970,31 @@ class TCardOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      TCardOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6396,6 +8096,31 @@ class TCardBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      TCardBuilderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.tcardBuilder) {
       throw Exception('Invalid widget type');
@@ -6481,6 +8206,31 @@ class TextOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      TextOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6582,6 +8332,31 @@ class TextFieldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      TextFieldOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.textField) {
       throw Exception('Invalid widget type');
@@ -6667,6 +8442,31 @@ class TooltipOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      TooltipOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6768,6 +8568,31 @@ class VideoOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      VideoOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.video) {
       throw Exception('Invalid widget type');
@@ -6853,6 +8678,31 @@ class VisibilityOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      VisibilityOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -6954,6 +8804,31 @@ class WebviewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      WebviewOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.webview) {
       throw Exception('Invalid widget type');
@@ -7039,6 +8914,31 @@ class WrapOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      WrapOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -7141,6 +9041,31 @@ class AnimationConfigGridOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AnimationConfigGridOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.animationConfigGrid) {
       throw Exception('Invalid widget type');
@@ -7227,6 +9152,31 @@ class AnimationConfigListOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AnimationConfigListOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -7328,6 +9278,31 @@ class FadeInAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      FadeInAnimationOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.fadeInAnimation) {
       throw Exception('Invalid widget type');
@@ -7413,6 +9388,31 @@ class ScaleAnimationOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ScaleAnimationOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -7514,6 +9514,31 @@ class SlideAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SlideAnimationOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.slideAnimation) {
       throw Exception('Invalid widget type');
@@ -7607,6 +9632,31 @@ class ApiCallsFetchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      ApiCallsFetchOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.apiCallsFetch) {
       throw Exception('Invalid widget type');
@@ -7692,6 +9742,31 @@ class LoginWithAppleOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithAppleOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -7794,6 +9869,31 @@ class LoginWithFacebookOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithFacebookOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithFacebook) {
       throw Exception('Invalid widget type');
@@ -7879,6 +9979,31 @@ class LoginWithGoogleOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithGoogleOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -7980,6 +10105,31 @@ class LoginWithTwitterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithTwitterOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithTwitter) {
       throw Exception('Invalid widget type');
@@ -8065,6 +10215,31 @@ class LoginWithGithubOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithGithubOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -8167,6 +10342,31 @@ class LoginWithMicrosoftOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithMicrosoftOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithMicrosoft) {
       throw Exception('Invalid widget type');
@@ -8253,6 +10453,31 @@ class LoginWithLinkedinOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithLinkedinOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -8355,6 +10580,31 @@ class LoginWithBitbucketOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithBitbucketOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithBitBucket) {
       throw Exception('Invalid widget type');
@@ -8440,6 +10690,31 @@ class LoginWithDiscordOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithDiscordOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -8541,6 +10816,31 @@ class LoginWithTwitchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithTwitchOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithTwitch) {
       throw Exception('Invalid widget type');
@@ -8634,6 +10934,31 @@ class LoginWithGitlabOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      LoginWithGitlabOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.loginWithGitlab) {
       throw Exception('Invalid widget type');
@@ -8719,6 +11044,31 @@ class HttpRequestOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      HttpRequestOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -8821,6 +11171,31 @@ class CustomHttpRequestOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CustomHttpRequestOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.customHttpRequest) {
       throw Exception('Invalid widget type');
@@ -8906,6 +11281,31 @@ class AppBarOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      AppBarOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -9007,6 +11407,31 @@ class BottomBarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      BottomBarOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.bottomBar) {
       throw Exception('Invalid widget type');
@@ -9092,6 +11517,31 @@ class DrawerOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      DrawerOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -9194,6 +11644,31 @@ class QonversionProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      QonversionProductsOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.qonversionProducts) {
       throw Exception('Invalid widget type');
@@ -9280,6 +11755,31 @@ class QonversionSubStatusOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      QonversionSubStatusOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -9382,6 +11882,31 @@ class RevenueCatProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RevenueCatProductsOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.revenueCatProducts) {
       throw Exception('Invalid widget type');
@@ -9476,6 +12001,31 @@ class RevenueCatSubStatusOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      RevenueCatSubStatusOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.revenueCatSubStatus) {
       throw Exception('Invalid widget type');
@@ -9561,6 +12111,31 @@ class WrapperOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      WrapperOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -9663,6 +12238,31 @@ class SupabaseFutureBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SupabaseFutureBuilderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.supabaseFutureBuilder) {
       throw Exception('Invalid widget type');
@@ -9749,6 +12349,31 @@ class SupabaseStreamBuilderOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SupabaseStreamBuilderOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -9851,6 +12476,31 @@ class SupabaseLoggedUserOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      SupabaseLoggedUserOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.supabaseLoggedUser) {
       throw Exception('Invalid widget type');
@@ -9936,6 +12586,31 @@ class CMSCountOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CMSCountOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -10037,6 +12712,31 @@ class CMSCustomQueryOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CMSCustomQueryOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.cmsCustomQuery) {
       throw Exception('Invalid widget type');
@@ -10122,6 +12822,31 @@ class CMSFetchOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CMSFetchOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,
@@ -10223,6 +12948,31 @@ class CMSStreamOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
       );
 
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CMSStreamOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.cmsStream) {
       throw Exception('Invalid widget type');
@@ -10308,6 +13058,31 @@ class CMSLoggedUserOpenNode extends CNode {
         id: id ?? this.id,
         parentID: parentID ?? this.parentID,
         child: child ?? this.child,
+        children: children ?? this.children,
+        name: name ?? this.name,
+        description: description ?? this.description,
+        childOrder: childOrder ?? this.childOrder,
+        attributes: attributes ?? getAttributes,
+        rectProperties: rectProperties ?? getRectProperties,
+      );
+
+  @override
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime? updatedAt,
+  }) =>
+      CMSLoggedUserOpenNode(
+        id: id ?? this.id,
+        parentID: parentID ?? this.parentID,
+        child: child,
         children: children ?? this.children,
         name: name ?? this.name,
         description: description ?? this.description,

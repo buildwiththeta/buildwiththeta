@@ -240,6 +240,20 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
   });
 
+  /// Copy the node with new attributes
+  CNode copyWithOutChild({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime updatedAt,
+  });
+
   /// Render a Widget from node
   Widget toWidget({
     required final BuildContext context,
