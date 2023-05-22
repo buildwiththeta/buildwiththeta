@@ -30,7 +30,8 @@
       ],
       [
         "Theta Builder", [
-          ["Introduction", "/builder/"]
+          ["Introduction", "/builder/"],
+          ["Get API Token", "/studio/get_project_api"]
         ]
       ]
     ],
