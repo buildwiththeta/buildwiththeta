@@ -116,4 +116,4 @@ See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main
 
 Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
-<img src="./assets/extended_positive.svg" width="200">
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/extended_positive.svg" width="200">

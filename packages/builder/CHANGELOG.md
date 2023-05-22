@@ -1,11 +1,15 @@
+# 0.1.0-dev.2
+
+* Improved docs.
+
 # 0.1.0-dev.1
 
 - [x] Ready for **Closed Beta** testing.
 
-* Added support for workflows
-* Improved documentation
-* Added caching for UIBox
-* Refactored code for better readability
+* Added support for workflows.
+* Improved documentation.
+* Added caching for UIBox.
+* Refactored code for better readability.
 
 # 0.0.2
 
@@ -18,4 +22,4 @@
 
 # 0.0.1
 
-* Initial version, still under heavy and conceptual development
+* Initial version, still under heavy and conceptual development.

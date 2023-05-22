@@ -1,7 +1,7 @@
 name: theta
 description: Build remote UIs.
 
-version: 0.1.0-dev.1
+version: 0.1.0-dev.2
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -27,29 +27,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_analytics:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/analytics
-      ref: main
-
-  theta_models:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/models
-      ref: main
-
-  theta_rendering:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/rendering
-      ref: main
-
-  theta_open_widgets:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/widgets
-      ref: main
+  theta_analytics: ^0.1.0-dev.1
+  theta_models: ^0.1.0-dev.1
+  theta_rendering: ^0.1.0-dev.1
+  theta_open_widgets: ^0.1.0-dev.1
 
   light_logger: ^0.0.3
 
