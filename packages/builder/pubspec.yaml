@@ -1,7 +1,12 @@
 name: theta
 description: Build remote UIs.
+
 version: 0.1.0-dev.1
-publish_to: none
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 platforms:
   android:
