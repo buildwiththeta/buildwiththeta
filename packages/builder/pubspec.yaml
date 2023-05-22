@@ -1,6 +1,6 @@
 name: theta
 description: Build remote UIs.
-version: 0.0.5
+version: 0.1.0-dev.1
 publish_to: none
 
 platforms:
@@ -68,6 +68,8 @@ dev_dependencies:
 dependency_overrides:
   theta_analytics:
     path: ../analytics
+  theta_models:
+    path: ../models
   theta_rendering:
     path: ../rendering
   theta_open_widgets:
