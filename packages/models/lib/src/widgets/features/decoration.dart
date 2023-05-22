@@ -27,8 +27,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -58,8 +59,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -79,8 +81,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -110,8 +113,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -130,8 +134,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
