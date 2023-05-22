@@ -6,7 +6,6 @@ export 'audio_player_actions.dart';
 export 'braintree.dart';
 export 'camera.dart';
 export 'custom_http_request.dart';
-export 'gestures.dart';
 export 'mixpanel.dart';
 export 'navigation.dart';
 export 'permissions.dart';

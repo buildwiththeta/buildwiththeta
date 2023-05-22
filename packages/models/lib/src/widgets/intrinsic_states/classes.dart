@@ -190,10 +190,7 @@ class CalendarIntrinsicStates extends IntrinsicState {
           maxChildren: 0,
           canHave: ChildrenEnum.none,
           addChildLabels: const ['Add Day Builder', 'Add Month Builder'],
-          gestures: const [
-            Trigger.onMonthLoaded,
-            Trigger.onDayPressed,
-          ],
+          gestures: const [],
         );
   CalendarIntrinsicStates.create() : this();
 }
@@ -215,10 +212,7 @@ class CalendarV2IntrinsicStates extends IntrinsicState {
           addChildLabels: const [
             // 'Add Day Builder', 'Add Month Builder'
           ],
-          gestures: const [
-            // Trigger.onMonthLoaded,
-            Trigger.onDayPressed,
-          ],
+          gestures: const [],
         );
   CalendarV2IntrinsicStates.create() : this();
 }
@@ -271,7 +265,7 @@ class CheckBoxIntrinsicStates extends IntrinsicState {
           category: NodeCategories.form,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
-          gestures: const [Trigger.onChange],
+          gestures: const [],
         );
   CheckBoxIntrinsicStates.create() : this();
 }
@@ -427,9 +421,7 @@ class CupertinoPickerIntrinsicStates extends IntrinsicState {
           category: NodeCategories.unclassified,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          gestures: const [
-            Trigger.onChange,
-          ],
+          gestures: const [],
         );
   CupertinoPickerIntrinsicStates.create() : this();
 }
@@ -482,9 +474,7 @@ class CupertinoSwitchIntrinsicStates extends IntrinsicState {
           maxChildren: 1,
           canHave: ChildrenEnum.none,
           addChildLabels: [],
-          gestures: [
-            Trigger.onChange,
-          ],
+          gestures: [],
         );
   CupertinoSwitchIntrinsicStates.create() : this();
 }
@@ -1014,9 +1004,7 @@ class PageViewIntrinsicStates extends IntrinsicState {
           category: NodeCategories.layout,
           maxChildren: null,
           canHave: ChildrenEnum.children,
-          gestures: const [
-            Trigger.onChange,
-          ],
+          gestures: const [],
         );
   PageViewIntrinsicStates.create() : this();
 }
@@ -1107,7 +1095,7 @@ class RadioIntrinsicStates extends IntrinsicState {
           type: NType.radio,
           category: NodeCategories.form,
           canHave: ChildrenEnum.none,
-          gestures: const [Trigger.onChange],
+          gestures: const [],
         );
   RadioIntrinsicStates.create() : this();
 }
@@ -1229,9 +1217,7 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
           type: NType.scaffold,
           category: NodeCategories.unclassified,
           canHave: ChildrenEnum.children,
-          gestures: const [
-            Trigger.initState,
-          ],
+          gestures: const [],
         );
   ScaffoldIntrinsicStates.create() : this();
 }
@@ -1286,11 +1272,7 @@ class TCardBuilderIntrinsicStates extends IntrinsicState {
           category: NodeCategories.layout,
           maxChildren: null,
           canHave: ChildrenEnum.child,
-          gestures: const [
-            Trigger.swipeLeft,
-            Trigger.swipeRight,
-            Trigger.onEnd,
-          ],
+          gestures: const [],
         );
   TCardBuilderIntrinsicStates.create() : this();
 }
@@ -1313,11 +1295,7 @@ class TCardIntrinsicStates extends IntrinsicState {
           type: NType.tcard,
           category: NodeCategories.layout,
           canHave: ChildrenEnum.children,
-          gestures: const [
-            Trigger.swipeLeft,
-            Trigger.swipeRight,
-            Trigger.onEnd,
-          ],
+          gestures: const [],
         );
   TCardIntrinsicStates.create() : this();
 }
@@ -1348,7 +1326,7 @@ class TextFieldIntrinsicStates extends IntrinsicState {
           type: NType.textField,
           category: NodeCategories.form,
           canHave: ChildrenEnum.none,
-          gestures: const [Trigger.onChange, Trigger.onSubmitted],
+          gestures: const [],
         );
   TextFieldIntrinsicStates.create() : this();
 }
@@ -2171,9 +2149,7 @@ class CmsStreamIntrinsicStates extends IntrinsicState {
             'Add new if successful',
             'Add new if empty or failed',
           ],
-          gestures: [
-            Trigger.onStreamNewValue,
-          ],
+          gestures: [],
         );
   CmsStreamIntrinsicStates.create() : this();
 }

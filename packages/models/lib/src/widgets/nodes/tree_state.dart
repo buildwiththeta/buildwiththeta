@@ -153,19 +153,4 @@ class TreeState with ChangeNotifier {
       config: config ?? this.config,
     );
   }
-
-  @override
-  List<Object?> get props => [
-        forPlay,
-        params,
-        states,
-        pageId,
-        isPage,
-        colorStyles,
-        textStyles,
-        deviceInfo,
-        theme,
-        config,
-        workflows,
-      ];
 }

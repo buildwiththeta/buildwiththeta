@@ -12,16 +12,18 @@ class UIBox extends StatelessWidget {
     super.key,
     this.placeholder,
     this.errorWidget,
+    this.workflows,
   });
 
   final String componentName;
   final Widget Function()? placeholder;
   final Widget Function(String)? errorWidget;
+  final List<Workflow>? workflows;
 
   @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
-      workflows: const [],
+      workflows: workflows,
       child: _LogicBox(
         componentName,
         placeholder: placeholder,
