@@ -38,7 +38,8 @@
       ["Migrazione", "/support/migrazione"],
       [
         "Theta Studio", [
-          ["Team", "/studio/team"]
+          ["Team", "/studio/team"],
+          ["Constraints", "/studio/constraints"]
         ]
       ]
     ],
