@@ -51,7 +51,7 @@ dependencies:
       path: packages/widgets
       ref: main
 
-  light_logger:
+  light_logger: ^0.0.3
 
   device_frame: ^1.0.0
   equatable: ^2.0.3
@@ -61,23 +61,16 @@ dependencies:
   provider: ^6.0.5
   collection: ^1.17.1
   hive: ^2.2.3
+  meta: ^1.9.1
+
+  reflectable: ^4.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
-  reflectable:
+  
   build_runner:
   source_gen:
-
-dependency_overrides:
-  theta_analytics:
-    path: ../analytics
-  theta_models:
-    path: ../models
-  theta_rendering:
-    path: ../rendering
-  theta_open_widgets:
-    path: ../widgets
 
 flutter:

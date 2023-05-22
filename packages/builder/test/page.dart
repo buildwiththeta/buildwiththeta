@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
 Future<void> main() async {
-  await Theta.initialize(
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiJmNDBhNWRmNS0wZjBmLTQ5NGItYjU0MC05ZDAwODc0ODQzNTQiLCJhbm9uX2tleSI6ImVmZjI3ZDczLTcwYmUtNDIwOS04MGMyLTI5MDJhZWYzOTM4ZCIsImlhdCI6MTY4NDc2NTU4MywiZXhwIjoxNzE2MzIzMTgzLCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.P7HDAAlw9Ho-ZaTkYP-yBtIY97BcuuGvnR66bxa30nc',
-    cacheEnabled: false,
-  );
+  await Theta.initialize(anonKey: 'thetaKey');
   runApp(const MyApp());
 }
 
@@ -32,12 +28,12 @@ class _MyAppState extends State<MyApp> {
               Workflow(
                 'Container l3l2s',
                 Trigger.onHover,
-                () => print('Hovered!'),
+                () => debugPrint('Hovered!'),
               ),
               Workflow(
                 'Text a34b8',
                 Trigger.onTap,
-                () => print('Tapped!'),
+                () => debugPrint('Tapped!'),
               ),
             ],
           ),

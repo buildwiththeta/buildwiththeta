@@ -1,50 +1,47 @@
 name: theta_models
-description: A new Flutter package project.
-version: 0.0.1
-publish_to: none
+description: A package for the models used in Theta.
+version: 0.1.0-dev.1
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 scripts:
   gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  theta_design_system:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/DS
-      ref: main
-
   light_logger: ^0.0.3
-
-  enum_to_string:
-  equatable:
-  recase:
-  responsive_builder:
-  device_frame:
+  enum_to_string: ^2.0.1
+  equatable: ^2.0.5
+  recase: ^4.1.0
+  responsive_builder: ^0.6.4
+  device_frame: ^1.1.0
   intl: ^0.18.0
   transition: ^2.0.2
   universal_platform: ^1.0.0+1
-  
+  google_fonts: ^4.0.4
   reflectable: ^4.0.5
+  meta: ^1.9.1
+  collection: ^1.17.1
 
-dependency_overrides:
-  theta_design_system:
-    path: ../DS
-
+  build: ^2.3.1
+  analyzer: ^5.11.1
+  freezed_annotation: ^2.2.0
+  source_gen: ^1.2.7
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
   build_runner: any  
   built_value_generator: any
-  source_gen: any
-  analyzer: any
   freezed: any
-  freezed_annotation: any
   json_serializable: any

@@ -1,4 +1,3 @@
-import 'package:theta_models/src/mappers/mapper.dart';
 import 'package:theta_models/src/models/configs/index.dart';
 import 'package:theta_models/src/models/languages/app_language.dart';
 import 'package:theta_models/theta_models.dart';

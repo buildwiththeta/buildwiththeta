@@ -37,22 +37,22 @@ class GitHubConfigMapper {
     final String? username,
     final String? repository,
   }) {
-    final _accessToken = accessToken ?? e.accessToken;
-    final _username = username ?? e.username;
-    final _repository = repository ?? e.repository;
-    if (_accessToken.isNotEmpty &&
-        _username.isNotEmpty &&
-        _repository.isNotEmpty) {
+    final accessToken0 = accessToken ?? e.accessToken;
+    final username0 = username ?? e.username;
+    final repository0 = repository ?? e.repository;
+    if (accessToken0.isNotEmpty &&
+        username0.isNotEmpty &&
+        repository0.isNotEmpty) {
       return GitHubConfigModelInitialized(
-        accessToken: _accessToken,
-        username: _username,
-        repository: _repository,
+        accessToken: accessToken0,
+        username: username0,
+        repository: repository0,
       );
     }
     return GitHubConfigModelUninitialized(
-      accessToken: _accessToken,
-      username: _username,
-      repository: _repository,
+      accessToken: accessToken0,
+      username: username0,
+      repository: repository0,
     );
   }
 }

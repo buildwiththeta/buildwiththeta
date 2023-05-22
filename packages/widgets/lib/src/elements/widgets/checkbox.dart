@@ -54,7 +54,7 @@ class _WCheckBoxState extends State<OpenWCheckBox> with AfterLayoutMixin {
           });
         }
       },
-      value: val == 'true',
+      value: val,
       mouseCursor: const FCursor(cursor: SystemMouseCursors.click).cursor,
       fillColor:
           MaterialStateProperty.resolveWith((final states) => Colors.black),

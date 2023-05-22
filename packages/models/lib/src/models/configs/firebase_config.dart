@@ -110,65 +110,65 @@ class FirebaseConfigMapper {
     final bool? pushNotificationFlag,
     final bool? isEnabled,
   }) {
-    final _serviceAndroidJson = serviceAndroidJson ?? e.serviceAndroidJson;
-    final _serviceInfoPlist = serviceInfoPlist ?? e.serviceInfoPlist;
-    final _appId = appId ?? e.appId;
-    final _apiKey = apiKey ?? e.apiKey;
-    final _projectId = projectId ?? e.projectId;
-    final _messagingSenderId = messagingSenderId ?? e.messagingSenderId;
-    final _authDomain = authDomain ?? e.authDomain;
-    final _storageBucket = storageBucket ?? e.storageBucket;
-    final _measurementId = measurementId ?? e.measurementId;
-    final _notificationVapidKey =
+    final serviceAndroidJson0 = serviceAndroidJson ?? e.serviceAndroidJson;
+    final serviceInfoPlist0 = serviceInfoPlist ?? e.serviceInfoPlist;
+    final appId0 = appId ?? e.appId;
+    final apiKey0 = apiKey ?? e.apiKey;
+    final projectId0 = projectId ?? e.projectId;
+    final messagingSenderId0 = messagingSenderId ?? e.messagingSenderId;
+    final authDomain0 = authDomain ?? e.authDomain;
+    final storageBucket0 = storageBucket ?? e.storageBucket;
+    final measurementId0 = measurementId ?? e.measurementId;
+    final notificationVapidKey0 =
         notificationVapidKey ?? e.notificationVapidKey;
-    final _notificationCMApiLegacyServerKey =
+    final notificationCMApiLegacyServerKey0 =
         notificationCMApiLegacyServerKey ?? e.notificationCMApiLegacyServerKey;
-    final _pushNotificationFlag =
+    final pushNotificationFlag0 =
         pushNotificationFlag ?? e.pushNotificationFlag;
-    final _isEnabled = isEnabled ?? e.isEnabled;
-    if (_serviceAndroidJson.isNotEmpty &&
-        _serviceInfoPlist.isNotEmpty &&
-        _appId.isEmpty &&
-        _apiKey.isNotEmpty &&
-        _projectId.isNotEmpty &&
-        _messagingSenderId.isNotEmpty &&
-        _authDomain.isNotEmpty &&
-        _storageBucket.isNotEmpty &&
-        _measurementId.isNotEmpty &&
-        _notificationCMApiLegacyServerKey.isNotEmpty &&
+    final isEnabled0 = isEnabled ?? e.isEnabled;
+    if (serviceAndroidJson0.isNotEmpty &&
+        serviceInfoPlist0.isNotEmpty &&
+        appId0.isEmpty &&
+        apiKey0.isNotEmpty &&
+        projectId0.isNotEmpty &&
+        messagingSenderId0.isNotEmpty &&
+        authDomain0.isNotEmpty &&
+        storageBucket0.isNotEmpty &&
+        measurementId0.isNotEmpty &&
+        notificationCMApiLegacyServerKey0.isNotEmpty &&
         _notificationLegacyServerKey.isNotEmpty &&
-        _notificationVapidKey.isNotEmpty &&
-        _isEnabled) {
+        notificationVapidKey0.isNotEmpty &&
+        isEnabled0) {
       return FirebaseConfigModelInitialized(
-        appId: _appId,
-        apiKey: _apiKey,
-        projectId: _projectId,
-        messagingSenderId: _messagingSenderId,
-        authDomain: _authDomain,
-        measurementId: _measurementId,
-        notificationVapidKey: _notificationVapidKey,
-        notificationCMApiLegacyServerKey: _notificationCMApiLegacyServerKey,
-        serviceAndroidJson: _serviceAndroidJson,
-        serviceInfoPlist: _serviceInfoPlist,
-        storageBucket: _storageBucket,
-        pushNotificationFlag: _pushNotificationFlag,
-        isEnabled: _isEnabled,
+        appId: appId0,
+        apiKey: apiKey0,
+        projectId: projectId0,
+        messagingSenderId: messagingSenderId0,
+        authDomain: authDomain0,
+        measurementId: measurementId0,
+        notificationVapidKey: notificationVapidKey0,
+        notificationCMApiLegacyServerKey: notificationCMApiLegacyServerKey0,
+        serviceAndroidJson: serviceAndroidJson0,
+        serviceInfoPlist: serviceInfoPlist0,
+        storageBucket: storageBucket0,
+        pushNotificationFlag: pushNotificationFlag0,
+        isEnabled: isEnabled0,
       );
     } else {
       return FirebaseConfigModelUninitialized(
-        appId: _appId,
-        apiKey: _apiKey,
-        projectId: _projectId,
-        messagingSenderId: _messagingSenderId,
-        authDomain: _authDomain,
-        measurementId: _measurementId,
-        notificationVapidKey: _notificationVapidKey,
-        notificationCMApiLegacyServerKey: _notificationCMApiLegacyServerKey,
-        serviceAndroidJson: _serviceAndroidJson,
-        serviceInfoPlist: _serviceInfoPlist,
-        storageBucket: _storageBucket,
-        pushNotificationFlag: _pushNotificationFlag,
-        isEnabled: _isEnabled,
+        appId: appId0,
+        apiKey: apiKey0,
+        projectId: projectId0,
+        messagingSenderId: messagingSenderId0,
+        authDomain: authDomain0,
+        measurementId: measurementId0,
+        notificationVapidKey: notificationVapidKey0,
+        notificationCMApiLegacyServerKey: notificationCMApiLegacyServerKey0,
+        serviceAndroidJson: serviceAndroidJson0,
+        serviceInfoPlist: serviceInfoPlist0,
+        storageBucket: storageBucket0,
+        pushNotificationFlag: pushNotificationFlag0,
+        isEnabled: isEnabled0,
       );
     }
   }

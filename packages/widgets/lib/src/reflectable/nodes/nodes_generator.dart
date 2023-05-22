@@ -137,8 +137,6 @@ class $generatedClassName extends CNode {
 }
     ''';
 
-    print('Generated code for $className:');
-    //print(code);
     return code;
   }
 }

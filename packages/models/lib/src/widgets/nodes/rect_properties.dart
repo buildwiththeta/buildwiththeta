@@ -1,6 +1,5 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:equatable/equatable.dart';
-import 'package:theta_models/src/widgets/nodes/rect.dart';
 import 'package:theta_models/theta_models.dart';
 
 class RectProperties extends Equatable {

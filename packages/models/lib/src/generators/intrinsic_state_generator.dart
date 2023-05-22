@@ -16,36 +16,10 @@ class IntrinsicStateGenerator
     final className = element.name;
     final generatedClassName = '${className}Generated';
     final nodeIcon = annotation.read('nodeIcon').stringValue;
-    final synonymous = annotation
-        .read('synonymous')
-        .listValue
-        .map((e) => e.toStringValue())
-        .toList();
-    final gestures = annotation
-        .read('gestures')
-        .listValue
-        .map((e) => e.toStringValue())
-        .toList();
-    final permissions = annotation
-        .read('permissions')
-        .listValue
-        .map((e) => e.toStringValue())
-        .toList();
-    final packages = annotation
-        .read('packages')
-        .listValue
-        .map((e) => e.toStringValue())
-        .toList();
-    final blockedTypes = annotation
-        .read('blockedTypes')
-        .listValue
-        .map((e) => e.toStringValue())
-        .toList();
     final displayName = annotation.read('displayName').stringValue;
     final type = annotation.read('type').stringValue;
     final category = annotation.read('category').stringValue;
     final canHave = annotation.read('canHave').stringValue;
-    final maxChildren = annotation.read('maxChildren').stringValue;
 
     return '''
 @nodeTypeISKey

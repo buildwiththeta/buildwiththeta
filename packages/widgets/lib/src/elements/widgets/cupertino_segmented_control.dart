@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:theta_design_system/theta_design_system.dart';
+import 'package:theta_design_system/theta_design_system.dart' hide HexColor;
 import 'package:theta_models/theta_models.dart';
 
 class OpenWCupertinoSegmentedControl extends StatefulWidget {

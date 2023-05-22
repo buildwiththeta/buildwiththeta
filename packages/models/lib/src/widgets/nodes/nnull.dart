@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theta_models/src/widgets/nodes/rect_properties.dart';
 import 'package:theta_models/theta_models.dart';
 
 class NNull extends CNode {

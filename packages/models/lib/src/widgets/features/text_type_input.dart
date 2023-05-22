@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:collection/collection.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:enum_to_string/enum_to_string.dart';
@@ -392,22 +390,6 @@ class FTextTypeInput {
           int? loop,) =>
       calc(params, states, dataset, forPlay, loop, '');*/
 
-  String _calcStringType(final String? value) {
-    const ls = LineSplitter();
-    final masForUsing = ls.convert(value ?? '');
-    if (masForUsing.length == 1) {
-      if ((value ?? '').contains("'")) {
-        return '"$value"';
-      }
-      return "'$value'";
-    } else {
-      if ((value ?? '').contains("'''")) {
-        return '"""$value"""';
-      }
-      return "'''$value'''";
-    }
-  }
-
   String convertType(
     final String original, {
     required final ResultTypeEnum resType,
@@ -415,17 +397,6 @@ class FTextTypeInput {
     var code = original;
     if (original.contains("'")) {
       code = '$original ';
-    }
-    if (resultType == ResultTypeEnum.string) {
-      switch (resultType) {
-        case ResultTypeEnum.dateTime:
-          if (typeDateTimeFormat == TypeDateTimeFormat.dateWithoutTime) {
-            return "'\${DateFormat('yyyy-MM-dd').format(DateTime.tryParse($code) ?? DateTime.now())}'";
-          }
-          if (typeDateTimeFormat == TypeDateTimeFormat.dateWithTime) {
-            return "'\${DateFormat('yyyy-MM-dd hh:mm:ss').format(DateTime.tryParse($code) ?? DateTime.now())}'";
-          }
-      }
     }
     return code;
   }

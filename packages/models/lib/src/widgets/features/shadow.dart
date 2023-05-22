@@ -1,10 +1,5 @@
-// Project imports:
-// ignore_for_file: public_member_api_docs
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:theta_design_system/theta_design_system.dart';
-// Project imports:
 import 'package:theta_models/theta_models.dart';
 
 @immutable

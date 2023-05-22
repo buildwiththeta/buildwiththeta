@@ -18,7 +18,7 @@ class OpenWInfiniteListView extends StatefulWidget {
   final bool flagValue;
   final FTextTypeInput value;
   @override
-  _WInfiniteListViewState createState() => _WInfiniteListViewState();
+  createState() => _WInfiniteListViewState();
 }
 
 class _WInfiniteListViewState extends State<OpenWInfiniteListView> {
