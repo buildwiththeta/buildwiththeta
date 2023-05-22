@@ -1,0 +1,20 @@
+---
+title: Get Project API Token
+description: Discover how to retrieve your project's API token, necessary for connecting your client app to Theta, and the importance of secure token handling.
+---
+
+# Get Project API Token
+
+To retrieve the API token from your project, follow the steps below:
+
+1. **Create a New Project:** Navigate to [app.buildwiththeta.com](https://app.buildwiththeta.com) and create a new project.
+
+2. **Open the Project Editor:** After your project has been created, enter the project editor.
+
+3. **Click the Project Name:** You'll find the project name in the top-left corner, next to the Theta logo. Click on it.
+
+4. **View the API Key:** Upon clicking the project name, a bottom sheet will appear displaying an 'API key' field. This is your API token.
+
+This anonymous (anon) key is what you'll use to connect your client application to Theta, using our Flutter client library. Ensure you store this anon key securely, preferably in an environment (`.env`) file, to prevent unauthorized access.
+
+Note that client applications can only connect to your project if it is set to 'public'. Make sure you have configured your project visibility accordingly.
