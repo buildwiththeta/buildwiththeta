@@ -24,12 +24,15 @@
       ["Migration", "/support/migration"],
       [
         "Theta Studio", [
-          ["Teams", "/studio/teams"]
+          ["Teams", "/studio/teams"],
+          ["Positioning & resizing", "/studio/positioning_and_resizing"],
+          ["Constraints", "/studio/constraints"]
         ]
       ],
       [
         "Theta Builder", [
-          ["Introduction", "/builder/"]
+          ["Introduction", "/builder/"],
+          ["Get API Token", "/studio/get_project_api"]
         ]
       ]
     ],
