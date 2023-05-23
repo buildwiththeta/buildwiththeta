@@ -37,21 +37,21 @@ class MixpanelConfigMapper {
     final String? url,
     final bool? automaticTracking,
   }) {
-    final _key = key ?? e.key;
-    final _url = url ?? e.url;
-    final _track = automaticTracking ?? e.automaticTracking;
+    final key0 = key ?? e.key;
+    final url0 = url ?? e.url;
+    final track = automaticTracking ?? e.automaticTracking;
 
-    if (_key.isNotEmpty && _urlKey.isNotEmpty) {
+    if (key0.isNotEmpty && _urlKey.isNotEmpty) {
       return MixpanelConfigModelInitialized(
-        key: _key,
-        url: _url,
-        automaticTracking: _track,
+        key: key0,
+        url: url0,
+        automaticTracking: track,
       );
     }
     return MixpanelConfigModelUninitialized(
-      key: _key,
-      url: _url,
-      automaticTracking: _track,
+      key: key0,
+      url: url0,
+      automaticTracking: track,
     );
   }
 }

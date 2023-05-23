@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:theta_open_widgets/src/elements/builders/workflow_executer.dart';
 
 class NodeBuilder extends StatefulWidget {
   const NodeBuilder({
@@ -87,18 +88,96 @@ class _NodeBuilderState extends State<NodeBuilder> {
             angle: _handleRotation(state),
             child: Padding(
               padding: _handlePadding(state),
-              child: Listener(
-                onPointerDown: (e) =>
-                    TreeGlobalState.onRightClick(e, widget.node),
-                child: GestureDetector(
-                  onTap: widget.onTap,
-                  onPanStart: (e) => widget.onPanStart(),
+              child: GestureDetectorInEditor(
+                node: widget.node,
+                onTap: widget.onTap,
+                onPanStart: widget.onPanStart,
+                child: GestureDetectorForPlay(
+                  node: widget.node,
                   child: widget.child,
                 ),
               ),
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class GestureDetectorInEditor extends StatelessWidget {
+  const GestureDetectorInEditor({
+    super.key,
+    required this.node,
+    required this.child,
+    required this.onTap,
+    required this.onPanStart,
+  });
+
+  final CNode node;
+  final Widget child;
+  final VoidCallback onTap;
+  final VoidCallback onPanStart;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = context.watch<TreeState>();
+    if (state.forPlay) {
+      return child;
+    }
+    return Listener(
+        onPointerDown: (e) => TreeGlobalState.onRightClick(e, node),
+        child: GestureDetector(
+          onTap: onTap,
+          onPanStart: (e) => onPanStart,
+          child: child,
+        ));
+  }
+}
+
+class GestureDetectorForPlay extends StatefulWidget {
+  const GestureDetectorForPlay({
+    super.key,
+    required this.node,
+    required this.child,
+  });
+
+  final CNode node;
+  final Widget child;
+
+  @override
+  State<GestureDetectorForPlay> createState() => _GestureDetectorForPlayState();
+}
+
+class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
+  late WorkflowExecuter executer;
+
+  @override
+  void initState() {
+    super.initState();
+    final state = context.read<TreeState>();
+    executer = WorkflowExecuter(
+      nodeID: widget.node.id,
+      nodeName: widget.node.name!,
+      workflows: state.workflows,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final state = context.watch<TreeState>();
+    if (!state.forPlay && state.workflows.isEmpty) {
+      return widget.child;
+    }
+    return MouseRegion(
+      onEnter: (e) => executer.execute(Trigger.onMouseEnter),
+      onExit: (e) => executer.execute(Trigger.onMouseExit),
+      onHover: (e) => executer.execute(Trigger.onHover),
+      child: GestureDetector(
+        onTap: () => executer.execute(Trigger.onTap),
+        onDoubleTap: () => executer.execute(Trigger.onDoubleTap),
+        onLongPress: () => executer.execute(Trigger.onLongPress),
+        child: widget.child,
       ),
     );
   }

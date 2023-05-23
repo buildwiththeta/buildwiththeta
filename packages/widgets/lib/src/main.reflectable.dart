@@ -90,7 +90,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix0.DynamicAttributes() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -475,8 +478,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             10,
             const prefix0.DynamicAttributeKey(),
-            const <int>[18, 19, 145, 146, 147, 148, 149],
-            const <int>[152, 153, 81, 154, 83, 146, 147, 148, 149, 150, 151],
+            const <int>[18, 19, 145, 146, 147, 148],
+            const <int>[151, 152, 81, 153, 83, 146, 147, 148, 149, 150],
             const <int>[145],
             -1,
             {r'fromJson': () => prefix11.FFirestorePath.fromJson},
@@ -497,7 +500,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             11,
             const prefix0.DynamicAttributeKey(),
-            const <int>[20, 21, 22, 23, 155, 156, 157, 158, 159, 160, 165],
+            const <int>[20, 21, 22, 23, 154, 155, 156, 157, 158, 159, 164],
             const <int>[
               79,
               80,
@@ -505,18 +508,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
               82,
               83,
               84,
+              154,
               155,
-              156,
+              157,
               158,
               159,
               160,
               161,
               162,
               163,
-              164,
-              165
+              164
             ],
-            const <int>[157],
+            const <int>[156],
             -1,
             {r'fromJson': () => prefix12.FFontSize.fromJson},
             {},
@@ -536,9 +539,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             12,
             const prefix0.DynamicAttributeKey(),
-            const <int>[166],
+            const <int>[165],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[166],
+            const <int>[165],
             -1,
             {r'fromJson': () => prefix13.FFontStyle.fromJson},
             {},
@@ -558,9 +561,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             13,
             const prefix0.DynamicAttributeKey(),
-            const <int>[24, 167, 168, 169, 170, 172, 173, 174, 175],
-            const <int>[79, 80, 81, 82, 83, 84, 169, 170, 171, 172, 173, 174],
-            const <int>[167, 168, 175],
+            const <int>[24, 166, 167, 168, 169, 171, 172, 173, 174],
+            const <int>[79, 80, 81, 82, 83, 84, 168, 169, 170, 171, 172, 173],
+            const <int>[166, 167, 174],
             -1,
             {
               r'convertDropDownToValue': () =>
@@ -585,9 +588,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             14,
             const prefix0.DynamicAttributeKey(),
-            const <int>[176],
+            const <int>[175],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[176],
+            const <int>[175],
             -1,
             {r'fromJson': () => prefix15.FIconType.fromJson},
             {},
@@ -606,9 +609,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             15,
             const prefix0.DynamicAttributeKey(),
-            const <int>[25, 177, 178, 179, 181],
-            const <int>[79, 80, 81, 82, 83, 84, 178, 179, 180, 181],
-            const <int>[177],
+            const <int>[25, 176, 177, 178, 180],
+            const <int>[79, 80, 81, 82, 83, 84, 177, 178, 179, 180],
+            const <int>[176],
             -1,
             {r'fromJson': () => prefix16.FKeyboardType.fromJson},
             {},
@@ -628,9 +631,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             16,
             const prefix0.DynamicAttributeKey(),
-            const <int>[182],
+            const <int>[181],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[182],
+            const <int>[181],
             -1,
             {r'fromJson': () => prefix17.FMainAxisAlignment.fromJson},
             {},
@@ -650,9 +653,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             17,
             const prefix0.DynamicAttributeKey(),
-            const <int>[183],
+            const <int>[182],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[183],
+            const <int>[182],
             -1,
             {r'fromJson': () => prefix18.FMainAxisSize.fromJson},
             {},
@@ -675,6 +678,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               26,
               27,
               28,
+              183,
               184,
               185,
               186,
@@ -683,8 +687,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               189,
               190,
               191,
-              192,
-              196
+              195
             ],
             const <int>[
               79,
@@ -693,19 +696,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
               82,
               83,
               84,
+              183,
               184,
-              185,
+              186,
               187,
               188,
-              189,
+              190,
               191,
               192,
               193,
               194,
-              195,
-              196
+              195
             ],
-            const <int>[186, 190],
+            const <int>[185, 189],
             -1,
             {
               r'fromJson': () => prefix19.FMargins.fromJson,
@@ -729,9 +732,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             19,
             const prefix0.DynamicAttributeKey(),
-            const <int>[197],
+            const <int>[196],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[197],
+            const <int>[196],
             -1,
             {r'fromJson': () => prefix20.FPageTransition.fromJson},
             {},
@@ -753,6 +756,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <int>[
               29,
+              197,
               198,
               199,
               200,
@@ -764,9 +768,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
               206,
               207,
               208,
-              209,
-              211,
-              212
+              210,
+              211
             ],
             const <int>[
               79,
@@ -775,16 +778,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
               82,
               83,
               84,
+              197,
               198,
-              199,
+              200,
               201,
               202,
-              203,
+              208,
               209,
-              210,
-              211
+              210
             ],
-            const <int>[200, 204, 205, 206, 207, 208, 212],
+            const <int>[199, 203, 204, 205, 206, 207, 211],
             -1,
             {
               r'fromJson': () => prefix21.FPhysic.fromJson,
@@ -814,7 +817,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             21,
             const prefix0.DynamicAttributeKey(),
-            const <int>[30, 31, 32, 33, 34, 35, 213, 214, 215, 222],
+            const <int>[30, 31, 32, 33, 34, 35, 212, 213, 214, 215, 216, 223],
             const <int>[
               79,
               80,
@@ -822,17 +825,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
               82,
               83,
               84,
+              212,
               213,
-              215,
+              214,
               216,
               217,
               218,
               219,
               220,
               221,
-              222
+              222,
+              223
             ],
-            const <int>[214],
+            const <int>[215],
             -1,
             {r'fromJson': () => prefix22.FShadow.fromJson},
             {},
@@ -856,7 +861,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
               36,
               37,
               38,
-              223,
               224,
               225,
               226,
@@ -866,26 +870,27 @@ final _data = <r.Reflectable, r.ReflectorData>{
               230,
               231,
               232,
-              236
+              233,
+              237
             ],
             const <int>[
               79,
-              232,
+              233,
               81,
               82,
               83,
               84,
-              224,
               225,
               226,
-              228,
-              231,
-              233,
+              227,
+              229,
+              232,
               234,
               235,
-              236
+              236,
+              237
             ],
-            const <int>[223, 227, 229, 230],
+            const <int>[224, 228, 230, 231],
             -1,
             {
               r'ready': () => prefix23.FSize.ready,
@@ -918,9 +923,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             23,
             const prefix0.DynamicAttributeKey(),
-            const <int>[237],
+            const <int>[238],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[237],
+            const <int>[238],
             -1,
             {r'fromJson': () => prefix24.FTextAlign.fromJson},
             {},
@@ -940,9 +945,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             24,
             const prefix0.DynamicAttributeKey(),
-            const <int>[39, 238, 239, 240, 242],
-            const <int>[79, 80, 81, 82, 83, 84, 239, 240, 241, 242],
-            const <int>[238],
+            const <int>[39, 239, 240, 241, 243],
+            const <int>[79, 80, 81, 82, 83, 84, 240, 241, 242, 243],
+            const <int>[239],
             -1,
             {r'fromJson': () => prefix25.FTextDecoration.fromJson},
             {},
@@ -962,9 +967,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             134217735,
             25,
             const prefix0.DynamicAttributeKey(),
-            const <int>[243],
+            const <int>[244],
             const <int>[79, 80, 81, 82, 83, 84, 86, 87, 88, 89, 90, 91],
-            const <int>[243],
+            const <int>[244],
             -1,
             {r'fromJson': () => prefix26.FTextDirection.fromJson},
             {},
@@ -994,7 +999,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
               46,
               47,
               48,
-              244,
               245,
               246,
               247,
@@ -1009,8 +1013,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               82,
               83,
               84,
-              244,
-              246,
+              245,
               247,
               248,
               249,
@@ -1025,7 +1028,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               258,
               259
             ],
-            const <int>[245],
+            const <int>[246],
             -1,
             {r'fromJson': () => prefix27.FTextStyle.fromJson},
             {},
@@ -1069,15 +1072,13 @@ final _data = <r.Reflectable, r.ReflectorData>{
               267,
               268,
               269,
-              270,
-              271,
-              272
+              270
             ],
             const <int>[
+              151,
               152,
-              153,
               81,
-              154,
+              153,
               83,
               260,
               261,
@@ -1101,9 +1102,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               280,
               281,
               282,
-              283,
-              284,
-              285
+              283
             ],
             const <int>[268],
             -1,
@@ -1752,23 +1751,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[77, 78, 79],
             const prefix0.DynamicAttributeKey(),
             const []),
-        r.MethodMirrorImpl(
-            r'toCode',
-            2097154,
-            10,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[80, 81, 82],
-            const prefix0.DynamicAttributeKey(),
-            const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 18, 150),
+            const prefix0.DynamicAttributeKey(), 18, 149),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 19, 151),
+            const prefix0.DynamicAttributeKey(), 19, 150),
         r.MethodMirrorImpl(r'==', 2097154, -1, -1, -1, -1, null,
-            const <int>[83], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[80], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toString', 2097154, -1, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'hashCode', 2097155, -1, -1, -1, -1, null,
@@ -1781,7 +1769,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[84, 85, 86],
+            const <int>[81, 82, 83],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -1792,11 +1780,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[87, 88, 89],
+            const <int>[84, 85, 86],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 11, 11, -1, -1, null,
-            const <int>[90], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[87], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 11, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
@@ -1807,19 +1795,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[91, 92, 93],
+            const <int>[88, 89, 90],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 11, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 20, 161),
+            const prefix0.DynamicAttributeKey(), 20, 160),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 21, 162),
+            const prefix0.DynamicAttributeKey(), 21, 161),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 22, 163),
+            const prefix0.DynamicAttributeKey(), 22, 162),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 23, 164),
+            const prefix0.DynamicAttributeKey(), 23, 163),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -1832,7 +1820,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.MethodMirrorImpl(r'fromJson', 2097170, 12, 12, -1, -1, null,
-            const <int>[94], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[91], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'convertDropDownToValue',
             2097170,
@@ -1841,17 +1829,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[95],
+            const <int>[92],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 13, 13, -1, -1, null,
-            const <int>[96], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[93], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 2097154, 13, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 13, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 24, 171),
+            const prefix0.DynamicAttributeKey(), 24, 170),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -1870,15 +1858,15 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.MethodMirrorImpl(r'getListDropDown', 35651603, 13, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 14, 14, -1, -1, null,
-            const <int>[97], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[94], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 15, 15, -1, -1, null,
-            const <int>[98], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[95], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 2097154, 15, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 15, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 25, 180),
+            const prefix0.DynamicAttributeKey(), 25, 179),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -1891,20 +1879,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.MethodMirrorImpl(r'fromJson', 2097170, 16, 16, -1, -1, null,
-            const <int>[99], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[96], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 17, 17, -1, -1, null,
-            const <int>[100], const prefix0.DynamicAttributeKey(), const []),
-        r.MethodMirrorImpl(
-            r'get',
-            2097154,
-            18,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[101, 102],
-            const prefix0.DynamicAttributeKey(),
-            const []),
+            const <int>[97], const prefix0.DynamicAttributeKey(), const []),
+        r.MethodMirrorImpl(r'get', 2097154, 18, -1, -1, -1, null,
+            const <int>[98, 99], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'getList',
             35651586,
@@ -1913,11 +1892,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[103, 104, 105],
+            const <int>[100, 101, 102],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 18, 18, -1, -1, null,
-            const <int>[106], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[103], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 18, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
@@ -1928,7 +1907,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[107, 108, 109],
+            const <int>[104, 105, 106],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -1939,21 +1918,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[110, 111, 112],
+            const <int>[107, 108, 109],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'convertToCode', 2097170, 18, -1, -1, -1, null,
-            const <int>[113], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[110], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 18, -1, -1, -1, null,
-            const <int>[114], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[111], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCodeForTests', 2097154, 18, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 26, 193),
+            const prefix0.DynamicAttributeKey(), 26, 192),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 27, 194),
+            const prefix0.DynamicAttributeKey(), 27, 193),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 28, 195),
+            const prefix0.DynamicAttributeKey(), 28, 194),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -1966,9 +1945,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.MethodMirrorImpl(r'fromJson', 2097170, 19, 19, -1, -1, null,
-            const <int>[115], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[112], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'get', 2097154, 20, -1, -1, -1, null,
-            const <int>[116], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[113], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'getStringForDropDown',
             2097154,
@@ -1977,19 +1956,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[117],
+            const <int>[114],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 20, 20, -1, -1, null,
-            const <int>[118], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[115], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 2097154, 20, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'clone', 2097154, 20, 20, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'copyWith', 2097154, 20, 20, -1, -1, null,
-            const <int>[119], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[116], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'convertJsonToValue', 2097170, 20, -1, -1, -1, null,
-            const <int>[120], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[117], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'convertDropDownToValue',
             2097170,
@@ -1998,7 +1977,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[121],
+            const <int>[118],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2009,17 +1988,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[122],
+            const <int>[119],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'convertValueToJson', 2097170, 20, -1, -1, -1, null,
-            const <int>[123], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[120], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'convertValueToCode', 2097170, 20, -1, -1, -1, null,
-            const <int>[124], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[121], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 20, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 29, 210),
+            const prefix0.DynamicAttributeKey(), 29, 209),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -2033,24 +2012,46 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <Object>[override]),
         r.MethodMirrorImpl(r'physicsList', 35651603, 20, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
+        r.MethodMirrorImpl(
+            r'get',
+            2097154,
+            21,
+            -1,
+            -1,
+            -1,
+            null,
+            const <int>[122, 123, 124],
+            const prefix0.DynamicAttributeKey(),
+            const []),
+        r.MethodMirrorImpl(
+            r'copyWith',
+            2097154,
+            21,
+            21,
+            -1,
+            -1,
+            null,
+            const <int>[125, 126, 127, 128, 129, 130],
+            const prefix0.DynamicAttributeKey(),
+            const []),
         r.MethodMirrorImpl(r'ready', 2097154, 21, 21, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 21, 21, -1, -1, null,
-            const <int>[125], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[131], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 21, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 30, 216),
+            const prefix0.DynamicAttributeKey(), 30, 217),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 31, 217),
+            const prefix0.DynamicAttributeKey(), 31, 218),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 32, 218),
+            const prefix0.DynamicAttributeKey(), 32, 219),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 33, 219),
+            const prefix0.DynamicAttributeKey(), 33, 220),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 34, 220),
+            const prefix0.DynamicAttributeKey(), 34, 221),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 35, 221),
+            const prefix0.DynamicAttributeKey(), 35, 222),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -2072,7 +2073,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[126, 127, 128],
+            const <int>[132, 133, 134],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2083,7 +2084,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[129, 130, 131],
+            const <int>[135, 136, 137],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2094,17 +2095,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[132, 133, 134],
+            const <int>[138, 139, 140],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 22, 22, -1, -1, null,
-            const <int>[135], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[141], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 22, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'convertListToCode', 2097170, 22, -1, -1, -1, null,
-            const <int>[136], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[142], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'convertTypeToCode', 2097170, 22, -1, -1, -1, null,
-            const <int>[137], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[143], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'toCode',
             2097154,
@@ -2113,7 +2114,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[138, 139],
+            const <int>[144, 145],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2128,11 +2129,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 36, 233),
+            const prefix0.DynamicAttributeKey(), 36, 234),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 37, 234),
+            const prefix0.DynamicAttributeKey(), 37, 235),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 38, 235),
+            const prefix0.DynamicAttributeKey(), 38, 236),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -2145,15 +2146,15 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.MethodMirrorImpl(r'fromJson', 2097170, 23, 23, -1, -1, null,
-            const <int>[140], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[146], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 24, 24, -1, -1, null,
-            const <int>[141], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[147], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 2097154, 24, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toCode', 2097154, 24, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 39, 241),
+            const prefix0.DynamicAttributeKey(), 39, 242),
         r.MethodMirrorImpl(
             r'props',
             35651587,
@@ -2166,7 +2167,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const prefix0.DynamicAttributeKey(),
             const <Object>[override]),
         r.MethodMirrorImpl(r'fromJson', 2097170, 25, 25, -1, -1, null,
-            const <int>[142], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[148], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'get',
             2097154,
@@ -2175,24 +2176,13 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[143, 144, 145, 146],
+            const <int>[149, 150, 151, 152],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 26, 26, -1, -1, null,
-            const <int>[147], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[153], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 26, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
-        r.MethodMirrorImpl(
-            r'toCode',
-            2097154,
-            26,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[148, 149, 150],
-            const prefix0.DynamicAttributeKey(),
-            const []),
         r.MethodMirrorImpl(
             r'toCodeTextStyleOnly',
             2097154,
@@ -2201,7 +2191,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[151, 152, 153],
+            const <int>[154, 155, 156],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2212,7 +2202,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[154, 155, 156, 157, 158, 159, 160, 161, 162],
+            const <int>[157, 158, 159, 160, 161, 162, 163, 164, 165],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.ImplicitGetterMirrorImpl(
@@ -2252,11 +2242,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[163, 164, 165],
+            const <int>[166, 167, 168],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'getStateValue', 2097154, 27, -1, -1, -1, null,
-            const <int>[166], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[169], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(
             r'getImage',
             524290,
@@ -2265,7 +2255,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[167, 168, 169],
+            const <int>[170, 171, 172],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2276,7 +2266,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[170, 171, 172, 173],
+            const <int>[173, 174, 175, 176],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2287,7 +2277,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[174, 175, 176, 177],
+            const <int>[177, 178, 179, 180],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2298,7 +2288,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[178, 179, 180],
+            const <int>[181, 182, 183],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2309,7 +2299,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[181, 182, 183, 184, 185, 186, 187, 188, 189, 190],
+            const <int>[184, 185, 186, 187, 188, 189, 190, 191, 192, 193],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(
@@ -2320,35 +2310,13 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[191, 192, 193, 194],
+            const <int>[194, 195, 196, 197],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.MethodMirrorImpl(r'fromJson', 2097170, 27, 27, -1, -1, null,
-            const <int>[195], const prefix0.DynamicAttributeKey(), const []),
+            const <int>[198], const prefix0.DynamicAttributeKey(), const []),
         r.MethodMirrorImpl(r'toJson', 35651586, 27, -1, -1, -1, null,
             const <int>[], const prefix0.DynamicAttributeKey(), const []),
-        r.MethodMirrorImpl(
-            r'toCode',
-            2097154,
-            27,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[196, 197, 198, 199, 200],
-            const prefix0.DynamicAttributeKey(),
-            const []),
-        r.MethodMirrorImpl(
-            r'getRawToCode',
-            2097154,
-            27,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[201, 202, 203],
-            const prefix0.DynamicAttributeKey(),
-            const []),
         r.MethodMirrorImpl(
             r'convertType',
             2097154,
@@ -2357,34 +2325,34 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             -1,
             null,
-            const <int>[204, 205],
+            const <int>[199, 200],
             const prefix0.DynamicAttributeKey(),
             const []),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 49, 273),
+            const prefix0.DynamicAttributeKey(), 49, 271),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 50, 274),
+            const prefix0.DynamicAttributeKey(), 50, 272),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 51, 275),
+            const prefix0.DynamicAttributeKey(), 51, 273),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 52, 276),
+            const prefix0.DynamicAttributeKey(), 52, 274),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 53, 277),
+            const prefix0.DynamicAttributeKey(), 53, 275),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 54, 278),
+            const prefix0.DynamicAttributeKey(), 54, 276),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 55, 279),
+            const prefix0.DynamicAttributeKey(), 55, 277),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 56, 280),
+            const prefix0.DynamicAttributeKey(), 56, 278),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 57, 281),
+            const prefix0.DynamicAttributeKey(), 57, 279),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 58, 282),
+            const prefix0.DynamicAttributeKey(), 58, 280),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 59, 283),
+            const prefix0.DynamicAttributeKey(), 59, 281),
         r.ImplicitGetterMirrorImpl(
-            const prefix0.DynamicAttributeKey(), 60, 284),
-        r.ImplicitGetterMirrorImpl(const prefix0.DynamicAttributeKey(), 61, 285)
+            const prefix0.DynamicAttributeKey(), 60, 282),
+        r.ImplicitGetterMirrorImpl(const prefix0.DynamicAttributeKey(), 61, 283)
       ],
       <m.ParameterMirror>[
         r.ParameterMirrorImpl(
@@ -3348,45 +3316,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             #loop),
         r.ParameterMirrorImpl(
-            r'context',
-            134349830,
-            149,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'loop',
-            67240966,
-            149,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'isStream',
-            134358022,
-            149,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #isStream),
-        r.ParameterMirrorImpl(
             r'other',
             134348806,
-            152,
+            151,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3398,7 +3330,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            155,
+            154,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3410,7 +3342,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'forPlay',
             134358022,
-            155,
+            154,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3422,7 +3354,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'deviceType',
             134358022,
-            155,
+            154,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3434,7 +3366,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'value',
             134349830,
-            156,
+            155,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3446,7 +3378,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            156,
+            155,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3458,7 +3390,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'deviceType',
             134349830,
-            156,
+            155,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3470,7 +3402,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             67142662,
-            157,
+            156,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3482,7 +3414,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'size',
             67253254,
-            159,
+            158,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3494,7 +3426,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'sizeTablet',
             67253254,
-            159,
+            158,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3506,7 +3438,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'sizeDesktop',
             67253254,
-            159,
+            158,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3518,7 +3450,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             134349830,
-            166,
+            165,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3529,6 +3461,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null),
         r.ParameterMirrorImpl(
             r'key',
+            134349830,
+            166,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'json',
             134349830,
             167,
             const prefix0.DynamicAttributeKey(),
@@ -3542,7 +3486,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             134349830,
-            168,
+            175,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3566,7 +3510,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             134349830,
-            177,
+            181,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3588,21 +3532,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'json',
-            134349830,
-            183,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
             r'state',
             134358022,
-            184,
+            183,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3614,7 +3546,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134358022,
-            184,
+            183,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3626,7 +3558,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            185,
+            184,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3638,7 +3570,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'forPlay',
             134358022,
-            185,
+            184,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3650,7 +3582,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'deviceType',
             134358022,
-            185,
+            184,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3662,7 +3594,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             67142662,
-            186,
+            185,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3674,7 +3606,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'margins',
             84030470,
-            188,
+            187,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3686,7 +3618,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'marginsTablet',
             84030470,
-            188,
+            187,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3698,7 +3630,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'marginsDesktop',
             84030470,
-            188,
+            187,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3710,7 +3642,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'value',
             151135238,
-            189,
+            188,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3722,7 +3654,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134358022,
-            189,
+            188,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3734,7 +3666,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'deviceType',
             134358022,
-            189,
+            188,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3746,7 +3678,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'list',
             84018182,
-            190,
+            189,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3758,7 +3690,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            191,
+            190,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3769,6 +3701,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null),
         r.ParameterMirrorImpl(
             r'json',
+            134349830,
+            196,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'context',
             134349830,
             197,
             const prefix0.DynamicAttributeKey(),
@@ -3792,7 +3736,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'context',
+            r'json',
             134349830,
             199,
             const prefix0.DynamicAttributeKey(),
@@ -3804,21 +3748,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'json',
-            134349830,
-            200,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
             r'physic',
             67253254,
-            203,
+            202,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3827,6 +3759,18 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const [],
             null,
             #physic),
+        r.ParameterMirrorImpl(
+            r'key',
+            134349830,
+            203,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
         r.ParameterMirrorImpl(
             r'key',
             134349830,
@@ -3852,7 +3796,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'key',
+            r'value',
             134349830,
             206,
             const prefix0.DynamicAttributeKey(),
@@ -3865,7 +3809,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null),
         r.ParameterMirrorImpl(
             r'value',
-            134349830,
+            67240966,
             207,
             const prefix0.DynamicAttributeKey(),
             -1,
@@ -3876,9 +3820,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'value',
-            67240966,
-            208,
+            r'context',
+            134348806,
+            212,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3888,9 +3832,105 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
+            r'colors',
+            151126022,
+            212,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'theme',
+            134348806,
+            212,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'x',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            27,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #x),
+        r.ParameterMirrorImpl(
+            r'y',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            27,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #y),
+        r.ParameterMirrorImpl(
+            r'spread',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            27,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #spread),
+        r.ParameterMirrorImpl(
+            r'blur',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            27,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #blur),
+        r.ParameterMirrorImpl(
+            r'fill',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            9,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #fill),
+        r.ParameterMirrorImpl(
+            r'opacity',
+            67252230,
+            213,
+            const prefix0.DynamicAttributeKey(),
+            22,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #opacity),
+        r.ParameterMirrorImpl(
             r'json',
             151127046,
-            214,
+            215,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3902,7 +3942,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'state',
             134358022,
-            224,
+            225,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3914,7 +3954,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134358022,
-            224,
+            225,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3926,7 +3966,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'isWidth',
             134358022,
-            224,
+            225,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3938,7 +3978,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'size',
             67252230,
-            225,
+            226,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3950,7 +3990,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'sizeTablet',
             67252230,
-            225,
+            226,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3962,7 +4002,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'sizeDesktop',
             67252230,
-            225,
+            226,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3974,7 +4014,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'newValue',
             134349830,
-            226,
+            227,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3986,7 +4026,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            226,
+            227,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -3998,7 +4038,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'deviceType',
             134349830,
-            226,
+            227,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4010,7 +4050,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             151127046,
-            227,
+            228,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4022,7 +4062,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'value',
             67240966,
-            229,
+            230,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4034,7 +4074,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'unit',
             67240966,
-            230,
+            231,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4046,7 +4086,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134358022,
-            231,
+            232,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4058,7 +4098,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'isWidth',
             134358022,
-            231,
+            232,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4067,18 +4107,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const [],
             null,
             #isWidth),
-        r.ParameterMirrorImpl(
-            r'json',
-            134349830,
-            237,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
         r.ParameterMirrorImpl(
             r'json',
             134349830,
@@ -4094,7 +4122,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'json',
             134349830,
-            243,
+            239,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'json',
+            134349830,
+            244,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4106,54 +4146,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'state',
             134349830,
-            244,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'context',
-            134349830,
-            244,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'forPlay',
-            134349830,
-            244,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'model',
-            67240966,
-            244,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'doc',
-            151127046,
             245,
             const prefix0.DynamicAttributeKey(),
             -1,
@@ -4166,7 +4158,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'context',
             134349830,
-            247,
+            245,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4176,9 +4168,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'textStyles',
-            151126022,
-            247,
+            r'forPlay',
+            134349830,
+            245,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4188,9 +4180,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'colorStyles',
-            151126022,
-            247,
+            r'model',
+            67240966,
+            245,
+            const prefix0.DynamicAttributeKey(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            null),
+        r.ParameterMirrorImpl(
+            r'doc',
+            151127046,
+            246,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4740,105 +4744,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null),
         r.ParameterMirrorImpl(
-            r'loop',
-            67240966,
-            270,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'resultType',
-            134358022,
-            270,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #resultType),
-        r.ParameterMirrorImpl(
-            r'defaultValue',
-            67253254,
-            270,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #defaultValue),
-        r.ParameterMirrorImpl(
-            r'whiteSpace',
-            67253254,
-            270,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #whiteSpace),
-        r.ParameterMirrorImpl(
-            r'wrapInString',
-            67253254,
-            270,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #wrapInString),
-        r.ParameterMirrorImpl(
-            r'loop',
-            67240966,
-            271,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            null),
-        r.ParameterMirrorImpl(
-            r'resultType',
-            134358022,
-            271,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #resultType),
-        r.ParameterMirrorImpl(
-            r'defaultValue',
-            67253254,
-            271,
-            const prefix0.DynamicAttributeKey(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #defaultValue),
-        r.ParameterMirrorImpl(
             r'original',
             134349830,
-            272,
+            270,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4850,7 +4758,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.ParameterMirrorImpl(
             r'resType',
             134358022,
-            272,
+            270,
             const prefix0.DynamicAttributeKey(),
             -1,
             -1,
@@ -4972,7 +4880,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r'getRaw': (dynamic instance) => instance.getRaw,
         r'getValue': (dynamic instance) => instance.getValue,
         r'updateValue': (dynamic instance) => instance.updateValue,
-        r'getRawToCode': (dynamic instance) => instance.getRawToCode,
         r'convertType': (dynamic instance) => instance.convertType,
         r'valueTablet': (dynamic instance) => instance.valueTablet,
         r'valueDesktop': (dynamic instance) => instance.valueDesktop,
@@ -10868,7 +10775,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) =>
+                  () => b ? const prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10957,7 +10865,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix31.WidgetAdapterParse() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix31.WidgetAdapterParse() : null
+            },
             -1,
             0,
             const <int>[],
@@ -11091,7 +11002,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.AlignWidgetAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.AlignWidgetAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AlignWidgetAdapter.create() : null
             },
@@ -11116,7 +11028,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.AspectRatioAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.AspectRatioAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AspectRatioAdapter.create() : null
             },
@@ -11141,7 +11054,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BadgeAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.BadgeAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BadgeAdapter.create() : null
             },
@@ -11154,8 +11067,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'BarcodeAdapter',
-            r'.BarcodeAdapter',
+            r'BottomBarItemAdapter',
+            r'.BottomBarItemAdapter',
             134217735,
             3,
             const prefix31.DynamicAdapter(),
@@ -11166,21 +11079,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BarcodeAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.BottomBarItemAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.BarcodeAdapter.create() : null
+                  () => b ? prefix32.BottomBarItemAdapter.create() : null
             },
             -1,
             3,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.barcode)
+              const prefix29.NodeKey(prefix39.NType.bottombaritem)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'BottomBarItemAdapter',
-            r'.BottomBarItemAdapter',
+            r'ButtonAdapter',
+            r'.ButtonAdapter',
             134217735,
             4,
             const prefix31.DynamicAdapter(),
@@ -11191,62 +11105,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BottomBarItemAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.BottomBarItemAdapter.create() : null
-            },
-            -1,
-            4,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.bottombaritem)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'BouncingAdapter',
-            r'.BouncingAdapter',
-            134217735,
-            5,
-            const prefix31.DynamicAdapter(),
-            const <int>[20, 21, 22],
-            const <int>[3, 4, 5, 6, 7, 20],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.BouncingAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.BouncingAdapter.create() : null
-            },
-            -1,
-            5,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.bouncingWidget)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'ButtonAdapter',
-            r'.ButtonAdapter',
-            134217735,
-            6,
-            const prefix31.DynamicAdapter(),
-            const <int>[23, 24, 25],
-            const <int>[3, 4, 5, 6, 7, 23],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.ButtonAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ButtonAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ButtonAdapter.create() : null
             },
             -1,
-            6,
+            4,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11257,21 +11121,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'CardAdaptor',
             r'.CardAdaptor',
             134217735,
-            7,
+            5,
             const prefix31.DynamicAdapter(),
-            const <int>[26, 27, 28],
-            const <int>[3, 4, 5, 6, 7, 26],
+            const <int>[20, 21, 22],
+            const <int>[3, 4, 5, 6, 7, 20],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CardAdaptor() : null,
+              r'': (bool b) => () => b ? const prefix32.CardAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CardAdaptor.create() : null
             },
             -1,
-            7,
+            5,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11282,21 +11146,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'CenterAdaptor',
             r'.CenterAdaptor',
             134217735,
-            8,
+            6,
             const prefix31.DynamicAdapter(),
-            const <int>[29, 30, 31],
-            const <int>[3, 4, 5, 6, 7, 29],
+            const <int>[23, 24, 25],
+            const <int>[3, 4, 5, 6, 7, 23],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CenterAdaptor() : null,
+              r'': (bool b) => () => b ? const prefix32.CenterAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CenterAdaptor.create() : null
             },
             -1,
-            8,
+            6,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11307,21 +11171,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'CheckBoxAdaptor',
             r'.CheckBoxAdaptor',
             134217735,
-            9,
+            7,
             const prefix31.DynamicAdapter(),
-            const <int>[32, 33, 34],
-            const <int>[3, 4, 5, 6, 7, 32],
+            const <int>[26, 27, 28],
+            const <int>[3, 4, 5, 6, 7, 26],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CheckBoxAdaptor() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.CheckBoxAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CheckBoxAdaptor.create() : null
             },
             -1,
-            9,
+            7,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11331,6 +11196,58 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.NonGenericClassMirrorImpl(
             r'CircularProgressIndicatorAdaptor',
             r'.CircularProgressIndicatorAdaptor',
+            134217735,
+            8,
+            const prefix31.DynamicAdapter(),
+            const <int>[29, 30, 31],
+            const <int>[3, 4, 5, 6, 7, 29],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () =>
+                  b ? const prefix32.CircularProgressIndicatorAdaptor() : null,
+              r'create': (bool b) => () =>
+                  b ? prefix32.CircularProgressIndicatorAdaptor.create() : null
+            },
+            -1,
+            8,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.circularProgressIndicator)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ClipOvalAdaptor',
+            r'.ClipOvalAdaptor',
+            134217735,
+            9,
+            const prefix31.DynamicAdapter(),
+            const <int>[32, 33, 34],
+            const <int>[3, 4, 5, 6, 7, 32],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.ClipOvalAdaptor() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ClipOvalAdaptor.create() : null
+            },
+            -1,
+            9,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.clipOval)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ClipRectAdapter',
+            r'.ClipRectAdapter',
             134217735,
             10,
             const prefix31.DynamicAdapter(),
@@ -11342,62 +11259,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CircularProgressIndicatorAdaptor() : null,
-              r'create': (bool b) => () =>
-                  b ? prefix32.CircularProgressIndicatorAdaptor.create() : null
-            },
-            -1,
-            10,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.circularProgressIndicator)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'ClipOvalAdaptor',
-            r'.ClipOvalAdaptor',
-            134217735,
-            11,
-            const prefix31.DynamicAdapter(),
-            const <int>[38, 39, 40],
-            const <int>[3, 4, 5, 6, 7, 38],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.ClipOvalAdaptor() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.ClipOvalAdaptor.create() : null
-            },
-            -1,
-            11,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.clipOval)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'ClipRectAdapter',
-            r'.ClipRectAdapter',
-            134217735,
-            12,
-            const prefix31.DynamicAdapter(),
-            const <int>[41, 42, 43],
-            const <int>[3, 4, 5, 6, 7, 41],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.ClipRectAdapter() : null,
+                  () => b ? const prefix32.ClipRectAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ClipRectAdapter.create() : null
             },
             -1,
-            12,
+            10,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11408,21 +11275,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ClipRRectAdapter',
             r'.ClipRRectAdapter',
             134217735,
-            13,
+            11,
             const prefix31.DynamicAdapter(),
-            const <int>[44, 45, 46],
-            const <int>[3, 4, 5, 6, 7, 44],
+            const <int>[38, 39, 40],
+            const <int>[3, 4, 5, 6, 7, 38],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ClipRRectAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ClipRRectAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ClipRRectAdapter.create() : null
             },
             -1,
-            13,
+            11,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11433,21 +11301,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ColumnAdapter',
             r'.ColumnAdapter',
             134217735,
-            14,
+            12,
             const prefix31.DynamicAdapter(),
-            const <int>[47, 48, 49],
-            const <int>[3, 4, 5, 6, 7, 47],
+            const <int>[41, 42, 43],
+            const <int>[3, 4, 5, 6, 7, 41],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ColumnAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ColumnAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ColumnAdapter.create() : null
             },
             -1,
-            14,
+            12,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11457,6 +11325,58 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.NonGenericClassMirrorImpl(
             r'ConcentricPageViewAdapter',
             r'.ConcentricPageViewAdapter',
+            134217735,
+            13,
+            const prefix31.DynamicAdapter(),
+            const <int>[44, 45, 46],
+            const <int>[3, 4, 5, 6, 7, 44],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.ConcentricPageViewAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ConcentricPageViewAdapter.create() : null
+            },
+            -1,
+            13,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.concentricPageView)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ConditionAdapter',
+            r'.ConditionAdapter',
+            134217735,
+            14,
+            const prefix31.DynamicAdapter(),
+            const <int>[47, 48, 49],
+            const <int>[3, 4, 5, 6, 7, 47],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.ConditionAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ConditionAdapter.create() : null
+            },
+            -1,
+            14,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.condition)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ConstrainedBoxAdapter',
+            r'.ConstrainedBoxAdapter',
             134217735,
             15,
             const prefix31.DynamicAdapter(),
@@ -11468,21 +11388,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ConcentricPageViewAdapter() : null,
+                  () => b ? const prefix32.ConstrainedBoxAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.ConcentricPageViewAdapter.create() : null
+                  () => b ? prefix32.ConstrainedBoxAdapter.create() : null
             },
             -1,
             15,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.concentricPageView)
+              const prefix29.NodeKey(prefix39.NType.constrainedBox)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'ConditionAdapter',
-            r'.ConditionAdapter',
+            r'BoxAdapter',
+            r'.BoxAdapter',
             134217735,
             16,
             const prefix31.DynamicAdapter(),
@@ -11493,21 +11413,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ConditionAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.BoxAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.ConditionAdapter.create() : null
+                  () => b ? prefix32.BoxAdapter.create() : null
             },
             -1,
             16,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.condition)
+              const prefix29.NodeKey(prefix39.NType.container)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'ConstrainedBoxAdapter',
-            r'.ConstrainedBoxAdapter',
+            r'CupertinoAppBarAdapter',
+            r'.CupertinoAppBarAdapter',
             134217735,
             17,
             const prefix31.DynamicAdapter(),
@@ -11519,21 +11439,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ConstrainedBoxAdapter() : null,
+                  () => b ? const prefix32.CupertinoAppBarAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.ConstrainedBoxAdapter.create() : null
+                  () => b ? prefix32.CupertinoAppBarAdapter.create() : null
             },
             -1,
             17,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.constrainedBox)
+              const prefix29.NodeKey(prefix39.NType.cupertinoAppBar)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'BoxAdapter',
-            r'.BoxAdapter',
+            r'CupertinoPickerAdapter',
+            r'.CupertinoPickerAdapter',
             134217735,
             18,
             const prefix31.DynamicAdapter(),
@@ -11544,21 +11464,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BoxAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.CupertinoPickerAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.BoxAdapter.create() : null
+                  () => b ? prefix32.CupertinoPickerAdapter.create() : null
             },
             -1,
             18,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.container)
+              const prefix29.NodeKey(prefix39.NType.cupertinoPicker)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'CupertinoAppBarAdapter',
-            r'.CupertinoAppBarAdapter',
+            r'CupertinoSegmentedControlAdapter',
+            r'.CupertinoSegmentedControlAdapter',
             134217735,
             19,
             const prefix31.DynamicAdapter(),
@@ -11569,22 +11490,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix32.CupertinoAppBarAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.CupertinoAppBarAdapter.create() : null
+              r'': (bool b) => () =>
+                  b ? const prefix32.CupertinoSegmentedControlAdapter() : null,
+              r'create': (bool b) => () =>
+                  b ? prefix32.CupertinoSegmentedControlAdapter.create() : null
             },
             -1,
             19,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.cupertinoAppBar)
+              const prefix29.NodeKey(prefix39.NType.cupertinoSegmentedControl)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'CupertinoPickerAdapter',
-            r'.CupertinoPickerAdapter',
+            r'CupertinoSwitchAdapter',
+            r'.CupertinoSwitchAdapter',
             134217735,
             20,
             const prefix31.DynamicAdapter(),
@@ -11596,21 +11517,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CupertinoPickerAdapter() : null,
+                  () => b ? const prefix32.CupertinoSwitchAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.CupertinoPickerAdapter.create() : null
+                  () => b ? prefix32.CupertinoSwitchAdapter.create() : null
             },
             -1,
             20,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.cupertinoPicker)
+              const prefix29.NodeKey(prefix39.NType.cupertinoSwitch)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'CupertinoSegmentedControlAdapter',
-            r'.CupertinoSegmentedControlAdapter',
+            r'DecoratedBoxAdapter',
+            r'.DecoratedBoxAdapter',
             134217735,
             21,
             const prefix31.DynamicAdapter(),
@@ -11622,63 +11543,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CupertinoSegmentedControlAdapter() : null,
-              r'create': (bool b) => () =>
-                  b ? prefix32.CupertinoSegmentedControlAdapter.create() : null
-            },
-            -1,
-            21,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.cupertinoSegmentedControl)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'CupertinoSwitchAdapter',
-            r'.CupertinoSwitchAdapter',
-            134217735,
-            22,
-            const prefix31.DynamicAdapter(),
-            const <int>[71, 72, 73],
-            const <int>[3, 4, 5, 6, 7, 71],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) =>
-                  () => b ? prefix32.CupertinoSwitchAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.CupertinoSwitchAdapter.create() : null
-            },
-            -1,
-            22,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.cupertinoSwitch)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'DecoratedBoxAdapter',
-            r'.DecoratedBoxAdapter',
-            134217735,
-            23,
-            const prefix31.DynamicAdapter(),
-            const <int>[74, 75, 76],
-            const <int>[3, 4, 5, 6, 7, 74],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.DecoratedBoxAdapter() : null,
+                  () => b ? const prefix32.DecoratedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DecoratedBoxAdapter.create() : null
             },
             -1,
-            23,
+            21,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11689,21 +11559,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'DividerAdapter',
             r'.DividerAdapter',
             134217735,
-            24,
+            22,
             const prefix31.DynamicAdapter(),
-            const <int>[77, 78, 79],
-            const <int>[3, 4, 5, 6, 7, 77],
+            const <int>[71, 72, 73],
+            const <int>[3, 4, 5, 6, 7, 71],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DividerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.DividerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DividerAdapter.create() : null
             },
             -1,
-            24,
+            22,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11714,21 +11584,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'DotsIndicatorAdapter',
             r'.DotsIndicatorAdapter',
             134217735,
-            25,
+            23,
             const prefix31.DynamicAdapter(),
-            const <int>[80, 81, 82],
-            const <int>[3, 4, 5, 6, 7, 80],
+            const <int>[74, 75, 76],
+            const <int>[3, 4, 5, 6, 7, 74],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DotsIndicatorAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.DotsIndicatorAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DotsIndicatorAdapter.create() : null
             },
             -1,
-            25,
+            23,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11739,21 +11610,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ExpandedAdapter',
             r'.ExpandedAdapter',
             134217735,
-            26,
+            24,
             const prefix31.DynamicAdapter(),
-            const <int>[83, 84, 85],
-            const <int>[3, 4, 5, 6, 7, 83],
+            const <int>[77, 78, 79],
+            const <int>[3, 4, 5, 6, 7, 77],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ExpandedAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ExpandedAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ExpandedAdapter.create() : null
             },
             -1,
-            26,
+            24,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11764,22 +11636,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'GestureDetectorAdapter',
             r'.GestureDetectorAdapter',
             134217735,
-            27,
+            25,
             const prefix31.DynamicAdapter(),
-            const <int>[86, 87, 88],
-            const <int>[3, 4, 5, 6, 7, 86],
+            const <int>[80, 81, 82],
+            const <int>[3, 4, 5, 6, 7, 80],
             const <int>[],
             -1,
             {},
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.GestureDetectorAdapter() : null,
+                  () => b ? const prefix32.GestureDetectorAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.GestureDetectorAdapter.create() : null
             },
             -1,
-            27,
+            25,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11790,21 +11662,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'GridViewAdapter',
             r'.GridViewAdapter',
             134217735,
-            28,
+            26,
             const prefix31.DynamicAdapter(),
-            const <int>[89, 90, 91],
-            const <int>[3, 4, 5, 6, 7, 89],
+            const <int>[83, 84, 85],
+            const <int>[3, 4, 5, 6, 7, 83],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.GridViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.GridViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.GridViewAdapter.create() : null
             },
             -1,
-            28,
+            26,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11815,21 +11688,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'HeroAdapter',
             r'.HeroAdapter',
             134217735,
-            29,
+            27,
             const prefix31.DynamicAdapter(),
-            const <int>[92, 93, 94],
-            const <int>[3, 4, 5, 6, 7, 92],
+            const <int>[86, 87, 88],
+            const <int>[3, 4, 5, 6, 7, 86],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.HeroAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.HeroAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.HeroAdapter.create() : null
             },
             -1,
-            29,
+            27,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11840,21 +11713,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'IconFeatherAdapter',
             r'.IconFeatherAdapter',
             134217735,
-            30,
+            28,
             const prefix31.DynamicAdapter(),
-            const <int>[95, 96, 97],
-            const <int>[3, 4, 5, 6, 7, 95],
+            const <int>[89, 90, 91],
+            const <int>[3, 4, 5, 6, 7, 89],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IconFeatherAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IconFeatherAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IconFeatherAdapter.create() : null
             },
             -1,
-            30,
+            28,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11864,6 +11738,58 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.NonGenericClassMirrorImpl(
             r'IconFontAwesomeAdapter',
             r'.IconFontAwesomeAdapter',
+            134217735,
+            29,
+            const prefix31.DynamicAdapter(),
+            const <int>[92, 93, 94],
+            const <int>[3, 4, 5, 6, 7, 92],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.IconFontAwesomeAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.IconFontAwesomeAdapter.create() : null
+            },
+            -1,
+            29,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.fontAwesomeIcon)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'IconLineAdapter',
+            r'.IconLineAdapter',
+            134217735,
+            30,
+            const prefix31.DynamicAdapter(),
+            const <int>[95, 96, 97],
+            const <int>[3, 4, 5, 6, 7, 95],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.IconLineAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.IconLineAdapter.create() : null
+            },
+            -1,
+            30,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.lineIcon)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'MaterialIconAdapter',
+            r'.MaterialIconAdapter',
             134217735,
             31,
             const prefix31.DynamicAdapter(),
@@ -11875,62 +11801,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.IconFontAwesomeAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.IconFontAwesomeAdapter.create() : null
-            },
-            -1,
-            31,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.fontAwesomeIcon)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'IconLineAdapter',
-            r'.IconLineAdapter',
-            134217735,
-            32,
-            const prefix31.DynamicAdapter(),
-            const <int>[101, 102, 103],
-            const <int>[3, 4, 5, 6, 7, 101],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.IconLineAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.IconLineAdapter.create() : null
-            },
-            -1,
-            32,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.lineIcon)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'MaterialIconAdapter',
-            r'.MaterialIconAdapter',
-            134217735,
-            33,
-            const prefix31.DynamicAdapter(),
-            const <int>[104, 105, 106],
-            const <int>[3, 4, 5, 6, 7, 104],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.MaterialIconAdapter() : null,
+                  () => b ? const prefix32.MaterialIconAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.MaterialIconAdapter.create() : null
             },
             -1,
-            33,
+            31,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11941,21 +11817,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'IgnorePointerAdapter',
             r'.IgnorePointerAdapter',
             134217735,
-            34,
+            32,
             const prefix31.DynamicAdapter(),
-            const <int>[107, 108, 109],
-            const <int>[3, 4, 5, 6, 7, 107],
+            const <int>[101, 102, 103],
+            const <int>[3, 4, 5, 6, 7, 101],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IgnorePointerAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IgnorePointerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IgnorePointerAdapter.create() : null
             },
             -1,
-            34,
+            32,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11966,21 +11843,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ImageAdapter',
             r'.ImageAdapter',
             134217735,
-            35,
+            33,
             const prefix31.DynamicAdapter(),
-            const <int>[110, 111, 112],
-            const <int>[3, 4, 5, 6, 7, 110],
+            const <int>[104, 105, 106],
+            const <int>[3, 4, 5, 6, 7, 104],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ImageAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ImageAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ImageAdapter.create() : null
             },
             -1,
-            35,
+            33,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -11991,21 +11868,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'IndexStackAdapter',
             r'.IndexStackAdapter',
             134217735,
-            36,
+            34,
             const prefix31.DynamicAdapter(),
-            const <int>[113, 114, 115],
-            const <int>[3, 4, 5, 6, 7, 113],
+            const <int>[107, 108, 109],
+            const <int>[3, 4, 5, 6, 7, 107],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IndexStackAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IndexStackAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IndexStackAdapter.create() : null
             },
             -1,
-            36,
+            34,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12015,6 +11893,58 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.NonGenericClassMirrorImpl(
             r'LinearProgressIndicatorAdapter',
             r'.LinearProgressIndicatorAdapter',
+            134217735,
+            35,
+            const prefix31.DynamicAdapter(),
+            const <int>[110, 111, 112],
+            const <int>[3, 4, 5, 6, 7, 110],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () =>
+                  b ? const prefix32.LinearProgressIndicatorAdapter() : null,
+              r'create': (bool b) => () =>
+                  b ? prefix32.LinearProgressIndicatorAdapter.create() : null
+            },
+            -1,
+            35,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.linearProgressIndicator)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'LiquidSwipeAdapter',
+            r'.LiquidSwipeAdapter',
+            134217735,
+            36,
+            const prefix31.DynamicAdapter(),
+            const <int>[113, 114, 115],
+            const <int>[3, 4, 5, 6, 7, 113],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.LiquidSwipeAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.LiquidSwipeAdapter.create() : null
+            },
+            -1,
+            36,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.liquidSwipe)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ListTileAdapter',
+            r'.ListTileAdapter',
             134217735,
             37,
             const prefix31.DynamicAdapter(),
@@ -12026,62 +11956,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LinearProgressIndicatorAdapter() : null,
-              r'create': (bool b) => () =>
-                  b ? prefix32.LinearProgressIndicatorAdapter.create() : null
-            },
-            -1,
-            37,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.linearProgressIndicator)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'LiquidSwipeAdapter',
-            r'.LiquidSwipeAdapter',
-            134217735,
-            38,
-            const prefix31.DynamicAdapter(),
-            const <int>[119, 120, 121],
-            const <int>[3, 4, 5, 6, 7, 119],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.LiquidSwipeAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.LiquidSwipeAdapter.create() : null
-            },
-            -1,
-            38,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.liquidSwipe)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'ListTileAdapter',
-            r'.ListTileAdapter',
-            134217735,
-            39,
-            const prefix31.DynamicAdapter(),
-            const <int>[122, 123, 124],
-            const <int>[3, 4, 5, 6, 7, 122],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.ListTileAdapter() : null,
+                  () => b ? const prefix32.ListTileAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ListTileAdapter.create() : null
             },
             -1,
-            39,
+            37,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12092,21 +11972,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ListViewAdapter',
             r'.ListViewAdapter',
             134217735,
-            40,
+            38,
             const prefix31.DynamicAdapter(),
-            const <int>[125, 126, 127],
-            const <int>[3, 4, 5, 6, 7, 125],
+            const <int>[119, 120, 121],
+            const <int>[3, 4, 5, 6, 7, 119],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ListViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ListViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ListViewAdapter.create() : null
             },
             -1,
-            40,
+            38,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12117,21 +11998,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'LottieAdapter',
             r'.LottieAdapter',
             134217735,
-            41,
+            39,
             const prefix31.DynamicAdapter(),
-            const <int>[128, 129, 130],
-            const <int>[3, 4, 5, 6, 7, 128],
+            const <int>[122, 123, 124],
+            const <int>[3, 4, 5, 6, 7, 122],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.LottieAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.LottieAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LottieAdapter.create() : null
             },
             -1,
-            41,
+            39,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12142,21 +12023,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'OffstageAdapter',
             r'.OffstageAdapter',
             134217735,
-            42,
+            40,
             const prefix31.DynamicAdapter(),
-            const <int>[131, 132, 133],
-            const <int>[3, 4, 5, 6, 7, 131],
+            const <int>[125, 126, 127],
+            const <int>[3, 4, 5, 6, 7, 125],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.OffstageAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.OffstageAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.OffstageAdapter.create() : null
             },
             -1,
-            42,
+            40,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12167,21 +12049,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'OpacityAdapter',
             r'.OpacityAdapter',
             134217735,
-            43,
+            41,
             const prefix31.DynamicAdapter(),
-            const <int>[134, 135, 136],
-            const <int>[3, 4, 5, 6, 7, 134],
+            const <int>[128, 129, 130],
+            const <int>[3, 4, 5, 6, 7, 128],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.OpacityAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.OpacityAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.OpacityAdapter.create() : null
             },
             -1,
-            43,
+            41,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12192,21 +12074,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'PaddingAdapter',
             r'.PaddingAdapter',
             134217735,
-            44,
+            42,
             const prefix31.DynamicAdapter(),
-            const <int>[137, 138, 139],
-            const <int>[3, 4, 5, 6, 7, 137],
+            const <int>[131, 132, 133],
+            const <int>[3, 4, 5, 6, 7, 131],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PaddingAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.PaddingAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PaddingAdapter.create() : null
             },
             -1,
-            44,
+            42,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12217,21 +12099,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'PageViewAdapter',
             r'.PageViewAdapter',
             134217735,
-            45,
+            43,
             const prefix31.DynamicAdapter(),
-            const <int>[140, 141, 142],
-            const <int>[3, 4, 5, 6, 7, 140],
+            const <int>[134, 135, 136],
+            const <int>[3, 4, 5, 6, 7, 134],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PageViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PageViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PageViewAdapter.create() : null
             },
             -1,
-            45,
+            43,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12242,21 +12125,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'PlaceholderAdapter',
             r'.PlaceholderAdapter',
             134217735,
-            46,
+            44,
             const prefix31.DynamicAdapter(),
-            const <int>[143, 144, 145],
-            const <int>[3, 4, 5, 6, 7, 143],
+            const <int>[137, 138, 139],
+            const <int>[3, 4, 5, 6, 7, 137],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PlaceholderAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PlaceholderAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PlaceholderAdapter.create() : null
             },
             -1,
-            46,
+            44,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12267,21 +12151,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'PositionedAdapter',
             r'.PositionedAdapter',
             134217735,
-            47,
+            45,
             const prefix31.DynamicAdapter(),
-            const <int>[146, 147, 148],
-            const <int>[3, 4, 5, 6, 7, 146],
+            const <int>[140, 141, 142],
+            const <int>[3, 4, 5, 6, 7, 140],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PositionedAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PositionedAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PositionedAdapter.create() : null
             },
             -1,
-            47,
+            45,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12292,6 +12177,57 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'QRScannerAdapter',
             r'.QRScannerAdapter',
             134217735,
+            46,
+            const prefix31.DynamicAdapter(),
+            const <int>[143, 144, 145],
+            const <int>[3, 4, 5, 6, 7, 143],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.QRScannerAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.QRScannerAdapter.create() : null
+            },
+            -1,
+            46,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.qrScanner)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'RadioAdapter',
+            r'.RadioAdapter',
+            134217735,
+            47,
+            const prefix31.DynamicAdapter(),
+            const <int>[146, 147, 148],
+            const <int>[3, 4, 5, 6, 7, 146],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? const prefix32.RadioAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.RadioAdapter.create() : null
+            },
+            -1,
+            47,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.radio)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ResponsiveConditionAdapter',
+            r'.ResponsiveConditionAdapter',
+            134217735,
             48,
             const prefix31.DynamicAdapter(),
             const <int>[149, 150, 151],
@@ -12301,21 +12237,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.QRScannerAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ResponsiveConditionAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.QRScannerAdapter.create() : null
+                  () => b ? prefix32.ResponsiveConditionAdapter.create() : null
             },
             -1,
             48,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.qrScanner)
+              const prefix29.NodeKey(prefix39.NType.responsiveCondition)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'QRCodeAdapter',
-            r'.QRCodeAdapter',
+            r'RotatedBoxAdapter',
+            r'.RotatedBoxAdapter',
             134217735,
             49,
             const prefix31.DynamicAdapter(),
@@ -12326,21 +12263,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.QRCodeAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.RotatedBoxAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.QRCodeAdapter.create() : null
+                  () => b ? prefix32.RotatedBoxAdapter.create() : null
             },
             -1,
             49,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.qrCode)
+              const prefix29.NodeKey(prefix39.NType.rotatedBox)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'RadioAdapter',
-            r'.RadioAdapter',
+            r'RowAdapter',
+            r'.RowAdapter',
             134217735,
             50,
             const prefix31.DynamicAdapter(),
@@ -12351,21 +12289,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.RadioAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.RowAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.RadioAdapter.create() : null
+                  () => b ? prefix32.RowAdapter.create() : null
             },
             -1,
             50,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.radio)
+              const prefix29.NodeKey(prefix39.NType.row)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'RefreshIndicatorAdapter',
-            r'.RefreshIndicatorAdapter',
+            r'SafeAreaAdapter',
+            r'.SafeAreaAdapter',
             134217735,
             51,
             const prefix31.DynamicAdapter(),
@@ -12377,21 +12315,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.RefreshIndicatorAdapter() : null,
+                  () => b ? const prefix32.SafeAreaAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.RefreshIndicatorAdapter.create() : null
+                  () => b ? prefix32.SafeAreaAdapter.create() : null
             },
             -1,
             51,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.refreshIndicator)
+              const prefix29.NodeKey(prefix39.NType.safeArea)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'ResponsiveConditionAdapter',
-            r'.ResponsiveConditionAdapter',
+            r'ScaffoldAdapter',
+            r'.ScaffoldAdapter',
             134217735,
             52,
             const prefix31.DynamicAdapter(),
@@ -12403,112 +12341,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ResponsiveConditionAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.ResponsiveConditionAdapter.create() : null
-            },
-            -1,
-            52,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.responsiveCondition)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'RotatedBoxAdapter',
-            r'.RotatedBoxAdapter',
-            134217735,
-            53,
-            const prefix31.DynamicAdapter(),
-            const <int>[164, 165, 166],
-            const <int>[3, 4, 5, 6, 7, 164],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.RotatedBoxAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.RotatedBoxAdapter.create() : null
-            },
-            -1,
-            53,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.rotatedBox)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'RowAdapter',
-            r'.RowAdapter',
-            134217735,
-            54,
-            const prefix31.DynamicAdapter(),
-            const <int>[167, 168, 169],
-            const <int>[3, 4, 5, 6, 7, 167],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.RowAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.RowAdapter.create() : null
-            },
-            -1,
-            54,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.row)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'SafeAreaAdapter',
-            r'.SafeAreaAdapter',
-            134217735,
-            55,
-            const prefix31.DynamicAdapter(),
-            const <int>[170, 171, 172],
-            const <int>[3, 4, 5, 6, 7, 170],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.SafeAreaAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.SafeAreaAdapter.create() : null
-            },
-            -1,
-            55,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.safeArea)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'ScaffoldAdapter',
-            r'.ScaffoldAdapter',
-            134217735,
-            56,
-            const prefix31.DynamicAdapter(),
-            const <int>[173, 174, 175],
-            const <int>[3, 4, 5, 6, 7, 173],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.ScaffoldAdapter() : null,
+                  () => b ? const prefix32.ScaffoldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ScaffoldAdapter.create() : null
             },
             -1,
-            56,
+            52,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12519,21 +12357,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'SizedBoxAdapter',
             r'.SizedBoxAdapter',
             134217735,
-            57,
+            53,
             const prefix31.DynamicAdapter(),
-            const <int>[176, 177, 178],
-            const <int>[3, 4, 5, 6, 7, 176],
+            const <int>[164, 165, 166],
+            const <int>[3, 4, 5, 6, 7, 164],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SizedBoxAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.SizedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SizedBoxAdapter.create() : null
             },
             -1,
-            57,
+            53,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12544,21 +12383,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'SpacerAdapter',
             r'.SpacerAdapter',
             134217735,
-            58,
+            54,
             const prefix31.DynamicAdapter(),
-            const <int>[179, 180, 181],
-            const <int>[3, 4, 5, 6, 7, 179],
+            const <int>[167, 168, 169],
+            const <int>[3, 4, 5, 6, 7, 167],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SpacerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.SpacerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SpacerAdapter.create() : null
             },
             -1,
-            58,
+            54,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12569,21 +12408,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'StackAdapter',
             r'.StackAdapter',
             134217735,
-            59,
+            55,
             const prefix31.DynamicAdapter(),
-            const <int>[182, 183, 184],
-            const <int>[3, 4, 5, 6, 7, 182],
+            const <int>[170, 171, 172],
+            const <int>[3, 4, 5, 6, 7, 170],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.StackAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.StackAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.StackAdapter.create() : null
             },
             -1,
-            59,
+            55,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12594,21 +12433,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TCardAdapter',
             r'.TCardAdapter',
             134217735,
-            60,
+            56,
             const prefix31.DynamicAdapter(),
-            const <int>[185, 186, 187],
-            const <int>[3, 4, 5, 6, 7, 185],
+            const <int>[173, 174, 175],
+            const <int>[3, 4, 5, 6, 7, 173],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TCardAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TCardAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TCardAdapter.create() : null
             },
             -1,
-            60,
+            56,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12619,21 +12458,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TextAdapter',
             r'.TextAdapter',
             134217735,
-            61,
+            57,
             const prefix31.DynamicAdapter(),
-            const <int>[188, 189, 190],
-            const <int>[3, 4, 5, 6, 7, 188],
+            const <int>[176, 177, 178],
+            const <int>[3, 4, 5, 6, 7, 176],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TextAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TextAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TextAdapter.create() : null
             },
             -1,
-            61,
+            57,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12644,21 +12483,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TextFieldAdapter',
             r'.TextFieldAdapter',
             134217735,
-            62,
+            58,
             const prefix31.DynamicAdapter(),
-            const <int>[191, 192, 193],
-            const <int>[3, 4, 5, 6, 7, 191],
+            const <int>[179, 180, 181],
+            const <int>[3, 4, 5, 6, 7, 179],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TextFieldAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.TextFieldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TextFieldAdapter.create() : null
             },
             -1,
-            62,
+            58,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12669,21 +12509,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TooltipAdapter',
             r'.TooltipAdapter',
             134217735,
-            63,
+            59,
             const prefix31.DynamicAdapter(),
-            const <int>[194, 195, 196],
-            const <int>[3, 4, 5, 6, 7, 194],
+            const <int>[182, 183, 184],
+            const <int>[3, 4, 5, 6, 7, 182],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TooltipAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TooltipAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TooltipAdapter.create() : null
             },
             -1,
-            63,
+            59,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12694,22 +12534,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TransformRotateAdapter',
             r'.TransformRotateAdapter',
             134217735,
-            64,
+            60,
             const prefix31.DynamicAdapter(),
-            const <int>[197, 198, 199],
-            const <int>[3, 4, 5, 6, 7, 197],
+            const <int>[185, 186, 187],
+            const <int>[3, 4, 5, 6, 7, 185],
             const <int>[],
             -1,
             {},
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.TransformRotateAdapter() : null,
+                  () => b ? const prefix32.TransformRotateAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TransformRotateAdapter.create() : null
             },
             -1,
-            64,
+            60,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12720,21 +12560,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TransformAdapter',
             r'.TransformAdapter',
             134217735,
-            65,
+            61,
             const prefix31.DynamicAdapter(),
-            const <int>[200, 201, 202],
-            const <int>[3, 4, 5, 6, 7, 200],
+            const <int>[188, 189, 190],
+            const <int>[3, 4, 5, 6, 7, 188],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TransformAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.TransformAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TransformAdapter.create() : null
             },
             -1,
-            65,
+            61,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12745,21 +12586,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'VideoAdapter',
             r'.VideoAdapter',
             134217735,
-            66,
+            62,
             const prefix31.DynamicAdapter(),
-            const <int>[203, 204, 205],
-            const <int>[3, 4, 5, 6, 7, 203],
+            const <int>[191, 192, 193],
+            const <int>[3, 4, 5, 6, 7, 191],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.VideoAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.VideoAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.VideoAdapter.create() : null
             },
             -1,
-            66,
+            62,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12770,21 +12611,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'VisibilityAdapter',
             r'.VisibilityAdapter',
             134217735,
-            67,
+            63,
             const prefix31.DynamicAdapter(),
-            const <int>[206, 207, 208],
-            const <int>[3, 4, 5, 6, 7, 206],
+            const <int>[194, 195, 196],
+            const <int>[3, 4, 5, 6, 7, 194],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.VisibilityAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.VisibilityAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.VisibilityAdapter.create() : null
             },
             -1,
-            67,
+            63,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12795,21 +12637,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'WrapAdapter',
             r'.WrapAdapter',
             134217735,
-            68,
+            64,
             const prefix31.DynamicAdapter(),
-            const <int>[209, 210, 211],
-            const <int>[3, 4, 5, 6, 7, 209],
+            const <int>[197, 198, 199],
+            const <int>[3, 4, 5, 6, 7, 197],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.WrapAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.WrapAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.WrapAdapter.create() : null
             },
             -1,
-            68,
+            64,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12820,22 +12662,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'AnimationConfigGridAdapter',
             r'.AnimationConfigGridAdapter',
             134217735,
-            69,
+            65,
             const prefix31.DynamicAdapter(),
-            const <int>[212, 213, 214],
-            const <int>[3, 4, 5, 6, 7, 212],
+            const <int>[200, 201, 202],
+            const <int>[3, 4, 5, 6, 7, 200],
             const <int>[],
             -1,
             {},
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.AnimationConfigGridAdapter() : null,
+                  () => b ? const prefix32.AnimationConfigGridAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AnimationConfigGridAdapter.create() : null
             },
             -1,
-            69,
+            65,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -12845,6 +12687,107 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.NonGenericClassMirrorImpl(
             r'AnimationConfigListAdapter',
             r'.AnimationConfigListAdapter',
+            134217735,
+            66,
+            const prefix31.DynamicAdapter(),
+            const <int>[203, 204, 205],
+            const <int>[3, 4, 5, 6, 7, 203],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix32.AnimationConfigListAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.AnimationConfigListAdapter.create() : null
+            },
+            -1,
+            66,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.animationConfigList)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'FadeInAdapter',
+            r'.FadeInAdapter',
+            134217735,
+            67,
+            const prefix31.DynamicAdapter(),
+            const <int>[206, 207, 208],
+            const <int>[3, 4, 5, 6, 7, 206],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? const prefix32.FadeInAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.FadeInAdapter.create() : null
+            },
+            -1,
+            67,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.fadeInAnimation)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ScaleAdapter',
+            r'.ScaleAdapter',
+            134217735,
+            68,
+            const prefix31.DynamicAdapter(),
+            const <int>[209, 210, 211],
+            const <int>[3, 4, 5, 6, 7, 209],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? const prefix32.ScaleAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ScaleAdapter.create() : null
+            },
+            -1,
+            68,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.scaleAnimation)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'SlideAdapter',
+            r'.SlideAdapter',
+            134217735,
+            69,
+            const prefix31.DynamicAdapter(),
+            const <int>[212, 213, 214],
+            const <int>[3, 4, 5, 6, 7, 212],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? const prefix32.SlideAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.SlideAdapter.create() : null
+            },
+            -1,
+            69,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.slideAnimation)
+            ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'LoginWithAppleAdapter',
+            r'.LoginWithAppleAdapter',
             134217735,
             70,
             const prefix31.DynamicAdapter(),
@@ -12856,21 +12799,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.AnimationConfigListAdapter() : null,
+                  () => b ? const prefix32.LoginWithAppleAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.AnimationConfigListAdapter.create() : null
+                  () => b ? prefix32.LoginWithAppleAdapter.create() : null
             },
             -1,
             70,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.animationConfigList)
+              const prefix29.NodeKey(prefix39.NType.loginWithApple)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'FadeInAdapter',
-            r'.FadeInAdapter',
+            r'LoginWithBitBucketAdapter',
+            r'.LoginWithBitBucketAdapter',
             134217735,
             71,
             const prefix31.DynamicAdapter(),
@@ -12881,21 +12824,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.FadeInAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.LoginWithBitBucketAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.FadeInAdapter.create() : null
+                  () => b ? prefix32.LoginWithBitBucketAdapter.create() : null
             },
             -1,
             71,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.fadeInAnimation)
+              const prefix29.NodeKey(prefix39.NType.loginWithBitBucket)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'ScaleAdapter',
-            r'.ScaleAdapter',
+            r'LoginWithDiscordAdapter',
+            r'.LoginWithDiscordAdapter',
             134217735,
             72,
             const prefix31.DynamicAdapter(),
@@ -12906,21 +12850,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ScaleAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.LoginWithDiscordAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.ScaleAdapter.create() : null
+                  () => b ? prefix32.LoginWithDiscordAdapter.create() : null
             },
             -1,
             72,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.scaleAnimation)
+              const prefix29.NodeKey(prefix39.NType.loginWithDiscord)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'SlideAdapter',
-            r'.SlideAdapter',
+            r'LoginWithFacebookAdapter',
+            r'.LoginWithFacebookAdapter',
             134217735,
             73,
             const prefix31.DynamicAdapter(),
@@ -12931,21 +12876,22 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SlideAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.LoginWithFacebookAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.SlideAdapter.create() : null
+                  () => b ? prefix32.LoginWithFacebookAdapter.create() : null
             },
             -1,
             73,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.slideAnimation)
+              const prefix29.NodeKey(prefix39.NType.loginWithFacebook)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithAppleAdapter',
-            r'.LoginWithAppleAdapter',
+            r'LoginWithGitHubAdapter',
+            r'.LoginWithGitHubAdapter',
             134217735,
             74,
             const prefix31.DynamicAdapter(),
@@ -12957,21 +12903,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithAppleAdapter() : null,
+                  () => b ? const prefix32.LoginWithGitHubAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithAppleAdapter.create() : null
+                  () => b ? prefix32.LoginWithGitHubAdapter.create() : null
             },
             -1,
             74,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithApple)
+              const prefix29.NodeKey(prefix39.NType.loginWithGitHub)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithBitBucketAdapter',
-            r'.LoginWithBitBucketAdapter',
+            r'LoginWithGitLabAdapter',
+            r'.LoginWithGitLabAdapter',
             134217735,
             75,
             const prefix31.DynamicAdapter(),
@@ -12983,21 +12929,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithBitBucketAdapter() : null,
+                  () => b ? const prefix32.LoginWithGitLabAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithBitBucketAdapter.create() : null
+                  () => b ? prefix32.LoginWithGitLabAdapter.create() : null
             },
             -1,
             75,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithBitBucket)
+              const prefix29.NodeKey(prefix39.NType.loginWithGitlab)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithDiscordAdapter',
-            r'.LoginWithDiscordAdapter',
+            r'LoginWithGoogleAdapter',
+            r'.LoginWithGoogleAdapter',
             134217735,
             76,
             const prefix31.DynamicAdapter(),
@@ -13009,21 +12955,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithDiscordAdapter() : null,
+                  () => b ? const prefix32.LoginWithGoogleAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithDiscordAdapter.create() : null
+                  () => b ? prefix32.LoginWithGoogleAdapter.create() : null
             },
             -1,
             76,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithDiscord)
+              const prefix29.NodeKey(prefix39.NType.loginWithGoogle)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithFacebookAdapter',
-            r'.LoginWithFacebookAdapter',
+            r'LoginWithLinkedinAdapter',
+            r'.LoginWithLinkedinAdapter',
             134217735,
             77,
             const prefix31.DynamicAdapter(),
@@ -13035,21 +12981,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithFacebookAdapter() : null,
+                  () => b ? const prefix32.LoginWithLinkedinAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithFacebookAdapter.create() : null
+                  () => b ? prefix32.LoginWithLinkedinAdapter.create() : null
             },
             -1,
             77,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithFacebook)
+              const prefix29.NodeKey(prefix39.NType.loginWithLinkedin)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithGitHubAdapter',
-            r'.LoginWithGitHubAdapter',
+            r'LoginWithMicrosoftAdapter',
+            r'.LoginWithMicrosoftAdapter',
             134217735,
             78,
             const prefix31.DynamicAdapter(),
@@ -13061,21 +13007,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGitHubAdapter() : null,
+                  () => b ? const prefix32.LoginWithMicrosoftAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithGitHubAdapter.create() : null
+                  () => b ? prefix32.LoginWithMicrosoftAdapter.create() : null
             },
             -1,
             78,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithGitHub)
+              const prefix29.NodeKey(prefix39.NType.loginWithMicrosoft)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithGitLabAdapter',
-            r'.LoginWithGitLabAdapter',
+            r'LoginWithTwitchAdapter',
+            r'.LoginWithTwitchAdapter',
             134217735,
             79,
             const prefix31.DynamicAdapter(),
@@ -13087,21 +13033,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGitLabAdapter() : null,
+                  () => b ? const prefix32.LoginWithTwitchAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithGitLabAdapter.create() : null
+                  () => b ? prefix32.LoginWithTwitchAdapter.create() : null
             },
             -1,
             79,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithGitlab)
+              const prefix29.NodeKey(prefix39.NType.loginWithTwitch)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithGoogleAdapter',
-            r'.LoginWithGoogleAdapter',
+            r'LoginWithTwitterAdapter',
+            r'.LoginWithTwitterAdapter',
             134217735,
             80,
             const prefix31.DynamicAdapter(),
@@ -13113,21 +13059,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGoogleAdapter() : null,
+                  () => b ? const prefix32.LoginWithTwitterAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithGoogleAdapter.create() : null
+                  () => b ? prefix32.LoginWithTwitterAdapter.create() : null
             },
             -1,
             80,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithGoogle)
+              const prefix29.NodeKey(prefix39.NType.loginWithTwitter)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithLinkedinAdapter',
-            r'.LoginWithLinkedinAdapter',
+            r'AppBarAdapter',
+            r'.AppBarAdapter',
             134217735,
             81,
             const prefix31.DynamicAdapter(),
@@ -13138,22 +13084,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix32.LoginWithLinkedinAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.AppBarAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithLinkedinAdapter.create() : null
+                  () => b ? prefix32.AppBarAdapter.create() : null
             },
             -1,
             81,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithLinkedin)
+              const prefix29.NodeKey(prefix39.NType.appBar)
             ],
             null),
         r.NonGenericClassMirrorImpl(
-            r'LoginWithMicrosoftAdapter',
-            r'.LoginWithMicrosoftAdapter',
+            r'BottomBarAdapter',
+            r'.BottomBarAdapter',
             134217735,
             82,
             const prefix31.DynamicAdapter(),
@@ -13165,114 +13110,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithMicrosoftAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithMicrosoftAdapter.create() : null
-            },
-            -1,
-            82,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithMicrosoft)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'LoginWithTwitchAdapter',
-            r'.LoginWithTwitchAdapter',
-            134217735,
-            83,
-            const prefix31.DynamicAdapter(),
-            const <int>[254, 255, 256],
-            const <int>[3, 4, 5, 6, 7, 254],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitchAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitchAdapter.create() : null
-            },
-            -1,
-            83,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithTwitch)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'LoginWithTwitterAdapter',
-            r'.LoginWithTwitterAdapter',
-            134217735,
-            84,
-            const prefix31.DynamicAdapter(),
-            const <int>[257, 258, 259],
-            const <int>[3, 4, 5, 6, 7, 257],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitterAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitterAdapter.create() : null
-            },
-            -1,
-            84,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.loginWithTwitter)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'AppBarAdapter',
-            r'.AppBarAdapter',
-            134217735,
-            85,
-            const prefix31.DynamicAdapter(),
-            const <int>[260, 261, 262],
-            const <int>[3, 4, 5, 6, 7, 260],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.AppBarAdapter() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix32.AppBarAdapter.create() : null
-            },
-            -1,
-            85,
-            const <int>[],
-            const <Object>[
-              prefix31.dynamicAdapter,
-              const prefix29.NodeKey(prefix39.NType.appBar)
-            ],
-            null),
-        r.NonGenericClassMirrorImpl(
-            r'BottomBarAdapter',
-            r'.BottomBarAdapter',
-            134217735,
-            86,
-            const prefix31.DynamicAdapter(),
-            const <int>[263, 264, 265],
-            const <int>[3, 4, 5, 6, 7, 263],
-            const <int>[],
-            -1,
-            {},
-            {},
-            {
-              r'': (bool b) => () => b ? prefix32.BottomBarAdapter() : null,
+                  () => b ? const prefix32.BottomBarAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BottomBarAdapter.create() : null
             },
             -1,
-            86,
+            82,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -13283,21 +13126,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'DrawerAdapter',
             r'.DrawerAdapter',
             134217735,
-            87,
+            83,
             const prefix31.DynamicAdapter(),
-            const <int>[266, 267, 268],
-            const <int>[3, 4, 5, 6, 7, 266],
+            const <int>[254, 255, 256],
+            const <int>[3, 4, 5, 6, 7, 254],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DrawerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.DrawerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DrawerAdapter.create() : null
             },
             -1,
-            87,
+            83,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -13308,21 +13151,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'WrapperAdapter',
             r'.WrapperAdapter',
             134217735,
-            88,
+            84,
             const prefix31.DynamicAdapter(),
-            const <int>[269, 270, 271],
-            const <int>[3, 4, 5, 6, 7, 269],
+            const <int>[257, 258, 259],
+            const <int>[3, 4, 5, 6, 7, 257],
             const <int>[],
             -1,
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.WrapperAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.WrapperAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.WrapperAdapter.create() : null
             },
             -1,
-            88,
+            84,
             const <int>[],
             const <Object>[
               prefix31.dynamicAdapter,
@@ -14615,66 +14458,6 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.MethodMirrorImpl(r'', 128, 84, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const []),
         r.MethodMirrorImpl(r'create', 256, 84, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(
-            r'toWidget',
-            2097154,
-            85,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[172, 173],
-            const prefix31.DynamicAdapter(),
-            const <Object>[override]),
-        r.MethodMirrorImpl(r'', 128, 85, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(r'create', 256, 85, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(
-            r'toWidget',
-            2097154,
-            86,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[174, 175],
-            const prefix31.DynamicAdapter(),
-            const <Object>[override]),
-        r.MethodMirrorImpl(r'', 128, 86, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(r'create', 256, 86, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(
-            r'toWidget',
-            2097154,
-            87,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[176, 177],
-            const prefix31.DynamicAdapter(),
-            const <Object>[override]),
-        r.MethodMirrorImpl(r'', 128, 87, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(r'create', 256, 87, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(
-            r'toWidget',
-            2097154,
-            88,
-            -1,
-            -1,
-            -1,
-            null,
-            const <int>[178, 179],
-            const prefix31.DynamicAdapter(),
-            const <Object>[override]),
-        r.MethodMirrorImpl(r'', 128, 88, -1, -1, -1, null, const <int>[],
-            const prefix31.DynamicAdapter(), const []),
-        r.MethodMirrorImpl(r'create', 256, 88, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const [])
       ],
       <m.ParameterMirror>[
@@ -16741,111 +16524,13 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             const [],
             null,
-            #state),
-        r.ParameterMirrorImpl(
-            r'context',
-            134358022,
-            260,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #context),
-        r.ParameterMirrorImpl(
-            r'state',
-            134358022,
-            260,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #state),
-        r.ParameterMirrorImpl(
-            r'context',
-            134358022,
-            263,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #context),
-        r.ParameterMirrorImpl(
-            r'state',
-            134358022,
-            263,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #state),
-        r.ParameterMirrorImpl(
-            r'context',
-            134358022,
-            266,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #context),
-        r.ParameterMirrorImpl(
-            r'state',
-            134358022,
-            266,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #state),
-        r.ParameterMirrorImpl(
-            r'context',
-            134358022,
-            269,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
-            #context),
-        r.ParameterMirrorImpl(
-            r'state',
-            134358022,
-            269,
-            const prefix31.DynamicAdapter(),
-            -1,
-            -1,
-            -1,
-            null,
-            const [],
-            null,
             #state)
       ],
       <Type>[
         prefix32.AlignWidgetAdapter,
         prefix32.AspectRatioAdapter,
         prefix32.BadgeAdapter,
-        prefix32.BarcodeAdapter,
         prefix32.BottomBarItemAdapter,
-        prefix32.BouncingAdapter,
         prefix32.ButtonAdapter,
         prefix32.CardAdaptor,
         prefix32.CenterAdaptor,
@@ -16889,9 +16574,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix32.PlaceholderAdapter,
         prefix32.PositionedAdapter,
         prefix32.QRScannerAdapter,
-        prefix32.QRCodeAdapter,
         prefix32.RadioAdapter,
-        prefix32.RefreshIndicatorAdapter,
         prefix32.ResponsiveConditionAdapter,
         prefix32.RotatedBoxAdapter,
         prefix32.RowAdapter,
@@ -16930,7 +16613,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix32.DrawerAdapter,
         prefix32.WrapperAdapter
       ],
-      89,
+      85,
       {
         r'==': (dynamic instance) => (x) => instance == x,
         r'toString': (dynamic instance) => instance.toString,
@@ -16957,8 +16640,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AlignWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AlignWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AlignWidgetDefaultAttributes.create() : null
             },
@@ -16983,8 +16666,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AspectRatioDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AspectRatioDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AspectRatioDefaultAttributes.create() : null
             },
@@ -17010,7 +16693,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.AudioPlayerProgressIndicatorDefaultAttributes()
+                  ? const prefix34
+                      .AudioPlayerProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.AudioPlayerProgressIndicatorDefaultAttributes
@@ -17040,7 +16724,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.AudioPlayerVolumeIndicatorDefaultAttributes()
+                  ? const prefix34.AudioPlayerVolumeIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.AudioPlayerVolumeIndicatorDefaultAttributes
@@ -17069,7 +16753,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.BadgeDefaultAttributes() : null,
+                  () => b ? const prefix34.BadgeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BadgeDefaultAttributes.create() : null
             },
@@ -17095,7 +16779,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.BarcodeDefaultAttributes() : null,
+                  () => b ? const prefix34.BarcodeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BarcodeDefaultAttributes.create() : null
             },
@@ -17120,8 +16804,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.BottomBarItemDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.BottomBarItemDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.BottomBarItemDefaultAttributes.create() : null
             },
@@ -17146,8 +16830,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.BouncingWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.BouncingWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.BouncingWidgetDefaultAttributes.create() : null
             },
@@ -17173,7 +16857,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ButtonDefaultAttributes() : null,
+                  () => b ? const prefix34.ButtonDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ButtonDefaultAttributes.create() : null
             },
@@ -17199,7 +16883,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CardDefaultAttributes() : null,
+                  () => b ? const prefix34.CardDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CardDefaultAttributes.create() : null
             },
@@ -17225,7 +16909,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CenterDefaultAttributes() : null,
+                  () => b ? const prefix34.CenterDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CenterDefaultAttributes.create() : null
             },
@@ -17251,7 +16935,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CheckBoxDefaultAttributes() : null,
+                  () => b ? const prefix34.CheckBoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CheckBoxDefaultAttributes.create() : null
             },
@@ -17277,7 +16961,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.CircularProgressIndicatorDefaultAttributes()
+                  ? const prefix34.CircularProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.CircularProgressIndicatorDefaultAttributes.create()
@@ -17305,7 +16989,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ClipsDefaultAttributes() : null,
+                  () => b ? const prefix34.ClipsDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ClipsDefaultAttributes.create() : null
             },
@@ -17331,8 +17015,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.ClipRoundedRectDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.ClipRoundedRectDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.ClipRoundedRectDefaultAttributes.create() : null
             },
@@ -17358,7 +17042,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.FlexDefaultAttributes() : null,
+                  () => b ? const prefix34.FlexDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.FlexDefaultAttributes.create() : null
             },
@@ -17385,7 +17069,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ComponentDefaultAttributes() : null,
+                  () => b ? const prefix34.ComponentDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ComponentDefaultAttributes.create() : null
             },
@@ -17410,8 +17094,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.ConcentricPageViewDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.ConcentricPageViewDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.ConcentricPageViewDefaultAttributes.create()
                   : null
@@ -17438,7 +17123,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ConditionDefaultAttributes() : null,
+                  () => b ? const prefix34.ConditionDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ConditionDefaultAttributes.create() : null
             },
@@ -17463,7 +17148,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix34.BoxDefaultAttributes() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix34.BoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BoxDefaultAttributes.create() : null
             },
@@ -17493,8 +17179,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CupertinoPickerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CupertinoPickerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CupertinoPickerDefaultAttributes.create() : null
             },
@@ -17520,7 +17206,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.CupertinoSegmentedControlDefaultAttributes()
+                  ? const prefix34.CupertinoSegmentedControlDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.CupertinoSegmentedControlDefaultAttributes.create()
@@ -17547,8 +17233,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.CupertinoSwitchControlDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.CupertinoSwitchControlDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.CupertinoSwitchControlDefaultAttributes.create()
                   : null
@@ -17574,8 +17261,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CupertinoSwitchDefaultAttributes() : null
+              r'': (bool b) => () =>
+                  b ? const prefix34.CupertinoSwitchDefaultAttributes() : null
             },
             -1,
             23,
@@ -17599,7 +17286,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.DividerDefaultAttributes() : null,
+                  () => b ? const prefix34.DividerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.DividerDefaultAttributes.create() : null
             },
@@ -17624,8 +17311,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.DotsIndicatorDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.DotsIndicatorDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.DotsIndicatorDefaultAttributes.create() : null
             },
@@ -17651,7 +17338,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ExpandedDefaultAttributes() : null,
+                  () => b ? const prefix34.ExpandedDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ExpandedDefaultAttributes.create() : null
             },
@@ -17676,8 +17363,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AdMobBannerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AdMobBannerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AdMobBannerDefaultAttributes.create() : null
             },
@@ -17703,7 +17390,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.GridViewDefaultAttributes() : null,
+                  () => b ? const prefix34.GridViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.GridViewDefaultAttributes.create() : null
             },
@@ -17730,7 +17417,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.HeroDefaultAttributes() : null,
+                  () => b ? const prefix34.HeroDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.HeroDefaultAttributes.create() : null
             },
@@ -17756,7 +17443,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.IconDefaultAttributes() : null,
+                  () => b ? const prefix34.IconDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.IconDefaultAttributes.create() : null
             },
@@ -17781,8 +17468,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.IgnorePointerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.IgnorePointerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.IgnorePointerDefaultAttributes.create() : null
             },
@@ -17807,8 +17494,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.IndexedStackDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.IndexedStackDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.IndexedStackDefaultAttributes.create() : null
             },
@@ -17834,7 +17521,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.LinearProgressIndicatorDefaultAttributes()
+                  ? const prefix34.LinearProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.LinearProgressIndicatorDefaultAttributes.create()
@@ -17861,8 +17548,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.LiquidSwipeDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.LiquidSwipeDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.LiquidSwipeDefaultAttributes.create() : null
             },
@@ -17888,7 +17575,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ListTileDefaultAttributes() : null,
+                  () => b ? const prefix34.ListTileDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ListTileDefaultAttributes.create() : null
             },
@@ -17914,7 +17601,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ListViewDefaultAttributes() : null,
+                  () => b ? const prefix34.ListViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ListViewDefaultAttributes.create() : null
             },
@@ -17941,7 +17628,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.LottieDefaultAttributes() : null,
+                  () => b ? const prefix34.LottieDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.LottieDefaultAttributes.create() : null
             },
@@ -17967,7 +17654,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.OffstageDefaultAttributes() : null,
+                  () => b ? const prefix34.OffstageDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.OffstageDefaultAttributes.create() : null
             },
@@ -17993,7 +17680,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PaddingDefaultAttributes() : null,
+                  () => b ? const prefix34.PaddingDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PaddingDefaultAttributes.create() : null
             },
@@ -18019,7 +17706,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PageViewDefaultAttributes() : null,
+                  () => b ? const prefix34.PageViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PageViewDefaultAttributes.create() : null
             },
@@ -18044,8 +17731,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.PlaceholderDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.PlaceholderDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.PlaceholderDefaultAttributes.create() : null
             },
@@ -18071,7 +17758,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PositionedDefaultAttributes() : null,
+                  () => b ? const prefix34.PositionedDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PositionedDefaultAttributes.create() : null
             },
@@ -18098,7 +17785,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.QRScannerDefaultAttributes() : null,
+                  () => b ? const prefix34.QRScannerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.QRScannerDefaultAttributes.create() : null
             },
@@ -18124,7 +17811,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.QRCodeDefaultAttributes() : null,
+                  () => b ? const prefix34.QRCodeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.QRCodeDefaultAttributes.create() : null
             },
@@ -18150,7 +17837,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.RadioDefaultAttributes() : null,
+                  () => b ? const prefix34.RadioDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.RadioDefaultAttributes.create() : null
             },
@@ -18175,8 +17862,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.RefreshIndicatorDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.RefreshIndicatorDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.RefreshIndicatorDefaultAttributes.create() : null
             },
@@ -18201,8 +17888,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.ResponsiveConditionDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.ResponsiveConditionDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.ResponsiveConditionDefaultAttributes.create()
                   : null
@@ -18229,7 +17917,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.RotatedBoxDefaultAttributes() : null,
+                  () => b ? const prefix34.RotatedBoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.RotatedBoxDefaultAttributes.create() : null
             },
@@ -18255,7 +17943,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ScaffoldDefaultAttributes() : null,
+                  () => b ? const prefix34.ScaffoldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ScaffoldDefaultAttributes.create() : null
             },
@@ -18281,7 +17969,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.SpacerDefaultAttributes() : null,
+                  () => b ? const prefix34.SpacerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.SpacerDefaultAttributes.create() : null
             },
@@ -18307,7 +17995,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.StackDefaultAttributes() : null,
+                  () => b ? const prefix34.StackDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.StackDefaultAttributes.create() : null
             },
@@ -18333,7 +18021,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TCardDefaultAttributes() : null,
+                  () => b ? const prefix34.TCardDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TCardDefaultAttributes.create() : null
             },
@@ -18360,7 +18048,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TextDefaultAttributes() : null,
+                  () => b ? const prefix34.TextDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TextDefaultAttributes.create() : null
             },
@@ -18386,7 +18074,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TextFieldDefaultAttributes() : null,
+                  () => b ? const prefix34.TextFieldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TextFieldDefaultAttributes.create() : null
             },
@@ -18412,7 +18100,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TooltipDefaultAttributes() : null,
+                  () => b ? const prefix34.TooltipDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TooltipDefaultAttributes.create() : null
             },
@@ -18438,7 +18126,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.VideoDefaultAttributes() : null,
+                  () => b ? const prefix34.VideoDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.VideoDefaultAttributes.create() : null
             },
@@ -18464,7 +18152,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.VisibilityDefaultAttributes() : null,
+                  () => b ? const prefix34.VisibilityDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.VisibilityDefaultAttributes.create() : null
             },
@@ -18490,7 +18178,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WebviewDefaultAttributes() : null,
+                  () => b ? const prefix34.WebviewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WebviewDefaultAttributes.create() : null
             },
@@ -18516,7 +18204,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WrapDefaultAttributes() : null,
+                  () => b ? const prefix34.WrapDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WrapDefaultAttributes.create() : null
             },
@@ -18541,8 +18229,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.AnimationConfigGridDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.AnimationConfigGridDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.AnimationConfigGridDefaultAttributes.create()
                   : null
@@ -18568,8 +18257,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.AnimationConfigListDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.AnimationConfigListDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.AnimationConfigListDefaultAttributes.create()
                   : null
@@ -18596,7 +18286,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.AnimationDefaultAttributes() : null,
+                  () => b ? const prefix34.AnimationDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.AnimationDefaultAttributes.create() : null
             },
@@ -18623,8 +18313,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.SocialLoginDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.SocialLoginDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.SocialLoginDefaultAttributes.create() : null
             },
@@ -18660,7 +18350,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.HttpRequestFutureBuilderDefaultAttributes()
+                  ? const prefix34.HttpRequestFutureBuilderDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.HttpRequestFutureBuilderDefaultAttributes.create()
@@ -18687,8 +18377,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.NavigationWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.NavigationWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.NavigationWidgetDefaultAttributes.create() : null
             },
@@ -18715,8 +18405,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.QonversionProductsDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.QonversionProductsDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.QonversionProductsDefaultAttributes.create()
                   : null
@@ -18742,8 +18433,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.QonversionSubStatusDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.QonversionSubStatusDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.QonversionSubStatusDefaultAttributes.create()
                   : null
@@ -18770,7 +18462,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WrapperDefaultAttributes() : null,
+                  () => b ? const prefix34.WrapperDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WrapperDefaultAttributes.create() : null
             },
@@ -18795,8 +18487,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.RevenueCatProductsDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.RevenueCatProductsDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.RevenueCatProductsDefaultAttributes.create()
                   : null
@@ -18822,8 +18515,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.RevenueCatSubStatusDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.RevenueCatSubStatusDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.RevenueCatSubStatusDefaultAttributes.create()
                   : null
@@ -18849,8 +18543,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseFutureBuilderDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseFutureBuilderDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseFutureBuilderDefaultAttributes.create()
                   : null
@@ -18876,8 +18571,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseStreamBuilderDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseStreamBuilderDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseStreamBuilderDefaultAttributes.create()
                   : null
@@ -18903,8 +18599,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseLoggedUserDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseLoggedUserDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseLoggedUserDefaultAttributes.create()
                   : null
@@ -18931,7 +18628,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSCountDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSCountDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSCountDefaultAttributes.create() : null
             },
@@ -18956,8 +18653,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CMSCustomQueryDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CMSCustomQueryDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CMSCustomQueryDefaultAttributes.create() : null
             },
@@ -18983,7 +18680,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSFetchDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSFetchDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSFetchDefaultAttributes.create() : null
             },
@@ -19009,7 +18706,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSStreamDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSStreamDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSStreamDefaultAttributes.create() : null
             },
@@ -19034,8 +18731,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CMSLoggedUserDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CMSLoggedUserDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CMSLoggedUserDefaultAttributes.create() : null
             },
@@ -20414,7 +20111,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix33.DefaultAttributesParse() : null
+                  () => b ? const prefix33.DefaultAttributesParse() : null
             },
             -1,
             0,
@@ -20548,7 +20245,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
+            {r'': (bool b) => () => b ? const prefix35.NodesParse() : null},
             -1,
             -1,
             const <int>[-1],
@@ -20569,7 +20266,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.TypeMirror>[], null, null, <Type>[], 0, {}, {}, null, [])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Returns a Icon widget in Teta.

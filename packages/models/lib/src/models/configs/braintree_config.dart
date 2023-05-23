@@ -70,8 +70,8 @@ class BraintreeConfigMapper {
 
   BraintreeConfigModel copyWith(
     final BraintreeConfigModel e, {
-    final _BraintreeChannelInfo? sandboxInfo,
-    final _BraintreeChannelInfo? productionInfo,
+    final PrivateBraintreeChannelInfo? sandboxInfo,
+    final PrivateBraintreeChannelInfo? productionInfo,
     final BraintreeThirdPartyPaymentProvider? applePay,
     final BraintreeThirdPartyPaymentProvider? googlePay,
     final String? companyName,
@@ -130,7 +130,7 @@ class BraintreeConfigInfoMapper {
   static const _merchantIdKey = 'braintree_MerchantId';
   static const _sandboxPrefix = 'braintree_Sandbox';
 
-  _BraintreeChannelInfo fromJson({
+  PrivateBraintreeChannelInfo fromJson({
     required final Map<String, dynamic> json,
     required final bool isSandbox,
   }) {
@@ -152,7 +152,7 @@ class BraintreeConfigInfoMapper {
   }
 
   Map<String, dynamic> toJson(
-    final _BraintreeChannelInfo e,
+    final PrivateBraintreeChannelInfo e,
     final bool isSandbox,
   ) =>
       isSandbox
@@ -169,8 +169,8 @@ class BraintreeConfigInfoMapper {
               _merchantIdKey: e.merchantId,
             };
 
-  _BraintreeChannelInfo copywith(
-    final _BraintreeChannelInfo e, {
+  PrivateBraintreeChannelInfo copywith(
+    final PrivateBraintreeChannelInfo e, {
     required final bool isSandbox,
     final String? clientToken,
     final String? publicKey,
@@ -252,8 +252,8 @@ class BraintreeThirdPartyPaymentProvider {
       );
 }
 
-abstract class _BraintreeChannelInfo extends Equatable {
-  const _BraintreeChannelInfo({
+abstract class PrivateBraintreeChannelInfo extends Equatable {
+  const PrivateBraintreeChannelInfo({
     required this.clientToken,
     required this.secretKey,
     required this.publicKey,
@@ -280,7 +280,7 @@ abstract class _BraintreeChannelInfo extends Equatable {
       ];
 }
 
-class _BraintreeProductionInfo extends _BraintreeChannelInfo {
+class _BraintreeProductionInfo extends PrivateBraintreeChannelInfo {
   const _BraintreeProductionInfo({
     required super.clientToken,
     required super.publicKey,
@@ -289,7 +289,7 @@ class _BraintreeProductionInfo extends _BraintreeChannelInfo {
   });
 }
 
-class _BraintreeSandboxInfo extends _BraintreeChannelInfo {
+class _BraintreeSandboxInfo extends PrivateBraintreeChannelInfo {
   const _BraintreeSandboxInfo({
     required super.clientToken,
     required super.publicKey,
@@ -311,8 +311,8 @@ abstract class BraintreeConfigModel extends Equatable {
     this.isEnabled = false,
   });
 
-  final _BraintreeChannelInfo sandboxInfo;
-  final _BraintreeChannelInfo productionInfo;
+  final PrivateBraintreeChannelInfo sandboxInfo;
+  final PrivateBraintreeChannelInfo productionInfo;
   final String currencyCode;
   final String companyName;
   final String countryCode;

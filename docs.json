@@ -13,6 +13,11 @@
       "link": "https://buildwiththeta.com"
     },
     {
+      "title": "Pub.dev",
+      "icon": "arrow-up-right-from-square",
+      "link": "https://pub.dev/packages/theta"
+    },
+    {
       "title": "Report a bug",
       "icon": "bug",
       "link": "https://github.com/buildwiththeta/buildwiththeta/issues/new"
@@ -25,6 +30,7 @@
       [
         "Theta Studio", [
           ["Teams", "/studio/teams"],
+          ["Positioning & resizing", "/studio/positioning_and_resizing"],
           ["Constraints", "/studio/constraints"]
         ]
       ],

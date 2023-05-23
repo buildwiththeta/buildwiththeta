@@ -37,8 +37,6 @@ class AirtableConfigMapper {
     final String? projectBase,
     final bool? isEnabled,
   }) {
-    final _key = key ?? e.key;
-    final _base = projectBase ?? e.projectBase;
     if (key != null && projectBase != null) {
       return AirtableConfigModelInitialized(
         key: key,

@@ -1,5 +1,4 @@
 import 'package:collection/collection.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -16,10 +15,7 @@ class GetPageResponseEntity {
 
   static GetPageResponseEntity fromJson(Map<String, dynamic> json) {
     final nodes = (json['nodes'] as List<dynamic>)
-        .map((e) {
-          Logger.printWarning('e: c${e['type']}');
-          return getIt<NodesParse>().fromJson(e['type'], e);
-        })
+        .map((e) => getIt<NodesParse>().fromJson(e['type'], e))
         .whereNotNull()
         .toList();
 

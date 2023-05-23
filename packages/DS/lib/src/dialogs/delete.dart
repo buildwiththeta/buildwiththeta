@@ -63,11 +63,12 @@ class _DeleteAlertState extends State<DeleteAlert> {
             primaryColor: theme.redError.withOpacity(0.7),
             'Delete',
             onTap: () async {
+              final temp = Navigator.of(context, rootNavigator: true);
               setState(() {
                 isLoading = true;
               });
               await widget.onContinue();
-              Navigator.of(context, rootNavigator: true).pop(null);
+              temp.pop(null);
             },
           )
       ],

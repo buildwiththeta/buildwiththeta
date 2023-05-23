@@ -50,8 +50,6 @@ class NodesParse {
               .any((e) => e.key == widgetType))
           .toList();
 
-      Logger.printMessage('classes: $classes');
-
       /// Get the class with the same name of the widget type
       final targetClass = classes.firstOrNull;
 

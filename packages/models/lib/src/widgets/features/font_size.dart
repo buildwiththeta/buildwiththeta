@@ -119,10 +119,6 @@ class FFontSize extends Equatable {
 
   /// Returns double for code
   String toCode() {
-    String _valueToCode(final double size) {
-      return size.toString();
-    }
-
     if (size == sizeTablet && size == sizeDesktop) {
       return _valueToCode(size);
     }
@@ -134,5 +130,9 @@ getValueForScreenType<double>(
   tablet: ${_valueToCode(sizeTablet)},
   desktop: ${_valueToCode(sizeDesktop)},
 )''';
+  }
+
+  String _valueToCode(final double size) {
+    return size.toString();
   }
 }

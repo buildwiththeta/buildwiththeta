@@ -1,7 +1,6 @@
 // Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
 // ignore_for_file: public_member_api_docs

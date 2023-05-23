@@ -17,7 +17,7 @@ class OpenWRadio extends StatefulWidget {
   final FTextTypeInput groupValue;
 
   @override
-  _WRadioState createState() => _WRadioState();
+  createState() => _WRadioState();
 }
 
 class _WRadioState extends State<OpenWRadio> {

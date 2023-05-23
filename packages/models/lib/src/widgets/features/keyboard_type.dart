@@ -50,27 +50,6 @@ class FKeyboardType extends Equatable {
     return TextInputType.text;
   }
 
-  static TextInputType _convertDropDownToValue(final String key) {
-    if (key == 'Text') {
-      return TextInputType.text;
-    } else if (key == 'Name') {
-      return TextInputType.name;
-    } else if (key == 'Email Address') {
-      return TextInputType.emailAddress;
-    } else if (key == 'Phone') {
-      return TextInputType.phone;
-    } else if (key == 'Number') {
-      return TextInputType.number;
-    } else if (key == 'Url') {
-      return TextInputType.url;
-    } else if (key == 'Visible Password') {
-      return TextInputType.visiblePassword;
-    } else if (key == 'Multiline') {
-      return TextInputType.multiline;
-    }
-    return TextInputType.text;
-  }
-
   static String _convertValueToJson(final TextInputType value) {
     if (value == TextInputType.text) {
       return 't';

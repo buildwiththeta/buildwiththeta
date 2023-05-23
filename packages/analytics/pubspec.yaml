@@ -1,10 +1,11 @@
 name: theta_analytics
 description: Theta Analytics sdk for Flutter
-version: 0.0.1
-homepage: "https://buildwiththeta.com"
-repository: https://github.com/teta-so/theta_analytics
-documentation: https://teta.so/flutter-docs
-publish: none
+version: 0.1.0-dev.1
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 platforms:
   android:
@@ -15,21 +16,21 @@ platforms:
   windows:
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  light_logger:
+  light_logger: ^0.0.3
 
   http: ^0.13.5
   uuid: ^3.0.6
   device_info_plus: ^8.1.0
   package_info_plus: ^3.0.3
   universal_platform: ^1.0.0+1
-  either_dart:
+  either_dart: ^0.4.0
 
 dev_dependencies:
   flutter_test:

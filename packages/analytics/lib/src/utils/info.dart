@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter/widgets.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:universal_platform/universal_platform.dart';
@@ -43,7 +42,7 @@ class DeviceInfoUtils {
 
     final List<Locale> systemLocales = [];
     try {
-      systemLocales.addAll(window.locales);
+      systemLocales.addAll(WidgetsBinding.instance.platformDispatcher.locales);
     } catch (e) {
       Logger.printError(e.toString());
     }

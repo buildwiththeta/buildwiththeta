@@ -1,6 +1,7 @@
 library theta_models;
 
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 
 export './src/models/index.dart';
 export './src/mappers/index.dart';
@@ -34,7 +35,9 @@ class ThetaModels {
   static Future<void> initialize() async {
     try {
       WidgetsFlutterBinding.ensureInitialized();
-    } catch (e) {}
+    } catch (e) {
+      Logger.printError('ThetaModels.initialize() failed: $e');
+    }
     initializeReflectable();
     _instance.isInitialized = true;
   }

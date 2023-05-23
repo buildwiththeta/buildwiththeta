@@ -10,7 +10,7 @@ class OpenWNumericStepButton extends StatefulWidget {
   final WidgetState state;
 
   @override
-  _WNumericStepButtonState createState() => _WNumericStepButtonState();
+  createState() => _WNumericStepButtonState();
 }
 
 class _WNumericStepButtonState extends State<OpenWNumericStepButton> {

@@ -15,7 +15,7 @@ class BounceForLargeWidgets extends StatefulWidget {
   final String? message;
 
   @override
-  _BouncingState createState() => _BouncingState();
+  createState() => _BouncingState();
 }
 
 class _BouncingState extends State<BounceForLargeWidgets>

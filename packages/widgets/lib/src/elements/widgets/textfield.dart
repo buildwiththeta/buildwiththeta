@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 
 class OpenWTextField extends StatefulWidget {
@@ -59,7 +58,7 @@ class OpenWTextField extends StatefulWidget {
   final FFill focusedBorderColor;
 
   @override
-  _WTextFieldState createState() => _WTextFieldState();
+  createState() => _WTextFieldState();
 }
 
 class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {

@@ -25,6 +25,7 @@ class LocalNotifierProvider extends StatelessWidget {
         onNodeFocused: (_) {},
         onNodeHovered: (_) {},
         onNodeAdded: (_, __, ___) {},
+        onRightClick: (_, __) {},
         child: child,
       ),
     );

@@ -6,22 +6,30 @@ import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta_models/theta_models.dart';
 
+/// A widget that builds a remote UI component from a page name.
+///
+/// - It requires a [componentName] for the component name.
+/// - It requires a [placeholder] for the placeholder widget.
+/// - It requires a [errorWidget] for the error widget.
+/// - It takes a [workflows] of type [Workflow] for the workflows.
 class UIBox extends StatelessWidget {
   const UIBox(
     this.componentName, {
     super.key,
     this.placeholder,
     this.errorWidget,
+    this.workflows,
   });
 
   final String componentName;
   final Widget Function()? placeholder;
   final Widget Function(String)? errorWidget;
+  final List<Workflow>? workflows;
 
   @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
-      workflows: const [],
+      workflows: workflows,
       child: _LogicBox(
         componentName,
         placeholder: placeholder,

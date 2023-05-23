@@ -31,17 +31,17 @@ class SupabaseConfigMapper {
     final String? key,
     final String? url,
   }) {
-    final _key = key ?? e.key;
-    final _url = url ?? e.url;
-    if (_key.isNotEmpty && _url.isNotEmpty) {
+    final key0 = key ?? e.key;
+    final url0 = url ?? e.url;
+    if (key0.isNotEmpty && url0.isNotEmpty) {
       return SupabaseConfigModelInitialized(
-        key: _key,
-        url: _url,
+        key: key0,
+        url: url0,
       );
     }
     return SupabaseConfigModelUninitialized(
-      key: _key,
-      url: _url,
+      key: key0,
+      url: url0,
     );
   }
 }

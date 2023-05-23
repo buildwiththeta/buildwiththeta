@@ -38,20 +38,20 @@ class RevenueCatConfigMapper {
     String? iosKey,
     bool? isEnabled,
   }) {
-    final _googleKey = googleKey ?? e.googleKey;
-    final _iosKey = iosKey ?? e.iOSKey;
-    final _isEnabled = isEnabled ?? e.isEnabled;
-    if (_googleKey.isNotEmpty && _iosKey.isNotEmpty) {
+    final googleKey0 = googleKey ?? e.googleKey;
+    final iosKey0 = iosKey ?? e.iOSKey;
+    final isEnabled0 = isEnabled ?? e.isEnabled;
+    if (googleKey0.isNotEmpty && iosKey0.isNotEmpty) {
       return RevenueCatConfigModelInitialized(
-        googleKey: _googleKey,
+        googleKey: googleKey0,
         iOSKey: _iOSKey,
-        isEnabled: _isEnabled,
+        isEnabled: isEnabled0,
       );
     }
     return RevenueCatConfigModelUninitialized(
-      googleKey: _googleKey,
+      googleKey: googleKey0,
       iOSKey: _iOSKey,
-      isEnabled: _isEnabled,
+      isEnabled: isEnabled0,
     );
   }
 }

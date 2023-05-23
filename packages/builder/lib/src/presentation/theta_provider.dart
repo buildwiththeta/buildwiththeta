@@ -5,7 +5,6 @@ import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/theta.dart';
-import 'package:theta_models/theta_models.dart';
 
 class ThetaProvider extends StatefulWidget {
   const ThetaProvider({

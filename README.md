@@ -18,7 +18,7 @@ Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththe
 
 ## Status
 - [x] Alpha: Experimental. Under intense development.
-- [ ] Closed Beta: Still under development. Except bugs and errors.
+- [x] Closed Beta: Still under development. Except bugs and errors.
 - [ ] Beta: Still pretty stable, no expected break changes in future.
 - [ ] Stable: Production-ready.
 
