@@ -25,16 +25,20 @@
   ],
   "sidebar": {
     "en": [
-      ["Getting started", [
-        ["Overview", "/"],
-        ["Introduction", "/builder/"],
-        ["Positioning & resizing", "/studio/positioning_and_resizing"],
-        ["Constraints", "/studio/constraints"],
-        ["Get API Token", "/studio/get_project_api"]
-      ],
-      ["Utils", [
-        ["Teams", "/studio/teams"],
-        ["Migration", "/support/migration"]
+      [
+        "Getting started", [
+          ["Overview", "/"],
+          ["Introduction", "/builder/"],
+          ["Positioning & resizing", "/studio/positioning_and_resizing"],
+          ["Constraints", "/studio/constraints"],
+          ["Get API Token", "/studio/get_project_api"]
+        ]
+      ]
+      [
+        "Utils", [
+          ["Teams", "/studio/teams"],
+          ["Migration", "/support/migration"]
+        ]
       ]
     ],
     "it": [
