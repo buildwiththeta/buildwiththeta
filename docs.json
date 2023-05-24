@@ -26,7 +26,7 @@
   "sidebar": {
     "en": [
       ["Getting started", [
-        ["Overview": "/"],
+        ["Overview", "/"],
         ["Introduction", "/builder/"],
         ["Positioning & resizing", "/studio/positioning_and_resizing"],
         ["Constraints", "/studio/constraints"],
