@@ -25,20 +25,16 @@
   ],
   "sidebar": {
     "en": [
-      ["Overview", "/"],
-      ["Migration", "/support/migration"],
-      [
-        "Theta Studio", [
-          ["Teams", "/studio/teams"],
-          ["Positioning & resizing", "/studio/positioning_and_resizing"],
-          ["Constraints", "/studio/constraints"]
-        ]
+      ["Getting started", [
+        ["Overview": "/"],
+        ["Introduction", "/builder/"],
+        ["Positioning & resizing", "/studio/positioning_and_resizing"],
+        ["Constraints", "/studio/constraints"],
+        ["Get API Token", "/studio/get_project_api"]
       ],
-      [
-        "Theta Builder", [
-          ["Introduction", "/builder/"],
-          ["Get API Token", "/studio/get_project_api"]
-        ]
+      ["Utils", [
+        ["Teams", "/studio/teams"],
+        ["Migration", "/support/migration"]
       ]
     ],
     "it": [
