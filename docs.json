@@ -4,7 +4,7 @@
   "logo": "/assets/logo_dark.svg",
   "logoDark": "/assets/logo_light.svg",
   "favicon": "/assets/favicon.svg",
-  "theme": "#9A55FE",
+  "theme": "#3285FF",
   "zoomImagesDefault": true,
   "anchors": [
     {
@@ -25,19 +25,19 @@
   ],
   "sidebar": {
     "en": [
-      ["Overview", "/"],
-      ["Migration", "/support/migration"],
       [
-        "Theta Studio", [
-          ["Teams", "/studio/teams"],
+        "Getting started", [
+          ["Overview", "/"],
+          ["Getting started", "/getting-started"],
           ["Positioning & resizing", "/studio/positioning_and_resizing"],
-          ["Constraints", "/studio/constraints"]
+          ["Responsive constraints", "/studio/constraints"],
+          ["Get API Token", "/studio/get_project_api"]
         ]
       ],
       [
-        "Theta Builder", [
-          ["Introduction", "/builder/"],
-          ["Get API Token", "/studio/get_project_api"]
+        "Utils", [
+          ["Teams", "/studio/teams"],
+          ["Migration", "/support/migration"]
         ]
       ]
     ],
