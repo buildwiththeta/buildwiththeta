@@ -28,9 +28,9 @@
       [
         "Getting started", [
           ["Overview", "/"],
-          ["Introduction", "/getting-started"],
+          ["Getting started", "/getting-started"],
           ["Positioning & resizing", "/studio/positioning_and_resizing"],
-          ["Constraints", "/studio/constraints"],
+          ["Responsive constraints", "/studio/constraints"],
           ["Get API Token", "/studio/get_project_api"]
         ]
       ],
