@@ -33,7 +33,7 @@
           ["Constraints", "/studio/constraints"],
           ["Get API Token", "/studio/get_project_api"]
         ]
-      ]
+      ],
       [
         "Utils", [
           ["Teams", "/studio/teams"],
