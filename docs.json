@@ -28,7 +28,7 @@
       [
         "Getting started", [
           ["Overview", "/"],
-          ["Introduction", "/builder/"],
+          ["Introduction", "/getting-started"],
           ["Positioning & resizing", "/studio/positioning_and_resizing"],
           ["Constraints", "/studio/constraints"],
           ["Get API Token", "/studio/get_project_api"]
