@@ -4,7 +4,7 @@
   "logo": "/assets/logo_dark.svg",
   "logoDark": "/assets/logo_light.svg",
   "favicon": "/assets/favicon.svg",
-  "theme": "#9A55FE",
+  "theme": "#FFEA2F",
   "zoomImagesDefault": true,
   "anchors": [
     {
