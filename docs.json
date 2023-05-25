@@ -6,6 +6,8 @@
   "favicon": "/assets/favicon.svg",
   "theme": "#3285FF",
   "zoomImagesDefault": true,
+  "socialPreview": "https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/thmbnail_Docs.jpg",
+  "twitter": "buildwiththeta",
   "anchors": [
     {
       "title": "Website",
