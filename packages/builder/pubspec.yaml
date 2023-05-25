@@ -1,7 +1,7 @@
 name: theta
-description: Build remote UIs.
+description: Build remote, dynamic and responsive user interfaces with the Theta Flutter library.
 
-version: 0.1.0-dev.2
+version: 0.1.0-dev.3
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
