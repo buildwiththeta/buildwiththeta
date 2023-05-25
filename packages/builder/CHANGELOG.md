@@ -1,6 +1,6 @@
-# 0.1.0-dev.2
+# 0.1.0-dev.3
 
-* Fix: removed `GlobalTreeState` from `LocalNotifierProvider` to prevent a duplication of keys. ([#44](https://github.com/buildwiththeta/buildwiththeta/issues/44)). ()
+* Fix: removed `GlobalTreeState` from `LocalNotifierProvider` to prevent duplicated keys. ([#44](https://github.com/buildwiththeta/buildwiththeta/issues/44)). ([6323fbc](https://github.com/buildwiththeta/buildwiththeta/commit/6323fbc0db443329149d6aedc3295b7137ceaf07))
 * Fix: improved docs.
 
 # 0.1.0-dev.2
