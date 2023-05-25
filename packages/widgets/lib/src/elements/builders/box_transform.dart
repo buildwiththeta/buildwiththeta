@@ -89,26 +89,67 @@ class _BoxTransformBuilder extends StatefulWidget {
 }
 
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
+  final controller = TransformableBoxController();
+
   @override
-  Widget build(BuildContext context) {
-    final TreeState state = context.watch<TreeState>();
+  void initState() {
+    super.initState();
+    final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
-    return TransformableBox(
-      rect: widget.node.rect(device.identifier.type),
-      clampingRect: Rect.fromLTWH(
+    controller
+      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setClampingRect(Rect.fromLTWH(
         0,
         0,
         device.screenSize.width,
         device.screenSize.height,
-      ),
+      ));
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final TreeState state = context.watch<TreeState>();
+    return TransformableBox(
+      controller: controller,
       onChanged: (rect) {
-        state.nodes[0].rect(device.identifier.type).top;
-        TreeGlobalState.onNodeChanged(
-          widget.node,
-          rect,
-          state.deviceInfo.identifier.type,
+        const canvasSize = Size(390, 844);
+
+        final anchorPoints = [
+          canvasSize.center(Offset.zero),
+        ];
+
+        final Size rectSize = rect.size;
+        final Offset rectCenterPosition = Offset(
+          rect.rect.left + rectSize.width / 2,
+          rect.rect.top + rectSize.height / 2,
         );
-        setState(() {});
+
+        for (final point in anchorPoints) {
+          final double distance = (point - rectCenterPosition).distance;
+          if (distance < 20) {
+            final centeredRect = Rect.fromCenter(
+              center: point,
+              width: rect.rect.width,
+              height: rect.rect.height,
+            );
+            controller
+              ..setRect(centeredRect)
+              ..recalculatePosition();
+          } else {
+            setState(() {});
+          }
+          TreeGlobalState.onNodeChanged(
+            widget.node,
+            rect,
+            state.deviceInfo.identifier.type,
+          );
+        }
       },
       contentBuilder: (_, rect, flip) => IgnorePointer(
         child: NodeBuilder(

@@ -22,7 +22,7 @@ dependencies:
   theta_models: ^0.1.0-dev.1
   theta_design_system: ^0.1.0-dev.1
   theta_rendering: ^0.1.0-dev.1
-  
+
   light_logger: ^0.0.3
 
   # State
@@ -56,8 +56,5 @@ dev_dependencies:
     sdk: flutter
   flutter_gen_runner:
   flutter_lints: ^2.0.1
-  build_runner: any  
+  build_runner: any
   built_value_generator: any
-  
-  
-  
