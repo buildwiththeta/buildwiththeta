@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
 
 
-  theta: ^0.1.0-dev.2
+  theta:
+    path: ../
 
 dev_dependencies:
   flutter_test:

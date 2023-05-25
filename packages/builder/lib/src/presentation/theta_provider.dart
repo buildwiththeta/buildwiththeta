@@ -5,6 +5,7 @@ import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/theta.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class ThetaProvider extends StatefulWidget {
   const ThetaProvider({
@@ -49,7 +50,14 @@ class _ThetaProviderState extends State<ThetaProvider> {
         workflows: [],
         config: const ProjectConfigModel(),
       ),
-      child: widget.child,
+      child: TreeGlobalState(
+        onNodeChanged: (_, __, ___) {},
+        onNodeFocused: (_) {},
+        onNodeHovered: (_) {},
+        onNodeAdded: (_, __, ___) {},
+        onRightClick: (_, __) {},
+        child: widget.child,
+      ),
     );
   }
 }

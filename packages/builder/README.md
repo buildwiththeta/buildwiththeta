@@ -1,4 +1,9 @@
-# Theta Flutter library
+# Theta
+
+Theta Flutter library.
+
+- Docs: https://docs.page/buildwiththeta/buildwiththeta/
+
 
 ## What is [Theta](https://buildwiththeta.com)?
 
@@ -17,13 +22,7 @@ Theta is a platform designed for rendering dynamic user interfaces seamlessly wi
 
 ---
 
-## Documentation
-
-Read the docs [here](https://docs.page/buildwiththeta/buildwiththeta/en/builder).
-
----
-
-## Usage
+## Getting started
 
 ### Initialize Theta
 
@@ -100,20 +99,24 @@ UIBox(
 
 ## Status
 
-- [x] Alpha: experimental. Expect breaking changes.
-- [x] Closed Beta: ready for testing. Expect bugs and missing features.
-- [ ] Open Beta: public testing period. Stable but missing features.
-
----
+- ✅ Alpha: experimental. Expect breaking changes.
+- ✅ Closed Beta: ready for testing. Expect bugs and missing features.
 
 ## Contributing
 
 See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
 
----
-
 ## License
 
 Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/extended_positive.svg" width="200">
+## Resources
+
+- [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
+- [⚡️ Website](https://buildwiththeta.com)
+- [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
+- [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
+- [🍻 Discord](https://discord.gg/3XkZ8zq4)
+- [🐦 Twitter](https://twitter.com/buildwiththeta)
+
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg">
