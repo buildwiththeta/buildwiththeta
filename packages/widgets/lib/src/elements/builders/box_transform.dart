@@ -102,6 +102,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         device.screenSize.height,
       ),
       onChanged: (rect) {
+        state.nodes[0].rect(device.identifier.type).top;
         TreeGlobalState.onNodeChanged(
           widget.node,
           rect,
