@@ -1,6 +1,21 @@
 # Change Log
 
+# 0.1.0-dev.3
+
+## Theta Studio
+
+- New resources page.
+
+## Theta Flutter library
+
+- Fix: removed GlobalTreeState from LocalNotifierProvider to prevent duplicated keys. ([#44](https://github.com/buildwiththeta/buildwiththeta/issues/44)). ([6323fbc](https://github.com/buildwiththeta/buildwiththeta/commit/6323fbc0db443329149d6aedc3295b7137ceaf07))
+- Fix: improved docs.
+
+---
+
 # 0.1.0-dev.2
+
+## Theta Studio
 
 ### News
 
@@ -16,6 +31,12 @@
 - Fixed the text style control for Texts.
 - Added a favicon to the website.
 - Fixed the website name in the tab.
+
+## Theta Flutter library
+
+- Fix: improved docs.
+
+---
 
 # 0.1.0-dev.1
 
