@@ -53,12 +53,15 @@
       ]
     ],
     "es": [
-      "Getting started", [
+      [
+        "Getting started", [
           ["Introduccion", "/"],
           ["Cómo empezar", "/cómo-empezar"],
           ["Posicionamient & redimensionamiento", "/studio/posicionamiento_y_redimensionamiento"]
         ]
-      "Utils", [
+      ],
+      [
+        "Utils", [
           ["Migración", "/support/migración"]
         ]
       ]
