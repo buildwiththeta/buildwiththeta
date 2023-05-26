@@ -31,6 +31,7 @@ class TreeState with ChangeNotifier {
     required this.workflows,
     required this.config,
     this.focusedNode,
+    this.nodes = const [],
   });
 
   /// Are we in Play Mode?
@@ -62,6 +63,9 @@ class TreeState with ChangeNotifier {
 
   /// Focused node
   CNode? focusedNode;
+
+  /// Nodes
+  List<CNode> nodes;
 
   /// Workflows
   /// This is the list of all the workflows
