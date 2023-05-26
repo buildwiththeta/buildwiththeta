@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
@@ -190,9 +189,6 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
 
   void onChanged(TransformResult<Rect, Offset, Size> rect) {
     final TreeState state = context.read<TreeState>();
-
-    Logger.printWarning('Lines: x ${state.xLines}, y ${state.yLines}');
-
     final Size rectSize = rect.size;
     final Offset rectCenterPosition = Offset(
       rect.rect.left + rectSize.width / 2,
