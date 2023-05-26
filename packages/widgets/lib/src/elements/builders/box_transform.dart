@@ -118,10 +118,18 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     return TransformableBox(
       controller: controller,
       onChanged: (rect) {
-        const canvasSize = Size(390, 844);
+        final canvasSize = state.deviceInfo.screenSize;
 
         final anchorPoints = [
           canvasSize.center(Offset.zero),
+        ];
+
+        final anchorAxisHorizontal = [
+          canvasSize.height / 2, // Center horizontal axis
+        ];
+
+        final anchorAxisVertical = [
+          canvasSize.width / 2, // Center vertical axis
         ];
 
         final Size rectSize = rect.size;
@@ -130,9 +138,12 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
           rect.rect.top + rectSize.height / 2,
         );
 
+        double? newTop;
+        double? newLeft;
+
         for (final point in anchorPoints) {
           final double distance = (point - rectCenterPosition).distance;
-          if (distance < 20) {
+          if (distance < 15) {
             final centeredRect = Rect.fromCenter(
               center: point,
               width: rect.rect.width,
@@ -141,14 +152,37 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
             controller
               ..setRect(centeredRect)
               ..recalculatePosition();
-          } else {
-            setState(() {});
+            adjustAndNotify(centeredRect, rect, state);
+            return;
           }
-          TreeGlobalState.onNodeChanged(
-            widget.node,
-            rect,
-            state.deviceInfo.identifier.type,
+        }
+
+        for (final axis in anchorAxisHorizontal) {
+          if ((rect.rect.top - axis).abs() < 15) {
+            newTop = axis;
+          } else if ((rect.rect.bottom - axis).abs() < 15) {
+            newTop = axis - rect.rect.height;
+          }
+        }
+
+        for (final axis in anchorAxisVertical) {
+          if ((rect.rect.left - axis).abs() < 15) {
+            newLeft = axis;
+          } else if ((rect.rect.right - axis).abs() < 15) {
+            newLeft = axis - rect.rect.width;
+          }
+        }
+
+        if (newTop != null || newLeft != null) {
+          final adjustedRect = Rect.fromLTWH(
+            newLeft ?? rect.rect.left,
+            newTop ?? rect.rect.top,
+            rect.rect.width,
+            rect.rect.height,
           );
+          adjustAndNotify(adjustedRect, rect, state);
+        } else {
+          setStateAndNotify(rect, state);
         }
       },
       contentBuilder: (_, rect, flip) => IgnorePointer(
@@ -169,5 +203,47 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         ),
       ),
     );
+  }
+
+  /// This method is used to notify the tree that the node has changed
+  /// but you also want to force the Rect to be to a new position.
+  void adjustAndNotify(
+    Rect adjustedRect,
+    TransformResult<Rect, Offset, Size> oldRect,
+    TreeState state,
+  ) {
+    controller
+      ..setRect(adjustedRect)
+      ..recalculatePosition();
+    TreeGlobalState.onNodeChanged(
+      widget.node,
+      TransformResult(
+        rect: adjustedRect,
+        oldRect: oldRect.rect,
+        delta: oldRect.delta,
+        flip: oldRect.flip,
+        resizeMode: oldRect.resizeMode,
+        rawSize: oldRect.rawSize,
+        minWidthReached: oldRect.minWidthReached,
+        maxWidthReached: oldRect.maxWidthReached,
+        minHeightReached: oldRect.minHeightReached,
+        maxHeightReached: oldRect.maxHeightReached,
+      ),
+      state.deviceInfo.identifier.type,
+    );
+  }
+
+  /// This method is used to notify the tree that the node has changed
+  /// without changing its position.
+  void setStateAndNotify(
+    TransformResult<Rect, Offset, Size> rect,
+    TreeState state,
+  ) {
+    TreeGlobalState.onNodeChanged(
+      widget.node,
+      rect,
+      state.deviceInfo.identifier.type,
+    );
+    setState(() {});
   }
 }
