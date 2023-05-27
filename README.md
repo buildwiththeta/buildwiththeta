@@ -46,11 +46,11 @@ All packages, except the one for the Studio, are available at Pub.dev.
 
 ---
 
-## Contributing
+## Contributing
 
 See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
 
-## License
+## License
 
 Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
