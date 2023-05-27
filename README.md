@@ -32,8 +32,15 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 <img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/Architecture-min.jpg" />
 
+In this repository you can find:
+
 - [ ] Theta Studio: web UI editor. Coming soon.
 - [x] Theta Flutter library. [Pub.dev](https://pub.dev/packages/theta)
+- [x] Models.
+- [x] Analytics.
+- [x] Rendering.
+- [x] Design System.
+- [x] Widgets.  
 
 All packages, except the one for the Studio, are available at Pub.dev.
 
