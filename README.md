@@ -28,6 +28,15 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 - [it](https://docs.page/buildwiththeta/buildwiththeta/it)
 - [es](https://docs.page/buildwiththeta/buildwiththeta/es)
 
+## Architecture
+
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/Architecture-min.jpg" />
+
+- [ ] Theta Studio: web UI editor. Coming soon.
+- [x] Theta Flutter library. [Pub.dev](https://pub.dev/packages/theta)
+
+All packages, except the one for the Studio, are available at Pub.dev.
+
 ---
 
 [![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/buildwiththeta/buildwiththeta)
