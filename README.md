@@ -14,7 +14,7 @@ Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththe
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
 - [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
 - Email Support: Ideal for reporting problems with your personal projects.
-- [Discord](https://discord.gg/BdhDRZb7tu): Ideal for sharing projects and portfolios with the community.
+- Discord: Ideal for sharing projects and portfolios with the community. Only for invited users.
 
 ## Status
 - [x] Alpha: Experimental. Under intense development.
@@ -46,6 +46,18 @@ All packages, except the one for the Studio, are available at Pub.dev.
 
 ---
 
-[![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/buildwiththeta/buildwiththeta)
-[![Discord](https://img.shields.io/discord/892332931966697472.svg?logo=discord&color=blue)](https://discord.gg/BdhDRZb7tu)
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE)
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
+
+## License
+
+Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
+
+## Resources
+
+- [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
+- [⚡️ Website](https://buildwiththeta.com)
+- [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
+- [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
+- [🐦 Twitter](https://twitter.com/buildwiththeta)
