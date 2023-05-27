@@ -1,11 +1,11 @@
-<img src="./docs/assets/website_cover.jpg" width="400" alt="Theta cover"/>
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
 
 # Build with Theta
 
 [Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
 
-- [ ] Theta Studio: no-code visual editor for reponsive and modern UIs. Under development. <!-- [Docs]() -->
-- [ ] Theta Flutter client: Stream your UIs inside your clients. Under development. <!-- [Docs]() -->
+- [x] Theta Studio: no-code visual editor for reponsive and modern UIs. Under development. <!-- [Docs]() -->
+- [x] Theta Flutter client: Stream your UIs inside your clients. Under development. <!-- [Docs]() -->
 
 ## Documentation
 Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththeta)
@@ -19,8 +19,6 @@ Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththe
 ## Status
 - [x] Alpha: Experimental. Under intense development.
 - [x] Closed Beta: Still under development. Except bugs and errors.
-- [ ] Beta: Still pretty stable, no expected break changes in future.
-- [ ] Stable: Production-ready.
 
 Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
 
