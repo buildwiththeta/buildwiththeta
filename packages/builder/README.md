@@ -102,11 +102,11 @@ UIBox(
 - ✅ Alpha: experimental. Expect breaking changes.
 - ✅ Closed Beta: ready for testing. Expect bugs and missing features.
 
-## Contributing
+## Contributing
 
 See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
 
-## License
+## License
 
 Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
@@ -116,7 +116,6 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [⚡️ Website](https://buildwiththeta.com)
 - [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
-- [🍻 Discord](https://discord.gg/3XkZ8zq4)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
 
 <img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg">
