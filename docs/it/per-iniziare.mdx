@@ -1,0 +1,88 @@
+# Per iniziare
+
+Theta funziona tra la piattaforma [hosted](https://buildwiththeta.com) e la libreria client. Per iniziare:
+
+- Iscriversi a [buildwiththeta.com](https://buildwiththeta.com) (in closed beta è necessario un invito).
+- Creare un nuovo progetto e disegnare la prima interfaccia.
+- Copiare la pagina con il nome che si desidera.
+- Installare [Theta client library] (https://pub.dev/packages/theta) e utilizzare una `UIBox('nome della pagina')` per integrare la pagina nella propria applicazione.
+
+## Progettazione dell'interfaccia
+
+- Vedere [come spostare e ridimensionare gli elementi](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
+- Vedere [come impostare i limiti responsive](https://docs.page/buildwiththeta/buildwiththeta/en/studio/constraints).
+
+## Installazione della libreria client di Theta
+
+```
+flutter pub add theta
+```
+
+### Inizializzazione
+
+Inizializzare Theta chiamando Theta.initialize con la chiave anonima. Assicurarsi di chiamare questo metodo all'inizio dell'applicazione.
+
+```dart
+importare 'package:theta/theta.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'thetaKey');
+}
+```
+
+### Avvolgere l'applicazione con ThetaProvider
+
+Avvolgere l'applicazione con ThetaProvider per consentire a qualsiasi UIBox di ricevere gli stili del tema e del progetto.
+
+```dart
+ThetaProvider(
+    tema: ThemeMode.light,
+    figlio: MaterialApp(
+        home: // ...
+    ),
+)
+```
+
+### Renderizzare l'interfaccia utente remota
+
+Tutto ciò che occorre fare è aggiungere un widget UIBox alla propria applicazione e passare il nome del componente come parametro.
+
+```dart
+/// La vostra applicazione
+return Scaffold(
+    corpo: Center(
+        bambino: UIBox('Nome del componente'),
+    ),
+);
+```
+
+### Caricamento dei segnaposto e gestione degli errori
+
+È possibile visualizzare un widget segnaposto durante il caricamento e un widget di errore.
+
+```dart
+UIBox(
+    'Homepage',
+    segnaposto: CircularProgressIndicator(),
+    errorWidget: (error) => Text(error),
+)
+```
+
+### Aggiungere codice personalizzato per le azioni
+
+Si desidera un'interfaccia utente dinamica con supporto ai gesti (onTap, doubleTap, ecc.)? È possibile aggiungere codice personalizzato, chiamato 'flusso di lavoro', basato su trigger di gesti.
+
+1. Selezionate un singolo elemento dell'interfaccia utente in base al suo id o al suo nome.
+2. Scegliere il trigger per la quale si avvierà l'azione.
+3. Aggiungere il codice.
+
+``dart
+UIBox(
+    'CupertinoAppBar',
+    flussi di lavoro: [
+        Workflow('Element id', Trigger.onTap, (context) {
+            /// Il vostro metodo
+        }),
+    ]
+)
+```
