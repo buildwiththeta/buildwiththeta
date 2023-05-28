@@ -36,8 +36,8 @@ Avvolgere l'applicazione con ThetaProvider per consentire a qualsiasi UIBox di r
 
 ```dart
 ThetaProvider(
-    tema: ThemeMode.light,
-    figlio: MaterialApp(
+    theme: ThemeMode.light,
+    child: MaterialApp(
         home: // ...
     ),
 )
@@ -50,8 +50,8 @@ Tutto ciò che occorre fare è aggiungere un widget UIBox alla propria applicazi
 ```dart
 /// La vostra applicazione
 return Scaffold(
-    corpo: Center(
-        bambino: UIBox('Nome del componente'),
+    body: Center(
+        child: UIBox('Nome del componente'),
     ),
 );
 ```
@@ -63,7 +63,7 @@ return Scaffold(
 ```dart
 UIBox(
     'Homepage',
-    segnaposto: CircularProgressIndicator(),
+    placeholder: CircularProgressIndicator(),
     errorWidget: (error) => Text(error),
 )
 ```
@@ -76,10 +76,10 @@ Si desidera un'interfaccia utente dinamica con supporto ai gesti (onTap, doubleT
 2. Scegliere il trigger per la quale si avvierà l'azione.
 3. Aggiungere il codice.
 
-``dart
+```dart
 UIBox(
     'CupertinoAppBar',
-    flussi di lavoro: [
+    workflows: [
         Workflow('Element id', Trigger.onTap, (context) {
             /// Il vostro metodo
         }),
