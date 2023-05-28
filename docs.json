@@ -44,11 +44,16 @@
       ]
     ],
     "it": [
-      ["Introduzione", "/"],
-      ["Migrazione", "/support/migrazione"],
       [
-        "Theta Studio", [
-          ["Team", "/studio/team"]
+        "Per iniziare", [
+          ["Introduzione", "/"],
+          ["Per iniziare", "/per_iniziare"]
+        ]
+      ],
+      [
+        "Utils", [
+          ["Team", "/studio/team"],
+          ["Migrazione", "/support/migrazione"]
         ]
       ]
     ],
