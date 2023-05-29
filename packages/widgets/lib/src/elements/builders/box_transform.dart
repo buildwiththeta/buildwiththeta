@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
@@ -90,6 +92,14 @@ class _BoxTransformBuilder extends StatefulWidget {
 
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   final controller = TransformableBoxController();
+  final _debouncer = Debouncer(milliseconds: 10);
+
+  final int differece = 8;
+  late Size canvasSize;
+
+  late List<Offset> anchorPoints;
+  late List<num> anchorAxisHorizontal;
+  late List<num> anchorAxisVertical;
 
   @override
   void initState() {
@@ -104,6 +114,47 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         device.screenSize.width,
         device.screenSize.height,
       ));
+
+    canvasSize = state.deviceInfo.screenSize;
+    anchorPoints = [
+      canvasSize.center(Offset.zero),
+    ];
+    anchorAxisHorizontal = [
+      canvasSize.height / 2, // Center horizontal axis
+      ...state.yLines, // X axis
+    ];
+    anchorAxisVertical = [
+      canvasSize.width / 2, // Center vertical axis
+      ...state.xLines, // Y axis
+    ];
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final TreeState state = context.read<TreeState>();
+    final device = state.deviceInfo;
+    controller
+      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setClampingRect(Rect.fromLTWH(
+        0,
+        0,
+        device.screenSize.width,
+        device.screenSize.height,
+      ));
+
+    canvasSize = state.deviceInfo.screenSize;
+    anchorPoints = [
+      canvasSize.center(Offset.zero),
+    ];
+    anchorAxisHorizontal = [
+      canvasSize.height / 2, // Center horizontal axis
+      ...state.yLines, // X axis
+    ];
+    anchorAxisVertical = [
+      canvasSize.width / 2, // Center vertical axis
+      ...state.xLines, // Y axis
+    ];
   }
 
   @override
@@ -112,79 +163,78 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     super.dispose();
   }
 
+  ({double? newTop, double? newLeft}) getCoordinates(
+      TransformResult<Rect, Offset, Size> rect) {
+    double? newTop;
+    double? newLeft;
+
+    for (final axis in anchorAxisHorizontal) {
+      if ((rect.rect.top - axis).abs() < differece) {
+        newTop = axis.toDouble();
+      } else if ((rect.rect.bottom - axis).abs() < differece) {
+        newTop = axis - rect.rect.height;
+      }
+    }
+
+    for (final axis in anchorAxisVertical) {
+      if ((rect.rect.left - axis).abs() < differece) {
+        newLeft = axis.toDouble();
+      } else if ((rect.rect.right - axis).abs() < differece) {
+        newLeft = axis - rect.rect.width;
+      }
+    }
+
+    return (newLeft: newLeft, newTop: newTop);
+  }
+
+  void onChanged(TransformResult<Rect, Offset, Size> rect) {
+    final TreeState state = context.read<TreeState>();
+    final Size rectSize = rect.size;
+    final Offset rectCenterPosition = Offset(
+      rect.rect.left + rectSize.width / 2,
+      rect.rect.top + rectSize.height / 2,
+    );
+
+    for (final point in anchorPoints) {
+      final double distance = (point - rectCenterPosition).distance;
+      if (distance < differece) {
+        final centeredRect = Rect.fromCenter(
+          center: point,
+          width: rect.rect.width,
+          height: rect.rect.height,
+        );
+        controller
+          ..setRect(centeredRect)
+          ..recalculatePosition();
+        adjustAndNotify(centeredRect, rect, state);
+        return;
+      }
+    }
+
+    double? newTop;
+    double? newLeft;
+    final res = getCoordinates(rect);
+    newTop = res.newTop;
+    newLeft = res.newLeft;
+
+    if (newTop != null || newLeft != null) {
+      final adjustedRect = Rect.fromLTWH(
+        newLeft ?? rect.rect.left,
+        newTop ?? rect.rect.top,
+        rect.rect.width,
+        rect.rect.height,
+      );
+      adjustAndNotify(adjustedRect, rect, state);
+    } else {
+      setStateAndNotify(rect, state);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final TreeState state = context.watch<TreeState>();
     return TransformableBox(
       controller: controller,
-      onChanged: (rect) {
-        final canvasSize = state.deviceInfo.screenSize;
-
-        final anchorPoints = [
-          canvasSize.center(Offset.zero),
-        ];
-
-        final anchorAxisHorizontal = [
-          canvasSize.height / 2, // Center horizontal axis
-        ];
-
-        final anchorAxisVertical = [
-          canvasSize.width / 2, // Center vertical axis
-        ];
-
-        final Size rectSize = rect.size;
-        final Offset rectCenterPosition = Offset(
-          rect.rect.left + rectSize.width / 2,
-          rect.rect.top + rectSize.height / 2,
-        );
-
-        double? newTop;
-        double? newLeft;
-
-        for (final point in anchorPoints) {
-          final double distance = (point - rectCenterPosition).distance;
-          if (distance < 15) {
-            final centeredRect = Rect.fromCenter(
-              center: point,
-              width: rect.rect.width,
-              height: rect.rect.height,
-            );
-            controller
-              ..setRect(centeredRect)
-              ..recalculatePosition();
-            adjustAndNotify(centeredRect, rect, state);
-            return;
-          }
-        }
-
-        for (final axis in anchorAxisHorizontal) {
-          if ((rect.rect.top - axis).abs() < 15) {
-            newTop = axis;
-          } else if ((rect.rect.bottom - axis).abs() < 15) {
-            newTop = axis - rect.rect.height;
-          }
-        }
-
-        for (final axis in anchorAxisVertical) {
-          if ((rect.rect.left - axis).abs() < 15) {
-            newLeft = axis;
-          } else if ((rect.rect.right - axis).abs() < 15) {
-            newLeft = axis - rect.rect.width;
-          }
-        }
-
-        if (newTop != null || newLeft != null) {
-          final adjustedRect = Rect.fromLTWH(
-            newLeft ?? rect.rect.left,
-            newTop ?? rect.rect.top,
-            rect.rect.width,
-            rect.rect.height,
-          );
-          adjustAndNotify(adjustedRect, rect, state);
-        } else {
-          setStateAndNotify(rect, state);
-        }
-      },
+      onChanged: (rect) => _debouncer.run(() => onChanged(rect)),
       contentBuilder: (_, rect, flip) => IgnorePointer(
         child: NodeBuilder(
           onTap: () {
@@ -245,5 +295,17 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       state.deviceInfo.identifier.type,
     );
     setState(() {});
+  }
+}
+
+class Debouncer {
+  final int milliseconds;
+  Timer? _timer;
+
+  Debouncer({required this.milliseconds});
+
+  run(VoidCallback action) {
+    _timer?.cancel();
+    _timer = Timer(Duration(milliseconds: milliseconds), action);
   }
 }
