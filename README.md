@@ -46,6 +46,10 @@ All packages, except the one for the Studio, are available at Pub.dev.
 
 ---
 
+## 💙 Supporters
+
+- [@chaplaindan](https://github.com/chaplaindan)
+
 ## Contributing
 
 See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
