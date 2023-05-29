@@ -46,7 +46,7 @@ All packages, except the one for the Studio, are available at Pub.dev.
 
 ---
 
-## 💙 Supporters
+## Supporters 💙
 
 - [@chaplaindan](https://github.com/chaplaindan)
 
