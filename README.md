@@ -34,7 +34,7 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 In this repository you can find:
 
-- [ ] Theta Studio: web UI editor. Coming soon.
+- [ ] Theta Studio: UI web editor. Coming soon.
 - [x] Theta Flutter library. [Pub.dev](https://pub.dev/packages/theta)
 - [x] Models.
 - [x] Analytics.
