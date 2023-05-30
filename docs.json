@@ -66,6 +66,7 @@
       ],
       [
         "Utils", [
+          ["Teams", "/studio/teams"],
           ["Migración", "/support/migración"]
         ]
       ]
