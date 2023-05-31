@@ -1,0 +1,46 @@
+---
+title: Restricciones
+description: Mantener elementos alineados en lados específicos, o estirarlos siguiendo tamaños de pantalla.
+---
+
+# Restricciones de alineación de IU
+
+Las Restricciones de Alineación de UI te permiten controlar la posición de un elemento dentro de un diseño. Puedes establecer opciones de alineación tanto para los ejes vertical como horizontal. Las tres opciones disponibles son `start`, `end`, y `stretch`.
+
+<YouTube id="LRhMnuvEg7A" />
+
+## Alineación Horizontal
+
+* `Start`: Alinea el elemento a la izquierda del contenedor. El elemento se posicionará según el valor de la izquierda.
+
+* `End`: Alinea el elemento a la derecha del contenedor. El borde derecho del elemento se posicionará según el valor de la derecha.
+
+* `Stretch`: Estira el elemento horizontalmente para llenar el ancho del contenedor, manteniendo los valores de margen izquierdo y derecho.
+
+## Alineación Vertical
+
+* `Start`: Alinea el elemento en la parte superior del contenedor. El elemento se posicionará según el valor de arriba.
+
+* `End`: Alinea el elemento en la parte inferior del contenedor. El borde inferior del elemento se posicionará según el valor de abajo.
+
+* `Stretch`: Estira el elemento verticalmente para llenar la altura del contenedor, manteniendo los valores de margen superior e inferior.
+
+## Ejemplos
+
+1. Si seleccionas `start` tanto para la alineación vertical como horizontal, el elemento se posicionará en la esquina superior izquierda, con los valores de arriba y izquierda determinando la posición exacta.
+
+2. Si seleccionas `end` tanto para la alineación vertical como horizontal, el elemento se posicionará en la esquina inferior derecha, con los valores de arriba y izquierda determinando la posición exacta.
+
+3. Si seleccionas `stretch` para la alineación horizontal, el elemento ocupará todo el ancho de la pantalla, con su ancho determinado por los valores de margen izquierdo y derecho.
+
+4. Si seleccionas `stretch` para la alineación vertical, el elemento ocupará toda la altura de la pantalla, con su altura determinada por los valores de margen superior e inferior.
+
+## Reemplazar Restricciones para Tablet y Desktop
+
+Además de la configuración predeterminada para dispositivos móviles, puedes anular las restricciones de alineación para pantallas más grandes como tablet y desktop. Esto te permite optimizar tu interfaz de usuario para diferentes tamaños de pantalla y crear un diseño verdaderamente receptivo.
+
+Para hacer esto, simplemente establece los valores de alineación deseados para los puntos de interrupción de tablet y desktop en la configuración. Esto anulará las restricciones móviles predeterminadas y proporcionará un comportamiento de alineación diferente en estos dispositivos.
+
+## Eliminar modificaciones
+
+Si deseas volver a la configuración móvil en un tablet o desktop, puedes hacerlo fácilmente haciendo clic en el botón 'Follow phone settings'. Esto eliminará las restricciones, permitiendo que el elemento se alinee según la configuración móvil predeterminada en todos los dispositivos. Esta función proporciona una forma flexible de ajustar las restricciones de alineación de la interfaz de usuario según los requisitos de diseño.
