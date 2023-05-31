@@ -1,3 +1,7 @@
+# 0.1.0-dev.4
+
+* Fully compliant with Dart 3.
+
 # 0.1.0-dev.3
 
 * Fix: removed `GlobalTreeState` from `LocalNotifierProvider` to prevent duplicated keys. ([#44](https://github.com/buildwiththeta/buildwiththeta/issues/44)). ([6323fbc](https://github.com/buildwiththeta/buildwiththeta/commit/6323fbc0db443329149d6aedc3295b7137ceaf07))
