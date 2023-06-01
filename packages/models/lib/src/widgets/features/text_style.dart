@@ -182,7 +182,21 @@ class FTextStyle extends Equatable {
       textAlign: textAlign ?? this.textAlign,
       fontStyle: fontStyle ?? this.fontStyle,
       textDirection: textDirection ?? this.textDirection,
-      textStyleModel: textStyleModel,
+      textStyleModel: textStyleModel ?? this.textStyleModel,
+    );
+  }
+
+  FTextStyle setModelNull() {
+    return FTextStyle(
+      fill: this.fill,
+      fontSize: this.fontSize,
+      fontFamily: this.fontFamily,
+      fontWeight: this.fontWeight,
+      textDecoration: this.textDecoration,
+      textAlign: this.textAlign,
+      fontStyle: this.fontStyle,
+      textDirection: this.textDirection,
+      textStyleModel: this.textStyleModel,
     );
   }
 }
