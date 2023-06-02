@@ -70,30 +70,6 @@ class BadgeAdapter extends WidgetAdapter {
   BadgeAdapter.create() : this();
 }
 
-/// Barcode
-@dynamicAdapter
-@NodeKey(NType.barcode)
-class BarcodeAdapter extends WidgetAdapter {
-  const BarcodeAdapter();
-
-  @override
-  Widget toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWBarcode(
-        nodeState: state,
-        child: state.node.child,
-        data: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        barcodeType: state.node.getAttributes[DBKeys.image] as FTextTypeInput,
-        width: state.node.getAttributes[DBKeys.width] as FSize,
-        height: state.node.getAttributes[DBKeys.height] as FSize,
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-      );
-
-  BarcodeAdapter.create() : this();
-}
-
 /// BottomBarItem
 @dynamicAdapter
 @NodeKey(NType.bottombaritem)
@@ -121,29 +97,6 @@ class BottomBarItemAdapter extends WidgetAdapter {
       );
 
   BottomBarItemAdapter.create() : this();
-}
-
-/// Bouncing
-@dynamicAdapter
-@NodeKey(NType.bouncingWidget)
-class BouncingAdapter extends WidgetAdapter {
-  const BouncingAdapter();
-
-  @override
-  Widget toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWBouncingWidget(
-        nodeState: state,
-        child: state.node.child,
-        value: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        valueOfCondition:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-        onPressed: () {},
-      );
-
-  BouncingAdapter.create() : this();
 }
 
 /// Button
@@ -1131,28 +1084,6 @@ class QRScannerAdapter extends WidgetAdapter {
   QRScannerAdapter.create() : this();
 }
 
-/// QR Code
-@dynamicAdapter
-@NodeKey(NType.qrCode)
-class QRCodeAdapter extends WidgetAdapter {
-  const QRCodeAdapter();
-  @override
-  Widget toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWQR(
-        nodeState: state,
-        content: state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        image: state.node.getAttributes[DBKeys.image] as FTextTypeInput,
-        withImage: state.node.getAttributes[DBKeys.flag] as bool,
-        size: state.node.getAttributes[DBKeys.width] as FSize,
-        fill: state.node.getAttributes[DBKeys.fill] as FFill,
-      );
-
-  QRCodeAdapter.create() : this();
-}
-
 /// Radio
 @dynamicAdapter
 @NodeKey(NType.radio)
@@ -1171,28 +1102,6 @@ class RadioAdapter extends WidgetAdapter {
       );
 
   RadioAdapter.create() : this();
-}
-
-/// Refresh Indicator
-@dynamicAdapter
-@NodeKey(NType.refreshIndicator)
-class RefreshIndicatorAdapter extends WidgetAdapter {
-  const RefreshIndicatorAdapter();
-  @override
-  Widget toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWRefreshIndicator(
-        nodeState: state,
-        actionValue:
-            state.node.getAttributes[DBKeys.actionValue] as FTextTypeInput,
-        height: state.node.getAttributes[DBKeys.height] as FSize,
-        duration: state.node.getAttributes[DBKeys.duration] as FTextTypeInput,
-        children: state.node.children ?? [],
-      );
-
-  RefreshIndicatorAdapter.create() : this();
 }
 
 /// Responsive Condition

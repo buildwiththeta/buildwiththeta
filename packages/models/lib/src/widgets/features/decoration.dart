@@ -1,9 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:theta_design_system/src/hex_color.dart';
 import 'package:theta_models/theta_models.dart';
-// Project imports:
 
 /// Class made to facilitate the creation of BoxDecoration for widgets
 class TetaBoxDecoration {
@@ -27,8 +23,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -58,8 +55,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -79,8 +77,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -110,8 +109,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,
@@ -130,8 +130,9 @@ class TetaBoxDecoration {
           forPlay: state.forPlay,
           deviceType: state.deviceType,
         ),
-        boxShadow: const [
-          //shadows.get(context),
+        boxShadow: [
+          if (shadow != null)
+            shadow.get(context, state.colorStyles, state.theme),
         ],
         border: borders?.get(
           context,

@@ -4,13 +4,20 @@
   "logo": "/assets/logo_dark.svg",
   "logoDark": "/assets/logo_light.svg",
   "favicon": "/assets/favicon.svg",
-  "theme": "#9A55FE",
+  "theme": "#3285FF",
   "zoomImagesDefault": true,
+  "socialPreview": "https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/thmbnail_Docs.jpg",
+  "twitter": "buildwiththeta",
   "anchors": [
     {
       "title": "Website",
       "icon": "arrow-up-right-from-square",
       "link": "https://buildwiththeta.com"
+    },
+    {
+      "title": "Pub.dev",
+      "icon": "arrow-up-right-from-square",
+      "link": "https://pub.dev/packages/theta"
     },
     {
       "title": "Report a bug",
@@ -20,30 +27,50 @@
   ],
   "sidebar": {
     "en": [
-      ["Overview", "/"],
-      ["Migration", "/support/migration"],
       [
-        "Theta Studio", [
-          ["Teams", "/studio/teams"]
+        "Getting started", [
+          ["Overview", "/"],
+          ["Getting started", "/getting-started"],
+          ["Positioning & resizing", "/studio/positioning_and_resizing"],
+          ["Responsive constraints", "/studio/constraints"],
+          ["Get API Token", "/studio/get_project_api"]
         ]
       ],
       [
-        "Theta Builder", [
-          ["Introduction", "/builder/"]
+        "Utils", [
+          ["Teams", "/studio/teams"],
+          ["Migration", "/support/migration"]
         ]
       ]
     ],
     "it": [
-      ["Introduzione", "/"],
-      ["Migrazione", "/support/migrazione"],
       [
-        "Theta Studio", [
-          ["Team", "/studio/team"]
+        "Per iniziare", [
+          ["Introduzione", "/"],
+          ["Per iniziare", "/per_iniziare"]
+        ]
+      ],
+      [
+        "Utils", [
+          ["Migrazione", "/support/migrazione"]
         ]
       ]
     ],
     "es": [
-      ["Introduccion", "/"]
+      [
+        "Getting started", [
+          ["Introduccion", "/"],
+          ["Cómo empezar", "/cómo-empezar"],
+          ["Posicionamient & redimensionamiento", "/studio/posicionamiento_y_redimensionamiento"],
+          ["Restricciones", "/studio/restricciones"],
+          ["Obten el token API del proyecto", "/studio/obten_token_API_del_proyecto"]
+        ]
+      ],
+      [
+        "Utils", [
+          ["Migración", "/support/migración"]
+        ]
+      ]
     ]
   }
 }

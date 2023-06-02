@@ -31,6 +31,9 @@ class TreeState with ChangeNotifier {
     required this.workflows,
     required this.config,
     this.focusedNode,
+    this.nodes = const [],
+    this.xLines = const [],
+    this.yLines = const [],
   });
 
   /// Are we in Play Mode?
@@ -63,6 +66,9 @@ class TreeState with ChangeNotifier {
   /// Focused node
   CNode? focusedNode;
 
+  /// Nodes
+  List<CNode> nodes;
+
   /// Workflows
   /// This is the list of all the workflows
   /// Workflow = custom code
@@ -76,50 +82,57 @@ class TreeState with ChangeNotifier {
   /// Like keys, integrations, etc.
   ProjectConfigModel config;
 
+  List<int> xLines;
+  List<int> yLines;
+
   DeviceType get deviceType => deviceInfo.identifier.type;
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
-    notifyListeners();
   }
 
   void onParamsId(Variables params) {
     this.params = params;
-    notifyListeners();
   }
 
   void onStatesId(Variables states) {
     this.states = states;
-    notifyListeners();
   }
 
   void onColorsChanged(ColorStyles colors) {
     colorStyles = colors;
-    notifyListeners();
   }
 
   void onTextsChanged(TextStyles texts) {
     textStyles = texts;
-    notifyListeners();
   }
 
   void onThemeChanged(ThemeMode themeMode) {
     theme = themeMode;
-    notifyListeners();
   }
 
   void onDeviceChanged(DeviceInfo deviceInfo) {
     this.deviceInfo = deviceInfo;
-    notifyListeners();
   }
 
   void onConfigChanged(ProjectConfigModel config) {
     this.config = config;
-    notifyListeners();
   }
 
   void onFocusNodeChanged(CNode? node) {
     focusedNode = node;
+  }
+
+  void onNodesChanged(Nodes nodes) {
+    this.nodes = nodes;
+  }
+
+  void onLinesChanged(List<int> xLines, List<int> yLines) {
+    this.xLines = xLines;
+    this.yLines = yLines;
+  }
+
+  void notify() {
     notifyListeners();
   }
 
@@ -138,6 +151,9 @@ class TreeState with ChangeNotifier {
     final ThemeMode? theme,
     final List<Workflow>? workflows,
     final ProjectConfigModel? config,
+    final Nodes? nodes,
+    final List<int>? xLines,
+    final List<int>? yLines,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -151,21 +167,9 @@ class TreeState with ChangeNotifier {
       theme: theme ?? this.theme,
       workflows: workflows ?? this.workflows,
       config: config ?? this.config,
+      nodes: nodes ?? this.nodes,
+      xLines: xLines ?? this.xLines,
+      yLines: yLines ?? this.yLines,
     );
   }
-
-  @override
-  List<Object?> get props => [
-        forPlay,
-        params,
-        states,
-        pageId,
-        isPage,
-        colorStyles,
-        textStyles,
-        deviceInfo,
-        theme,
-        config,
-        workflows,
-      ];
 }

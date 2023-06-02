@@ -7,8 +7,6 @@ import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
-import 'main.reflectable.dart';
-
 Future<void> main() async {
   await ThetaModels.initialize();
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,29 +24,19 @@ Future<void> main() async {
   );
 
   /// Get the adapter (toWidget method)
-  final adapter = const WidgetAdapterParse().getByType(NType.text);
+  const WidgetAdapterParse().getByType(NType.text);
 
   /// Get the default attributes
-  final defaultAttributes =
-      const DefaultAttributesParse().getByType(NType.text);
+
+  const DefaultAttributesParse().getByType(NType.text);
 
   /// Get the intrinsic state
-  final intrinsicState =
-      const DynamicIntrinsicState().getStateByType(NType.text);
+
+  const DynamicIntrinsicState().getStateByType(NType.text);
 
   /// Get the node
-  final node = const NodesParse().fromJson(
+  const NodesParse().fromJson(
     NType.text,
     json,
   );
-
-  print('');
-  print('RESULT: ------------------');
-  print('Intrinsic state: $intrinsicState');
-  print('--------------------------');
-  print('adapter: $adapter');
-  print('--------------------------');
-  print('default attributes: $defaultAttributes');
-  print('--------------------------');
-  print('node: $node');
 }

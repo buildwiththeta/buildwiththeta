@@ -1,7 +1,12 @@
 name: theta
-description: Build remote UIs.
-version: 0.0.5
-publish_to: none
+description: Build remote, dynamic and responsive user interfaces with the Theta Flutter library.
+
+version: 0.1.0-dev.4
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 platforms:
   android:
@@ -22,31 +27,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_analytics:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/analytics
-      ref: main
+  theta_analytics: ^0.1.0-dev.1
+  theta_models: ^0.1.0-dev.2
+  theta_rendering: ^0.1.0-dev.1
+  theta_open_widgets: ^0.1.0-dev.1
 
-  theta_models:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/models
-      ref: main
-
-  theta_rendering:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/rendering
-      ref: main
-
-  theta_open_widgets:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/widgets
-      ref: main
-
-  light_logger:
+  light_logger: ^0.0.3
 
   device_frame: ^1.0.0
   equatable: ^2.0.3
@@ -56,21 +42,16 @@ dependencies:
   provider: ^6.0.5
   collection: ^1.17.1
   hive: ^2.2.3
+  meta: ^1.9.1
+
+  reflectable: ^4.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
-  reflectable:
+  
   build_runner:
   source_gen:
-
-dependency_overrides:
-  theta_analytics:
-    path: ../analytics
-  theta_rendering:
-    path: ../rendering
-  theta_open_widgets:
-    path: ../widgets
 
 flutter:

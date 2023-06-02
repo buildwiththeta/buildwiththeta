@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:google_fonts/google_fonts.dart';
-import 'package:theta_design_system/src/hex_color.dart';
 import 'package:theta_models/theta_models.dart';
 // Project imports:
 

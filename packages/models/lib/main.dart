@@ -10,14 +10,4 @@ import 'main.reflectable.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   initializeReflectable();
-
-  final res = const DynamicAttributes().fromJson(DBKeys.align, {
-    'm': 'tL',
-    't': 'tL',
-    'd': 'tL',
-  });
-  print(res);
-
-  final res2 = const DynamicIntrinsicState().getStateByType(NType.align);
-  print(res2.displayName);
 }

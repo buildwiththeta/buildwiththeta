@@ -38,21 +38,21 @@ class QonversionConfigMapper {
     final bool? isEnabled,
     final bool? isDebugMode,
   }) {
-    final _key = key ?? e.key;
-    final _isEnabled = isEnabled ?? e.isEnabled;
-    final _isDebugMode = isDebugMode ?? e.isDebugMode;
+    final key0 = key ?? e.key;
+    final isEnabled0 = isEnabled ?? e.isEnabled;
+    final isDebugMode0 = isDebugMode ?? e.isDebugMode;
 
-    if (_key.isNotEmpty) {
+    if (key0.isNotEmpty) {
       return QonversionConfigModelInitialized(
-        key: _key,
-        isDebugMode: _isDebugMode,
-        isEnabled: _isEnabled,
+        key: key0,
+        isDebugMode: isDebugMode0,
+        isEnabled: isEnabled0,
       );
     }
     return QonversionConfigModelUninitialized(
-      key: _key,
-      isDebugMode: _isDebugMode,
-      isEnabled: _isEnabled,
+      key: key0,
+      isDebugMode: isDebugMode0,
+      isEnabled: isEnabled0,
     );
   }
 }

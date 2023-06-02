@@ -23,10 +23,16 @@ typedef OnNodeHoveredCallBack = void Function(
   CNode node,
 )?;
 
+typedef OnRightClickCallBack = void Function(
+  PointerDownEvent e,
+  CNode node,
+)?;
+
 OnNodeAddedCallBack _onNodeAdded;
 OnNodeChangedCallBack _onNodeChanged;
 OnNodeFocusedCallBack _onNodeFocused;
 OnNodeHoveredCallBack _onNodeHovered;
+OnRightClickCallBack _onRightClick;
 
 class TreeGlobalState extends StatefulWidget {
   TreeGlobalState({
@@ -35,11 +41,13 @@ class TreeGlobalState extends StatefulWidget {
     required final OnNodeChangedCallBack onNodeChanged,
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
+    required final OnRightClickCallBack onRightClick,
   }) : super(key: _globalKey) {
     _onNodeAdded = onNodeAdded;
     _onNodeChanged = onNodeChanged;
     _onNodeFocused = onNodeFocused;
     _onNodeHovered = onNodeHovered;
+    _onRightClick = onRightClick;
   }
 
   final Widget child;
@@ -69,6 +77,12 @@ class TreeGlobalState extends StatefulWidget {
     CNode node,
   ) =>
       _onNodeHovered!.call(node);
+
+  static void onRightClick(
+    PointerDownEvent e,
+    CNode node,
+  ) =>
+      _onRightClick!.call(e, node);
 
   @override
   State<TreeGlobalState> createState() => _TreeGlobalState();

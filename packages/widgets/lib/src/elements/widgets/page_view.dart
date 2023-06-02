@@ -23,7 +23,7 @@ class OpenWPageView extends StatefulWidget {
   final bool flagValue;
 
   @override
-  _WPageViewState createState() => _WPageViewState();
+  createState() => _WPageViewState();
 }
 
 class _WPageViewState extends State<OpenWPageView> {

@@ -49,29 +49,19 @@ Future<void> main() async {
   );
 
   /// Get the adapter (toWidget method)
-  final adapter = const WidgetAdapterParse().getByType(NType.scaffold);
+  const WidgetAdapterParse().getByType(NType.scaffold);
 
   /// Get the default attributes
-  final defaultAttributes =
-      const DefaultAttributesParse().getByType(NType.scaffold);
+
+  const DefaultAttributesParse().getByType(NType.scaffold);
 
   /// Get the intrinsic state
-  final intrinsicState =
-      const DynamicIntrinsicState().getStateByType(NType.scaffold);
+
+  const DynamicIntrinsicState().getStateByType(NType.scaffold);
 
   /// Get the node
-  final node = const NodesParse().fromJson(
+  const NodesParse().fromJson(
     json['type'],
     json,
   );
-
-  print('');
-  print('RESULT: ------------------');
-  print('Intrinsic state: $intrinsicState');
-  print('--------------------------');
-  print('adapter: $adapter');
-  print('--------------------------');
-  print('default attributes: $defaultAttributes');
-  print('--------------------------');
-  print('node: $node');
 }

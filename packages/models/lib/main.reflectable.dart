@@ -4963,7 +4963,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix0.DynamicAttributes() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -10858,7 +10861,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) =>
+                  () => b ? const prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10935,7 +10939,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       [])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

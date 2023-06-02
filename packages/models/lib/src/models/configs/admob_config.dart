@@ -31,17 +31,17 @@ class AdMobConfigMapper {
     final String? iosId,
     final String? androidId,
   }) {
-    final _iosId = iosId ?? e.iosId;
-    final _androidId = androidId ?? e.androidId;
+    final iosId0 = iosId ?? e.iosId;
+    final androidId0 = androidId ?? e.androidId;
     if (iosId != null && androidId != null) {
       return AdMobConfigModelInitialized(
-        iosId: _iosId,
-        androidId: _androidId,
+        iosId: iosId0,
+        androidId: androidId0,
       );
     }
     return AdMobConfigModelUninitialized(
-      iosId: _iosId,
-      androidId: _androidId,
+      iosId: iosId0,
+      androidId: androidId0,
     );
   }
 }

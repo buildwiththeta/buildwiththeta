@@ -5,7 +5,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// [FBorderRadius] is a set of functions to use [BorderRadius]
@@ -98,25 +97,21 @@ class FBorderRadius extends Equatable {
         radiusDesktop: value,
       );
     } else {
-      try {
-        return FBorderRadius(
-          radiusMobile: (json['m'] as List<dynamic>)
-              .map((final dynamic e) => double.parse('$e'))
-              .toList(),
-          radiusTablet: (json['t'] as List<dynamic>)
-              .map((final dynamic e) => double.parse('$e'))
-              .toList(),
-          radiusDesktop: (json['d'] as List<dynamic>)
-              .map((final dynamic e) => double.parse('$e'))
-              .toList(),
-        );
-      } catch (e) {
-        return const FBorderRadius(
-          radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
-        );
-      }
+      return FBorderRadius(
+        radiusMobile: (json['m'] as List<dynamic>)
+            .map((final dynamic e) => double.parse('$e'))
+            .toList(),
+        radiusTablet: json['t'] == null
+            ? null
+            : (json['t'] as List<dynamic>)
+                .map((final dynamic e) => double.parse('$e'))
+                .toList(),
+        radiusDesktop: json['d'] == null
+            ? null
+            : (json['d'] as List<dynamic>)
+                .map((final dynamic e) => double.parse('$e'))
+                .toList(),
+      );
     }
   }
 
@@ -124,9 +119,9 @@ class FBorderRadius extends Equatable {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'm': radiusMobile,
-      't': radiusTablet,
-      'd': radiusDesktop,
-    };
+      if (radiusTablet != null) 't': radiusTablet,
+      if (radiusDesktop != null) 'd': radiusDesktop,
+    }..removeWhere((key, value) => value == null);
   }
 
   /// Change the value of [value] (List<double>)

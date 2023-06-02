@@ -14,3 +14,4 @@ export 'typedefs.dart';
 export 'user.dart';
 export 'variable.dart';
 export 'user_info.dart';
+export 'hex_color.dart';

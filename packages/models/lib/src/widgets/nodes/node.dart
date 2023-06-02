@@ -210,8 +210,38 @@ abstract class CNode extends Equatable {
     };
   }
 
+  /// toJson method with id
+  Map<String, dynamic> toJsonWithId() {
+    final body = getAttributes;
+    return {
+      'id': id,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+    };
+  }
+
   /// Copy the node with new attributes
   CNode copyWith({
+    NodeID? id,
+    NodeID? parentID,
+    CNode? child,
+    List<CNode>? children,
+    String? name,
+    String? description,
+    int? childOrder,
+    Map<String, dynamic>? attributes,
+    RectProperties? rectProperties,
+    DateTime updatedAt,
+  });
+
+  /// Copy the node with new attributes
+  CNode copyWithOutChild({
     NodeID? id,
     NodeID? parentID,
     CNode? child,

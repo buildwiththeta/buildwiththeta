@@ -1,13 +1,13 @@
 library theta_models;
 
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 
 export './src/models/index.dart';
 export './src/mappers/index.dart';
 export './src/enums/index.dart';
 export './src/widgets/features/index.dart';
 export './src/widgets/nodes/index.dart';
-export './src/controls/index.dart';
 export 'src/widgets/actions/enums/index.dart';
 export './src/gen/assets.gen.dart';
 import 'main.reflectable.dart';
@@ -35,7 +35,9 @@ class ThetaModels {
   static Future<void> initialize() async {
     try {
       WidgetsFlutterBinding.ensureInitialized();
-    } catch (e) {}
+    } catch (e) {
+      Logger.printError('ThetaModels.initialize() failed: $e');
+    }
     initializeReflectable();
     _instance.isInitialized = true;
   }

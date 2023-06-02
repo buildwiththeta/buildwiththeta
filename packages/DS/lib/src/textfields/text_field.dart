@@ -40,40 +40,46 @@ class ThetaTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
-    return CupertinoTextField(
-      controller: controller,
-      placeholder: placeholder,
-      keyboardType: keyboardType,
-      placeholderStyle: GoogleFonts.manrope(
-        color: Theme.of(context).extension<ThetaTheme>()!.txtPrimary30,
-        fontSize: const Paragraph().size,
-        fontWeight: const Paragraph().weight,
-        letterSpacing: const Paragraph().tracking,
-      ),
-      style: GoogleFonts.manrope(
-        color: theme.txtPrimary,
-        fontSize: const Paragraph().size,
-        fontWeight: const Paragraph().weight,
-        letterSpacing: const Paragraph().tracking,
-      ),
-      decoration: BoxDecoration(
-        color: theme.bgTertiary,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(Grid.small),
+    return IgnorePointer(
+      ignoring: !enabled || readOnly,
+      child: Opacity(
+        opacity: enabled ? 1 : 0.5,
+        child: CupertinoTextField(
+          controller: controller,
+          placeholder: placeholder,
+          keyboardType: keyboardType,
+          placeholderStyle: GoogleFonts.manrope(
+            color: Theme.of(context).extension<ThetaTheme>()!.txtPrimary30,
+            fontSize: const Paragraph().size,
+            fontWeight: const Paragraph().weight,
+            letterSpacing: const Paragraph().tracking,
+          ),
+          style: GoogleFonts.manrope(
+            color: theme.txtPrimary,
+            fontSize: const Paragraph().size,
+            fontWeight: const Paragraph().weight,
+            letterSpacing: const Paragraph().tracking,
+          ),
+          decoration: BoxDecoration(
+            color: theme.bgTertiary,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(Grid.small),
+            ),
+          ),
+          padding: const EdgeInsets.all(Grid.medium),
+          obscureText: obscureText,
+          onChanged: onChanged,
+          onSubmitted: onSubmitted,
+          onTap: onTap,
+          onTapOutside: onTapOutside,
+          readOnly: readOnly,
+          expands: expands,
+          enabled: true,
+          maxLines: maxLines,
+          minLines: minLines,
+          maxLength: maxLength,
         ),
       ),
-      padding: const EdgeInsets.all(Grid.medium),
-      obscureText: obscureText,
-      onChanged: onChanged,
-      onSubmitted: onSubmitted,
-      onTap: onTap,
-      onTapOutside: onTapOutside,
-      readOnly: readOnly,
-      expands: expands,
-      enabled: enabled,
-      maxLines: maxLines,
-      minLines: minLines,
-      maxLength: maxLength,
     );
   }
 }

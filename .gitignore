@@ -27,3 +27,5 @@ doc/api/
 .flutter-plugins-dependencies
 
 pubspec_overrides.yaml
+
+.idea/

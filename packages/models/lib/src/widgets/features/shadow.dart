@@ -1,9 +1,5 @@
-// Project imports:
-// ignore_for_file: public_member_api_docs
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-// Project imports:
 import 'package:theta_models/theta_models.dart';
 
 @immutable
@@ -34,6 +30,34 @@ class FShadow extends Equatable {
         fill,
         opacity,
       ];
+
+  BoxShadow get(BuildContext context, ColorStyles colors, ThemeMode theme) =>
+      BoxShadow(
+        color: HexColor(fill.getHexColor(context, colors, theme))
+            .withOpacity(double.parse(opacity.size)),
+        blurRadius: double.parse(blur.value ?? '0'),
+        offset: Offset(
+          double.parse(x.value ?? '0'),
+          double.parse(y.value ?? '0'),
+        ),
+      );
+
+  FShadow copyWith({
+    FTextTypeInput? x,
+    FTextTypeInput? y,
+    FTextTypeInput? spread,
+    FTextTypeInput? blur,
+    FFill? fill,
+    FSize? opacity,
+  }) =>
+      FShadow(
+        x: x ?? this.x,
+        y: y ?? this.y,
+        spread: spread ?? this.spread,
+        blur: blur ?? this.blur,
+        fill: fill ?? this.fill,
+        opacity: opacity ?? this.opacity,
+      );
 
   FShadow ready() => const FShadow(
         x: FTextTypeInput(value: '0'),

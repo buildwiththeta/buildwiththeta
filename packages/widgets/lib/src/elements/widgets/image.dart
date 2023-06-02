@@ -43,39 +43,47 @@ class OpenWImage extends StatelessWidget {
     final result = img.isNotEmpty
         ? img
         : 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png';
-    return ClipRRect(
-      borderRadius: borderRadius.get(
-        context,
-        forPlay: state.forPlay,
-        deviceType: state.deviceType,
-      ),
-      child: SizedBox(
-        width: width.get(
-          state: state,
-          context: context,
-          isWidth: true,
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        borderRadius: borderRadius.get(
+          context,
+          forPlay: state.forPlay,
+          deviceType: state.deviceType,
         ),
-        height: height.get(
-          state: state,
-          context: context,
-          isWidth: false,
-        ),
-        child: UniversalPlatform.isWeb
-            ? Image.network(
-                '${Constants.backendTetaProxy}/${Uri.encodeComponent(result)}',
-                width: width.get(state: state, context: context, isWidth: true),
-                height:
-                    height.get(state: state, context: context, isWidth: false),
-                fit: boxFit.value,
-              )
-            : Image.network(
-                result,
-                width: width.get(state: state, context: context, isWidth: true),
-                height:
-                    height.get(state: state, context: context, isWidth: false),
-                fit: boxFit.value,
-              ),
+        boxShadow: [
+          shadows.get(
+            context,
+            state.colorStyles,
+            state.theme,
+          ),
+        ],
       ),
+      width: width.get(
+        state: state,
+        context: context,
+        isWidth: true,
+      ),
+      height: height.get(
+        state: state,
+        context: context,
+        isWidth: false,
+      ),
+      child: UniversalPlatform.isWeb
+          ? Image.network(
+              '${Constants.backendTetaProxy}/${Uri.encodeComponent(result)}',
+              width: width.get(state: state, context: context, isWidth: true),
+              height:
+                  height.get(state: state, context: context, isWidth: false),
+              fit: boxFit.value,
+            )
+          : Image.network(
+              result,
+              width: width.get(state: state, context: context, isWidth: true),
+              height:
+                  height.get(state: state, context: context, isWidth: false),
+              fit: boxFit.value,
+            ),
     );
   }
 }

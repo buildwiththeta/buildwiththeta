@@ -9,5 +9,3 @@ build/
 .flutter-plugins
 .metadata
 .fvm/
-*.g.dart
-*.freezed.dart

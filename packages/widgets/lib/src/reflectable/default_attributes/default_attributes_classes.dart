@@ -186,8 +186,8 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [8, 8, 8, 8],
-          radiusTablet: [8, 8, 8, 8],
-          radiusDesktop: [8, 8, 8, 8],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
         DBKeys.fill: FFill(
           levels: [
@@ -224,8 +224,8 @@ class CardDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.fill: FFill(),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
       };
 
@@ -307,8 +307,8 @@ class ClipRoundedRectDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [8, 8, 8, 8],
-          radiusTablet: [8, 8, 8, 8],
-          radiusDesktop: [16, 16, 16, 16],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
       };
 
@@ -438,8 +438,8 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
         DBKeys.shadows: FShadow(
           x: FTextTypeInput(value: '0'),
@@ -584,8 +584,8 @@ class DotsIndicatorDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [8, 8, 8, 8],
-          radiusTablet: [8, 8, 8, 8],
-          radiusDesktop: [8, 8, 8, 8],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
         DBKeys.width: FSize(
           size: '8',
@@ -1175,8 +1175,8 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.keyboardType: FKeyboardType(),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [0, 0, 0, 0],
-          radiusTablet: [0, 0, 0, 0],
-          radiusDesktop: [0, 0, 0, 0],
+          radiusTablet: null,
+          radiusDesktop: null,
         ),
         DBKeys.showCursor: true,
         DBKeys.autoCorrect: false,

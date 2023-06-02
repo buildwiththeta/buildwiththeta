@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // Package imports:
-import 'package:theta_design_system/src/hex_color.dart';
 import 'package:theta_models/theta_models.dart';
 // Project imports:
 

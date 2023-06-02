@@ -1,74 +1,60 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
-version: 0.0.16
-publish_to: none
+
+version: 0.1.0-dev.1
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 scripts:
   gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
 
 environment:
-  sdk: ">=2.19.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  theta_models:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/models
-      ref: main
+  theta_models: ^0.1.0-dev.1
+  theta_design_system: ^0.1.0-dev.1
+  theta_rendering: ^0.1.0-dev.1
 
-  theta_design_system:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/DS
-      ref: main
-
-  theta_rendering:
-    git:
-      url: https://github.com/buildwiththeta/buildwiththeta.git
-      path: packages/rendering
-      ref: main
-  
-  light_logger:
+  light_logger: ^0.0.3
 
   # State
-  equatable: 2.0.3
+  equatable: ^2.0.5
   provider: ^6.0.5
 
   # UI
   google_fonts: ^4.0.4
-  feather_icons: 
-  material_design_icons_flutter: 5.0.6595
-  font_awesome_flutter_named: 1.1.1
-  line_icons: 2.0.1
-  flutter_staggered_animations: 1.0.0
+  feather_icons: ^1.2.0
+  material_design_icons_flutter: ^5.0.6595
+  font_awesome_flutter_named: ^1.1.1
+  line_icons: ^2.0.1
+  flutter_staggered_animations: ^1.0.0
   lottie: ^2.3.2
-  gap: any
-  after_layout: 1.2.0
-  enum_to_string: 2.0.1
-  universal_platform: 1.0.0+1
+  gap: ^3.0.0
+  after_layout: ^1.2.0
+  enum_to_string: ^2.0.1
+  universal_platform: ^1.0.0+1
   collection: ^1.17.0
-  flutter_box_transform:
-  
+  flutter_box_transform: ^0.2.1
+  device_frame: ^1.1.0
+  meta: ^1.9.1
 
-dependency_overrides:
-  theta_models:
-    path: ../models
-  theta_design_system:
-    path: ../DS
-  theta_rendering:
-    path: ../rendering
+  build: ^2.3.1
+  reflectable: ^4.0.5
+  source_gen: ^1.2.7
+  analyzer: ^5.11.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_gen_runner:
   flutter_lints: ^2.0.1
-  build_runner: any  
+  build_runner: any
   built_value_generator: any
-  source_gen: any
-  analyzer: any
-  reflectable: any

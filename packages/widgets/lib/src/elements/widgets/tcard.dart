@@ -21,7 +21,7 @@ class OpenWTCard extends StatefulWidget {
   final FTextTypeInput delaySlideFor;
 
   @override
-  _WTCardState createState() => _WTCardState();
+  createState() => _WTCardState();
 }
 
 class _WTCardState extends State<OpenWTCard> {
@@ -71,19 +71,6 @@ class _WTCardState extends State<OpenWTCard> {
 
   @override
   Widget build(final BuildContext context) {
-    final state = context.watch<TreeState>();
-    final slideSpeedStr = widget.slideSpeed.get(
-      state: state,
-      loop: widget.state.loop,
-      context: context,
-    );
-    final slideSpeed = double.tryParse(slideSpeedStr) ?? 20;
-    final delayStr = widget.delaySlideFor.get(
-      state: state,
-      loop: widget.state.loop,
-      context: context,
-    );
-    final delay = int.tryParse(delayStr) ?? 500;
     return const SizedBox
         .shrink(); /*IgnorePointer(
       ignoring: !state.forPlay,

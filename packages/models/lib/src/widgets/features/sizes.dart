@@ -80,9 +80,7 @@ class FSize extends Equatable {
       }
     }
 
-    if (sizeValue == null) {
-      return null;
-    } else if (sizeValue.toLowerCase() == 'max' ||
+    if (sizeValue.toLowerCase() == 'max' ||
         sizeValue.toLowerCase() == 'inf' ||
         sizeValue.toLowerCase() == '100%') {
       return double.maxFinite;
@@ -175,39 +173,39 @@ class FSize extends Equatable {
     required final BuildContext context,
     required final bool isWidth,
   }) {
-    String _valueToCode(final String size) {
-      double? value = 0;
-      if (size.toLowerCase() == 'max' ||
-          size.toLowerCase() == 'inf' ||
-          size.toLowerCase() == '100%') {
-        return 'double.maxFinite';
-      } else if (size.toLowerCase() == 'null' || size.toLowerCase() == 'auto') {
-        return 'null';
-      }
-      final temp = size.replaceAll('%', '');
-      value = double.tryParse(temp) ?? 0;
-      if (size.contains('%')) {
-        if (isWidth) {
-          return 'MediaQuery.of(context).size.width * 100 / $value';
-        } else {
-          return 'MediaQuery.of(context).size.height * 100 / $value';
-        }
-      }
-      return '$value';
-    }
-
-    if (_valueToCode(size) == _valueToCode(sizeTablet) &&
-        _valueToCode(size) == _valueToCode(sizeDesktop)) {
-      return _valueToCode(size);
+    if (_valueToCode(size, isWidth) == _valueToCode(sizeTablet, isWidth) &&
+        _valueToCode(size, isWidth) == _valueToCode(sizeDesktop, isWidth)) {
+      return _valueToCode(size, isWidth);
     } else {
       return '''
 getValueForScreenType<double?>(
   context: context,
-  mobile: ${_valueToCode(size)},
-  tablet: ${_valueToCode(sizeTablet)},
-  desktop: ${_valueToCode(sizeDesktop)},
+  mobile: ${_valueToCode(size, isWidth)},
+  tablet: ${_valueToCode(sizeTablet, isWidth)},
+  desktop: ${_valueToCode(sizeDesktop, isWidth)},
 )''';
     }
+  }
+
+  String _valueToCode(final String size, final bool isWidth) {
+    double? value = 0;
+    if (size.toLowerCase() == 'max' ||
+        size.toLowerCase() == 'inf' ||
+        size.toLowerCase() == '100%') {
+      return 'double.maxFinite';
+    } else if (size.toLowerCase() == 'null' || size.toLowerCase() == 'auto') {
+      return 'null';
+    }
+    final temp = size.replaceAll('%', '');
+    value = double.tryParse(temp) ?? 0;
+    if (size.contains('%')) {
+      if (isWidth) {
+        return 'MediaQuery.of(context).size.width * 100 / $value';
+      } else {
+        return 'MediaQuery.of(context).size.height * 100 / $value';
+      }
+    }
+    return '$value';
   }
 
   @override

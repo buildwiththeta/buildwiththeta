@@ -81,6 +81,31 @@ class $generatedClassName extends CNode {
           rectProperties: rectProperties ?? getRectProperties,
         );
 
+  @override
+  CNode copyWithOutChild(
+          {NodeID? id,
+          NodeID? parentID,
+          CNode? child,
+          List<CNode>? children,
+          String? name,
+          String? description,
+          int? childOrder,
+          Map<String, dynamic>? attributes,
+          RectProperties? rectProperties,
+          DateTime? updatedAt,
+        }) =>
+        $generatedClassName(
+          id: id ?? this.id,
+          parentID: parentID ?? this.parentID,
+          child: child ,
+          children: children ?? this.children,
+          name: name ?? this.name,
+          description: description ?? this.description,
+          childOrder: childOrder ?? this.childOrder,
+          attributes: attributes ?? getAttributes,
+          rectProperties: rectProperties ?? getRectProperties,
+        );
+
   static fromJson(String widgetType, Map<String, dynamic> json) {
     if (widgetType != NType.$type) {
       throw Exception('Invalid widget type');
@@ -112,8 +137,6 @@ class $generatedClassName extends CNode {
 }
     ''';
 
-    print('Generated code for $className:');
-    //print(code);
     return code;
   }
 }

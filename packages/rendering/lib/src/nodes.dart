@@ -18,8 +18,14 @@ class NodeRendering {
           parentID: parentID,
         ));
       } else if (node.intrinsicState.canHave == ChildrenEnum.child) {
-        children.add(node.copyWith(
-            child: buildTree(list, node.id).firstOrNull, parentID: parentID));
+        final children0 = buildTree(list, node.id);
+        children.add(node.copyWithOutChild(
+            child: children0.isNotEmpty
+                ? list.any((element) => element.id == children0.first.id)
+                    ? children0.first
+                    : null
+                : null,
+            parentID: parentID));
       } else {
         children.add(node.copyWith(parentID: parentID));
       }
