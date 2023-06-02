@@ -27,10 +27,22 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
   bool isStretchAlign(ResponsiveAlignment v) =>
       v == ResponsiveAlignment.stretch;
 
+  DeviceInfo getDeviceInfo(TreeState state) {
+    final screenSize = MediaQuery.of(context).size;
+    if (screenSize.width <= Devices.ios.iPhone13ProMax.screenSize.width) {
+      return Devices.ios.iPhone13;
+    } else if (screenSize.width <=
+        Devices.ios.iPadPro11Inches.screenSize.width) {
+      return Devices.ios.iPadPro11Inches;
+    } else {
+      return Devices.macOS.macBookPro;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final TreeState state = context.watch<TreeState>();
-    final device = state.deviceInfo;
+    final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
     if (state.focusedNode?.id != widget.node.id || state.forPlay) {
       final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
