@@ -40,6 +40,10 @@ class OpenWAlign extends Align {
   @override
   void updateRenderObject(
       BuildContext context, RenderPositionedBox renderObject) {
+    final AlignmentGeometry alignment = align.get(
+      context,
+      forPlay: context.watch<TreeState>().forPlay,
+    );
     renderObject
       ..alignment = alignment
       ..widthFactor = widthFactor
