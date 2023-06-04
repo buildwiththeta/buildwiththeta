@@ -38,6 +38,7 @@
       ],
       [
         "Utils", [
+          ["FAQ", "/faq"],
           ["Teams", "/studio/teams"],
           ["Migration", "/support/migration"]
         ]
