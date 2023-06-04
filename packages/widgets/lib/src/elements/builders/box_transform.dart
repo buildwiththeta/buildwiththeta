@@ -142,8 +142,9 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void didUpdateWidget(_BoxTransformBuilder oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
     controller
@@ -200,6 +201,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   }
 
   void onChanged(TransformResult<Rect, Offset, Size> rect) {
+    print("kasapiniz onChanged ${rect.rect.toString()}}");
+
     final TreeState state = context.read<TreeState>();
     final Size rectSize = rect.size;
     final Offset rectCenterPosition = Offset(
