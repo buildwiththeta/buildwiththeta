@@ -201,8 +201,6 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   }
 
   void onChanged(TransformResult<Rect, Offset, Size> rect) {
-    print("kasapiniz onChanged ${rect.rect.toString()}}");
-
     final TreeState state = context.read<TreeState>();
     final Size rectSize = rect.size;
     final Offset rectCenterPosition = Offset(
