@@ -45,10 +45,11 @@
         ]
       ],
       [
-        "Utils", [
+        "Misc.", [
           ["FAQ", "/faq"],
           ["Teams", "/studio/teams"],
-          ["Migration", "/support/migration"]
+          ["Migration", "/support/migration"],
+          ["License \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
         ]
       ]
     ],
@@ -60,7 +61,7 @@
         ]
       ],
       [
-        "Utils", [
+        "Misc.", [
           ["Migrazione", "/support/migrazione"]
         ]
       ]
@@ -76,7 +77,7 @@
         ]
       ],
       [
-        "Utils", [
+        "Misc.", [
           ["Migración", "/support/migración"]
         ]
       ]
