@@ -1,6 +1,10 @@
+## 0.1.3-dev.1
+
+- [x] Fix: material_design_icons_flutter dependency updated.
+
 ## 0.1.2
 
-- Fix: horizontal stretch
+- [x] Fix: horizontal stretch
 
 ## 0.1.1
 
