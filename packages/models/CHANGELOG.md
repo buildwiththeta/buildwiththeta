@@ -1,3 +1,11 @@
+## 0.1.2
+
+- [x] Ready for ([0.1.2](https://github.com/buildwiththeta/buildwiththeta/releases/tag/0.1.2)).
+
+## 0.1.1
+
+- Minor fixes.
+
 ## 0.1.0
 
 - Added setModelNull to FTextStyle

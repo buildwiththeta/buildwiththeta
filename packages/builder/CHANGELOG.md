@@ -1,3 +1,13 @@
+## 0.1.1
+
+- [x] Theta Widgets dependency updated to 0.1.1.
+
+## 0.1.0
+
+- [x] Ready for ([0.1.2](https://github.com/buildwiththeta/buildwiththeta/releases/tag/0.1.2)).
+- [x] Theta Models dependency updated to 0.1.2.
+- [x] Theta Rendering dependency updated to 0.1.1.
+
 # 0.1.0-dev.5
 
 * Feat: new theta_open_widgets version

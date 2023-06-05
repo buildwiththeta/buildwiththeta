@@ -1,3 +1,16 @@
+## 0.1.2
+
+- Fix: horizontal stretch
+
+## 0.1.1
+
+- [x] Theta Models dependency updated to 0.1.2.
+- [x] Theta Rendering dependency updated to 0.1.1.
+
+## 0.1.0
+
+- [x] Ready for ([0.1.2](https://github.com/buildwiththeta/buildwiththeta/releases/tag/0.1.2)).
+
 ## 0.1.0-dev.2
 
 - [x] Align fixed ([#68](https://github.com/buildwiththeta/buildwiththeta/issues/68)).

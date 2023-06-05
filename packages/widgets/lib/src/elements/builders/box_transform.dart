@@ -28,6 +28,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       v == ResponsiveAlignment.stretch;
 
   DeviceInfo getDeviceInfo(TreeState state) {
+    if (!state.forPlay) {
+      return state.deviceInfo;
+    }
     final screenSize = MediaQuery.of(context).size;
     if (screenSize.width <= Devices.ios.iPhone13ProMax.screenSize.width) {
       return Devices.ios.iPhone13;
@@ -35,7 +38,20 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
         Devices.ios.iPadPro11Inches.screenSize.width) {
       return Devices.ios.iPadPro11Inches;
     } else {
-      return Devices.macOS.macBookPro;
+      return DeviceInfo.genericDesktopMonitor(
+        platform: TargetPlatform.macOS,
+        id: 'theta-desktop',
+        name: 'Generic Desktop',
+        screenSize: const Size(1920, 1080),
+        windowPosition: Rect.fromCenter(
+          center: const Offset(
+            1920 * 0.5,
+            1080 * 0.5,
+          ),
+          width: 1920,
+          height: 1080,
+        ),
+      );
     }
   }
 

@@ -90,7 +90,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix0.DynamicAttributes() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -10777,7 +10780,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) =>
+                  () => b ? const prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10866,7 +10870,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix31.WidgetAdapterParse() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix31.WidgetAdapterParse() : null
+            },
             -1,
             0,
             const <int>[],
@@ -11000,7 +11007,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.AlignWidgetAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.AlignWidgetAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AlignWidgetAdapter.create() : null
             },
@@ -11025,7 +11033,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.AspectRatioAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.AspectRatioAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AspectRatioAdapter.create() : null
             },
@@ -11050,7 +11059,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BadgeAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.BadgeAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BadgeAdapter.create() : null
             },
@@ -11075,7 +11084,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BottomBarItemAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.BottomBarItemAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BottomBarItemAdapter.create() : null
             },
@@ -11100,7 +11110,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ButtonAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ButtonAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ButtonAdapter.create() : null
             },
@@ -11125,7 +11135,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CardAdaptor() : null,
+              r'': (bool b) => () => b ? const prefix32.CardAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CardAdaptor.create() : null
             },
@@ -11150,7 +11160,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CenterAdaptor() : null,
+              r'': (bool b) => () => b ? const prefix32.CenterAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CenterAdaptor.create() : null
             },
@@ -11175,7 +11185,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.CheckBoxAdaptor() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.CheckBoxAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CheckBoxAdaptor.create() : null
             },
@@ -11200,8 +11211,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix32.CircularProgressIndicatorAdaptor() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix32.CircularProgressIndicatorAdaptor() : null,
               r'create': (bool b) => () =>
                   b ? prefix32.CircularProgressIndicatorAdaptor.create() : null
             },
@@ -11226,7 +11237,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ClipOvalAdaptor() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ClipOvalAdaptor() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ClipOvalAdaptor.create() : null
             },
@@ -11251,7 +11263,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ClipRectAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ClipRectAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ClipRectAdapter.create() : null
             },
@@ -11276,7 +11289,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ClipRRectAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ClipRRectAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ClipRRectAdapter.create() : null
             },
@@ -11301,7 +11315,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ColumnAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ColumnAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ColumnAdapter.create() : null
             },
@@ -11327,7 +11341,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ConcentricPageViewAdapter() : null,
+                  () => b ? const prefix32.ConcentricPageViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ConcentricPageViewAdapter.create() : null
             },
@@ -11352,7 +11366,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ConditionAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ConditionAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ConditionAdapter.create() : null
             },
@@ -11378,7 +11393,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ConstrainedBoxAdapter() : null,
+                  () => b ? const prefix32.ConstrainedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ConstrainedBoxAdapter.create() : null
             },
@@ -11403,7 +11418,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BoxAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.BoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BoxAdapter.create() : null
             },
@@ -11429,7 +11444,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CupertinoAppBarAdapter() : null,
+                  () => b ? const prefix32.CupertinoAppBarAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CupertinoAppBarAdapter.create() : null
             },
@@ -11455,7 +11470,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CupertinoPickerAdapter() : null,
+                  () => b ? const prefix32.CupertinoPickerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CupertinoPickerAdapter.create() : null
             },
@@ -11480,8 +11495,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix32.CupertinoSegmentedControlAdapter() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix32.CupertinoSegmentedControlAdapter() : null,
               r'create': (bool b) => () =>
                   b ? prefix32.CupertinoSegmentedControlAdapter.create() : null
             },
@@ -11507,7 +11522,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.CupertinoSwitchAdapter() : null,
+                  () => b ? const prefix32.CupertinoSwitchAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.CupertinoSwitchAdapter.create() : null
             },
@@ -11532,7 +11547,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DecoratedBoxAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.DecoratedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DecoratedBoxAdapter.create() : null
             },
@@ -11557,7 +11573,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DividerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.DividerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DividerAdapter.create() : null
             },
@@ -11582,7 +11598,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DotsIndicatorAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.DotsIndicatorAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DotsIndicatorAdapter.create() : null
             },
@@ -11607,7 +11624,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ExpandedAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ExpandedAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ExpandedAdapter.create() : null
             },
@@ -11633,7 +11651,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.GestureDetectorAdapter() : null,
+                  () => b ? const prefix32.GestureDetectorAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.GestureDetectorAdapter.create() : null
             },
@@ -11658,7 +11676,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.GridViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.GridViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.GridViewAdapter.create() : null
             },
@@ -11683,7 +11702,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.HeroAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.HeroAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.HeroAdapter.create() : null
             },
@@ -11708,7 +11727,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IconFeatherAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IconFeatherAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IconFeatherAdapter.create() : null
             },
@@ -11734,7 +11754,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.IconFontAwesomeAdapter() : null,
+                  () => b ? const prefix32.IconFontAwesomeAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IconFontAwesomeAdapter.create() : null
             },
@@ -11759,7 +11779,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IconLineAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IconLineAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IconLineAdapter.create() : null
             },
@@ -11784,7 +11805,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.MaterialIconAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.MaterialIconAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.MaterialIconAdapter.create() : null
             },
@@ -11809,7 +11831,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IgnorePointerAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IgnorePointerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IgnorePointerAdapter.create() : null
             },
@@ -11834,7 +11857,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ImageAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ImageAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ImageAdapter.create() : null
             },
@@ -11859,7 +11882,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.IndexStackAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.IndexStackAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.IndexStackAdapter.create() : null
             },
@@ -11884,8 +11908,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix32.LinearProgressIndicatorAdapter() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix32.LinearProgressIndicatorAdapter() : null,
               r'create': (bool b) => () =>
                   b ? prefix32.LinearProgressIndicatorAdapter.create() : null
             },
@@ -11910,7 +11934,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.LiquidSwipeAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.LiquidSwipeAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LiquidSwipeAdapter.create() : null
             },
@@ -11935,7 +11960,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ListTileAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ListTileAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ListTileAdapter.create() : null
             },
@@ -11960,7 +11986,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ListViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ListViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ListViewAdapter.create() : null
             },
@@ -11985,7 +12012,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.LottieAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.LottieAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LottieAdapter.create() : null
             },
@@ -12010,7 +12037,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.OffstageAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.OffstageAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.OffstageAdapter.create() : null
             },
@@ -12035,7 +12063,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.OpacityAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.OpacityAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.OpacityAdapter.create() : null
             },
@@ -12060,7 +12088,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PaddingAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.PaddingAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PaddingAdapter.create() : null
             },
@@ -12085,7 +12113,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PageViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PageViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PageViewAdapter.create() : null
             },
@@ -12110,7 +12139,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PlaceholderAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PlaceholderAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PlaceholderAdapter.create() : null
             },
@@ -12135,7 +12165,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.PositionedAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.PositionedAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.PositionedAdapter.create() : null
             },
@@ -12160,7 +12191,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.QRScannerAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.QRScannerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.QRScannerAdapter.create() : null
             },
@@ -12185,7 +12217,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.RadioAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.RadioAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.RadioAdapter.create() : null
             },
@@ -12211,7 +12243,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.ResponsiveConditionAdapter() : null,
+                  () => b ? const prefix32.ResponsiveConditionAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ResponsiveConditionAdapter.create() : null
             },
@@ -12236,7 +12268,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.RotatedBoxAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.RotatedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.RotatedBoxAdapter.create() : null
             },
@@ -12261,7 +12294,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.RowAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.RowAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.RowAdapter.create() : null
             },
@@ -12286,7 +12319,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SafeAreaAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.SafeAreaAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SafeAreaAdapter.create() : null
             },
@@ -12311,7 +12345,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ScaffoldAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.ScaffoldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ScaffoldAdapter.create() : null
             },
@@ -12336,7 +12371,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SizedBoxAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.SizedBoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SizedBoxAdapter.create() : null
             },
@@ -12361,7 +12397,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SpacerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.SpacerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SpacerAdapter.create() : null
             },
@@ -12386,7 +12422,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.StackAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.StackAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.StackAdapter.create() : null
             },
@@ -12411,7 +12447,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TCardAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TCardAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TCardAdapter.create() : null
             },
@@ -12436,7 +12472,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TextAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TextAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TextAdapter.create() : null
             },
@@ -12461,7 +12497,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TextFieldAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.TextFieldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TextFieldAdapter.create() : null
             },
@@ -12486,7 +12523,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TooltipAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.TooltipAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TooltipAdapter.create() : null
             },
@@ -12512,7 +12549,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.TransformRotateAdapter() : null,
+                  () => b ? const prefix32.TransformRotateAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TransformRotateAdapter.create() : null
             },
@@ -12537,7 +12574,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.TransformAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.TransformAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.TransformAdapter.create() : null
             },
@@ -12562,7 +12600,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.VideoAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.VideoAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.VideoAdapter.create() : null
             },
@@ -12587,7 +12625,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.VisibilityAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.VisibilityAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.VisibilityAdapter.create() : null
             },
@@ -12612,7 +12651,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.WrapAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.WrapAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.WrapAdapter.create() : null
             },
@@ -12638,7 +12677,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.AnimationConfigGridAdapter() : null,
+                  () => b ? const prefix32.AnimationConfigGridAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AnimationConfigGridAdapter.create() : null
             },
@@ -12664,7 +12703,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.AnimationConfigListAdapter() : null,
+                  () => b ? const prefix32.AnimationConfigListAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AnimationConfigListAdapter.create() : null
             },
@@ -12689,7 +12728,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.FadeInAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.FadeInAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.FadeInAdapter.create() : null
             },
@@ -12714,7 +12753,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.ScaleAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.ScaleAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ScaleAdapter.create() : null
             },
@@ -12739,7 +12778,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.SlideAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.SlideAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.SlideAdapter.create() : null
             },
@@ -12765,7 +12804,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithAppleAdapter() : null,
+                  () => b ? const prefix32.LoginWithAppleAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithAppleAdapter.create() : null
             },
@@ -12791,7 +12830,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithBitBucketAdapter() : null,
+                  () => b ? const prefix32.LoginWithBitBucketAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithBitBucketAdapter.create() : null
             },
@@ -12817,7 +12856,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithDiscordAdapter() : null,
+                  () => b ? const prefix32.LoginWithDiscordAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithDiscordAdapter.create() : null
             },
@@ -12843,7 +12882,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithFacebookAdapter() : null,
+                  () => b ? const prefix32.LoginWithFacebookAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithFacebookAdapter.create() : null
             },
@@ -12869,7 +12908,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGitHubAdapter() : null,
+                  () => b ? const prefix32.LoginWithGitHubAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithGitHubAdapter.create() : null
             },
@@ -12895,7 +12934,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGitLabAdapter() : null,
+                  () => b ? const prefix32.LoginWithGitLabAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithGitLabAdapter.create() : null
             },
@@ -12921,7 +12960,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithGoogleAdapter() : null,
+                  () => b ? const prefix32.LoginWithGoogleAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithGoogleAdapter.create() : null
             },
@@ -12947,7 +12986,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithLinkedinAdapter() : null,
+                  () => b ? const prefix32.LoginWithLinkedinAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithLinkedinAdapter.create() : null
             },
@@ -12973,7 +13012,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithMicrosoftAdapter() : null,
+                  () => b ? const prefix32.LoginWithMicrosoftAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithMicrosoftAdapter.create() : null
             },
@@ -12999,7 +13038,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitchAdapter() : null,
+                  () => b ? const prefix32.LoginWithTwitchAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithTwitchAdapter.create() : null
             },
@@ -13025,7 +13064,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix32.LoginWithTwitterAdapter() : null,
+                  () => b ? const prefix32.LoginWithTwitterAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.LoginWithTwitterAdapter.create() : null
             },
@@ -13050,7 +13089,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.AppBarAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.AppBarAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.AppBarAdapter.create() : null
             },
@@ -13075,7 +13114,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.BottomBarAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix32.BottomBarAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BottomBarAdapter.create() : null
             },
@@ -13100,7 +13140,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.DrawerAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.DrawerAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.DrawerAdapter.create() : null
             },
@@ -13125,7 +13165,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix32.WrapperAdapter() : null,
+              r'': (bool b) => () => b ? const prefix32.WrapperAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.WrapperAdapter.create() : null
             },
@@ -16605,8 +16645,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AlignWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AlignWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AlignWidgetDefaultAttributes.create() : null
             },
@@ -16631,8 +16671,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AspectRatioDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AspectRatioDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AspectRatioDefaultAttributes.create() : null
             },
@@ -16658,7 +16698,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.AudioPlayerProgressIndicatorDefaultAttributes()
+                  ? const prefix34
+                      .AudioPlayerProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.AudioPlayerProgressIndicatorDefaultAttributes
@@ -16688,7 +16729,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.AudioPlayerVolumeIndicatorDefaultAttributes()
+                  ? const prefix34.AudioPlayerVolumeIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.AudioPlayerVolumeIndicatorDefaultAttributes
@@ -16717,7 +16758,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.BadgeDefaultAttributes() : null,
+                  () => b ? const prefix34.BadgeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BadgeDefaultAttributes.create() : null
             },
@@ -16743,7 +16784,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.BarcodeDefaultAttributes() : null,
+                  () => b ? const prefix34.BarcodeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BarcodeDefaultAttributes.create() : null
             },
@@ -16768,8 +16809,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.BottomBarItemDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.BottomBarItemDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.BottomBarItemDefaultAttributes.create() : null
             },
@@ -16794,8 +16835,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.BouncingWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.BouncingWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.BouncingWidgetDefaultAttributes.create() : null
             },
@@ -16821,7 +16862,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ButtonDefaultAttributes() : null,
+                  () => b ? const prefix34.ButtonDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ButtonDefaultAttributes.create() : null
             },
@@ -16847,7 +16888,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CardDefaultAttributes() : null,
+                  () => b ? const prefix34.CardDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CardDefaultAttributes.create() : null
             },
@@ -16873,7 +16914,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CenterDefaultAttributes() : null,
+                  () => b ? const prefix34.CenterDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CenterDefaultAttributes.create() : null
             },
@@ -16899,7 +16940,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CheckBoxDefaultAttributes() : null,
+                  () => b ? const prefix34.CheckBoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CheckBoxDefaultAttributes.create() : null
             },
@@ -16925,7 +16966,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.CircularProgressIndicatorDefaultAttributes()
+                  ? const prefix34.CircularProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.CircularProgressIndicatorDefaultAttributes.create()
@@ -16953,7 +16994,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ClipsDefaultAttributes() : null,
+                  () => b ? const prefix34.ClipsDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ClipsDefaultAttributes.create() : null
             },
@@ -16979,8 +17020,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.ClipRoundedRectDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.ClipRoundedRectDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.ClipRoundedRectDefaultAttributes.create() : null
             },
@@ -17006,7 +17047,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.FlexDefaultAttributes() : null,
+                  () => b ? const prefix34.FlexDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.FlexDefaultAttributes.create() : null
             },
@@ -17033,7 +17074,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ComponentDefaultAttributes() : null,
+                  () => b ? const prefix34.ComponentDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ComponentDefaultAttributes.create() : null
             },
@@ -17058,8 +17099,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.ConcentricPageViewDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.ConcentricPageViewDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.ConcentricPageViewDefaultAttributes.create()
                   : null
@@ -17086,7 +17128,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ConditionDefaultAttributes() : null,
+                  () => b ? const prefix34.ConditionDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ConditionDefaultAttributes.create() : null
             },
@@ -17111,7 +17153,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix34.BoxDefaultAttributes() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix34.BoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.BoxDefaultAttributes.create() : null
             },
@@ -17141,8 +17184,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CupertinoPickerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CupertinoPickerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CupertinoPickerDefaultAttributes.create() : null
             },
@@ -17168,7 +17211,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.CupertinoSegmentedControlDefaultAttributes()
+                  ? const prefix34.CupertinoSegmentedControlDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.CupertinoSegmentedControlDefaultAttributes.create()
@@ -17195,8 +17238,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.CupertinoSwitchControlDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.CupertinoSwitchControlDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.CupertinoSwitchControlDefaultAttributes.create()
                   : null
@@ -17222,8 +17266,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CupertinoSwitchDefaultAttributes() : null
+              r'': (bool b) => () =>
+                  b ? const prefix34.CupertinoSwitchDefaultAttributes() : null
             },
             -1,
             23,
@@ -17247,7 +17291,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.DividerDefaultAttributes() : null,
+                  () => b ? const prefix34.DividerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.DividerDefaultAttributes.create() : null
             },
@@ -17272,8 +17316,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.DotsIndicatorDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.DotsIndicatorDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.DotsIndicatorDefaultAttributes.create() : null
             },
@@ -17299,7 +17343,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ExpandedDefaultAttributes() : null,
+                  () => b ? const prefix34.ExpandedDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ExpandedDefaultAttributes.create() : null
             },
@@ -17324,8 +17368,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.AdMobBannerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.AdMobBannerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.AdMobBannerDefaultAttributes.create() : null
             },
@@ -17351,7 +17395,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.GridViewDefaultAttributes() : null,
+                  () => b ? const prefix34.GridViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.GridViewDefaultAttributes.create() : null
             },
@@ -17378,7 +17422,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.HeroDefaultAttributes() : null,
+                  () => b ? const prefix34.HeroDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.HeroDefaultAttributes.create() : null
             },
@@ -17404,7 +17448,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.IconDefaultAttributes() : null,
+                  () => b ? const prefix34.IconDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.IconDefaultAttributes.create() : null
             },
@@ -17429,8 +17473,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.IgnorePointerDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.IgnorePointerDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.IgnorePointerDefaultAttributes.create() : null
             },
@@ -17455,8 +17499,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.IndexedStackDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.IndexedStackDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.IndexedStackDefaultAttributes.create() : null
             },
@@ -17482,7 +17526,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.LinearProgressIndicatorDefaultAttributes()
+                  ? const prefix34.LinearProgressIndicatorDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.LinearProgressIndicatorDefaultAttributes.create()
@@ -17509,8 +17553,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.LiquidSwipeDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.LiquidSwipeDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.LiquidSwipeDefaultAttributes.create() : null
             },
@@ -17536,7 +17580,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ListTileDefaultAttributes() : null,
+                  () => b ? const prefix34.ListTileDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ListTileDefaultAttributes.create() : null
             },
@@ -17562,7 +17606,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ListViewDefaultAttributes() : null,
+                  () => b ? const prefix34.ListViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ListViewDefaultAttributes.create() : null
             },
@@ -17589,7 +17633,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.LottieDefaultAttributes() : null,
+                  () => b ? const prefix34.LottieDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.LottieDefaultAttributes.create() : null
             },
@@ -17615,7 +17659,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.OffstageDefaultAttributes() : null,
+                  () => b ? const prefix34.OffstageDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.OffstageDefaultAttributes.create() : null
             },
@@ -17641,7 +17685,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PaddingDefaultAttributes() : null,
+                  () => b ? const prefix34.PaddingDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PaddingDefaultAttributes.create() : null
             },
@@ -17667,7 +17711,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PageViewDefaultAttributes() : null,
+                  () => b ? const prefix34.PageViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PageViewDefaultAttributes.create() : null
             },
@@ -17692,8 +17736,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.PlaceholderDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.PlaceholderDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.PlaceholderDefaultAttributes.create() : null
             },
@@ -17719,7 +17763,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.PositionedDefaultAttributes() : null,
+                  () => b ? const prefix34.PositionedDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.PositionedDefaultAttributes.create() : null
             },
@@ -17746,7 +17790,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.QRScannerDefaultAttributes() : null,
+                  () => b ? const prefix34.QRScannerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.QRScannerDefaultAttributes.create() : null
             },
@@ -17772,7 +17816,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.QRCodeDefaultAttributes() : null,
+                  () => b ? const prefix34.QRCodeDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.QRCodeDefaultAttributes.create() : null
             },
@@ -17798,7 +17842,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.RadioDefaultAttributes() : null,
+                  () => b ? const prefix34.RadioDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.RadioDefaultAttributes.create() : null
             },
@@ -17823,8 +17867,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.RefreshIndicatorDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.RefreshIndicatorDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.RefreshIndicatorDefaultAttributes.create() : null
             },
@@ -17849,8 +17893,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.ResponsiveConditionDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.ResponsiveConditionDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.ResponsiveConditionDefaultAttributes.create()
                   : null
@@ -17877,7 +17922,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.RotatedBoxDefaultAttributes() : null,
+                  () => b ? const prefix34.RotatedBoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.RotatedBoxDefaultAttributes.create() : null
             },
@@ -17903,7 +17948,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.ScaffoldDefaultAttributes() : null,
+                  () => b ? const prefix34.ScaffoldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.ScaffoldDefaultAttributes.create() : null
             },
@@ -17929,7 +17974,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.SpacerDefaultAttributes() : null,
+                  () => b ? const prefix34.SpacerDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.SpacerDefaultAttributes.create() : null
             },
@@ -17955,7 +18000,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.StackDefaultAttributes() : null,
+                  () => b ? const prefix34.StackDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.StackDefaultAttributes.create() : null
             },
@@ -17981,7 +18026,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TCardDefaultAttributes() : null,
+                  () => b ? const prefix34.TCardDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TCardDefaultAttributes.create() : null
             },
@@ -18008,7 +18053,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TextDefaultAttributes() : null,
+                  () => b ? const prefix34.TextDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TextDefaultAttributes.create() : null
             },
@@ -18034,7 +18079,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TextFieldDefaultAttributes() : null,
+                  () => b ? const prefix34.TextFieldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TextFieldDefaultAttributes.create() : null
             },
@@ -18060,7 +18105,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.TooltipDefaultAttributes() : null,
+                  () => b ? const prefix34.TooltipDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.TooltipDefaultAttributes.create() : null
             },
@@ -18086,7 +18131,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.VideoDefaultAttributes() : null,
+                  () => b ? const prefix34.VideoDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.VideoDefaultAttributes.create() : null
             },
@@ -18112,7 +18157,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.VisibilityDefaultAttributes() : null,
+                  () => b ? const prefix34.VisibilityDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.VisibilityDefaultAttributes.create() : null
             },
@@ -18138,7 +18183,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WebviewDefaultAttributes() : null,
+                  () => b ? const prefix34.WebviewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WebviewDefaultAttributes.create() : null
             },
@@ -18164,7 +18209,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WrapDefaultAttributes() : null,
+                  () => b ? const prefix34.WrapDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WrapDefaultAttributes.create() : null
             },
@@ -18189,8 +18234,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.AnimationConfigGridDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.AnimationConfigGridDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.AnimationConfigGridDefaultAttributes.create()
                   : null
@@ -18216,8 +18262,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.AnimationConfigListDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.AnimationConfigListDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.AnimationConfigListDefaultAttributes.create()
                   : null
@@ -18244,7 +18291,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.AnimationDefaultAttributes() : null,
+                  () => b ? const prefix34.AnimationDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.AnimationDefaultAttributes.create() : null
             },
@@ -18271,8 +18318,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.SocialLoginDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.SocialLoginDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.SocialLoginDefaultAttributes.create() : null
             },
@@ -18308,7 +18355,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) => () => b
-                  ? prefix34.HttpRequestFutureBuilderDefaultAttributes()
+                  ? const prefix34.HttpRequestFutureBuilderDefaultAttributes()
                   : null,
               r'create': (bool b) => () => b
                   ? prefix34.HttpRequestFutureBuilderDefaultAttributes.create()
@@ -18335,8 +18382,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.NavigationWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.NavigationWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.NavigationWidgetDefaultAttributes.create() : null
             },
@@ -18363,8 +18410,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.QonversionProductsDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.QonversionProductsDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.QonversionProductsDefaultAttributes.create()
                   : null
@@ -18390,8 +18438,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.QonversionSubStatusDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.QonversionSubStatusDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.QonversionSubStatusDefaultAttributes.create()
                   : null
@@ -18418,7 +18467,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.WrapperDefaultAttributes() : null,
+                  () => b ? const prefix34.WrapperDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.WrapperDefaultAttributes.create() : null
             },
@@ -18443,8 +18492,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.RevenueCatProductsDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.RevenueCatProductsDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.RevenueCatProductsDefaultAttributes.create()
                   : null
@@ -18470,8 +18520,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.RevenueCatSubStatusDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.RevenueCatSubStatusDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.RevenueCatSubStatusDefaultAttributes.create()
                   : null
@@ -18497,8 +18548,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseFutureBuilderDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseFutureBuilderDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseFutureBuilderDefaultAttributes.create()
                   : null
@@ -18524,8 +18576,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseStreamBuilderDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseStreamBuilderDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseStreamBuilderDefaultAttributes.create()
                   : null
@@ -18551,8 +18604,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? prefix34.SupabaseLoggedUserDefaultAttributes() : null,
+              r'': (bool b) => () => b
+                  ? const prefix34.SupabaseLoggedUserDefaultAttributes()
+                  : null,
               r'create': (bool b) => () => b
                   ? prefix34.SupabaseLoggedUserDefaultAttributes.create()
                   : null
@@ -18579,7 +18633,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSCountDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSCountDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSCountDefaultAttributes.create() : null
             },
@@ -18604,8 +18658,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CMSCustomQueryDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CMSCustomQueryDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CMSCustomQueryDefaultAttributes.create() : null
             },
@@ -18631,7 +18685,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSFetchDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSFetchDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSFetchDefaultAttributes.create() : null
             },
@@ -18657,7 +18711,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix34.CMSStreamDefaultAttributes() : null,
+                  () => b ? const prefix34.CMSStreamDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix34.CMSStreamDefaultAttributes.create() : null
             },
@@ -18682,8 +18736,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix34.CMSLoggedUserDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix34.CMSLoggedUserDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix34.CMSLoggedUserDefaultAttributes.create() : null
             },
@@ -20062,7 +20116,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix33.DefaultAttributesParse() : null
+                  () => b ? const prefix33.DefaultAttributesParse() : null
             },
             -1,
             0,
@@ -20196,7 +20250,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
+            {r'': (bool b) => () => b ? const prefix35.NodesParse() : null},
             -1,
             -1,
             const <int>[-1],
@@ -20217,7 +20271,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.TypeMirror>[], null, null, <Type>[], 0, {}, {}, null, [])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

@@ -6,8 +6,7 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3MjE4ZTIxOC00MmQ5LTQyZTgtYmE1My04MGM2ZTkyN2FiNmMiLCJhbm9uX2tleSI6ImY5M2UzN2U4LTA1ZGEtNDlhMy1hOWRmLThmZTkzODQ5MTQxZSIsImlhdCI6MTY4NTk1NTgzNywiZXhwIjoxNzE3NTEzNDM3LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.wR09By0qyK2AdHQG9h-CcRDfz0mzjFBxpbP3lIs9fIY',
+    anonKey: 'anonKey',
   );
 
   runApp(const MyApp());
