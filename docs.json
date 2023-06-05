@@ -38,6 +38,7 @@
       ],
       [
         "Flutter library", [
+          ["Theta sample app", "/builder/run_example"],
           ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
           ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
           ["Repository \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],

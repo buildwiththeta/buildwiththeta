@@ -1,6 +1,10 @@
+# 0.1.0-dev.5
+
+* Feat: new theta_open_widgets version
+
 # 0.1.0-dev.4
 
-* Fully compliant with Dart 3.
+* Feat: fully compliant with Dart 3.
 
 # 0.1.0-dev.3
 
