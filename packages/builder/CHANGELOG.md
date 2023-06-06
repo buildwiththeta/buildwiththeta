@@ -1,3 +1,10 @@
+## 0.1.2
+
+- [x] Fix: compatibility with macOS, iOS, Android, Windows.
+- [x] Fix: example project improved.
+- [x] Fix: dependencies updated.
+- [x] Feat: added compatibility section in README.
+
 ## 0.1.1
 
 - [x] Theta Widgets dependency updated to 0.1.1.

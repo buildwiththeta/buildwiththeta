@@ -102,6 +102,16 @@ UIBox(
 - ✅ Alpha: experimental. Expect breaking changes.
 - ✅ Closed Beta: ready for testing. Expect bugs and missing features.
 
+## Compatibility
+
+- ✅ Web
+- ✅ Android (with minSdkVersion >= 19)
+- ✅ iOS
+- ✅ macOS
+- ✅ Windows
+
+Read more about configuration in the [documentation](https://docs.buildwiththeta.com/en/builder/compatibility).
+
 ## Contributing
 
 See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
