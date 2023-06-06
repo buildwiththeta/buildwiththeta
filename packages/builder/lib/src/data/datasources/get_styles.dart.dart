@@ -18,7 +18,10 @@ class StylesService {
     final log = _analytics.logEvent(title: 'Get styles', description: null);
     final res = await _httpClient.post(
       Uri.parse('$baseUrl$getStylesPath'),
-      headers: {'Authorization': 'Bearer ${_clientToken.key}'},
+      headers: {
+        'Authorization': 'Bearer ${_clientToken.key}',
+        ...defaultHeaders
+      },
       body: json.encode({
         if (log.isRight) 'log': {...log.right},
       }),

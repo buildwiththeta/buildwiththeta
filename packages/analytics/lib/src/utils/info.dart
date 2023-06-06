@@ -1,8 +1,8 @@
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/widgets.dart';
 import 'package:light_logger/light_logger.dart';
+import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:universal_platform/universal_platform.dart';
 
 class DeviceInfo {
   const DeviceInfo(
@@ -57,21 +57,19 @@ class DeviceInfoUtils {
   }
 
   Future<String> _osName(DeviceInfoPlugin deviceInfoResponse) async {
-    if (UniversalPlatform.isAndroid) {
-      return "Android";
-    } else if (UniversalPlatform.isIOS) {
-      final info = await deviceInfoResponse.iosInfo;
-      return info.model?.toLowerCase().contains('ipad') ?? false
-          ? 'iPadOS'
-          : 'iOS';
-    } else if (UniversalPlatform.isWeb) {
+    if (kIsWeb) {
       final info = await deviceInfoResponse.webBrowserInfo;
       return info.browserName.name;
-    } else if (UniversalPlatform.isMacOS) {
+    } else if (defaultTargetPlatform == TargetPlatform.android) {
+      return "Android";
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      final info = await deviceInfoResponse.iosInfo;
+      return info.model.toLowerCase().contains('ipad') ? 'iPadOS' : 'iOS';
+    } else if (defaultTargetPlatform == TargetPlatform.macOS) {
       return "macOS";
-    } else if (UniversalPlatform.isWindows) {
+    } else if (defaultTargetPlatform == TargetPlatform.windows) {
       return "Windows";
-    } else if (UniversalPlatform.isLinux) {
+    } else if (defaultTargetPlatform == TargetPlatform.linux) {
       final info = await deviceInfoResponse.linuxInfo;
       return info.name;
     } else {
@@ -81,21 +79,21 @@ class DeviceInfoUtils {
 
   Future<String?> _osVersion() async {
     final deviceInfoResponse = DeviceInfoPlugin();
-    if (UniversalPlatform.isAndroid) {
-      final info = await deviceInfoResponse.androidInfo;
-      return info.version.release;
-    } else if (UniversalPlatform.isIOS) {
-      final info = await deviceInfoResponse.iosInfo;
-      return info.systemVersion;
-    } else if (UniversalPlatform.isWeb) {
+    if (kIsWeb) {
       final info = await deviceInfoResponse.webBrowserInfo;
       return info.appVersion;
-    } else if (UniversalPlatform.isMacOS) {
+    } else if (defaultTargetPlatform == TargetPlatform.android) {
+      final info = await deviceInfoResponse.androidInfo;
+      return info.version.release;
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      final info = await deviceInfoResponse.iosInfo;
+      return info.systemVersion;
+    } else if (defaultTargetPlatform == TargetPlatform.macOS) {
       return null;
-    } else if (UniversalPlatform.isWindows) {
+    } else if (defaultTargetPlatform == TargetPlatform.windows) {
       final info = await deviceInfoResponse.windowsInfo;
       return '${info.majorVersion}.${info.minorVersion}.${info.buildNumber}';
-    } else if (UniversalPlatform.isLinux) {
+    } else if (defaultTargetPlatform == TargetPlatform.linux) {
       final info = await deviceInfoResponse.linuxInfo;
       return info.versionId;
     } else {
