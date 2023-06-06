@@ -1,0 +1,68 @@
+---
+title: Theta Flutter library supported platforms
+---
+
+# Compatibility
+
+Platforms supported by the [Theta Flutter library](https://pub.dev/packages/theta).
+
+## Supported platforms
+
+- [x] Web
+- [x] iOS
+- [x] Android
+- [x] macOS
+- [x] Windows
+
+---
+
+## Configuration
+
+### Web
+
+No configuration needed.
+
+### iOS
+
+No configuration needed.
+
+### Android
+
+<Warning>Theta is not be available to users running Android SDKs below 19.</Warning>
+
+Since Theta depends on `[package_info_plus](https://pub.dev/packages/package_info_plus)` the `minSdkVersion` must be at least 19.
+
+```
+android/app/build.gradle:
+android {
+  defaultConfig {
+    minSdkVersion 19
+  }
+}
+```
+
+Also, Theta requires [internet connection](https://developer.android.com/training/basics/network-ops/connecting).
+
+```
+<manifest xmlns:android...>
+  ...
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application ...
+</manifest>
+```
+
+### macOS
+
+macOS apps must allow network access in the relevant .entitlements files.
+
+```
+<key>com.apple.security.network.client</key>
+<true/>
+```
+
+Learn more about [setting up entitlements](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements).
+
+### Windows
+
+No configuration needed.
+
