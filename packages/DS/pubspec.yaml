@@ -1,11 +1,11 @@
 name: theta_design_system
 description: Design system basics for Theta
-version: 0.1.0
+version: 0.1.1
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
 issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
-documentation: https://docs.page/buildwiththeta/buildwiththeta
+documentation: https://docs.buildwiththeta.com
 
 platforms:
   android:
@@ -24,12 +24,10 @@ dependencies:
     sdk: flutter
 
   light_logger: ^0.0.3
-  google_fonts: ^4.0.4
+
+  google_fonts: ^5.0.0
   equatable: ^2.0.5
   gap: ^3.0.0
-  lottie: ^2.3.2
-  flutter_colorpicker: ^1.0.3
-
 
 dev_dependencies:
   flutter_test:
