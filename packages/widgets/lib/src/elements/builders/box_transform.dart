@@ -263,7 +263,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   Widget build(BuildContext context) {
     return TransformableBox(
       controller: controller,
-      onChanged: (rect) => _debouncer.run(() => onChanged(rect)),
+      onChanged: (rect, drag) => _debouncer.run(() => onChanged(rect)),
       contentBuilder: (_, rect, flip) => IgnorePointer(
         child: NodeBuilder(
           onTap: () {
@@ -307,6 +307,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         maxWidthReached: oldRect.maxWidthReached,
         minHeightReached: oldRect.minHeightReached,
         maxHeightReached: oldRect.maxHeightReached,
+        largestRect: oldRect.largestRect,
+        handle: oldRect.handle,
       ),
       state.deviceInfo.identifier.type,
     );

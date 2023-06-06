@@ -1,3 +1,7 @@
+## 0.1.4
+
+- [x] Fix: google_fonts updated to 5.0.0
+
 ## 0.1.3
 
 - [x] Fix: rectSingleFromJson uses double.parse

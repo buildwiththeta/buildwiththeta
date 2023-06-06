@@ -1,6 +1,10 @@
+## 0.1.2
+
+- [x] Fix: http dependency updated.
+
 ## 0.1.1
 
-- [x] Added Content-Type header in 'Get styles' method.
+- [x] Feat: Added Content-Type header in 'Get styles' method.
 
 ## 0.1.0
 
