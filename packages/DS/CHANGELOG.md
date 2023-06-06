@@ -1,3 +1,7 @@
+## 0.1.1
+
+- [x] Fix: dependencies updated.
+
 ## 0.1.0
 
 - [x] Ready for ([0.1.2](https://github.com/buildwiththeta/buildwiththeta/releases/tag/0.1.2)).

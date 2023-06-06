@@ -83,7 +83,11 @@ class ResponsiveRect extends Equatable {
   static Rect? rectSingleFromJson(Map<String, dynamic>? json) {
     if (json == null) return null;
     return Rect.fromLTRB(
-        json['left'], json['top'], json['right'], json['bottom']);
+      double.parse(json['left'].toString()),
+      double.parse(json['top'].toString()),
+      double.parse(json['right'].toString()),
+      double.parse(json['bottom'].toString()),
+    );
   }
 
   @override
