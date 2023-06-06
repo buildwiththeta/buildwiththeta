@@ -1,14 +1,9 @@
-// Flutter imports:
-// ignore_for_file: public_member_api_docs
-
-// Flutter imports:
 import 'package:device_frame/device_frame.dart' as frame;
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/theta_models.dart';
-// Package imports:
-import 'package:universal_platform/universal_platform.dart';
 
 enum SizeUnit {
   pixel,
@@ -56,7 +51,7 @@ class FSize extends Equatable {
   }) {
     String? sizeValue;
     var inEditor = false;
-    if (UniversalPlatform.isWeb) {
+    if (kIsWeb) {
       if (Uri.base.toString().contains('/editor/')) {
         inEditor = true;
       }

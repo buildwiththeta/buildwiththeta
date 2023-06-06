@@ -4943,12 +4943,28 @@ class IconOpenNode extends CNode {
       for (final entry in (json['properties'] as Map<String, dynamic>)
           .entries
           .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
+        try {
+          attributes[entry.key] =
+              const DynamicAttributes().fromJson(entry.key, entry.value);
+        } catch (e) {
+          Logger.printError(
+              'Error parsing attribute ${entry.key} with value ${entry.value} for widget $widgetType, error: $e');
+          throw Exception(
+              'Error parsing attribute ${entry.key} with value ${entry.value} for widget $widgetType, error: $e');
+        }
       }
     }
 
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
+    RectProperties rectProperties;
+
+    try {
+      rectProperties = RectProperties.fromJson(json['rect_properties']);
+    } catch (e) {
+      Logger.printError(
+          'Error parsing rect properties for widget $widgetType, error: $e');
+      throw Exception(
+          'Error parsing rect properties for widget $widgetType, error: $e');
+    }
 
     return IconOpenNode(
       id: json['id'],
