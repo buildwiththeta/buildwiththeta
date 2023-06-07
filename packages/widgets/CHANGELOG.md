@@ -1,3 +1,7 @@
+## 0.1.4
+
+- [x] Fix: flutter_box_transform back to 0.2.1.
+
 ## 0.1.3
 
 - [x] Fix: dependencies updated.
