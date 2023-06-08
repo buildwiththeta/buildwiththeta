@@ -1,3 +1,11 @@
+## 0.1.4
+
+- [x] Fix: google_fonts updated to 5.0.0
+
+## 0.1.3
+
+- [x] Fix: rectSingleFromJson uses double.parse
+
 ## 0.1.2
 
 - [x] Ready for ([0.1.2](https://github.com/buildwiththeta/buildwiththeta/releases/tag/0.1.2)).

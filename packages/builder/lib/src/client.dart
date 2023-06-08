@@ -1,4 +1,5 @@
 import 'package:either_dart/either.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 import 'package:theta/src/domain/usecases/base_usecase.dart';
@@ -15,7 +16,10 @@ class ThetaClient {
 
   Future<void> initialize() async => await _fetchStyles().then((res) {
         res.fold(
-          (l) => throw Exception('Error fetching styles: $l'),
+          (l) {
+            Logger.printError('Error fetching styles: $l');
+            throw Exception('Error fetching styles: $l');
+          },
           (r) => styles = r,
         );
       });

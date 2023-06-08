@@ -8,7 +8,8 @@
 - [x] Theta Flutter client: Stream your UIs inside your clients. [Pub.dev](https://pub.dev/packages/theta)
 
 ## Documentation
-Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththeta)
+
+- Docs: https://docs.buildwiththeta.com
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.

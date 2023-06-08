@@ -1,6 +1,6 @@
 name: theta_models
 description: A package for the models used in Theta.
-version: 0.1.2
+version: 0.1.4
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -28,8 +28,7 @@ dependencies:
   device_frame: ^1.1.0
   intl: ^0.18.0
   transition: ^2.0.2
-  universal_platform: ^1.0.0+1
-  google_fonts: ^4.0.4
+  google_fonts: ^5.0.0
   reflectable: ^4.0.5
   meta: ^1.9.1
   collection: ^1.17.1

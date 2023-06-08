@@ -1,6 +1,22 @@
+## 0.1.4
+
+- [x] Fix: flutter_box_transform back to 0.2.1.
+
+## 0.1.3
+
+- [x] Fix: dependencies updated.
+
+## 0.1.3-dev.2
+
+- [x] Fix: dependencies updated.
+
+## 0.1.3-dev.1
+
+- [x] Fix: material_design_icons_flutter dependency updated.
+
 ## 0.1.2
 
-- Fix: horizontal stretch
+- [x] Fix: horizontal stretch.
 
 ## 0.1.1
 
