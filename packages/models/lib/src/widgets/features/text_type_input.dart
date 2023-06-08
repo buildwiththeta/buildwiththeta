@@ -243,16 +243,16 @@ class FTextTypeInput {
       return getValueForScreenType<String>(
         context: context,
         mobile: value ?? '',
-        tablet: valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '',
-        desktop: valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '',
+        tablet: valueTablet ?? value,
+        desktop: valueDesktop ?? value ?? '',
       );
     } else {
       if (state.deviceType == DeviceType.phone) {
         return value ?? '';
       } else if (state.deviceType == DeviceType.tablet) {
-        return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+        return valueTablet ?? value ?? '';
       } else {
-        return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
+        return valueDesktop ?? value ?? '';
       }
     }
   }

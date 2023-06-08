@@ -17,8 +17,6 @@ abstract class NodeWidget extends StatefulWidget {
 
 class _StateWidgetState extends State<NodeWidget> {
   @override
-  Widget build(BuildContext context) {
-    final TreeState state = context.watch<TreeState>();
-    return widget.build(context, state, widget.nodeState);
-  }
+  Widget build(BuildContext context) =>
+      widget.build(context, context.watch<TreeState>(), widget.nodeState);
 }

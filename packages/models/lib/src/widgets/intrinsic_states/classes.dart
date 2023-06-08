@@ -574,42 +574,6 @@ class GoogleAdMobBannerAdIntrinsicStates extends IntrinsicState {
   GoogleAdMobBannerAdIntrinsicStates.create() : this();
 }
 
-/// GridView
-@nodeTypeISKey
-@NodeKey(NType.gridViewBuilder)
-class GridViewBuilderIntrinsicStates extends IntrinsicState {
-  GridViewBuilderIntrinsicStates()
-      : super(
-          nodeIcon: Assets.wIcons.grid.path,
-          synonymous: const ['gridview', 'builder', 'scroll', 'vertical list'],
-          displayName: NodeType.name(NType.gridViewBuilder),
-          type: NType.gridViewBuilder,
-          category: NodeCategories.layout,
-          canHave: ChildrenEnum.child,
-        );
-  GridViewBuilderIntrinsicStates.create() : this();
-}
-
-/// GridView
-@nodeTypeISKey
-@NodeKey(NType.gridView)
-class GridViewIntrinsicStates extends IntrinsicState {
-  GridViewIntrinsicStates()
-      : super(
-          nodeIcon: Assets.wIcons.grid.path,
-          blockedTypes: const [],
-          synonymous: const ['gridview', 'builder', 'scroll', 'vertical list'],
-          displayName: NodeType.name(NType.gridView),
-          type: NType.gridView,
-          category: NodeCategories.layout,
-          maxChildren: null,
-          canHave: ChildrenEnum.children,
-          addChildLabels: const [],
-          gestures: const [],
-        );
-  GridViewIntrinsicStates.create() : this();
-}
-
 /// Hero
 @nodeTypeISKey
 @NodeKey(NType.hero)
@@ -812,17 +776,18 @@ class ListTileIntrinsicStates extends IntrinsicState {
   ListTileIntrinsicStates.create() : this();
 }
 
-/// ListView
+/// ListView & GridView
 /// https://api.flutter.dev/flutter/widgets/ListView-class.html
+/// https://api.flutter.dev/flutter/widgets/GridView-class.html
 @nodeTypeISKey
 @NodeKey(NType.listView)
 @NodeKey(NType.gridView)
 class ListViewIntrinsicStates extends IntrinsicState {
-  ListViewIntrinsicStates()
+  const ListViewIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.list.path,
+          nodeIcon: 'nodes/collection/',
           blockedTypes: const [],
-          synonymous: const ['scroll', 'vertical list', 'listview'],
+          synonymous: const ['scroll', 'vertical list', 'listview', 'gridview'],
           displayName: 'Collection',
           type: NType.listView,
           category: NodeCategories.layout,
@@ -831,7 +796,8 @@ class ListViewIntrinsicStates extends IntrinsicState {
           addChildLabels: const [],
           gestures: const [],
         );
-  ListViewIntrinsicStates.create() : this();
+
+  const ListViewIntrinsicStates.create() : this();
 }
 
 /// Lottie

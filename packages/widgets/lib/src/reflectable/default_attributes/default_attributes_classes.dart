@@ -669,29 +669,6 @@ class AdMobBannerDefaultAttributes extends DefaultAttributesAdapter {
   AdMobBannerDefaultAttributes.create() : this();
 }
 
-/// GridView, GridView.builder
-@dynamicDefaultAttribute
-@NodeKey(NType.gridView)
-@NodeKey(NType.gridViewBuilder)
-class GridViewDefaultAttributes extends DefaultAttributesAdapter {
-  const GridViewDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.flag: true,
-        DBKeys.isVertical: true,
-        DBKeys.isPrimary: true,
-        DBKeys.mainAxisSpacing: FTextTypeInput(value: '2'),
-        DBKeys.crossAxisCount: FTextTypeInput(value: '2'),
-        DBKeys.crossAxisSpacing: FTextTypeInput(value: '2'),
-        DBKeys.childAspectRatio: FTextTypeInput(value: '1'),
-        DBKeys.value: FTextTypeInput(value: '0'),
-        DBKeys.valueOfCondition: FTextTypeInput(),
-      };
-
-  GridViewDefaultAttributes.create() : this();
-}
-
 /// Hero
 @dynamicDefaultAttribute
 @NodeKey(NType.hero)
@@ -809,11 +786,14 @@ class ListViewDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.isVertical: true,
         DBKeys.flag: true,
+        DBKeys.isListView: true,
         DBKeys.isPrimary: true,
         DBKeys.isFullWidth: false,
         DBKeys.physic: FPhysic(),
-        DBKeys.value: FTextTypeInput(value: '0'),
-        DBKeys.valueOfCondition: FTextTypeInput(),
+        DBKeys.mainAxisSpacing: FTextTypeInput(value: '2'),
+        DBKeys.crossAxisCount: FTextTypeInput(value: '2'),
+        DBKeys.crossAxisSpacing: FTextTypeInput(value: '2'),
+        DBKeys.childAspectRatio: FTextTypeInput(value: '1'),
       };
 
   ListViewDefaultAttributes.create() : this();

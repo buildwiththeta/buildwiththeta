@@ -903,18 +903,33 @@ class ListViewAdapter extends WidgetAdapter {
     required final BuildContext context,
     required final WidgetState state,
   }) =>
-      OpenWListView(
-        state: state,
-        children: state.node.children ?? [],
-        flagValue: false, //Check
-        value: const FTextTypeInput(),
-        physic: state.node.getAttributes[DBKeys.physic] as FPhysic,
-        isPrimary: state.node.getAttributes[DBKeys.isPrimary] as bool, //Check
-        isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
-        shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
-        isReverse: state.node.getAttributes[DBKeys.isFullWidth] as bool,
-        //action: state.node.getAttributes[DBKeys.action] as NodeGestureActions,
-      );
+      (state.node.getAttributes[DBKeys.isListView] as bool? ?? true)
+          ? OpenWListView(
+              state: state,
+              children: state.node.children ?? [],
+              flagValue: false, //Check
+              value: const FTextTypeInput(),
+              physic: state.node.getAttributes[DBKeys.physic] as FPhysic,
+              isPrimary:
+                  state.node.getAttributes[DBKeys.isPrimary] as bool, //Check
+              isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,
+              shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
+              isReverse: state.node.getAttributes[DBKeys.isFullWidth] as bool,
+              //action: state.node.getAttributes[DBKeys.action] as NodeGestureActions,
+            )
+          : OpenWGridView(
+              nodeState: state,
+              children: state.node.children ?? [],
+              crossAxisCount: state.node.getAttributes[DBKeys.crossAxisCount],
+              mainAxisSpacing: state.node.getAttributes[DBKeys.mainAxisSpacing],
+              crossAxisSpacing:
+                  state.node.getAttributes[DBKeys.crossAxisSpacing],
+              isVertical: state.node.getAttributes[DBKeys.isVertical],
+              isPrimary: state.node.getAttributes[DBKeys.isPrimary],
+              childAspectRatio:
+                  state.node.getAttributes[DBKeys.childAspectRatio],
+              shrinkWrap: state.node.getAttributes[DBKeys.flag] as bool,
+            );
 
   ListViewAdapter.create() : this();
 }
