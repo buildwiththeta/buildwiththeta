@@ -38,6 +38,13 @@ class PageMapper extends Mapper<PageEntity> {
         _refPageId: page.refPageId,
       };
 
+  Map<String, dynamic> toJsonWithId(PageEntity page) => {
+        _idKey: page.id,
+        _branchIdKey: page.branchID,
+        _nameKey: page.name,
+        _refPageId: page.refPageId,
+      };
+
   PageEntity copyWith(final PageEntity e,
           {final String? id,
           final String? branchID,

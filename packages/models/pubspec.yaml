@@ -18,6 +18,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  theta_open_widgets: ^0.1.2
+
   light_logger: ^0.0.3
   enum_to_string: ^2.0.1
   equatable: ^2.0.5
@@ -36,7 +38,7 @@ dependencies:
   analyzer: ^5.11.1
   freezed_annotation: ^2.2.0
   source_gen: ^1.2.7
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -45,6 +45,17 @@ class TextStylesMapper extends Mapper<TextStyleEntity> {
         }
       };
 
+  Map<String, dynamic> toJsonWithId(final TextStyleEntity e) => {
+        idKey: e.id,
+        typeKey: 'text',
+        branchKey: e.branchID,
+        nameKey: e.name,
+        propertiesKey: {
+          familyKey: e.fontFamily,
+          sizeKey: e.fontSize.toJson(),
+          weightKey: e.fontWeight.toJson()
+        }
+      };
   TextStyleEntity copyWith(final TextStyleEntity e,
           {final String? id,
           final String? branchID,

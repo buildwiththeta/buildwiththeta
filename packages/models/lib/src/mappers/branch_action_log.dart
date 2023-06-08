@@ -36,7 +36,7 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
   @override
   Map<String, dynamic> toJson(final BranchActionLogEntity branch) => {
         _prjIdKey: branch.projectID,
-        _actionKey: branch.action,
+        _actionKey: branch.action.name,
         _userNameKey: branch.userName,
         _sourceBranchNamenKey: branch.sourceBranchName,
         _targetBranchNameKey: branch.targetBranchName,

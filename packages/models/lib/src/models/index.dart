@@ -16,3 +16,4 @@ export 'variable.dart';
 export 'user_info.dart';
 export 'hex_color.dart';
 export 'branch_action_log.dart';
+export 'branch_json_log.dart';

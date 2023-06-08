@@ -39,6 +39,16 @@ class ColorStylesMapper extends Mapper<ColorStyleEntity> {
         }
       };
 
+  Map<String, dynamic> toJsonWithId(ColorStyleEntity model) => {
+        _idKey: model.id,
+        _typeKey: 'color',
+        _branchKey: model.branchID,
+        _nameKey: model.name,
+        _propertiesKey: {
+          _darkKey: model.dark.toJson(),
+          _lightKey: model.light.toJson(),
+        }
+      };
   ColorStyleEntity copyWith(final ColorStyleEntity e,
           {final String? id,
           final String? branchID,
