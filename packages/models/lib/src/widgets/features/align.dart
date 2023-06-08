@@ -5,7 +5,6 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 @immutable
@@ -47,12 +46,14 @@ class FAlign extends Equatable {
     final DeviceType deviceType = DeviceType.phone,
   }) {
     if (forPlay) {
-      return getValueForScreenType<Alignment>(
-        context: context,
-        mobile: align!,
-        tablet: alignTablet ?? align!,
-        desktop: alignDesktop ?? align!,
-      );
+      final width = MediaQuery.of(context).size.width;
+      if (width < 600) {
+        return align!;
+      } else if (width < 900) {
+        return alignTablet != null ? alignTablet ?? align! : align!;
+      } else {
+        return alignDesktop != null ? alignDesktop ?? align! : align!;
+      }
     } else {
       if (deviceType == DeviceType.phone) {
         return align!;
@@ -93,13 +94,11 @@ class FAlign extends Equatable {
     }
   }
 
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'm': convertValueToJson(align!),
-      't': convertValueToJson(alignTablet ?? align!),
-      'd': convertValueToJson(alignDesktop ?? align!),
-    };
-  }
+  Map<String, dynamic> toJson() => {
+        'm': convertValueToJson(align!),
+        't': convertValueToJson(alignTablet ?? align!),
+        'd': convertValueToJson(alignDesktop ?? align!),
+      };
 
   FAlign clone() => FAlign(
         align: align,
@@ -183,24 +182,6 @@ class FAlign extends Equatable {
     if (value == Alignment.bottomRight) result = 'Alignment.bottomRight';
     return result;
   }
-
-  /// Converts the Alignment value to code.
-  ///
-  /// e.g. it returns:
-  /// ```dart
-  /// Alignment.topLeft
-  /// ```
-  String toCode() =>
-      align == (alignTablet ?? align) && align == (alignDesktop ?? align)
-          ? convertValueToCode(align)
-          : '''
-  getValueForScreenType<Alignment>(
-    context: context,
-    mobile: ${convertValueToCode(align)},
-    tablet: ${convertValueToCode(alignTablet ?? align)},
-    desktop: ${convertValueToCode(alignDesktop ?? align)},
-  )
-  ''';
 }
 
 

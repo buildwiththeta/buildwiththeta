@@ -2,8 +2,21 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
+
 import 'package:device_frame/src/info/device_type.dart' as prefix39;
 import 'package:meta/meta.dart' as prefix37;
+// ignore_for_file: camel_case_types
+// ignore_for_file: implementation_imports
+// ignore_for_file: prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_collection_literals
+// ignore_for_file: unnecessary_const
+
+// ignore:unused_import
+import 'package:reflectable/mirrors.dart' as m;
+// ignore:unused_import
+import 'package:reflectable/reflectable.dart' as r show Reflectable;
+// ignore:unused_import
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart'
     as prefix0;
 import 'package:theta_models/src/widgets/features/align.dart' as prefix1;
@@ -63,19 +76,6 @@ import 'package:theta_open_widgets/src/reflectable/nodes/nodes_classes.dart'
     as prefix36;
 import 'package:theta_open_widgets/src/reflectable/nodes/nodes_parse.dart'
     as prefix35;
-
-// ignore_for_file: camel_case_types
-// ignore_for_file: implementation_imports
-// ignore_for_file: prefer_adjacent_string_concatenation
-// ignore_for_file: prefer_collection_literals
-// ignore_for_file: unnecessary_const
-
-// ignore:unused_import
-import 'package:reflectable/mirrors.dart' as m;
-// ignore:unused_import
-import 'package:reflectable/src/reflectable_builder_based.dart' as r;
-// ignore:unused_import
-import 'package:reflectable/reflectable.dart' as r show Reflectable;
 
 final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.DynamicAttributeReflector(): r.ReflectorData(
@@ -6872,9 +6872,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates.create() : null
+                  () => b ? const prefix30.ListViewIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix30.ListViewIntrinsicStates.create() : null
             },
             -1,
             42,

@@ -2,8 +2,6 @@ import 'package:collection/collection.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Set of func to use text string in Teta's widgets
@@ -95,6 +93,7 @@ class FTextTypeInput {
     this.type = FTextTypeEnum.text,
     this.value = '',
     this.valueTablet = '',
+    this.valueLaptop = '',
     this.valueDesktop = '',
     this.paramName,
     this.stateName,
@@ -110,6 +109,7 @@ class FTextTypeInput {
   final FTextTypeEnum? type;
   final String? value;
   final String? valueTablet;
+  final String? valueLaptop;
   final String? valueDesktop;
   final String? paramName;
   final String? stateName;
@@ -166,52 +166,6 @@ class FTextTypeInput {
     required final BuildContext context,
     required final int loop,
   }) {
-    final dynamic result = getRaw(
-      state: state,
-      loop: loop,
-      placeholder: placeholder,
-      context: context,
-    );
-
-    if (result.runtimeType == String) {
-      switch (resultType) {
-        case ResultTypeEnum.string:
-          return result;
-        case ResultTypeEnum.int:
-          return int.tryParse(result as String) ??
-              'Impossible to convert to int type';
-        case ResultTypeEnum.double:
-          return double.tryParse(result as String) ??
-              'Impossible to convert to double type';
-        case ResultTypeEnum.bool:
-          return (result as String?) == 'true'
-              ? true
-              : result == 'false'
-                  ? false
-                  : 'Impossible to convert to double type';
-        case ResultTypeEnum.dateTime:
-          {
-            final date = DateTime.tryParse(result as String);
-            if (date != null) {
-              if (typeDateTimeFormat == TypeDateTimeFormat.dateWithoutTime) {
-                return DateFormat('yyyy-MM-dd').format(date);
-              }
-              if (typeDateTimeFormat == TypeDateTimeFormat.dateWithTime) {
-                return DateFormat('yyyy-MM-dd hh:mm:ss').format(date);
-              }
-            }
-            return 'Impossible to convert to DateTime type';
-          }
-      }
-    }
-  }
-
-  dynamic getRaw({
-    required final TreeState state,
-    required final int loop,
-    required final String placeholder,
-    required final BuildContext context,
-  }) {
     if (type == FTextTypeEnum.param) {
       try {
         final variable = state.params
@@ -240,19 +194,30 @@ class FTextTypeInput {
       return string.toString();
     }
     if (state.forPlay) {
-      return getValueForScreenType<String>(
-        context: context,
-        mobile: value ?? '',
-        tablet: valueTablet ?? value,
-        desktop: valueDesktop ?? value ?? '',
-      );
+      final width = MediaQuery.of(context).size.width;
+      if (width < 600) {
+        return value ?? '';
+      } else if (width < 900) {
+        return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+      } else if (width < 1200) {
+        return valueLaptop != '' ? valueLaptop ?? value ?? '' : value ?? '';
+      } else {
+        return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
+      }
     } else {
       if (state.deviceType == DeviceType.phone) {
         return value ?? '';
       } else if (state.deviceType == DeviceType.tablet) {
-        return valueTablet ?? value ?? '';
+        return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+      } else if (state.deviceType == DeviceType.laptop) {
+        return valueLaptop != ''
+            ? valueLaptop ??
+                (valueDesktop != '' ? valueDesktop : value) ??
+                value ??
+                ''
+            : value ?? '';
       } else {
-        return valueDesktop ?? value ?? '';
+        return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
       }
     }
   }
@@ -263,12 +228,16 @@ class FTextTypeInput {
     required final DeviceType deviceType,
   }) {
     if (forPlay) {
-      return getValueForScreenType<String>(
-        context: context,
-        mobile: value ?? '',
-        tablet: valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '',
-        desktop: valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '',
-      );
+      final width = MediaQuery.of(context).size.width;
+      if (width < 600) {
+        return value ?? '';
+      } else if (width < 900) {
+        return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+      } else if (width < 1200) {
+        return valueLaptop != '' ? valueLaptop ?? value ?? '' : value ?? '';
+      } else {
+        return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
+      }
     } else {
       if (deviceType == DeviceType.phone) {
         return value ?? '';
@@ -283,6 +252,7 @@ class FTextTypeInput {
   FTextTypeInput copyWith({
     String? value,
     String? valueTablet,
+    String? valueLaptop,
     String? valueDesktop,
     FTextTypeEnum? type,
     String? paramName,
@@ -295,6 +265,7 @@ class FTextTypeInput {
     return FTextTypeInput(
       value: value ?? this.value,
       valueTablet: valueTablet ?? this.valueTablet,
+      valueLaptop: valueLaptop ?? this.valueLaptop,
       valueDesktop: valueDesktop ?? this.valueDesktop,
       type: type ?? this.type,
       paramName: paramName ?? this.paramName,
@@ -320,6 +291,8 @@ class FTextTypeInput {
       return copyWith(value: val);
     } else if (deviceType == DeviceType.tablet) {
       return copyWith(valueTablet: val);
+    } else if (deviceType == DeviceType.laptop) {
+      return copyWith(valueLaptop: val);
     } else {
       return copyWith(valueDesktop: val);
     }
@@ -331,6 +304,7 @@ class FTextTypeInput {
         type: EnumToString.fromString(FTextTypeEnum.values, json?['t']),
         value: json?['v'] as String?,
         valueTablet: json?['vt'] as String?,
+        valueLaptop: json?['vl'] as String?,
         valueDesktop: json?['vd'] as String?,
         paramName: json?['pN'] as String?,
         stateName: json?['sN'] as String?,
@@ -367,6 +341,7 @@ class FTextTypeInput {
         't': EnumToString.convertToString(type),
         'v': value,
         'vt': valueTablet,
+        'vl': valueLaptop,
         'vd': valueDesktop,
         'pN': paramName,
         'sN': stateName,
@@ -380,24 +355,4 @@ class FTextTypeInput {
             ? EnumToString.convertToString(typeDateTimeFormat)
             : EnumToString.convertToString(TypeDateTimeFormat.dateWithTime),
       }..removeWhere((final String key, final dynamic value) => value == null);
-
-  /*String toCode(
-          BuildContext context,
-          List<VariableObject> params,
-          List<VariableObject> states,
-          List<DatasetObject> dataset,
-          bool forPlay,
-          int? loop,) =>
-      calc(params, states, dataset, forPlay, loop, '');*/
-
-  String convertType(
-    final String original, {
-    required final ResultTypeEnum resType,
-  }) {
-    var code = original;
-    if (original.contains("'")) {
-      code = '$original ';
-    }
-    return code;
-  }
 }

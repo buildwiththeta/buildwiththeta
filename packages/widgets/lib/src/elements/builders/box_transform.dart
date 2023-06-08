@@ -37,6 +37,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     } else if (screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
       return Devices.ios.iPadPro11Inches;
+    } else if (screenSize.width <=
+        Devices.ios.iPadPro11Inches.screenSize.width) {
+      return Devices.ios.iPadPro11Inches;
     } else {
       return DeviceInfo.genericDesktopMonitor(
         platform: TargetPlatform.macOS,
