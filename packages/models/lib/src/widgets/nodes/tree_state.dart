@@ -30,6 +30,7 @@ class TreeState with ChangeNotifier {
     required this.deviceInfo,
     required this.workflows,
     required this.config,
+    required this.nodeOverrides,
     this.focusedNode,
     this.nodes = const [],
     this.xLines = const [],
@@ -75,6 +76,8 @@ class TreeState with ChangeNotifier {
   /// User can create custom code and add it to the project
   /// This code will be executed when the workflow is called
   List<Workflow> workflows;
+
+  List<Override> nodeOverrides;
 
   /// Project config
   /// This is the config file of the project
@@ -151,6 +154,7 @@ class TreeState with ChangeNotifier {
     final ThemeMode? theme,
     final List<Workflow>? workflows,
     final ProjectConfigModel? config,
+    final List<Override>? nodeOverrides,
     final Nodes? nodes,
     final List<int>? xLines,
     final List<int>? yLines,
@@ -164,6 +168,7 @@ class TreeState with ChangeNotifier {
       colorStyles: colorStyles ?? this.colorStyles,
       textStyles: textStyles ?? this.textStyles,
       deviceInfo: deviceInfo ?? this.deviceInfo,
+      nodeOverrides: nodeOverrides ?? this.nodeOverrides,
       theme: theme ?? this.theme,
       workflows: workflows ?? this.workflows,
       config: config ?? this.config,

@@ -1,6 +1,6 @@
 name: theta_models
 description: A package for the models used in Theta.
-version: 0.1.4
+version: 0.1.5
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -8,7 +8,7 @@ issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
 documentation: https://docs.page/buildwiththeta/buildwiththeta
 
 scripts:
-  gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

@@ -246,4 +246,5 @@ class DBKeys {
   static const String mapConfigTrackMyLocation = 'mapConfigShowTrackMyLocation';
 
   static const String stringDropdown = 'StringDropdownValue';
+  static const String isListView = 'isListView';
 }

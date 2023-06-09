@@ -2,7 +2,6 @@
 
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
@@ -149,37 +148,5 @@ class FBorderRadius extends Equatable {
       radiusTablet: radiusTablet ?? this.radiusTablet,
       radiusDesktop: radiusDesktop ?? this.radiusDesktop,
     );
-  }
-
-  String convertValueToCode(final List<double> radius) {
-    if (radius[0] == 0 && radius[1] == 0 && radius[2] == 0 && radius[3] == 0) {
-      return 'BorderRadius.zero';
-    }
-    return '''
-    BorderRadius.only(
-      topLeft: Radius.circular(${radius[0]}),
-      topRight: Radius.circular(${radius[1]}),
-      bottomRight: Radius.circular(${radius[2]}),
-      bottomLeft: Radius.circular(${radius[3]}),
-    )''';
-  }
-
-  /// Convert [FBorderRadius] to code String
-  String toCode() {
-    final valueTablet = radiusTablet ?? radiusMobile;
-    final valueDesktop = radiusDesktop ?? radiusMobile;
-    if (listEquals(radiusMobile, valueTablet) &&
-        listEquals(radiusMobile, valueDesktop)) {
-      return convertValueToCode(radiusMobile!);
-    }
-
-    return '''
-getValueForScreenType<BorderRadius>(
-  context: context,
-  mobile: ${convertValueToCode(radiusMobile!)},
-  tablet: ${convertValueToCode(radiusTablet ?? radiusMobile!)},
-  desktop: ${convertValueToCode(radiusDesktop ?? radiusMobile!)},
-)
-''';
   }
 }

@@ -6,7 +6,7 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey: 'anonKey',
+    anonKey: '',
   );
 
   runApp(const MyApp());
@@ -32,13 +32,24 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a page [name].
           body: UIBox(
-            'Homepage',
+            'Button',
 
             /// [placeholder] is the widget displayed while the page is loading.
             placeholder: () => const CircularProgressIndicator(),
 
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error),
+
+            overrides: const [
+              Override(
+                nodeIdenfier: 'node.id',
+                props: [
+                  ChildProperty(
+                    child: Text('Click me!'),
+                  ),
+                ],
+              )
+            ],
 
             /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
             workflows: [

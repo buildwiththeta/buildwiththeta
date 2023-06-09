@@ -2,7 +2,7 @@
 
 Theta Flutter library.
 
-- Docs: https://docs.page/buildwiththeta/buildwiththeta/
+- Documentation: https://docs.buildwiththeta.com
 
 
 ## What is [Theta](https://buildwiththeta.com)?
@@ -93,6 +93,65 @@ UIBox(
         }),
     ],
 )
+```
+
+### Override child
+
+You can override the child of a node with a custom widget by mixing no-code with Flutter. 
+If in the no-code component the node to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered via code.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-id',
+            props: [
+                ChildProperty(child: CircularProgressIndicator()),
+            ],
+        ),
+    ],
+),
+```
+
+### Override children
+
+You can also overwrite the children of a node. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-name',
+            props: [
+                ChildrenProperty(children: [
+                    Text('Click me!'),
+                    // other widgets
+                ]),
+            ],
+        )
+    ],
+),
+```
+
+### Mixing of different `UIBox`
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Wrapper Widget',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-id',
+            props: [
+                ChildProperty(child: UIBox('Primary Button')),
+            ],
+        ),
+    ],
+),
 ```
 
 ---
