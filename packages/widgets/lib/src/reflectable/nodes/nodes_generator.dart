@@ -38,6 +38,7 @@ class $generatedClassName extends CNode {
       final Map<String, dynamic>? attributes,
       final RectProperties? rectProperties,
       final DateTime? updatedAt,
+      final PageID? pageID,
       })
       : super(
             id: id,
@@ -54,6 +55,7 @@ class $generatedClassName extends CNode {
             child: child,
             children: children,
             updatedAt: updatedAt ?? DateTime.now(),
+            pageID: pageID ?? '',
           );
 
   @override
@@ -68,6 +70,7 @@ class $generatedClassName extends CNode {
           Map<String, dynamic>? attributes,
           RectProperties? rectProperties,
           DateTime? updatedAt,
+          PageID? pageID,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -79,6 +82,7 @@ class $generatedClassName extends CNode {
           childOrder: childOrder ?? this.childOrder,
           attributes: attributes ?? getAttributes,
           rectProperties: rectProperties ?? getRectProperties,
+          pageID: pageID ?? this.pageID,
         );
 
   @override
@@ -93,6 +97,7 @@ class $generatedClassName extends CNode {
           Map<String, dynamic>? attributes,
           RectProperties? rectProperties,
           DateTime? updatedAt,
+          PageID? pageID,
         }) =>
         $generatedClassName(
           id: id ?? this.id,
@@ -104,6 +109,7 @@ class $generatedClassName extends CNode {
           childOrder: childOrder ?? this.childOrder,
           attributes: attributes ?? getAttributes,
           rectProperties: rectProperties ?? getRectProperties,
+          pageID: pageID ?? this.pageID,
         );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -129,6 +135,7 @@ class $generatedClassName extends CNode {
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
       childOrder: json['child_order'],
+      pageID: json['page_id'],
     );
   }
 

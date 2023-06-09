@@ -18,6 +18,7 @@ abstract class CNode extends Equatable {
     required final RectProperties rectProperties,
     required this.adapter,
     required this.updatedAt,
+    required this.pageID,
     this.name,
     this.description,
     this.id = '',
@@ -112,6 +113,9 @@ abstract class CNode extends Equatable {
 
   /// The index of the node in the parent's children list
   final int childOrder;
+
+  /// The page id of the node
+  final PageID? pageID;
 
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
@@ -226,6 +230,23 @@ abstract class CNode extends Equatable {
     };
   }
 
+  /// toJson method with id and page id
+  Map<String, dynamic> toJsonWithIdAndPageId() {
+    final body = getAttributes;
+    return {
+      'id': id,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+      'page_id': pageID,
+    };
+  }
+
   /// Copy the node with new attributes
   CNode copyWith({
     NodeID? id,
@@ -238,6 +259,7 @@ abstract class CNode extends Equatable {
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
+    PageID? pageID,
   });
 
   /// Copy the node with new attributes
@@ -252,6 +274,7 @@ abstract class CNode extends Equatable {
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
+    PageID? pageID,
   });
 
   /// Render a Widget from node
@@ -299,6 +322,7 @@ abstract class CNode extends Equatable {
         movable,
         hideHandlesWhenNotResizable,
         updatedAt,
+        pageID,
       ];
 
   @override
