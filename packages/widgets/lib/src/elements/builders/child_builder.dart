@@ -12,20 +12,26 @@ class ChildBuilder extends SingleChildRenderObjectWidget {
     required final WidgetState state,
     required final CNode? child,
   }) : super(
-          child: child == null
-              ? const SizedBox.shrink()
-              : NodeBuilder(
-                  node: child,
-                  onTap: () {
-                    TreeGlobalState.onNodeFocused(child);
-                  },
-                  onPanStart: () {
-                    TreeGlobalState.onNodeFocused(child);
-                  },
-                  child: const NodeOverrideExecuter()
-                      .executeChild(context, state, child),
-                ),
-        );
+            child: child == null
+                ? const NodeOverrideExecuter()
+                    .executeChild(context, state, const SizedBox.shrink())
+                : NodeBuilder(
+                    node: child,
+                    onTap: () {
+                      TreeGlobalState.onNodeFocused(child);
+                    },
+                    onPanStart: () {
+                      TreeGlobalState.onNodeFocused(child);
+                    },
+                    child: const NodeOverrideExecuter().executeChild(
+                      context,
+                      state,
+                      child.toWidget(
+                        context: context,
+                        state: state.copyWith(node: child),
+                      ),
+                    ),
+                  ));
 
   @override
   RenderConstrainedBox createRenderObject(BuildContext context) {

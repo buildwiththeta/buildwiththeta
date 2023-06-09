@@ -11,7 +11,7 @@ class LocalNotifierProvider extends StatelessWidget {
   });
 
   final List<Workflow>? workflows;
-  final List<NodeOverride>? nodeOverrides;
+  final List<Override>? nodeOverrides;
   final Widget child;
 
   @override

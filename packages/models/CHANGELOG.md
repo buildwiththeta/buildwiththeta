@@ -1,3 +1,7 @@
+## 0.1.5
+
+- [x] Feat: collection widget.
+
 ## 0.1.4
 
 - [x] Fix: google_fonts updated to 5.0.0

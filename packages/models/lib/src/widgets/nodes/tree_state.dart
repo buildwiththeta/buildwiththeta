@@ -77,7 +77,7 @@ class TreeState with ChangeNotifier {
   /// This code will be executed when the workflow is called
   List<Workflow> workflows;
 
-  List<NodeOverride> nodeOverrides;
+  List<Override> nodeOverrides;
 
   /// Project config
   /// This is the config file of the project
@@ -154,7 +154,7 @@ class TreeState with ChangeNotifier {
     final ThemeMode? theme,
     final List<Workflow>? workflows,
     final ProjectConfigModel? config,
-    final List<NodeOverride>? nodeOverrides,
+    final List<Override>? nodeOverrides,
     final Nodes? nodes,
     final List<int>? xLines,
     final List<int>? yLines,

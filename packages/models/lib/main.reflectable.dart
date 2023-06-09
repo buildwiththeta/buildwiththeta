@@ -2,8 +2,21 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
+
 import 'package:device_frame/src/info/device_type.dart' as prefix33;
 import 'package:meta/meta.dart' as prefix31;
+// ignore_for_file: camel_case_types
+// ignore_for_file: implementation_imports
+// ignore_for_file: prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_collection_literals
+// ignore_for_file: unnecessary_const
+
+// ignore:unused_import
+import 'package:reflectable/mirrors.dart' as m;
+// ignore:unused_import
+import 'package:reflectable/reflectable.dart' as r show Reflectable;
+// ignore:unused_import
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart'
     as prefix0;
 import 'package:theta_models/src/widgets/features/align.dart' as prefix1;
@@ -51,19 +64,6 @@ import 'package:theta_models/src/widgets/intrinsic_states/intrinsic_state_parse.
     as prefix29;
 import 'package:theta_models/src/widgets/nodes/key_constants.dart' as prefix32;
 import 'package:theta_models/src/widgets/nodes/node_type.dart' as prefix34;
-
-// ignore_for_file: camel_case_types
-// ignore_for_file: implementation_imports
-// ignore_for_file: prefer_adjacent_string_concatenation
-// ignore_for_file: prefer_collection_literals
-// ignore_for_file: unnecessary_const
-
-// ignore:unused_import
-import 'package:reflectable/mirrors.dart' as m;
-// ignore:unused_import
-import 'package:reflectable/src/reflectable_builder_based.dart' as r;
-// ignore:unused_import
-import 'package:reflectable/reflectable.dart' as r show Reflectable;
 
 final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.DynamicAttributeKey(): r.ReflectorData(
@@ -4872,7 +4872,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix0.DynamicAttributes() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -6770,9 +6773,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates.create() : null
+                  () => b ? const prefix30.ListViewIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix30.ListViewIntrinsicStates.create() : null
             },
             -1,
             40,
@@ -7780,9 +7783,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix30.StackIntrinsicStates() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix30.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix30.StackIntrinsicStates.create() : null
+                  () => b ? const prefix30.StackIntrinsicStates.create() : null
             },
             -1,
             62,
@@ -10665,7 +10669,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) =>
+                  () => b ? const prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10742,7 +10747,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       [])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

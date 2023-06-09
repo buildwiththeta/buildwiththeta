@@ -1,8 +1,8 @@
+import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:collection/collection.dart';
 
 class NodeOverrideExecuter extends Equatable {
   const NodeOverrideExecuter();
@@ -10,23 +10,17 @@ class NodeOverrideExecuter extends Equatable {
   @override
   List<Object> get props => [];
 
-  Widget executeChild(BuildContext context, WidgetState state, CNode child) {
+  Widget executeChild(BuildContext context, WidgetState state, Widget child) {
     final nodeOverrides = context.read<TreeState>().nodeOverrides;
     final override = nodeOverrides.firstWhereOrNull((e) =>
         e.nodeIdenfier == state.node.name || e.nodeIdenfier == state.node.id);
     if (override != null && overridesChild(override)) {
       return override.properties
-              .firstWhereOrNull((e) => e.property == NodeProperties.child)
+              .firstWhereOrNull((e) => e is ChildProperty)
               ?.value ??
-          child.toWidget(
-            context: context,
-            state: state.copyWith(node: child),
-          );
+          child;
     }
-    return child.toWidget(
-      context: context,
-      state: state.copyWith(node: child),
-    );
+    return child;
   }
 
   List<Widget> executeChildren(
@@ -34,10 +28,10 @@ class NodeOverrideExecuter extends Equatable {
     final nodeOverrides = context.read<TreeState>().nodeOverrides;
     final override = nodeOverrides.firstWhereOrNull((e) =>
         e.nodeIdenfier == state.node.name || e.nodeIdenfier == state.node.id);
-    if (override != null && overridesChild(override)) {
+    if (override != null && overridesChildren(override)) {
       return override.properties
-              .firstWhereOrNull((e) => e.property == NodeProperties.children)
-              ?.value ??
+              .firstWhereOrNull((e) => e is ChildrenProperty)
+              ?.value as List<Widget>? ??
           children
               .map(
                 (e) => e.toWidget(
@@ -55,8 +49,8 @@ class NodeOverrideExecuter extends Equatable {
         .toList();
   }
 
-  bool overridesChildren(NodeOverride override) =>
+  bool overridesChildren(Override override) =>
       override.properties.any((e) => e.property == NodeProperties.children);
-  bool overridesChild(NodeOverride override) =>
+  bool overridesChild(Override override) =>
       override.properties.any((e) => e.property == NodeProperties.child);
 }
