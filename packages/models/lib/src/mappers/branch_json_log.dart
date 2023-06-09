@@ -58,7 +58,9 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
         _branchKey: _branchMapper.toJsonWithId(branch.branch),
         _pagesKey:
             branch.pages.map((e) => _pageMapper.toJsonWithId(e)).toList(),
-        _nodesKey: branch.nodes.map((e) => e.toJsonWithIdAndPageId()).toList(),
+        _nodesKey: branch.nodes
+            .map((e) => e.toJsonWithStabilIdAndPageIdAndId())
+            .toList(),
         _colorStylesKey: branch.colorStyles
             .map((e) => _colorStylesMapper.toJsonWithId(e))
             .toList(),

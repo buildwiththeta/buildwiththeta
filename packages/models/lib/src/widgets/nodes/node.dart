@@ -250,6 +250,23 @@ abstract class CNode extends Equatable {
     };
   }
 
+  Map<String, dynamic> toJsonWithStabilIdAndPageIdAndId() {
+    final body = getAttributes;
+    return {
+      'id': id,
+      'stabil_id': stabilID,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+      'page_id': pageID,
+    };
+  }
+
   /// toJson method with id and page id
   Map<String, dynamic> toJsonWithIdAndPageId() {
     final body = getAttributes;
