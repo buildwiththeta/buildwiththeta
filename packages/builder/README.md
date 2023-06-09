@@ -97,8 +97,8 @@ UIBox(
 
 ### Override child
 
-You can override the child of a node with a custom widget by mixing no-code with Flutter. 
-If in the no-code component the node to which you want to overwrite the child already has one, 
+You can override the child of an element with a custom widget by mixing no-code with Flutter. 
+If in the no-code component the element to which you want to overwrite the child already has one, 
 it will be removed and replaced with the one entered via code.
 
 ```dart
@@ -106,7 +106,7 @@ UIBox(
     'Component name',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-id',
+            'Element id',
             props: [
                 ChildProperty(child: CircularProgressIndicator()),
             ],
@@ -117,14 +117,14 @@ UIBox(
 
 ### Override children
 
-You can also overwrite the children of a node. 
+You can also overwrite the children of an element. 
 
 ```dart
 UIBox(
     'Component name',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-name',
+            'Element name',
             props: [
                 ChildrenProperty(children: [
                     Text('Click me!'),
@@ -145,7 +145,7 @@ UIBox(
     'Wrapper Widget',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-id',
+            'Element id',
             props: [
                 ChildProperty(child: UIBox('Primary Button')),
             ],
