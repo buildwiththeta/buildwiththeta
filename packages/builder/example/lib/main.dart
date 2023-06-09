@@ -40,13 +40,22 @@ class _MyAppState extends State<MyApp> {
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error),
 
+            /// [overrides] are the properties that can be overriden by the user.
             overrides: const [
+              /// [Override] requires a [node] identifier and a list of [props].
+              /// Use one Override per node.
               Override(
-                nodeIdenfier: 'node.id',
+                'node id',
                 props: [
+                  /// [ChildProperty] is used to override the child of a node.
                   ChildProperty(
                     child: Text('Click me!'),
                   ),
+
+                  /// [ChildrenProperty] is used to override the children of a node.
+                  // ChildrenProperty(
+                  //  children: [Text('Click me!')],
+                  // ),
                 ],
               )
             ],

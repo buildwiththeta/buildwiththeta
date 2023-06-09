@@ -28,9 +28,9 @@ dependencies:
     sdk: flutter
 
   theta_analytics: ^0.1.2
-  theta_models: ^0.1.5
+  theta_models: ^0.1.6
   theta_rendering: ^0.1.1
-  theta_open_widgets: ^0.1.5
+  theta_open_widgets: ^0.1.6
 
   light_logger: ^0.0.3
 

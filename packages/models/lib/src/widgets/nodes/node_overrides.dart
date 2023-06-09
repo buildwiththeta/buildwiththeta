@@ -7,20 +7,20 @@ enum NodeProperties {
 }
 
 class Override extends Equatable {
-  const Override({
-    required this.nodeIdenfier,
+  const Override(
+    this.node, {
     required List<NodeProperty> props,
   }) : properties = props;
 
-  final String nodeIdenfier;
+  final String node;
   final List<NodeProperty> properties;
 
   @override
-  List<Object> get props => [nodeIdenfier, properties];
+  List<Object> get props => [node, properties];
 
   @override
   String toString() =>
-      'Action { nodeIdenfier: $nodeIdenfier, properties: $properties }';
+      'Action { nodeIdenfier: $node, properties: $properties }';
 }
 
 abstract class NodeProperty extends Equatable {
