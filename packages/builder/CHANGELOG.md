@@ -1,3 +1,12 @@
+## 0.1.4
+
+- [x] Fix: Override class updated.
+
+## 0.1.3
+
+- [x] Feat: collection widget (ListView / GridView).
+- [x] Feat: [node overrides](https://docs.buildwiththeta.com/en/builder/overrides).
+
 ## 0.1.2
 
 - [x] Fix: compatibility with macOS, iOS, Android, Windows.

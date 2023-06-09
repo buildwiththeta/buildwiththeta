@@ -52,18 +52,9 @@ class OpenWGridView extends NodeWidget {
     );
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: int.tryParse(crossAxisCountString) != null &&
-                (int.tryParse(crossAxisCountString) ?? 0) > 0.1
-            ? int.parse(crossAxisCountString)
-            : 2,
-        mainAxisSpacing: double.tryParse(mainAxisSpacingString) != null &&
-                (double.tryParse(mainAxisSpacingString) ?? 0) > 0.1
-            ? double.parse(mainAxisSpacingString)
-            : 2,
-        crossAxisSpacing: double.tryParse(crossAxisSpacingString) != null &&
-                (double.tryParse(crossAxisSpacingString) ?? 0) > 0.1
-            ? double.parse(crossAxisSpacingString)
-            : 2,
+        crossAxisCount: int.tryParse(crossAxisCountString) ?? 2,
+        mainAxisSpacing: double.tryParse(mainAxisSpacingString) ?? 2,
+        crossAxisSpacing: double.tryParse(crossAxisSpacingString) ?? 2,
         childAspectRatio: double.tryParse(childAspectRatioString) != null &&
                 (double.tryParse(childAspectRatioString) ?? 0) > 0.1
             ? double.parse(childAspectRatioString)

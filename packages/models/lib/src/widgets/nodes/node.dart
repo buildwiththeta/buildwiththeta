@@ -51,6 +51,7 @@ abstract class CNode extends Equatable {
     rect: ResponsiveRect(
       rectPhone: defaultRectForMobile,
       rectTablet: null,
+      rectLaptop: null,
       rectDesktop: null,
     ),
     flipRectWhileResizing: true,
@@ -134,9 +135,11 @@ abstract class CNode extends Equatable {
 
   bool doesRectExist(DeviceType deviceType) => deviceType == DeviceType.tablet
       ? getRectProperties.rect.rectTablet != null
-      : deviceType == DeviceType.desktop
-          ? getRectProperties.rect.rectDesktop != null
-          : true;
+      : deviceType == DeviceType.laptop
+          ? getRectProperties.rect.rectLaptop != null
+          : deviceType == DeviceType.desktop
+              ? getRectProperties.rect.rectDesktop != null
+              : true;
 
   Rect rect(DeviceType deviceType) =>
       getRectProperties.rect.getByDeviceType(deviceType);

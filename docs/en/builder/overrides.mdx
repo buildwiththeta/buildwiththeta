@@ -1,0 +1,68 @@
+---
+title: Override Element Properties
+---
+
+# Override element properties
+
+## Override child
+
+You can override the child of an element with a Flutter widget by mixing no-code with Flutter. 
+If in the no-code component the element to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            'Element id',
+            props: [
+                ChildProperty(child: CircularProgressIndicator()),
+            ],
+        ),
+    ],
+),
+```
+
+## Override children
+
+You can also overwrite the children of an element. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            'Element name',
+            props: [
+                ChildrenProperty(children: [
+                    Text('Click me!'),
+                    // other widgets
+                ]),
+            ],
+        )
+    ],
+),
+```
+
+## Mixing of different UIBox(es)
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Wrapper Widget',
+    overrides: const [
+        Override(
+            'Element id',
+            props: [
+                ChildProperty(child: UIBox('Primary Button')),
+            ],
+        ),
+    ],
+),
+```
+
+<Warning>It is recommended to use only one Override per element, as only the first one is taken.</Warning>
+
+<Warning>If you accidentally try to overwrite children to an element with only one child, the change by code will simply be ignored.</Warning>

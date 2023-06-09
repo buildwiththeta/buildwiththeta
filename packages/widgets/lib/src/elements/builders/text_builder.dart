@@ -36,17 +36,8 @@ class TextBuilder extends StatelessWidget {
       intValue = 1;
     }
     return Text(
-      value.get(
-        loop: nodeState.loop,
-        state: state,
-        context: context,
-      ),
-      style: textStyle.get(
-        state,
-        context,
-        state.forPlay,
-        model,
-      ),
+      value.get(loop: nodeState.loop, state: state, context: context),
+      style: textStyle.get(state, context, state.forPlay, model),
       textAlign: textStyle.textAlign.value,
       maxLines: intValue,
       textDirection: textStyle.textDirection.value,

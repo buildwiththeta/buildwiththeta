@@ -37,6 +37,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     } else if (screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
       return Devices.ios.iPadPro11Inches;
+    } else if (screenSize.width <=
+        Devices.ios.iPadPro11Inches.screenSize.width) {
+      return Devices.ios.iPadPro11Inches;
     } else {
       return DeviceInfo.genericDesktopMonitor(
         platform: TargetPlatform.macOS,
@@ -124,6 +127,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
 
   final int differece = 8;
   late Size canvasSize;
+  double x = 0, y = 0;
+  bool showLeft = false;
 
   late List<Offset> anchorPoints;
   late List<num> anchorAxisHorizontal;

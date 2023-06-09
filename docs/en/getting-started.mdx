@@ -77,7 +77,7 @@ UIBox(
 )
 ```
 
-### Add custom code for actions
+## Add custom code
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add custom code, called 'workflow' based on gesture triggers.
 
@@ -96,3 +96,63 @@ UIBox(
 )
 ```
 
+## Override element properties
+
+### Override child
+
+You can override the child of an element with a Flutter widget by mixing no-code with Flutter. 
+If in the no-code component the element to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-id',
+            props: [
+                ChildProperty(child: CircularProgressIndicator()),
+            ],
+        ),
+    ],
+),
+```
+
+### Override children
+
+You can also overwrite the children of an element. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-name',
+            props: [
+                ChildrenProperty(children: [
+                    Text('Click me!'),
+                    // other widgets
+                ]),
+            ],
+        )
+    ],
+),
+```
+
+### Mixing of different UIBox(es)
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Wrapper Widget',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-id',
+            props: [
+                ChildProperty(child: UIBox('Primary Button')),
+            ],
+        ),
+    ],
+),
+```

@@ -1,3 +1,11 @@
+## 0.1.6
+
+- [x] Fix: NodeOverrideExecuter updated.
+
+## 0.1.5
+
+- [x] Feat: collection widget.
+
 ## 0.1.4
 
 - [x] Fix: flutter_box_transform back to 0.2.1.
