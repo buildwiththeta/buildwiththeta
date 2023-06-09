@@ -1179,7 +1179,7 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
       : super(
           nodeIcon: Assets.icons.devices.smartphone.path,
           synonymous: const ['safearea', 'padding'],
-          displayName: 'Page (Scaffold)',
+          displayName: 'Component',
           type: NType.scaffold,
           category: NodeCategories.unclassified,
           canHave: ChildrenEnum.children,
@@ -1207,16 +1207,16 @@ class SpacerIntrinsicStates extends IntrinsicState {
 @nodeTypeISKey
 @NodeKey(NType.stack)
 class StackIntrinsicStates extends IntrinsicState {
-  StackIntrinsicStates()
+  const StackIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.stack.path,
+          nodeIcon: 'nodes/freeform/',
           synonymous: const ['stack', 'overlay', 'position absolute'],
-          displayName: NodeType.name(NType.stack),
+          displayName: 'Freeform',
           type: NType.stack,
           category: NodeCategories.layout,
           canHave: ChildrenEnum.children,
         );
-  StackIntrinsicStates.create() : this();
+  const StackIntrinsicStates.create() : this();
 }
 
 @nodeTypeISKey

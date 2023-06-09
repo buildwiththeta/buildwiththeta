@@ -127,6 +127,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
 
   final int differece = 8;
   late Size canvasSize;
+  double x = 0, y = 0;
+  bool showLeft = false;
 
   late List<Offset> anchorPoints;
   late List<num> anchorAxisHorizontal;
