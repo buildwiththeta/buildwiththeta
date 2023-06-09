@@ -1,3 +1,7 @@
+## 0.1.4
+
+- [x] Fix: Override class updated.
+
 ## 0.1.3
 
 - [x] Feat: collection widget (ListView / GridView).
