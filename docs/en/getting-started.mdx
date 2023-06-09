@@ -77,7 +77,7 @@ UIBox(
 )
 ```
 
-### Add custom code for actions
+## Add custom code
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add custom code, called 'workflow' based on gesture triggers.
 
@@ -96,9 +96,31 @@ UIBox(
 )
 ```
 
-### Override node properties
+## Override
 
-- children
+### Override child
+
+You can override the child of a node with a Flutter widget by mixing no-code with Flutter. 
+If in the no-code component the node to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override(
+            nodeIdenfier: 'node-id',
+            props: [
+                ChildProperty(child: CircularProgressIndicator()),
+            ],
+        ),
+    ],
+),
+```
+
+### Override children
+
+You can also overwrite the children of a node. 
 
 ```dart
 UIBox(
@@ -117,25 +139,9 @@ UIBox(
 ),
 ```
 
-- child
+### Mixing of different `UIBox`
 
-```dart
-UIBox(
-    'Component name',
-    overrides: const [
-        Override(
-            nodeIdenfier: 'node-id',
-            props: [
-                ChildProperty(child: CircularProgressIndicator()),
-            ],
-        ),
-    ],
-),
-```
-
-### Mixing of different UIBox
-
-You can even use UIBoxes inside the other UIBoxes, putting them as children of each other. This gives a very high degree of customization.
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
 
 ```dart
 UIBox(
