@@ -51,6 +51,7 @@ class NNull extends CNode {
     RectProperties? rectProperties,
     DateTime? updatedAt,
     PageID? pageID,
+    NodeID? stabilID,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
@@ -68,6 +69,7 @@ class NNull extends CNode {
     RectProperties? rectProperties,
     DateTime? updatedAt,
     PageID? pageID,
+    NodeID? stabilID,
   }) {
     throw UnimplementedError('copyWithWithNull not implemented in NNull class');
   }

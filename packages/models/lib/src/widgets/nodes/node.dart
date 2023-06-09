@@ -22,6 +22,7 @@ abstract class CNode extends Equatable {
     this.name,
     this.description,
     this.id = '',
+    this.stabilID,
     this.child,
     this.children = const [],
     this.childOrder = 0,
@@ -98,6 +99,9 @@ abstract class CNode extends Equatable {
 
   /// The id of the node (node-id)
   final NodeID id;
+
+  /// Stabil id of the node
+  final NodeID? stabilID;
 
   /// The child of the node, if it exists
   final CNode? child;
@@ -230,6 +234,22 @@ abstract class CNode extends Equatable {
     };
   }
 
+  // toJson method with stabil id
+  Map<String, dynamic> toJsonWithStabilId() {
+    final body = getAttributes;
+    return {
+      'stabil_id': stabilID,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+    };
+  }
+
   /// toJson method with id and page id
   Map<String, dynamic> toJsonWithIdAndPageId() {
     final body = getAttributes;
@@ -260,6 +280,7 @@ abstract class CNode extends Equatable {
     RectProperties? rectProperties,
     DateTime updatedAt,
     PageID? pageID,
+    NodeID? stabilID,
   });
 
   /// Copy the node with new attributes
@@ -275,6 +296,7 @@ abstract class CNode extends Equatable {
     RectProperties? rectProperties,
     DateTime updatedAt,
     PageID? pageID,
+    NodeID? stabilID,
   });
 
   /// Render a Widget from node
