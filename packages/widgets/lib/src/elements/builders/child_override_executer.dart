@@ -12,8 +12,8 @@ class NodeOverrideExecuter extends Equatable {
 
   Widget executeChild(BuildContext context, WidgetState state, Widget child) {
     final nodeOverrides = context.read<TreeState>().nodeOverrides;
-    final override = nodeOverrides.firstWhereOrNull((e) =>
-        e.nodeIdenfier == state.node.name || e.nodeIdenfier == state.node.id);
+    final override = nodeOverrides.firstWhereOrNull(
+        (e) => e.node == state.node.name || e.node == state.node.id);
     if (override != null && overridesChild(override)) {
       return override.properties
               .firstWhereOrNull((e) => e is ChildProperty)
@@ -26,8 +26,8 @@ class NodeOverrideExecuter extends Equatable {
   List<Widget> executeChildren(
       BuildContext context, WidgetState state, List<CNode> children) {
     final nodeOverrides = context.read<TreeState>().nodeOverrides;
-    final override = nodeOverrides.firstWhereOrNull((e) =>
-        e.nodeIdenfier == state.node.name || e.nodeIdenfier == state.node.id);
+    final override = nodeOverrides.firstWhereOrNull(
+        (e) => e.node == state.node.name || e.node == state.node.id);
     if (override != null && overridesChildren(override)) {
       return override.properties
               .firstWhereOrNull((e) => e is ChildrenProperty)

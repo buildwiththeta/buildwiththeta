@@ -1,3 +1,7 @@
+## 0.1.6
+
+- [x] Fix: NodeOverrideExecuter updated.
+
 ## 0.1.5
 
 - [x] Feat: collection widget.

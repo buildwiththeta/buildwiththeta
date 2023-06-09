@@ -1,3 +1,7 @@
+## 0.1.6
+
+- [x] Fix: Override syntax upgraded.
+
 ## 0.1.5
 
 - [x] Feat: collection widget.
