@@ -1,13 +1,13 @@
 ---
-title: Override node properties
+title: Override Element Properties
 ---
 
-# Override node properties
+# Override element properties
 
 ## Override child
 
-You can override the child of a node with a Flutter widget by mixing no-code with Flutter. 
-If in the no-code component the node to which you want to overwrite the child already has one, 
+You can override the child of an element with a Flutter widget by mixing no-code with Flutter. 
+If in the no-code component the element to which you want to overwrite the child already has one, 
 it will be removed and replaced with the one entered by the user via code.
 
 ```dart
@@ -15,7 +15,7 @@ UIBox(
     'Component name',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-id',
+            'Element id',
             props: [
                 ChildProperty(child: CircularProgressIndicator()),
             ],
@@ -26,14 +26,14 @@ UIBox(
 
 ## Override children
 
-You can also overwrite the children of a node. 
+You can also overwrite the children of an element. 
 
 ```dart
 UIBox(
     'Component name',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-name',
+            'Element name',
             props: [
                 ChildrenProperty(children: [
                     Text('Click me!'),
@@ -54,7 +54,7 @@ UIBox(
     'Wrapper Widget',
     overrides: const [
         Override(
-            nodeIdenfier: 'node-id',
+            'Element id',
             props: [
                 ChildProperty(child: UIBox('Primary Button')),
             ],
@@ -63,6 +63,6 @@ UIBox(
 ),
 ```
 
-<Warning>It is recommended to use only one Override per widget, as only the first one is taken.</Warning>
+<Warning>It is recommended to use only one Override per element, as only the first one is taken.</Warning>
 
-<Warning>If you accidentally try to overwrite children to a node with only one child, the change by code will simply be ignored.</Warning>
+<Warning>If you accidentally try to overwrite children to an element with only one child, the change by code will simply be ignored.</Warning>
