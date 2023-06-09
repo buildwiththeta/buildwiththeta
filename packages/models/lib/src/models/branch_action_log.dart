@@ -31,6 +31,7 @@ enum BranchActionTypeEnum {
   create,
   merge,
   delete,
+  restore,
 }
 
 BranchActionTypeEnum parseBranchActionTypeEnum(String action) {
@@ -41,6 +42,8 @@ BranchActionTypeEnum parseBranchActionTypeEnum(String action) {
       return BranchActionTypeEnum.merge;
     case 'delete':
       return BranchActionTypeEnum.delete;
+    case 'restore':
+      return BranchActionTypeEnum.restore;
     default:
       throw Exception('Invalid BranchActionTypeEnum value: $action');
   }
