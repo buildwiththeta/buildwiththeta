@@ -19936,6 +19936,37 @@ final _data = <r.Reflectable, r.ReflectorData>{
       {},
       null,
       []),
+  const prefix35.NodeDeclarationReflector(): r.ReflectorData(
+      <m.TypeMirror>[
+        r.NonGenericClassMirrorImpl(
+            r'NodesParse',
+            r'.NodesParse',
+            134217735,
+            0,
+            const prefix35.NodeDeclarationReflector(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[const prefix35.NodeDeclarationReflector()],
+            {})
+      ],
+      null,
+      null,
+      <Type>[prefix35.NodesParse],
+      1,
+      {},
+      {},
+      null,
+      [
+        const [0, 0, null]
+      ]),
   const prefix35.NodeDeclaration(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
@@ -19961,7 +19992,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AlignOpenNode(
                           attributes: attributes,
@@ -19970,8 +20003,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20007,7 +20042,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AspectRatioOpenNode(
                           attributes: attributes,
@@ -20016,8 +20053,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20053,7 +20092,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AudioPlayerOpenNode(
                           attributes: attributes,
@@ -20062,8 +20103,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20102,7 +20145,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AudioPlayerProgressIndicatorOpenNode(
                           attributes: attributes,
@@ -20111,8 +20156,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20152,7 +20199,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AudioPlayerVolumeIndicatorOpenNode(
                           attributes: attributes,
@@ -20161,8 +20210,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20198,7 +20249,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.BadgeOpenNode(
                           attributes: attributes,
@@ -20207,8 +20260,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20244,7 +20299,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.BarcodeOpenNode(
                           attributes: attributes,
@@ -20253,8 +20310,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20290,7 +20349,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.BottomBarItemOpenNode(
                           attributes: attributes,
@@ -20299,8 +20360,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20336,7 +20399,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.BouncingWidgetOpenNode(
                           attributes: attributes,
@@ -20345,8 +20410,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20382,7 +20449,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ButtonOpenNode(
                           attributes: attributes,
@@ -20391,8 +20460,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20428,7 +20499,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CalendarOpenNode(
                           attributes: attributes,
@@ -20437,8 +20510,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20474,7 +20549,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CalendarV2OpenNode(
                           attributes: attributes,
@@ -20483,8 +20560,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20520,7 +20599,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CardOpenNode(
                           attributes: attributes,
@@ -20529,8 +20610,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20566,7 +20649,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CenterOpenNode(
                           attributes: attributes,
@@ -20575,8 +20660,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20612,7 +20699,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CheckboxOpenNode(
                           attributes: attributes,
@@ -20621,8 +20710,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20661,7 +20752,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CircularProgressIndicatorOpenNode(
                           attributes: attributes,
@@ -20670,8 +20763,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20707,7 +20802,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ClipOvalOpenNode(
                           attributes: attributes,
@@ -20716,8 +20813,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20753,7 +20852,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ClipRectOpenNode(
                           attributes: attributes,
@@ -20762,8 +20863,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20799,7 +20902,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ClipRRectOpenNode(
                           attributes: attributes,
@@ -20808,8 +20913,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20845,7 +20952,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ColumnOpenNode(
                           attributes: attributes,
@@ -20854,8 +20963,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20891,7 +21002,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ComponentOpenNode(
                           attributes: attributes,
@@ -20900,8 +21013,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20937,7 +21052,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RowOpenNode(
                           attributes: attributes,
@@ -20946,8 +21063,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -20983,7 +21102,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ConcentricPageViewOpenNode(
                           attributes: attributes,
@@ -20992,8 +21113,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21029,7 +21152,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ConditionOpenNode(
                           attributes: attributes,
@@ -21038,8 +21163,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21075,7 +21202,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ContainerOpenNode(
                           attributes: attributes,
@@ -21084,8 +21213,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21121,7 +21252,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ConstrainedBoxOpenNode(
                           attributes: attributes,
@@ -21130,8 +21263,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21167,7 +21302,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LimitedBoxOpenNode(
                           attributes: attributes,
@@ -21176,8 +21313,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21213,7 +21352,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SizedBoxOpenNode(
                           attributes: attributes,
@@ -21222,8 +21363,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21259,7 +21402,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.DecoratedBoxOpenNode(
                           attributes: attributes,
@@ -21268,8 +21413,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21305,7 +21452,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ImageOpenNode(
                           attributes: attributes,
@@ -21314,8 +21463,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21351,7 +21502,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CupertinoPickerOpenNode(
                           attributes: attributes,
@@ -21360,8 +21513,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21400,7 +21555,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CupertinoSegmentedControlOpenNode(
                           attributes: attributes,
@@ -21409,8 +21566,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21446,7 +21605,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CupertinoSwitchOpenNode(
                           attributes: attributes,
@@ -21455,8 +21616,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21492,7 +21655,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.DividerOpenNode(
                           attributes: attributes,
@@ -21501,8 +21666,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21538,7 +21705,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.DotsIndicatorOpenNode(
                           attributes: attributes,
@@ -21547,8 +21716,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21584,7 +21755,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ExpandedOpenNode(
                           attributes: attributes,
@@ -21593,8 +21766,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21630,7 +21805,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AdMobBannerOpenNode(
                           attributes: attributes,
@@ -21639,8 +21816,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21676,7 +21855,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.GoogleMapsOpenNode(
                           attributes: attributes,
@@ -21685,8 +21866,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21722,7 +21905,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.GridViewOpenNode(
                           attributes: attributes,
@@ -21731,8 +21916,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21768,7 +21955,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.GridViewBuilderOpenNode(
                           attributes: attributes,
@@ -21777,8 +21966,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21814,7 +22005,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.HeroOpenNode(
                           attributes: attributes,
@@ -21823,8 +22016,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21860,7 +22055,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.IconOpenNode(
                           attributes: attributes,
@@ -21869,8 +22066,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21906,7 +22105,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.IgnorePointerOpenNode(
                           attributes: attributes,
@@ -21915,8 +22116,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -21952,7 +22155,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.IndexedStackOpenNode(
                           attributes: attributes,
@@ -21961,8 +22166,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22001,7 +22208,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LinearProgressIndicatorOpenNode(
                           attributes: attributes,
@@ -22010,8 +22219,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22047,7 +22258,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LiquidSwipeOpenNode(
                           attributes: attributes,
@@ -22056,8 +22269,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22093,7 +22308,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ListTileOpenNode(
                           attributes: attributes,
@@ -22102,8 +22319,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22139,7 +22358,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ListViewOpenNode(
                           attributes: attributes,
@@ -22148,8 +22369,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22185,7 +22408,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ListViewBuilderOpenNode(
                           attributes: attributes,
@@ -22194,8 +22419,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22231,7 +22458,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LottieOpenNode(
                           attributes: attributes,
@@ -22240,8 +22469,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22277,7 +22508,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.MapOpenNode(
                           attributes: attributes,
@@ -22286,8 +22519,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22323,7 +22558,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.MarkerOpenNode(
                           attributes: attributes,
@@ -22332,8 +22569,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22369,7 +22608,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.OpacityOpenNode(
                           attributes: attributes,
@@ -22378,8 +22619,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22415,7 +22658,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.PaddingOpenNode(
                           attributes: attributes,
@@ -22424,8 +22669,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22461,7 +22708,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.PageViewOpenNode(
                           attributes: attributes,
@@ -22470,8 +22719,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22507,7 +22758,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.PlaceholderOpenNode(
                           attributes: attributes,
@@ -22516,8 +22769,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22553,7 +22808,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.PositionedOpenNode(
                           attributes: attributes,
@@ -22562,8 +22819,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22599,7 +22858,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SafeAreaOpenNode(
                           attributes: attributes,
@@ -22608,8 +22869,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22645,7 +22908,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.QRScannerOpenNode(
                           attributes: attributes,
@@ -22654,8 +22919,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22691,7 +22958,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.QRCodeOpenNode(
                           attributes: attributes,
@@ -22700,8 +22969,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22737,7 +23008,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RadioOpenNode(
                           attributes: attributes,
@@ -22746,8 +23019,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22783,7 +23058,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RefreshIndicatorOpenNode(
                           attributes: attributes,
@@ -22792,8 +23069,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22829,7 +23108,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ResponsiveConditionOpenNode(
                           attributes: attributes,
@@ -22838,8 +23119,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22875,7 +23158,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RotatedBoxOpenNode(
                           attributes: attributes,
@@ -22884,8 +23169,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22921,7 +23208,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ScaffoldOpenNode(
                           attributes: attributes,
@@ -22930,8 +23219,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -22967,7 +23258,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SpacerOpenNode(
                           attributes: attributes,
@@ -22976,8 +23269,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23013,7 +23308,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.StackOpenNode(
                           attributes: attributes,
@@ -23022,8 +23319,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23059,7 +23358,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.TCardOpenNode(
                           attributes: attributes,
@@ -23068,8 +23369,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23105,7 +23408,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.TCardBuilderOpenNode(
                           attributes: attributes,
@@ -23114,8 +23419,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23151,7 +23458,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.TextOpenNode(
                           attributes: attributes,
@@ -23160,8 +23469,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23197,7 +23508,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.TextFieldOpenNode(
                           attributes: attributes,
@@ -23206,8 +23519,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23243,7 +23558,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.TooltipOpenNode(
                           attributes: attributes,
@@ -23252,8 +23569,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23289,7 +23608,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.VideoOpenNode(
                           attributes: attributes,
@@ -23298,8 +23619,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23335,7 +23658,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.VisibilityOpenNode(
                           attributes: attributes,
@@ -23344,8 +23669,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23381,7 +23708,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.WebviewOpenNode(
                           attributes: attributes,
@@ -23390,8 +23719,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23427,7 +23758,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.WrapOpenNode(
                           attributes: attributes,
@@ -23436,8 +23769,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23473,7 +23808,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AnimationConfigGridOpenNode(
                           attributes: attributes,
@@ -23482,8 +23819,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23519,7 +23858,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AnimationConfigListOpenNode(
                           attributes: attributes,
@@ -23528,8 +23869,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23565,7 +23908,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.FadeInAnimationOpenNode(
                           attributes: attributes,
@@ -23574,8 +23919,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23611,7 +23958,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ScaleAnimationOpenNode(
                           attributes: attributes,
@@ -23620,8 +23969,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23657,7 +24008,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SlideAnimationOpenNode(
                           attributes: attributes,
@@ -23666,8 +24019,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23703,7 +24058,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.ApiCallsFetchOpenNode(
                           attributes: attributes,
@@ -23712,8 +24069,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23749,7 +24108,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithAppleOpenNode(
                           attributes: attributes,
@@ -23758,8 +24119,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23795,7 +24158,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithFacebookOpenNode(
                           attributes: attributes,
@@ -23804,8 +24169,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23841,7 +24208,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithGoogleOpenNode(
                           attributes: attributes,
@@ -23850,8 +24219,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23887,7 +24258,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithTwitterOpenNode(
                           attributes: attributes,
@@ -23896,8 +24269,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23933,7 +24308,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithGithubOpenNode(
                           attributes: attributes,
@@ -23942,8 +24319,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -23979,7 +24358,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithMicrosoftOpenNode(
                           attributes: attributes,
@@ -23988,8 +24369,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24025,7 +24408,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithLinkedinOpenNode(
                           attributes: attributes,
@@ -24034,8 +24419,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24071,7 +24458,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithBitbucketOpenNode(
                           attributes: attributes,
@@ -24080,8 +24469,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24117,7 +24508,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithDiscordOpenNode(
                           attributes: attributes,
@@ -24126,8 +24519,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24163,7 +24558,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithTwitchOpenNode(
                           attributes: attributes,
@@ -24172,8 +24569,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24209,7 +24608,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.LoginWithGitlabOpenNode(
                           attributes: attributes,
@@ -24218,8 +24619,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24255,7 +24658,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.HttpRequestOpenNode(
                           attributes: attributes,
@@ -24264,8 +24669,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24301,7 +24708,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CustomHttpRequestOpenNode(
                           attributes: attributes,
@@ -24310,8 +24719,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24347,7 +24758,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.AppBarOpenNode(
                           attributes: attributes,
@@ -24356,8 +24769,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24393,7 +24808,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.BottomBarOpenNode(
                           attributes: attributes,
@@ -24402,8 +24819,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24439,7 +24858,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.DrawerOpenNode(
                           attributes: attributes,
@@ -24448,8 +24869,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24485,7 +24908,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.QonversionProductsOpenNode(
                           attributes: attributes,
@@ -24494,8 +24919,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24531,7 +24958,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.QonversionSubStatusOpenNode(
                           attributes: attributes,
@@ -24540,8 +24969,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24577,7 +25008,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RevenueCatProductsOpenNode(
                           attributes: attributes,
@@ -24586,8 +25019,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24623,7 +25058,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.RevenueCatSubStatusOpenNode(
                           attributes: attributes,
@@ -24632,8 +25069,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24669,7 +25108,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.WrapperOpenNode(
                           attributes: attributes,
@@ -24678,8 +25119,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24717,7 +25160,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SupabaseFutureBuilderOpenNode(
                           attributes: attributes,
@@ -24726,8 +25171,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24765,7 +25212,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SupabaseStreamBuilderOpenNode(
                           attributes: attributes,
@@ -24774,8 +25223,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24811,7 +25262,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.SupabaseLoggedUserOpenNode(
                           attributes: attributes,
@@ -24820,8 +25273,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24857,7 +25312,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CMSCountOpenNode(
                           attributes: attributes,
@@ -24866,8 +25323,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24903,7 +25362,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CMSCustomQueryOpenNode(
                           attributes: attributes,
@@ -24912,8 +25373,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24949,7 +25412,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CMSFetchOpenNode(
                           attributes: attributes,
@@ -24958,8 +25423,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -24995,7 +25462,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CMSStreamOpenNode(
                           attributes: attributes,
@@ -25004,8 +25473,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -25041,7 +25512,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       childOrder,
                       attributes,
                       rectProperties,
-                      updatedAt}) =>
+                      updatedAt,
+                      pageID,
+                      stabilID}) =>
                   b
                       ? prefix36.CMSLoggedUserOpenNode(
                           attributes: attributes,
@@ -25050,8 +25523,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           children: children,
                           description: description,
                           name: name,
+                          pageID: pageID,
                           parentID: parentID,
                           rectProperties: rectProperties,
+                          stabilID: stabilID,
                           updatedAt: updatedAt,
                           id: id)
                       : null
@@ -25199,40 +25674,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             #childOrder,
             #attributes,
             #rectProperties,
-            #updatedAt
+            #updatedAt,
+            #pageID,
+            #stabilID
           ]
         ]
-      ]),
-  const prefix35.NodeDeclarationReflector(): r.ReflectorData(
-      <m.TypeMirror>[
-        r.NonGenericClassMirrorImpl(
-            r'NodesParse',
-            r'.NodesParse',
-            134217735,
-            0,
-            const prefix35.NodeDeclarationReflector(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {},
-            {},
-            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[const prefix35.NodeDeclarationReflector()],
-            {})
-      ],
-      null,
-      null,
-      <Type>[prefix35.NodesParse],
-      1,
-      {},
-      {},
-      null,
-      [
-        const [0, 0, null]
       ])
 };
 
