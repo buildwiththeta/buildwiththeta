@@ -18,6 +18,8 @@ class TreeState with ChangeNotifier {
   /// [deviceInfo] is the device info object
   /// [workflows] is the list of workflows
   /// [config] is the project config object
+  /// [nodeOverrides] is the list of node overrides
+  /// [fit] is the fit of the component
   TreeState({
     required this.forPlay,
     required this.params,
@@ -31,6 +33,7 @@ class TreeState with ChangeNotifier {
     required this.workflows,
     required this.config,
     required this.nodeOverrides,
+    required this.fit,
     this.focusedNode,
     this.nodes = const [],
     this.xLines = const [],
@@ -69,6 +72,8 @@ class TreeState with ChangeNotifier {
 
   /// Nodes
   List<CNode> nodes;
+
+  ComponentFit fit = ComponentFit.loose;
 
   /// Workflows
   /// This is the list of all the workflows
@@ -135,6 +140,10 @@ class TreeState with ChangeNotifier {
     this.yLines = yLines;
   }
 
+  void onFitChanged(ComponentFit fit) {
+    this.fit = fit;
+  }
+
   void notify() {
     notifyListeners();
   }
@@ -158,6 +167,7 @@ class TreeState with ChangeNotifier {
     final Nodes? nodes,
     final List<int>? xLines,
     final List<int>? yLines,
+    final ComponentFit? fit,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -175,6 +185,7 @@ class TreeState with ChangeNotifier {
       nodes: nodes ?? this.nodes,
       xLines: xLines ?? this.xLines,
       yLines: yLines ?? this.yLines,
+      fit: fit ?? this.fit,
     );
   }
 }

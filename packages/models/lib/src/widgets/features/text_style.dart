@@ -196,7 +196,7 @@ class FTextStyle extends Equatable {
       textAlign: textAlign,
       fontStyle: fontStyle,
       textDirection: textDirection,
-      textStyleModel: textStyleModel,
+      textStyleModel: null,
     );
   }
 }

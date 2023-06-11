@@ -63,6 +63,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final TreeState state = context.watch<TreeState>();
     final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
+
     if (state.focusedNode?.id != widget.node.id || state.forPlay) {
       final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
           ? device
@@ -84,29 +85,65 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       final height =
           isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
 
-      return Positioned(
-        top: top,
-        bottom: bottom,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: NodeBuilder(
-          onTap: () {
-            TreeGlobalState.onNodeFocused(widget.node);
-            setState(() {});
-          },
-          onPanStart: () {
-            TreeGlobalState.onNodeFocused(widget.node);
-            setState(() {});
-          },
-          node: widget.node,
-          child: widget.node.toWidget(
-            context: context,
-            state: WidgetState(node: widget.node, loop: 0),
+      if (state.fit == ComponentFit.loose) {
+        return Padding(
+          padding: EdgeInsets.only(
+              top:
+                  !isStretchAlign(widget.node.verticalAlignment) ? 0 : top ?? 0,
+              bottom: !isStretchAlign(widget.node.verticalAlignment)
+                  ? 0
+                  : bottom ?? 0,
+              left: !isStretchAlign(widget.node.horizontalAlignment)
+                  ? 0
+                  : left ?? 0,
+              right: !isStretchAlign(widget.node.horizontalAlignment)
+                  ? 0
+                  : right ?? 0),
+          child: SizedBox(
+            width: width ?? double.infinity,
+            height: height ?? double.infinity,
+            child: NodeBuilder(
+              onTap: () {
+                TreeGlobalState.onNodeFocused(widget.node);
+                setState(() {});
+              },
+              onPanStart: () {
+                TreeGlobalState.onNodeFocused(widget.node);
+                setState(() {});
+              },
+              node: widget.node,
+              child: widget.node.toWidget(
+                context: context,
+                state: WidgetState(node: widget.node, loop: 0),
+              ),
+            ),
           ),
-        ),
-      );
+        );
+      } else {
+        return Positioned(
+          top: top,
+          bottom: bottom,
+          left: left,
+          right: right,
+          width: width,
+          height: height,
+          child: NodeBuilder(
+            onTap: () {
+              TreeGlobalState.onNodeFocused(widget.node);
+              setState(() {});
+            },
+            onPanStart: () {
+              TreeGlobalState.onNodeFocused(widget.node);
+              setState(() {});
+            },
+            node: widget.node,
+            child: widget.node.toWidget(
+              context: context,
+              state: WidgetState(node: widget.node, loop: 0),
+            ),
+          ),
+        );
+      }
     }
     return _BoxTransformBuilder(node: widget.node);
   }
