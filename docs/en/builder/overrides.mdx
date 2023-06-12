@@ -4,9 +4,46 @@ title: Override Element Properties
 
 # Override element properties
 
-## Override child
+You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
 
-You can override the child of an element with a Flutter widget by mixing no-code with Flutter. 
+## Text override
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override('Label')
+            ..setText('Click me!'),
+    ],
+),
+```
+
+## Image override
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Image')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+## Color override (`Container` background color and `Text` color)
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Post Title')
+            ..setColor(Colors.white, 0.5),
+    ],
+),
+```
+
+## Child override
+
 If in the no-code component the element to which you want to overwrite the child already has one, 
 it will be removed and replaced with the one entered by the user via code.
 
@@ -14,17 +51,13 @@ it will be removed and replaced with the one entered by the user via code.
 UIBox(
     'Component name',
     overrides: const [
-        Override(
-            'Element id',
-            props: [
-                ChildProperty(child: CircularProgressIndicator()),
-            ],
-        ),
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
     ],
 ),
 ```
 
-## Override children
+## Children override
 
 You can also overwrite the children of an element. 
 
@@ -32,15 +65,8 @@ You can also overwrite the children of an element.
 UIBox(
     'Component name',
     overrides: const [
-        Override(
-            'Element name',
-            props: [
-                ChildrenProperty(children: [
-                    Text('Click me!'),
-                    // other widgets
-                ]),
-            ],
-        )
+        Override('Element name')
+            ..setChildren([Text('Child 1'), Text('Child 2')]),
     ],
 ),
 ```
