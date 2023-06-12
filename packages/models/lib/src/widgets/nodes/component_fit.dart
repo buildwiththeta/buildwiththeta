@@ -1,0 +1,4 @@
+enum ComponentFit {
+  expand,
+  loose,
+}
