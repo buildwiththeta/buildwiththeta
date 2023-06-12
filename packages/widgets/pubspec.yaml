@@ -57,3 +57,7 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   build_runner: any
   built_value_generator: any
+
+dependency_overrides:
+  theta_models:
+    path: ../models

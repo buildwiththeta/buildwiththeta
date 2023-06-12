@@ -47,6 +47,12 @@ dependencies:
   reflectable: ^4.0.5
   path_provider: ^2.0.15
 
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_open_widgets:
+    path: ../widgets
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -41,14 +41,6 @@ class OpenWScaffold extends NodeWidget {
       final WidgetState nodeState) {
     final widgets =
         children.map((final e) => BoxTransformBuilder(node: e)).toList();
-    if (state.fit == ComponentFit.loose) {
-      if (state.forPlay) {
-        return widgets.first;
-      }
-      return Center(
-        child: widgets.first,
-      );
-    }
     if (state.forPlay) {
       return Stack(
         children: widgets,

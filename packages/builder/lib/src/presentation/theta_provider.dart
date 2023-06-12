@@ -44,6 +44,7 @@ class _ThetaProviderState extends State<ThetaProvider> {
         states: [],
         pageId: '',
         isPage: true,
+        fit: ComponentFit.expand,
         colorStyles: _styles.colorStyles,
         textStyles: _styles.textStyles,
         theme: widget.theme ?? ThemeMode.light,
