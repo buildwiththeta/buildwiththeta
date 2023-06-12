@@ -14,13 +14,13 @@ class PageEntity extends Equatable {
     required this.id,
     required this.branchID,
     required this.name,
-    required this.refPageId,
+    required this.stabilID,
   });
 
   final PageID id;
   final BranchID branchID;
   final String name;
-  final PageID? refPageId;
+  final PageID? stabilID;
 
   PageEntity copyWith({
     final String? id,
@@ -32,7 +32,7 @@ class PageEntity extends Equatable {
         id: id ?? this.id,
         branchID: branchID ?? this.branchID,
         name: name ?? this.name,
-        refPageId: refPageId ?? this.refPageId,
+        stabilID: stabilID ?? this.stabilID,
       );
 
   @override
@@ -40,10 +40,10 @@ class PageEntity extends Equatable {
         id,
         branchID,
         name,
-        refPageId,
+        stabilID,
       ];
 
   @override
   String toString() =>
-      'PageEntity { id: $id, name: $name, branch_id: $branchID, ref_page_id: $refPageId }';
+      'PageEntity { id: $id, name: $name, branch_id: $branchID, stabil_id: $stabilID }';
 }

@@ -41,6 +41,15 @@ class BranchMapper extends Mapper<BranchEntity> {
         _createdAtKey: branch.createdAt.toIso8601String(),
       };
 
+  Map<String, dynamic> toJsonWithId(BranchEntity branch) => {
+        _idKey: branch.id,
+        _prjIdKey: branch.projectID,
+        _nameKey: branch.name,
+        _descriptionKey: branch.description,
+        _defaultPageIdKey: branch.defaultPageID,
+        _createdAtKey: branch.createdAt.toIso8601String(),
+      };
+
   /// Return a json from this instance.
   ///
   /// Return example:

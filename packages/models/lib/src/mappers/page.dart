@@ -7,7 +7,7 @@ class PageMapper extends Mapper<PageEntity> {
   static const _idKey = 'id';
   static const _branchIdKey = 'branch_id';
   static const _nameKey = 'name';
-  static const _refPageId = 'ref_page_id';
+  static const _stabilID = 'stabil_id';
 
   /// For a single instance
   @override
@@ -16,7 +16,7 @@ class PageMapper extends Mapper<PageEntity> {
       id: json[_idKey],
       branchID: json[_branchIdKey],
       name: json[_nameKey] as String,
-      refPageId: json[_refPageId],
+      stabilID: json[_stabilID],
     );
   }
 
@@ -35,18 +35,25 @@ class PageMapper extends Mapper<PageEntity> {
         _idKey: page.id,
         _branchIdKey: page.branchID,
         _nameKey: page.name,
-        _refPageId: page.refPageId,
+        _stabilID: page.stabilID,
+      };
+
+  Map<String, dynamic> toJsonWithId(PageEntity page) => {
+        _idKey: page.id,
+        _branchIdKey: page.branchID,
+        _nameKey: page.name,
+        _stabilID: page.stabilID,
       };
 
   PageEntity copyWith(final PageEntity e,
           {final String? id,
           final String? branchID,
           final String? name,
-          final String? refPageId}) =>
+          final String? stabilID}) =>
       PageEntity(
         id: id ?? e.id,
         branchID: branchID ?? e.branchID,
         name: name ?? e.name,
-        refPageId: refPageId ?? e.refPageId,
+        stabilID: stabilID ?? e.stabilID,
       );
 }

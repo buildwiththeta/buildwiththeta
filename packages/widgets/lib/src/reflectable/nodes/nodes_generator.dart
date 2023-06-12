@@ -38,6 +38,8 @@ class $generatedClassName extends CNode {
       final Map<String, dynamic>? attributes,
       final RectProperties? rectProperties,
       final DateTime? updatedAt,
+      final PageID? pageID,
+      final NodeID? stabilID, 
       })
       : super(
             id: id,
@@ -54,6 +56,8 @@ class $generatedClassName extends CNode {
             child: child,
             children: children,
             updatedAt: updatedAt ?? DateTime.now(),
+            pageID: pageID ?? '',
+            stabilID: stabilID,
           );
 
   @override
@@ -68,6 +72,8 @@ class $generatedClassName extends CNode {
           Map<String, dynamic>? attributes,
           RectProperties? rectProperties,
           DateTime? updatedAt,
+          PageID? pageID,
+          NodeID? stabilID,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -79,6 +85,8 @@ class $generatedClassName extends CNode {
           childOrder: childOrder ?? this.childOrder,
           attributes: attributes ?? getAttributes,
           rectProperties: rectProperties ?? getRectProperties,
+          pageID: pageID ?? this.pageID,
+          stabilID: stabilID ?? this.stabilID,
         );
 
   @override
@@ -93,6 +101,8 @@ class $generatedClassName extends CNode {
           Map<String, dynamic>? attributes,
           RectProperties? rectProperties,
           DateTime? updatedAt,
+          PageID? pageID,
+          NodeID? stabilID,
         }) =>
         $generatedClassName(
           id: id ?? this.id,
@@ -104,6 +114,8 @@ class $generatedClassName extends CNode {
           childOrder: childOrder ?? this.childOrder,
           attributes: attributes ?? getAttributes,
           rectProperties: rectProperties ?? getRectProperties,
+          pageID: pageID ?? this.pageID,
+          stabilID: stabilID ?? this.stabilID,
         );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -119,7 +131,7 @@ class $generatedClassName extends CNode {
     }
 
     final rectProperties = RectProperties.fromJson(json['rect_properties']);
-    
+
     return $generatedClassName(
       id: json['id'],
       name: json['name'],
@@ -129,6 +141,8 @@ class $generatedClassName extends CNode {
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
       childOrder: json['child_order'],
+      pageID: json['page_id'],
+      stabilID: json['stabil_id'],
     );
   }
 
