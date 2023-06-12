@@ -27,6 +27,7 @@ class PageEntity extends Equatable {
     final String? branchID,
     final String? name,
     final String? refPageId,
+    final String? stabilID,
   }) =>
       PageEntity(
         id: id ?? this.id,

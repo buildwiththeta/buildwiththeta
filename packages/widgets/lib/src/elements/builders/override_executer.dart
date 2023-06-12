@@ -23,7 +23,11 @@ class NodeOverrideExecuter extends Equatable {
       bool Function(Override override) condition) {
     final nodeOverrides = context.read<TreeState>().nodeOverrides;
     final override = nodeOverrides.firstWhereOrNull(
-        (e) => e.node == state.node.name || e.node == state.node.id);
+      (e) =>
+          e.node == state.node.name ||
+          e.node == state.node.id ||
+          e.node == state.node.stabilID,
+    );
     if (override != null && condition(override)) {
       return override;
     }

@@ -6,8 +6,7 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3MjE4ZTIxOC00MmQ5LTQyZTgtYmE1My04MGM2ZTkyN2FiNmMiLCJhbm9uX2tleSI6ImY5M2UzN2U4LTA1ZGEtNDlhMy1hOWRmLThmZTkzODQ5MTQxZSIsImlhdCI6MTY4NjU1OTI1NSwiZXhwIjoxNzE4MTE2ODU1LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.YBNPwObbkjT6tGRWZJbOwBVpL4WQwA3OSbtrX1w9V8g',
+    anonKey: 'thetaKey',
   );
 
   runApp(const MyApp());
@@ -41,6 +40,10 @@ class _MyAppState extends State<MyApp> {
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error),
 
+            /// [fit] is how the component should fit the parent.
+            /// It can be [ComponentFit.expand] or [ComponentFit.loose].
+            fit: ComponentFit.expand,
+
             /// [overrides] are the properties that can be overriden by the user.
             overrides: [
               /// [Override] requires a [node] identifier and a list of [props].
@@ -50,7 +53,7 @@ class _MyAppState extends State<MyApp> {
               )..setChild(const Text('Click me!')),
 
               Override(
-                'f1e28ef0-0840-11ee-b7c5-1978a120aa03',
+                'node name',
               )
                 ..setText('Click me!')
                 ..setColor(Colors.white, 1),

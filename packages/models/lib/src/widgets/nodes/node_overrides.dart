@@ -18,31 +18,22 @@ class Override extends Equatable {
   final String node;
   final List<NodeProperty> properties = [];
 
-  void setChild(Widget child) {
-    properties.add(ChildProperty(child: child));
-  }
+  void setChild(Widget child) => properties.add(ChildProperty(child: child));
 
-  void setChildren(List<Widget> children) {
-    properties.add(ChildrenProperty(children: children));
-  }
+  void setChildren(List<Widget> children) =>
+      properties.add(ChildrenProperty(children: children));
 
-  void setText(String data) {
-    properties.add(TextProperty(textData: data));
-  }
+  void setText(String data) => properties.add(TextProperty(textData: data));
 
-  void setImage(String data) {
-    properties.add(ImageProperty(imageData: data));
-  }
+  void setImage(String data) => properties.add(ImageProperty(imageData: data));
 
-  void setColor(Color color, double opacity) {
-    properties.add(FillProperty(
-        fill: FFill(levels: [
-      FFillElement(
-          color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
-          stop: 0,
-          opacity: opacity)
-    ])));
-  }
+  void setColor(Color color, double opacity) => properties.add(FillProperty(
+          fill: FFill(levels: [
+        FFillElement(
+            color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
+            stop: 0,
+            opacity: opacity)
+      ])));
 
   @override
   List<Object> get props => [node, properties];

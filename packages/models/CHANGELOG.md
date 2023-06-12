@@ -1,3 +1,10 @@
+## 0.1.7
+
+- [x] Feat: Branch Action Log
+- [x] Feat: Branch Json Log
+- [x] Feat: Color, Text, Image overrides
+- [x] Fix: Overrides new syntax
+
 ## 0.1.6
 
 - [x] Fix: Override syntax upgraded.

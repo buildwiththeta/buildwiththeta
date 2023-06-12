@@ -1,5 +1,4 @@
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Mapper for [BranchJsonLogEntity].
 class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
@@ -18,11 +17,14 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
   static const _pageMapper = PageMapper();
   static const _colorStylesMapper = ColorStylesMapper();
   static const _textStylesMapper = TextStylesMapper();
-  static const _mapper = NodesParse();
 
-  /// For a single instance.
   @override
   BranchJsonLogEntity fromJson(Map<String, dynamic> json) =>
+      throw UnimplementedError();
+
+  /// For a single instance.
+  BranchJsonLogEntity customFromJson(
+          Map<String, dynamic> json, dynamic mapper) =>
       BranchJsonLogEntity(
         id: json[_idKey],
         projectID: json[_prjIdKey],
@@ -32,7 +34,7 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
             .map<PageEntity>((e) => _pageMapper.fromJson(e))
             .toList(),
         nodes: json[_nodesKey]
-            .map<CNode>((e) => _mapper.fromJson(e['type'], e)!)
+            .map<CNode>((e) => mapper.fromJson(e['type'], e)!)
             .toList(),
         colorStyles: json[_colorStylesKey]
             .map<ColorStyleEntity>((e) => _colorStylesMapper.fromJson(e))
