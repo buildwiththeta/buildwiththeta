@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for [BranchJsonLogEntity].
@@ -33,8 +34,9 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
         pages: json[_pagesKey]
             .map<PageEntity>((e) => _pageMapper.fromJson(e))
             .toList(),
-        nodes: json[_nodesKey]
-            .map<CNode>((e) => mapper.fromJson(e['type'], e)!)
+        nodes: (json[_nodesKey] as List<dynamic>)
+            .map<CNode?>((e) => mapper.fromJson(e['type'], e))
+            .whereNotNull()
             .toList(),
         colorStyles: json[_colorStylesKey]
             .map<ColorStyleEntity>((e) => _colorStylesMapper.fromJson(e))
