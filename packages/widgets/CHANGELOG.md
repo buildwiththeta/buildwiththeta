@@ -1,3 +1,7 @@
+## 0.1.7
+
+- [x] Feat: NodeOverrideExecuter for Image, Text and Color
+
 ## 0.1.6
 
 - [x] Fix: NodeOverrideExecuter updated.
