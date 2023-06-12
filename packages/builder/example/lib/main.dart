@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
               /// Use one Override per node.
               Override(
                 'node id',
-              )..setChild(const Text('Click me!')),
+              )..setChild(const UIBox('ComponentName')),
 
               Override(
                 'node name',
