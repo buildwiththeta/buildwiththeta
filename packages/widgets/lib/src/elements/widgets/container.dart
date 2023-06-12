@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -49,10 +50,14 @@ class OpenWContainer extends Container {
           decoration: TetaBoxDecoration.get(
             state: context.watch<TreeState>(),
             context: context,
-            fill: fill.get(
+            fill: const NodeOverrideExecuter().executeColor(
               context,
-              context.watch<TreeState>().colorStyles,
-              context.watch<TreeState>().theme,
+              state,
+              fill.get(
+                context,
+                context.watch<TreeState>().colorStyles,
+                context.watch<TreeState>().theme,
+              ),
             ),
             borderRadius: borderRadius,
             shadow: shadows,

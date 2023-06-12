@@ -4,6 +4,7 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/text_style_builder.dart';
 
 class OpenWTextField extends StatefulWidget {
   /// Returns a TextField widget in Teta
@@ -215,11 +216,18 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               state: state,
             ),
           ),
-          style: widget.textStyle.get(
-            state,
-            context,
-            state.forPlay,
-            model,
+          style: TetaTextStyles.get(
+            nodeState: widget.state,
+            state: state,
+            context: context,
+            model: model,
+            forPlay: state.forPlay,
+            fill: widget.textStyle.fill,
+            fontFamily: widget.textStyle.fontFamily,
+            fontSize: widget.textStyle.fontSize,
+            fontWeight: widget.textStyle.fontWeight,
+            textDecoration: widget.textStyle.textDecoration,
+            fontStyle: widget.textStyle.fontStyle,
           ),
           textAlign: widget.textStyle.textAlign.value,
           autocorrect: widget.autoCorrect,

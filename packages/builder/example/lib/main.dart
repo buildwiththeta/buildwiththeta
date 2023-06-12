@@ -6,7 +6,8 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey: '',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3MjE4ZTIxOC00MmQ5LTQyZTgtYmE1My04MGM2ZTkyN2FiNmMiLCJhbm9uX2tleSI6ImY5M2UzN2U4LTA1ZGEtNDlhMy1hOWRmLThmZTkzODQ5MTQxZSIsImlhdCI6MTY4NjU1OTI1NSwiZXhwIjoxNzE4MTE2ODU1LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.YBNPwObbkjT6tGRWZJbOwBVpL4WQwA3OSbtrX1w9V8g',
   );
 
   runApp(const MyApp());
@@ -41,23 +42,22 @@ class _MyAppState extends State<MyApp> {
             errorWidget: (error) => Text(error),
 
             /// [overrides] are the properties that can be overriden by the user.
-            overrides: const [
+            overrides: [
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
                 'node id',
-                props: [
-                  /// [ChildProperty] is used to override the child of a node.
-                  ChildProperty(
-                    child: Text('Click me!'),
-                  ),
+              )..setChild(const Text('Click me!')),
 
-                  /// [ChildrenProperty] is used to override the children of a node.
-                  // ChildrenProperty(
-                  //  children: [Text('Click me!')],
-                  // ),
-                ],
+              Override(
+                'f1e28ef0-0840-11ee-b7c5-1978a120aa03',
               )
+                ..setText('Click me!')
+                ..setColor(Colors.white, 1),
+
+              Override(
+                'node id 2',
+              )..setChildren([const Text('Click me!')]),
             ],
 
             /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
