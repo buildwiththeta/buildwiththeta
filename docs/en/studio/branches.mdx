@@ -1,29 +1,18 @@
 ---
-title: Secure project management with branches
+title: Secure Project Management with Branches
 ---
 
-# Secure project management with branches
+# Secure Project Management with Branches
 
-## Introduction to branches
+In project management and software development, branches are divergent paths within a codebase that enable parallel development and experimentation. With branches, teams can independently make changes, test features, and iterate without disrupting the main project. 
 
-In project management, branches refer to divergent paths of a project's code 
-that exist concurrently Branches serve as separate workspaces, allowing changes to be made, 
-experiments to be made, and features to be developed independently of the main "main" branch. 
-This approach allows for parallel development, giving teams the flexibility 
-to work on different aspects of a project simultaneously.
+In Theta one branch in addition to the main branch is currently permitted, allowing for focused development and collaboration. **Users can edit nodes, components, color styles, and text styles within each branch**, empowering teams to refine specific project elements. **Theta also offers the ability to restore an overwritten main branch, ensuring data integrity.** 
 
-Once changes in one branch have been tested and deemed stable, 
-they can be fed back into the main branch, incorporating the new components or fixes. 
-Branches facilitate collaboration, maintain project integrity and enable efficient 
-project management by providing a structured framework for development iterations 
-and feature implementation.
+While the current version of Theta allows for one branch, future versions will expand this capability to accommodate additional branches. Branches in Theta facilitate concurrent work, enhance flexibility, and promote efficient project management.
 
-## How they work in Theta
+Key Features:
+- [x] Parallel development and experimentation with one additional branch.
+- [x] Independent editing of nodes, components, color styles, and text styles.
+- [x] Restore overwritten main branch for data integrity.
 
-In Theta, it is possible to create a branch in addition to the "main" branch, 
-allowing work to be done without ever affecting the main branch, 
-thus without immediately going to change the design that is taken by app clients.
-
-As much as it is not possible to do a true merge, as the new version always overwrites the past one, it is still possible to subdivide the new branch by selecting only certain components, thus not overwriting those that are considered production-ready.
-
-Branches see their introduction in Theta Rome (0.2), and will be expanded in future versions.
+<Warning>The current version of Theta allows for one additional branch, with plans to support multiple branches in future versions, further enhancing project management capabilities.</Warning>
