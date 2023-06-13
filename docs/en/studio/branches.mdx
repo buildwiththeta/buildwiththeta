@@ -1,0 +1,29 @@
+---
+title: Secure project management with branches
+---
+
+# Secure project management with branches
+
+## Introduction to branches
+
+In project management, branches refer to divergent paths of a project's code 
+that exist concurrently Branches serve as separate workspaces, allowing changes to be made, 
+experiments to be made, and features to be developed independently of the main "main" branch. 
+This approach allows for parallel development, giving teams the flexibility 
+to work on different aspects of a project simultaneously.
+
+Once changes in one branch have been tested and deemed stable, 
+they can be fed back into the main branch, incorporating the new components or fixes. 
+Branches facilitate collaboration, maintain project integrity and enable efficient 
+project management by providing a structured framework for development iterations 
+and feature implementation.
+
+## How they work in Theta
+
+In Theta, it is possible to create a branch in addition to the "main" branch, 
+allowing work to be done without ever affecting the main branch, 
+thus without immediately going to change the design that is taken by app clients.
+
+As much as it is not possible to do a true merge, as the new version always overwrites the past one, it is still possible to subdivide the new branch by selecting only certain components, thus not overwriting those that are considered production-ready.
+
+Branches see their introduction in Theta Rome (0.2), and will be expanded in future versions.
