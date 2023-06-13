@@ -7,10 +7,10 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
   static const _idKey = 'id';
   static const _prjIdKey = 'project_id';
   static const _actionKey = 'action';
-  static const _userNameKey = 'user_name';
   static const _sourceBranchNamenKey = 'source_branch_name';
   static const _targetBranchNameKey = 'target_branch_name';
   static const _createdAtKey = 'created_at';
+  static const _userUID = 'user_uid';
 
   /// For a single instance.
   @override
@@ -19,7 +19,7 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
         id: json[_idKey],
         projectID: json[_prjIdKey],
         action: parseBranchActionTypeEnum(json[_actionKey]),
-        userName: json[_userNameKey],
+        userID: json[_userUID],
         sourceBranchName: json[_sourceBranchNamenKey],
         targetBranchName: json[_targetBranchNameKey],
         createdAt: DateTime.parse(json[_createdAtKey]),
@@ -37,7 +37,7 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
   Map<String, dynamic> toJson(final BranchActionLogEntity branch) => {
         _prjIdKey: branch.projectID,
         _actionKey: branch.action.name,
-        _userNameKey: branch.userName,
+        _userUID: branch.userID,
         _sourceBranchNamenKey: branch.sourceBranchName,
         _targetBranchNameKey: branch.targetBranchName,
         _createdAtKey: branch.createdAt.toIso8601String(),
@@ -48,7 +48,7 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
     final BranchActionLogID? id,
     final ProjectID? projectID,
     final BranchActionTypeEnum? action,
-    final String? userName,
+    final UserID? userID,
     final PageID? sourceBranchName,
     final String? targetBranchName,
     final DateTime? createdAt,
@@ -57,7 +57,7 @@ class BranchActionLogMapper extends Mapper<BranchActionLogEntity> {
         id: id ?? e.id,
         action: action ?? e.action,
         projectID: projectID ?? e.projectID,
-        userName: userName ?? e.userName,
+        userID: userID ?? e.userID,
         sourceBranchName: sourceBranchName ?? e.sourceBranchName,
         targetBranchName: targetBranchName ?? e.targetBranchName,
         createdAt: createdAt ?? e.createdAt,
