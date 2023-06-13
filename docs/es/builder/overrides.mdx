@@ -1,0 +1,94 @@
+---
+title: Override de las propiedades de los elementos
+---
+
+# Override de las propiedades de los elementos
+
+Puedes realizar un override a cada bloque de UI con un widget de Flutter mediante la combinación de no-code con Flutter.
+
+## Text override
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override('Label')
+            ..setText('Click me!'),
+    ],
+),
+```
+
+## Image override
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Image')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+## Color override (`Container` background color y `Text` color)
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Post Title')
+            ..setColor(Colors.white, 0.5),
+    ],
+),
+```
+
+## Child override
+
+Si en el componente no-code el elemento al que deseas sobrescribir ya tiene un hijo, 
+este será eliminado y reemplazado por el que el usuario haya ingresado mediante código.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+## Children override
+
+También puedes sobrescribir los hijos de un elemento.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element name')
+            ..setChildren([Text('Child 1'), Text('Child 2')]),
+    ],
+),
+```
+
+## Combinación de diferentes UIBox(es)
+
+También puedes usar el `UIBox`  dentro de otros `UIBox`es. Esto proporciona un alto grado de personalización.
+
+```dart
+UIBox(
+    'Wrapper Widget',
+    overrides: const [
+        Override(
+            'Element id',
+            props: [
+                ChildProperty(child: UIBox('Primary Button')),
+            ],
+        ),
+    ],
+),
+```
+
+<Warning>Se recomienda utilizar solo un override por elemento, ya que solo se tomará en cuenta la primera.</Warning>
+
+<Warning>Si intentas sobrescribir accidentalmente los hijos de un elemento que solo tiene un hijo, el cambio realizado mediante código simplemente se ignorará.</Warning>

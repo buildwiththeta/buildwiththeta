@@ -7,6 +7,15 @@ Theta funziona tra la piattaforma [hosted](https://buildwiththeta.com) e la libr
 - Copiare la pagina con il nome che si desidera.
 - Installare [Theta client library] (https://pub.dev/packages/theta) e utilizzare una `UIBox('nome della pagina')` per integrare la pagina nella propria applicazione.
 
+## Requisiti di sistema
+
+Theta è un'applicazione web che può essere utilizzata da un browser. Per un'esperienza ottimale, attenersi ai requisiti di sistema:
+
+- È consigliato utilizzare un desktop o un laptop.
+- Utilizzare uno schermo di almeno 12 pollici.
+- Si consiglia di utilizzare Google Chrome (in caso di problemi, provare a vedere se i problemi persistono con Chrome).
+- Per fare copia e incolla all'interno di un progetto, permetti l'utilizzo degli appunti (una finestra di dialogo apparirà su app.buildwiththeta.com).
+
 ## Progettazione dell'interfaccia
 
 - Vedere [come spostare e ridimensionare gli elementi](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
@@ -85,4 +94,54 @@ UIBox(
         }),
     ]
 )
+```
+## Sovrascrivi le proprietà del blocco
+
+Puoi sovrascrivere le proprietà di ogni blocco UI utilizzando un widget Flutter combinando il no-code con Flutter.
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Post title')
+            ..setText('My beautiful cat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Sovrascrittura del figlio
+
+Se nel componente no-code l'elemento a cui si vuole sovrascrivere il figlio ne ha già uno, 
+verrà rimosso e sostituito con quello inserito dall'utente tramite codice.
+
+È possibile utilizzare la `UIBox` anche all'interno di altre `UIBox`. Ciò offre un grado di personalizzazione molto elevato.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+### Sovrascrittura dei figli
+
+È possibile sovrascrivere i figli di un elemento. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element name')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
 ```
