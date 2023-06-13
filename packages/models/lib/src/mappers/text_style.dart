@@ -11,11 +11,13 @@ class TextStylesMapper extends Mapper<TextStyleEntity> {
   static const familyKey = 'family';
   static const sizeKey = 'size';
   static const weightKey = 'weight';
+  static const _stabilID = 'stabil_id';
 
   /// For a single instance
   @override
   TextStyleEntity fromJson(final Map<String, dynamic> json) => TextStyleEntity(
       id: json[idKey],
+      stabilID: json[_stabilID],
       branchID: json[branchKey],
       name: json[nameKey],
       fontFamily: json[propertiesKey][familyKey],
@@ -47,6 +49,7 @@ class TextStylesMapper extends Mapper<TextStyleEntity> {
 
   Map<String, dynamic> toJsonWithId(final TextStyleEntity e) => {
         idKey: e.id,
+        _stabilID: e.stabilID,
         typeKey: 'text',
         branchKey: e.branchID,
         nameKey: e.name,
@@ -56,8 +59,22 @@ class TextStylesMapper extends Mapper<TextStyleEntity> {
           weightKey: e.fontWeight.toJson()
         }
       };
+
+  Map<String, dynamic> toJsonWithStabilID(final TextStyleEntity e) => {
+        _stabilID: e.stabilID,
+        typeKey: 'text',
+        branchKey: e.branchID,
+        nameKey: e.name,
+        propertiesKey: {
+          familyKey: e.fontFamily,
+          sizeKey: e.fontSize.toJson(),
+          weightKey: e.fontWeight.toJson()
+        }
+      };
+
   TextStyleEntity copyWith(final TextStyleEntity e,
           {final String? id,
+          final String? stabilID,
           final String? branchID,
           final String? name,
           final String? fontFamily,
@@ -65,6 +82,7 @@ class TextStylesMapper extends Mapper<TextStyleEntity> {
           final FFontWeight? fontWeight}) =>
       TextStyleEntity(
           id: id ?? e.id,
+          stabilID: stabilID ?? e.stabilID,
           branchID: branchID ?? e.branchID,
           name: name ?? e.name,
           fontFamily: fontFamily ?? e.fontFamily,
