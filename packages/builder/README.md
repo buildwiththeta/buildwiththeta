@@ -95,7 +95,36 @@ UIBox(
 )
 ```
 
+## Component fit modes
+
+- Documentation: [https://docs.buildwiththeta.com/en/studio/component_fit](https://docs.buildwiththeta.com/en/studio/component_fit)
+
+### Absolute
+
+Using the `absolute` fit mode, the component will be rendered with the exact coordinates of the component in the Theta Studio.
+
+```dart
+UIBox(
+    'Component name',
+    fit: ComponentFit.absolute,
+)
+```
+
+### Auto Layout
+
+Using the `autoLayout` fit mode, the component will be rendered with the coordinates of the component in the Theta Studio, but the size will be calculated automatically.
+
+```dart
+UIBox(
+    'Component name',
+    fit: ComponentFit.autoLayout,
+)
+```
+
+
 ## Overrides
+
+- Documentation: [https://docs.buildwiththeta.com/en/builder/overrides](https://docs.buildwiththeta.com/en/builder/overrides)
 
 You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
 
@@ -151,7 +180,7 @@ UIBox(
 ## Status
 
 - ✅ Alpha: experimental. Expect breaking changes.
-- ✅ Closed Beta: ready for testing. Expect bugs and missing features.
+- ✅ Closed Beta: ready for conscientious use. Expect some bugs and missing features.
 
 ## Compatibility
 
@@ -175,7 +204,7 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 
 - [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
 - [⚡️ Website](https://buildwiththeta.com)
-- [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
+- [🧑‍🏫 Documentation](https://docs.buildwiththeta.com)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
 

@@ -42,8 +42,8 @@ class _MyAppState extends State<MyApp> {
             errorWidget: (error) => Text(error),
 
             /// [fit] is how the component should fit the parent.
-            /// It can be [ComponentFit.expand] or [ComponentFit.loose].
-            fit: ComponentFit.expand,
+            /// It can be [ComponentFit.absolute] or [ComponentFit.autoLayout].
+            fit: ComponentFit.absolute,
 
             /// [overrides] are the properties that can be overriden by the user.
             overrides: [
