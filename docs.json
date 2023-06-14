@@ -66,7 +66,15 @@
         ]
       ],
       [
+        "Flutter library", [
+          ["App di esempio di Theta", "/builder/esempio"],
+          ["compatibilità", "/builder/compatibilità"],
+          ["Overrides", "/builder/overrides"]
+        ]
+      ],
+      [
         "Misc.", [
+          ["FAQ", "/faq"],
           ["Migrazione", "/support/migrazione"]
         ]
       ]
