@@ -41,7 +41,7 @@ body:
       description: Provide information about your Flutter environment by running the command flutter doctor -v and pasting the output here. If not applicable, write “N/A” or “Not Applicable”
       placeholder: This is my Flutter environment
     validations:
-      required: true
+      required: false
   - type: textarea
     id: device
     attributes:
@@ -49,7 +49,7 @@ body:
       description: Provide specifications about the device on which you are experiencing this issue (e.g., manufacturer, model, OS version, browser used).
       placeholder: These are the specifications of my device
     validations:
-      required: true
+      required: false
   - type: textarea
     id: steps-to-reproduce
     attributes:
@@ -57,7 +57,7 @@ body:
       description: Provide a set of steps to reproduce the bug. Be as detailed as possible.
       placeholder: 1. ...
     validations:
-      required: true
+      required: false
   - type: textarea
     id: expected-behaviour
     attributes:
@@ -65,7 +65,7 @@ body:
       description: What were you expecting to happen when you performed the steps above?
       placeholder: I expected this specific output.
     validations:
-      required: true
+      required: false
   - type: textarea
     id: actual-behaviour
     attributes:
@@ -73,7 +73,7 @@ body:
       description: What actually happened when you performed the steps above?
       placeholder: I got this output.
     validations:
-      required: true
+      required: false
   - type: textarea
     id: logs
     attributes:
