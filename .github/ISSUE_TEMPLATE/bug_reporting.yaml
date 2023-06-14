@@ -66,3 +66,51 @@ body:
       placeholder: I expected this specific output.
     validations:
       required: true
+  - type: textarea
+    id: actual-behaviour
+    attributes:
+      label: Actual Behaviour
+      description: What actually happened when you performed the steps above?
+      placeholder: I got this output.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Run `flutter run` or `flutter build` and paste any error logs that might help understand the issue. If the error log is too long, consider using a service like Gist to provide the link to the log. If not applicable, write "N/A" or "Not applicable".
+      placeholder: This is my log.
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here. This could include any relevant configuration, add-ons or libraries used, or other details that might help the developers understand the issue.
+      placeholder: This is some more additional context about what happened in my project.
+    validations:
+  required: false
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Additional Context
+      description: If you have an idea of a potential solution, describe it here. If not, feel free to skip this part.
+      placeholder: This is my possibile solution to the issue faced.
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem. Screenshots can be extremely helpful for understanding the issue, especially in the context of visual bugs.
+      placeholder: Upload your screenshot just by dragging it
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/buildwiththeta/buildwiththeta/blob/main/CODE_OF_CONDUCT.md)
+    options:
+      - label: I agree to follow this project's Code of Conduct
+      required: true
