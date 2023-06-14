@@ -8,7 +8,7 @@ class BranchActionLogEntity extends Equatable {
     required this.id,
     required this.projectID,
     required this.action,
-    required this.userName,
+    required this.userID,
     required this.sourceBranchName,
     required this.targetBranchName,
     required this.createdAt,
@@ -17,14 +17,14 @@ class BranchActionLogEntity extends Equatable {
   final BranchActionLogID id;
   final ProjectID projectID;
   final BranchActionTypeEnum action;
-  final PageID? userName;
+  final UserID? userID;
   final String sourceBranchName;
   final String? targetBranchName;
   final DateTime createdAt;
 
   @override
   List<Object?> get props =>
-      [id, projectID, userName, sourceBranchName, targetBranchName, createdAt];
+      [id, projectID, userID, sourceBranchName, targetBranchName, createdAt];
 }
 
 enum BranchActionTypeEnum {
