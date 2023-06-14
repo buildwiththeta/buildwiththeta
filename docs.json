@@ -69,7 +69,11 @@
         "Flutter library", [
           ["App di esempio di Theta", "/builder/esempio"],
           ["compatibilità", "/builder/compatibilità"],
-          ["Overrides", "/builder/overrides"]
+          ["Overrides", "/builder/overrides"],
+          ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
+          ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
+          ["Repository \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],
+          ["Example \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder/example"]
         ]
       ],
       [
