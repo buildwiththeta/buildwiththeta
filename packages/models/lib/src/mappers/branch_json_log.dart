@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for [BranchJsonLogEntity].
@@ -9,41 +8,24 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
   static const _prjIdKey = 'project_id';
   static const _actionKey = 'action';
   static const _branchKey = 'branch';
-  static const _pagesKey = 'pages';
-  static const _nodesKey = 'nodes';
-  static const _colorStylesKey = 'color_styles';
-  static const _textStylesKey = 'text_styles';
+  static const _componentNamesKey = 'component_names';
+  static const _jsonFileUrlKey = 'json_file_url';
   static const _createdAtKey = 'created_at';
   static const _branchMapper = BranchMapper();
-  static const _pageMapper = PageMapper();
-  static const _colorStylesMapper = ColorStylesMapper();
-  static const _textStylesMapper = TextStylesMapper();
 
   @override
   BranchJsonLogEntity fromJson(Map<String, dynamic> json) =>
       throw UnimplementedError();
 
   /// For a single instance.
-  BranchJsonLogEntity customFromJson(
-          Map<String, dynamic> json, dynamic mapper) =>
+  BranchJsonLogEntity customFromJson(Map<String, dynamic> json) =>
       BranchJsonLogEntity(
         id: json[_idKey],
         projectID: json[_prjIdKey],
+        componentNames: json[_componentNamesKey],
+        jsonFileUrl: json[_jsonFileUrlKey],
         action: parseBranchActionTypeEnum(json[_actionKey]),
         branch: _branchMapper.fromJson(json[_branchKey]),
-        pages: json[_pagesKey]
-            .map<PageEntity>((e) => _pageMapper.fromJson(e))
-            .toList(),
-        nodes: (json[_nodesKey] as List<dynamic>)
-            .map<CNode?>((e) => mapper.fromJson(e['type'], e))
-            .whereNotNull()
-            .toList(),
-        colorStyles: json[_colorStylesKey]
-            .map<ColorStyleEntity>((e) => _colorStylesMapper.fromJson(e))
-            .toList(),
-        textStyles: json[_textStylesKey]
-            .map<TextStyleEntity>((e) => _textStylesMapper.fromJson(e))
-            .toList(),
         createdAt: DateTime.parse(json[_createdAtKey]),
       );
 
@@ -59,18 +41,9 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
   Map<String, dynamic> toJson(final BranchJsonLogEntity branch) => {
         _prjIdKey: branch.projectID,
         _actionKey: branch.action.name,
+        _componentNamesKey: branch.componentNames,
         _branchKey: _branchMapper.toJsonWithId(branch.branch),
-        _pagesKey:
-            branch.pages.map((e) => _pageMapper.toJsonWithId(e)).toList(),
-        _nodesKey: branch.nodes
-            .map((e) => e.toJsonWithStabilIdAndPageIdAndId())
-            .toList(),
-        _colorStylesKey: branch.colorStyles
-            .map((e) => _colorStylesMapper.toJsonWithId(e))
-            .toList(),
-        _textStylesKey: branch.textStyles
-            .map((e) => _textStylesMapper.toJsonWithId(e))
-            .toList(),
+        _jsonFileUrlKey: branch.jsonFileUrl,
       };
 
   BranchJsonLogEntity copyWith(
@@ -78,11 +51,9 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
     final BranchActionLogID? id,
     final ProjectID? projectID,
     final BranchActionTypeEnum? action,
+    final String? componentNames,
     final BranchEntity? branch,
-    final Pages? pages,
-    final Nodes? nodes,
-    final ColorStyles? colorStyles,
-    final TextStyles? textStyles,
+    final String? jsonFileUrl,
     final DateTime? createdAt,
   }) =>
       BranchJsonLogEntity(
@@ -90,10 +61,8 @@ class BranchJsonLogMapper extends Mapper<BranchJsonLogEntity> {
         projectID: projectID ?? e.projectID,
         action: action ?? e.action,
         branch: branch ?? e.branch,
-        pages: pages ?? e.pages,
-        nodes: nodes ?? e.nodes,
-        colorStyles: colorStyles ?? e.colorStyles,
-        textStyles: textStyles ?? e.textStyles,
+        componentNames: componentNames ?? e.componentNames,
+        jsonFileUrl: jsonFileUrl ?? e.jsonFileUrl,
         createdAt: createdAt ?? e.createdAt,
       );
 }

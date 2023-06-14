@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/theta_models.dart';
 
-/// Entity for a branch.
+/// Entity for a Branch Json Log.
 /// Uses BranchJsonLogMapper to serialize/deserialize.
 class BranchJsonLogEntity extends Equatable {
   const BranchJsonLogEntity({
@@ -9,10 +9,8 @@ class BranchJsonLogEntity extends Equatable {
     required this.projectID,
     required this.action,
     required this.branch,
-    required this.pages,
-    required this.nodes,
-    required this.colorStyles,
-    required this.textStyles,
+    required this.componentNames,
+    required this.jsonFileUrl,
     required this.createdAt,
   });
 
@@ -20,22 +18,11 @@ class BranchJsonLogEntity extends Equatable {
   final ProjectID projectID;
   final BranchActionTypeEnum action;
   final BranchEntity branch;
-  final Pages pages;
-  final Nodes nodes;
-  final ColorStyles colorStyles;
-  final TextStyles textStyles;
+  final String componentNames;
+  final String jsonFileUrl;
   final DateTime createdAt;
 
   @override
-  List<Object?> get props => [
-        id,
-        projectID,
-        action,
-        branch,
-        pages,
-        nodes,
-        colorStyles,
-        textStyles,
-        createdAt
-      ];
+  List<Object?> get props =>
+      [id, projectID, action, branch, componentNames, jsonFileUrl, createdAt];
 }
