@@ -16,3 +16,13 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: true
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      description: What were you using when you faced the problem?
+      options:
+        - Theta Studio
+        - Theta Flutter Library
+    validations:
+      required: true
