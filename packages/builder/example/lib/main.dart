@@ -6,7 +6,8 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey: 'thetaKey',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3MjE4ZTIxOC00MmQ5LTQyZTgtYmE1My04MGM2ZTkyN2FiNmMiLCJhbm9uX2tleSI6ImY5M2UzN2U4LTA1ZGEtNDlhMy1hOWRmLThmZTkzODQ5MTQxZSIsImlhdCI6MTY4Njc0ODkzOSwiZXhwIjoxNzE4MzA2NTM5LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.Qy-VI8sOZy0KvdVEqc_hS5OE-EV489FbtVtKMAds6ys',
   );
 
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a page [name].
           body: UIBox(
-            'Button',
+            'Homepage',
 
             /// [placeholder] is the widget displayed while the page is loading.
             placeholder: () => const CircularProgressIndicator(),
@@ -53,10 +54,10 @@ class _MyAppState extends State<MyApp> {
               )..setChild(const UIBox('ComponentName')),
 
               Override(
-                'node name',
+                'f03d7221-9165-4862-913f-9e828c4de8b9',
               )
                 ..setText('Click me!')
-                ..setColor(Colors.white, 1),
+                ..setColor(Colors.red, 1),
 
               Override(
                 'node id 2',
