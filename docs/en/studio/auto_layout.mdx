@@ -1,0 +1,72 @@
+---
+title: Component Fit Modes
+---
+
+![auto_layout_features](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/8c23e82c-f38b-40d6-8465-bae01e868f2d)
+
+# Component Fit Modes
+
+## Absolute mode
+
+By enabling **Absolute mode** (default on all components) then all blocks are positioned according to their absolute coordinates (or responsive alignments) taking against device size.
+
+This mode is useful for creating complex components made from multiple widgets on the same layer, or for creating pieces of pages.
+
+<Warning>Pay attention to the absolute coordinates</Warning>
+
+Sometimes, however, elements with absolute positions cannot integrate with other Flutter widgets or with portions of the screen smaller than the entire screen, as the elements will always follow their coordinates, even going outside any parent widgets inserted into the apps via code.
+
+See the following example:
+
+- Make a component of a button within [Theta](https://app.buildwiththeta.com), with `left: 16`, `right: 16`, `top: 345`, and horizontal constraints to `stretch`.
+- Inside your app, using Theta Flutter Library, wrap your UIBox in a container with `width: 500` and `height: 350`.
+- Run you app with `flutter run`.
+
+The Flutter code:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.absolute
+  ),
+),
+```
+
+You'll see the absolute element will go outside the parent container, as it still follows the top coordinates given in Theta. As illustrated in the following image:
+
+![expanded_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/d73e382d-eeba-4fd2-b55f-49715a319edd)
+
+This is not good for components that need to integrate into a Flutter context. **Auto Layout** can be used to solve this situation.
+
+## Auto Layout
+
+**Auto Layout** mode allows single-block components (made by just one element on the first level) to be able to be displayed regardless of screen size, thus without an absolute position. These are super useful for being able to create widgets that can be embedded inside other widgets, thus without the need for absolute position.
+
+Stretch alignments will still work, however, allowing you to see how a full-width button widens on different devices.
+
+Now let's try the initial example again by setting Auto Layout in the code:
+
+The Flutter code:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.autoLayout,
+  ),
+),
+```
+
+![loose_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/73b30e95-5f97-4bcf-a53f-a5d02ac0c403)
+
+This time, the component is untethered from its absolute coordinates and will be able to be placed as a regular Flutter widget.
+
+
+
