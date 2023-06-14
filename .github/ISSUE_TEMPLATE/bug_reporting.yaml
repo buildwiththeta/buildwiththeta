@@ -74,3 +74,11 @@ body:
       placeholder: I got this output.
     validations:
       required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Run flutter run or flutter build and paste any error logs that might help understand the issue. If the error log is too long, consider using a service like Gist to provide the link to the log. If not applicable, write "N/A" or "Not applicable".
+      placeholder: This is my log.
+    validations:
+      required: false
