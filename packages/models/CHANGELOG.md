@@ -1,3 +1,8 @@
+## 0.1.8
+
+- [x] Feat: userId added in BranchActionLogEntity.
+- [x] Fix: Component Fit modes renamed.
+
 ## 0.1.7
 
 - [x] Feat: Branch Action Log

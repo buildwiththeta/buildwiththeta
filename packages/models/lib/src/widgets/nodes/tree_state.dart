@@ -73,7 +73,7 @@ class TreeState with ChangeNotifier {
   /// Nodes
   List<CNode> nodes;
 
-  ComponentFit fit = ComponentFit.loose;
+  ComponentFit fit = ComponentFit.absolute;
 
   /// Workflows
   /// This is the list of all the workflows
