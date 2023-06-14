@@ -1,3 +1,7 @@
+## 0.1.8
+
+- [x] Feat: ComponentFit upgraded.
+
 ## 0.1.7
 
 - [x] Feat: NodeOverrideExecuter for Image, Text and Color
