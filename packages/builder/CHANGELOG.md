@@ -1,3 +1,7 @@
+## 0.1.7
+
+- [x] Feat: ComponentFit upgraded.
+
 ## 0.1.6
 
 - [x] Fix: New Overrides docs.

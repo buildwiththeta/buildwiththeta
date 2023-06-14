@@ -20,7 +20,7 @@ class UIBox extends StatelessWidget {
     this.errorWidget,
     this.workflows,
     this.overrides,
-    this.fit = ComponentFit.expand,
+    this.fit = ComponentFit.absolute,
   });
 
   final String componentName;
