@@ -90,3 +90,11 @@ body:
       placeholder: This is some more additional context about what happened in my project.
     validations:
       required: false
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Additional Context
+      description: If you have an idea of a potential solution, describe it here. If not, feel free to skip this part.
+      placeholder: This is my possibile solution to the issue faced.
+    validations:
+      required: false
