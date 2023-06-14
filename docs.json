@@ -80,6 +80,11 @@
         ]
       ],
       [
+        "Flutter library", [
+          ["Overrides", "/builder/overrides"]
+        ]
+      ],
+      [
         "Misc.", [
           ["Preguntas frecuentes", "/preguntas-frecuentes"],
           ["Migración", "/support/migración"]
