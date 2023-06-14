@@ -98,3 +98,11 @@ body:
       placeholder: This is my possibile solution to the issue faced.
     validations:
       required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem. Screenshots can be extremely helpful for understanding the issue, especially in the context of visual bugs.
+      placeholder: Upload your screenshot just by dragging it
+    validations:
+      required: false
