@@ -26,3 +26,19 @@ body:
         - Theta Flutter Library
     validations:
       required: true
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug
+      description: Describe the issue you are encountering. Be as detailed as possible, explaining the steps leading to the bug, and what you expected to happen instead.
+      placeholder: I faced this specific bug!
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Flutter Environment
+      description: Provide information about your Flutter environment by running the command flutter doctor -v and pasting the output here. If not applicable, write “N/A” or “Not Applicable”
+      placeholder: This is my Flutter environment
+    validations:
+      required: true
