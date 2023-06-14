@@ -7,8 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug reporting form! Remember, providing as much detail as possible will make it easier for others to help you resolve the bug. If the bug is not immediately reproducible, it may be necessary to provide more context or a sample code snippet that demonstrates the issue.
-        
+        Thanks for taking the time to fill out this bug reporting form! Remember, providing as much detail as possible will make it easier for others to help you resolve the bug. If the bug is not immediately reproducible, it may be necessary to provide more context or a sample code snippet that demonstrates the issue. 
   - type: input
     id: contact
     attributes:
@@ -17,7 +16,6 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: true
-      
   - type: dropdown
     id: product
     attributes:
@@ -28,7 +26,6 @@ body:
         - 1.0.3 (Edge)
     validations:
       required: true
-      
   - type: textarea
     id: bug-description
     attributes:
@@ -37,7 +34,6 @@ body:
       placeholder: I faced this specific bug!
     validations:
       required: true
-  
   - type: textarea
     id: environment
     attributes:
@@ -46,7 +42,6 @@ body:
       placeholder: This is my Flutter environment 
     validations:
       required: true
-  
   - type: textarea
     id: device
     attributes:
@@ -55,7 +50,6 @@ body:
       placeholder: These are the specifications of my device
     validations:
       required: true
-      
   - type: textarea
     id: steps-to-reproduce
     attributes:
@@ -64,7 +58,6 @@ body:
       placeholder: 1. ... 
     validations:
       required: true
-      
   - type: textarea
     id: expected-behaviour
     attributes:
@@ -73,7 +66,6 @@ body:
       placeholder: I expected this specific output. 
     validations:
       required: true
-      
   - type: textarea
     id: actual-behaviour
     attributes:
@@ -82,7 +74,6 @@ body:
       placeholder: I got this output. 
     validations:
       required: true
-      
    - type: textarea
      id: logs
      attributes:
@@ -91,7 +82,6 @@ body:
        placeholder: This is my log.
      validations:
       required: false
-      
   - type: textarea 
     id: context
     attributes:
@@ -100,7 +90,6 @@ body:
       placeholder: This is some more additional context about what happened in my project.
     validations:
       required: false
-      
   - type: textarea 
     id: possible-solution
     attributes:
@@ -109,7 +98,6 @@ body:
       placeholder: This is my possibile solution to the issue faced.
     validations:
       required: false
-  
   - type: textarea
     id: screenshots
     attributes:
@@ -118,7 +106,6 @@ body:
       placeholder: Upload your screenshot just by dragging it
     validations:
       required: false
-      
   - type: checkboxes
     id: terms
     attributes:
