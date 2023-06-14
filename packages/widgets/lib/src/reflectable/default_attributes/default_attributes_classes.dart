@@ -417,14 +417,14 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
           sizeDesktop: '250',
         ),
         DBKeys.width: FSize(
-          size: '',
-          sizeTablet: '',
-          sizeDesktop: '',
+          size: '150',
+          sizeTablet: '150',
+          sizeDesktop: '150',
         ),
         DBKeys.height: FSize(
-          size: '',
-          sizeTablet: '',
-          sizeDesktop: '',
+          size: '150',
+          sizeTablet: '150',
+          sizeDesktop: '150',
         ),
         DBKeys.margins: FMargins(
           margins: [0, 0, 0, 0],
