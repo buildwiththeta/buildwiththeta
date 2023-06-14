@@ -33,6 +33,8 @@
           ["Getting started", "/getting-started"],
           ["Positioning & resizing", "/studio/positioning_and_resizing"],
           ["Responsive constraints", "/studio/constraints"],
+          ["Component fit modes", "/studio/component_fit"],
+          ["Branches", "/studio/branches"],
           ["Get API Token", "/studio/get_project_api"]
         ]
       ],
