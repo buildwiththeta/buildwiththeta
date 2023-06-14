@@ -85,7 +85,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       final height =
           isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
 
-      if (state.fit == ComponentFit.loose) {
+      if (state.fit == ComponentFit.autoLayout) {
         return Padding(
           padding: EdgeInsets.only(
               top:
