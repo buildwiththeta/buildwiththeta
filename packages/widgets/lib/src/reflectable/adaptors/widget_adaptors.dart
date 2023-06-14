@@ -1134,6 +1134,7 @@ class ResponsiveConditionAdapter extends WidgetAdapter {
         child: state.node.child,
         visibleOnDesktop:
             state.node.getAttributes[DBKeys.visibleOnDesktop] as bool,
+        visibleOnLaptop: state.node.getAttributes[DBKeys.visibleOnLaptop] as bool,
         visibleOnMobile:
             state.node.getAttributes[DBKeys.visibleOnMobile] as bool,
         visibleOnTablet:

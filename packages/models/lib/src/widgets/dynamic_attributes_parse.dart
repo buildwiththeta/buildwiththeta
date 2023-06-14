@@ -144,6 +144,7 @@ class DynamicAttributes {
       case DBKeys.visibleOnDesktop:
       case DBKeys.visibleOnMobile:
       case DBKeys.visibleOnTablet:
+      case DBKeys.visibleOnLaptop:
       case DBKeys.fadeAnimationEnabled:
       case DBKeys.scaleAnimationEnabled:
       case DBKeys.slideAnimationEnabled:

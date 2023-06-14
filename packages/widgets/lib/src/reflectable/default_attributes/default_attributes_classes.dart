@@ -1009,6 +1009,7 @@ class ResponsiveConditionDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.visibleOnDesktop: true,
         DBKeys.visibleOnMobile: true,
+        DBKeys.visibleOnLaptop: true,
         DBKeys.visibleOnTablet: true,
       };
 
