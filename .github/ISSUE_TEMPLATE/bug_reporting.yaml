@@ -42,3 +42,27 @@ body:
       placeholder: This is my Flutter environment
     validations:
       required: true
+  - type: textarea
+    id: device
+    attributes:
+      label: Device Information
+      description: Provide specifications about the device on which you are experiencing this issue (e.g., manufacturer, model, OS version, browser used).
+      placeholder: These are the specifications of my device
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide a set of steps to reproduce the bug. Be as detailed as possible.
+      placeholder: 1. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected Behaviour
+      description: What were you expecting to happen when you performed the steps above?
+      placeholder: I expected this specific output.
+    validations:
+      required: true
