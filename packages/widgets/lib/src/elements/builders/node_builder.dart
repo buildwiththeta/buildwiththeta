@@ -58,7 +58,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
             : _handleNotPlayVisibility(state);
   }
 
-  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1000
+  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1200
       ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
       : MediaQuery.of(context).size.width > 834
           ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
