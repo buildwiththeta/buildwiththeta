@@ -90,27 +90,4 @@ body:
       placeholder: This is some more additional context about what happened in my project.
     validations:
   required: false
-  - type: textarea
-    id: possible-solution
-    attributes:
-      label: Additional Context
-      description: If you have an idea of a potential solution, describe it here. If not, feel free to skip this part.
-      placeholder: This is my possibile solution to the issue faced.
-    validations:
-      required: false
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Screenshots
-      description: If applicable, add screenshots to help explain your problem. Screenshots can be extremely helpful for understanding the issue, especially in the context of visual bugs.
-      placeholder: Upload your screenshot just by dragging it
-    validations:
-      required: false
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/buildwiththeta/buildwiththeta/blob/main/CODE_OF_CONDUCT.md)
-    options:
-      - label: I agree to follow this project's Code of Conduct
-      required: true
+
