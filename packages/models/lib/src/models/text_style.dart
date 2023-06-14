@@ -18,17 +18,20 @@ class TextStyleEntity extends Equatable {
     required this.fontFamily,
     required this.fontSize,
     required this.fontWeight,
+    this.stabilID = '',
   });
 
   const TextStyleEntity.ready()
       : id = '',
         branchID = '',
+        stabilID = '',
         name = 'Text Style',
         fontFamily = 'Poppins',
         fontSize = const FFontSize(),
         fontWeight = const FFontWeight();
 
   final ID id;
+  final ID stabilID;
   final BranchID branchID;
   final String name;
   final String fontFamily;
@@ -37,9 +40,9 @@ class TextStyleEntity extends Equatable {
 
   @override
   List<Object?> get props =>
-      [id, name, branchID, fontFamily, fontSize, fontWeight];
+      [id, stabilID, name, branchID, fontFamily, fontSize, fontWeight];
 
   @override
   String toString() =>
-      'TextStyleModel { id: $id, channel_id: $branchID, name: $name, font_family: $fontFamily, font_size: ${fontSize.toCode()},font_weight ${fontWeight.toCode()} }';
+      'TextStyleModel { id: $id, stabilID:$stabilID, channel_id: $branchID, name: $name, font_family: $fontFamily, font_size: ${fontSize.toCode()},font_weight ${fontWeight.toCode()} }';
 }

@@ -20,6 +20,7 @@ class UIBox extends StatelessWidget {
     this.errorWidget,
     this.workflows,
     this.overrides,
+    this.fit = ComponentFit.expand,
   });
 
   final String componentName;
@@ -27,12 +28,14 @@ class UIBox extends StatelessWidget {
   final Widget Function(String)? errorWidget;
   final List<Workflow>? workflows;
   final List<Override>? overrides;
+  final ComponentFit fit;
 
   @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
       workflows: workflows,
       nodeOverrides: overrides,
+      componentFit: fit,
       child: _LogicBox(
         componentName,
         placeholder: placeholder,

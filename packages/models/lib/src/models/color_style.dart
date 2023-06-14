@@ -17,6 +17,7 @@ class ColorStyleEntity extends Equatable {
     required this.name,
     required this.dark,
     required this.light,
+    this.stabilID = '',
   });
 
   final ID id;
@@ -24,11 +25,12 @@ class ColorStyleEntity extends Equatable {
   final String name;
   final FFill dark;
   final FFill light;
+  final ID stabilID;
 
   @override
-  List<Object> get props => [id, branchID, name, dark, light];
+  List<Object> get props => [id, stabilID, branchID, name, dark, light];
 
   @override
   String toString() =>
-      'ColorStyleModel { id: $id, branch_id: $branchID, name: $name }';
+      'ColorStyleModel { id: $id, stabilID:$stabilID branch_id: $branchID, name: $name }';
 }

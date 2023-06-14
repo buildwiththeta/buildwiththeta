@@ -45,24 +45,7 @@ class FAlign extends Equatable {
     required final bool forPlay,
     final DeviceType deviceType = DeviceType.phone,
   }) {
-    if (forPlay) {
-      final width = MediaQuery.of(context).size.width;
-      if (width < 600) {
-        return align!;
-      } else if (width < 900) {
-        return alignTablet != null ? alignTablet ?? align! : align!;
-      } else {
-        return alignDesktop != null ? alignDesktop ?? align! : align!;
-      }
-    } else {
-      if (deviceType == DeviceType.phone) {
-        return align!;
-      } else if (deviceType == DeviceType.tablet) {
-        return alignTablet ?? align!;
-      } else {
-        return alignDesktop ?? align!;
-      }
-    }
+    return align!;
   }
 
   String getStringForDropDown(
@@ -77,21 +60,11 @@ class FAlign extends Equatable {
   }
 
   static FAlign fromJson(final dynamic json) {
-    if (json is String) {
-      return FAlign(
-        align: convertJsonToValue(json),
-      );
-    } else {
-      try {
-        return FAlign(
-          align: convertJsonToValue(json['m'] as String? ?? ''),
-          alignTablet: convertDropDownToValue(json['t'] as String? ?? ''),
-          alignDesktop: convertDropDownToValue(json['d'] as String? ?? ''),
-        );
-      } catch (e) {
-        return const FAlign();
-      }
-    }
+    return FAlign(
+      align: convertJsonToValue(json['m']),
+      alignTablet: convertDropDownToValue(json['t'] ?? json['m'] ?? ''),
+      alignDesktop: convertDropDownToValue(json['d'] ?? json['m'] ?? ''),
+    );
   }
 
   Map<String, dynamic> toJson() => {
@@ -118,17 +91,28 @@ class FAlign extends Equatable {
       );
 
   static Alignment convertJsonToValue(final String key) {
-    var align = Alignment.topLeft;
-    if (key == 'tL') align = Alignment.topLeft;
-    if (key == 'tC') align = Alignment.topCenter;
-    if (key == 'tR') align = Alignment.topRight;
-    if (key == 'cL') align = Alignment.centerLeft;
-    if (key == 'c') align = Alignment.center;
-    if (key == 'cR') align = Alignment.centerRight;
-    if (key == 'bL') align = Alignment.bottomLeft;
-    if (key == 'bC') align = Alignment.bottomCenter;
-    if (key == 'bR') align = Alignment.bottomRight;
-    return align;
+    switch (key) {
+      case 'tL':
+        return Alignment.topLeft;
+      case 'tC':
+        return Alignment.topCenter;
+      case 'tR':
+        return Alignment.topRight;
+      case 'cL':
+        return Alignment.centerLeft;
+      case 'c':
+        return Alignment.center;
+      case 'cR':
+        return Alignment.centerRight;
+      case 'bL':
+        return Alignment.bottomLeft;
+      case 'bC':
+        return Alignment.bottomCenter;
+      case 'bR':
+        return Alignment.bottomRight;
+      default:
+        return Alignment.topLeft;
+    }
   }
 
   static Alignment convertDropDownToValue(final String key) {

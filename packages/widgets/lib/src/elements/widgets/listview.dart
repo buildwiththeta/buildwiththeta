@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
 class OpenWListView extends StatelessWidget {
   /// Returns a ListView in Teta
@@ -29,6 +30,8 @@ class OpenWListView extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
+    final children = const NodeOverrideExecuter()
+        .executeChildren(context, state, this.children);
     return NotificationListener<ScrollEndNotification>(
       onNotification: (final scrollEnd) {
         return true;
@@ -43,16 +46,7 @@ class OpenWListView extends StatelessWidget {
           scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
           itemCount: children.isEmpty ? 1 : children.length,
           itemBuilder: (final context, final index) {
-            return children.isNotEmpty
-                ? children[index].toWidget(
-                    context: context,
-                    state: state.copyWith(
-                      node: children[index],
-                      loop: index,
-                      isVertical: isVertical,
-                    ),
-                  )
-                : const SizedBox();
+            return children.isNotEmpty ? children[index] : const SizedBox();
           },
         ),
       ),

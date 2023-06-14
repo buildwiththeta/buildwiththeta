@@ -2,29 +2,66 @@
 title: Override Element Properties
 ---
 
+![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
+
 # Override element properties
 
-## Override child
+You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
 
-You can override the child of an element with a Flutter widget by mixing no-code with Flutter. 
+## Text override
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override('Label')
+            ..setText('Click me!'),
+    ],
+),
+```
+
+## Image override
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Image')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+## Color override (`Container` background color and `Text` color)
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Post Title')
+            ..setColor(Colors.white, 0.5),
+    ],
+),
+```
+
+## Child override
+
 If in the no-code component the element to which you want to overwrite the child already has one, 
 it will be removed and replaced with the one entered by the user via code.
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
 
 ```dart
 UIBox(
     'Component name',
     overrides: const [
-        Override(
-            'Element id',
-            props: [
-                ChildProperty(child: CircularProgressIndicator()),
-            ],
-        ),
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
     ],
 ),
 ```
 
-## Override children
+## Children override
 
 You can also overwrite the children of an element. 
 
@@ -32,33 +69,8 @@ You can also overwrite the children of an element.
 UIBox(
     'Component name',
     overrides: const [
-        Override(
-            'Element name',
-            props: [
-                ChildrenProperty(children: [
-                    Text('Click me!'),
-                    // other widgets
-                ]),
-            ],
-        )
-    ],
-),
-```
-
-## Mixing of different UIBox(es)
-
-You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
-
-```dart
-UIBox(
-    'Wrapper Widget',
-    overrides: const [
-        Override(
-            'Element id',
-            props: [
-                ChildProperty(child: UIBox('Primary Button')),
-            ],
-        ),
+        Override('Element name')
+            ..setChildren([Text('Child 1'), Text('Child 2')]),
     ],
 ),
 ```

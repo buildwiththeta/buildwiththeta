@@ -6,7 +6,7 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
-    anonKey: '',
+    anonKey: 'thetaKey',
   );
 
   runApp(const MyApp());
@@ -40,24 +40,27 @@ class _MyAppState extends State<MyApp> {
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error),
 
+            /// [fit] is how the component should fit the parent.
+            /// It can be [ComponentFit.expand] or [ComponentFit.loose].
+            fit: ComponentFit.expand,
+
             /// [overrides] are the properties that can be overriden by the user.
-            overrides: const [
+            overrides: [
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
                 'node id',
-                props: [
-                  /// [ChildProperty] is used to override the child of a node.
-                  ChildProperty(
-                    child: Text('Click me!'),
-                  ),
+              )..setChild(const UIBox('ComponentName')),
 
-                  /// [ChildrenProperty] is used to override the children of a node.
-                  // ChildrenProperty(
-                  //  children: [Text('Click me!')],
-                  // ),
-                ],
+              Override(
+                'node name',
               )
+                ..setText('Click me!')
+                ..setColor(Colors.white, 1),
+
+              Override(
+                'node id 2',
+              )..setChildren([const Text('Click me!')]),
             ],
 
             /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.

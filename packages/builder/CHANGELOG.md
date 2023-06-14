@@ -1,3 +1,12 @@
+## 0.1.6
+
+- [x] Fix: New Overrides docs.
+
+## 0.1.5
+
+- [x] Feat: Add Text, Image, Color overrides.
+- [x] Fix: New Override syntax.
+
 ## 0.1.4
 
 - [x] Fix: Override class updated.
