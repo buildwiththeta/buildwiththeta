@@ -1,0 +1,148 @@
+# Getting started
+
+Theta works between the [hosted](https://buildwiththeta.com) platform and client library. To get started:
+
+- Sign up at [buildwiththeta.com](https://buildwiththeta.com) (An invite is required in closed beta).
+- Create a new project and design your first interface.
+- Copy the page the name you want mirror.
+- Install [Theta client library](https://pub.dev/packages/theta) and use a `UIBox('name of the page')` to integrate the page within your app.
+
+## System requirements
+
+Theta is a web application that can be used from a browser. For optimal experience, please follow the system requirements:
+
+- Working on a desktop or laptop is recommended.
+- Use a screen of at least 12 inches.
+- It is recommended to use Google Chrome (if you experience problems, please try to see if problems persist on Chrome).
+- To do copy and paste within a project, allow the ClipBoard (a dialog box will appear at app.buildwiththeta.com)
+
+## Designing your interface
+
+- See [how to move and resize elements](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
+- See [how to set responsive constraints](https://docs.page/buildwiththeta/buildwiththeta/en/studio/constraints).
+
+## Installing Theta client library
+
+```
+flutter pub add theta
+```
+
+### Initializing
+
+Initialize Theta by calling Theta.initialize with your anonymous key. Be sure to call this method at the root of your app.
+
+```dart
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'thetaKey');
+}
+```
+
+### Wrap your app with ThetaProvider 
+
+Wrap your app with ThetaProvider to enable any UIBox to receive the theme and project styles.
+
+```dart
+ThetaProvider(
+    theme: ThemeMode.light,
+    child: MaterialApp(
+        home: // ...
+    ),
+)
+```
+
+### Render remote UI 
+
+Everything you need to do is to add a UIBox widget to your app and pass the component name as a parameter.
+
+```dart
+/// Your app
+return Scaffold(
+    body: Center(
+        child: UIBox('Component name'),
+    ),
+);
+```
+
+### Loading placeholder and error handling 
+
+You can display a placeholder widget during loading and an error widget.
+
+```dart
+UIBox(
+    'Homepage',
+    placeholder: CircularProgressIndicator(),
+    errorWidget: (error) => Text(error),
+)
+```
+
+## Add custom code
+
+Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add custom code, called 'workflow' based on gesture triggers.
+
+1. Select a single UI element based on its id or name.
+2. Choose the trigger for which the action will start.
+3. Add your code.
+
+```dart
+UIBox(
+    'CupertinoAppBar',
+    workflows: [
+        Workflow('Element id', Trigger.onTap, (context) {
+            /// Your method
+        }),
+    ]
+)
+```
+
+## Override block properties
+
+You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Post title')
+            ..setText('My beautiful cat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Child override
+
+If in the no-code component the element to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+### Children override
+
+You can also overwrite the children of an element. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element name')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
+```
