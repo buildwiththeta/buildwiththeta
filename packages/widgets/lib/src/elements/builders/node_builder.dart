@@ -49,26 +49,35 @@ class _NodeBuilderState extends State<NodeBuilder> {
                   marginsDesktop: [0, 0, 0, 0]))
           .get(state: state, context: context);
 
-  bool _handleVisibility(TreeState state) =>
-      (widget.node.getAttributes[DBKeys.visibility] as bool? ?? true) &&
-              state.forPlay
-          ? _handlePlayVisibility()
-          : _handleNotPlayVisibility(state);
+  bool _handleVisibility(TreeState state) {
+    final visibility = widget.node.getAttributes[DBKeys.visibility] as bool?;
+    return (visibility == false)
+        ? false
+        : ((visibility ?? true) && state.forPlay)
+            ? _handlePlayVisibility()
+            : _handleNotPlayVisibility(state);
+  }
 
-  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1000
+  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1200
       ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
-      : MediaQuery.of(context).size.width > 600
-          ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ?? true)
-          : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
-              true);
+      : MediaQuery.of(context).size.width > 834
+          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          : MediaQuery.of(context).size.width > 600
+              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+                  true)
+              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+                  true);
 
   bool _handleNotPlayVisibility(TreeState state) => state.deviceType ==
           DeviceType.desktop
       ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
-      : state.deviceType == DeviceType.tablet
-          ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ?? true)
-          : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
-              true);
+      : state.deviceType == DeviceType.laptop
+          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          : state.deviceType == DeviceType.tablet
+              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+                  true)
+              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+                  true);
 
   double _handleRotation(TreeState state) => double.parse(
       (widget.node.getAttributes[DBKeys.rotation] as FTextTypeInput?)?.value ??

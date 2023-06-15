@@ -19,6 +19,7 @@ class OpenWResponsiveCondition extends NodeWidget {
     required super.nodeState,
     required this.visibleOnMobile,
     required this.visibleOnTablet,
+    required this.visibleOnLaptop,
     required this.visibleOnDesktop,
     this.child,
   });
@@ -26,6 +27,7 @@ class OpenWResponsiveCondition extends NodeWidget {
   final CNode? child;
   final bool visibleOnMobile;
   final bool visibleOnTablet;
+  final bool visibleOnLaptop;
   final bool visibleOnDesktop;
 
   @override
@@ -34,6 +36,17 @@ class OpenWResponsiveCondition extends NodeWidget {
     /// If the device is a desktop, return the child if visibleOnDesktop is true
     if (state.deviceType == DeviceType.desktop) {
       return visibleOnDesktop
+          ? ChildBuilder(
+              context: context,
+              state: nodeState,
+              child: child,
+            )
+          : const SizedBox();
+    }
+
+    /// If the device is a laptop, return the child if visibleOnLaptop is true
+    if (state.deviceType == DeviceType.laptop) {
+      return visibleOnLaptop
           ? ChildBuilder(
               context: context,
               state: nodeState,

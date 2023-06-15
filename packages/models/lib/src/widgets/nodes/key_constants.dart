@@ -89,6 +89,7 @@ class DBKeys {
   static const String isFullWidth = 'sFW';
   static const String visibleOnMobile = 'vOM';
   static const String visibleOnTablet = 'vOT';
+  static const String visibleOnLaptop = 'vOL';
   static const String visibleOnDesktop = 'vOD';
   static const String fadeAnimationEnabled = 'animF';
   static const String scaleAnimationEnabled = 'animScale';
