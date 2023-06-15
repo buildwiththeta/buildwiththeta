@@ -93,7 +93,7 @@ body:
   - type: textarea
     id: possible-solution
     attributes:
-      label: Additional Context
+      label: Possible Solution
       description: If you have an idea of a potential solution, describe it here. If not, feel free to skip this part.
       placeholder: This is my possibile solution to the issue faced.
     validations:
