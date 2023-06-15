@@ -1,46 +1,47 @@
 ---
-title: Constraints
-description: Keep elements aligned on specific sides, or stretching them following screen sizes.
+title: Kısıtlamalar
+description: Aynı tarafta hizalı tutun veya ekran boyutlarına uyarak gerdirin.
+
 ---
 
-# UI Alignment Constraints
+# Kısıtlamalarla UI Hizalaması (UI Alignment Constraints)
 
-The UI Alignment Constraints allow you to control the positioning of an element within a layout. You can set alignment options for both the vertical and horizontal axes. The three options available are `start`, `end`, and `stretch`.
+UI Hizalama Kısıtlamaları(UI Alignment Constraints), bir düzen içinde bir öğenin konumunu kontrol etmenizi sağlar. Hem dikey hem de yatay eksenler için hizalama seçenekleri belirleyebilirsiniz. Mevcut olan üç seçenek `start`, `end` ve `stretch` olarak adlandırılır.
 
 <YouTube id="LRhMnuvEg7A" />
 
-## Horizontal Alignment
+## Yatay Hizalama (Horizontal Alignment)
 
-* `Start`: Aligns the element to the left of the container. The element will be positioned according to the left value.
+* `Start`:  Öğeyi konteynerin soluna hizalar. Öğe, sol değere göre konumlandırılır.
 
-* `End`: Aligns the element to the right of the container. The element's right edge will be positioned according to the right value.
+* `End`: Öğeyi konteynerin sağına hizalar. Öğenin sağ kenarı, sağ değere göre konumlandırılır.
 
-* `Stretch`: Stretches the element horizontally to fill the width of the container, maintaining the left and right margin values.
+* `Stretch`: Öğeyi yatay olarak konteynerin genişliğini dolduracak şekilde gererek, sol ve sağ kenar boşluk değerlerini korur.
 
-## Vertical Alignment
+## Dikey Hizalama (Vertical Alignment)
 
-* `Start`: Aligns the element to the top of the container. The element will be positioned according to the top value.
+* `Start`: Öğeyi konteynerin üstüne hizalar. Öğe, üst değere göre konumlandırılır.
 
-* `End`: Aligns the element to the bottom of the container. The element's bottom edge will be positioned according to the bottom value.
+* `End`: Öğeyi konteynerin altına hizalar. Öğenin alt kenarı, alt değere göre konumlandırılır.
 
-* `Stretch`: Stretches the element vertically to fill the height of the container, maintaining the top and bottom margin values.
+* `Stretch`: Öğeyi dikey olarak konteynerin yüksekliğini dolduracak şekilde gererek, üst ve alt kenar boşluk değerlerini korur.
 
-## Examples
+## Örnekler
 
-1. If you select `start` for both vertical and horizontal alignment, the element will be positioned at the top-left corner, with the top and left values determining the exact position.
+1. Hem dikey hem de yatay hizalama için`start` seçerseniz, öğe sol üst köşede konumlandırılır ve tam konumu üst ve sol değerler belirler.
 
-2. If you select `end` for both vertical and horizontal alignment, the element will be positioned at the bottom-right corner, with the top and left values determining the exact position.
+2. Hem dikey hem de yatay hizalama için `end` seçerseniz, öğe sağ alt köşede konumlandırılır ve tam konumu üst ve sol değerler belirler.
 
-3. If you select `stretch` for horizontal alignment, the element will span the full width of the screen, with its width determined by the left and right margin values.
+3. Yatay hizalamada `stretch` seçerseniz, öğe ekranın tam genişliğini kaplar ve genişliği sol ve sağ kenar boşluk değerlerine bağlı olarak belirlenir.
 
-4. If you select `stretch` for vertical alignment, the element will span the full height of the screen, with its height determined by the top and bottom margin values.
+4. Dikey hizalamada `stretch` seçerseniz, öğe ekranın tam yüksekliğini kaplar ve yüksekliği üst ve alt kenar boşluk değerlerine bağlı olarak belirlenir.
 
-## Override Constraints for Tablet and Desktop
+##  Tablet ve Masaüstü İçin Kısıtlamaları Geçersiz Kılma (Override Constraints)
 
-In addition to the default mobile settings, you can override the alignment constraints for larger screens such as tablets and desktops. This allows you to optimize your UI for various screen sizes and create a truly responsive design.
+Varsayılan mobil ayarların yanı sıra, tablet ve masaüstü gibi daha büyük ekranlar için hizalama kısıtlamalarını geçersiz kılabilirsiniz. Bu, farklı ekran boyutları için UI'nizi optimize etmenize ve gerçekten duyarlı bir tasarım oluşturmanıza olanak tanır.
 
-To do this, simply set the desired alignment values for the tablet and desktop breakpoints in the settings. This will override the default mobile constraints, providing a different alignment behavior on these devices.
+Bunu yapmak için, ayarlarda tablet ve masaüstü kesinti noktaları için istenen hizalama değerlerini (alignment values) ayarlayın. Bu, varsayılan mobil kısıtlamaları geçersiz kılar ve bu cihazlarda farklı bir hizalama davranışı sağlar.
 
-## Remove Overrides
+## Geçersiz Kılmalardan Kurtulma (Remove Overrides)
 
-If you wish to revert back to the mobile settings on a tablet or desktop, you can easily do so by clicking on the 'Follow phone settings' button. This will remove the override constraints, allowing the element to align according to the default mobile settings on all devices. This feature provides a flexible way to adjust your UI alignment constraints as per your design requirements.
+Tablet veya masaüstünde mobil ayarlara geri dönmek isterseniz, 'Follow phone settings (Telefon ayarlarını takip et)' düğmesine tıklayarak kolayca yapabilirsiniz. Bu, geçersiz kısıtlamaları kaldırır ve öğenin tüm cihazlarda varsayılan mobil ayarlara göre hizalanmasına izin verir. Bu özellik, tasarım gereksinimlerinize göre UI hizalama kısıtlamalarını esnek bir şekilde ayarlamanızı sağlar.

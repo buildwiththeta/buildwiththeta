@@ -1,14 +1,14 @@
 ---
-title: Theta Flutter library supported platforms
+title: Theta Flutter kütüphanesinin desteklediği platformlar
 ---
 
-# Compatibility
+# Uyumluluk
 
-Platforms supported by the [Theta Flutter library](https://pub.dev/packages/theta).
+[Theta Flutter kütüphanesi](https://pub.dev/packages/theta) tarafından desteklenen platformlar.
 
-<Warning>Theta is only compatible with Dart 3.</Warning>
+<Warning>Theta yalnızca Dart 3 ile uyumludur.</Warning>
 
-## Supported platforms
+## Desteklenen platformlar
 
 - [x] Web
 - [x] iOS
@@ -18,23 +18,24 @@ Platforms supported by the [Theta Flutter library](https://pub.dev/packages/thet
 
 ---
 
-## Configuration
+## Yapılandırma
 
 ### Web
 
-No configuration is required.
+Yapılandırma gerektirmez.
 
 ### iOS
 
-No configuration is required.
+Yapılandırma gerektirmez.
 
 ### Android
 
-> Time required for setup: 2 minutes.
+> Krulum için gereken süre: 2 dakika.
 
-<Warning>Theta is not be available to users running Android SDKs below 19.</Warning>
+<Warning>Theta, 19'den düşük Android SDK sürümlerini kullanan kullanıcılara uygun değildir.</Warning>
 
-Since Theta depends on `[package_info_plus](https://pub.dev/packages/package_info_plus)` the `minSdkVersion` must be at least 19.
+Theta, `[package_info_plus](https://pub.dev/packages/package_info_plus)`a bağımlı olduğu için `minSdkVersion` en az 19 olmalıdır.
+
 
 ```
 android/app/build.gradle:
@@ -44,8 +45,7 @@ android {
   }
 }
 ```
-
-Also, Theta requires [internet connection](https://developer.android.com/training/basics/network-ops/connecting).
+Ayrıca, Theta [internet bağlantısı](https://developer.android.com/training/basics/network-ops/connecting) gerektirir.
 
 ```
 <manifest xmlns:android...>
@@ -57,18 +57,18 @@ Also, Theta requires [internet connection](https://developer.android.com/trainin
 
 ### macOS
 
-> Time required for setup: 1 minute.
+> Kurulum için gereken süre: 1 dakika.
 
-macOS apps must allow network access in the relevant .entitlements files.
+macOS uygulamalarının ilgili .entitlements dosyalarında ağ erişimine izin vermesi gerekmektedir.
 
 ```
 <key>com.apple.security.network.client</key>
 <true/>
 ```
+[Entitlements](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements) ayarlarını yapma hakkında daha fazla bilgi edinin.
 
-Learn more about [setting up entitlements](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements).
 
 ### Windows
 
-No configuration is required.
+Yapılandırma gerektirmez.
 

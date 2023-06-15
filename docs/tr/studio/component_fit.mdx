@@ -1,28 +1,28 @@
 ---
-title: Component Fit Modes
+title: Bileşen Uyumluluk Modları
 ---
 
 ![auto_layout_features](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/8c23e82c-f38b-40d6-8465-bae01e868f2d)
 
-# Component Fit Modes
+# Bileşen Uyumluluk (Component Fit) Modları
 
-## Absolute mode
+## Mutlak (Absolute) Mod
 
-By enabling **Absolute mode** (default on all components) then all blocks are positioned according to their absolute coordinates (or responsive alignments) taking against device size.
+**Mutlak (Absolute) mod** (tüm bileşenler için varsayılan) etkinleştirildiğinde, tüm bloklar, mutlak koordinatlarına (veya duyarlı hizalamalara) göre cihaz boyutuna karşı konumlandırılır.
 
-This mode is useful for creating complex components made from multiple widgets on the same layer, or for creating pieces of pages.
+Bu mod, aynı katmanda birden fazla bileşen içeren karmaşık bileşenler veya sayfa parçaları oluşturmak için kullanışlıdır.
 
-<Warning>Pay attention to the absolute coordinates</Warning>
+<Warning>Mutlak koordinatlara dikkat edin</Warning>
 
-Sometimes, however, elements with absolute positions cannot integrate with other Flutter widgets or with portions of the screen smaller than the entire screen, as the elements will always follow their coordinates, even going outside any parent widgets inserted into the apps via code.
+Ancak bazen mutlak konumlara sahip öğeler, diğer Flutter bileşenleriyle veya tüm ekrandan daha küçük olan ekran bölümleriyle entegre olamaz, çünkü öğeler her zaman koordinatlarını takip eder ve hatta kod aracılığıyla uygulamalara eklenen herhangi bir üst öğenin dışına çıkabilir.
 
-See the following example:
+Aşağıdaki örneğe bakalım:
 
-- Make a component of a button within [Theta](https://app.buildwiththeta.com), with `left: 16`, `right: 16`, `top: 345`, and horizontal constraints to `stretch`.
-- Inside your app, using Theta Flutter Library, wrap your UIBox in a container with `width: 500` and `height: 350`.
-- Run you app with `flutter run`.
+- [Theta](https://app.buildwiththeta.com içinde bir düğme bileşeni oluşturun ve `left: 16`, `right: 16`, `top: 345` ve yatay sınırlamaları `stretch` olarak ayarlayın.
+- Theta Flutter Kütüphanesini kullanarak uygulamanızda, UIBox'ı  `width: 500` ve  `height: 350` değerleriyle bir konteyner içine alın.
+- Uygulamanızı `flutter run` komutuyla çalıştırın.
 
-The Flutter code:
+Flutter kodu:
 
 ```dart
 Container(
@@ -36,21 +36,21 @@ Container(
 ),
 ```
 
-You'll see the absolute element will go outside the parent container, as it still follows the top coordinates given in Theta. As illustrated in the following image:
+Mutlak modda bileşen, Theta'da verilen üst koordinatları takip ederek üst öğe konteynerının dışına çıkacaktır. Aşağıdaki resimde gösterildiği gibi:
 
 ![expanded_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/d73e382d-eeba-4fd2-b55f-49715a319edd)
 
-This is not good for components that need to integrate into a Flutter context. **Auto Layout** can be used to solve this situation.
+Bu, bir Flutter bağlamına entegre olması gereken bileşenler için uygun değildir. Bu durumu çözmek için **Otomatik Düzen(Auto Layout)** kullanılabilir.
 
-## Auto Layout
+## Otomatik Düzen (Auto Layout)
 
-**Auto Layout** mode allows single-block components (made by just one element on the first level) to be able to be displayed regardless of screen size, thus without an absolute position. These are super useful for being able to create widgets that can be embedded inside other widgets, thus without the need for absolute position.
+**Otomatik Düzen(Auto Layout)** modu, tek-blok bileşenlerin (sadece birinci seviyede tek bir öğe tarafından oluşturulan bileşenler) ekran boyutundan bağımsız olarak görüntülenebilmesini sağlar, yani mutlak bir konumu olmadan. Bu, başka bileşenlerin içine yerleştirilebilen widget'lar oluşturabilme konusunda  son derece kullanışlıdır ve mutlak konuma ihtiyaç duymaz.
 
-Stretch alignments will still work, however, allowing you to see how a full-width button widens on different devices.
+Stretch hizalamaları hala çalışır, bu sayede tam genişlikte bir düğmenin farklı cihazlarda nasıl genişlediğini görebilirsiniz.
 
-Now let's try the initial example again by setting Auto Layout in the code:
+Şimdi, kodda Otomatik Düzen'i ayarlayarak ilk örneği tekrar deneyelim:
 
-The Flutter code:
+Flutter kodu:
 
 ```dart
 Container(
@@ -66,7 +66,7 @@ Container(
 
 ![loose_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/73b30e95-5f97-4bcf-a53f-a5d02ac0c403)
 
-This time, the component is untethered from its absolute coordinates and will be able to be placed as a regular Flutter widget.
+Bu kez bileşen, mutlak koordinatlardan bağımsızdır ve bir Flutter widget'ı gibi yerleştirilebilir hale gelir.
 
 
 

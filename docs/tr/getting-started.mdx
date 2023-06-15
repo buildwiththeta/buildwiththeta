@@ -1,35 +1,36 @@
-# Getting started
+# Başlarken
 
-Theta works between the [hosted](https://buildwiththeta.com) platform and client library. To get started:
+Theta, [hosted](https://buildwiththeta.com) platformu ve istemci kütüphanesi (client library) arasında çalışır. Başlamak için:
 
-- Sign up at [buildwiththeta.com](https://buildwiththeta.com) (An invite is required in closed beta).
-- Create a new project and design your first interface.
-- Copy the page the name you want mirror.
-- Install [Theta client library](https://pub.dev/packages/theta) and use a `UIBox('name of the page')` to integrate the page within your app.
+- [buildwiththeta.com](https://buildwiththeta.com) adresine kaydolun (Kapalı beta sürecinde davet gereklidir).
+- Yeni bir proje oluşturun ve ilk arayüzünüzü tasarlayın.
+- Aynı adı taşıyan sayfayı kopyalayın.
+- [Theta istemci kütüphanesi](https://pub.dev/packages/theta)'ni yükleyin ve sayfayı uygulamanızın içine entegre etmek için `UIBox('sayfa adı')` kullanın.
 
-## System requirements
+## Sistem gereksinimleri
 
-Theta is a web application that can be used from a browser. For optimal experience, please follow the system requirements:
+Theta, bir tarayıcıdan kullanılabilen bir web uygulamasıdır. Optimal deneyim için sistem gereksinimlerine dikkat edin:
 
-- Working on a desktop or laptop is recommended.
-- Use a screen of at least 12 inches.
-- It is recommended to use Google Chrome (if you experience problems, please try to see if problems persist on Chrome).
-- To do copy and paste within a project, allow the ClipBoard (a dialog box will appear at app.buildwiththeta.com)
+- Masaüstü veya dizüstü bilgisayarda çalışmanız önerilir.
+- En az 12 inçlik bir ekran kullanın.
+- Google Chrome kullanmanız önerilir (sorunlar yaşıyorsanız, sorunların Chrome'da da devam edip etmediğini kontrol edin).
+- Bir projede kopyalama yapmak için, ClipBoard'a izin verin (app.buildwiththeta.com adresinde bir iletişim kutusu görünecektir).
 
-## Designing your interface
+## Arayüzünüzü tasarlama
 
-- See [how to move and resize elements](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
-- See [how to set responsive constraints](https://docs.page/buildwiththeta/buildwiththeta/en/studio/constraints).
+- [Elemanları taşıma ve yeniden boyutlandırma hakkında](https://docs.page/buildwiththeta/buildwiththeta/tr/studio/positioning_and_resizing) bilgi alın.
+- [Duyarlı sınırlamaları ayarlama hakkında](https://docs.page/buildwiththeta/buildwiththeta/tr/studio/constraints) bilgi alın.
 
-## Installing Theta client library
+
+## Theta istemci kütüphanesini yükleme
 
 ```
 flutter pub add theta
 ```
 
-### Initializing
+### Başlatma
 
-Initialize Theta by calling Theta.initialize with your anonymous key. Be sure to call this method at the root of your app.
+Theta'yı, anonim anahtarınızla Theta.initialize yöntemini çağırarak başlatın. Bu yöntemi uygulamanızın kökünde çağırmayı unutmayın.
 
 ```dart
 import 'package:theta/theta.dart';
@@ -39,9 +40,9 @@ Future<void> main() async {
 }
 ```
 
-### Wrap your app with ThetaProvider 
+### Uygulamanızı ThetaProvider ile sarmalayın
 
-Wrap your app with ThetaProvider to enable any UIBox to receive the theme and project styles.
+Uygulamanızı ThetaProvider ile sarmalayarak, herhangi bir UIBox'ın tema ve proje stillerini almasını sağlayın.
 
 ```dart
 ThetaProvider(
@@ -52,22 +53,22 @@ ThetaProvider(
 )
 ```
 
-### Render remote UI 
+### Uzaktan UI oluşturma
 
-Everything you need to do is to add a UIBox widget to your app and pass the component name as a parameter.
+Uygulamanıza bir UIBox bileşeni(Component) eklemeniz ve bileşen adını bir parametre olarak iletebilmeniz yeterlidir.
 
 ```dart
 /// Your app
 return Scaffold(
     body: Center(
-        child: UIBox('Component name'),
+        child: UIBox('Component adı'),
     ),
 );
 ```
 
-### Loading placeholder and error handling 
+### Yükleme yedekleri ve hata işleme
 
-You can display a placeholder widget during loading and an error widget.
+Yükleme sırasında bir yedek widget ve bir hata widgeti görüntüleyebilirsiniz.
 
 ```dart
 UIBox(
@@ -77,13 +78,13 @@ UIBox(
 )
 ```
 
-## Add custom code
+## Özel kod ekleyin
 
-Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add custom code, called 'workflow' based on gesture triggers.
+Dinamik bir UI istiyor musunuz ve hareket desteği (onTap, doubleTap, vb.) mi istiyorsunuz? Hareket tetikleyicilere dayalı olarak 'workflow' adı verilen özel kod ekleyebilirsiniz.
 
-1. Select a single UI element based on its id or name.
-2. Choose the trigger for which the action will start.
-3. Add your code.
+1. Bir id veya isimle bir UI öğesi seçin.
+2. Eylemin başlayacağı tetikleyiciyi seçin.
+3. Kodunuzu ekleyin.
 
 ```dart
 UIBox(
@@ -96,9 +97,9 @@ UIBox(
 )
 ```
 
-## Override block properties
+## Blok özelliklerini geçersiz kılma (Override block properties)
 
-You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
+Her bir UI bloğunu, no-code ile Flutter'ı karıştırarak Flutter bileşeniyle geçersiz kılabilirsiniz. 
 
 ```dart
 UIBox(
@@ -113,32 +114,32 @@ UIBox(
 ),
 ```
 
-### Child override
+### Çocuk geçersiz kılma (Child override)
 
-If in the no-code component the element to which you want to overwrite the child already has one, 
-it will be removed and replaced with the one entered by the user via code.
+Eğer no-code bileşeninde üzerine yazmak istediğiniz öğenin zaten bir çocuğu (child) varsa, o çocuk kaldırılıp kullanıcı tarafından kodla girilen çocukla değiştirilecektir.
 
-You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+Ayrıca UIBoxi diğer UIBoxlerin içinde de kullanabilirsiniz. Bu, son derece yüksek bir özelleştirme derecesi sağlar.
 
 ```dart
 UIBox(
-    'Component name',
+    'Component adı',
     overrides: [
         Override('Element id')
-            ..setChild(UIBox('Other component')),
+            ..setChild(UIBox('Diger component')),
     ],
 ),
 ```
 
-### Children override
+### Çocuklar geçersiz kılar (Children override)
 
-You can also overwrite the children of an element. 
+Bir öğenin çocuklarını da üzerine yazabilirsiniz.
+
 
 ```dart
 UIBox(
-    'Component name',
+    'Component adı',
     overrides: [
-        Override('Element name')
+        Override('Element adı')
             ..setChildren([
                 Text('Child 1'), 
                 Text('Child 2')

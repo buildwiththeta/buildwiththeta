@@ -1,14 +1,14 @@
 ---
-title: Override Element Properties
+title: Öğe özelliklerini geçersiz kıl
 ---
 
 ![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
 
-# Override element properties
+# Öğe özelliklerini geçersiz kıl
 
-You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
+Flutter ile no-code karışımı karıştırarak her bir UI bloğunu bir Flutter widget'ıyla geçersiz kılabilirsiniz.
 
-## Text override
+## Metin geçersiz kılma
 
 ```dart
 UIBox(
@@ -20,7 +20,7 @@ UIBox(
 ),
 ```
 
-## Image override
+## Görüntü geçersiz kılma
 
 ```dart
 UIBox(
@@ -32,7 +32,7 @@ UIBox(
 ),
 ```
 
-## Color override (`Container` background color and `Text` color)
+## Renk geçersiz kılma  (`Container` arka plan rengi ve `Text` rengi)
 
 ```dart
 UIBox(
@@ -44,12 +44,11 @@ UIBox(
 ),
 ```
 
-## Child override
+## Çocuk geçersiz kılma
 
-If in the no-code component the element to which you want to overwrite the child already has one, 
-it will be removed and replaced with the one entered by the user via code.
+Kodsuz bileşende çocuğun üzerine yazmak istediğiniz öğenin zaten bir öğesi varsa, bu öğe kaldırılacak ve kullanıcı tarafından kod aracılığıyla girilen öğeyle değiştirilecektir.
 
-You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+`UIBox`'u diğer `UIBox`'larda da kullanabilirsiniz. Bu, çok yüksek derecede kişiselleştirme sağlar.
 
 ```dart
 UIBox(
@@ -61,9 +60,9 @@ UIBox(
 ),
 ```
 
-## Children override
+## Çocuklar geçersiz kılar
 
-You can also overwrite the children of an element. 
+Bir öğenin alt öğelerinin üzerine de yazabilirsiniz. 
 
 ```dart
 UIBox(
@@ -75,6 +74,6 @@ UIBox(
 ),
 ```
 
-<Warning>It is recommended to use only one Override per element, as only the first one is taken.</Warning>
+<Warning>Yalnızca ilki alındığından, öğe başına yalnızca bir Geçersiz Kılma kullanılması önerilir.</Warning>
 
-<Warning>If you accidentally try to overwrite children to an element with only one child, the change by code will simply be ignored.</Warning>
+<Warning>Yalnızca bir çocuğu olan bir öğeye yanlışlıkla çocukların üzerine yazmaya çalışırsanız, kodla yapılan değişiklik basitçe yok sayılır.</Warning>
