@@ -1,0 +1,74 @@
+---
+title: Theta Flutter kütüphanesinin desteklediği platformlar
+---
+
+# Uyumluluk
+
+[Theta Flutter kütüphanesi](https://pub.dev/packages/theta) tarafından desteklenen platformlar.
+
+<Warning>Theta yalnızca Dart 3 ile uyumludur.</Warning>
+
+## Desteklenen platformlar
+
+- [x] Web
+- [x] iOS
+- [x] Android
+- [x] macOS
+- [x] Windows
+
+---
+
+## Yapılandırma
+
+### Web
+
+Yapılandırma gerektirmez.
+
+### iOS
+
+Yapılandırma gerektirmez.
+
+### Android
+
+> Krulum için gereken süre: 2 dakika.
+
+<Warning>Theta, 19'den düşük Android SDK sürümlerini kullanan kullanıcılara uygun değildir.</Warning>
+
+Theta, `[package_info_plus](https://pub.dev/packages/package_info_plus)`a bağımlı olduğu için `minSdkVersion` en az 19 olmalıdır.
+
+
+```
+android/app/build.gradle:
+android {
+  defaultConfig {
+    minSdkVersion 19
+  }
+}
+```
+Ayrıca, Theta [internet bağlantısı](https://developer.android.com/training/basics/network-ops/connecting) gerektirir.
+
+```
+<manifest xmlns:android...>
+  ...
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application ...
+</manifest>
+```
+
+### macOS
+
+> Kurulum için gereken süre: 1 dakika.
+
+macOS uygulamalarının ilgili .entitlements dosyalarında ağ erişimine izin vermesi gerekmektedir.
+
+```
+<key>com.apple.security.network.client</key>
+<true/>
+```
+[Entitlements](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements) ayarlarını yapma hakkında daha fazla bilgi edinin.
+
+
+### Windows
+
+Yapılandırma gerektirmez.
+
