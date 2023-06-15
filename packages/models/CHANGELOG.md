@@ -1,3 +1,7 @@
+## 0.1.9
+
+- [x] Feat: DBKeys.visibleOnLaptop added.
+
 ## 0.1.8
 
 - [x] Feat: userId added in BranchActionLogEntity.

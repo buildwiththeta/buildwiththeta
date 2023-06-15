@@ -1,3 +1,8 @@
+## 0.1.9
+
+- [x] Feat: Visibility on laptops added.
+- [x] Fix: Global visibility fixed.
+
 ## 0.1.8
 
 - [x] Feat: ComponentFit upgraded.
