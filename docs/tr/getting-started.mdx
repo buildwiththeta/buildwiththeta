@@ -1,0 +1,149 @@
+# Başlarken
+
+Theta, [hosted](https://buildwiththeta.com) platformu ve istemci kütüphanesi (client library) arasında çalışır. Başlamak için:
+
+- [buildwiththeta.com](https://buildwiththeta.com) adresine kaydolun (Kapalı beta sürecinde davet gereklidir).
+- Yeni bir proje oluşturun ve ilk arayüzünüzü tasarlayın.
+- Aynı adı taşıyan sayfayı kopyalayın.
+- [Theta istemci kütüphanesi](https://pub.dev/packages/theta)'ni yükleyin ve sayfayı uygulamanızın içine entegre etmek için `UIBox('sayfa adı')` kullanın.
+
+## Sistem gereksinimleri
+
+Theta, bir tarayıcıdan kullanılabilen bir web uygulamasıdır. Optimal deneyim için sistem gereksinimlerine dikkat edin:
+
+- Masaüstü veya dizüstü bilgisayarda çalışmanız önerilir.
+- En az 12 inçlik bir ekran kullanın.
+- Google Chrome kullanmanız önerilir (sorunlar yaşıyorsanız, sorunların Chrome'da da devam edip etmediğini kontrol edin).
+- Bir projede kopyalama yapmak için, ClipBoard'a izin verin (app.buildwiththeta.com adresinde bir iletişim kutusu görünecektir).
+
+## Arayüzünüzü tasarlama
+
+- [Elemanları taşıma ve yeniden boyutlandırma hakkında](https://docs.page/buildwiththeta/buildwiththeta/tr/studio/positioning_and_resizing) bilgi alın.
+- [Duyarlı sınırlamaları ayarlama hakkında](https://docs.page/buildwiththeta/buildwiththeta/tr/studio/constraints) bilgi alın.
+
+
+## Theta istemci kütüphanesini yükleme
+
+```
+flutter pub add theta
+```
+
+### Başlatma
+
+Theta'yı, anonim anahtarınızla Theta.initialize yöntemini çağırarak başlatın. Bu yöntemi uygulamanızın kökünde çağırmayı unutmayın.
+
+```dart
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'thetaKey');
+}
+```
+
+### Uygulamanızı ThetaProvider ile sarmalayın
+
+Uygulamanızı ThetaProvider ile sarmalayarak, herhangi bir UIBox'ın tema ve proje stillerini almasını sağlayın.
+
+```dart
+ThetaProvider(
+    theme: ThemeMode.light,
+    child: MaterialApp(
+        home: // ...
+    ),
+)
+```
+
+### Uzaktan UI oluşturma
+
+Uygulamanıza bir UIBox bileşeni(Component) eklemeniz ve bileşen adını bir parametre olarak iletebilmeniz yeterlidir.
+
+```dart
+/// Your app
+return Scaffold(
+    body: Center(
+        child: UIBox('Component adı'),
+    ),
+);
+```
+
+### Yükleme yedekleri ve hata işleme
+
+Yükleme sırasında bir yedek widget ve bir hata widgeti görüntüleyebilirsiniz.
+
+```dart
+UIBox(
+    'Homepage',
+    placeholder: CircularProgressIndicator(),
+    errorWidget: (error) => Text(error),
+)
+```
+
+## Özel kod ekleyin
+
+Dinamik bir UI istiyor musunuz ve hareket desteği (onTap, doubleTap, vb.) mi istiyorsunuz? Hareket tetikleyicilere dayalı olarak 'workflow' adı verilen özel kod ekleyebilirsiniz.
+
+1. Bir id veya isimle bir UI öğesi seçin.
+2. Eylemin başlayacağı tetikleyiciyi seçin.
+3. Kodunuzu ekleyin.
+
+```dart
+UIBox(
+    'CupertinoAppBar',
+    workflows: [
+        Workflow('Element id', Trigger.onTap, (context) {
+            /// Your method
+        }),
+    ]
+)
+```
+
+## Blok özelliklerini geçersiz kılma (Override block properties)
+
+Her bir UI bloğunu, no-code ile Flutter'ı karıştırarak Flutter bileşeniyle geçersiz kılabilirsiniz. 
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Post title')
+            ..setText('My beautiful cat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Çocuk geçersiz kılma (Child override)
+
+Eğer no-code bileşeninde üzerine yazmak istediğiniz öğenin zaten bir çocuğu (child) varsa, o çocuk kaldırılıp kullanıcı tarafından kodla girilen çocukla değiştirilecektir.
+
+Ayrıca UIBoxi diğer UIBoxlerin içinde de kullanabilirsiniz. Bu, son derece yüksek bir özelleştirme derecesi sağlar.
+
+```dart
+UIBox(
+    'Component adı',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Diger component')),
+    ],
+),
+```
+
+### Çocuklar geçersiz kılar (Children override)
+
+Bir öğenin çocuklarını da üzerine yazabilirsiniz.
+
+
+```dart
+UIBox(
+    'Component adı',
+    overrides: [
+        Override('Element adı')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
+```
