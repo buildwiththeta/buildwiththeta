@@ -104,6 +104,38 @@
           ["Migración", "/support/migración"]
         ]
       ]
+    ],
+    "tr": [
+      [
+        "Başlarken", [
+          ["Genel Bakış", "/"],
+          ["Başlarken", "/getting-started"],
+          ["Konumlandırma && Boyutlandırma", "/studio/positioning_and_resizing"],
+          ["Duyarlı Kısıtlamalar", "/studio/constraints"],
+          ["Bileşen Uyumluluk Modları", "/studio/component_fit"],
+          ["Şubeler", "/studio/branches"],
+          ["API Anahtarını Al", "/studio/get_project_api"]
+        ]
+      ],
+      [
+        "Flutter Kütüphanesi", [
+          ["Theta örnek uygulama", "/builder/run_example"],
+          ["Uyumluluk", "/builder/compatibility"],
+          ["Geçersiz Kılma", "/builder/overrides"],
+          ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
+          ["API Referansı \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
+          ["Depo \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],
+          ["Örnek \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder/example"]
+        ]
+      ],
+      [
+        "Çeşitli", [
+          ["SSS", "/faq"],
+          ["Takımlar", "/studio/teams"],
+          ["Geçiş", "/support/migration"],
+          ["Lisans  \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
+        ]
+      ]
     ]
   }
 }
