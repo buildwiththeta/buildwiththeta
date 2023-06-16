@@ -40,6 +40,7 @@ class $generatedClassName extends CNode {
       final DateTime? updatedAt,
       final PageID? pageID,
       final NodeID? stabilID, 
+      final bool? isLocked,
       })
       : super(
             id: id,
@@ -58,6 +59,7 @@ class $generatedClassName extends CNode {
             updatedAt: updatedAt ?? DateTime.now(),
             pageID: pageID ?? '',
             stabilID: stabilID,
+            isLocked: isLocked ?? false,
           );
 
   @override
@@ -74,6 +76,7 @@ class $generatedClassName extends CNode {
           DateTime? updatedAt,
           PageID? pageID,
           NodeID? stabilID,
+          final bool? isLocked,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -87,6 +90,7 @@ class $generatedClassName extends CNode {
           rectProperties: rectProperties ?? getRectProperties,
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
+          isLocked: isLocked ?? this.isLocked,
         );
 
   @override
@@ -103,6 +107,7 @@ class $generatedClassName extends CNode {
           DateTime? updatedAt,
           PageID? pageID,
           NodeID? stabilID,
+          bool? isLocked,
         }) =>
         $generatedClassName(
           id: id ?? this.id,
@@ -116,6 +121,7 @@ class $generatedClassName extends CNode {
           rectProperties: rectProperties ?? getRectProperties,
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
+          isLocked: isLocked ??  this.isLocked,
         );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -143,6 +149,7 @@ class $generatedClassName extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      isLocked: json['is_locked'],
     );
   }
 

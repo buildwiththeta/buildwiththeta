@@ -17,6 +17,7 @@ class NNull extends CNode {
           adapter: const NNullWidgetAdapter(),
           updatedAt: DateTime.now(),
           pageID: '',
+          isLocked: false,
         );
 
   static NNull fromJson(
@@ -52,6 +53,7 @@ class NNull extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    bool? isLocked,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
@@ -70,6 +72,7 @@ class NNull extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    bool? isLocked,
   }) {
     throw UnimplementedError('copyWithWithNull not implemented in NNull class');
   }
