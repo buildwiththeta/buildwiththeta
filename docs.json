@@ -62,13 +62,18 @@
       [
         "Per iniziare", [
           ["Introduzione", "/"],
-          ["Per iniziare", "/per_iniziare"]
+          ["Per iniziare", "/per_iniziare"],
+          ["Posizionamento & ridimensionamento", "/studio/posizionamento_ridimensionamento"],
+          ["Vincoli Responsive", "/studio/vincoli"],
+          ["Modalità di Adattamento dei Componenti", "/studio/modalità_adattamento"],
+          ["Branch", "/studio/branch"],
+          ["Ottenere il token API", "/studio/ottenere_api"]
         ]
       ],
       [
         "Flutter library", [
           ["App di esempio di Theta", "/builder/esempio"],
-          ["compatibilità", "/builder/compatibilità"],
+          ["Compatibilità", "/builder/compatibilità"],
           ["Overrides", "/builder/overrides"],
           ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
           ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
@@ -79,6 +84,7 @@
       [
         "Misc.", [
           ["FAQ", "/faq"],
+          ["Teams", "/studio/team"],
           ["Migrazione", "/support/migrazione"]
         ]
       ]
@@ -96,6 +102,10 @@
       [
         "Flutter library", [
           ["Overrides", "/builder/overrides"]
+          ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
+          ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
+          ["Repository \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],
+          ["Example \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder/example"]
         ]
       ],
       [
