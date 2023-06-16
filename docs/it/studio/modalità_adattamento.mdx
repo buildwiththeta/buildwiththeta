@@ -1,0 +1,71 @@
+---
+title: Modalità di Adattamento dei Componenti
+---
+
+![auto_layout_features](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/8c23e82c-f38b-40d6-8465-bae01e868f2d)
+
+# Modalità di Adattamento dei Componenti
+
+## Modalità Absolute
+
+Abilitando la **modalità Absolute** (impostazione predefinita su tutti i componenti), tutti i blocchi vengono posizionati in base alle loro coordinate assolute (o allineamenti responsivi) rispetto alle dimensioni del dispositivo.
+
+Questa modalità è utile per creare componenti complessi composti da più widget nello stesso livello, o per creare parti di pagine.
+
+<Warning>Attenzione alle coordinate assolute</Warning>
+
+Tuttavia, a volte gli elementi con posizioni assolute non possono integrarsi con altri widget Flutter o con porzioni dello schermo più piccole dell'intero schermo, poiché gli elementi seguiranno sempre le loro coordinate, anche al di fuori di qualsiasi widget padre inserito nell'app tramite codice.
+
+Vediamo il seguente esempio:
+
+- Crea un componente di un pulsante all'interno di [Theta](https://app.buildwiththeta.com), con `left: 16`, `right: 16`, `top: 345`, e vincoli orizzontali su `stretch`.
+- All'interno della tua app, utilizzando la libreria Theta Flutter, avvolgi il tuo UIBox in un container con `width: 500` e `height: 350`.
+- Esegui la tua app con `flutter run`.
+
+Il codice Flutter:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.absolute
+  ),
+),
+```
+
+Vedrai che l'elemento assoluto uscirà dal container padre, poiché seguirà comunque le coordinate superiori date in Theta. Come illustrato nell'immagine seguente:
+
+![expanded_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/d73e382d-eeba-4fd2-b55f-49715a319edd)
+
+Ciò non è buono per i componenti che devono integrarsi in un contesto Flutter. Auto Layout può essere utilizzato per risolvere questa situazione.
+
+## Auto Layout
+
+La modalità **Auto Layout** consente ai componenti costituiti da un singolo blocco (composti da un solo elemento al primo livello) di essere visualizzati indipendentemente dalle dimensioni dello schermo, senza una posizione assoluta. Questo è estremamente utile per creare widget che possono essere incorporati all'interno di altri widget, senza la necessità di una posizione assoluta.
+
+Gli allineamenti stretch continueranno a funzionare, consentendoti di vedere come un pulsante a larghezza intera si espande su diversi dispositivi.
+
+Ora riprova l'esempio iniziale impostando l'Auto Layout nel codice:
+
+Il codice Flutter:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.autoLayout,
+  ),
+),
+```
+
+![loose_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/73b30e95-5f97-4bcf-a53f-a5d02ac0c403)
+
+Questa volta, il componente è separato dalle sue coordinate assolute e può essere posizionato come un widget Flutter normale.
+
+
