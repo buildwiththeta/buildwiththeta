@@ -11,8 +11,13 @@
   "anchors": [
     {
       "title": "Website",
-      "icon": "arrow-up-right-from-square",
+      "icon": "home",
       "link": "https://buildwiththeta.com"
+    },
+    {
+      "title": "Dashboard",
+      "icon": "bolt",
+      "link": "https://app.buildwiththeta.com"
     },
     {
       "title": "Pub.dev",
