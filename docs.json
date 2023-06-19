@@ -66,7 +66,12 @@
       [
         "Per iniziare", [
           ["Introduzione", "/"],
-          ["Per iniziare", "/per_iniziare"]
+          ["Per iniziare", "/per_iniziare"],
+          ["Posizionamento & ridimensionamento", "/studio/posizionamento_ridimensionamento"],
+          ["Vincoli responsive", "/studio/vincoli"],
+          ["Modalità di adattamento dei componenti", "/studio/modalità_adattamento"],
+          ["Branch", "/studio/branch"],
+          ["Ottenere il token API", "/studio/ottenere_api"]
         ]
       ],
       [
@@ -83,6 +88,7 @@
       [
         "Misc.", [
           ["FAQ", "/faq"],
+          ["Team", "/team"],
           ["Migrazione", "/support/migrazione"]
         ]
       ]
