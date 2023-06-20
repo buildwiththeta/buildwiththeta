@@ -15,13 +15,13 @@ Here are some of Theta's defining features:
 
 ### Available Features
 
-- Absolute Positioning: Design elements with absolute positioning, similar to Figma.
-- Responsive Design: Create responsive elements and interfaces.
-- Theta Integration: Incorporate Theta into your app using the Theta Flutter library.
-- Code and No-Code Mix: Use workflows to combine no-code and code, e.g., run a method when a node is tapped.
-- Loading and Error Handling: Efficiently manage loading and error handling in remote widgets.
-- Light and Dark Modes: Support for dark and light UI themes.
-- Node Overrides: Override any single node from your app.
+- **Absolute Positioning**: Design elements with absolute positioning, similar to Figma.
+- **Responsive Design**: Create responsive elements and interfaces.
+- **Theta Integration**: Incorporate Theta into your app using the Theta Flutter library.
+- **Code and No-Code Mix**: Use workflows to combine no-code and code, e.g., run a method when a node is tapped.
+- **Loading and Error Handling**: Efficiently manage loading and error handling in remote widgets.
+- **Light and Dark Modes**: Support for dark and light UI themes.
+- **Node Overrides**: Override any single node from your app.
 
 ## Documentation
 
