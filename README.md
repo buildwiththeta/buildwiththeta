@@ -1,6 +1,6 @@
 <img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
 
-# The new open source way of designing remote UI
+# The open source way of designing remote UI
 
 [Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
 
