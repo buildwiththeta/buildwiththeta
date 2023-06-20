@@ -44,6 +44,7 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 - [en](https://docs.page/buildwiththeta/buildwiththeta/en)
 - [it](https://docs.page/buildwiththeta/buildwiththeta/it)
 - [es](https://docs.page/buildwiththeta/buildwiththeta/es)
+- [tr](https://docs.page/buildwiththeta/buildwiththeta/tr)
 
 ## Architecture
 
