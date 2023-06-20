@@ -2,7 +2,7 @@
 
 # The open source way of designing remote UI
 
-[Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
+[Theta](https://buildwiththeta.com) is an open source tool to streamline remote UI creation and testing, without the need for rebuilding.
 
 - [x] Theta Studio: no-code visual editor for reponsive and modern UIs.
 - [x] Theta Flutter client: Stream your UIs inside your clients. [Pub.dev](https://pub.dev/packages/theta)
