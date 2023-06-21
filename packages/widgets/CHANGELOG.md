@@ -1,3 +1,7 @@
+## 0.2.0
+
+- [x] Fix: Cors proxy removed from image.
+
 ## 0.1.9
 
 - [x] Feat: Visibility on laptops added.

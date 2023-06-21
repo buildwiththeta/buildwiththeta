@@ -5,10 +5,8 @@
 
 // Package imports:
 // Flutter imports:
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
@@ -72,21 +70,10 @@ class OpenWImage extends StatelessWidget {
         context: context,
         isWidth: false,
       ),
-      child: kIsWeb
-          ? Image.network(
-              '${Constants.backendTetaProxy}/${Uri.encodeComponent(data)}',
-              width: width.get(state: state, context: context, isWidth: true),
-              height:
-                  height.get(state: state, context: context, isWidth: false),
-              fit: boxFit.value,
-            )
-          : Image.network(
-              data,
-              width: width.get(state: state, context: context, isWidth: true),
-              height:
-                  height.get(state: state, context: context, isWidth: false),
-              fit: boxFit.value,
-            ),
+      child: Image.network(
+        data,
+        fit: boxFit.value,
+      ),
     );
   }
 }
