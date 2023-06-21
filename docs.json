@@ -55,6 +55,11 @@
         ]
       ],
       [
+        "User & Billing.", [
+          ["User deletion", "/support/user_deletion"]
+        ]
+      ],
+      [
         "Misc.", [
           ["FAQ", "/faq"],
           ["Migration", "/support/migration"],
