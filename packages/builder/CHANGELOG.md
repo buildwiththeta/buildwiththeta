@@ -1,3 +1,7 @@
+## 0.1.8
+
+- [x] Fix: theta_open_widget 0.2.1.
+
 ## 0.1.7
 
 - [x] Feat: ComponentFit upgraded.

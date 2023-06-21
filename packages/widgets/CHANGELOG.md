@@ -1,3 +1,7 @@
+## 0.2.1
+
+- [x] Fix: image_network package removed.
+
 ## 0.2.0
 
 - [x] Fix: Cors proxy removed from image.
