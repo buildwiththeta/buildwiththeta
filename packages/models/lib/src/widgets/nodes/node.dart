@@ -26,6 +26,7 @@ abstract class CNode extends Equatable {
     this.child,
     this.children = const [],
     this.childOrder = 0,
+    this.componentID,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -121,6 +122,9 @@ abstract class CNode extends Equatable {
 
   /// The page id of the node
   final PageID? pageID;
+
+  /// The component id of the node
+  final PageID? componentID;
 
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
@@ -218,6 +222,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
     };
   }
 
@@ -234,6 +239,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
     };
   }
 
@@ -250,6 +256,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
     };
   }
 
@@ -267,6 +274,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'page_id': pageID,
+      'component_id': componentID,
     };
   }
 
@@ -301,6 +309,7 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   });
 
   /// Copy the node with new attributes
@@ -317,6 +326,7 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   });
 
   /// Render a Widget from node
@@ -365,6 +375,8 @@ abstract class CNode extends Equatable {
         hideHandlesWhenNotResizable,
         updatedAt,
         pageID,
+        stabilID,
+        componentID,
       ];
 
   @override

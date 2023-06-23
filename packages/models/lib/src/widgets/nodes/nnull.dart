@@ -52,6 +52,7 @@ class NNull extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
@@ -70,6 +71,7 @@ class NNull extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) {
     throw UnimplementedError('copyWithWithNull not implemented in NNull class');
   }

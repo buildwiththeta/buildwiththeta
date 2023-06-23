@@ -23,6 +23,7 @@ class AlignOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.align,
@@ -42,6 +43,7 @@ class AlignOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -58,6 +60,7 @@ class AlignOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AlignOpenNode(
         id: id ?? this.id,
@@ -71,6 +74,7 @@ class AlignOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -87,6 +91,7 @@ class AlignOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AlignOpenNode(
         id: id ?? this.id,
@@ -100,6 +105,7 @@ class AlignOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -130,6 +136,7 @@ class AlignOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -155,6 +162,7 @@ class AspectRatioOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.aspectRatio,
@@ -174,6 +182,7 @@ class AspectRatioOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -190,6 +199,7 @@ class AspectRatioOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AspectRatioOpenNode(
         id: id ?? this.id,
@@ -203,6 +213,7 @@ class AspectRatioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -219,6 +230,7 @@ class AspectRatioOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AspectRatioOpenNode(
         id: id ?? this.id,
@@ -232,6 +244,7 @@ class AspectRatioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -262,6 +275,7 @@ class AspectRatioOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -287,6 +301,7 @@ class AudioPlayerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.audioPlayer,
@@ -306,6 +321,7 @@ class AudioPlayerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -322,6 +338,7 @@ class AudioPlayerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerOpenNode(
         id: id ?? this.id,
@@ -335,6 +352,7 @@ class AudioPlayerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -351,6 +369,7 @@ class AudioPlayerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerOpenNode(
         id: id ?? this.id,
@@ -364,6 +383,7 @@ class AudioPlayerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -394,6 +414,7 @@ class AudioPlayerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -419,6 +440,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.audioPlayerProgressIndicator,
@@ -439,6 +461,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -455,6 +478,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -468,6 +492,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -484,6 +509,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -497,6 +523,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -527,6 +554,7 @@ class AudioPlayerProgressIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -552,6 +580,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.audioPlayerVolumeIndicator,
@@ -572,6 +601,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -588,6 +618,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
         id: id ?? this.id,
@@ -601,6 +632,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -617,6 +649,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AudioPlayerVolumeIndicatorOpenNode(
         id: id ?? this.id,
@@ -630,6 +663,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -660,6 +694,7 @@ class AudioPlayerVolumeIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -685,6 +720,7 @@ class BadgeOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.badge,
@@ -704,6 +740,7 @@ class BadgeOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -720,6 +757,7 @@ class BadgeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BadgeOpenNode(
         id: id ?? this.id,
@@ -733,6 +771,7 @@ class BadgeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -749,6 +788,7 @@ class BadgeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BadgeOpenNode(
         id: id ?? this.id,
@@ -762,6 +802,7 @@ class BadgeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -792,6 +833,7 @@ class BadgeOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -817,6 +859,7 @@ class BarcodeOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.barcode,
@@ -836,6 +879,7 @@ class BarcodeOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -852,6 +896,7 @@ class BarcodeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BarcodeOpenNode(
         id: id ?? this.id,
@@ -865,6 +910,7 @@ class BarcodeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -881,6 +927,7 @@ class BarcodeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BarcodeOpenNode(
         id: id ?? this.id,
@@ -894,6 +941,7 @@ class BarcodeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -924,6 +972,7 @@ class BarcodeOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -949,6 +998,7 @@ class BottomBarItemOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.bottombaritem,
@@ -968,6 +1018,7 @@ class BottomBarItemOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -984,6 +1035,7 @@ class BottomBarItemOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BottomBarItemOpenNode(
         id: id ?? this.id,
@@ -997,6 +1049,7 @@ class BottomBarItemOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1013,6 +1066,7 @@ class BottomBarItemOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BottomBarItemOpenNode(
         id: id ?? this.id,
@@ -1026,6 +1080,7 @@ class BottomBarItemOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1056,6 +1111,7 @@ class BottomBarItemOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1081,6 +1137,7 @@ class BouncingWidgetOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.bouncingWidget,
@@ -1100,6 +1157,7 @@ class BouncingWidgetOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1116,6 +1174,7 @@ class BouncingWidgetOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BouncingWidgetOpenNode(
         id: id ?? this.id,
@@ -1129,6 +1188,7 @@ class BouncingWidgetOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1145,6 +1205,7 @@ class BouncingWidgetOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BouncingWidgetOpenNode(
         id: id ?? this.id,
@@ -1158,6 +1219,7 @@ class BouncingWidgetOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1188,6 +1250,7 @@ class BouncingWidgetOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1213,6 +1276,7 @@ class ButtonOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.button,
@@ -1232,6 +1296,7 @@ class ButtonOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1248,6 +1313,7 @@ class ButtonOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ButtonOpenNode(
         id: id ?? this.id,
@@ -1261,6 +1327,7 @@ class ButtonOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1277,6 +1344,7 @@ class ButtonOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ButtonOpenNode(
         id: id ?? this.id,
@@ -1290,6 +1358,7 @@ class ButtonOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1320,6 +1389,7 @@ class ButtonOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1345,6 +1415,7 @@ class CalendarOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.calendar,
@@ -1364,6 +1435,7 @@ class CalendarOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1380,6 +1452,7 @@ class CalendarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CalendarOpenNode(
         id: id ?? this.id,
@@ -1393,6 +1466,7 @@ class CalendarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1409,6 +1483,7 @@ class CalendarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CalendarOpenNode(
         id: id ?? this.id,
@@ -1422,6 +1497,7 @@ class CalendarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1452,6 +1528,7 @@ class CalendarOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1477,6 +1554,7 @@ class CalendarV2OpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.calendarV2,
@@ -1496,6 +1574,7 @@ class CalendarV2OpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1512,6 +1591,7 @@ class CalendarV2OpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CalendarV2OpenNode(
         id: id ?? this.id,
@@ -1525,6 +1605,7 @@ class CalendarV2OpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1541,6 +1622,7 @@ class CalendarV2OpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CalendarV2OpenNode(
         id: id ?? this.id,
@@ -1554,6 +1636,7 @@ class CalendarV2OpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1584,6 +1667,7 @@ class CalendarV2OpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1609,6 +1693,7 @@ class CardOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.card,
@@ -1628,6 +1713,7 @@ class CardOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1644,6 +1730,7 @@ class CardOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CardOpenNode(
         id: id ?? this.id,
@@ -1657,6 +1744,7 @@ class CardOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1673,6 +1761,7 @@ class CardOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CardOpenNode(
         id: id ?? this.id,
@@ -1686,6 +1775,7 @@ class CardOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1716,6 +1806,7 @@ class CardOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1741,6 +1832,7 @@ class CenterOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.center,
@@ -1760,6 +1852,7 @@ class CenterOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1776,6 +1869,7 @@ class CenterOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CenterOpenNode(
         id: id ?? this.id,
@@ -1789,6 +1883,7 @@ class CenterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1805,6 +1900,7 @@ class CenterOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CenterOpenNode(
         id: id ?? this.id,
@@ -1818,6 +1914,7 @@ class CenterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1848,6 +1945,7 @@ class CenterOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -1873,6 +1971,7 @@ class CheckboxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.checkbox,
@@ -1892,6 +1991,7 @@ class CheckboxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -1908,6 +2008,7 @@ class CheckboxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CheckboxOpenNode(
         id: id ?? this.id,
@@ -1921,6 +2022,7 @@ class CheckboxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -1937,6 +2039,7 @@ class CheckboxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CheckboxOpenNode(
         id: id ?? this.id,
@@ -1950,6 +2053,7 @@ class CheckboxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -1980,6 +2084,7 @@ class CheckboxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2005,6 +2110,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.circularProgressIndicator,
@@ -2025,6 +2131,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2041,6 +2148,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CircularProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -2054,6 +2162,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2070,6 +2179,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CircularProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -2083,6 +2193,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2113,6 +2224,7 @@ class CircularProgressIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2138,6 +2250,7 @@ class ClipOvalOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.clipOval,
@@ -2157,6 +2270,7 @@ class ClipOvalOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2173,6 +2287,7 @@ class ClipOvalOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipOvalOpenNode(
         id: id ?? this.id,
@@ -2186,6 +2301,7 @@ class ClipOvalOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2202,6 +2318,7 @@ class ClipOvalOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipOvalOpenNode(
         id: id ?? this.id,
@@ -2215,6 +2332,7 @@ class ClipOvalOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2245,6 +2363,7 @@ class ClipOvalOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2270,6 +2389,7 @@ class ClipRectOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.clipRect,
@@ -2289,6 +2409,7 @@ class ClipRectOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2305,6 +2426,7 @@ class ClipRectOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipRectOpenNode(
         id: id ?? this.id,
@@ -2318,6 +2440,7 @@ class ClipRectOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2334,6 +2457,7 @@ class ClipRectOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipRectOpenNode(
         id: id ?? this.id,
@@ -2347,6 +2471,7 @@ class ClipRectOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2377,6 +2502,7 @@ class ClipRectOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2402,6 +2528,7 @@ class ClipRRectOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.clipRoundedRect,
@@ -2421,6 +2548,7 @@ class ClipRRectOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2437,6 +2565,7 @@ class ClipRRectOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipRRectOpenNode(
         id: id ?? this.id,
@@ -2450,6 +2579,7 @@ class ClipRRectOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2466,6 +2596,7 @@ class ClipRRectOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ClipRRectOpenNode(
         id: id ?? this.id,
@@ -2479,6 +2610,7 @@ class ClipRRectOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2509,6 +2641,7 @@ class ClipRRectOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2534,6 +2667,7 @@ class ColumnOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.column,
@@ -2553,6 +2687,7 @@ class ColumnOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2569,6 +2704,7 @@ class ColumnOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ColumnOpenNode(
         id: id ?? this.id,
@@ -2582,6 +2718,7 @@ class ColumnOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2598,6 +2735,7 @@ class ColumnOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ColumnOpenNode(
         id: id ?? this.id,
@@ -2611,6 +2749,7 @@ class ColumnOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2641,6 +2780,7 @@ class ColumnOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2666,6 +2806,7 @@ class ComponentOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.component,
@@ -2685,6 +2826,7 @@ class ComponentOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2701,6 +2843,7 @@ class ComponentOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ComponentOpenNode(
         id: id ?? this.id,
@@ -2714,6 +2857,7 @@ class ComponentOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2730,6 +2874,7 @@ class ComponentOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ComponentOpenNode(
         id: id ?? this.id,
@@ -2743,6 +2888,7 @@ class ComponentOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2773,6 +2919,7 @@ class ComponentOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2798,6 +2945,7 @@ class RowOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.row,
@@ -2817,6 +2965,7 @@ class RowOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2833,6 +2982,7 @@ class RowOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RowOpenNode(
         id: id ?? this.id,
@@ -2846,6 +2996,7 @@ class RowOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2862,6 +3013,7 @@ class RowOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RowOpenNode(
         id: id ?? this.id,
@@ -2875,6 +3027,7 @@ class RowOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -2905,6 +3058,7 @@ class RowOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -2930,6 +3084,7 @@ class ConcentricPageViewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.concentricPageView,
@@ -2950,6 +3105,7 @@ class ConcentricPageViewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -2966,6 +3122,7 @@ class ConcentricPageViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConcentricPageViewOpenNode(
         id: id ?? this.id,
@@ -2979,6 +3136,7 @@ class ConcentricPageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -2995,6 +3153,7 @@ class ConcentricPageViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConcentricPageViewOpenNode(
         id: id ?? this.id,
@@ -3008,6 +3167,7 @@ class ConcentricPageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3038,6 +3198,7 @@ class ConcentricPageViewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3063,6 +3224,7 @@ class ConditionOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.condition,
@@ -3082,6 +3244,7 @@ class ConditionOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3098,6 +3261,7 @@ class ConditionOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConditionOpenNode(
         id: id ?? this.id,
@@ -3111,6 +3275,7 @@ class ConditionOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3127,6 +3292,7 @@ class ConditionOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConditionOpenNode(
         id: id ?? this.id,
@@ -3140,6 +3306,7 @@ class ConditionOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3170,6 +3337,7 @@ class ConditionOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3195,6 +3363,7 @@ class ContainerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.container,
@@ -3214,6 +3383,7 @@ class ContainerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3230,6 +3400,7 @@ class ContainerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ContainerOpenNode(
         id: id ?? this.id,
@@ -3243,6 +3414,7 @@ class ContainerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3259,6 +3431,7 @@ class ContainerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ContainerOpenNode(
         id: id ?? this.id,
@@ -3272,6 +3445,7 @@ class ContainerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3302,6 +3476,7 @@ class ContainerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3327,6 +3502,7 @@ class ConstrainedBoxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.constrainedBox,
@@ -3346,6 +3522,7 @@ class ConstrainedBoxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3362,6 +3539,7 @@ class ConstrainedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConstrainedBoxOpenNode(
         id: id ?? this.id,
@@ -3375,6 +3553,7 @@ class ConstrainedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3391,6 +3570,7 @@ class ConstrainedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ConstrainedBoxOpenNode(
         id: id ?? this.id,
@@ -3404,6 +3584,7 @@ class ConstrainedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3434,6 +3615,7 @@ class ConstrainedBoxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3459,6 +3641,7 @@ class LimitedBoxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.limitedBox,
@@ -3478,6 +3661,7 @@ class LimitedBoxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3494,6 +3678,7 @@ class LimitedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LimitedBoxOpenNode(
         id: id ?? this.id,
@@ -3507,6 +3692,7 @@ class LimitedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3523,6 +3709,7 @@ class LimitedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LimitedBoxOpenNode(
         id: id ?? this.id,
@@ -3536,6 +3723,7 @@ class LimitedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3566,6 +3754,7 @@ class LimitedBoxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3591,6 +3780,7 @@ class SizedBoxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.sizedBox,
@@ -3610,6 +3800,7 @@ class SizedBoxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3626,6 +3817,7 @@ class SizedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SizedBoxOpenNode(
         id: id ?? this.id,
@@ -3639,6 +3831,7 @@ class SizedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3655,6 +3848,7 @@ class SizedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SizedBoxOpenNode(
         id: id ?? this.id,
@@ -3668,6 +3862,7 @@ class SizedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3698,6 +3893,7 @@ class SizedBoxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3723,6 +3919,7 @@ class DecoratedBoxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.decoratedBox,
@@ -3742,6 +3939,7 @@ class DecoratedBoxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3758,6 +3956,7 @@ class DecoratedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DecoratedBoxOpenNode(
         id: id ?? this.id,
@@ -3771,6 +3970,7 @@ class DecoratedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3787,6 +3987,7 @@ class DecoratedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DecoratedBoxOpenNode(
         id: id ?? this.id,
@@ -3800,6 +4001,7 @@ class DecoratedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3830,6 +4032,7 @@ class DecoratedBoxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3855,6 +4058,7 @@ class ImageOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.image,
@@ -3874,6 +4078,7 @@ class ImageOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -3890,6 +4095,7 @@ class ImageOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ImageOpenNode(
         id: id ?? this.id,
@@ -3903,6 +4109,7 @@ class ImageOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -3919,6 +4126,7 @@ class ImageOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ImageOpenNode(
         id: id ?? this.id,
@@ -3932,6 +4140,7 @@ class ImageOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -3962,6 +4171,7 @@ class ImageOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -3987,6 +4197,7 @@ class CupertinoPickerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cupertinoPicker,
@@ -4006,6 +4217,7 @@ class CupertinoPickerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4022,6 +4234,7 @@ class CupertinoPickerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoPickerOpenNode(
         id: id ?? this.id,
@@ -4035,6 +4248,7 @@ class CupertinoPickerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4051,6 +4265,7 @@ class CupertinoPickerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoPickerOpenNode(
         id: id ?? this.id,
@@ -4064,6 +4279,7 @@ class CupertinoPickerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4094,6 +4310,7 @@ class CupertinoPickerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4119,6 +4336,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cupertinoSegmentedControl,
@@ -4139,6 +4357,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4155,6 +4374,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoSegmentedControlOpenNode(
         id: id ?? this.id,
@@ -4168,6 +4388,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4184,6 +4405,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoSegmentedControlOpenNode(
         id: id ?? this.id,
@@ -4197,6 +4419,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4227,6 +4450,7 @@ class CupertinoSegmentedControlOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4252,6 +4476,7 @@ class CupertinoSwitchOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cupertinoSwitch,
@@ -4271,6 +4496,7 @@ class CupertinoSwitchOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4287,6 +4513,7 @@ class CupertinoSwitchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoSwitchOpenNode(
         id: id ?? this.id,
@@ -4300,6 +4527,7 @@ class CupertinoSwitchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4316,6 +4544,7 @@ class CupertinoSwitchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CupertinoSwitchOpenNode(
         id: id ?? this.id,
@@ -4329,6 +4558,7 @@ class CupertinoSwitchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4359,6 +4589,7 @@ class CupertinoSwitchOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4384,6 +4615,7 @@ class DividerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.divider,
@@ -4403,6 +4635,7 @@ class DividerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4419,6 +4652,7 @@ class DividerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DividerOpenNode(
         id: id ?? this.id,
@@ -4432,6 +4666,7 @@ class DividerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4448,6 +4683,7 @@ class DividerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DividerOpenNode(
         id: id ?? this.id,
@@ -4461,6 +4697,7 @@ class DividerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4491,6 +4728,7 @@ class DividerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4516,6 +4754,7 @@ class DotsIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.dotsIndicator,
@@ -4535,6 +4774,7 @@ class DotsIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4551,6 +4791,7 @@ class DotsIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DotsIndicatorOpenNode(
         id: id ?? this.id,
@@ -4564,6 +4805,7 @@ class DotsIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4580,6 +4822,7 @@ class DotsIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DotsIndicatorOpenNode(
         id: id ?? this.id,
@@ -4593,6 +4836,7 @@ class DotsIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4623,6 +4867,7 @@ class DotsIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4648,6 +4893,7 @@ class ExpandedOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.expanded,
@@ -4667,6 +4913,7 @@ class ExpandedOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4683,6 +4930,7 @@ class ExpandedOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ExpandedOpenNode(
         id: id ?? this.id,
@@ -4696,6 +4944,7 @@ class ExpandedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4712,6 +4961,7 @@ class ExpandedOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ExpandedOpenNode(
         id: id ?? this.id,
@@ -4725,6 +4975,7 @@ class ExpandedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4755,6 +5006,7 @@ class ExpandedOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4780,6 +5032,7 @@ class AdMobBannerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.adMobBanner,
@@ -4799,6 +5052,7 @@ class AdMobBannerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4815,6 +5069,7 @@ class AdMobBannerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AdMobBannerOpenNode(
         id: id ?? this.id,
@@ -4828,6 +5083,7 @@ class AdMobBannerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4844,6 +5100,7 @@ class AdMobBannerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AdMobBannerOpenNode(
         id: id ?? this.id,
@@ -4857,6 +5114,7 @@ class AdMobBannerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -4887,6 +5145,7 @@ class AdMobBannerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -4912,6 +5171,7 @@ class GoogleMapsOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.googleMaps,
@@ -4931,6 +5191,7 @@ class GoogleMapsOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -4947,6 +5208,7 @@ class GoogleMapsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GoogleMapsOpenNode(
         id: id ?? this.id,
@@ -4960,6 +5222,7 @@ class GoogleMapsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -4976,6 +5239,7 @@ class GoogleMapsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GoogleMapsOpenNode(
         id: id ?? this.id,
@@ -4989,6 +5253,7 @@ class GoogleMapsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5019,6 +5284,7 @@ class GoogleMapsOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5044,6 +5310,7 @@ class GridViewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.gridView,
@@ -5063,6 +5330,7 @@ class GridViewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5079,6 +5347,7 @@ class GridViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GridViewOpenNode(
         id: id ?? this.id,
@@ -5092,6 +5361,7 @@ class GridViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5108,6 +5378,7 @@ class GridViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GridViewOpenNode(
         id: id ?? this.id,
@@ -5121,6 +5392,7 @@ class GridViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5151,6 +5423,7 @@ class GridViewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5176,6 +5449,7 @@ class GridViewBuilderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.gridViewBuilder,
@@ -5195,6 +5469,7 @@ class GridViewBuilderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5211,6 +5486,7 @@ class GridViewBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GridViewBuilderOpenNode(
         id: id ?? this.id,
@@ -5224,6 +5500,7 @@ class GridViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5240,6 +5517,7 @@ class GridViewBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       GridViewBuilderOpenNode(
         id: id ?? this.id,
@@ -5253,6 +5531,7 @@ class GridViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5283,6 +5562,7 @@ class GridViewBuilderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5308,6 +5588,7 @@ class HeroOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.hero,
@@ -5327,6 +5608,7 @@ class HeroOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5343,6 +5625,7 @@ class HeroOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       HeroOpenNode(
         id: id ?? this.id,
@@ -5356,6 +5639,7 @@ class HeroOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5372,6 +5656,7 @@ class HeroOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       HeroOpenNode(
         id: id ?? this.id,
@@ -5385,6 +5670,7 @@ class HeroOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5415,6 +5701,7 @@ class HeroOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5440,6 +5727,7 @@ class IconOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.icon,
@@ -5459,6 +5747,7 @@ class IconOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5475,6 +5764,7 @@ class IconOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IconOpenNode(
         id: id ?? this.id,
@@ -5488,6 +5778,7 @@ class IconOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5504,6 +5795,7 @@ class IconOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IconOpenNode(
         id: id ?? this.id,
@@ -5517,6 +5809,7 @@ class IconOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5547,6 +5840,7 @@ class IconOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5572,6 +5866,7 @@ class IgnorePointerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.ignorePointer,
@@ -5591,6 +5886,7 @@ class IgnorePointerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5607,6 +5903,7 @@ class IgnorePointerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IgnorePointerOpenNode(
         id: id ?? this.id,
@@ -5620,6 +5917,7 @@ class IgnorePointerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5636,6 +5934,7 @@ class IgnorePointerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IgnorePointerOpenNode(
         id: id ?? this.id,
@@ -5649,6 +5948,7 @@ class IgnorePointerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5679,6 +5979,7 @@ class IgnorePointerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5704,6 +6005,7 @@ class IndexedStackOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.indexedStack,
@@ -5723,6 +6025,7 @@ class IndexedStackOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5739,6 +6042,7 @@ class IndexedStackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IndexedStackOpenNode(
         id: id ?? this.id,
@@ -5752,6 +6056,7 @@ class IndexedStackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5768,6 +6073,7 @@ class IndexedStackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       IndexedStackOpenNode(
         id: id ?? this.id,
@@ -5781,6 +6087,7 @@ class IndexedStackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5811,6 +6118,7 @@ class IndexedStackOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5836,6 +6144,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.linearProgressIndicator,
@@ -5856,6 +6165,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -5872,6 +6182,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LinearProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -5885,6 +6196,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -5901,6 +6213,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LinearProgressIndicatorOpenNode(
         id: id ?? this.id,
@@ -5914,6 +6227,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -5944,6 +6258,7 @@ class LinearProgressIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -5969,6 +6284,7 @@ class LiquidSwipeOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.liquidSwipe,
@@ -5988,6 +6304,7 @@ class LiquidSwipeOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6004,6 +6321,7 @@ class LiquidSwipeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LiquidSwipeOpenNode(
         id: id ?? this.id,
@@ -6017,6 +6335,7 @@ class LiquidSwipeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6033,6 +6352,7 @@ class LiquidSwipeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LiquidSwipeOpenNode(
         id: id ?? this.id,
@@ -6046,6 +6366,7 @@ class LiquidSwipeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6076,6 +6397,7 @@ class LiquidSwipeOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6101,6 +6423,7 @@ class ListTileOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.listTile,
@@ -6120,6 +6443,7 @@ class ListTileOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6136,6 +6460,7 @@ class ListTileOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListTileOpenNode(
         id: id ?? this.id,
@@ -6149,6 +6474,7 @@ class ListTileOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6165,6 +6491,7 @@ class ListTileOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListTileOpenNode(
         id: id ?? this.id,
@@ -6178,6 +6505,7 @@ class ListTileOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6208,6 +6536,7 @@ class ListTileOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6233,6 +6562,7 @@ class ListViewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.listView,
@@ -6252,6 +6582,7 @@ class ListViewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6268,6 +6599,7 @@ class ListViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListViewOpenNode(
         id: id ?? this.id,
@@ -6281,6 +6613,7 @@ class ListViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6297,6 +6630,7 @@ class ListViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListViewOpenNode(
         id: id ?? this.id,
@@ -6310,6 +6644,7 @@ class ListViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6340,6 +6675,7 @@ class ListViewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6365,6 +6701,7 @@ class ListViewBuilderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.listViewBuilder,
@@ -6384,6 +6721,7 @@ class ListViewBuilderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6400,6 +6738,7 @@ class ListViewBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListViewBuilderOpenNode(
         id: id ?? this.id,
@@ -6413,6 +6752,7 @@ class ListViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6429,6 +6769,7 @@ class ListViewBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ListViewBuilderOpenNode(
         id: id ?? this.id,
@@ -6442,6 +6783,7 @@ class ListViewBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6472,6 +6814,7 @@ class ListViewBuilderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6497,6 +6840,7 @@ class LottieOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.lottie,
@@ -6516,6 +6860,7 @@ class LottieOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6532,6 +6877,7 @@ class LottieOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LottieOpenNode(
         id: id ?? this.id,
@@ -6545,6 +6891,7 @@ class LottieOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6561,6 +6908,7 @@ class LottieOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LottieOpenNode(
         id: id ?? this.id,
@@ -6574,6 +6922,7 @@ class LottieOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6604,6 +6953,7 @@ class LottieOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6629,6 +6979,7 @@ class MapOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.map,
@@ -6648,6 +6999,7 @@ class MapOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6664,6 +7016,7 @@ class MapOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       MapOpenNode(
         id: id ?? this.id,
@@ -6677,6 +7030,7 @@ class MapOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6693,6 +7047,7 @@ class MapOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       MapOpenNode(
         id: id ?? this.id,
@@ -6706,6 +7061,7 @@ class MapOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6736,6 +7092,7 @@ class MapOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6761,6 +7118,7 @@ class MarkerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.marker,
@@ -6780,6 +7138,7 @@ class MarkerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6796,6 +7155,7 @@ class MarkerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       MarkerOpenNode(
         id: id ?? this.id,
@@ -6809,6 +7169,7 @@ class MarkerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6825,6 +7186,7 @@ class MarkerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       MarkerOpenNode(
         id: id ?? this.id,
@@ -6838,6 +7200,7 @@ class MarkerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -6868,6 +7231,7 @@ class MarkerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -6893,6 +7257,7 @@ class OpacityOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.opacity,
@@ -6912,6 +7277,7 @@ class OpacityOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -6928,6 +7294,7 @@ class OpacityOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       OpacityOpenNode(
         id: id ?? this.id,
@@ -6941,6 +7308,7 @@ class OpacityOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -6957,6 +7325,7 @@ class OpacityOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       OpacityOpenNode(
         id: id ?? this.id,
@@ -6970,6 +7339,7 @@ class OpacityOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7000,6 +7370,7 @@ class OpacityOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7025,6 +7396,7 @@ class PaddingOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.padding,
@@ -7044,6 +7416,7 @@ class PaddingOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7060,6 +7433,7 @@ class PaddingOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PaddingOpenNode(
         id: id ?? this.id,
@@ -7073,6 +7447,7 @@ class PaddingOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7089,6 +7464,7 @@ class PaddingOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PaddingOpenNode(
         id: id ?? this.id,
@@ -7102,6 +7478,7 @@ class PaddingOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7132,6 +7509,7 @@ class PaddingOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7157,6 +7535,7 @@ class PageViewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.pageView,
@@ -7176,6 +7555,7 @@ class PageViewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7192,6 +7572,7 @@ class PageViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PageViewOpenNode(
         id: id ?? this.id,
@@ -7205,6 +7586,7 @@ class PageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7221,6 +7603,7 @@ class PageViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PageViewOpenNode(
         id: id ?? this.id,
@@ -7234,6 +7617,7 @@ class PageViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7264,6 +7648,7 @@ class PageViewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7289,6 +7674,7 @@ class PlaceholderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.placeholder,
@@ -7308,6 +7694,7 @@ class PlaceholderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7324,6 +7711,7 @@ class PlaceholderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PlaceholderOpenNode(
         id: id ?? this.id,
@@ -7337,6 +7725,7 @@ class PlaceholderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7353,6 +7742,7 @@ class PlaceholderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PlaceholderOpenNode(
         id: id ?? this.id,
@@ -7366,6 +7756,7 @@ class PlaceholderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7396,6 +7787,7 @@ class PlaceholderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7421,6 +7813,7 @@ class PositionedOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.positioned,
@@ -7440,6 +7833,7 @@ class PositionedOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7456,6 +7850,7 @@ class PositionedOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PositionedOpenNode(
         id: id ?? this.id,
@@ -7469,6 +7864,7 @@ class PositionedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7485,6 +7881,7 @@ class PositionedOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       PositionedOpenNode(
         id: id ?? this.id,
@@ -7498,6 +7895,7 @@ class PositionedOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7528,6 +7926,7 @@ class PositionedOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7553,6 +7952,7 @@ class SafeAreaOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.safeArea,
@@ -7572,6 +7972,7 @@ class SafeAreaOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7588,6 +7989,7 @@ class SafeAreaOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SafeAreaOpenNode(
         id: id ?? this.id,
@@ -7601,6 +8003,7 @@ class SafeAreaOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7617,6 +8020,7 @@ class SafeAreaOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SafeAreaOpenNode(
         id: id ?? this.id,
@@ -7630,6 +8034,7 @@ class SafeAreaOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7660,6 +8065,7 @@ class SafeAreaOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7685,6 +8091,7 @@ class QRScannerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.qrScanner,
@@ -7704,6 +8111,7 @@ class QRScannerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7720,6 +8128,7 @@ class QRScannerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QRScannerOpenNode(
         id: id ?? this.id,
@@ -7733,6 +8142,7 @@ class QRScannerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7749,6 +8159,7 @@ class QRScannerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QRScannerOpenNode(
         id: id ?? this.id,
@@ -7762,6 +8173,7 @@ class QRScannerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7792,6 +8204,7 @@ class QRScannerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7817,6 +8230,7 @@ class QRCodeOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.qrCode,
@@ -7836,6 +8250,7 @@ class QRCodeOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7852,6 +8267,7 @@ class QRCodeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QRCodeOpenNode(
         id: id ?? this.id,
@@ -7865,6 +8281,7 @@ class QRCodeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -7881,6 +8298,7 @@ class QRCodeOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QRCodeOpenNode(
         id: id ?? this.id,
@@ -7894,6 +8312,7 @@ class QRCodeOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -7924,6 +8343,7 @@ class QRCodeOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -7949,6 +8369,7 @@ class RadioOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.radio,
@@ -7968,6 +8389,7 @@ class RadioOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -7984,6 +8406,7 @@ class RadioOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RadioOpenNode(
         id: id ?? this.id,
@@ -7997,6 +8420,7 @@ class RadioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8013,6 +8437,7 @@ class RadioOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RadioOpenNode(
         id: id ?? this.id,
@@ -8026,6 +8451,7 @@ class RadioOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8056,6 +8482,7 @@ class RadioOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8081,6 +8508,7 @@ class RefreshIndicatorOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.refreshIndicator,
@@ -8100,6 +8528,7 @@ class RefreshIndicatorOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8116,6 +8545,7 @@ class RefreshIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RefreshIndicatorOpenNode(
         id: id ?? this.id,
@@ -8129,6 +8559,7 @@ class RefreshIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8145,6 +8576,7 @@ class RefreshIndicatorOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RefreshIndicatorOpenNode(
         id: id ?? this.id,
@@ -8158,6 +8590,7 @@ class RefreshIndicatorOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8188,6 +8621,7 @@ class RefreshIndicatorOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8213,6 +8647,7 @@ class ResponsiveConditionOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.responsiveCondition,
@@ -8233,6 +8668,7 @@ class ResponsiveConditionOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8249,6 +8685,7 @@ class ResponsiveConditionOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ResponsiveConditionOpenNode(
         id: id ?? this.id,
@@ -8262,6 +8699,7 @@ class ResponsiveConditionOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8278,6 +8716,7 @@ class ResponsiveConditionOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ResponsiveConditionOpenNode(
         id: id ?? this.id,
@@ -8291,6 +8730,7 @@ class ResponsiveConditionOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8321,6 +8761,7 @@ class ResponsiveConditionOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8346,6 +8787,7 @@ class RotatedBoxOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.rotatedBox,
@@ -8365,6 +8807,7 @@ class RotatedBoxOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8381,6 +8824,7 @@ class RotatedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RotatedBoxOpenNode(
         id: id ?? this.id,
@@ -8394,6 +8838,7 @@ class RotatedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8410,6 +8855,7 @@ class RotatedBoxOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RotatedBoxOpenNode(
         id: id ?? this.id,
@@ -8423,6 +8869,7 @@ class RotatedBoxOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8453,6 +8900,7 @@ class RotatedBoxOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8478,6 +8926,7 @@ class ScaffoldOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.scaffold,
@@ -8497,6 +8946,7 @@ class ScaffoldOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8513,6 +8963,7 @@ class ScaffoldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ScaffoldOpenNode(
         id: id ?? this.id,
@@ -8526,6 +8977,7 @@ class ScaffoldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8542,6 +8994,7 @@ class ScaffoldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ScaffoldOpenNode(
         id: id ?? this.id,
@@ -8555,6 +9008,7 @@ class ScaffoldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8585,6 +9039,7 @@ class ScaffoldOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8610,6 +9065,7 @@ class SpacerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.spacer,
@@ -8629,6 +9085,7 @@ class SpacerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8645,6 +9102,7 @@ class SpacerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SpacerOpenNode(
         id: id ?? this.id,
@@ -8658,6 +9116,7 @@ class SpacerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8674,6 +9133,7 @@ class SpacerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SpacerOpenNode(
         id: id ?? this.id,
@@ -8687,6 +9147,7 @@ class SpacerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8717,6 +9178,7 @@ class SpacerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8742,6 +9204,7 @@ class StackOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.stack,
@@ -8761,6 +9224,7 @@ class StackOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8777,6 +9241,7 @@ class StackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       StackOpenNode(
         id: id ?? this.id,
@@ -8790,6 +9255,7 @@ class StackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8806,6 +9272,7 @@ class StackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       StackOpenNode(
         id: id ?? this.id,
@@ -8819,6 +9286,7 @@ class StackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8849,6 +9317,7 @@ class StackOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -8874,6 +9343,7 @@ class TCardOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.tcard,
@@ -8893,6 +9363,7 @@ class TCardOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -8909,6 +9380,7 @@ class TCardOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TCardOpenNode(
         id: id ?? this.id,
@@ -8922,6 +9394,7 @@ class TCardOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -8938,6 +9411,7 @@ class TCardOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TCardOpenNode(
         id: id ?? this.id,
@@ -8951,6 +9425,7 @@ class TCardOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -8981,6 +9456,7 @@ class TCardOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9006,6 +9482,7 @@ class TCardBuilderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.tcardBuilder,
@@ -9025,6 +9502,7 @@ class TCardBuilderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9041,6 +9519,7 @@ class TCardBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TCardBuilderOpenNode(
         id: id ?? this.id,
@@ -9054,6 +9533,7 @@ class TCardBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9070,6 +9550,7 @@ class TCardBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TCardBuilderOpenNode(
         id: id ?? this.id,
@@ -9083,6 +9564,7 @@ class TCardBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9113,6 +9595,7 @@ class TCardBuilderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9138,6 +9621,7 @@ class TextOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.text,
@@ -9157,6 +9641,7 @@ class TextOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9173,6 +9658,7 @@ class TextOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TextOpenNode(
         id: id ?? this.id,
@@ -9186,6 +9672,7 @@ class TextOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9202,6 +9689,7 @@ class TextOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TextOpenNode(
         id: id ?? this.id,
@@ -9215,6 +9703,7 @@ class TextOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9245,6 +9734,7 @@ class TextOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9270,6 +9760,7 @@ class TextFieldOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.textField,
@@ -9289,6 +9780,7 @@ class TextFieldOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9305,6 +9797,7 @@ class TextFieldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TextFieldOpenNode(
         id: id ?? this.id,
@@ -9318,6 +9811,7 @@ class TextFieldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9334,6 +9828,7 @@ class TextFieldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TextFieldOpenNode(
         id: id ?? this.id,
@@ -9347,6 +9842,7 @@ class TextFieldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9377,6 +9873,7 @@ class TextFieldOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9402,6 +9899,7 @@ class TooltipOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.tooltip,
@@ -9421,6 +9919,7 @@ class TooltipOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9437,6 +9936,7 @@ class TooltipOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TooltipOpenNode(
         id: id ?? this.id,
@@ -9450,6 +9950,7 @@ class TooltipOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9466,6 +9967,7 @@ class TooltipOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       TooltipOpenNode(
         id: id ?? this.id,
@@ -9479,6 +9981,7 @@ class TooltipOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9509,6 +10012,7 @@ class TooltipOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9534,6 +10038,7 @@ class VideoOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.video,
@@ -9553,6 +10058,7 @@ class VideoOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9569,6 +10075,7 @@ class VideoOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       VideoOpenNode(
         id: id ?? this.id,
@@ -9582,6 +10089,7 @@ class VideoOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9598,6 +10106,7 @@ class VideoOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       VideoOpenNode(
         id: id ?? this.id,
@@ -9611,6 +10120,7 @@ class VideoOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9641,6 +10151,7 @@ class VideoOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9666,6 +10177,7 @@ class VisibilityOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.visibility,
@@ -9685,6 +10197,7 @@ class VisibilityOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9701,6 +10214,7 @@ class VisibilityOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       VisibilityOpenNode(
         id: id ?? this.id,
@@ -9714,6 +10228,7 @@ class VisibilityOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9730,6 +10245,7 @@ class VisibilityOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       VisibilityOpenNode(
         id: id ?? this.id,
@@ -9743,6 +10259,7 @@ class VisibilityOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9773,6 +10290,7 @@ class VisibilityOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9798,6 +10316,7 @@ class WebviewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.webview,
@@ -9817,6 +10336,7 @@ class WebviewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9833,6 +10353,7 @@ class WebviewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WebviewOpenNode(
         id: id ?? this.id,
@@ -9846,6 +10367,7 @@ class WebviewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9862,6 +10384,7 @@ class WebviewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WebviewOpenNode(
         id: id ?? this.id,
@@ -9875,6 +10398,7 @@ class WebviewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -9905,6 +10429,7 @@ class WebviewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -9930,6 +10455,7 @@ class WrapOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.wrap,
@@ -9949,6 +10475,7 @@ class WrapOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -9965,6 +10492,7 @@ class WrapOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WrapOpenNode(
         id: id ?? this.id,
@@ -9978,6 +10506,7 @@ class WrapOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -9994,6 +10523,7 @@ class WrapOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WrapOpenNode(
         id: id ?? this.id,
@@ -10007,6 +10537,7 @@ class WrapOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10037,6 +10568,7 @@ class WrapOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10062,6 +10594,7 @@ class AnimationConfigGridOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.animationConfigGrid,
@@ -10082,6 +10615,7 @@ class AnimationConfigGridOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10098,6 +10632,7 @@ class AnimationConfigGridOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AnimationConfigGridOpenNode(
         id: id ?? this.id,
@@ -10111,6 +10646,7 @@ class AnimationConfigGridOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10127,6 +10663,7 @@ class AnimationConfigGridOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AnimationConfigGridOpenNode(
         id: id ?? this.id,
@@ -10140,6 +10677,7 @@ class AnimationConfigGridOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10170,6 +10708,7 @@ class AnimationConfigGridOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10195,6 +10734,7 @@ class AnimationConfigListOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.animationConfigList,
@@ -10215,6 +10755,7 @@ class AnimationConfigListOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10231,6 +10772,7 @@ class AnimationConfigListOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AnimationConfigListOpenNode(
         id: id ?? this.id,
@@ -10244,6 +10786,7 @@ class AnimationConfigListOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10260,6 +10803,7 @@ class AnimationConfigListOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AnimationConfigListOpenNode(
         id: id ?? this.id,
@@ -10273,6 +10817,7 @@ class AnimationConfigListOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10303,6 +10848,7 @@ class AnimationConfigListOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10328,6 +10874,7 @@ class FadeInAnimationOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.fadeInAnimation,
@@ -10347,6 +10894,7 @@ class FadeInAnimationOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10363,6 +10911,7 @@ class FadeInAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       FadeInAnimationOpenNode(
         id: id ?? this.id,
@@ -10376,6 +10925,7 @@ class FadeInAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10392,6 +10942,7 @@ class FadeInAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       FadeInAnimationOpenNode(
         id: id ?? this.id,
@@ -10405,6 +10956,7 @@ class FadeInAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10435,6 +10987,7 @@ class FadeInAnimationOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10460,6 +11013,7 @@ class ScaleAnimationOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.scaleAnimation,
@@ -10479,6 +11033,7 @@ class ScaleAnimationOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10495,6 +11050,7 @@ class ScaleAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ScaleAnimationOpenNode(
         id: id ?? this.id,
@@ -10508,6 +11064,7 @@ class ScaleAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10524,6 +11081,7 @@ class ScaleAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ScaleAnimationOpenNode(
         id: id ?? this.id,
@@ -10537,6 +11095,7 @@ class ScaleAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10567,6 +11126,7 @@ class ScaleAnimationOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10592,6 +11152,7 @@ class SlideAnimationOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.slideAnimation,
@@ -10611,6 +11172,7 @@ class SlideAnimationOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10627,6 +11189,7 @@ class SlideAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SlideAnimationOpenNode(
         id: id ?? this.id,
@@ -10640,6 +11203,7 @@ class SlideAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10656,6 +11220,7 @@ class SlideAnimationOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SlideAnimationOpenNode(
         id: id ?? this.id,
@@ -10669,6 +11234,7 @@ class SlideAnimationOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10699,6 +11265,7 @@ class SlideAnimationOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10724,6 +11291,7 @@ class ApiCallsFetchOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.apiCallsFetch,
@@ -10743,6 +11311,7 @@ class ApiCallsFetchOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10759,6 +11328,7 @@ class ApiCallsFetchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ApiCallsFetchOpenNode(
         id: id ?? this.id,
@@ -10772,6 +11342,7 @@ class ApiCallsFetchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10788,6 +11359,7 @@ class ApiCallsFetchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       ApiCallsFetchOpenNode(
         id: id ?? this.id,
@@ -10801,6 +11373,7 @@ class ApiCallsFetchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10831,6 +11404,7 @@ class ApiCallsFetchOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10856,6 +11430,7 @@ class LoginWithAppleOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithApple,
@@ -10875,6 +11450,7 @@ class LoginWithAppleOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -10891,6 +11467,7 @@ class LoginWithAppleOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithAppleOpenNode(
         id: id ?? this.id,
@@ -10904,6 +11481,7 @@ class LoginWithAppleOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -10920,6 +11498,7 @@ class LoginWithAppleOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithAppleOpenNode(
         id: id ?? this.id,
@@ -10933,6 +11512,7 @@ class LoginWithAppleOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -10963,6 +11543,7 @@ class LoginWithAppleOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -10988,6 +11569,7 @@ class LoginWithFacebookOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithFacebook,
@@ -11008,6 +11590,7 @@ class LoginWithFacebookOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11024,6 +11607,7 @@ class LoginWithFacebookOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithFacebookOpenNode(
         id: id ?? this.id,
@@ -11037,6 +11621,7 @@ class LoginWithFacebookOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11053,6 +11638,7 @@ class LoginWithFacebookOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithFacebookOpenNode(
         id: id ?? this.id,
@@ -11066,6 +11652,7 @@ class LoginWithFacebookOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11096,6 +11683,7 @@ class LoginWithFacebookOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11121,6 +11709,7 @@ class LoginWithGoogleOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithGoogle,
@@ -11140,6 +11729,7 @@ class LoginWithGoogleOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11156,6 +11746,7 @@ class LoginWithGoogleOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGoogleOpenNode(
         id: id ?? this.id,
@@ -11169,6 +11760,7 @@ class LoginWithGoogleOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11185,6 +11777,7 @@ class LoginWithGoogleOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGoogleOpenNode(
         id: id ?? this.id,
@@ -11198,6 +11791,7 @@ class LoginWithGoogleOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11228,6 +11822,7 @@ class LoginWithGoogleOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11253,6 +11848,7 @@ class LoginWithTwitterOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithTwitter,
@@ -11272,6 +11868,7 @@ class LoginWithTwitterOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11288,6 +11885,7 @@ class LoginWithTwitterOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithTwitterOpenNode(
         id: id ?? this.id,
@@ -11301,6 +11899,7 @@ class LoginWithTwitterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11317,6 +11916,7 @@ class LoginWithTwitterOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithTwitterOpenNode(
         id: id ?? this.id,
@@ -11330,6 +11930,7 @@ class LoginWithTwitterOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11360,6 +11961,7 @@ class LoginWithTwitterOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11385,6 +11987,7 @@ class LoginWithGithubOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithGitHub,
@@ -11404,6 +12007,7 @@ class LoginWithGithubOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11420,6 +12024,7 @@ class LoginWithGithubOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGithubOpenNode(
         id: id ?? this.id,
@@ -11433,6 +12038,7 @@ class LoginWithGithubOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11449,6 +12055,7 @@ class LoginWithGithubOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGithubOpenNode(
         id: id ?? this.id,
@@ -11462,6 +12069,7 @@ class LoginWithGithubOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11492,6 +12100,7 @@ class LoginWithGithubOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11517,6 +12126,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithMicrosoft,
@@ -11537,6 +12147,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11553,6 +12164,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithMicrosoftOpenNode(
         id: id ?? this.id,
@@ -11566,6 +12178,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11582,6 +12195,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithMicrosoftOpenNode(
         id: id ?? this.id,
@@ -11595,6 +12209,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11625,6 +12240,7 @@ class LoginWithMicrosoftOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11650,6 +12266,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithLinkedin,
@@ -11670,6 +12287,7 @@ class LoginWithLinkedinOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11686,6 +12304,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithLinkedinOpenNode(
         id: id ?? this.id,
@@ -11699,6 +12318,7 @@ class LoginWithLinkedinOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11715,6 +12335,7 @@ class LoginWithLinkedinOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithLinkedinOpenNode(
         id: id ?? this.id,
@@ -11728,6 +12349,7 @@ class LoginWithLinkedinOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11758,6 +12380,7 @@ class LoginWithLinkedinOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11783,6 +12406,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithBitBucket,
@@ -11803,6 +12427,7 @@ class LoginWithBitbucketOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11819,6 +12444,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithBitbucketOpenNode(
         id: id ?? this.id,
@@ -11832,6 +12458,7 @@ class LoginWithBitbucketOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11848,6 +12475,7 @@ class LoginWithBitbucketOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithBitbucketOpenNode(
         id: id ?? this.id,
@@ -11861,6 +12489,7 @@ class LoginWithBitbucketOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -11891,6 +12520,7 @@ class LoginWithBitbucketOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -11916,6 +12546,7 @@ class LoginWithDiscordOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithDiscord,
@@ -11935,6 +12566,7 @@ class LoginWithDiscordOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -11951,6 +12583,7 @@ class LoginWithDiscordOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithDiscordOpenNode(
         id: id ?? this.id,
@@ -11964,6 +12597,7 @@ class LoginWithDiscordOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -11980,6 +12614,7 @@ class LoginWithDiscordOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithDiscordOpenNode(
         id: id ?? this.id,
@@ -11993,6 +12628,7 @@ class LoginWithDiscordOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12023,6 +12659,7 @@ class LoginWithDiscordOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12048,6 +12685,7 @@ class LoginWithTwitchOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithTwitch,
@@ -12067,6 +12705,7 @@ class LoginWithTwitchOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12083,6 +12722,7 @@ class LoginWithTwitchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithTwitchOpenNode(
         id: id ?? this.id,
@@ -12096,6 +12736,7 @@ class LoginWithTwitchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12112,6 +12753,7 @@ class LoginWithTwitchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithTwitchOpenNode(
         id: id ?? this.id,
@@ -12125,6 +12767,7 @@ class LoginWithTwitchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12155,6 +12798,7 @@ class LoginWithTwitchOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12180,6 +12824,7 @@ class LoginWithGitlabOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.loginWithGitlab,
@@ -12199,6 +12844,7 @@ class LoginWithGitlabOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12215,6 +12861,7 @@ class LoginWithGitlabOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGitlabOpenNode(
         id: id ?? this.id,
@@ -12228,6 +12875,7 @@ class LoginWithGitlabOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12244,6 +12892,7 @@ class LoginWithGitlabOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       LoginWithGitlabOpenNode(
         id: id ?? this.id,
@@ -12257,6 +12906,7 @@ class LoginWithGitlabOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12287,6 +12937,7 @@ class LoginWithGitlabOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12312,6 +12963,7 @@ class HttpRequestOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.httpRequest,
@@ -12331,6 +12983,7 @@ class HttpRequestOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12347,6 +13000,7 @@ class HttpRequestOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       HttpRequestOpenNode(
         id: id ?? this.id,
@@ -12360,6 +13014,7 @@ class HttpRequestOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12376,6 +13031,7 @@ class HttpRequestOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       HttpRequestOpenNode(
         id: id ?? this.id,
@@ -12389,6 +13045,7 @@ class HttpRequestOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12419,6 +13076,7 @@ class HttpRequestOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12444,6 +13102,7 @@ class CustomHttpRequestOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.customHttpRequest,
@@ -12464,6 +13123,7 @@ class CustomHttpRequestOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12480,6 +13140,7 @@ class CustomHttpRequestOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CustomHttpRequestOpenNode(
         id: id ?? this.id,
@@ -12493,6 +13154,7 @@ class CustomHttpRequestOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12509,6 +13171,7 @@ class CustomHttpRequestOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CustomHttpRequestOpenNode(
         id: id ?? this.id,
@@ -12522,6 +13185,7 @@ class CustomHttpRequestOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12552,6 +13216,7 @@ class CustomHttpRequestOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12577,6 +13242,7 @@ class AppBarOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.appBar,
@@ -12596,6 +13262,7 @@ class AppBarOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12612,6 +13279,7 @@ class AppBarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AppBarOpenNode(
         id: id ?? this.id,
@@ -12625,6 +13293,7 @@ class AppBarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12641,6 +13310,7 @@ class AppBarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       AppBarOpenNode(
         id: id ?? this.id,
@@ -12654,6 +13324,7 @@ class AppBarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12684,6 +13355,7 @@ class AppBarOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12709,6 +13381,7 @@ class BottomBarOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.bottomBar,
@@ -12728,6 +13401,7 @@ class BottomBarOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12744,6 +13418,7 @@ class BottomBarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BottomBarOpenNode(
         id: id ?? this.id,
@@ -12757,6 +13432,7 @@ class BottomBarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12773,6 +13449,7 @@ class BottomBarOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       BottomBarOpenNode(
         id: id ?? this.id,
@@ -12786,6 +13463,7 @@ class BottomBarOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12816,6 +13494,7 @@ class BottomBarOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12841,6 +13520,7 @@ class DrawerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.drawer,
@@ -12860,6 +13540,7 @@ class DrawerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -12876,6 +13557,7 @@ class DrawerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DrawerOpenNode(
         id: id ?? this.id,
@@ -12889,6 +13571,7 @@ class DrawerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -12905,6 +13588,7 @@ class DrawerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       DrawerOpenNode(
         id: id ?? this.id,
@@ -12918,6 +13602,7 @@ class DrawerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -12948,6 +13633,7 @@ class DrawerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -12973,6 +13659,7 @@ class QonversionProductsOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.qonversionProducts,
@@ -12993,6 +13680,7 @@ class QonversionProductsOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13009,6 +13697,7 @@ class QonversionProductsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QonversionProductsOpenNode(
         id: id ?? this.id,
@@ -13022,6 +13711,7 @@ class QonversionProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13038,6 +13728,7 @@ class QonversionProductsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QonversionProductsOpenNode(
         id: id ?? this.id,
@@ -13051,6 +13742,7 @@ class QonversionProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13081,6 +13773,7 @@ class QonversionProductsOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13106,6 +13799,7 @@ class QonversionSubStatusOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.qonversionSubStatus,
@@ -13126,6 +13820,7 @@ class QonversionSubStatusOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13142,6 +13837,7 @@ class QonversionSubStatusOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QonversionSubStatusOpenNode(
         id: id ?? this.id,
@@ -13155,6 +13851,7 @@ class QonversionSubStatusOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13171,6 +13868,7 @@ class QonversionSubStatusOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       QonversionSubStatusOpenNode(
         id: id ?? this.id,
@@ -13184,6 +13882,7 @@ class QonversionSubStatusOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13214,6 +13913,7 @@ class QonversionSubStatusOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13239,6 +13939,7 @@ class RevenueCatProductsOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.revenueCatProducts,
@@ -13259,6 +13960,7 @@ class RevenueCatProductsOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13275,6 +13977,7 @@ class RevenueCatProductsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RevenueCatProductsOpenNode(
         id: id ?? this.id,
@@ -13288,6 +13991,7 @@ class RevenueCatProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13304,6 +14008,7 @@ class RevenueCatProductsOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RevenueCatProductsOpenNode(
         id: id ?? this.id,
@@ -13317,6 +14022,7 @@ class RevenueCatProductsOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13347,6 +14053,7 @@ class RevenueCatProductsOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13372,6 +14079,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.revenueCatSubStatus,
@@ -13392,6 +14100,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13408,6 +14117,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RevenueCatSubStatusOpenNode(
         id: id ?? this.id,
@@ -13421,6 +14131,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13437,6 +14148,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       RevenueCatSubStatusOpenNode(
         id: id ?? this.id,
@@ -13450,6 +14162,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13480,6 +14193,7 @@ class RevenueCatSubStatusOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13505,6 +14219,7 @@ class WrapperOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.wrapper,
@@ -13524,6 +14239,7 @@ class WrapperOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13540,6 +14256,7 @@ class WrapperOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WrapperOpenNode(
         id: id ?? this.id,
@@ -13553,6 +14270,7 @@ class WrapperOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13569,6 +14287,7 @@ class WrapperOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       WrapperOpenNode(
         id: id ?? this.id,
@@ -13582,6 +14301,7 @@ class WrapperOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13612,6 +14332,7 @@ class WrapperOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13637,6 +14358,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.supabaseFutureBuilder,
@@ -13657,6 +14379,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13673,6 +14396,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseFutureBuilderOpenNode(
         id: id ?? this.id,
@@ -13686,6 +14410,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13702,6 +14427,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseFutureBuilderOpenNode(
         id: id ?? this.id,
@@ -13715,6 +14441,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13745,6 +14472,7 @@ class SupabaseFutureBuilderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13770,6 +14498,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.supabaseStreamBuilder,
@@ -13790,6 +14519,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13806,6 +14536,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseStreamBuilderOpenNode(
         id: id ?? this.id,
@@ -13819,6 +14550,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13835,6 +14567,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseStreamBuilderOpenNode(
         id: id ?? this.id,
@@ -13848,6 +14581,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -13878,6 +14612,7 @@ class SupabaseStreamBuilderOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -13903,6 +14638,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.supabaseLoggedUser,
@@ -13923,6 +14659,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -13939,6 +14676,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseLoggedUserOpenNode(
         id: id ?? this.id,
@@ -13952,6 +14690,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -13968,6 +14707,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       SupabaseLoggedUserOpenNode(
         id: id ?? this.id,
@@ -13981,6 +14721,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14011,6 +14752,7 @@ class SupabaseLoggedUserOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -14036,6 +14778,7 @@ class CMSCountOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cmsCount,
@@ -14055,6 +14798,7 @@ class CMSCountOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -14071,6 +14815,7 @@ class CMSCountOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSCountOpenNode(
         id: id ?? this.id,
@@ -14084,6 +14829,7 @@ class CMSCountOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -14100,6 +14846,7 @@ class CMSCountOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSCountOpenNode(
         id: id ?? this.id,
@@ -14113,6 +14860,7 @@ class CMSCountOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14143,6 +14891,7 @@ class CMSCountOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -14168,6 +14917,7 @@ class CMSCustomQueryOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cmsCustomQuery,
@@ -14187,6 +14937,7 @@ class CMSCustomQueryOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -14203,6 +14954,7 @@ class CMSCustomQueryOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSCustomQueryOpenNode(
         id: id ?? this.id,
@@ -14216,6 +14968,7 @@ class CMSCustomQueryOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -14232,6 +14985,7 @@ class CMSCustomQueryOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSCustomQueryOpenNode(
         id: id ?? this.id,
@@ -14245,6 +14999,7 @@ class CMSCustomQueryOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14275,6 +15030,7 @@ class CMSCustomQueryOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -14300,6 +15056,7 @@ class CMSFetchOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cmsFetch,
@@ -14319,6 +15076,7 @@ class CMSFetchOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -14335,6 +15093,7 @@ class CMSFetchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSFetchOpenNode(
         id: id ?? this.id,
@@ -14348,6 +15107,7 @@ class CMSFetchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -14364,6 +15124,7 @@ class CMSFetchOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSFetchOpenNode(
         id: id ?? this.id,
@@ -14377,6 +15138,7 @@ class CMSFetchOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14407,6 +15169,7 @@ class CMSFetchOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -14432,6 +15195,7 @@ class CMSStreamOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cmsStream,
@@ -14451,6 +15215,7 @@ class CMSStreamOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -14467,6 +15232,7 @@ class CMSStreamOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSStreamOpenNode(
         id: id ?? this.id,
@@ -14480,6 +15246,7 @@ class CMSStreamOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -14496,6 +15263,7 @@ class CMSStreamOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSStreamOpenNode(
         id: id ?? this.id,
@@ -14509,6 +15277,7 @@ class CMSStreamOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14539,6 +15308,7 @@ class CMSStreamOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
@@ -14564,6 +15334,7 @@ class CMSLoggedUserOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
   }) : super(
           id: id,
           type: NType.cmsLoggedUser,
@@ -14583,6 +15354,7 @@ class CMSLoggedUserOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
         );
 
   @override
@@ -14599,6 +15371,7 @@ class CMSLoggedUserOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSLoggedUserOpenNode(
         id: id ?? this.id,
@@ -14612,6 +15385,7 @@ class CMSLoggedUserOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   @override
@@ -14628,6 +15402,7 @@ class CMSLoggedUserOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
   }) =>
       CMSLoggedUserOpenNode(
         id: id ?? this.id,
@@ -14641,6 +15416,7 @@ class CMSLoggedUserOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
       );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -14671,6 +15447,7 @@ class CMSLoggedUserOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
     );
   }
 
