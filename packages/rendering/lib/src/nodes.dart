@@ -39,6 +39,16 @@ class NodeRendering {
     return buildTree(list, null).first;
   }
 
+  List<CNode> renderComponents(final List<CNode> list, final PageID pageID) {
+    final nodes = list.where((element) => element.pageID == pageID).toList();
+    for (var node in nodes) {
+      if (node.type == NType.component) {
+        node.addChildrenToComponent(node.componentID!, list);
+      }
+    }
+    return nodes;
+  }
+
   List<CNode> renderFlatList(final CNode scaffold) {
     final nodes = findAllChildren(scaffold)
       ..sort((a, b) => a.childOrder.compareTo(b.childOrder));

@@ -71,3 +71,4 @@ export 'transform_translate.dart';
 export 'video.dart';
 export 'visibility.dart';
 export 'wrap.dart';
+export 'component.dart';

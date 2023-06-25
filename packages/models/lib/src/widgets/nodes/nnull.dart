@@ -53,6 +53,7 @@ class NNull extends CNode {
     PageID? pageID,
     NodeID? stabilID,
     PageID? componentID,
+    List<CNode>? componentChildren,
   }) {
     throw UnimplementedError('copyWith not implemented in NNull class');
   }
@@ -72,6 +73,7 @@ class NNull extends CNode {
     PageID? pageID,
     NodeID? stabilID,
     PageID? componentID,
+    List<CNode>? componentChildren,
   }) {
     throw UnimplementedError('copyWithWithNull not implemented in NNull class');
   }

@@ -2,6 +2,7 @@ import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:uuid/uuid.dart';
 
 /// CNode is the mother of all sub node classes.
 /// CNode = Custom Node.
@@ -27,6 +28,7 @@ abstract class CNode extends Equatable {
     this.children = const [],
     this.childOrder = 0,
     this.componentID,
+    this.componentChildren = const [],
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -46,6 +48,51 @@ abstract class CNode extends Equatable {
       marginsDesktop: [0, 0, 0, 0],
     ),
   };
+
+  // all the children of the component
+  List<CNode> componentChildren = [];
+
+  // Method to add children to a component node using the component ID.
+  void addChildrenToComponent(PageID componentID, List<CNode> children) {
+    final childerenFake = createFakeChildren(children);
+    if (type == NType.component) {
+      for (var child in childerenFake) {
+        if (componentID == child.pageID && componentID == this.componentID) {
+          if (child.type == NType.component) {
+            child.addChildrenToComponent(child.componentID!, childerenFake);
+          }
+          componentChildren.add(child);
+        }
+      }
+    }
+  }
+
+  // Method to create fake children for the component children.
+  List<CNode> createFakeChildren(List<CNode> children) {
+    List<CNode> copyChildren = [];
+    Map<String, CNode> nodeMap = {};
+
+    for (var node in children) {
+      CNode copyNode = node.copyWith(id: Uuid().v1());
+      nodeMap[node.id] = copyNode;
+    }
+
+    for (var node in children) {
+      if (node.parentID != null) {
+        var parent = nodeMap[node.parentID];
+        if (parent != null) {
+          var copyNode = nodeMap[node.id];
+          copyNode = copyNode!.copyWith(parentID: parent.id);
+          copyChildren.add(copyNode);
+        }
+      } else {
+        var copyNode = nodeMap[node.id];
+        copyChildren.add(copyNode!);
+      }
+    }
+
+    return copyChildren;
+  }
 
   static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
   static const defaultRProperties = RectProperties(
@@ -310,6 +357,7 @@ abstract class CNode extends Equatable {
     PageID? pageID,
     NodeID? stabilID,
     PageID? componentID,
+    List<CNode>? componentChildren,
   });
 
   /// Copy the node with new attributes
@@ -327,6 +375,7 @@ abstract class CNode extends Equatable {
     PageID? pageID,
     NodeID? stabilID,
     PageID? componentID,
+    List<CNode>? componentChildren,
   });
 
   /// Render a Widget from node

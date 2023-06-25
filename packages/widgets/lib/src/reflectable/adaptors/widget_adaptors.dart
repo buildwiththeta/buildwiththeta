@@ -1134,7 +1134,8 @@ class ResponsiveConditionAdapter extends WidgetAdapter {
         child: state.node.child,
         visibleOnDesktop:
             state.node.getAttributes[DBKeys.visibleOnDesktop] as bool,
-        visibleOnLaptop: state.node.getAttributes[DBKeys.visibleOnLaptop] as bool,
+        visibleOnLaptop:
+            state.node.getAttributes[DBKeys.visibleOnLaptop] as bool,
         visibleOnMobile:
             state.node.getAttributes[DBKeys.visibleOnMobile] as bool,
         visibleOnTablet:
@@ -1936,4 +1937,23 @@ class WrapperAdapter extends WidgetAdapter {
       );
 
   WrapperAdapter.create() : this();
+}
+
+/// Component
+@dynamicAdapter
+@NodeKey(NType.component)
+class ComponentAdapter extends WidgetAdapter {
+  const ComponentAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWComponent(
+        key: ValueKey(state.node.id),
+        nodeState: state,
+        componentChildren: state.node.componentChildren,
+      );
+
+  ComponentAdapter.create() : this();
 }

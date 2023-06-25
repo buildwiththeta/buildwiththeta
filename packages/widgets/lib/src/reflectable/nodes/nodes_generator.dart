@@ -41,6 +41,7 @@ class $generatedClassName extends CNode {
       final PageID? pageID,
       final NodeID? stabilID,
       final PageID? componentID,
+      final List<CNode>? componentChildren,
       })
       : super(
             id: id,
@@ -60,6 +61,7 @@ class $generatedClassName extends CNode {
             pageID: pageID ?? '',
             stabilID: stabilID,
             componentID: componentID,
+            componentChildren:componentChildren ?? [],
           );
 
   @override
@@ -77,6 +79,7 @@ class $generatedClassName extends CNode {
           PageID? pageID,
           NodeID? stabilID,
           PageID? componentID,
+          List<CNode>? componentChildren,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -91,6 +94,7 @@ class $generatedClassName extends CNode {
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
           componentID:componentID ?? this.componentID,
+          componentChildren: componentChildren ?? this.componentChildren,
         );
 
   @override
@@ -108,6 +112,7 @@ class $generatedClassName extends CNode {
           PageID? pageID,
           NodeID? stabilID,
           PageID? componentID,
+          List<CNode>? componentChildren,
         }) =>
         $generatedClassName(
           id: id ?? this.id,
@@ -122,6 +127,7 @@ class $generatedClassName extends CNode {
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
           componentID:componentID ?? this.componentID,
+          componentChildren: componentChildren ?? this.componentChildren,
         );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {

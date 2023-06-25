@@ -12870,6 +12870,31 @@ final _data = <r.Reflectable, r.ReflectorData>{
               prefix31.dynamicAdapter,
               const prefix29.NodeKey(prefix39.NType.wrapper)
             ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ComponentAdapter',
+            r'.ComponentAdapter',
+            134217735,
+            85,
+            const prefix31.DynamicAdapter(),
+            const <int>[260, 261, 262],
+            const <int>[3, 4, 5, 6, 7, 260],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? prefix32.ComponentAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ComponentAdapter.create() : null
+            },
+            -1,
+            85,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix39.NType.component)
+            ],
             null)
       ],
       <m.DeclarationMirror>[
@@ -14157,6 +14182,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.MethodMirrorImpl(r'', 128, 84, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const []),
         r.MethodMirrorImpl(r'create', 256, 84, -1, -1, -1, null, const <int>[],
+            const prefix31.DynamicAdapter(), const []),
+        r.MethodMirrorImpl(
+            r'toWidget',
+            2097154,
+            85,
+            -1,
+            -1,
+            -1,
+            null,
+            const <int>[172, 173],
+            const prefix31.DynamicAdapter(),
+            const <Object>[override]),
+        r.MethodMirrorImpl(r'', 128, 85, -1, -1, -1, null, const <int>[],
+            const prefix31.DynamicAdapter(), const []),
+        r.MethodMirrorImpl(r'create', 256, 85, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const [])
       ],
       <m.ParameterMirror>[
@@ -16223,6 +16263,30 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             const [],
             null,
+            #state),
+        r.ParameterMirrorImpl(
+            r'context',
+            134358022,
+            260,
+            const prefix31.DynamicAdapter(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #context),
+        r.ParameterMirrorImpl(
+            r'state',
+            134358022,
+            260,
+            const prefix31.DynamicAdapter(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
             #state)
       ],
       <Type>[
@@ -16310,9 +16374,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix32.AppBarAdapter,
         prefix32.BottomBarAdapter,
         prefix32.DrawerAdapter,
-        prefix32.WrapperAdapter
+        prefix32.WrapperAdapter,
+        prefix32.ComponentAdapter
       ],
-      85,
+      86,
       {
         r'==': (dynamic instance) => (x) => instance == x,
         r'toString': (dynamic instance) => instance.toString,

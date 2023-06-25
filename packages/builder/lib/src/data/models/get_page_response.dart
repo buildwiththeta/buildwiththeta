@@ -21,7 +21,8 @@ class GetPageResponseEntity {
 
     return GetPageResponseEntity(
       pageID: json['page_id'],
-      treeNodes: getIt<NodeRendering>().renderTree(nodes),
+      treeNodes: getIt<NodeRendering>().renderTree(
+          getIt<NodeRendering>().renderComponents(nodes, json['page_id'])),
     );
   }
 

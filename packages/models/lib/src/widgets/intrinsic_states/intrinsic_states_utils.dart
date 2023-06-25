@@ -30,6 +30,7 @@ class IntrinsicStateUtils {
     NType.row: RowIntrinsicStates(),
     NType.safeArea: SafeAreaIntrinsicStates(),
     NType.scaffold: ScaffoldIntrinsicStates(),
+    NType.component: ComponentIntrinsicStates(),
     NType.spacer: SpacerIntrinsicStates(),
     NType.stack: const StackIntrinsicStates(),
     NType.text: TextIntrinsicStates(),
