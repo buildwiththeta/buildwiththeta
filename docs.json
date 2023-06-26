@@ -10,9 +10,14 @@
   "twitter": "buildwiththeta",
   "anchors": [
     {
-      "title": "Website",
-      "icon": "arrow-up-right-from-square",
+      "title": "Buildwiththeta.com",
+      "icon": "home",
       "link": "https://buildwiththeta.com"
+    },
+    {
+      "title": "Dashboard",
+      "icon": "bolt",
+      "link": "https://app.buildwiththeta.com"
     },
     {
       "title": "Pub.dev",
@@ -50,10 +55,14 @@
         ]
       ],
       [
+        "User & Billing", [
+          ["User deletion", "/support/user_deletion"]
+        ]
+      ],
+      [
         "Misc.", [
           ["FAQ", "/faq"],
-          ["Teams", "/studio/teams"],
-          ["Migration", "/support/migration"],
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
           ["License \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
         ]
       ]
@@ -62,13 +71,18 @@
       [
         "Per iniziare", [
           ["Introduzione", "/"],
-          ["Per iniziare", "/per_iniziare"]
+          ["Per iniziare", "/per_iniziare"],
+          ["Posizionamento & ridimensionamento", "/studio/posizionamento_ridimensionamento"],
+          ["Vincoli responsive", "/studio/vincoli"],
+          ["Modalità di adattamento dei componenti", "/studio/modalità_adattamento"],
+          ["Branch", "/studio/branch"],
+          ["Ottenere il token API", "/studio/ottenere_api"]
         ]
       ],
       [
         "Flutter library", [
           ["App di esempio di Theta", "/builder/esempio"],
-          ["compatibilità", "/builder/compatibilità"],
+          ["Compatibilità", "/builder/compatibilità"],
           ["Overrides", "/builder/overrides"],
           ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
           ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
@@ -79,7 +93,8 @@
       [
         "Misc.", [
           ["FAQ", "/faq"],
-          ["Migrazione", "/support/migrazione"]
+          ["Team", "/team"],
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"]
         ]
       ]
     ],
@@ -95,13 +110,49 @@
       ],
       [
         "Flutter library", [
-          ["Overrides", "/builder/overrides"]
+          ["Overrides", "/builder/overrides"],
+          ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
+          ["API Reference \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
+          ["Repository \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],
+          ["Example \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder/example"]
         ]
       ],
       [
         "Misc.", [
           ["Preguntas frecuentes", "/preguntas-frecuentes"],
-          ["Migración", "/support/migración"]
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"]
+        ]
+      ]
+    ],
+    "tr": [
+      [
+        "Başlarken", [
+          ["Genel Bakış", "/"],
+          ["Başlarken", "/getting-started"],
+          ["Konumlandırma && Boyutlandırma", "/studio/positioning_and_resizing"],
+          ["Duyarlı Kısıtlamalar", "/studio/constraints"],
+          ["Bileşen Uyumluluk Modları", "/studio/component_fit"],
+          ["Şubeler", "/studio/branches"],
+          ["API Anahtarını Al", "/studio/get_project_api"]
+        ]
+      ],
+      [
+        "Flutter Kütüphanesi", [
+          ["Theta örnek uygulama", "/builder/run_example"],
+          ["Uyumluluk", "/builder/compatibility"],
+          ["Geçersiz Kılma", "/builder/overrides"],
+          ["Pub.dev \uD83D\uDD17", "https://pub.dev/packages/theta"],
+          ["API Referansı \uD83D\uDD17", "https://pub.dev/documentation/theta/latest/"],
+          ["Depo \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder"],
+          ["Örnek \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/tree/main/packages/builder/example"]
+        ]
+      ],
+      [
+        "Çeşitli", [
+          ["SSS", "/faq"],
+          ["Takımlar", "/studio/teams"],
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
+          ["Lisans  \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
         ]
       ]
     ]

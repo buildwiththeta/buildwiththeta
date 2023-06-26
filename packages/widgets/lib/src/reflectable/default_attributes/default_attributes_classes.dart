@@ -1116,7 +1116,7 @@ class TextDefaultAttributes extends DefaultAttributesAdapter {
           fill: FFill(paletteStyle: 'Text / Primary'),
         ),
         DBKeys.isFullWidth: false,
-        DBKeys.maxLines: FTextTypeInput(value: '1'),
+        DBKeys.maxLines: FTextTypeInput(value: ''),
       };
 
   TextDefaultAttributes.create() : this();
@@ -1149,8 +1149,8 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
           sizeTablet: 'max',
           sizeDesktop: 'max',
         ),
-        DBKeys.maxLines: FTextTypeInput(value: '1'),
-        DBKeys.minLines: FTextTypeInput(value: '1'),
+        DBKeys.maxLines: FTextTypeInput(value: ''),
+        DBKeys.minLines: FTextTypeInput(value: ''),
         DBKeys.maxLenght: FTextTypeInput(),
         DBKeys.bordersSize: FTextTypeInput(value: '1'),
         DBKeys.keyboardType: FKeyboardType(),

@@ -1,0 +1,47 @@
+---
+title: Vincoli di allineamento
+description: Mantieni gli elementi allineati su lati specifici o estendili seguendo le dimensioni dello schermo.
+---
+
+# Vincoli di allineamento UI
+
+I Vincoli di allineamento UI consentono di controllare il posizionamento di un elemento all'interno di un layout. Si possono impostare opzioni di allineamento sia per l'asse verticale che per quello orizzontale.  Le tre opzioni disponibili sono `start`, `end`, e `stretch`.
+
+<YouTube id="LRhMnuvEg7A" />
+
+## Allineamento orizzontale
+
+* `Start`: Allinea l'elemento alla sinistra del contenitore. L'elemento verrà posizionato in base al valore di sinistra.
+
+* `End`: Allinea l'elemento alla destra del contenitore. Il bordo destro dell'elemento verrà posizionato in base al valore di destra.
+
+* `Stretch`: Estende l'elemento in orizzontale per riempire la larghezza del contenitore, mantenendo i valori di margine sinistro e destro.
+
+## Allineamento verticale
+
+* `Start`: Allinea l'elemento nella parte superiore del contenitore. L'elemento verrà posizionato in base al valore di alto.
+
+* `End`: Allinea l'elemento nella parte inferiore del contenitore. Il bordo inferiore dell'elemento verrà posizionato in base al valore di basso.
+
+* `Stretch`:  Estende l'elemento in verticale per riempire l'altezza del contenitore, mantenendo i valori di margine superiore e inferiore.
+
+## Esempi
+
+1. Se selezioni `start` per l'allineamento verticale e orizzontale, l'elemento verrà posizionato nell'angolo in alto a sinistra, con i valori di alto e sinistra che determinano la posizione esatta.
+
+2. Se selezioni `end`  per l'allineamento verticale e orizzontale, l'elemento verrà posizionato nell'angolo in basso a destra, con i valori di alto e sinistra che determinano la posizione esatta.
+
+3. Se selezioni `stretch` per l'allineamento orizzontale, l'elemento si estenderà su tutta la larghezza dello schermo, con la larghezza determinata dai valori di margine sinistro e destro.
+
+4. Se selezioni `stretch` per l'allineamento verticale, l'elemento si estenderà su tutta l'altezza dello schermo, con l'altezza determinata dai valori di margine superiore e inferiore.
+
+
+## Sovrascrivi i vincoli per tablet e desktop
+
+Oltre alle impostazioni predefinite per i dispositivi mobili, puoi sovrascrivere i vincoli di allineamento per schermi più grandi come tablet e desktop. Ciò ti consente di ottimizzare l'interfaccia utente per varie dimensioni dello schermo e creare un design veramente responsivo.
+
+Per farlo, imposta semplicemente i valori di allineamento desiderati per i breakpoint di tablet e desktop nelle impostazioni. Ciò sovrascriverà i vincoli predefiniti per i dispositivi mobili, fornendo un comportamento di allineamento diverso su questi dispositivi.evices.
+
+## Rimuovi le sovrascritture
+
+Se desideri ripristinare le impostazioni per i dispositivi mobili su tablet o desktop, puoi farlo facilmente cliccando sul pulsante 'Follow phone settings'. Ciò rimuoverà i vincoli di sovrascrittura, consentendo all'elemento di allinearsi in base alle impostazioni predefinite per i dispositivi mobili su tutti i dispositivi. Questa funzionalità offre un modo flessibile per regolare i vincoli di allineamento dell'interfaccia utente in base alle tue esigenze di design.
