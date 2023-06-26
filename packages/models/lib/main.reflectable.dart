@@ -4708,10 +4708,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {
-              r'': (bool b) =>
-                  () => b ? const prefix0.DynamicAttributes() : null
-            },
+            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
             -1,
             -1,
             const <int>[-1],
@@ -6609,9 +6606,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix30.ListViewIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix30.ListViewIntrinsicStates.create() : null
+                  () => b ? prefix30.ListViewIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix30.ListViewIntrinsicStates.create() : null
             },
             -1,
             40,
@@ -7619,10 +7616,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix30.StackIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix30.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix30.StackIntrinsicStates.create() : null
+                  () => b ? prefix30.StackIntrinsicStates.create() : null
             },
             -1,
             62,
@@ -10505,8 +10501,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
             },
             -1,
             0,
@@ -10583,7 +10578,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       [])
 };
 
-const _memberSymbolMap = null;
+final _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

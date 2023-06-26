@@ -10761,7 +10761,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix32.ButtonAdapter() : null,
+              r'': (bool b) => () => b ? prefix32.ButtonAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ButtonAdapter.create() : null
             },
@@ -10786,7 +10786,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix32.ColumnAdapter() : null,
+              r'': (bool b) => () => b ? prefix32.ColumnAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ColumnAdapter.create() : null
             },
@@ -10811,8 +10811,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix32.ConditionAdapter() : null,
+              r'': (bool b) => () => b ? prefix32.ConditionAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.ConditionAdapter.create() : null
             },
@@ -10837,7 +10836,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix32.BoxAdapter() : null,
+              r'': (bool b) => () => b ? prefix32.BoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix32.BoxAdapter.create() : null
             },
@@ -11123,6 +11122,31 @@ final _data = <r.Reflectable, r.ReflectorData>{
               prefix31.dynamicAdapter,
               const prefix29.NodeKey(prefix40.NType.video)
             ],
+            null),
+        r.NonGenericClassMirrorImpl(
+            r'ComponentAdapter',
+            r'.ComponentAdapter',
+            134217735,
+            16,
+            const prefix31.DynamicAdapter(),
+            const <int>[53, 54, 55],
+            const <int>[3, 4, 5, 6, 7, 53],
+            const <int>[],
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? prefix32.ComponentAdapter() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.ComponentAdapter.create() : null
+            },
+            -1,
+            16,
+            const <int>[],
+            const <Object>[
+              prefix31.dynamicAdapter,
+              const prefix29.NodeKey(prefix40.NType.component)
+            ],
             null)
       ],
       <m.DeclarationMirror>[
@@ -11375,6 +11399,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
         r.MethodMirrorImpl(r'', 128, 15, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const []),
         r.MethodMirrorImpl(r'create', 256, 15, -1, -1, -1, null, const <int>[],
+            const prefix31.DynamicAdapter(), const []),
+        r.MethodMirrorImpl(
+            r'toWidget',
+            2097154,
+            16,
+            -1,
+            -1,
+            -1,
+            null,
+            const <int>[34, 35],
+            const prefix31.DynamicAdapter(),
+            const <Object>[override]),
+        r.MethodMirrorImpl(r'', 128, 16, -1, -1, -1, null, const <int>[],
+            const prefix31.DynamicAdapter(), const []),
+        r.MethodMirrorImpl(r'create', 256, 16, -1, -1, -1, null, const <int>[],
             const prefix31.DynamicAdapter(), const [])
       ],
       <m.ParameterMirror>[
@@ -11785,6 +11824,30 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             const [],
             null,
+            #state),
+        r.ParameterMirrorImpl(
+            r'context',
+            134358022,
+            53,
+            const prefix31.DynamicAdapter(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
+            #context),
+        r.ParameterMirrorImpl(
+            r'state',
+            134358022,
+            53,
+            const prefix31.DynamicAdapter(),
+            -1,
+            -1,
+            -1,
+            null,
+            const [],
+            null,
             #state)
       ],
       <Type>[
@@ -11803,9 +11866,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix32.StackAdapter,
         prefix32.TextAdapter,
         prefix32.TextFieldAdapter,
-        prefix32.VideoAdapter
+        prefix32.VideoAdapter,
+        prefix32.ComponentAdapter
       ],
-      16,
+      17,
       {
         r'==': (dynamic instance) => (x) => instance == x,
         r'toString': (dynamic instance) => instance.toString,
@@ -12634,6 +12698,37 @@ final _data = <r.Reflectable, r.ReflectorData>{
       {},
       null,
       []),
+  const prefix35.NodeDeclarationReflector(): r.ReflectorData(
+      <m.TypeMirror>[
+        r.NonGenericClassMirrorImpl(
+            r'NodesParse',
+            r'.NodesParse',
+            134217735,
+            0,
+            const prefix35.NodeDeclarationReflector(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[const prefix35.NodeDeclarationReflector()],
+            {})
+      ],
+      null,
+      null,
+      <Type>[prefix35.NodesParse],
+      1,
+      {},
+      {},
+      null,
+      [
+        const [0, 0, null]
+      ]),
   const prefix35.NodeDeclaration(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
@@ -12662,6 +12757,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.AlignOpenNode(
@@ -12669,6 +12766,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12714,6 +12813,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ButtonOpenNode(
@@ -12721,6 +12822,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12766,6 +12869,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ColumnOpenNode(
@@ -12773,6 +12878,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12818,6 +12925,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ComponentOpenNode(
@@ -12825,6 +12934,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12870,6 +12981,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.RowOpenNode(
@@ -12877,6 +12990,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12922,6 +13037,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ConditionOpenNode(
@@ -12929,6 +13046,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -12974,6 +13093,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ContainerOpenNode(
@@ -12981,6 +13102,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13026,6 +13149,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ImageOpenNode(
@@ -13033,6 +13158,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13078,6 +13205,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ExpandedOpenNode(
@@ -13085,6 +13214,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13130,6 +13261,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.IconOpenNode(
@@ -13137,6 +13270,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13182,6 +13317,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ListViewOpenNode(
@@ -13189,6 +13326,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13234,6 +13373,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.LottieOpenNode(
@@ -13241,6 +13382,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13286,6 +13429,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.OpacityOpenNode(
@@ -13293,6 +13438,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13338,6 +13485,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.ScaffoldOpenNode(
@@ -13345,6 +13494,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13390,6 +13541,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.StackOpenNode(
@@ -13397,6 +13550,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13442,6 +13597,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.TextOpenNode(
@@ -13449,6 +13606,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13494,6 +13653,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.TextFieldOpenNode(
@@ -13501,6 +13662,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13546,6 +13709,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       updatedAt,
                       pageID,
                       stabilID,
+                      componentID,
+                      componentChildren,
                       isLocked}) =>
                   b
                       ? prefix36.VideoOpenNode(
@@ -13553,6 +13718,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
                           child: child,
                           childOrder: childOrder,
                           children: children,
+                          componentChildren: componentChildren,
+                          componentID: componentID,
                           description: description,
                           isLocked: isLocked,
                           name: name,
@@ -13617,40 +13784,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
             #updatedAt,
             #pageID,
             #stabilID,
+            #componentID,
+            #componentChildren,
             #isLocked
           ]
         ]
-      ]),
-  const prefix35.NodeDeclarationReflector(): r.ReflectorData(
-      <m.TypeMirror>[
-        r.NonGenericClassMirrorImpl(
-            r'NodesParse',
-            r'.NodesParse',
-            134217735,
-            0,
-            const prefix35.NodeDeclarationReflector(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {},
-            {},
-            {r'': (bool b) => () => b ? prefix35.NodesParse() : null},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[const prefix35.NodeDeclarationReflector()],
-            {})
-      ],
-      null,
-      null,
-      <Type>[prefix35.NodesParse],
-      1,
-      {},
-      {},
-      null,
-      [
-        const [0, 0, null]
       ])
 };
 
