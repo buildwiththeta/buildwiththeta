@@ -25,7 +25,10 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _controller.onLoaded(() => debugPrint('Loaded!'));
+    _controller.onLoaded(() {
+      debugPrint('Loaded!');
+      final rootNode = _controller.rootNode;
+    });
     _controller.onError((error) => debugPrint(error.toString()));
   }
 
