@@ -1,11 +1,12 @@
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
+# [Theta](https://buildwiththeta.com)
 
-# The open source way of designing remote UI
+## The open source way of designing remote UI
 
-[Theta](https://buildwiththeta.com) is an open source tool to streamline remote UI creation and testing, without the need for rebuilding.
+Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
-- [x] Theta Studio: no-code visual editor for reponsive and modern UIs.
-- [x] Theta Flutter client: Stream your UIs inside your clients. [Pub.dev](https://pub.dev/packages/theta)
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+
+- Documentation: https://docs.buildwiththeta.com
 
 ## Why Theta?
 
@@ -22,10 +23,6 @@ Here are some of Theta's defining features:
 - **Loading and Error Handling**: Efficiently manage loading and error handling in remote widgets.
 - **Light and Dark Modes**: Support for dark and light UI themes.
 - **Node Overrides**: Override any single node from your app.
-
-## Documentation
-
-- Docs: https://docs.buildwiththeta.com
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
@@ -83,3 +80,5 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
+
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
