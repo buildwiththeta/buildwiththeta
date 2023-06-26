@@ -1,5 +1,12 @@
 # Theta
 
+## The open source way of designing remote UI
+
+Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
+
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+
+
 Theta Flutter library.
 
 - Documentation: https://docs.buildwiththeta.com
