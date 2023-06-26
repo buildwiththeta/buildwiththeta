@@ -55,9 +55,14 @@
         ]
       ],
       [
+        "User & Billing", [
+          ["User deletion", "/support/user_deletion"]
+        ]
+      ],
+      [
         "Misc.", [
           ["FAQ", "/faq"],
-          ["Migration", "/support/migration"],
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
           ["License \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
         ]
       ]
@@ -89,7 +94,7 @@
         "Misc.", [
           ["FAQ", "/faq"],
           ["Team", "/team"],
-          ["Migrazione", "/support/migrazione"]
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"]
         ]
       ]
     ],
@@ -115,7 +120,7 @@
       [
         "Misc.", [
           ["Preguntas frecuentes", "/preguntas-frecuentes"],
-          ["Migración", "/support/migración"]
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"]
         ]
       ]
     ],
@@ -146,7 +151,7 @@
         "Çeşitli", [
           ["SSS", "/faq"],
           ["Takımlar", "/studio/teams"],
-          ["Geçiş", "/support/migration"],
+          ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
           ["Lisans  \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
         ]
       ]

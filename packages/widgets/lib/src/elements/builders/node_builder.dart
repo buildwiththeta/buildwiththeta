@@ -1,5 +1,6 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
@@ -79,6 +80,33 @@ class _NodeBuilderState extends State<NodeBuilder> {
               : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
                   true);
 
+  Widget handleSlideAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.slideAnimationEnabled] as bool? ?? false) {
+      return SlideAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
+
+  Widget handleScaleAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.scaleAnimationEnabled] as bool? ?? false) {
+      return ScaleAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
+
+  Widget handleFadeInAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.fadeAnimationEnabled] as bool? ?? false) {
+      return FadeInAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
+
   double _handleRotation(TreeState state) => double.parse(
       (widget.node.getAttributes[DBKeys.rotation] as FTextTypeInput?)?.value ??
           '0');
@@ -103,7 +131,16 @@ class _NodeBuilderState extends State<NodeBuilder> {
                 onPanStart: widget.onPanStart,
                 child: GestureDetectorForPlay(
                   node: widget.node,
-                  child: widget.child,
+                  child: handleSlideAnimation(
+                    widget.node,
+                    handleScaleAnimation(
+                      widget.node,
+                      handleFadeInAnimation(
+                        widget.node,
+                        widget.child,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

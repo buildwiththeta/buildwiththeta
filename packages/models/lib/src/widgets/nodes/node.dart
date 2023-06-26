@@ -29,6 +29,7 @@ abstract class CNode extends Equatable {
     this.childOrder = 0,
     this.componentID,
     this.componentChildren = const [],
+    this.isLocked = false,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -57,8 +58,8 @@ abstract class CNode extends Equatable {
     PageID componentID,
     List<CNode> children,
   ) {
-    final childerenFake = createFakeChildren(children);
-    return _addChildrenToComponent(componentID, childerenFake);
+    final childrenFake = createFakeChildren(children);
+    return _addChildrenToComponent(componentID, childrenFake);
   }
 
   void _addChildrenToComponent(PageID componentID, List<CNode> children,
@@ -200,6 +201,9 @@ abstract class CNode extends Equatable {
   /// The component id of the node
   final PageID? componentID;
 
+  /// If the node is locked or not
+  final bool isLocked;
+
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
   /// the node's attributes to the node's widget
@@ -297,6 +301,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'component_id': componentID,
+      'is_locked': isLocked,
     };
   }
 
@@ -314,6 +319,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'component_id': componentID,
+      'is_locked': isLocked,
     };
   }
 
@@ -331,6 +337,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'component_id': componentID,
+      'is_locked': isLocked,
     };
   }
 
@@ -349,6 +356,7 @@ abstract class CNode extends Equatable {
       'child_order': childOrder,
       'page_id': pageID,
       'component_id': componentID,
+      'is_locked': isLocked,
     };
   }
 
@@ -366,6 +374,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'page_id': pageID,
+      'is_locked': isLocked,
     };
   }
 
@@ -385,6 +394,7 @@ abstract class CNode extends Equatable {
     NodeID? stabilID,
     PageID? componentID,
     List<CNode>? componentChildren,
+    bool? isLocked,
   });
 
   /// Copy the node with new attributes
@@ -403,6 +413,7 @@ abstract class CNode extends Equatable {
     NodeID? stabilID,
     PageID? componentID,
     List<CNode>? componentChildren,
+    bool? isLocked,
   });
 
   /// Render a Widget from node
@@ -453,6 +464,7 @@ abstract class CNode extends Equatable {
         pageID,
         stabilID,
         componentID,
+        isLocked,
       ];
 
   @override

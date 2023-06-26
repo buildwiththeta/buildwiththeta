@@ -42,6 +42,8 @@ class $generatedClassName extends CNode {
       final NodeID? stabilID,
       final PageID? componentID,
       final List<CNode>? componentChildren,
+      final bool? isLocked,
+
       })
       : super(
             id: id,
@@ -62,6 +64,7 @@ class $generatedClassName extends CNode {
             stabilID: stabilID,
             componentID: componentID,
             componentChildren:componentChildren ?? [],
+            isLocked: isLocked ?? false,
           );
 
   @override
@@ -80,6 +83,7 @@ class $generatedClassName extends CNode {
           NodeID? stabilID,
           PageID? componentID,
           List<CNode>? componentChildren,
+          final bool? isLocked,
         }) =>
       $generatedClassName(
           id: id ?? this.id,
@@ -95,6 +99,7 @@ class $generatedClassName extends CNode {
           stabilID: stabilID ?? this.stabilID,
           componentID:componentID ?? this.componentID,
           componentChildren: componentChildren ?? this.componentChildren,
+          isLocked: isLocked ?? this.isLocked,
         );
 
   @override
@@ -113,6 +118,7 @@ class $generatedClassName extends CNode {
           NodeID? stabilID,
           PageID? componentID,
           List<CNode>? componentChildren,
+          bool? isLocked,
         }) =>
         $generatedClassName(
           id: id ?? this.id,
@@ -128,6 +134,7 @@ class $generatedClassName extends CNode {
           stabilID: stabilID ?? this.stabilID,
           componentID:componentID ?? this.componentID,
           componentChildren: componentChildren ?? this.componentChildren,
+          isLocked: isLocked ??  this.isLocked,
         );
 
   static fromJson(String widgetType, Map<String, dynamic> json) {
@@ -156,6 +163,7 @@ class $generatedClassName extends CNode {
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
+      isLocked: json['is_locked'],
     );
   }
 

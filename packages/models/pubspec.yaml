@@ -1,6 +1,6 @@
 name: theta_models
 description: A package for the models used in Theta.
-version: 0.1.9
+version: 0.2.0
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
