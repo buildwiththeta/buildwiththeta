@@ -30,6 +30,7 @@ dependencies:
   reflectable: ^4.0.5
   meta: ^1.9.1
   collection: ^1.17.1
+  uuid: ^3.0.7
 
   build: ^2.3.1
   analyzer: ^5.11.1
