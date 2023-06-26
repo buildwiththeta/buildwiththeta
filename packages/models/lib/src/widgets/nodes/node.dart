@@ -26,6 +26,7 @@ abstract class CNode extends Equatable {
     this.child,
     this.children = const [],
     this.childOrder = 0,
+    this.isLocked = false,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -121,6 +122,9 @@ abstract class CNode extends Equatable {
 
   /// The page id of the node
   final PageID? pageID;
+
+  /// If the node is locked or not
+  final bool isLocked;
 
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
@@ -218,6 +222,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'is_locked': isLocked,
     };
   }
 
@@ -234,6 +239,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'is_locked': isLocked,
     };
   }
 
@@ -250,6 +256,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'is_locked': isLocked,
     };
   }
 
@@ -267,6 +274,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'page_id': pageID,
+      'is_locked': isLocked,
     };
   }
 
@@ -284,6 +292,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'page_id': pageID,
+      'is_locked': isLocked,
     };
   }
 
@@ -301,6 +310,7 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    bool? isLocked,
   });
 
   /// Copy the node with new attributes
@@ -317,6 +327,7 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    bool? isLocked,
   });
 
   /// Render a Widget from node
@@ -365,6 +376,7 @@ abstract class CNode extends Equatable {
         hideHandlesWhenNotResizable,
         updatedAt,
         pageID,
+        isLocked,
       ];
 
   @override

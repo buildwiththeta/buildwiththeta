@@ -64,7 +64,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
 
-    if (state.focusedNode?.id != widget.node.id || state.forPlay) {
+    if (state.focusedNode?.id != widget.node.id ||
+        state.forPlay ||
+        widget.node.isLocked == true) {
       final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
           ? device
           : Devices.ios.iPhone13;
