@@ -53,18 +53,45 @@ abstract class CNode extends Equatable {
   List<CNode> componentChildren = [];
 
   // Method to add children to a component node using the component ID.
-  void addChildrenToComponent(PageID componentID, List<CNode> children) {
+  void addChildrenToComponent(
+    PageID componentID,
+    List<CNode> children,
+  ) {
     final childerenFake = createFakeChildren(children);
-    if (type == NType.component) {
-      for (var child in childerenFake) {
-        if (componentID == child.pageID && componentID == this.componentID) {
-          if (child.type == NType.component) {
-            child.addChildrenToComponent(child.componentID!, childerenFake);
+    return _addChildrenToComponent(componentID, childerenFake);
+  }
+
+  void _addChildrenToComponent(PageID componentID, List<CNode> children,
+      {Set<PageID>? topComponentsIds}) {
+    topComponentsIds ??= {};
+
+    if (topComponentsIds.isEmpty) {
+      topComponentsIds.add(this.pageID!);
+    }
+    if (this.pageID == componentID ||
+        topComponentsIds.contains(this.componentID)) {
+      return;
+    }
+
+    topComponentsIds.add(this.componentID!);
+
+    for (var child in children) {
+      if (componentID == child.pageID && componentID == this.componentID) {
+        if (child.type == NType.component &&
+            !topComponentsIds.contains(child.componentID)) {
+          if (!child.componentChildren.contains(this)) {
+            child._addChildrenToComponent(
+              child.componentID!,
+              children,
+              topComponentsIds: topComponentsIds,
+            );
           }
-          componentChildren.add(child);
         }
+        componentChildren.add(child);
       }
     }
+
+    topComponentsIds.remove(this.componentID);
   }
 
   // Method to create fake children for the component children.
