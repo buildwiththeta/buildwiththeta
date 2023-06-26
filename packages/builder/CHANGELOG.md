@@ -1,3 +1,7 @@
+## 0.1.9
+
+- [x] Fix: less classes and smaller codebase.
+
 ## 0.1.8
 
 - [x] Fix: theta_open_widget 0.2.1.

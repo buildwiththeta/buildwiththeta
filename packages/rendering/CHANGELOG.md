@@ -1,3 +1,8 @@
+## 0.1.2
+
+
+- [x] Feat: add support to models 0.2.0.
+
 ## 0.1.1
 
 - [x] Theta Models dependency updated to 0.1.2.

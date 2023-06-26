@@ -1,3 +1,7 @@
+## 0.2.0
+
+- [x] Feat: Add `isLocked` property in nodes.
+
 ## 0.1.9
 
 - [x] Feat: DBKeys.visibleOnLaptop added.
