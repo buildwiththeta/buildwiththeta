@@ -1019,8 +1019,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {
               r'': (bool b) =>
                   () => b ? const prefix25.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix25.ScaffoldIntrinsicStates.create() : null
+              r'create': (bool b) => () =>
+                  b ? const prefix25.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,

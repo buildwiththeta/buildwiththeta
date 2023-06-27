@@ -2,7 +2,20 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
+
 import 'package:meta/meta.dart' as prefix32;
+// ignore_for_file: camel_case_types
+// ignore_for_file: implementation_imports
+// ignore_for_file: prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_collection_literals
+// ignore_for_file: unnecessary_const
+
+// ignore:unused_import
+import 'package:reflectable/mirrors.dart' as m;
+// ignore:unused_import
+import 'package:reflectable/reflectable.dart' as r show Reflectable;
+// ignore:unused_import
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart'
     as prefix0;
 import 'package:theta_models/src/widgets/features/align.dart' as prefix1;
@@ -55,19 +68,6 @@ import 'package:theta_open_widgets/src/reflectable/nodes/nodes_classes.dart'
     as prefix31;
 import 'package:theta_open_widgets/src/reflectable/nodes/nodes_parse.dart'
     as prefix30;
-
-// ignore_for_file: camel_case_types
-// ignore_for_file: implementation_imports
-// ignore_for_file: prefer_adjacent_string_concatenation
-// ignore_for_file: prefer_collection_literals
-// ignore_for_file: unnecessary_const
-
-// ignore:unused_import
-import 'package:reflectable/mirrors.dart' as m;
-// ignore:unused_import
-import 'package:reflectable/src/reflectable_builder_based.dart' as r;
-// ignore:unused_import
-import 'package:reflectable/reflectable.dart' as r show Reflectable;
 
 final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.DynamicAttributeReflector(): r.ReflectorData(<m.TypeMirror>[],
@@ -900,9 +900,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix25.IconIntrinsicStates() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix25.IconIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix25.IconIntrinsicStates.create() : null
+                  () => b ? const prefix25.IconIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -951,9 +952,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix25.ListViewIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix25.ListViewIntrinsicStates.create() : null
+                  () => b ? const prefix25.ListViewIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix25.ListViewIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1029,9 +1030,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix25.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix25.ScaffoldIntrinsicStates.create() : null
+                  () => b ? const prefix25.ScaffoldIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix25.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1054,9 +1055,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix25.StackIntrinsicStates() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix25.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix25.StackIntrinsicStates.create() : null
+                  () => b ? const prefix25.StackIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1185,7 +1187,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix26.WidgetAdapterParse() : null},
+            {
+              r'': (bool b) =>
+                  () => b ? const prefix26.WidgetAdapterParse() : null
+            },
             -1,
             -1,
             const <int>[-1],
@@ -1232,7 +1237,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.AlignWidgetAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.AlignWidgetAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.AlignWidgetAdapter.create() : null
             },
@@ -1264,7 +1270,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ButtonAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.ButtonAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.ButtonAdapter.create() : null
             },
@@ -1296,7 +1302,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ColumnAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.ColumnAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.ColumnAdapter.create() : null
             },
@@ -1328,7 +1334,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.BoxAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.BoxAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.BoxAdapter.create() : null
             },
@@ -1360,7 +1366,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.GridViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.GridViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.GridViewAdapter.create() : null
             },
@@ -1392,7 +1399,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.MaterialIconAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.MaterialIconAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.MaterialIconAdapter.create() : null
             },
@@ -1424,7 +1432,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ImageAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.ImageAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.ImageAdapter.create() : null
             },
@@ -1456,7 +1464,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ListViewAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.ListViewAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.ListViewAdapter.create() : null
             },
@@ -1488,7 +1497,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.LottieAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.LottieAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.LottieAdapter.create() : null
             },
@@ -1520,7 +1529,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.RowAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.RowAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.RowAdapter.create() : null
             },
@@ -1552,7 +1561,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ScaffoldAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.ScaffoldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.ScaffoldAdapter.create() : null
             },
@@ -1584,7 +1594,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.StackAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.StackAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.StackAdapter.create() : null
             },
@@ -1616,7 +1626,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.TextAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.TextAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.TextAdapter.create() : null
             },
@@ -1648,7 +1658,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.TextFieldAdapter() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix27.TextFieldAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.TextFieldAdapter.create() : null
             },
@@ -1680,7 +1691,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.VideoAdapter() : null,
+              r'': (bool b) => () => b ? const prefix27.VideoAdapter() : null,
               r'create': (bool b) =>
                   () => b ? prefix27.VideoAdapter.create() : null
             },
@@ -1753,8 +1764,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? prefix29.AlignWidgetDefaultAttributes() : null,
+              r'': (bool b) => () =>
+                  b ? const prefix29.AlignWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
                   b ? prefix29.AlignWidgetDefaultAttributes.create() : null
             },
@@ -1787,7 +1798,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.ButtonDefaultAttributes() : null,
+                  () => b ? const prefix29.ButtonDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.ButtonDefaultAttributes.create() : null
             },
@@ -1820,7 +1831,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.FlexDefaultAttributes() : null,
+                  () => b ? const prefix29.FlexDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.FlexDefaultAttributes.create() : null
             },
@@ -1854,7 +1865,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.ComponentDefaultAttributes() : null,
+                  () => b ? const prefix29.ComponentDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.ComponentDefaultAttributes.create() : null
             },
@@ -1886,7 +1897,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.BoxDefaultAttributes() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix29.BoxDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.BoxDefaultAttributes.create() : null
             },
@@ -1920,7 +1932,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.IconDefaultAttributes() : null,
+                  () => b ? const prefix29.IconDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.IconDefaultAttributes.create() : null
             },
@@ -1953,7 +1965,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.ListViewDefaultAttributes() : null,
+                  () => b ? const prefix29.ListViewDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.ListViewDefaultAttributes.create() : null
             },
@@ -1986,7 +1998,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.LottieDefaultAttributes() : null,
+                  () => b ? const prefix29.LottieDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.LottieDefaultAttributes.create() : null
             },
@@ -2019,7 +2031,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.ScaffoldDefaultAttributes() : null,
+                  () => b ? const prefix29.ScaffoldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.ScaffoldDefaultAttributes.create() : null
             },
@@ -2052,7 +2064,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.StackDefaultAttributes() : null,
+                  () => b ? const prefix29.StackDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.StackDefaultAttributes.create() : null
             },
@@ -2085,7 +2097,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.TextDefaultAttributes() : null,
+                  () => b ? const prefix29.TextDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.TextDefaultAttributes.create() : null
             },
@@ -2118,7 +2130,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.TextFieldDefaultAttributes() : null,
+                  () => b ? const prefix29.TextFieldDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.TextFieldDefaultAttributes.create() : null
             },
@@ -2151,7 +2163,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix29.VideoDefaultAttributes() : null,
+                  () => b ? const prefix29.VideoDefaultAttributes() : null,
               r'create': (bool b) =>
                   () => b ? prefix29.VideoDefaultAttributes.create() : null
             },
@@ -2219,7 +2231,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix28.DefaultAttributesParse() : null
+                  () => b ? const prefix28.DefaultAttributesParse() : null
             },
             -1,
             -1,
@@ -3094,7 +3106,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? prefix30.NodesParse() : null},
+            {r'': (bool b) => () => b ? const prefix30.NodesParse() : null},
             -1,
             -1,
             const <int>[-1],
@@ -3113,7 +3125,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       ])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

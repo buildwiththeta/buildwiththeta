@@ -162,7 +162,7 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
           type: NType.scaffold,
           canHave: ChildrenEnum.children,
         );
-  ScaffoldIntrinsicStates.create() : this();
+  const ScaffoldIntrinsicStates.create() : this();
 }
 
 @nodeTypeISKey
