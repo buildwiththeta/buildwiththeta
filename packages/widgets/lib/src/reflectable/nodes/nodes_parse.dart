@@ -12,7 +12,6 @@ import 'nodes_classes.dart';
 class NodeDeclaration extends Reflectable {
   const NodeDeclaration()
       : super.fromList(const [
-          typeCapability,
           metadataCapability,
           newInstanceCapability,
           staticInvokeCapability,
@@ -24,7 +23,6 @@ const nodeDeclaration = NodeDeclaration();
 class NodeDeclarationReflector extends Reflectable {
   const NodeDeclarationReflector()
       : super(
-          typeCapability,
           metadataCapability,
           newInstanceCapability,
           staticInvokeCapability,
@@ -55,7 +53,7 @@ class NodesParse {
 
       /// There is no class with this widget type
       if (targetClass == null) {
-        return null;
+        throw Exception('Cannot find class with widget type: $widgetType');
       }
 
       /// Invoke the fromJson method of the class

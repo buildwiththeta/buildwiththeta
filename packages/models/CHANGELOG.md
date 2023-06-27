@@ -1,3 +1,7 @@
+## 0.2.1
+
+- [x] Feat: unused files removed, cutting the 50% of time in code generation.
+
 ## 0.2.0
 
 - [x] Feat: Add `isLocked` property in nodes.
