@@ -1,3 +1,7 @@
+## 0.2.3
+
+- [x] Feat: improved performance, cut of > 80% of code generation time.
+
 ## 0.2.2
 
 - [x] Feat: add support to models 0.2.0.

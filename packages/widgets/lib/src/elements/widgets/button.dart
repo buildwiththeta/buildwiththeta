@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 // ignore_for_file: public_member_api_docs
 
@@ -17,7 +17,6 @@ class OpenWButton extends NodeWidget {
     required this.borderRadius,
     required this.textAlignPosition,
     required this.actionValue,
-    required this.pageTransition,
     required this.onTap,
     required this.onDoubleTap,
     required this.onLongPress,
@@ -31,7 +30,6 @@ class OpenWButton extends NodeWidget {
   final FTextStyle textStyle;
   final FAlign textAlignPosition;
   final FTextTypeInput actionValue;
-  final FPageTransition pageTransition;
   final Function() onTap;
   final Function() onDoubleTap;
   final Function() onLongPress;
