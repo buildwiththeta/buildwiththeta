@@ -3,42 +3,21 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_open_widgets/src/main.reflectable.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 Future<void> main() async {
   await ThetaOpenWidgets.initialize();
 
   final json = jsonDecode(
     jsonEncode(
-      <String, dynamic>{
+      {
         '_id': 1442390,
         'ids': [1442396],
-        'body': {
-          'wdh': {'s': 375, 'u': 'i', 't': 375, 'd': 375, 'ut': 'i', 'ud': 'i'},
-          'hgh': {'s': 812, 'u': 'i', 't': 812, 'd': 812, 'ut': 'i', 'ud': 'i'},
-          'fill': {
-            'l': [
-              {'color': '000000', 'stop': 0, 'opacity': 0}
-            ],
-            't': 's',
-            'r': 0,
-            'bF': 'cv'
-          },
-          'a': {'acts': []},
-          'shAB': false,
-          'shBB': false,
-          'shDW': false,
-          'f': true,
-          'isBox': false,
-          'p': {
-            'm': [0, 0, 0, 0],
-            't': [0, 0, 0, 0],
-            'd': [0, 0, 0, 0]
-          }
-        },
+        'body': {},
         'type': 'scaffold',
         'page_id': 45448,
         'created_at': '2022-11-08T12:58:42.213Z',
@@ -49,19 +28,33 @@ Future<void> main() async {
   );
 
   /// Get the adapter (toWidget method)
-  const WidgetAdapterParse().getByType(NType.scaffold);
+  final widgetAdapter = const WidgetAdapterParse().getByType(NType.scaffold);
+
+  Logger.printWarning('widget adaptor: $widgetAdapter');
 
   /// Get the default attributes
 
-  const DefaultAttributesParse().getByType(NType.scaffold);
+  final defaultAttribute =
+      const DefaultAttributesParse().getByType(NType.scaffold);
+
+  Logger.printWarning('default attribute: $defaultAttribute');
 
   /// Get the intrinsic state
 
-  const DynamicIntrinsicState().getStateByType(NType.scaffold);
+  final intrinsicState =
+      const DynamicIntrinsicState().getStateByType(NType.scaffold);
+
+  Logger.printWarning('intrinsic state: $intrinsicState');
+
+  final supportedClasses = const NodesParse().supportedClasses;
+
+  Logger.printWarning('supported classes: $supportedClasses');
 
   /// Get the node
-  const NodesParse().fromJson(
+  final node = const NodesParse().fromJson(
     json['type'],
     json,
   );
+
+  Logger.printWarning('node: $node');
 }

@@ -5,7 +5,6 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 @immutable
@@ -46,22 +45,7 @@ class FAlign extends Equatable {
     required final bool forPlay,
     final DeviceType deviceType = DeviceType.phone,
   }) {
-    if (forPlay) {
-      return getValueForScreenType<Alignment>(
-        context: context,
-        mobile: align!,
-        tablet: alignTablet ?? align!,
-        desktop: alignDesktop ?? align!,
-      );
-    } else {
-      if (deviceType == DeviceType.phone) {
-        return align!;
-      } else if (deviceType == DeviceType.tablet) {
-        return alignTablet ?? align!;
-      } else {
-        return alignDesktop ?? align!;
-      }
-    }
+    return align!;
   }
 
   String getStringForDropDown(
@@ -76,30 +60,18 @@ class FAlign extends Equatable {
   }
 
   static FAlign fromJson(final dynamic json) {
-    if (json is String) {
-      return FAlign(
-        align: convertJsonToValue(json),
-      );
-    } else {
-      try {
-        return FAlign(
-          align: convertJsonToValue(json['m'] as String? ?? ''),
-          alignTablet: convertDropDownToValue(json['t'] as String? ?? ''),
-          alignDesktop: convertDropDownToValue(json['d'] as String? ?? ''),
-        );
-      } catch (e) {
-        return const FAlign();
-      }
-    }
+    return FAlign(
+      align: convertJsonToValue(json['m']),
+      alignTablet: convertDropDownToValue(json['t'] ?? json['m'] ?? ''),
+      alignDesktop: convertDropDownToValue(json['d'] ?? json['m'] ?? ''),
+    );
   }
 
-  Map<String, dynamic> toJson() {
-    return <String, dynamic>{
-      'm': convertValueToJson(align!),
-      't': convertValueToJson(alignTablet ?? align!),
-      'd': convertValueToJson(alignDesktop ?? align!),
-    };
-  }
+  Map<String, dynamic> toJson() => {
+        'm': convertValueToJson(align!),
+        't': convertValueToJson(alignTablet ?? align!),
+        'd': convertValueToJson(alignDesktop ?? align!),
+      };
 
   FAlign clone() => FAlign(
         align: align,
@@ -119,17 +91,28 @@ class FAlign extends Equatable {
       );
 
   static Alignment convertJsonToValue(final String key) {
-    var align = Alignment.topLeft;
-    if (key == 'tL') align = Alignment.topLeft;
-    if (key == 'tC') align = Alignment.topCenter;
-    if (key == 'tR') align = Alignment.topRight;
-    if (key == 'cL') align = Alignment.centerLeft;
-    if (key == 'c') align = Alignment.center;
-    if (key == 'cR') align = Alignment.centerRight;
-    if (key == 'bL') align = Alignment.bottomLeft;
-    if (key == 'bC') align = Alignment.bottomCenter;
-    if (key == 'bR') align = Alignment.bottomRight;
-    return align;
+    switch (key) {
+      case 'tL':
+        return Alignment.topLeft;
+      case 'tC':
+        return Alignment.topCenter;
+      case 'tR':
+        return Alignment.topRight;
+      case 'cL':
+        return Alignment.centerLeft;
+      case 'c':
+        return Alignment.center;
+      case 'cR':
+        return Alignment.centerRight;
+      case 'bL':
+        return Alignment.bottomLeft;
+      case 'bC':
+        return Alignment.bottomCenter;
+      case 'bR':
+        return Alignment.bottomRight;
+      default:
+        return Alignment.topLeft;
+    }
   }
 
   static Alignment convertDropDownToValue(final String key) {
@@ -183,24 +166,6 @@ class FAlign extends Equatable {
     if (value == Alignment.bottomRight) result = 'Alignment.bottomRight';
     return result;
   }
-
-  /// Converts the Alignment value to code.
-  ///
-  /// e.g. it returns:
-  /// ```dart
-  /// Alignment.topLeft
-  /// ```
-  String toCode() =>
-      align == (alignTablet ?? align) && align == (alignDesktop ?? align)
-          ? convertValueToCode(align)
-          : '''
-  getValueForScreenType<Alignment>(
-    context: context,
-    mobile: ${convertValueToCode(align)},
-    tablet: ${convertValueToCode(alignTablet ?? align)},
-    desktop: ${convertValueToCode(alignDesktop ?? align)},
-  )
-  ''';
 }
 
 

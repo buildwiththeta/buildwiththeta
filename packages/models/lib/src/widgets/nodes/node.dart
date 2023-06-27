@@ -18,12 +18,15 @@ abstract class CNode extends Equatable {
     required final RectProperties rectProperties,
     required this.adapter,
     required this.updatedAt,
+    required this.pageID,
     this.name,
     this.description,
     this.id = '',
+    this.stabilID,
     this.child,
     this.children = const [],
     this.childOrder = 0,
+    this.isLocked = false,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
         _rectProperties = rectProperties,
@@ -49,6 +52,7 @@ abstract class CNode extends Equatable {
     rect: ResponsiveRect(
       rectPhone: defaultRectForMobile,
       rectTablet: null,
+      rectLaptop: null,
       rectDesktop: null,
     ),
     flipRectWhileResizing: true,
@@ -98,6 +102,9 @@ abstract class CNode extends Equatable {
   /// The id of the node (node-id)
   final NodeID id;
 
+  /// Stabil id of the node
+  final NodeID? stabilID;
+
   /// The child of the node, if it exists
   final CNode? child;
 
@@ -113,6 +120,12 @@ abstract class CNode extends Equatable {
   /// The index of the node in the parent's children list
   final int childOrder;
 
+  /// The page id of the node
+  final PageID? pageID;
+
+  /// If the node is locked or not
+  final bool isLocked;
+
   /// A ValueNotifier that notifies the node's attributes
   /// If the node's attributes are changed, the ValueNotifier notifies
   /// the node's attributes to the node's widget
@@ -126,9 +139,11 @@ abstract class CNode extends Equatable {
 
   bool doesRectExist(DeviceType deviceType) => deviceType == DeviceType.tablet
       ? getRectProperties.rect.rectTablet != null
-      : deviceType == DeviceType.desktop
-          ? getRectProperties.rect.rectDesktop != null
-          : true;
+      : deviceType == DeviceType.laptop
+          ? getRectProperties.rect.rectLaptop != null
+          : deviceType == DeviceType.desktop
+              ? getRectProperties.rect.rectDesktop != null
+              : true;
 
   Rect rect(DeviceType deviceType) =>
       getRectProperties.rect.getByDeviceType(deviceType);
@@ -207,6 +222,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'is_locked': isLocked,
     };
   }
 
@@ -223,6 +239,60 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'is_locked': isLocked,
+    };
+  }
+
+  // toJson method with stabil id
+  Map<String, dynamic> toJsonWithStabilId() {
+    final body = getAttributes;
+    return {
+      'stabil_id': stabilID,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+      'is_locked': isLocked,
+    };
+  }
+
+  Map<String, dynamic> toJsonWithStabilIdAndPageIdAndId() {
+    final body = getAttributes;
+    return {
+      'id': id,
+      'stabil_id': stabilID,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+      'page_id': pageID,
+      'is_locked': isLocked,
+    };
+  }
+
+  /// toJson method with id and page id
+  Map<String, dynamic> toJsonWithIdAndPageId() {
+    final body = getAttributes;
+    return {
+      'id': id,
+      'type': type,
+      'name': name,
+      'description': description,
+      'parent_id': parentID,
+      'properties': body,
+      'rect_properties': rectPropertiesToJson(),
+      'updated_at': updatedAt.toIso8601String(),
+      'child_order': childOrder,
+      'page_id': pageID,
+      'is_locked': isLocked,
     };
   }
 
@@ -238,6 +308,9 @@ abstract class CNode extends Equatable {
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
+    PageID? pageID,
+    NodeID? stabilID,
+    bool? isLocked,
   });
 
   /// Copy the node with new attributes
@@ -252,6 +325,9 @@ abstract class CNode extends Equatable {
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
+    PageID? pageID,
+    NodeID? stabilID,
+    bool? isLocked,
   });
 
   /// Render a Widget from node
@@ -299,6 +375,8 @@ abstract class CNode extends Equatable {
         movable,
         hideHandlesWhenNotResizable,
         updatedAt,
+        pageID,
+        isLocked,
       ];
 
   @override

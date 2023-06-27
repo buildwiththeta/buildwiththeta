@@ -1,15 +1,15 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.1.0-dev.1
+version: 0.2.3
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
 issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
-documentation: https://docs.page/buildwiththeta/buildwiththeta
+documentation: https://docs.buildwiththeta.com
 
 scripts:
-  gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -19,9 +19,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_models: ^0.1.0-dev.1
-  theta_design_system: ^0.1.0-dev.1
-  theta_rendering: ^0.1.0-dev.1
+  theta_models: ^0.2.1
+  theta_design_system: ^0.1.1
+  theta_rendering: ^0.1.2
 
   light_logger: ^0.0.3
 
@@ -30,9 +30,9 @@ dependencies:
   provider: ^6.0.5
 
   # UI
-  google_fonts: ^4.0.4
+  google_fonts: ^5.0.0
   feather_icons: ^1.2.0
-  material_design_icons_flutter: ^5.0.6595
+  material_design_icons_flutter: ^6.0.7096
   font_awesome_flutter_named: ^1.1.1
   line_icons: ^2.0.1
   flutter_staggered_animations: ^1.0.0
@@ -40,7 +40,6 @@ dependencies:
   gap: ^3.0.0
   after_layout: ^1.2.0
   enum_to_string: ^2.0.1
-  universal_platform: ^1.0.0+1
   collection: ^1.17.0
   flutter_box_transform: ^0.2.1
   device_frame: ^1.1.0

@@ -7,9 +7,13 @@ class LocalNotifierProvider extends StatelessWidget {
     super.key,
     required this.child,
     required this.workflows,
+    required this.componentFit,
+    required this.nodeOverrides,
   });
 
   final List<Workflow>? workflows;
+  final List<Override>? nodeOverrides;
+  final ComponentFit componentFit;
   final Widget child;
 
   @override
@@ -18,6 +22,8 @@ class LocalNotifierProvider extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => globalState.copyWith(
         workflows: workflows,
+        nodeOverrides: nodeOverrides,
+        fit: componentFit,
       ),
       child: child,
     );

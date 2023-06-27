@@ -11,6 +11,4 @@ class WidgetConfiguration {
     required this.properties,
     required this.toWidget,
   });
-
-  // Add any other methods or functionality you need.
 }

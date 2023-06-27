@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
+import 'package:theta_open_widgets/src/elements/builders/text_style_builder.dart';
 
 /// Returns a [Text] widget with all the properties
 class TextBuilder extends StatelessWidget {
@@ -35,17 +37,22 @@ class TextBuilder extends StatelessWidget {
     if (intValue != null && intValue <= 0) {
       intValue = 1;
     }
+    final data = const NodeOverrideExecuter().executeText(context, nodeState,
+        value.get(loop: nodeState.loop, state: state, context: context));
     return Text(
-      value.get(
-        loop: nodeState.loop,
+      data,
+      style: TetaTextStyles.get(
+        nodeState: nodeState,
         state: state,
         context: context,
-      ),
-      style: textStyle.get(
-        state,
-        context,
-        state.forPlay,
-        model,
+        model: model,
+        forPlay: state.forPlay,
+        fill: textStyle.fill,
+        fontFamily: textStyle.fontFamily,
+        fontSize: textStyle.fontSize,
+        fontWeight: textStyle.fontWeight,
+        textDecoration: textStyle.textDecoration,
+        fontStyle: textStyle.fontStyle,
       ),
       textAlign: textStyle.textAlign.value,
       maxLines: intValue,

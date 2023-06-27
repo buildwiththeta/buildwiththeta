@@ -7,6 +7,15 @@ Theta works between the [hosted](https://buildwiththeta.com) platform and client
 - Copy the page the name you want mirror.
 - Install [Theta client library](https://pub.dev/packages/theta) and use a `UIBox('name of the page')` to integrate the page within your app.
 
+## System requirements
+
+Theta is a web application that can be used from a browser. For optimal experience, please follow the system requirements:
+
+- Working on a desktop or laptop is recommended.
+- Use a screen of at least 12 inches.
+- It is recommended to use Google Chrome (if you experience problems, please try to see if problems persist on Chrome).
+- To do copy and paste within a project, allow the ClipBoard (a dialog box will appear at app.buildwiththeta.com)
+
 ## Designing your interface
 
 - See [how to move and resize elements](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
@@ -68,7 +77,7 @@ UIBox(
 )
 ```
 
-### Add custom code for actions
+## Add custom code
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add custom code, called 'workflow' based on gesture triggers.
 
@@ -87,3 +96,53 @@ UIBox(
 )
 ```
 
+## Override block properties
+
+You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Post title')
+            ..setText('My beautiful cat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Child override
+
+If in the no-code component the element to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+### Children override
+
+You can also overwrite the children of an element. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element name')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
+```

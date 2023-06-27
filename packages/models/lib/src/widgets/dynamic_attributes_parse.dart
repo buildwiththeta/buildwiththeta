@@ -6,9 +6,7 @@ import 'package:theta_models/theta_models.dart';
 class DynamicAttributeKey extends Reflectable {
   const DynamicAttributeKey()
       : super.fromList(const [
-          instanceInvokeCapability,
           metadataCapability,
-          declarationsCapability,
           staticInvokeCapability,
         ]);
 }
@@ -21,13 +19,7 @@ class AttributeKey {
 }
 
 class DynamicAttributeReflector extends Reflectable {
-  const DynamicAttributeReflector()
-      : super(
-          typeCapability,
-          metadataCapability,
-          newInstanceCapability,
-          staticInvokeCapability,
-        );
+  const DynamicAttributeReflector() : super();
 }
 
 const dynamicAttributeReflector = DynamicAttributeReflector();
@@ -144,6 +136,7 @@ class DynamicAttributes {
       case DBKeys.visibleOnDesktop:
       case DBKeys.visibleOnMobile:
       case DBKeys.visibleOnTablet:
+      case DBKeys.visibleOnLaptop:
       case DBKeys.fadeAnimationEnabled:
       case DBKeys.scaleAnimationEnabled:
       case DBKeys.slideAnimationEnabled:

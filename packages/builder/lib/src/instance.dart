@@ -1,14 +1,15 @@
 // ignore_for_file: unused_field
 
 import 'package:either_dart/either.dart';
+import 'package:flutter/foundation.dart';
+import 'package:hive/hive.dart';
 import 'package:light_logger/light_logger.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-
-import '../main.reflectable.dart' as theta;
 
 /// Theta instance.
 ///
@@ -95,8 +96,10 @@ class Theta {
 
   Future<void> _initExternalDependencies() async {
     await ThetaOpenWidgets.initialize();
-    theta.initializeReflectable();
     await ThetaAnalytics.initialize();
+    if (kIsWeb) return;
+    final appDocumentDirectory = await getApplicationDocumentsDirectory();
+    Hive.init(appDocumentDirectory.path);
   }
 
   Future<void> _initializeCore() async {

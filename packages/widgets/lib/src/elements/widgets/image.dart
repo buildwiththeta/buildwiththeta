@@ -7,9 +7,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:universal_platform/universal_platform.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
 class OpenWImage extends StatelessWidget {
   /// Returns a Image
@@ -43,6 +42,8 @@ class OpenWImage extends StatelessWidget {
     final result = img.isNotEmpty
         ? img
         : 'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png';
+    final data =
+        const NodeOverrideExecuter().executeImage(context, nodeState, result);
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
@@ -69,21 +70,10 @@ class OpenWImage extends StatelessWidget {
         context: context,
         isWidth: false,
       ),
-      child: UniversalPlatform.isWeb
-          ? Image.network(
-              '${Constants.backendTetaProxy}/${Uri.encodeComponent(result)}',
-              width: width.get(state: state, context: context, isWidth: true),
-              height:
-                  height.get(state: state, context: context, isWidth: false),
-              fit: boxFit.value,
-            )
-          : Image.network(
-              result,
-              width: width.get(state: state, context: context, isWidth: true),
-              height:
-                  height.get(state: state, context: context, isWidth: false),
-              fit: boxFit.value,
-            ),
+      child: Image.network(
+        data,
+        fit: boxFit.value,
+      ),
     );
   }
 }

@@ -1,8 +1,15 @@
-# Theta
+# [Theta](https://buildwiththeta.com)
+
+## The open source way of designing remote UI
+
+Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
+
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+
 
 Theta Flutter library.
 
-- Docs: https://docs.page/buildwiththeta/buildwiththeta/
+- Documentation: https://docs.buildwiththeta.com
 
 
 ## What is [Theta](https://buildwiththeta.com)?
@@ -76,6 +83,27 @@ UIBox(
 )
 ```
 
+### Use a controller
+
+Use a controller for greater control of the remote component.
+
+```dart
+final controller = UIBoxController();
+
+controller.onLoaded(() {
+    debugPrint('Loaded!');
+    debugPrint(_controller.nodesToList().toString());
+});
+controller.onError((error) => debugPrint(error.toString()));
+
+UIBox(
+    'Feed',
+    controller: controller,
+);
+
+controller.dispose();
+```
+
 ### Add custom code for actions
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add functions, called 'workflows', based on gesture triggers.
@@ -95,12 +123,102 @@ UIBox(
 )
 ```
 
+## Component fit modes
+
+- Documentation: [https://docs.buildwiththeta.com/en/studio/component_fit](https://docs.buildwiththeta.com/en/studio/component_fit)
+
+### Absolute
+
+Using the `absolute` fit mode, the component will be rendered with the exact coordinates of the component in the Theta Studio.
+
+```dart
+UIBox(
+    'Component name',
+    fit: ComponentFit.absolute,
+)
+```
+
+### Auto Layout
+
+Using the `autoLayout` fit mode, the component will be rendered with the coordinates of the component in the Theta Studio, but the size will be calculated automatically.
+
+```dart
+UIBox(
+    'Component name',
+    fit: ComponentFit.autoLayout,
+)
+```
+
+
+## Overrides
+
+- Documentation: [https://docs.buildwiththeta.com/en/builder/overrides](https://docs.buildwiththeta.com/en/builder/overrides)
+
+You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Post title')
+            ..setText('My beautiful cat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Child override
+
+If in the no-code component the element to which you want to overwrite the child already has one, 
+it will be removed and replaced with the one entered by the user via code.
+
+You can also use the `UIBox` within other `UIBox`es. This provides a very high degree of customization.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+### Children override
+
+You can also overwrite the children of an element. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        Override('Element name')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
+```
+
 ---
 
 ## Status
 
 - ✅ Alpha: experimental. Expect breaking changes.
-- ✅ Closed Beta: ready for testing. Expect bugs and missing features.
+- ✅ Closed Beta: ready for conscientious use. Expect some bugs and missing features.
+
+## Compatibility
+
+- ✅ Web
+- ✅ Android
+- ✅ iOS
+- ✅ macOS
+- ✅ Windows
+
+Read more about configuration in the [documentation](https://docs.buildwiththeta.com/en/builder/compatibility).
 
 ## Contributing
 
@@ -114,7 +232,7 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 
 - [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
 - [⚡️ Website](https://buildwiththeta.com)
-- [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
+- [🧑‍🏫 Documentation](https://docs.buildwiththeta.com)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
 

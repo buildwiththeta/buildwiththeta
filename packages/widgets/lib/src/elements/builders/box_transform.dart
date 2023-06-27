@@ -28,14 +28,33 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       v == ResponsiveAlignment.stretch;
 
   DeviceInfo getDeviceInfo(TreeState state) {
+    if (!state.forPlay) {
+      return state.deviceInfo;
+    }
     final screenSize = MediaQuery.of(context).size;
     if (screenSize.width <= Devices.ios.iPhone13ProMax.screenSize.width) {
       return Devices.ios.iPhone13;
     } else if (screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
       return Devices.ios.iPadPro11Inches;
+    } else if (screenSize.width <=
+        Devices.ios.iPadPro11Inches.screenSize.width) {
+      return Devices.ios.iPadPro11Inches;
     } else {
-      return Devices.macOS.macBookPro;
+      return DeviceInfo.genericDesktopMonitor(
+        platform: TargetPlatform.macOS,
+        id: 'theta-desktop',
+        name: 'Generic Desktop',
+        screenSize: const Size(1920, 1080),
+        windowPosition: Rect.fromCenter(
+          center: const Offset(
+            1920 * 0.5,
+            1080 * 0.5,
+          ),
+          width: 1920,
+          height: 1080,
+        ),
+      );
     }
   }
 
@@ -44,7 +63,10 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final TreeState state = context.watch<TreeState>();
     final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
-    if (state.focusedNode?.id != widget.node.id || state.forPlay) {
+
+    if (state.focusedNode?.id != widget.node.id ||
+        state.forPlay ||
+        widget.node.isLocked == true) {
       final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
           ? device
           : Devices.ios.iPhone13;
@@ -65,29 +87,65 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       final height =
           isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
 
-      return Positioned(
-        top: top,
-        bottom: bottom,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: NodeBuilder(
-          onTap: () {
-            TreeGlobalState.onNodeFocused(widget.node);
-            setState(() {});
-          },
-          onPanStart: () {
-            TreeGlobalState.onNodeFocused(widget.node);
-            setState(() {});
-          },
-          node: widget.node,
-          child: widget.node.toWidget(
-            context: context,
-            state: WidgetState(node: widget.node, loop: 0),
+      if (state.fit == ComponentFit.autoLayout) {
+        return Padding(
+          padding: EdgeInsets.only(
+              top:
+                  !isStretchAlign(widget.node.verticalAlignment) ? 0 : top ?? 0,
+              bottom: !isStretchAlign(widget.node.verticalAlignment)
+                  ? 0
+                  : bottom ?? 0,
+              left: !isStretchAlign(widget.node.horizontalAlignment)
+                  ? 0
+                  : left ?? 0,
+              right: !isStretchAlign(widget.node.horizontalAlignment)
+                  ? 0
+                  : right ?? 0),
+          child: SizedBox(
+            width: width ?? double.infinity,
+            height: height ?? double.infinity,
+            child: NodeBuilder(
+              onTap: () {
+                TreeGlobalState.onNodeFocused(widget.node);
+                setState(() {});
+              },
+              onPanStart: () {
+                TreeGlobalState.onNodeFocused(widget.node);
+                setState(() {});
+              },
+              node: widget.node,
+              child: widget.node.toWidget(
+                context: context,
+                state: WidgetState(node: widget.node, loop: 0),
+              ),
+            ),
           ),
-        ),
-      );
+        );
+      } else {
+        return Positioned(
+          top: top,
+          bottom: bottom,
+          left: left,
+          right: right,
+          width: width,
+          height: height,
+          child: NodeBuilder(
+            onTap: () {
+              TreeGlobalState.onNodeFocused(widget.node);
+              setState(() {});
+            },
+            onPanStart: () {
+              TreeGlobalState.onNodeFocused(widget.node);
+              setState(() {});
+            },
+            node: widget.node,
+            child: widget.node.toWidget(
+              context: context,
+              state: WidgetState(node: widget.node, loop: 0),
+            ),
+          ),
+        );
+      }
     }
     return _BoxTransformBuilder(node: widget.node);
   }
@@ -108,6 +166,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
 
   final int differece = 8;
   late Size canvasSize;
+  double x = 0, y = 0;
+  bool showLeft = false;
 
   late List<Offset> anchorPoints;
   late List<num> anchorAxisHorizontal;
@@ -142,8 +202,9 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void didUpdateWidget(_BoxTransformBuilder oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
     controller

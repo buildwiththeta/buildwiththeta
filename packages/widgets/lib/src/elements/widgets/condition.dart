@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Returns a if condition widget
 /// It takes a [children] of type [CNode] as children

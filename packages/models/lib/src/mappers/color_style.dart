@@ -10,11 +10,13 @@ class ColorStylesMapper extends Mapper<ColorStyleEntity> {
   static const _darkKey = 'value';
   static const _lightKey = 'light';
   static const _typeKey = 'type';
+  static const _stabilID = 'stabil_id';
 
   /// For a single instance
   @override
   ColorStyleEntity fromJson(Map<String, dynamic> json) => ColorStyleEntity(
         id: json[_idKey],
+        stabilID: json[_stabilID],
         branchID: json[_branchKey],
         name: json[_nameKey],
         dark: json[_propertiesKey][_darkKey] != null
@@ -39,14 +41,38 @@ class ColorStylesMapper extends Mapper<ColorStyleEntity> {
         }
       };
 
+  Map<String, dynamic> toJsonWithId(ColorStyleEntity model) => {
+        _idKey: model.id,
+        _stabilID: model.stabilID,
+        _typeKey: 'color',
+        _branchKey: model.branchID,
+        _nameKey: model.name,
+        _propertiesKey: {
+          _darkKey: model.dark.toJson(),
+          _lightKey: model.light.toJson(),
+        }
+      };
+
+  Map<String, dynamic> toJsonWithStabilID(ColorStyleEntity model) => {
+        _stabilID: model.stabilID,
+        _typeKey: 'color',
+        _branchKey: model.branchID,
+        _nameKey: model.name,
+        _propertiesKey: {
+          _darkKey: model.dark.toJson(),
+          _lightKey: model.light.toJson(),
+        }
+      };
   ColorStyleEntity copyWith(final ColorStyleEntity e,
           {final String? id,
+          final String? stabilID,
           final String? branchID,
           final String? name,
           final FFill? light,
           final FFill? fill}) =>
       ColorStyleEntity(
         id: id ?? e.id,
+        stabilID: stabilID ?? e.stabilID,
         branchID: branchID ?? e.branchID,
         name: name ?? e.name,
         dark: fill ?? e.dark,

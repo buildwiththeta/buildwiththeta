@@ -1,0 +1,79 @@
+---
+title: Öğe özelliklerini geçersiz kıl
+---
+
+![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
+
+# Öğe özelliklerini geçersiz kıl
+
+Flutter ile no-code karışımı karıştırarak her bir UI bloğunu bir Flutter widget'ıyla geçersiz kılabilirsiniz.
+
+## Metin geçersiz kılma
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override('Label')
+            ..setText('Click me!'),
+    ],
+),
+```
+
+## Görüntü geçersiz kılma
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Image')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+## Renk geçersiz kılma  (`Container` arka plan rengi ve `Text` rengi)
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Post Title')
+            ..setColor(Colors.white, 0.5),
+    ],
+),
+```
+
+## Çocuk geçersiz kılma
+
+Kodsuz bileşende çocuğun üzerine yazmak istediğiniz öğenin zaten bir öğesi varsa, bu öğe kaldırılacak ve kullanıcı tarafından kod aracılığıyla girilen öğeyle değiştirilecektir.
+
+`UIBox`'u diğer `UIBox`'larda da kullanabilirsiniz. Bu, çok yüksek derecede kişiselleştirme sağlar.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+## Çocuklar geçersiz kılar
+
+Bir öğenin alt öğelerinin üzerine de yazabilirsiniz. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element name')
+            ..setChildren([Text('Child 1'), Text('Child 2')]),
+    ],
+),
+```
+
+<Warning>Yalnızca ilki alındığından, öğe başına yalnızca bir Geçersiz Kılma kullanılması önerilir.</Warning>
+
+<Warning>Yalnızca bir çocuğu olan bir öğeye yanlışlıkla çocukların üzerine yazmaya çalışırsanız, kodla yapılan değişiklik basitçe yok sayılır.</Warning>

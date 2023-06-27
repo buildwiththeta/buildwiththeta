@@ -38,11 +38,13 @@ class _ThetaProviderState extends State<ThetaProvider> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => TreeState(
+        nodeOverrides: [],
         forPlay: true,
         params: [],
         states: [],
         pageId: '',
         isPage: true,
+        fit: ComponentFit.absolute,
         colorStyles: _styles.colorStyles,
         textStyles: _styles.textStyles,
         theme: widget.theme ?? ThemeMode.light,

@@ -1,0 +1,42 @@
+name: Feature Request
+description: Form for a feature request
+title: "[Feature]: "
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request form!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature
+      description: Describe the feature you want to request in as much detail as possible
+      placeholder: I want a new super feature!
+    validations:
+      required: true
+  - type: textarea
+    id: feature-additional-context
+    attributes:
+      label: Additional context
+      description: If you feel you need to add some context to better explain your idea, please do so here
+      placeholder: Add more context here if needed
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/buildwiththeta/buildwiththeta/blob/main/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

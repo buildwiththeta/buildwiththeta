@@ -54,26 +54,6 @@ class FTextStyle extends Equatable {
         textDirection,
       ];
 
-  TextStyle get(
-    final TreeState state,
-    final BuildContext context,
-    final bool forPlay,
-    final TextStyleEntity? model,
-  ) {
-    return TetaTextStyles.get(
-      state: state,
-      context: context,
-      model: model,
-      forPlay: forPlay,
-      fill: fill,
-      fontFamily: fontFamily,
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      textDecoration: textDecoration,
-      fontStyle: fontStyle,
-    );
-  }
-
   static FTextStyle fromJson(final Map<String, dynamic> doc) {
     return FTextStyle(
       fill: doc[DBKeys.fill] != null
@@ -196,7 +176,7 @@ class FTextStyle extends Equatable {
       textAlign: textAlign,
       fontStyle: fontStyle,
       textDirection: textDirection,
-      textStyleModel: textStyleModel,
+      textStyleModel: null,
     );
   }
 }

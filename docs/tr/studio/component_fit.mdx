@@ -1,0 +1,72 @@
+---
+title: Bileşen Uyumluluk Modları
+---
+
+![auto_layout_features](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/8c23e82c-f38b-40d6-8465-bae01e868f2d)
+
+# Bileşen Uyumluluk (Component Fit) Modları
+
+## Mutlak (Absolute) Mod
+
+**Mutlak (Absolute) mod** (tüm bileşenler için varsayılan) etkinleştirildiğinde, tüm bloklar, mutlak koordinatlarına (veya duyarlı hizalamalara) göre cihaz boyutuna karşı konumlandırılır.
+
+Bu mod, aynı katmanda birden fazla bileşen içeren karmaşık bileşenler veya sayfa parçaları oluşturmak için kullanışlıdır.
+
+<Warning>Mutlak koordinatlara dikkat edin</Warning>
+
+Ancak bazen mutlak konumlara sahip öğeler, diğer Flutter bileşenleriyle veya tüm ekrandan daha küçük olan ekran bölümleriyle entegre olamaz, çünkü öğeler her zaman koordinatlarını takip eder ve hatta kod aracılığıyla uygulamalara eklenen herhangi bir üst öğenin dışına çıkabilir.
+
+Aşağıdaki örneğe bakalım:
+
+- [Theta](https://app.buildwiththeta.com içinde bir düğme bileşeni oluşturun ve `left: 16`, `right: 16`, `top: 345` ve yatay sınırlamaları `stretch` olarak ayarlayın.
+- Theta Flutter Kütüphanesini kullanarak uygulamanızda, UIBox'ı  `width: 500` ve  `height: 350` değerleriyle bir konteyner içine alın.
+- Uygulamanızı `flutter run` komutuyla çalıştırın.
+
+Flutter kodu:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.absolute
+  ),
+),
+```
+
+Mutlak modda bileşen, Theta'da verilen üst koordinatları takip ederek üst öğe konteynerının dışına çıkacaktır. Aşağıdaki resimde gösterildiği gibi:
+
+![expanded_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/d73e382d-eeba-4fd2-b55f-49715a319edd)
+
+Bu, bir Flutter bağlamına entegre olması gereken bileşenler için uygun değildir. Bu durumu çözmek için **Otomatik Düzen(Auto Layout)** kullanılabilir.
+
+## Otomatik Düzen (Auto Layout)
+
+**Otomatik Düzen(Auto Layout)** modu, tek-blok bileşenlerin (sadece birinci seviyede tek bir öğe tarafından oluşturulan bileşenler) ekran boyutundan bağımsız olarak görüntülenebilmesini sağlar, yani mutlak bir konumu olmadan. Bu, başka bileşenlerin içine yerleştirilebilen widget'lar oluşturabilme konusunda  son derece kullanışlıdır ve mutlak konuma ihtiyaç duymaz.
+
+Stretch hizalamaları hala çalışır, bu sayede tam genişlikte bir düğmenin farklı cihazlarda nasıl genişlediğini görebilirsiniz.
+
+Şimdi, kodda Otomatik Düzen'i ayarlayarak ilk örneği tekrar deneyelim:
+
+Flutter kodu:
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.autoLayout,
+  ),
+),
+```
+
+![loose_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/73b30e95-5f97-4bcf-a53f-a5d02ac0c403)
+
+Bu kez bileşen, mutlak koordinatlardan bağımsızdır ve bir Flutter widget'ı gibi yerleştirilebilir hale gelir.
+
+
+

@@ -1,0 +1,4 @@
+enum ComponentFit {
+  absolute,
+  autoLayout,
+}

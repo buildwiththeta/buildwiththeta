@@ -1,0 +1,47 @@
+---
+title: Kısıtlamalar
+description: Aynı tarafta hizalı tutun veya ekran boyutlarına uyarak gerdirin.
+
+---
+
+# Kısıtlamalarla UI Hizalaması (UI Alignment Constraints)
+
+UI Hizalama Kısıtlamaları(UI Alignment Constraints), bir düzen içinde bir öğenin konumunu kontrol etmenizi sağlar. Hem dikey hem de yatay eksenler için hizalama seçenekleri belirleyebilirsiniz. Mevcut olan üç seçenek `start`, `end` ve `stretch` olarak adlandırılır.
+
+<YouTube id="LRhMnuvEg7A" />
+
+## Yatay Hizalama (Horizontal Alignment)
+
+* `Start`:  Öğeyi konteynerin soluna hizalar. Öğe, sol değere göre konumlandırılır.
+
+* `End`: Öğeyi konteynerin sağına hizalar. Öğenin sağ kenarı, sağ değere göre konumlandırılır.
+
+* `Stretch`: Öğeyi yatay olarak konteynerin genişliğini dolduracak şekilde gererek, sol ve sağ kenar boşluk değerlerini korur.
+
+## Dikey Hizalama (Vertical Alignment)
+
+* `Start`: Öğeyi konteynerin üstüne hizalar. Öğe, üst değere göre konumlandırılır.
+
+* `End`: Öğeyi konteynerin altına hizalar. Öğenin alt kenarı, alt değere göre konumlandırılır.
+
+* `Stretch`: Öğeyi dikey olarak konteynerin yüksekliğini dolduracak şekilde gererek, üst ve alt kenar boşluk değerlerini korur.
+
+## Örnekler
+
+1. Hem dikey hem de yatay hizalama için`start` seçerseniz, öğe sol üst köşede konumlandırılır ve tam konumu üst ve sol değerler belirler.
+
+2. Hem dikey hem de yatay hizalama için `end` seçerseniz, öğe sağ alt köşede konumlandırılır ve tam konumu üst ve sol değerler belirler.
+
+3. Yatay hizalamada `stretch` seçerseniz, öğe ekranın tam genişliğini kaplar ve genişliği sol ve sağ kenar boşluk değerlerine bağlı olarak belirlenir.
+
+4. Dikey hizalamada `stretch` seçerseniz, öğe ekranın tam yüksekliğini kaplar ve yüksekliği üst ve alt kenar boşluk değerlerine bağlı olarak belirlenir.
+
+##  Tablet ve Masaüstü İçin Kısıtlamaları Geçersiz Kılma (Override Constraints)
+
+Varsayılan mobil ayarların yanı sıra, tablet ve masaüstü gibi daha büyük ekranlar için hizalama kısıtlamalarını geçersiz kılabilirsiniz. Bu, farklı ekran boyutları için UI'nizi optimize etmenize ve gerçekten duyarlı bir tasarım oluşturmanıza olanak tanır.
+
+Bunu yapmak için, ayarlarda tablet ve masaüstü kesinti noktaları için istenen hizalama değerlerini (alignment values) ayarlayın. Bu, varsayılan mobil kısıtlamaları geçersiz kılar ve bu cihazlarda farklı bir hizalama davranışı sağlar.
+
+## Geçersiz Kılmalardan Kurtulma (Remove Overrides)
+
+Tablet veya masaüstünde mobil ayarlara geri dönmek isterseniz, 'Follow phone settings (Telefon ayarlarını takip et)' düğmesine tıklayarak kolayca yapabilirsiniz. Bu, geçersiz kısıtlamaları kaldırır ve öğenin tüm cihazlarda varsayılan mobil ayarlara göre hizalanmasına izin verir. Bu özellik, tasarım gereksinimlerinize göre UI hizalama kısıtlamalarını esnek bir şekilde ayarlamanızı sağlar.

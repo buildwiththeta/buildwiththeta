@@ -1,5 +1,6 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
@@ -49,26 +50,62 @@ class _NodeBuilderState extends State<NodeBuilder> {
                   marginsDesktop: [0, 0, 0, 0]))
           .get(state: state, context: context);
 
-  bool _handleVisibility(TreeState state) =>
-      (widget.node.getAttributes[DBKeys.visibility] as bool? ?? true) &&
-              state.forPlay
-          ? _handlePlayVisibility()
-          : _handleNotPlayVisibility(state);
+  bool _handleVisibility(TreeState state) {
+    final visibility = widget.node.getAttributes[DBKeys.visibility] as bool?;
+    return (visibility == false)
+        ? false
+        : ((visibility ?? true) && state.forPlay)
+            ? _handlePlayVisibility()
+            : _handleNotPlayVisibility(state);
+  }
 
-  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1000
+  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1200
       ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
-      : MediaQuery.of(context).size.width > 600
-          ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ?? true)
-          : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
-              true);
+      : MediaQuery.of(context).size.width > 834
+          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          : MediaQuery.of(context).size.width > 600
+              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+                  true)
+              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+                  true);
 
   bool _handleNotPlayVisibility(TreeState state) => state.deviceType ==
           DeviceType.desktop
       ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
-      : state.deviceType == DeviceType.tablet
-          ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ?? true)
-          : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
-              true);
+      : state.deviceType == DeviceType.laptop
+          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          : state.deviceType == DeviceType.tablet
+              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+                  true)
+              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+                  true);
+
+  Widget handleSlideAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.slideAnimationEnabled] as bool? ?? false) {
+      return SlideAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
+
+  Widget handleScaleAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.scaleAnimationEnabled] as bool? ?? false) {
+      return ScaleAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
+
+  Widget handleFadeInAnimation(CNode node, Widget child) {
+    if (node.getAttributes[DBKeys.fadeAnimationEnabled] as bool? ?? false) {
+      return FadeInAnimation(
+        child: widget.child,
+      );
+    }
+    return widget.child;
+  }
 
   double _handleRotation(TreeState state) => double.parse(
       (widget.node.getAttributes[DBKeys.rotation] as FTextTypeInput?)?.value ??
@@ -94,7 +131,16 @@ class _NodeBuilderState extends State<NodeBuilder> {
                 onPanStart: widget.onPanStart,
                 child: GestureDetectorForPlay(
                   node: widget.node,
-                  child: widget.child,
+                  child: handleSlideAnimation(
+                    widget.node,
+                    handleScaleAnimation(
+                      widget.node,
+                      handleFadeInAnimation(
+                        widget.node,
+                        widget.child,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -1,14 +1,28 @@
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
+# [Theta](https://buildwiththeta.com)
 
-# Build with Theta
+## The open source way of designing remote UI
 
-[Theta](https://buildwiththeta.com) is an open source tool to streamline app creation and testing with dynamic UIs, without the need for rebuilding.
+Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
-- [x] Theta Studio: no-code visual editor for reponsive and modern UIs.
-- [x] Theta Flutter client: Stream your UIs inside your clients. [Pub.dev](https://pub.dev/packages/theta)
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
 
-## Documentation
-Learn more about Theta with [Docs](https://docs.page/buildwiththeta/buildwiththeta)
+- Documentation: https://docs.buildwiththeta.com
+
+## Why Theta?
+
+Designed to facilitate quick UI designing, Theta streamlines the creation of dynamic interfaces directly within your app clients. Theta is not a no-code app builder. Instead, it allows developers to incorporate Theta into their existing workflows, ensuring seamless integration without compromising on code quality. With Theta, you can design a responsive app bar and view it within a Flutter app in mere minutes.
+
+Here are some of Theta's defining features:
+
+### Available Features
+
+- **Absolute Positioning**: Design elements with absolute positioning, similar to Figma.
+- **Responsive Design**: Create responsive elements and interfaces.
+- **Theta Integration**: Incorporate Theta into your app using the Theta Flutter library.
+- **Code and No-Code Mix**: Use workflows to combine no-code and code, e.g., run a method when a node is tapped.
+- **Loading and Error Handling**: Efficiently manage loading and error handling in remote widgets.
+- **Light and Dark Modes**: Support for dark and light UI themes.
+- **Node Overrides**: Override any single node from your app.
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
@@ -27,6 +41,7 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 - [en](https://docs.page/buildwiththeta/buildwiththeta/en)
 - [it](https://docs.page/buildwiththeta/buildwiththeta/it)
 - [es](https://docs.page/buildwiththeta/buildwiththeta/es)
+- [tr](https://docs.page/buildwiththeta/buildwiththeta/tr)
 
 ## Architecture
 
@@ -65,3 +80,5 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
+
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>

@@ -1,1 +1,0 @@
-enum ActionFirebaseMessages { subscribeToTopic, unsubscribeToTopic }

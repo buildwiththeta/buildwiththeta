@@ -1,0 +1,80 @@
+---
+title: Override Element Properties
+---
+
+![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
+
+# Override delle proprietà degli elementi
+
+È possibile sovrascrivere ogni blocco UI con un widget Flutter, mixando il no-code con Flutter.
+
+## Override del testo
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override('Label')
+            ..setText('Click me!'),
+    ],
+),
+```
+
+## Override dell'immagine
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Image')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+## Override del colore (colore di sfondo del `Container` e colore del `Text`)
+
+```dart
+UIBox(
+    'Social Card',
+    overrides: const [
+        Override('Post Title')
+            ..setColor(Colors.white, 0.5),
+    ],
+),
+```
+
+## Override del figlio
+
+Se nel componente no-code l'elemento a cui si vuole sovrascrivere il figlio ne ha già uno, 
+verrà rimosso e sostituito con quello inserito dall'utente tramite codice.
+
+È possibile utilizzare la `UIBox` anche all'interno di altre `UIBox`. Questo offre un grado di personalizzazione molto elevato.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+## Override dei figli
+
+È possibile sovrascrivere anche i figli di un elemento. 
+
+```dart
+UIBox(
+    'Component name',
+    overrides: const [
+        Override('Element name')
+            ..setChildren([Text('Child 1'), Text('Child 2')]),
+    ],
+),
+```
+
+<Warning>Si consiglia di utilizzare solo un override per elemento, poiché viene presa in considerazione solo la prima.</Warning>
+
+<Warning>Se si tenta accidentalmente di sovrascrivere i figli a un elemento con un solo figlio, la modifica da parte del codice sarà semplicemente ignorata.</Warning>

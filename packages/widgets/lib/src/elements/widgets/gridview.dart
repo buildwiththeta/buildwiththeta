@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
@@ -50,20 +51,13 @@ class OpenWGridView extends NodeWidget {
       context: context,
       loop: nodeState.loop,
     );
+    final children = const NodeOverrideExecuter()
+        .executeChildren(context, nodeState, this.children);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: int.tryParse(crossAxisCountString) != null &&
-                (int.tryParse(crossAxisCountString) ?? 0) > 0.1
-            ? int.parse(crossAxisCountString)
-            : 2,
-        mainAxisSpacing: double.tryParse(mainAxisSpacingString) != null &&
-                (double.tryParse(mainAxisSpacingString) ?? 0) > 0.1
-            ? double.parse(mainAxisSpacingString)
-            : 2,
-        crossAxisSpacing: double.tryParse(crossAxisSpacingString) != null &&
-                (double.tryParse(crossAxisSpacingString) ?? 0) > 0.1
-            ? double.parse(crossAxisSpacingString)
-            : 2,
+        crossAxisCount: int.tryParse(crossAxisCountString) ?? 2,
+        mainAxisSpacing: double.tryParse(mainAxisSpacingString) ?? 2,
+        crossAxisSpacing: double.tryParse(crossAxisSpacingString) ?? 2,
         childAspectRatio: double.tryParse(childAspectRatioString) != null &&
                 (double.tryParse(childAspectRatioString) ?? 0) > 0.1
             ? double.parse(childAspectRatioString)
@@ -73,12 +67,8 @@ class OpenWGridView extends NodeWidget {
       primary: isPrimary,
       scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
       itemCount: children.isEmpty ? 1 : children.length,
-      itemBuilder: (final context, final index) => children.isNotEmpty
-          ? children[index].toWidget(
-              context: context,
-              state: nodeState.copyWith(loop: index),
-            )
-          : const SizedBox(),
+      itemBuilder: (final context, final index) =>
+          children.isNotEmpty ? children[index] : const SizedBox(),
     );
   }
 }
