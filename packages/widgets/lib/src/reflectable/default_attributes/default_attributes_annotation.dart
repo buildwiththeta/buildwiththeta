@@ -1,21 +1,16 @@
+import 'package:collection/collection.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:collection/collection.dart';
+
 import 'index.dart';
 
 class DynamicDefaultAttributeAdapter extends Reflectable {
   const DynamicDefaultAttributeAdapter()
       : super.fromList(const [
-          typeCapability,
-          declarationsCapability,
           metadataCapability,
           newInstanceCapability,
-          staticInvokeCapability,
           instanceInvokeCapability,
-          typeRelationsCapability,
-          invokingCapability,
-          newInstanceCapability,
         ]);
 }
 
@@ -24,15 +19,9 @@ const dynamicDefaultAttribute = DynamicDefaultAttributeAdapter();
 class DynamicDefaultAttributesReflector extends Reflectable {
   const DynamicDefaultAttributesReflector()
       : super(
-          typeCapability,
-          declarationsCapability,
           metadataCapability,
           newInstanceCapability,
-          staticInvokeCapability,
           instanceInvokeCapability,
-          typeRelationsCapability,
-          invokingCapability,
-          newInstanceCapability,
         );
 }
 
@@ -54,11 +43,11 @@ class DefaultAttributesParse {
       /// Get the class with the same name of the key
       final targetClass = classes.firstOrNull;
       if (targetClass == null) {
-        return null;
+        throw Exception('Cannot find class with key: $key');
       }
 
       if (targetClass.isAbstract) {
-        throw ArgumentError('Cannot instantiate an abstract class.');
+        throw Exception('Cannot instantiate an abstract class.');
       }
 
       final instance =

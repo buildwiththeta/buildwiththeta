@@ -9,7 +9,7 @@ issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
 documentation: https://docs.buildwiththeta.com
 
 scripts:
-  gen: "flutter pub run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns"
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -57,3 +57,7 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   build_runner: any
   built_value_generator: any
+
+dependency_overrides:
+  theta_models:
+    path: ../models

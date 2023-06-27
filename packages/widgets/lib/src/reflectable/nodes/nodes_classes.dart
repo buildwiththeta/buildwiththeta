@@ -16,7 +16,7 @@ part 'nodes_classes.g.dart';
 /// It is used to generate the file nodes_classes.g.dart
 /// Without this line, reflectable will not detect this file
 /// Uncomment this line when you want to generate the file nodes_classes.g.dart
-//part 'nodes_classes.nodebuilder.g.dart';
+/// part 'nodes_classes.nodebuilder.g.dart';
 
 @NodeInfo(
   type: NType.align,
@@ -49,12 +49,6 @@ class _Component {}
 class _Row {}
 
 @NodeInfo(
-  type: NType.condition,
-  optionalDisplayName: 'Condition',
-)
-class _Condition {}
-
-@NodeInfo(
   type: NType.container,
   optionalDisplayName: 'Container',
 )
@@ -65,12 +59,6 @@ class _Container {}
   optionalDisplayName: 'Image',
 )
 class _Image {}
-
-@NodeInfo(
-  type: NType.expanded,
-  optionalDisplayName: 'Expanded',
-)
-class _Expanded {}
 
 @NodeInfo(
   type: NType.icon,
@@ -89,12 +77,6 @@ class _ListView {}
   optionalDisplayName: 'Lottie',
 )
 class _Lottie {}
-
-@NodeInfo(
-  type: NType.opacity,
-  optionalDisplayName: 'Opacity',
-)
-class _Opacity {}
 
 @NodeInfo(
   type: NType.scaffold,

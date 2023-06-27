@@ -11,8 +11,6 @@ import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
-import '../main.reflectable.dart' as theta;
-
 /// Theta instance.
 ///
 /// ❗️ Initialize before use, otherwise an error is thrown.
@@ -98,7 +96,6 @@ class Theta {
 
   Future<void> _initExternalDependencies() async {
     await ThetaOpenWidgets.initialize();
-    theta.initializeReflectable();
     await ThetaAnalytics.initialize();
     if (kIsWeb) return;
     final appDocumentDirectory = await getApplicationDocumentsDirectory();
