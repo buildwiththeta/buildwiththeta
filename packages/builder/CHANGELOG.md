@@ -1,3 +1,8 @@
+## 0.2.0
+
+- [x] Feat: add UIBoxController.
+- [x] Fix: remove unused dependencies.
+
 ## 0.1.9
 
 - [x] Fix: less classes and smaller codebase.

@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _controller.onLoaded(() {
       debugPrint('Loaded!');
-      final rootNode = _controller.rootNode;
+      debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));
   }
