@@ -83,6 +83,27 @@ UIBox(
 )
 ```
 
+### Use a controller
+
+Use a controller for greater control of the remote component.
+
+```dart
+final controller = UIBoxController();
+
+controller.onLoaded(() {
+    debugPrint('Loaded!');
+    debugPrint(_controller.nodesToList().toString());
+});
+controller.onError((error) => debugPrint(error.toString()));
+
+UIBox(
+    'Feed',
+    controller: controller,
+);
+
+controller.dispose();
+```
+
 ### Add custom code for actions
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add functions, called 'workflows', based on gesture triggers.
