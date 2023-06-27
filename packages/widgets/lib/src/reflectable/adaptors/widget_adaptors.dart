@@ -465,7 +465,6 @@ class ComponentAdapter extends WidgetAdapter {
   }) =>
       OpenWComponent(
         key: ValueKey(state.node.id),
-        nodeState: state,
         componentChildren: state.node.componentChildren,
       );
 

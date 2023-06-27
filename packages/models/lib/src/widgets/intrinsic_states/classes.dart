@@ -335,7 +335,7 @@ class ColumnIntrinsicStates extends IntrinsicState {
 class ComponentIntrinsicStates extends IntrinsicState {
   ComponentIntrinsicStates()
       : super(
-          nodeIcon: Assets.wIcons.component.path,
+          nodeIcon: 'nodes/component/',
           synonymous: const ['component', 'symbol', 'widget'],
           displayName: NodeType.name(NType.component),
           type: NType.component,
@@ -1177,7 +1177,7 @@ class SafeAreaIntrinsicStates extends IntrinsicState {
 class ScaffoldIntrinsicStates extends IntrinsicState {
   ScaffoldIntrinsicStates()
       : super(
-          nodeIcon: Assets.icons.devices.smartphone.path,
+          nodeIcon: 'nodes/component/',
           synonymous: const ['safearea', 'padding'],
           displayName: 'Component',
           type: NType.scaffold,

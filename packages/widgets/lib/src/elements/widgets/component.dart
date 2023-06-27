@@ -6,21 +6,30 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
-class OpenWComponent extends NodeWidget {
+class OpenWComponent extends StatefulWidget {
   const OpenWComponent({
     super.key,
-    required super.nodeState,
     required this.componentChildren,
   });
-
   final List<CNode> componentChildren;
 
   @override
-  Widget build(final BuildContext context, final TreeState state,
-      final WidgetState nodeState) {
+  State<OpenWComponent> createState() => _OpenWComponentState();
+}
+
+class _OpenWComponentState extends State<OpenWComponent> {
+  late List<CNode> componentChildren;
+
+  @override
+  void initState() {
+    super.initState();
+    componentChildren = widget.componentChildren;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     const NodeRendering nodeRendering = NodeRendering();
     if (componentChildren.isEmpty) {
       return const Placeholder();
