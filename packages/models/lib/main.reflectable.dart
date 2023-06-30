@@ -2,20 +2,7 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
-
 import 'package:meta/meta.dart' as prefix26;
-// ignore_for_file: camel_case_types
-// ignore_for_file: implementation_imports
-// ignore_for_file: prefer_adjacent_string_concatenation
-// ignore_for_file: prefer_collection_literals
-// ignore_for_file: unnecessary_const
-
-// ignore:unused_import
-import 'package:reflectable/mirrors.dart' as m;
-// ignore:unused_import
-import 'package:reflectable/reflectable.dart' as r show Reflectable;
-// ignore:unused_import
-import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart'
     as prefix0;
 import 'package:theta_models/src/widgets/features/align.dart' as prefix1;
@@ -56,6 +43,19 @@ import 'package:theta_models/src/widgets/intrinsic_states/intrinsic_state_parse.
     as prefix24;
 import 'package:theta_models/src/widgets/nodes/key_constants.dart' as prefix27;
 import 'package:theta_models/src/widgets/nodes/node_type.dart' as prefix28;
+
+// ignore_for_file: camel_case_types
+// ignore_for_file: implementation_imports
+// ignore_for_file: prefer_adjacent_string_concatenation
+// ignore_for_file: prefer_collection_literals
+// ignore_for_file: unnecessary_const
+
+// ignore:unused_import
+import 'package:reflectable/mirrors.dart' as m;
+// ignore:unused_import
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
+// ignore:unused_import
+import 'package:reflectable/reflectable.dart' as r show Reflectable;
 
 final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.DynamicAttributeKey(): r.ReflectorData(
@@ -728,130 +728,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix22.FTextStyle,
         prefix23.FTextTypeInput
       ],
-      28,
-      {
-        r'==': (dynamic instance) => (x) => instance == x,
-        r'toString': (dynamic instance) => instance.toString,
-        r'noSuchMethod': (dynamic instance) => instance.noSuchMethod,
-        r'hashCode': (dynamic instance) => instance.hashCode,
-        r'runtimeType': (dynamic instance) => instance.runtimeType,
-        r'stringify': (dynamic instance) => instance.stringify,
-        r'get': (dynamic instance) => instance.get,
-        r'getStringForDropDown': (dynamic instance) =>
-            instance.getStringForDropDown,
-        r'toJson': (dynamic instance) => instance.toJson,
-        r'clone': (dynamic instance) => instance.clone,
-        r'copyWith': (dynamic instance) => instance.copyWith,
-        r'align': (dynamic instance) => instance.align,
-        r'alignTablet': (dynamic instance) => instance.alignTablet,
-        r'alignDesktop': (dynamic instance) => instance.alignDesktop,
-        r'props': (dynamic instance) => instance.props,
-        r'value': (dynamic instance) => instance.value,
-        r'valueString': (dynamic instance) => instance.valueString,
-        r'toCode': (dynamic instance) => instance.toCode,
-        r'fill': (dynamic instance) => instance.fill,
-        r'width': (dynamic instance) => instance.width,
-        r'style': (dynamic instance) => instance.style,
-        r'update': (dynamic instance) => instance.update,
-        r'radiusMobile': (dynamic instance) => instance.radiusMobile,
-        r'radiusTablet': (dynamic instance) => instance.radiusTablet,
-        r'radiusDesktop': (dynamic instance) => instance.radiusDesktop,
-        r'convertValueToCode': (dynamic instance) =>
-            instance.convertValueToCode,
-        r'cursor': (dynamic instance) => instance.cursor,
-        r'getHexColor': (dynamic instance) => instance.getHexColor,
-        r'ready': (dynamic instance) => instance.ready,
-        r'alignToJson': (dynamic instance) => instance.alignToJson,
-        r'alignToCode': (dynamic instance) => instance.alignToCode,
-        r'typeToCode': (dynamic instance) => instance.typeToCode,
-        r'levels': (dynamic instance) => instance.levels,
-        r'type': (dynamic instance) => instance.type,
-        r'begin': (dynamic instance) => instance.begin,
-        r'end': (dynamic instance) => instance.end,
-        r'center': (dynamic instance) => instance.center,
-        r'radius': (dynamic instance) => instance.radius,
-        r'boxFit': (dynamic instance) => instance.boxFit,
-        r'paletteStyle': (dynamic instance) => instance.paletteStyle,
-        r'getFinalValues': (dynamic instance) => instance.getFinalValues,
-        r'getPath': (dynamic instance) => instance.getPath,
-        r'values': (dynamic instance) => instance.values,
-        r'isDoc': (dynamic instance) => instance.isDoc,
-        r'size': (dynamic instance) => instance.size,
-        r'sizeTablet': (dynamic instance) => instance.sizeTablet,
-        r'sizeDesktop': (dynamic instance) => instance.sizeDesktop,
-        r'unit': (dynamic instance) => instance.unit,
-        r'weight': (dynamic instance) => instance.weight,
-        r'getString': (dynamic instance) => instance.getString,
-        r'getList': (dynamic instance) => instance.getList,
-        r'toCodeForTests': (dynamic instance) => instance.toCodeForTests,
-        r'margins': (dynamic instance) => instance.margins,
-        r'marginsTablet': (dynamic instance) => instance.marginsTablet,
-        r'marginsDesktop': (dynamic instance) => instance.marginsDesktop,
-        r'physics': (dynamic instance) => instance.physics,
-        r'x': (dynamic instance) => instance.x,
-        r'y': (dynamic instance) => instance.y,
-        r'spread': (dynamic instance) => instance.spread,
-        r'blur': (dynamic instance) => instance.blur,
-        r'opacity': (dynamic instance) => instance.opacity,
-        r'updateSize': (dynamic instance) => instance.updateSize,
-        r'textDecoration': (dynamic instance) => instance.textDecoration,
-        r'toCodeTextStyleOnly': (dynamic instance) =>
-            instance.toCodeTextStyleOnly,
-        r'setModelNull': (dynamic instance) => instance.setModelNull,
-        r'fontSize': (dynamic instance) => instance.fontSize,
-        r'fontFamily': (dynamic instance) => instance.fontFamily,
-        r'fontWeight': (dynamic instance) => instance.fontWeight,
-        r'textAlign': (dynamic instance) => instance.textAlign,
-        r'fontStyle': (dynamic instance) => instance.fontStyle,
-        r'textStyleModel': (dynamic instance) => instance.textStyleModel,
-        r'textDirection': (dynamic instance) => instance.textDirection,
-        r'getStateValue': (dynamic instance) => instance.getStateValue,
-        r'getImage': (dynamic instance) => instance.getImage,
-        r'calc': (dynamic instance) => instance.calc,
-        r'getValue': (dynamic instance) => instance.getValue,
-        r'updateValue': (dynamic instance) => instance.updateValue,
-        r'valueTablet': (dynamic instance) => instance.valueTablet,
-        r'valueLaptop': (dynamic instance) => instance.valueLaptop,
-        r'valueDesktop': (dynamic instance) => instance.valueDesktop,
-        r'paramName': (dynamic instance) => instance.paramName,
-        r'stateName': (dynamic instance) => instance.stateName,
-        r'datasetLength': (dynamic instance) => instance.datasetLength,
-        r'datasetSubListData': (dynamic instance) =>
-            instance.datasetSubListData,
-        r'datasetSubMapData': (dynamic instance) => instance.datasetSubMapData,
-        r'locale': (dynamic instance) => instance.locale,
-        r'combination': (dynamic instance) => instance.combination,
-        r'resultType': (dynamic instance) => instance.resultType,
-        r'typeDateTimeFormat': (dynamic instance) => instance.typeDateTimeFormat
-      },
-      {},
-      null,
-      []),
-  const prefix0.DynamicAttributeReflector(): r.ReflectorData(
-      <m.TypeMirror>[
-        r.NonGenericClassMirrorImpl(
-            r'DynamicAttributes',
-            r'.DynamicAttributes',
-            134217735,
-            0,
-            const prefix0.DynamicAttributeReflector(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {},
-            {},
-            {r'': (bool b) => () => b ? prefix0.DynamicAttributes() : null},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[const prefix0.DynamicAttributeReflector()],
-            {})
-      ],
-      null,
-      null,
-      <Type>[prefix0.DynamicAttributes],
-      1,
+      23,
       {},
       {},
       null,
@@ -1011,10 +888,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix25.IconIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix25.IconIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix25.IconIntrinsicStates.create() : null
+                  () => b ? prefix25.IconIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1063,9 +939,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates() : null,
+                  () => b ? prefix25.ListViewIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix30.ListViewIntrinsicStates.create() : null
+                  () => b ? prefix25.ListViewIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1141,9 +1017,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix25.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix25.ScaffoldIntrinsicStates.create() : null
+                  () => b ? prefix25.ScaffoldIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix25.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1166,9 +1042,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix30.StackIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix25.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix30.StackIntrinsicStates.create() : null
+                  () => b ? prefix25.StackIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1242,7 +1118,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix29.DynamicIntrinsicState() : null
+              r'': (bool b) => () => b ? prefix25.VideoIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix25.VideoIntrinsicStates.create() : null
             },
             -1,
             -1,
