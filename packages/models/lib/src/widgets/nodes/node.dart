@@ -67,10 +67,9 @@ abstract class CNode extends Equatable {
     topComponentsIds ??= {};
 
     if (topComponentsIds.isEmpty) {
-      topComponentsIds.add(this.pageID!);
+      topComponentsIds.add(pageID!);
     }
-    if (this.pageID == componentID ||
-        topComponentsIds.contains(this.componentID)) {
+    if (pageID == componentID || topComponentsIds.contains(this.componentID)) {
       return;
     }
 
