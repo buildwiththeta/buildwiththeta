@@ -64,7 +64,6 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
           ),
         ),
         DBKeys.actionValue: FTextTypeInput(),
-        DBKeys.pageTransition: FPageTransition(),
         DBKeys.align: FAlign(),
       };
 
@@ -104,22 +103,6 @@ class ComponentDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{};
 
   ComponentDefaultAttributes.create() : this();
-}
-
-/// Condition
-@dynamicDefaultAttribute
-@NodeKey(NType.condition)
-class ConditionDefaultAttributes extends DefaultAttributesAdapter {
-  const ConditionDefaultAttributes();
-
-  @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.value: FTextTypeInput(),
-        DBKeys.valueOfCondition: FTextTypeInput(),
-        DBKeys.conditionType: FConditionType(),
-      };
-
-  ConditionDefaultAttributes.create() : this();
 }
 
 /// Image, Container
@@ -230,7 +213,6 @@ class IconDefaultAttributes extends DefaultAttributesAdapter {
 /// ListView
 @dynamicDefaultAttribute
 @NodeKey(NType.listView)
-@NodeKey(NType.listViewBuilder)
 class ListViewDefaultAttributes extends DefaultAttributesAdapter {
   const ListViewDefaultAttributes();
 
@@ -241,7 +223,6 @@ class ListViewDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.isListView: true,
         DBKeys.isPrimary: true,
         DBKeys.isFullWidth: false,
-        DBKeys.physic: FPhysic(),
         DBKeys.mainAxisSpacing: FTextTypeInput(value: '2'),
         DBKeys.crossAxisCount: FTextTypeInput(value: '2'),
         DBKeys.crossAxisSpacing: FTextTypeInput(value: '2'),
@@ -364,7 +345,6 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.minLines: FTextTypeInput(value: ''),
         DBKeys.maxLenght: FTextTypeInput(),
         DBKeys.bordersSize: FTextTypeInput(value: '1'),
-        DBKeys.keyboardType: FKeyboardType(),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [0, 0, 0, 0],
           radiusTablet: null,

@@ -11,7 +11,6 @@ class OpenWListView extends StatelessWidget {
     required this.children,
     required this.flagValue,
     required this.value,
-    required this.physic,
     required this.isVertical,
     required this.isReverse,
     required this.isPrimary,
@@ -23,7 +22,6 @@ class OpenWListView extends StatelessWidget {
   final bool isVertical;
   final bool flagValue;
   final FTextTypeInput value;
-  final FPhysic physic;
   final bool isPrimary;
   final bool isReverse;
   final bool shrinkWrap;
@@ -40,7 +38,6 @@ class OpenWListView extends StatelessWidget {
         behavior: _MyCustomScrollBehavior(),
         child: ListView.builder(
           reverse: isReverse,
-          physics: physic.physics,
           addAutomaticKeepAlives: false,
           addRepaintBoundaries: false,
           scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,

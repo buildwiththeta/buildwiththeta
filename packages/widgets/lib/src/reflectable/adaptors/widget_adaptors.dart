@@ -46,8 +46,6 @@ class ButtonAdapter extends WidgetAdapter {
         textAlignPosition: state.node.getAttributes[DBKeys.align] as FAlign,
         actionValue:
             state.node.getAttributes[DBKeys.actionValue] as FTextTypeInput,
-        pageTransition:
-            state.node.getAttributes[DBKeys.pageTransition] as FPageTransition,
         onTap: () {},
         onDoubleTap: () {},
         onLongPress: () {},
@@ -79,30 +77,6 @@ class ColumnAdapter extends WidgetAdapter {
       );
 
   ColumnAdapter.create() : this();
-}
-
-/// Condition
-@dynamicAdapter
-@NodeKey(NType.condition)
-class ConditionAdapter extends WidgetAdapter {
-  const ConditionAdapter();
-  @override
-  Widget toWidget({
-    required final BuildContext context,
-    required final WidgetState state,
-  }) =>
-      OpenWCondition(
-        nodeState: state,
-        children: state.node.children ?? [],
-        firstValueToCompare:
-            state.node.getAttributes[DBKeys.value] as FTextTypeInput,
-        secondValueToCompare:
-            state.node.getAttributes[DBKeys.valueOfCondition] as FTextTypeInput,
-        conditionType:
-            state.node.getAttributes[DBKeys.conditionType] as FConditionType,
-      );
-
-  ConditionAdapter.create() : this();
 }
 
 /// Container
@@ -236,7 +210,6 @@ class ListViewAdapter extends WidgetAdapter {
               children: state.node.children ?? [],
               flagValue: false, //Check
               value: const FTextTypeInput(),
-              physic: state.node.getAttributes[DBKeys.physic] as FPhysic,
               isPrimary:
                   state.node.getAttributes[DBKeys.isPrimary] as bool, //Check
               isVertical: state.node.getAttributes[DBKeys.isVertical] as bool,

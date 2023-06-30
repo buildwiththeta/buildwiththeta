@@ -154,7 +154,9 @@ class AlignOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'AlignOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'AlignOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -306,7 +308,9 @@ class ButtonOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'ButtonOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ButtonOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -458,7 +462,9 @@ class ColumnOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'ColumnOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ColumnOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -611,6 +617,9 @@ class ComponentOpenNode extends CNode {
 
   @override
   String toString() =>
+      'ComponentOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ComponentOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -762,160 +771,10 @@ class RowOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'RowOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'RowOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
-/// condition
-@nodeDeclaration
-@NodeKey(NType.condition)
-class ConditionOpenNode extends CNode {
-  ConditionOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final int? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.condition,
-          name: name ?? 'Condition',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.condition),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.condition),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.condition),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      ConditionOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      ConditionOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.condition) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return ConditionOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() =>
-      'ConditionOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// container
@@ -1067,6 +926,9 @@ class ContainerOpenNode extends CNode {
 
   @override
   String toString() =>
+      'ContainerOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ContainerOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -1218,160 +1080,10 @@ class ImageOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'ImageOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ImageOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
-/// expanded
-@nodeDeclaration
-@NodeKey(NType.expanded)
-class ExpandedOpenNode extends CNode {
-  ExpandedOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final int? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.expanded,
-          name: name ?? 'Expanded',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.expanded),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.expanded),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.expanded),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      ExpandedOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      ExpandedOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.expanded) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return ExpandedOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() =>
-      'ExpandedOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// icon
@@ -1522,7 +1234,9 @@ class IconOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'IconOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'IconOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -1674,7 +1388,9 @@ class ListViewOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'ListViewOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ListViewOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -1826,160 +1542,10 @@ class LottieOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'LottieOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'LottieOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
-/// opacity
-@nodeDeclaration
-@NodeKey(NType.opacity)
-class OpacityOpenNode extends CNode {
-  OpacityOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final int? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.opacity,
-          name: name ?? 'Opacity',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.opacity),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.opacity),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.opacity),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      OpacityOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    int? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      OpacityOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.opacity) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return OpacityOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() =>
-      'OpacityOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
 /// scaffold
@@ -2130,7 +1696,9 @@ class ScaffoldOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'ScaffoldOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'ScaffoldOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -2282,7 +1850,9 @@ class StackOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'StackOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'StackOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -2434,7 +2004,9 @@ class TextOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'TextOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'TextOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -2587,6 +2159,9 @@ class TextFieldOpenNode extends CNode {
 
   @override
   String toString() =>
+      'TextFieldOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'TextFieldOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
@@ -2738,6 +2313,8 @@ class VideoOpenNode extends CNode {
   }
 
   @override
-  String toString() =>
+  String toString() => 'VideoOpenNode { id: $id, name: $name, type: $type }';
+
+  String toStringExtended() =>
       'VideoOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }

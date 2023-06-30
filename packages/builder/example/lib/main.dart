@@ -6,6 +6,8 @@ Future<void> main() async {
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
     cacheEnabled: false,
+
+    /// Example key
     anonKey: '',
   );
 
@@ -20,6 +22,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _controller = UIBoxController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.onLoaded(() {
+      debugPrint('Loaded!');
+      debugPrint(_controller.nodesToList().toString());
+    });
+    _controller.onError((error) => debugPrint(error.toString()));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     /// ThetaProvider is used to provide the project styles to the widgets.
@@ -30,15 +50,17 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
           /// UIBox is the main widget.
           /// It's used to build the UI.
-          /// It requires a page [name].
+          /// It requires a component [name].
           body: UIBox(
             'Homepage',
 
+            controller: _controller,
+
             /// [placeholder] is the widget displayed while the page is loading.
-            placeholder: () => const CircularProgressIndicator(),
+            placeholder: const CircularProgressIndicator(),
 
             /// [errorWidget] is the widget displayed if an error occurs.
-            errorWidget: (error) => Text(error),
+            errorWidget: (error) => Text(error.toString()),
 
             /// [fit] is how the component should fit the parent.
             /// It can be [ComponentFit.absolute] or [ComponentFit.autoLayout].

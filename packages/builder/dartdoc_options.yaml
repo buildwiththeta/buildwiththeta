@@ -1,0 +1,11 @@
+dartdoc:
+  linkTo:
+    url: "https://docs.buildwiththeta.com"
+  nodoc: ['lib/main.dart', 'lib/main.reflectable']
+  exclude: [
+    "theta_open_widgets",
+    "theta_analytics",
+    "theta_rendering",
+    "theta_models",
+    "main.reflectable",
+  ]

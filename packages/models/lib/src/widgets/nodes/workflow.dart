@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:theta_models/theta_models.dart';
+import 'package:theta_models/src/enums/gestures.dart';
 
 class Workflow extends Equatable {
   const Workflow(

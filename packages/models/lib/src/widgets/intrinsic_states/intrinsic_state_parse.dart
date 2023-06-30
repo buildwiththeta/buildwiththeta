@@ -1,19 +1,12 @@
+import 'package:collection/collection.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:collection/collection.dart';
 
 class NodeTypeISKey extends Reflectable {
   const NodeTypeISKey()
       : super.fromList(const [
-          typeCapability,
-          declarationsCapability,
           metadataCapability,
-          newInstanceCapability,
-          staticInvokeCapability,
-          instanceInvokeCapability,
-          typeRelationsCapability,
-          invokingCapability,
           newInstanceCapability,
         ]);
 }
@@ -26,18 +19,7 @@ class NodeKey {
 }
 
 class IntrinsicStateReflector extends Reflectable {
-  const IntrinsicStateReflector()
-      : super(
-          typeCapability,
-          declarationsCapability,
-          metadataCapability,
-          newInstanceCapability,
-          staticInvokeCapability,
-          instanceInvokeCapability,
-          typeRelationsCapability,
-          invokingCapability,
-          newInstanceCapability,
-        );
+  const IntrinsicStateReflector() : super();
 }
 
 const dynamicIntrinsicStateReflector = IntrinsicStateReflector();

@@ -168,7 +168,9 @@ class $generatedClassName extends CNode {
   }
 
   @override
-  String toString() => '$generatedClassName { id: \$id, name: \$name, type: \$type, parentID: \$parentID, attributes: \$getAttributes, childOrder: \$childOrder, child: \$child, children: \$children }';
+  String toString() => '$generatedClassName { id: \$id, name: \$name, type: \$type }';
+
+  String toStringExtended() => '$generatedClassName { id: \$id, name: \$name, type: \$type, parentID: \$parentID, attributes: \$getAttributes, childOrder: \$childOrder, child: \$child, children: \$children }';
 }
     ''';
 
