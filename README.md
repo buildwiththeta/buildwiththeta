@@ -1,6 +1,6 @@
 # [Theta](https://buildwiththeta.com)
 
-## The open source way of designing remote UI
+## The open source way of designing remote design systems
 
 Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
@@ -10,19 +10,18 @@ Build your remote design system effortlessly, without writing code. Seamlessly i
 
 ## Why Theta?
 
-Designed to facilitate quick UI designing, Theta streamlines the creation of dynamic interfaces directly within your app clients. Theta is not a no-code app builder. Instead, it allows developers to incorporate Theta into their existing workflows, ensuring seamless integration without compromising on code quality. With Theta, you can design a responsive app bar and view it within a Flutter app in mere minutes.
+Theta simplifies the creation and maintenance of remote design systems. It allows the user interface of front-end applications on different platforms to be updated in real time from a central cloud, eliminating the need for users to download a new version. 
 
-Here are some of Theta's defining features:
+Remote design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
 
-### Available Features
+Theta offers several advantages:
 
-- **Absolute Positioning**: Design elements with absolute positioning, similar to Figma.
-- **Responsive Design**: Create responsive elements and interfaces.
-- **Theta Integration**: Incorporate Theta into your app using the Theta Flutter library.
-- **Code and No-Code Mix**: Use workflows to combine no-code and code, e.g., run a method when a node is tapped.
-- **Loading and Error Handling**: Efficiently manage loading and error handling in remote widgets.
-- **Light and Dark Modes**: Support for dark and light UI themes.
-- **Node Overrides**: Override any single node from your app.
+- **Flexibility and Control:** Theta provides a no-code environment for designing the UI, but it doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
+- **Mixing No-Code and Local Code:** Developers using Theta can override each node with their widgets, leveraging any technology stack. This approach enables a high degree of customization and flexibility, which is usually unavailable with traditional no-code solutions.
+- **Team Collaboration and Version Control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the app, a crucial aspect for maintaining app quality and addressing bugs or issues.
+- **Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions.
+- **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
+- **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
@@ -30,18 +29,15 @@ Here are some of Theta's defining features:
 - Email Support: Ideal for reporting problems with your personal projects.
 - Discord: Ideal for sharing projects and portfolios with the community. Only for invited users.
 
+## Supported Frameworks
+- [x] Flutter: ready on [pub.dev](https://pub.dev/packages/theta).
+- [ ] Swift: Working on it.
+
 ## Status
 - [x] Alpha: Experimental. Under intense development.
 - [x] Closed Beta: Still under development. Except bugs and errors.
 
 Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
-
-## Languages supported in docs
-
-- [en](https://docs.page/buildwiththeta/buildwiththeta/en)
-- [it](https://docs.page/buildwiththeta/buildwiththeta/it)
-- [es](https://docs.page/buildwiththeta/buildwiththeta/es)
-- [tr](https://docs.page/buildwiththeta/buildwiththeta/tr)
 
 ## Architecture
 
@@ -73,6 +69,13 @@ See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main
 
 Build with Theta packages are licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
+## Languages supported in docs
+
+- [en](https://docs.page/buildwiththeta/buildwiththeta/en)
+- [it](https://docs.page/buildwiththeta/buildwiththeta/it)
+- [es](https://docs.page/buildwiththeta/buildwiththeta/es)
+- [tr](https://docs.page/buildwiththeta/buildwiththeta/tr)
+
 ## Resources
 
 - [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
@@ -81,4 +84,4 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
 
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg"/>
+![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/banner-email-min.png)
