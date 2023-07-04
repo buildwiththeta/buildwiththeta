@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
+import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_rendering/theta_rendering.dart';
@@ -129,8 +130,22 @@ class __LogicBoxState extends State<_LogicBox> {
       _isLoaded = true;
     });
     if (_widget?.children?.length == 1 && widget.fit == null) {
-      context.read<TreeState>().onFitChanged(ComponentFit.autoLayout);
+      state.onFitChanged(ComponentFit.autoLayout);
     }
+    if (r.conversionEvents.isNotEmpty) {
+      final worksFromCloud = r.conversionEvents
+          .map((e) => Workflow(e.nodeID, e.trigger, () async {
+                await getIt<SendConversionEventUseCase>()(
+                  SendConversionEventUseCaseParams(
+                    eventID: e.id,
+                    abTestID: r.abTestID,
+                  ),
+                );
+              }))
+          .toList();
+      state.onWorkflowsChanged([...state.workflows, ...worksFromCloud]);
+    }
+    state.notify();
   }
 
   @override

@@ -144,6 +144,10 @@ class TreeState with ChangeNotifier {
     this.fit = fit;
   }
 
+  void onWorkflowsChanged(List<Workflow> workflows) {
+    this.workflows = workflows;
+  }
+
   void notify() {
     notifyListeners();
   }

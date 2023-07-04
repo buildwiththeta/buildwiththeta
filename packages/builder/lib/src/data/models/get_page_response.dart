@@ -7,10 +7,14 @@ class GetPageResponseEntity {
   GetPageResponseEntity({
     required this.pageID,
     required this.treeNodes,
+    this.conversionEvents = const [],
+    this.abTestID,
   });
 
   final String pageID;
   final CNode treeNodes;
+  final List<ConversionEvent> conversionEvents;
+  final ID? abTestID;
 
   static GetPageResponseEntity fromJson(Map<String, dynamic> json) {
     final nodes = (json['nodes'] as List<dynamic>)
@@ -21,6 +25,9 @@ class GetPageResponseEntity {
     return GetPageResponseEntity(
       pageID: json['page_id'],
       treeNodes: getIt<NodeRendering>().renderTree(nodes),
+      conversionEvents:
+          ConversionEvent.fromJsonList(json['conversion_events'] ?? []),
+      abTestID: json['ab_test'],
     );
   }
 
