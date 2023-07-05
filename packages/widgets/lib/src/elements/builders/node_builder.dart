@@ -5,18 +5,19 @@ import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
+import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/builders/workflow_executer.dart';
 
 class NodeBuilder extends StatefulWidget {
   const NodeBuilder({
     super.key,
-    required this.node,
-    required this.child,
+    required this.state,
     required this.onTap,
     required this.onPanStart,
+    required this.child,
   });
 
-  final CNode node;
+  final WidgetState state;
   final Widget child;
 
   final Function() onTap;
@@ -28,14 +29,14 @@ class NodeBuilder extends StatefulWidget {
 
 class _NodeBuilderState extends State<NodeBuilder> {
   BoxDecoration _handleDecorationChange(CNode? focusNode) =>
-      (focusNode?.id == widget.node.id)
+      (focusNode?.id == widget.state.node.id)
           ? BoxDecoration(
               border: Border.all(width: 2, color: Palette.blue),
             )
           : const BoxDecoration();
 
   EdgeInsets _handleMargins(TreeState state) =>
-      (widget.node.getAttributes[DBKeys.margins] as FMargins? ??
+      (widget.state.node.getAttributes[DBKeys.margins] as FMargins? ??
               const FMargins(
                   margins: [0, 0, 0, 0],
                   marginsTablet: [0, 0, 0, 0],
@@ -43,7 +44,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
           .get(state: state, context: context);
 
   EdgeInsets _handlePadding(TreeState state) =>
-      (widget.node.getAttributes[DBKeys.padding] as FMargins? ??
+      (widget.state.node.getAttributes[DBKeys.padding] as FMargins? ??
               const FMargins(
                   margins: [0, 0, 0, 0],
                   marginsTablet: [0, 0, 0, 0],
@@ -51,7 +52,8 @@ class _NodeBuilderState extends State<NodeBuilder> {
           .get(state: state, context: context);
 
   bool _handleVisibility(TreeState state) {
-    final visibility = widget.node.getAttributes[DBKeys.visibility] as bool?;
+    final visibility =
+        widget.state.node.getAttributes[DBKeys.visibility] as bool?;
     return (visibility == false)
         ? false
         : ((visibility ?? true) && state.forPlay)
@@ -60,60 +62,77 @@ class _NodeBuilderState extends State<NodeBuilder> {
   }
 
   bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1200
-      ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
+      ? (widget.state.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ??
+          true)
       : MediaQuery.of(context).size.width > 834
-          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          ? (widget.state.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ??
+              true)
           : MediaQuery.of(context).size.width > 600
-              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+              ? (widget.state.node.getAttributes[DBKeys.visibleOnTablet]
+                      as bool? ??
                   true)
-              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+              : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
+                      as bool? ??
                   true);
 
   bool _handleNotPlayVisibility(TreeState state) => state.deviceType ==
           DeviceType.desktop
-      ? (widget.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ?? true)
+      ? (widget.state.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ??
+          true)
       : state.deviceType == DeviceType.laptop
-          ? (widget.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ?? true)
+          ? (widget.state.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ??
+              true)
           : state.deviceType == DeviceType.tablet
-              ? (widget.node.getAttributes[DBKeys.visibleOnTablet] as bool? ??
+              ? (widget.state.node.getAttributes[DBKeys.visibleOnTablet]
+                      as bool? ??
                   true)
-              : (widget.node.getAttributes[DBKeys.visibleOnMobile] as bool? ??
+              : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
+                      as bool? ??
                   true);
 
   Widget handleSlideAnimation(CNode node, Widget child) {
     if (node.getAttributes[DBKeys.slideAnimationEnabled] as bool? ?? false) {
       return SlideAnimation(
-        child: widget.child,
+        child: child,
       );
     }
-    return widget.child;
+    return child;
   }
 
   Widget handleScaleAnimation(CNode node, Widget child) {
     if (node.getAttributes[DBKeys.scaleAnimationEnabled] as bool? ?? false) {
       return ScaleAnimation(
-        child: widget.child,
+        child: child,
       );
     }
-    return widget.child;
+    return child;
   }
 
   Widget handleFadeInAnimation(CNode node, Widget child) {
     if (node.getAttributes[DBKeys.fadeAnimationEnabled] as bool? ?? false) {
       return FadeInAnimation(
-        child: widget.child,
+        child: child,
       );
     }
-    return widget.child;
+    return child;
   }
 
   double _handleRotation(TreeState state) => double.parse(
-      (widget.node.getAttributes[DBKeys.rotation] as FTextTypeInput?)?.value ??
+      (widget.state.node.getAttributes[DBKeys.rotation] as FTextTypeInput?)
+              ?.value ??
           '0');
 
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
+    final override = const NodeOverrideExecuter().executeBuilder(
+      context,
+      widget.state.node,
+      
+    );
+    if (override != null) {
+      return override;
+    }
     return Visibility(
       visible: _handleVisibility(state),
       child: Padding(
@@ -126,17 +145,17 @@ class _NodeBuilderState extends State<NodeBuilder> {
             child: Padding(
               padding: _handlePadding(state),
               child: GestureDetectorInEditor(
-                node: widget.node,
+                node: widget.state.node,
                 onTap: widget.onTap,
                 onPanStart: widget.onPanStart,
                 child: GestureDetectorForPlay(
-                  node: widget.node,
+                  state: widget.state,
                   child: handleSlideAnimation(
-                    widget.node,
+                    widget.state.node,
                     handleScaleAnimation(
-                      widget.node,
+                      widget.state.node,
                       handleFadeInAnimation(
-                        widget.node,
+                        widget.state.node,
                         widget.child,
                       ),
                     ),
@@ -184,11 +203,11 @@ class GestureDetectorInEditor extends StatelessWidget {
 class GestureDetectorForPlay extends StatefulWidget {
   const GestureDetectorForPlay({
     super.key,
-    required this.node,
+    required this.state,
     required this.child,
   });
 
-  final CNode node;
+  final WidgetState state;
   final Widget child;
 
   @override
@@ -203,8 +222,8 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
     super.initState();
     final state = context.read<TreeState>();
     executer = WorkflowExecuter(
-      nodeID: widget.node.id,
-      nodeName: widget.node.name!,
+      nodeID: widget.state.node.id,
+      nodeName: widget.state.node.name!,
       workflows: state.workflows,
     );
   }

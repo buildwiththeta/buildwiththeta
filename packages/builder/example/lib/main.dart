@@ -72,14 +72,25 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'node id',
-              )..setChild(const UIBox('ComponentName')),
+                'e844aab0-15cc-11ee-a3cd-33f0978e6b7c',
+                builder: (context, node, child, children) {
+                  return GestureDetector(
+                    onTap: () {
+                      debugPrint('Tapped!');
+                    },
+                    child: Container(
+                      color: Colors.black,
+                      child: child,
+                    ),
+                  );
+                },
+              ),
 
               Override(
                 'fd0578d0-15cc-11ee-a3cd-33f0978e6b7c',
-              )
-                ..setText('Click me aaaaa!')
-                ..setColor(Colors.red, 1),
+                text: 'Click me!',
+                color: Colors.blue,
+              ),
 
               Override(
                 'node id 2',

@@ -40,6 +40,27 @@ class NodeOverrideExecuter extends Equatable {
     return null;
   }
 
+  Widget? executeBuilder(BuildContext context, CNode node) {
+    final nodeOverrides = context.read<TreeState>().nodeOverrides;
+    final override = nodeOverrides.firstWhereOrNull(
+      (e) =>
+          e.node == node.name || e.node == node.id || e.node == node.stabilID,
+    );
+    if (override?.builder == null) {
+      return null;
+    }
+    return override?.builder?.call(
+      context,
+      node,
+      node.child
+          ?.toWidget(context: context, state: WidgetState(node: node, loop: 0)),
+      node.children
+          ?.map((e) => e.toWidget(
+              context: context, state: WidgetState(node: e, loop: 0)))
+          .toList(),
+    );
+  }
+
   FFill executeColor(
       BuildContext context, WidgetState state, FFill originalFill) {
     final override = checkOverride(context, state, overridesTextValue);
@@ -62,7 +83,7 @@ class NodeOverrideExecuter extends Equatable {
       BuildContext context, WidgetState state, String originalImageValue) {
     final override = checkOverride(context, state, overridesImageValue);
     return override?.properties
-            .firstWhereOrNull((e) => e is TextProperty)
+            .firstWhereOrNull((e) => e is ImageProperty)
             ?.value ??
         originalImageValue;
   }

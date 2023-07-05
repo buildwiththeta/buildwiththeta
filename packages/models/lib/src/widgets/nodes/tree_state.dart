@@ -151,6 +151,10 @@ class TreeState with ChangeNotifier {
     this.nodeComponentID = nodeComponentID;
   }
 
+  void onWorkflowsChanged(List<Workflow> workflows) {
+    this.workflows = workflows;
+  }
+
   void notify() {
     notifyListeners();
   }

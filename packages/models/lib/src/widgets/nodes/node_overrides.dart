@@ -2,6 +2,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 
+typedef BuilderFunction = Widget Function(
+    BuildContext, CNode, Widget?, List<Widget>?);
+
 enum NodeProperties {
   child,
   children,
@@ -13,11 +16,27 @@ enum NodeProperties {
 /// A class that represents a node override.
 class Override extends Equatable {
   /// Creates a node override.
-  Override(this.node, {this.component});
+  Override(this.node,
+      {this.builder,
+      this.component,
+      final Color? color,
+      final String? image,
+      final String? text}) {
+    if (color != null) {
+      setColor(color, 1.0);
+    }
+    if (image != null) {
+      setImage(image);
+    }
+    if (text != null) {
+      setText(text);
+    }
+  }
 
   final String node;
   final String? component;
   final List<NodeProperty> properties = [];
+  final BuilderFunction? builder;
 
   void setChild(Widget child) => properties.add(ChildProperty(child: child));
 
@@ -31,9 +50,10 @@ class Override extends Equatable {
   void setColor(Color color, double opacity) => properties.add(FillProperty(
           fill: FFill(levels: [
         FFillElement(
-            color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
-            stop: 0,
-            opacity: opacity)
+          color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
+          stop: 0,
+          opacity: opacity,
+        )
       ])));
 
   @override
