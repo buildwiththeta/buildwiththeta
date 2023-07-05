@@ -101,7 +101,9 @@ class __LogicBoxState extends State<_LogicBox> {
 
     /// Sets the load callback in the controller.
     /// It's used to load the component programmatically.
-    widget.controller?._setLoadCallback(load);
+    if (widget.controller != null) {
+      widget.controller!._setLoadCallback(load);
+    }
 
     /// Loads the component from the server when the widget is initialized.
     load();
@@ -117,7 +119,9 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.
   void onError(Exception error) {
-    widget.controller?._triggerError(error);
+    if (widget.controller != null) {
+      widget.controller!._triggerError(error);
+    }
     setState(() => _error = error);
   }
 

@@ -100,9 +100,7 @@ class ComponentDefaultAttributes extends DefaultAttributesAdapter {
   const ComponentDefaultAttributes();
 
   @override
-  Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.componentFit: ComponentFit.absolute,
-      };
+  Map<String, dynamic> get get => const <String, dynamic>{};
 
   ComponentDefaultAttributes.create() : this();
 }
@@ -274,11 +272,9 @@ class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.fill: FFill(
           paletteStyle: 'Background / Primary',
         ),
-        DBKeys.showAppBar: true,
-        DBKeys.showBottomBar: true,
-        DBKeys.showDrawer: false,
         DBKeys.flag: true,
         DBKeys.isBoxed: false,
+        DBKeys.componentFit: 'absolute',
       };
 
   ScaffoldDefaultAttributes.create() : this();
