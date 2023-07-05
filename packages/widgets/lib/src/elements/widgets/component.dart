@@ -16,10 +16,12 @@ class OpenWComponent extends StatefulWidget {
     super.key,
     required this.state,
     required this.componentChildren,
+    required this.fit,
   });
 
   final WidgetState state;
   final List<CNode> componentChildren;
+  final ComponentFit fit;
 
   @override
   State<OpenWComponent> createState() => _OpenWComponentState();
@@ -45,6 +47,7 @@ class _OpenWComponentState extends State<OpenWComponent> {
     return ChangeNotifierProvider(
       create: (_) => globalState.copyWith(
         nodeComponentID: widget.state.node.id,
+        fit: widget.fit,
       ),
       child: NodeBuilder(
         onTap: () {

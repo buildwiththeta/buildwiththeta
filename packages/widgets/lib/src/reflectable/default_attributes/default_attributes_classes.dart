@@ -100,7 +100,9 @@ class ComponentDefaultAttributes extends DefaultAttributesAdapter {
   const ComponentDefaultAttributes();
 
   @override
-  Map<String, dynamic> get get => const <String, dynamic>{};
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.componentFit: ComponentFit.absolute,
+      };
 
   ComponentDefaultAttributes.create() : this();
 }

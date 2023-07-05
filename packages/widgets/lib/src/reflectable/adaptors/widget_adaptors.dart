@@ -440,6 +440,7 @@ class ComponentAdapter extends WidgetAdapter {
         key: ValueKey(state.node.id),
         state: state,
         componentChildren: state.node.componentChildren,
+        fit: state.node.getAttributes[DBKeys.componentFit] as ComponentFit,
       );
 
   ComponentAdapter.create() : this();

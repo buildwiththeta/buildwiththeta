@@ -248,4 +248,5 @@ class DBKeys {
 
   static const String stringDropdown = 'StringDropdownValue';
   static const String isListView = 'isListView';
+  static const String componentFit = 'componentFit';
 }
