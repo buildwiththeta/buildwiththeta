@@ -1,6 +1,5 @@
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:uuid/uuid.dart';
 
 final defaultProject = ProjectEntity(
   id: 'a',
@@ -23,15 +22,8 @@ const defaultPage = PageEntity(
   id: 'a',
   branchID: 'a',
   name: 'Homepage',
+  stabilID: 'a',
 );
 final defaultNodes = [
-  const NodesParse().fromJson(NType.scaffold, {
-    'id': const Uuid().v1(),
-    'name': 'Scaffold',
-    'type': NType.scaffold,
-    'properties': {},
-    'rect_properties': {},
-    'parent_id': '',
-    'page_id': 'a',
-  })!
+  ScaffoldOpenNode(id: 'a'),
 ];

@@ -18,6 +18,9 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
+scripts:
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
+
 environment:
   sdk: '>=3.0.0 <4.0.0'
 
@@ -35,10 +38,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  theta_design_system: ^0.1.0-dev.1
-  theta_models: ^0.1.0
-  theta_open_widgets: ^0.1.0-dev.1
-  theta_rendering: ^0.1.0-dev.1
+  theta_design_system: ^0.1.1
+  theta_models: ^0.2.1
+  theta_rendering: ^0.1.2
+  theta_open_widgets: ^0.2.3
+  
   adaptive_theme: ^3.3.0
   uuid: ^3.0.7
   either_dart: ^0.4.0
@@ -48,6 +52,8 @@ dependencies:
   flutter_box_transform: ^0.2.1
   freezed_annotation: ^2.2.0
   get_it: ^7.6.0
+  flutter_svg: ^2.0.7
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +85,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
