@@ -13,9 +13,10 @@ enum NodeProperties {
 /// A class that represents a node override.
 class Override extends Equatable {
   /// Creates a node override.
-  Override(this.node);
+  Override(this.node, {this.component});
 
   final String node;
+  final String? component;
   final List<NodeProperty> properties = [];
 
   void setChild(Widget child) => properties.add(ChildProperty(child: child));
@@ -37,6 +38,56 @@ class Override extends Equatable {
 
   @override
   List<Object> get props => [node, properties];
+
+  Override fromJson(Map<String, dynamic> json) {
+    final override = Override(json['node'] as String);
+    final properties = json['properties'] as List<dynamic>;
+    for (final property in properties) {
+      switch (property['property'] as String) {
+        case 'child':
+          override.setChild(property['value'] as Widget);
+          break;
+        case 'children':
+          override.setChildren(property['value'] as List<Widget>);
+          break;
+        case 'textData':
+          override.setText(property['value'] as String);
+          break;
+        case 'imageData':
+          override.setImage(property['value'] as String);
+          break;
+        case 'fill':
+          final fill = property['value'] as Map<String, dynamic>;
+          override.setColor(
+              Color(int.parse(fill['color'] as String, radix: 16)),
+              fill['opacity'] as double);
+          break;
+        default:
+          break;
+      }
+    }
+    return override;
+  }
+
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+    json['node'] = node;
+    json['properties'] = properties.map((property) {
+      final json = <String, dynamic>{};
+      json['property'] = property.property.toString().split('.').last;
+      if (property.property == NodeProperties.fill) {
+        final fill = property.value as FFill;
+        json['value'] = {
+          'color': fill.levels.first.color,
+          'opacity': fill.levels.first.opacity
+        };
+        return json;
+      }
+      json['value'] = property.value;
+      return json;
+    }).toList();
+    return json;
+  }
 
   @override
   String toString() =>
@@ -70,7 +121,7 @@ class TextProperty extends NodeProperty {
 class ImageProperty extends NodeProperty {
   const ImageProperty({
     required this.imageData,
-  }) : super(NodeProperties.textData, imageData);
+  }) : super(NodeProperties.imageData, imageData);
 
   final String imageData;
 
@@ -103,7 +154,7 @@ class ChildrenProperty extends NodeProperty {
 class FillProperty extends NodeProperty {
   const FillProperty({
     required this.fill,
-  }) : super(NodeProperties.children, fill);
+  }) : super(NodeProperties.fill, fill);
 
   final FFill fill;
 

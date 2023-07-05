@@ -2,7 +2,6 @@ import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:uuid/uuid.dart';
 
 /// CNode is the mother of all sub node classes.
 /// CNode = Custom Node.
@@ -58,8 +57,7 @@ abstract class CNode extends Equatable {
     PageID componentID,
     List<CNode> children,
   ) {
-    final childrenFake = createFakeChildren(children);
-    return _addChildrenToComponent(componentID, childrenFake);
+    return _addChildrenToComponent(componentID, children);
   }
 
   void _addChildrenToComponent(PageID componentID, List<CNode> children,
@@ -92,33 +90,6 @@ abstract class CNode extends Equatable {
     }
 
     topComponentsIds.remove(this.componentID);
-  }
-
-  // Method to create fake children for the component children.
-  List<CNode> createFakeChildren(List<CNode> children) {
-    List<CNode> copyChildren = [];
-    Map<String, CNode> nodeMap = {};
-
-    for (var node in children) {
-      CNode copyNode = node.copyWith(id: Uuid().v1());
-      nodeMap[node.id] = copyNode;
-    }
-
-    for (var node in children) {
-      if (node.parentID != null) {
-        var parent = nodeMap[node.parentID];
-        if (parent != null) {
-          var copyNode = nodeMap[node.id];
-          copyNode = copyNode!.copyWith(parentID: parent.id);
-          copyChildren.add(copyNode);
-        }
-      } else {
-        var copyNode = nodeMap[node.id];
-        copyChildren.add(copyNode!);
-      }
-    }
-
-    return copyChildren;
   }
 
   static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);

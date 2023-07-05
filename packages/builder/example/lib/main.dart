@@ -8,7 +8,8 @@ Future<void> main() async {
     cacheEnabled: false,
 
     /// Example key
-    anonKey: '',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiJlNmFkODFiYy1jZDRhLTRkNzktOWM0MC04ODBlYmI2MTFhOTUiLCJhbm9uX2tleSI6ImI5NmM3NWI1LTkzZTEtNGFlZS05YmQ2LWNmMzQ3ZTBiMDVmOCIsImlhdCI6MTY4ODU1MzgxNiwiZXhwIjoxNzIwMTExNDE2LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.eWUqCU9E63Nh5uLg_NFZs5dsZ9Qu9ckzyfmg18aXedg',
   );
 
   runApp(const MyApp());
@@ -52,7 +53,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Homepage',
+            'Untitled 4',
 
             controller: _controller,
 
@@ -75,9 +76,9 @@ class _MyAppState extends State<MyApp> {
               )..setChild(const UIBox('ComponentName')),
 
               Override(
-                'node id',
+                'fd0578d0-15cc-11ee-a3cd-33f0978e6b7c',
               )
-                ..setText('Click me!')
+                ..setText('Click me aaaaa!')
                 ..setColor(Colors.red, 1),
 
               Override(

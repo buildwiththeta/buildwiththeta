@@ -21,13 +21,19 @@ class NodeOverrideExecuter extends Equatable {
 
   Override? checkOverride(BuildContext context, WidgetState state,
       bool Function(Override override) condition) {
-    final nodeOverrides = context.read<TreeState>().nodeOverrides;
-    final override = nodeOverrides.firstWhereOrNull(
-      (e) =>
-          e.node == state.node.name ||
+    final treeState = context.read<TreeState>();
+    final nodeOverrides = treeState.nodeOverrides;
+    final override = nodeOverrides.firstWhereOrNull((e) {
+      if (e.component != null) {
+        return e.component == treeState.nodeComponentID &&
+            (e.node == state.node.name ||
+                e.node == state.node.id ||
+                e.node == state.node.stabilID);
+      }
+      return e.node == state.node.name ||
           e.node == state.node.id ||
-          e.node == state.node.stabilID,
-    );
+          e.node == state.node.stabilID;
+    });
     if (override != null && condition(override)) {
       return override;
     }

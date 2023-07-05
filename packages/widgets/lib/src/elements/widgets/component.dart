@@ -5,14 +5,20 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
 class OpenWComponent extends StatefulWidget {
   const OpenWComponent({
     super.key,
+    required this.node,
     required this.componentChildren,
   });
+
+  final CNode node;
   final List<CNode> componentChildren;
 
   @override
@@ -30,14 +36,34 @@ class _OpenWComponentState extends State<OpenWComponent> {
 
   @override
   Widget build(BuildContext context) {
-    const NodeRendering nodeRendering = NodeRendering();
     if (componentChildren.isEmpty) {
       return const Placeholder();
     }
-    final widget = nodeRendering.renderTree(componentChildren);
-    return widget.toWidget(
-      context: context,
-      state: WidgetState(node: widget, loop: 0),
+    const NodeRendering nodeRendering = NodeRendering();
+    final widget0 = nodeRendering.renderTree(componentChildren);
+    final globalState = context.watch<TreeState>();
+    return ChangeNotifierProvider(
+      create: (_) => globalState.copyWith(
+        nodeComponentID: widget.node.id,
+      ),
+      child: NodeBuilder(
+        onTap: () {
+          TreeGlobalState.onNodeFocused(widget.node);
+          setState(() {});
+        },
+        onPanStart: () {
+          TreeGlobalState.onNodeFocused(widget.node);
+          setState(() {});
+        },
+        node: widget.node,
+        child: IgnorePointer(
+          ignoring: !globalState.forPlay,
+          child: widget0.toWidget(
+            context: context,
+            state: WidgetState(node: widget0, loop: 0),
+          ),
+        ),
+      ),
     );
   }
 }
