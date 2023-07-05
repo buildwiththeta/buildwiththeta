@@ -14,11 +14,11 @@ import 'package:theta_rendering/theta_rendering.dart';
 class OpenWComponent extends StatefulWidget {
   const OpenWComponent({
     super.key,
-    required this.node,
+    required this.state,
     required this.componentChildren,
   });
 
-  final CNode node;
+  final WidgetState state;
   final List<CNode> componentChildren;
 
   @override
@@ -44,18 +44,18 @@ class _OpenWComponentState extends State<OpenWComponent> {
     final globalState = context.watch<TreeState>();
     return ChangeNotifierProvider(
       create: (_) => globalState.copyWith(
-        nodeComponentID: widget.node.id,
+        nodeComponentID: widget.state.node.id,
       ),
       child: NodeBuilder(
         onTap: () {
-          TreeGlobalState.onNodeFocused(widget.node);
+          TreeGlobalState.onNodeFocused(widget.state.node);
           setState(() {});
         },
         onPanStart: () {
-          TreeGlobalState.onNodeFocused(widget.node);
+          TreeGlobalState.onNodeFocused(widget.state.node);
           setState(() {});
         },
-        node: widget.node,
+        state: widget.state,
         child: IgnorePointer(
           ignoring: !globalState.forPlay,
           child: widget0.toWidget(
