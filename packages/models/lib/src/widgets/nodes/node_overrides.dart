@@ -16,12 +16,14 @@ enum NodeProperties {
 /// A class that represents a node override.
 class Override extends Equatable {
   /// Creates a node override.
-  Override(this.node,
-      {this.builder,
-      this.component,
-      final Color? color,
-      final String? image,
-      final String? text}) {
+  Override(
+    this.node, {
+    this.builder,
+    this.component,
+    final Color? color,
+    final String? image,
+    final String? text,
+  }) {
     if (color != null) {
       setColor(color, 1.0);
     }
