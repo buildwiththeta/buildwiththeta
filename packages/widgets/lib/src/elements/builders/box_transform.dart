@@ -113,7 +113,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
                 TreeGlobalState.onNodeFocused(widget.node);
                 setState(() {});
               },
-              node: widget.node,
+              state: WidgetState(node: widget.node, loop: 0),
               child: widget.node.toWidget(
                 context: context,
                 state: WidgetState(node: widget.node, loop: 0),
@@ -138,7 +138,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
               TreeGlobalState.onNodeFocused(widget.node);
               setState(() {});
             },
-            node: widget.node,
+            state: WidgetState(node: widget.node, loop: 0),
             child: widget.node.toWidget(
               context: context,
               state: WidgetState(node: widget.node, loop: 0),
@@ -318,7 +318,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
             TreeGlobalState.onNodeFocused(widget.node);
             setState(() {});
           },
-          node: widget.node,
+          state: WidgetState(node: widget.node, loop: 0),
           child: widget.node.toWidget(
             context: context,
             state: WidgetState(node: widget.node, loop: 0),

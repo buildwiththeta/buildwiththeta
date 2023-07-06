@@ -3,6 +3,7 @@ import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/local_component_service.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/domain/repositories/component_repository.dart';
+import 'package:theta/theta.dart';
 
 class ComponentRepositoryImpl implements ComponentRepository {
   const ComponentRepositoryImpl(
@@ -28,6 +29,17 @@ class ComponentRepositoryImpl implements ComponentRepository {
       return Right(res);
     } catch (e) {
       _localComponentService.clearCache();
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Exception, void>> sendConversionEvent(
+      ID eventID, ID? abTestID) async {
+    try {
+      await _componentService.sendConversionEvent(eventID, abTestID);
+      return const Right(null);
+    } catch (e) {
       return Left(Exception(e.toString()));
     }
   }

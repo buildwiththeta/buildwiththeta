@@ -297,9 +297,6 @@ class ScaffoldAdapter extends WidgetAdapter {
         fill: state.node.getAttributes[DBKeys.fill] as FFill,
         flag: state.node.getAttributes[DBKeys.flag] as bool,
         isBoxed: state.node.getAttributes[DBKeys.isBoxed] as bool,
-        showAppBar: state.node.getAttributes[DBKeys.showAppBar] as bool,
-        showBottomBar: state.node.getAttributes[DBKeys.showBottomBar] as bool,
-        showDrawer: state.node.getAttributes[DBKeys.showDrawer] as bool,
         isScrollable: false,
         isClipped: false,
         bodyExtended: false,
@@ -438,6 +435,7 @@ class ComponentAdapter extends WidgetAdapter {
   }) =>
       OpenWComponent(
         key: ValueKey(state.node.id),
+        state: state,
         componentChildren: state.node.componentChildren,
       );
 

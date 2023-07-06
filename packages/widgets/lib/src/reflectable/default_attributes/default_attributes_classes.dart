@@ -272,11 +272,9 @@ class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.fill: FFill(
           paletteStyle: 'Background / Primary',
         ),
-        DBKeys.showAppBar: true,
-        DBKeys.showBottomBar: true,
-        DBKeys.showDrawer: false,
         DBKeys.flag: true,
         DBKeys.isBoxed: false,
+        DBKeys.componentFit: 'absolute',
       };
 
   ScaffoldDefaultAttributes.create() : this();

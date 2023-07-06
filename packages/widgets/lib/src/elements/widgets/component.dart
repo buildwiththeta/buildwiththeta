@@ -5,14 +5,21 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
 class OpenWComponent extends StatefulWidget {
   const OpenWComponent({
     super.key,
+    required this.state,
     required this.componentChildren,
   });
+
+  final WidgetState state;
   final List<CNode> componentChildren;
 
   @override
@@ -30,14 +37,38 @@ class _OpenWComponentState extends State<OpenWComponent> {
 
   @override
   Widget build(BuildContext context) {
-    const NodeRendering nodeRendering = NodeRendering();
     if (componentChildren.isEmpty) {
       return const Placeholder();
     }
-    final widget = nodeRendering.renderTree(componentChildren);
-    return widget.toWidget(
-      context: context,
-      state: WidgetState(node: widget, loop: 0),
+    const NodeRendering nodeRendering = NodeRendering();
+    final widget0 = nodeRendering.renderTree(componentChildren);
+    final globalState = context.watch<TreeState>();
+    Logger.printWarning('widget0: $widget0');
+    return ChangeNotifierProvider(
+      create: (_) => globalState.copyWith(
+        nodeComponentID: widget.state.node.id,
+        fit: widget0.getAttributes[DBKeys.componentFit] == 'absolute'
+            ? ComponentFit.absolute
+            : ComponentFit.autoLayout,
+      ),
+      child: NodeBuilder(
+        onTap: () {
+          TreeGlobalState.onNodeFocused(widget.state.node);
+          setState(() {});
+        },
+        onPanStart: () {
+          TreeGlobalState.onNodeFocused(widget.state.node);
+          setState(() {});
+        },
+        state: widget.state,
+        child: IgnorePointer(
+          ignoring: !globalState.forPlay,
+          child: widget0.toWidget(
+            context: context,
+            state: WidgetState(node: widget0, loop: 0),
+          ),
+        ),
+      ),
     );
   }
 }

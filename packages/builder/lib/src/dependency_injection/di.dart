@@ -12,6 +12,7 @@ import 'package:theta/src/domain/repositories/component_repository.dart';
 import 'package:theta/src/domain/repositories/styles_repository.dart';
 import 'package:theta/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
@@ -43,7 +44,8 @@ Future<void> initializeDependencyInjection(
 
   getIt
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))
-    ..registerLazySingleton(() => GetStylesUseCase(getIt()));
+    ..registerLazySingleton(() => GetStylesUseCase(getIt()))
+    ..registerLazySingleton(() => SendConversionEventUseCase(getIt()));
 
   getIt.registerLazySingleton(() => ThetaClient(getIt(), getIt()));
 }

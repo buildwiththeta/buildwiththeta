@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
+import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_rendering/theta_rendering.dart';
@@ -100,7 +101,9 @@ class __LogicBoxState extends State<_LogicBox> {
 
     /// Sets the load callback in the controller.
     /// It's used to load the component programmatically.
-    widget.controller?._setLoadCallback(load);
+    if (widget.controller != null) {
+      widget.controller!._setLoadCallback(load);
+    }
 
     /// Loads the component from the server when the widget is initialized.
     load();
@@ -116,7 +119,9 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.
   void onError(Exception error) {
-    widget.controller?._triggerError(error);
+    if (widget.controller != null) {
+      widget.controller!._triggerError(error);
+    }
     setState(() => _error = error);
   }
 
@@ -129,8 +134,22 @@ class __LogicBoxState extends State<_LogicBox> {
       _isLoaded = true;
     });
     if (_widget?.children?.length == 1 && widget.fit == null) {
-      context.read<TreeState>().onFitChanged(ComponentFit.autoLayout);
+      state.onFitChanged(ComponentFit.autoLayout);
     }
+    if (r.conversionEvents.isNotEmpty) {
+      final worksFromCloud = r.conversionEvents
+          .map((e) => Workflow(e.nodeID, e.trigger, () async {
+                await getIt<SendConversionEventUseCase>()(
+                  SendConversionEventUseCaseParams(
+                    eventID: e.id,
+                    abTestID: r.abTestID,
+                  ),
+                );
+              }))
+          .toList();
+      state.onWorkflowsChanged([...state.workflows, ...worksFromCloud]);
+    }
+    state.notify();
   }
 
   @override
