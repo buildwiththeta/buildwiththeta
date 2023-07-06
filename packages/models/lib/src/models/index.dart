@@ -18,9 +18,6 @@ export 'hex_color.dart';
 export 'branch_action_log.dart';
 export 'branch_json_log.dart';
 export 'branch_json_file.dart';
-<<<<<<< HEAD
 export 'component_sharing.dart';
 export 'component_json_file.dart';
-=======
 export 'conversion_event.dart';
->>>>>>> feat/component
