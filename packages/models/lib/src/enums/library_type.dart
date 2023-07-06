@@ -1,0 +1,4 @@
+enum LibraryType {
+  team,
+  public,
+}
