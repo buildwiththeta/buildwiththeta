@@ -26,6 +26,8 @@ abstract class CNode extends Equatable {
     this.child,
     this.children = const [],
     this.childOrder = 0,
+    this.componentID,
+    this.componentChildren = const [],
     this.isLocked = false,
   })  : _defaultAttributes = defaultAttributes,
         _attributes = attributes,
@@ -46,6 +48,96 @@ abstract class CNode extends Equatable {
       marginsDesktop: [0, 0, 0, 0],
     ),
   };
+
+  // all the children of the component
+  final List<CNode> componentChildren;
+
+  CNode addChildrenToComponent(
+    PageID componentID,
+    List<CNode> children,
+  ) {
+    return _addChildrenToComponent(this, componentID, children);
+  }
+
+  CNode _addChildrenToComponent(
+      CNode currentNode, PageID componentID, List<CNode> children,
+      {Set<PageID>? topComponentsIds}) {
+    topComponentsIds ??= {};
+
+    if (topComponentsIds.isEmpty) {
+      topComponentsIds.add(currentNode.pageID!);
+    }
+    if (currentNode.pageID == componentID ||
+        topComponentsIds.contains(currentNode.componentID)) {
+      return currentNode;
+    }
+
+    topComponentsIds.add(currentNode.componentID!);
+
+    List<CNode> newComponentChildren = List.from(currentNode.componentChildren);
+
+    for (var child in children) {
+      if (componentID == child.pageID &&
+          componentID == currentNode.componentID) {
+        if (child.type == NType.component &&
+            !topComponentsIds.contains(child.componentID)) {
+          if (!child.componentChildren.contains(currentNode)) {
+            child._addChildrenToComponent(
+              child,
+              child.componentID!,
+              children,
+              topComponentsIds: topComponentsIds,
+            );
+          }
+        }
+        newComponentChildren.add(child);
+      }
+    }
+
+    topComponentsIds.remove(currentNode.componentID);
+
+    return currentNode.copyWith(componentChildren: newComponentChildren);
+  }
+
+  // Method to add children to a component node using the component ID.
+  /*void addChildrenToComponent(
+    PageID componentID,
+    List<CNode> children,
+  ) {
+    return _addChildrenToComponent(componentID, children);
+  }
+
+  void _addChildrenToComponent(PageID componentID, List<CNode> children,
+      {Set<PageID>? topComponentsIds}) {
+    topComponentsIds ??= {};
+
+    if (topComponentsIds.isEmpty) {
+      topComponentsIds.add(pageID!);
+    }
+    if (pageID == componentID || topComponentsIds.contains(this.componentID)) {
+      return;
+    }
+
+    topComponentsIds.add(this.componentID!);
+
+    for (var child in children) {
+      if (componentID == child.pageID && componentID == this.componentID) {
+        if (child.type == NType.component &&
+            !topComponentsIds.contains(child.componentID)) {
+          if (!child.componentChildren.contains(this)) {
+            child._addChildrenToComponent(
+              child.componentID!,
+              children,
+              topComponentsIds: topComponentsIds,
+            );
+          }
+        }
+        componentChildren.add(child);
+      }
+    }
+
+    topComponentsIds.remove(this.componentID);
+  }*/
 
   static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
   static const defaultRProperties = RectProperties(
@@ -122,6 +214,9 @@ abstract class CNode extends Equatable {
 
   /// The page id of the node
   final PageID? pageID;
+
+  /// The component id of the node
+  final PageID? componentID;
 
   /// If the node is locked or not
   final bool isLocked;
@@ -222,6 +317,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
       'is_locked': isLocked,
     };
   }
@@ -239,6 +335,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
       'is_locked': isLocked,
     };
   }
@@ -256,6 +353,7 @@ abstract class CNode extends Equatable {
       'rect_properties': rectPropertiesToJson(),
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
+      'component_id': componentID,
       'is_locked': isLocked,
     };
   }
@@ -274,6 +372,7 @@ abstract class CNode extends Equatable {
       'updated_at': updatedAt.toIso8601String(),
       'child_order': childOrder,
       'page_id': pageID,
+      'component_id': componentID,
       'is_locked': isLocked,
     };
   }
@@ -310,6 +409,8 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   });
 
@@ -327,6 +428,8 @@ abstract class CNode extends Equatable {
     DateTime updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   });
 
@@ -376,7 +479,10 @@ abstract class CNode extends Equatable {
         hideHandlesWhenNotResizable,
         updatedAt,
         pageID,
+        stabilID,
+        componentID,
         isLocked,
+        componentChildren,
       ];
 
   @override

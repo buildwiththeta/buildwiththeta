@@ -23,6 +23,8 @@ class AlignOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -43,6 +45,8 @@ class AlignOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -60,6 +64,8 @@ class AlignOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       AlignOpenNode(
@@ -74,6 +80,8 @@ class AlignOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -91,6 +99,8 @@ class AlignOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       AlignOpenNode(
@@ -105,6 +115,8 @@ class AlignOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -136,6 +148,7 @@ class AlignOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -164,6 +177,8 @@ class ButtonOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -184,6 +199,8 @@ class ButtonOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -201,6 +218,8 @@ class ButtonOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ButtonOpenNode(
@@ -215,6 +234,8 @@ class ButtonOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -232,6 +253,8 @@ class ButtonOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ButtonOpenNode(
@@ -246,6 +269,8 @@ class ButtonOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -277,6 +302,7 @@ class ButtonOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -305,6 +331,8 @@ class ColumnOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -325,6 +353,8 @@ class ColumnOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -342,6 +372,8 @@ class ColumnOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ColumnOpenNode(
@@ -356,6 +388,8 @@ class ColumnOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -373,6 +407,8 @@ class ColumnOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ColumnOpenNode(
@@ -387,6 +423,8 @@ class ColumnOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -418,6 +456,7 @@ class ColumnOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -446,6 +485,8 @@ class ComponentOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -466,6 +507,8 @@ class ComponentOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -483,6 +526,8 @@ class ComponentOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ComponentOpenNode(
@@ -497,6 +542,8 @@ class ComponentOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -514,6 +561,8 @@ class ComponentOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ComponentOpenNode(
@@ -528,6 +577,8 @@ class ComponentOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -559,6 +610,7 @@ class ComponentOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -588,6 +640,8 @@ class RowOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -608,6 +662,8 @@ class RowOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -625,6 +681,8 @@ class RowOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       RowOpenNode(
@@ -639,6 +697,8 @@ class RowOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -656,6 +716,8 @@ class RowOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       RowOpenNode(
@@ -670,6 +732,8 @@ class RowOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -701,6 +765,7 @@ class RowOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -729,6 +794,8 @@ class ContainerOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -749,6 +816,8 @@ class ContainerOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -766,6 +835,8 @@ class ContainerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ContainerOpenNode(
@@ -780,6 +851,8 @@ class ContainerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -797,6 +870,8 @@ class ContainerOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ContainerOpenNode(
@@ -811,6 +886,8 @@ class ContainerOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -842,6 +919,7 @@ class ContainerOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -871,6 +949,8 @@ class ImageOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -891,6 +971,8 @@ class ImageOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -908,6 +990,8 @@ class ImageOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ImageOpenNode(
@@ -922,6 +1006,8 @@ class ImageOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -939,6 +1025,8 @@ class ImageOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ImageOpenNode(
@@ -953,6 +1041,8 @@ class ImageOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -984,6 +1074,7 @@ class ImageOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1012,6 +1103,8 @@ class IconOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1032,6 +1125,8 @@ class IconOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1049,6 +1144,8 @@ class IconOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       IconOpenNode(
@@ -1063,6 +1160,8 @@ class IconOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1080,6 +1179,8 @@ class IconOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       IconOpenNode(
@@ -1094,6 +1195,8 @@ class IconOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1125,6 +1228,7 @@ class IconOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1153,6 +1257,8 @@ class ListViewOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1173,6 +1279,8 @@ class ListViewOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1190,6 +1298,8 @@ class ListViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ListViewOpenNode(
@@ -1204,6 +1314,8 @@ class ListViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1221,6 +1333,8 @@ class ListViewOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ListViewOpenNode(
@@ -1235,6 +1349,8 @@ class ListViewOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1266,6 +1382,7 @@ class ListViewOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1294,6 +1411,8 @@ class LottieOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1314,6 +1433,8 @@ class LottieOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1331,6 +1452,8 @@ class LottieOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       LottieOpenNode(
@@ -1345,6 +1468,8 @@ class LottieOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1362,6 +1487,8 @@ class LottieOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       LottieOpenNode(
@@ -1376,6 +1503,8 @@ class LottieOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1407,6 +1536,7 @@ class LottieOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1435,6 +1565,8 @@ class ScaffoldOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1455,6 +1587,8 @@ class ScaffoldOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1472,6 +1606,8 @@ class ScaffoldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       ScaffoldOpenNode(
@@ -1486,6 +1622,8 @@ class ScaffoldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1503,6 +1641,8 @@ class ScaffoldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       ScaffoldOpenNode(
@@ -1517,6 +1657,8 @@ class ScaffoldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1548,6 +1690,7 @@ class ScaffoldOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1576,6 +1719,8 @@ class StackOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1596,6 +1741,8 @@ class StackOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1613,6 +1760,8 @@ class StackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       StackOpenNode(
@@ -1627,6 +1776,8 @@ class StackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1644,6 +1795,8 @@ class StackOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       StackOpenNode(
@@ -1658,6 +1811,8 @@ class StackOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1689,6 +1844,7 @@ class StackOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1717,6 +1873,8 @@ class TextOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1737,6 +1895,8 @@ class TextOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1754,6 +1914,8 @@ class TextOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       TextOpenNode(
@@ -1768,6 +1930,8 @@ class TextOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1785,6 +1949,8 @@ class TextOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       TextOpenNode(
@@ -1799,6 +1965,8 @@ class TextOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1830,6 +1998,7 @@ class TextOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -1858,6 +2027,8 @@ class TextFieldOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -1878,6 +2049,8 @@ class TextFieldOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -1895,6 +2068,8 @@ class TextFieldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       TextFieldOpenNode(
@@ -1909,6 +2084,8 @@ class TextFieldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1926,6 +2103,8 @@ class TextFieldOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       TextFieldOpenNode(
@@ -1940,6 +2119,8 @@ class TextFieldOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -1971,6 +2152,7 @@ class TextFieldOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }
@@ -2000,6 +2182,8 @@ class VideoOpenNode extends CNode {
     final DateTime? updatedAt,
     final PageID? pageID,
     final NodeID? stabilID,
+    final PageID? componentID,
+    final List<CNode>? componentChildren,
     final bool? isLocked,
   }) : super(
           id: id,
@@ -2020,6 +2204,8 @@ class VideoOpenNode extends CNode {
           updatedAt: updatedAt ?? DateTime.now(),
           pageID: pageID ?? '',
           stabilID: stabilID,
+          componentID: componentID,
+          componentChildren: componentChildren ?? [],
           isLocked: isLocked ?? false,
         );
 
@@ -2037,6 +2223,8 @@ class VideoOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     final bool? isLocked,
   }) =>
       VideoOpenNode(
@@ -2051,6 +2239,8 @@ class VideoOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -2068,6 +2258,8 @@ class VideoOpenNode extends CNode {
     DateTime? updatedAt,
     PageID? pageID,
     NodeID? stabilID,
+    PageID? componentID,
+    List<CNode>? componentChildren,
     bool? isLocked,
   }) =>
       VideoOpenNode(
@@ -2082,6 +2274,8 @@ class VideoOpenNode extends CNode {
         rectProperties: rectProperties ?? getRectProperties,
         pageID: pageID ?? this.pageID,
         stabilID: stabilID ?? this.stabilID,
+        componentID: componentID ?? this.componentID,
+        componentChildren: componentChildren ?? this.componentChildren,
         isLocked: isLocked ?? this.isLocked,
       );
 
@@ -2113,6 +2307,7 @@ class VideoOpenNode extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }

@@ -42,4 +42,34 @@ class FindNodeRendering {
     }
     return false;
   }
+
+  CNode? findTopComponent(List<CNode> nodes, NodeID nodeID) {
+    final topComponents =
+        nodes.where((element) => element.type == NType.component).toList();
+    for (final component in topComponents) {
+      final result = _findComponentRecursively(component, nodeID);
+      if (result != null) {
+        return component;
+      }
+    }
+    return null;
+  }
+
+  CNode? _findComponentRecursively(CNode component, NodeID nodeID) {
+    if (component.id == nodeID) {
+      return component;
+    }
+
+    for (final node in component.componentChildren) {
+      if (node.type == NType.component) {
+        final result = _findComponentRecursively(node, nodeID);
+        if (result != null) {
+          return result;
+        }
+      } else if (node.id == nodeID) {
+        return node;
+      }
+    }
+    return null;
+  }
 }

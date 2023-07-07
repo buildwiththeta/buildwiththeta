@@ -51,7 +51,7 @@ class ColumnIntrinsicStates extends IntrinsicState {
 class ComponentIntrinsicStates extends IntrinsicState {
   ComponentIntrinsicStates()
       : super(
-          nodeIcon: '',
+          nodeIcon: 'nodes/component/',
           displayName: NodeType.name(NType.component),
           type: NType.component,
           maxChildren: 0,
@@ -157,7 +157,7 @@ class RowIntrinsicStates extends IntrinsicState {
 class ScaffoldIntrinsicStates extends IntrinsicState {
   const ScaffoldIntrinsicStates()
       : super(
-          nodeIcon: '',
+          nodeIcon: 'nodes/component/',
           displayName: 'Component',
           type: NType.scaffold,
           canHave: ChildrenEnum.children,

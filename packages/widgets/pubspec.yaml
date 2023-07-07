@@ -1,7 +1,7 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.2.3
+version: 0.2.4
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -61,3 +61,5 @@ dev_dependencies:
 dependency_overrides:
   theta_models:
     path: ../models
+  theta_rendering:
+    path: ../rendering
