@@ -155,6 +155,10 @@ class TreeState with ChangeNotifier {
     this.workflows = workflows;
   }
 
+  void onOverridesChanged(List<Override> nodeOverrides) {
+    this.nodeOverrides = nodeOverrides;
+  }
+
   void notify() {
     notifyListeners();
   }

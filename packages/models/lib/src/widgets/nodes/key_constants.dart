@@ -37,7 +37,6 @@ class DBKeys {
   static const String crossAxisAlignment = 'cAA';
   static const String mainAxisAlignment = 'mAA';
   static const String mainAxisSize = 'mAS';
-  static const String firestorePath = 'path';
   static const String fill = 'fill';
   static const String fill2 = 'fill2';
   static const String fill3 = 'fill3';
@@ -162,91 +161,8 @@ class DBKeys {
   static const String iconType = 'icTp';
   static const String cursorType = 'cursorType';
 
-  // Supabase ---------------------------------------------
-  /// Use for from's value in Supabase operation
-  static const String supabaseFrom = 'spF';
-
-  /// Use for select's value in Supabase operation
-  static const String supabaseSelect = 'spSl';
-
-  /// Use for select's value in Supabase operation
-  static const String supabaseStream = 'spS';
-
-  /// Use for match's value in Supabase operation
-  static const String supabaseMatch = 'spMt';
-
-  /// Use for range's value in Supabase operation
-  static const String supabaseFromRange = 'spFr';
-
-  /// Use for range's value in Supabase operation
-  static const String supabaseNumberPage = 'spNp';
-
-  /// Use for range's value in Supabase operation
-  static const String supabaseToRange = 'spTr';
-
-  /// Use for order's value in Supabase operation
-  static const String supabaseOrder = 'spOr';
-
-  /// Use for search's value in Supabase operation
-  static const String supabaseSearchName = 'spSeN';
-  static const String supabaseSearchValue = 'spSeV';
-  static const String supabaseEqName = 'spEqN';
-  static const String supabaseEqValue = 'spEqV';
-
-  // Use for custom http request
-  static const String customHttpRequestURL = 'customHttpRequestURL';
-  static const String customHttpRequestList = 'customHttpRequestList';
-  static const String customHttpRequestHeader = 'customHttpRequestHeader';
-
-  //Api Calls
-  static const String requestName = 'apiCallRN';
-  static const String apiCallsResponseName = 'apiCallResN';
-  static const String apiCallsDynamicValue = 'apiCallsDV';
-  static const String apiCallsSelectedRequest = 'apiCallSR';
-
-  static const String cmsCollection = 'cmsColl';
-  static const String cmsLimit = 'cmsLmt';
-  static const String cmsPage = 'cmsPage';
-  static const String cmsLikeKey = 'cmsKey';
-  static const String cmsLikeValue = 'cmsValue';
-
-  static const String adMobAdAndroidUnitId = 'adMobAndroidUnitId';
-  static const String adMobAdIosUnitId = 'adMobIosUnitId';
-
-  static const audioPlayerUrl = 'aopurl';
-
-  static const String audioPlayerCurrentDataset = 'apcd';
-
-  static const String markerLatitude = 'googleMapsMarkerLatitudeKey';
-
-  static const String markerLongitude = 'googleMapsMarkerLongitudeKey';
-
-  static const String markerIconUrl = 'googleMapsMarkerIconUrlKey';
-
-  static const String markerIconWidth = 'googleMapsMarkerIconWidthKey';
-
-  static const String markerIconHeight = 'googleMapsMarkerIconHeightKey';
-
-  static const String markerId = 'googleMapsMarkerIdKey';
-
-  static const String markerDrawPathToUserCurrentLocation =
-      'markerDrawPathToUserCurrentLocation';
-
-  static const String mapConfig = 'googleMapsDatasetConfigNameKey';
-
-  static const String googleMapsController = 'googleMapsControllerName';
-
-  static const String googleMapsCubitController = 'googleMapsCubitController';
-
-  static const String mapCustomStyle = 'googleMapsCustomStyle';
-  static const String mapCustomInitialZoomLevel = 'googleMapsInitialZoomLevel';
-  static const String mapInitialPositionLat = 'googleMapsInitialPositionLat';
-  static const String mapInitialPositionLng = 'googleMapsInitialPositionLng';
-  static const String mapConfigShowMyLocationMarker =
-      'mapDrawPathToBetweenMarkersAndUserCurrentLocation';
-  static const String mapConfigTrackMyLocation = 'mapConfigShowTrackMyLocation';
-
   static const String stringDropdown = 'StringDropdownValue';
   static const String isListView = 'isListView';
   static const String componentFit = 'componentFit';
+  static const String overrides = 'overrides';
 }

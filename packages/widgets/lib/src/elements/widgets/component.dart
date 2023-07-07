@@ -46,11 +46,14 @@ class _OpenWComponentState extends State<OpenWComponent> {
     Logger.printWarning('widget0: $widget0');
     return ChangeNotifierProvider(
       create: (_) => globalState.copyWith(
-        nodeComponentID: widget.state.node.id,
-        fit: widget0.getAttributes[DBKeys.componentFit] == 'absolute'
-            ? ComponentFit.absolute
-            : ComponentFit.autoLayout,
-      ),
+          nodeComponentID: widget.state.node.id,
+          fit: widget0.getAttributes[DBKeys.componentFit] == 'absolute'
+              ? ComponentFit.absolute
+              : ComponentFit.autoLayout,
+          nodeOverrides: [
+            ...globalState.nodeOverrides,
+            ...widget.state.node.getAttributes[DBKeys.overrides]
+          ]),
       child: NodeBuilder(
         onTap: () {
           TreeGlobalState.onNodeFocused(widget.state.node);
