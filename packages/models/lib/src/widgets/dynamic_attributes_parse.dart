@@ -67,6 +67,10 @@ class DynamicAttributes {
   dynamic manualFromJson(final String key, final dynamic value) {
     try {
       switch (key) {
+        case DBKeys.overrides:
+          {
+            return Override.fromJsonList(value ?? []);
+          }
         case 'params':
           {
             final params = <VariableEntity>[];
@@ -86,14 +90,6 @@ class DynamicAttributes {
               }
             }
             return states;
-          }
-        case DBKeys.apiCallsSelectedRequest:
-          {
-            var map = <String, dynamic>{};
-            if (value != null) {
-              map = value as Map<String, dynamic>;
-            }
-            return map;
           }
 
         default:
@@ -122,8 +118,6 @@ class DynamicAttributes {
       case DBKeys.isBoxed:
       case DBKeys.isTight:
       case DBKeys.flexValue:
-      case DBKeys.mapConfigShowMyLocationMarker:
-      case DBKeys.mapConfigTrackMyLocation:
       case DBKeys.stringDropdown:
       case DBKeys.fontFamily:
       case DBKeys.right:
@@ -140,7 +134,6 @@ class DynamicAttributes {
       case DBKeys.fadeAnimationEnabled:
       case DBKeys.scaleAnimationEnabled:
       case DBKeys.slideAnimationEnabled:
-      case DBKeys.requestName:
       case DBKeys.dropdownItem:
       case DBKeys.showAppBar:
       case DBKeys.showBottomBar:

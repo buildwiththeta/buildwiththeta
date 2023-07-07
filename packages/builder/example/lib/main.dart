@@ -30,6 +30,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _controller.onLoaded(() {
       debugPrint('Loaded!');
+
+      /// Prints the nodes to the console.
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));

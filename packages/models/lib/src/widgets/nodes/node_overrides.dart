@@ -20,10 +20,14 @@ class Override extends Equatable {
     this.node, {
     this.builder,
     this.component,
+    List<NodeProperty>? props,
     final Color? color,
     final String? image,
     final String? text,
   }) {
+    if (props != null) {
+      properties.addAll(props);
+    }
     if (color != null) {
       setColor(color, 1.0);
     }
@@ -61,7 +65,7 @@ class Override extends Equatable {
   @override
   List<Object> get props => [node, properties];
 
-  Override fromJson(Map<String, dynamic> json) {
+  static Override fromJson(Map<String, dynamic> json) {
     final override = Override(json['node'] as String);
     final properties = json['properties'] as List<dynamic>;
     for (final property in properties) {
@@ -91,6 +95,9 @@ class Override extends Equatable {
     return override;
   }
 
+  static List<Override> fromJsonList(List<dynamic> json) =>
+      json.map((e) => fromJson(e)).toList();
+
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     json['node'] = node;
@@ -109,6 +116,20 @@ class Override extends Equatable {
       return json;
     }).toList();
     return json;
+  }
+
+  Override copyWith({
+    String? node,
+    String? component,
+    List<NodeProperty>? properties,
+    BuilderFunction? builder,
+  }) {
+    return Override(
+      node ?? this.node,
+      component: component ?? this.component,
+      props: properties ?? this.properties,
+      builder: builder ?? this.builder,
+    );
   }
 
   @override
