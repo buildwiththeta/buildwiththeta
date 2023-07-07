@@ -8,7 +8,7 @@ Future<void> main() async {
     cacheEnabled: false,
 
     /// Example key
-    anonKey: 'anon key',
+    anonKey: 'Theta Key',
   );
 
   runApp(const MyApp());
@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Untitled 4',
+            'Your component',
 
             controller: _controller,
 
@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
 
               Override(
                 'node id',
-                text: 'Click meeeee!',
+                text: 'Click me!',
                 color: Colors.blue,
               ),
 

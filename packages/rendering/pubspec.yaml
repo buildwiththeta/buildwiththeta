@@ -13,13 +13,9 @@ environment:
 
 dependencies: 
 
-  theta_models: ^0.2.0
+  theta_models: ^0.2.2
   light_logger: ^0.0.3
   collection: ^1.17.1
-
-dependency_overrides:
-  theta_models:
-    path: ../models
 
 dev_dependencies:
   flutter_test:
