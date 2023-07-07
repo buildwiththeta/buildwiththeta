@@ -50,10 +50,57 @@ abstract class CNode extends Equatable {
   };
 
   // all the children of the component
-  List<CNode> componentChildren = [];
+  final List<CNode> componentChildren;
+
+  CNode addChildrenToComponent(
+    PageID componentID,
+    List<CNode> children,
+  ) {
+    return _addChildrenToComponent(this, componentID, children);
+  }
+
+  CNode _addChildrenToComponent(
+      CNode currentNode, PageID componentID, List<CNode> children,
+      {Set<PageID>? topComponentsIds}) {
+    topComponentsIds ??= {};
+
+    if (topComponentsIds.isEmpty) {
+      topComponentsIds.add(currentNode.pageID!);
+    }
+    if (currentNode.pageID == componentID ||
+        topComponentsIds.contains(currentNode.componentID)) {
+      return currentNode;
+    }
+
+    topComponentsIds.add(currentNode.componentID!);
+
+    List<CNode> newComponentChildren = List.from(currentNode.componentChildren);
+
+    for (var child in children) {
+      if (componentID == child.pageID &&
+          componentID == currentNode.componentID) {
+        if (child.type == NType.component &&
+            !topComponentsIds.contains(child.componentID)) {
+          if (!child.componentChildren.contains(currentNode)) {
+            child._addChildrenToComponent(
+              child,
+              child.componentID!,
+              children,
+              topComponentsIds: topComponentsIds,
+            );
+          }
+        }
+        newComponentChildren.add(child);
+      }
+    }
+
+    topComponentsIds.remove(currentNode.componentID);
+
+    return currentNode.copyWith(componentChildren: newComponentChildren);
+  }
 
   // Method to add children to a component node using the component ID.
-  void addChildrenToComponent(
+  /*void addChildrenToComponent(
     PageID componentID,
     List<CNode> children,
   ) {
@@ -90,7 +137,7 @@ abstract class CNode extends Equatable {
     }
 
     topComponentsIds.remove(this.componentID);
-  }
+  }*/
 
   static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
   static const defaultRProperties = RectProperties(
@@ -435,6 +482,7 @@ abstract class CNode extends Equatable {
         stabilID,
         componentID,
         isLocked,
+        componentChildren,
       ];
 
   @override

@@ -882,9 +882,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix26.IconIntrinsicStates() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix26.IconIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix26.IconIntrinsicStates.create() : null
+                  () => b ? const prefix26.IconIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -933,9 +934,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix26.ListViewIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix26.ListViewIntrinsicStates.create() : null
+                  () => b ? const prefix26.ListViewIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix26.ListViewIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1011,9 +1012,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix26.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) =>
-                  () => b ? prefix26.ScaffoldIntrinsicStates.create() : null
+                  () => b ? const prefix26.ScaffoldIntrinsicStates() : null,
+              r'create': (bool b) => () =>
+                  b ? const prefix26.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1036,9 +1037,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix26.StackIntrinsicStates() : null,
+              r'': (bool b) =>
+                  () => b ? const prefix26.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix26.StackIntrinsicStates.create() : null
+                  () => b ? const prefix26.StackIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1155,7 +1157,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       null, null, <Type>[prefix25.DynamicIntrinsicState], 1, {}, {}, null, [])
 };
 
-final _memberSymbolMap = null;
+const _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

@@ -1,3 +1,7 @@
+## 0.2.4
+
+- [x] Feat: component widget added.
+
 ## 0.2.3
 
 - [x] Feat: improved performance, cut of > 80% of code generation time.

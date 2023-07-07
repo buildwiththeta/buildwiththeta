@@ -8,8 +8,7 @@ Future<void> main() async {
     cacheEnabled: false,
 
     /// Example key
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiJlNmFkODFiYy1jZDRhLTRkNzktOWM0MC04ODBlYmI2MTFhOTUiLCJhbm9uX2tleSI6ImI5NmM3NWI1LTkzZTEtNGFlZS05YmQ2LWNmMzQ3ZTBiMDVmOCIsImlhdCI6MTY4ODU1MzgxNiwiZXhwIjoxNzIwMTExNDE2LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.eWUqCU9E63Nh5uLg_NFZs5dsZ9Qu9ckzyfmg18aXedg',
+    anonKey: 'anon key',
   );
 
   runApp(const MyApp());
@@ -30,8 +29,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _controller.onLoaded(() {
       debugPrint('Loaded!');
-
-      /// Prints the nodes to the console.
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));
@@ -65,16 +62,12 @@ class _MyAppState extends State<MyApp> {
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error.toString()),
 
-            /// [fit] is how the component should fit the parent.
-            /// It can be [ComponentFit.absolute] or [ComponentFit.autoLayout].
-            fit: ComponentFit.absolute,
-
             /// [overrides] are the properties that can be overriden by the user.
             overrides: [
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'e844aab0-15cc-11ee-a3cd-33f0978e6b7c',
+                'node id',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -89,7 +82,13 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                'node id 2',
+                'node id',
+                text: 'Click meeeee!',
+                color: Colors.blue,
+              ),
+
+              Override(
+                'node id',
               )..setChildren([
                   const Text('Click me!'),
                   const Text('Click me!'),
