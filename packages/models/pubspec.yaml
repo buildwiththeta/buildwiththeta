@@ -45,3 +45,4 @@ dev_dependencies:
   built_value_generator: any
   freezed: any
   json_serializable: any
+

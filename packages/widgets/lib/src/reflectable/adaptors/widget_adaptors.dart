@@ -434,7 +434,8 @@ class ComponentAdapter extends WidgetAdapter {
     required final WidgetState state,
   }) =>
       OpenWComponent(
-        key: ValueKey(state.node.id),
+        key: ValueKey(
+            '${state.node.id} ${state.node.getAttributes[DBKeys.overrides]}'),
         state: state,
         componentChildren: state.node.componentChildren,
       );

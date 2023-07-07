@@ -104,6 +104,10 @@ class DynamicAttributes {
 
   dynamic toJson(final String key, final dynamic value) {
     switch (key) {
+      case DBKeys.overrides:
+        {
+          return (value as List<Override>).map((e) => e.toJson()).toList();
+        }
       case DBKeys.icon:
       case DBKeys.faIcon:
       case DBKeys.featherIcon:
