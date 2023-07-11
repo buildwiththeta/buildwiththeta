@@ -6,7 +6,6 @@ part 'panels_state.dart';
 
 enum PanelsEnum {
   closed,
-  pages,
   styles,
   tree,
   add,
@@ -25,14 +24,6 @@ class PanelsCubit extends Cubit<PanelsState> {
           state.maybeMap(
             add: (x) => const PanelsState.closed(),
             orElse: () => const PanelsState.add(),
-          ),
-        );
-        break;
-      case PanelsEnum.pages:
-        emit(
-          state.maybeMap(
-            pages: (x) => const PanelsState.closed(),
-            orElse: () => const PanelsState.pages(),
           ),
         );
         break;

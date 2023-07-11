@@ -19,7 +19,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() closed,
-    required TResult Function() pages,
     required TResult Function() styles,
     required TResult Function() tree,
     required TResult Function() add,
@@ -28,7 +27,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? closed,
-    TResult? Function()? pages,
     TResult? Function()? styles,
     TResult? Function()? tree,
     TResult? Function()? add,
@@ -37,7 +35,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? closed,
-    TResult Function()? pages,
     TResult Function()? styles,
     TResult Function()? tree,
     TResult Function()? add,
@@ -47,7 +44,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
     required TResult Function(_Styles value) styles,
     required TResult Function(_Tree value) tree,
     required TResult Function(_Add value) add,
@@ -56,7 +52,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
     TResult? Function(_Styles value)? styles,
     TResult? Function(_Tree value)? tree,
     TResult? Function(_Add value)? add,
@@ -65,7 +60,6 @@ mixin _$PanelsState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
     TResult Function(_Styles value)? styles,
     TResult Function(_Tree value)? tree,
     TResult Function(_Add value)? add,
@@ -129,7 +123,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() closed,
-    required TResult Function() pages,
     required TResult Function() styles,
     required TResult Function() tree,
     required TResult Function() add,
@@ -141,7 +134,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? closed,
-    TResult? Function()? pages,
     TResult? Function()? styles,
     TResult? Function()? tree,
     TResult? Function()? add,
@@ -153,7 +145,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? closed,
-    TResult Function()? pages,
     TResult Function()? styles,
     TResult Function()? tree,
     TResult Function()? add,
@@ -169,7 +160,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
     required TResult Function(_Styles value) styles,
     required TResult Function(_Tree value) tree,
     required TResult Function(_Add value) add,
@@ -181,7 +171,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
     TResult? Function(_Styles value)? styles,
     TResult? Function(_Tree value)? tree,
     TResult? Function(_Add value)? add,
@@ -193,7 +182,6 @@ class _$_Closed implements _Closed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
     TResult Function(_Styles value)? styles,
     TResult Function(_Tree value)? tree,
     TResult Function(_Add value)? add,
@@ -208,124 +196,6 @@ class _$_Closed implements _Closed {
 
 abstract class _Closed implements PanelsState {
   const factory _Closed() = _$_Closed;
-}
-
-/// @nodoc
-abstract class _$$_PagesCopyWith<$Res> {
-  factory _$$_PagesCopyWith(_$_Pages value, $Res Function(_$_Pages) then) =
-      __$$_PagesCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_PagesCopyWithImpl<$Res>
-    extends _$PanelsStateCopyWithImpl<$Res, _$_Pages>
-    implements _$$_PagesCopyWith<$Res> {
-  __$$_PagesCopyWithImpl(_$_Pages _value, $Res Function(_$_Pages) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Pages implements _Pages {
-  const _$_Pages();
-
-  @override
-  String toString() {
-    return 'PanelsState.pages()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Pages);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() closed,
-    required TResult Function() pages,
-    required TResult Function() styles,
-    required TResult Function() tree,
-    required TResult Function() add,
-  }) {
-    return pages();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? closed,
-    TResult? Function()? pages,
-    TResult? Function()? styles,
-    TResult? Function()? tree,
-    TResult? Function()? add,
-  }) {
-    return pages?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? closed,
-    TResult Function()? pages,
-    TResult Function()? styles,
-    TResult Function()? tree,
-    TResult Function()? add,
-    required TResult orElse(),
-  }) {
-    if (pages != null) {
-      return pages();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
-    required TResult Function(_Styles value) styles,
-    required TResult Function(_Tree value) tree,
-    required TResult Function(_Add value) add,
-  }) {
-    return pages(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
-    TResult? Function(_Styles value)? styles,
-    TResult? Function(_Tree value)? tree,
-    TResult? Function(_Add value)? add,
-  }) {
-    return pages?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
-    TResult Function(_Styles value)? styles,
-    TResult Function(_Tree value)? tree,
-    TResult Function(_Add value)? add,
-    required TResult orElse(),
-  }) {
-    if (pages != null) {
-      return pages(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Pages implements PanelsState {
-  const factory _Pages() = _$_Pages;
 }
 
 /// @nodoc
@@ -365,7 +235,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() closed,
-    required TResult Function() pages,
     required TResult Function() styles,
     required TResult Function() tree,
     required TResult Function() add,
@@ -377,7 +246,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? closed,
-    TResult? Function()? pages,
     TResult? Function()? styles,
     TResult? Function()? tree,
     TResult? Function()? add,
@@ -389,7 +257,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? closed,
-    TResult Function()? pages,
     TResult Function()? styles,
     TResult Function()? tree,
     TResult Function()? add,
@@ -405,7 +272,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
     required TResult Function(_Styles value) styles,
     required TResult Function(_Tree value) tree,
     required TResult Function(_Add value) add,
@@ -417,7 +283,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
     TResult? Function(_Styles value)? styles,
     TResult? Function(_Tree value)? tree,
     TResult? Function(_Add value)? add,
@@ -429,7 +294,6 @@ class _$_Styles implements _Styles {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
     TResult Function(_Styles value)? styles,
     TResult Function(_Tree value)? tree,
     TResult Function(_Add value)? add,
@@ -483,7 +347,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() closed,
-    required TResult Function() pages,
     required TResult Function() styles,
     required TResult Function() tree,
     required TResult Function() add,
@@ -495,7 +358,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? closed,
-    TResult? Function()? pages,
     TResult? Function()? styles,
     TResult? Function()? tree,
     TResult? Function()? add,
@@ -507,7 +369,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? closed,
-    TResult Function()? pages,
     TResult Function()? styles,
     TResult Function()? tree,
     TResult Function()? add,
@@ -523,7 +384,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
     required TResult Function(_Styles value) styles,
     required TResult Function(_Tree value) tree,
     required TResult Function(_Add value) add,
@@ -535,7 +395,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
     TResult? Function(_Styles value)? styles,
     TResult? Function(_Tree value)? tree,
     TResult? Function(_Add value)? add,
@@ -547,7 +406,6 @@ class _$_Tree implements _Tree {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
     TResult Function(_Styles value)? styles,
     TResult Function(_Tree value)? tree,
     TResult Function(_Add value)? add,
@@ -600,7 +458,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() closed,
-    required TResult Function() pages,
     required TResult Function() styles,
     required TResult Function() tree,
     required TResult Function() add,
@@ -612,7 +469,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? closed,
-    TResult? Function()? pages,
     TResult? Function()? styles,
     TResult? Function()? tree,
     TResult? Function()? add,
@@ -624,7 +480,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? closed,
-    TResult Function()? pages,
     TResult Function()? styles,
     TResult Function()? tree,
     TResult Function()? add,
@@ -640,7 +495,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Closed value) closed,
-    required TResult Function(_Pages value) pages,
     required TResult Function(_Styles value) styles,
     required TResult Function(_Tree value) tree,
     required TResult Function(_Add value) add,
@@ -652,7 +506,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Closed value)? closed,
-    TResult? Function(_Pages value)? pages,
     TResult? Function(_Styles value)? styles,
     TResult? Function(_Tree value)? tree,
     TResult? Function(_Add value)? add,
@@ -664,7 +517,6 @@ class _$_Add implements _Add {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Closed value)? closed,
-    TResult Function(_Pages value)? pages,
     TResult Function(_Styles value)? styles,
     TResult Function(_Tree value)? tree,
     TResult Function(_Add value)? add,
