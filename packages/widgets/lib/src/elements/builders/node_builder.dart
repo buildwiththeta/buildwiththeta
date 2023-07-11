@@ -43,13 +43,20 @@ class _NodeBuilderState extends State<NodeBuilder> {
                   marginsDesktop: [0, 0, 0, 0]))
           .get(state: state, context: context);
 
-  EdgeInsets _handlePadding(TreeState state) =>
-      (widget.state.node.getAttributes[DBKeys.padding] as FMargins? ??
+  EdgeInsets _handlePadding(TreeState state) {
+    final nodeType = widget.state.node.type;
+    if (nodeType == NType.container) {
+      // Node use own padding for OpenWContainer
+      return EdgeInsets.zero;
+    } else {
+      return (widget.state.node.getAttributes[DBKeys.padding] as FMargins? ??
               const FMargins(
                   margins: [0, 0, 0, 0],
                   marginsTablet: [0, 0, 0, 0],
                   marginsDesktop: [0, 0, 0, 0]))
           .get(state: state, context: context);
+    }
+  }
 
   bool _handleVisibility(TreeState state) {
     final visibility =
@@ -128,7 +135,6 @@ class _NodeBuilderState extends State<NodeBuilder> {
     final override = const NodeOverrideExecuter().executeBuilder(
       context,
       widget.state.node,
-      
     );
     if (override != null) {
       return override;

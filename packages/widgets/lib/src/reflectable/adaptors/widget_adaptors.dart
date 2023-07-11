@@ -95,7 +95,6 @@ class BoxAdapter extends WidgetAdapter {
         child: state.node.child,
         width: state.node.getAttributes[DBKeys.width] as FSize,
         height: state.node.getAttributes[DBKeys.height] as FSize,
-        margins: state.node.getAttributes[DBKeys.margins] as FMargins,
         paddings: state.node.getAttributes[DBKeys.padding] as FMargins,
         borderRadius:
             state.node.getAttributes[DBKeys.borderRadius] as FBorderRadius,

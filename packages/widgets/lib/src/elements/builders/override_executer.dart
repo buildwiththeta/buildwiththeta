@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 
+import '../../../theta_open_widgets.dart';
+import 'node_builder.dart';
+
 class NodeOverrideExecuter extends Equatable {
   const NodeOverrideExecuter();
 
@@ -103,12 +106,24 @@ class NodeOverrideExecuter extends Equatable {
             .firstWhereOrNull((e) => e is ChildrenProperty)
             ?.value as List<Widget>? ??
         children
-            .map(
-              (e) => e.toWidget(
-                context: context,
-                state: state.copyWith(node: e, loop: children.indexOf(e)),
-              ),
-            )
+            .map((child) => NodeBuilder(
+                  state: state.copyWith(node: child),
+                  onTap: () {
+                    TreeGlobalState.onNodeFocused(child);
+                  },
+                  onPanStart: () {
+                    TreeGlobalState.onNodeFocused(child);
+                  },
+                  child: const NodeOverrideExecuter().executeChild(
+                    context,
+                    state,
+                    child.toWidget(
+                      context: context,
+                      state: state.copyWith(
+                          node: child, loop: children.indexOf(child)),
+                    ),
+                  ),
+                ))
             .toList();
   }
 }
