@@ -5,3 +5,6 @@ environment:
 
 dev_dependencies: 
   melos: ^3.0.1
+dependencies:
+  theta_models: ^0.2.2
+  provider:
