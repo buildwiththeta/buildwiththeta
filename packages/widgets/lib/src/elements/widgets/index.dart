@@ -17,3 +17,4 @@ export 'stack.dart';
 export 'text.dart';
 export 'textfield.dart';
 export 'video.dart';
+export 'component.dart';

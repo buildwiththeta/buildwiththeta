@@ -1,45 +1,54 @@
 ---
-title: Override Element Properties
+title: Override nodes
 ---
 
 ![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
 
-# Override element properties
+# Override nodes
 
 You can override each UI block with a Flutter widget by mixing no-code with Flutter. 
 
-## Text override
+## Basic properties override
 
 ```dart
 UIBox(
     'Button',
     overrides: const [
-        Override('Label')
-            ..setText('Click me!'),
+        Override(
+            'Label',
+            text: 'Click me',
+            color: Colors.white,
+        ),
+        Override(
+            'Image', 
+            image: 'https://',
+        ),
     ],
 ),
 ```
 
-## Image override
+## Replace a node
+
+You can replace an entire node within the no-code component tree using the builder function. With this method, you can still use the child and children properties of the original node.
 
 ```dart
 UIBox(
-    'Social Card',
+    'Component name',
     overrides: const [
-        Override('Image')
-            ..setImage('https://...'),
-    ],
-),
-```
-
-## Color override (`Container` background color and `Text` color)
-
-```dart
-UIBox(
-    'Social Card',
-    overrides: const [
-        Override('Post Title')
-            ..setColor(Colors.white, 0.5),
+        Override(
+            'element id',
+            builder: (context, node, child, children) {
+                return GestureDetector(
+                    onTap: () {
+                        debugPrint('Tapped!');
+                    },
+                    child: Container(
+                        color: Colors.black,
+                        child: child,
+                    ),
+                );
+            },
+        ),
     ],
 ),
 ```
@@ -55,8 +64,7 @@ You can also use the `UIBox` within other `UIBox`es. This provides a very high d
 UIBox(
     'Component name',
     overrides: const [
-        Override('Element id')
-            ..setChild(UIBox('Other component')),
+        Override('Element id', child: UIBox('Other component')),
     ],
 ),
 ```
@@ -69,10 +77,24 @@ You can also overwrite the children of an element.
 UIBox(
     'Component name',
     overrides: const [
-        Override('Element name')
-            ..setChildren([Text('Child 1'), Text('Child 2')]),
+        Override(
+            'Element name',
+            children: [
+                Text('Child 1'), 
+                Text('Child 2'),   
+            ],
+        ),
     ],
 ),
+```
+
+## Change properties after node initialization
+
+```dart
+final override = Override('element id');
+override
+    ..setText('Click me!')
+    ..setColor(Colors.black);
 ```
 
 <Warning>It is recommended to use only one Override per element, as only the first one is taken.</Warning>

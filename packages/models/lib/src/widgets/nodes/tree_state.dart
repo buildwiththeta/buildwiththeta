@@ -35,6 +35,7 @@ class TreeState with ChangeNotifier {
     required this.nodeOverrides,
     required this.fit,
     this.focusedNode,
+    this.nodeComponentID,
     this.nodes = const [],
     this.xLines = const [],
     this.yLines = const [],
@@ -95,6 +96,8 @@ class TreeState with ChangeNotifier {
 
   DeviceType get deviceType => deviceInfo.identifier.type;
 
+  NodeID? nodeComponentID;
+
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
   }
@@ -144,6 +147,18 @@ class TreeState with ChangeNotifier {
     this.fit = fit;
   }
 
+  void onNodeComponentIDChanged(NodeID nodeComponentID) {
+    this.nodeComponentID = nodeComponentID;
+  }
+
+  void onWorkflowsChanged(List<Workflow> workflows) {
+    this.workflows = workflows;
+  }
+
+  void onOverridesChanged(List<Override> nodeOverrides) {
+    this.nodeOverrides = nodeOverrides;
+  }
+
   void notify() {
     notifyListeners();
   }
@@ -168,6 +183,7 @@ class TreeState with ChangeNotifier {
     final List<int>? xLines,
     final List<int>? yLines,
     final ComponentFit? fit,
+    final NodeID? nodeComponentID,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -186,6 +202,7 @@ class TreeState with ChangeNotifier {
       xLines: xLines ?? this.xLines,
       yLines: yLines ?? this.yLines,
       fit: fit ?? this.fit,
+      nodeComponentID: nodeComponentID ?? this.nodeComponentID,
     );
   }
 }

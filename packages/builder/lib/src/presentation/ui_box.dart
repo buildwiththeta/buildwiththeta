@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
+import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_rendering/theta_rendering.dart';
@@ -25,7 +26,6 @@ class UIBox extends StatelessWidget {
     this.errorWidget,
     this.workflows,
     this.overrides,
-    this.fit,
   });
 
   final String componentName;
@@ -35,34 +35,16 @@ class UIBox extends StatelessWidget {
   final List<Workflow>? workflows;
   final List<Override>? overrides;
 
-  /// The fit of the component.
-  /// If it's null, the fit is set to [ComponentFit.absolute] or [ComponentFit.autoLayout] depending on the number of children.
-  ///
-  /// If it's [ComponentFit.absolute], the component is rendered with absolute positioning (following top, left, bottom, right values).
-  /// If it's [ComponentFit.autoLayout], the component is rendered with auto layout (following flex values as a normal widget).
-  ///
-  /// Example:
-  ///
-  /// ```dart
-  /// UIBox(
-  ///   'Homepage',
-  ///   fit: ComponentFit.absolute,
-  /// )
-  /// ```
-  final ComponentFit? fit;
-
   @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
       workflows: workflows,
       nodeOverrides: overrides,
-      componentFit: fit ?? ComponentFit.absolute,
       child: _LogicBox(
         componentName,
         controller: controller,
         placeholder: placeholder,
         errorWidget: errorWidget,
-        fit: fit,
       ),
     );
   }
@@ -74,11 +56,9 @@ class _LogicBox extends StatefulWidget {
     this.controller,
     this.placeholder,
     this.errorWidget,
-    this.fit,
   });
 
   final String componentName;
-  final ComponentFit? fit;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -100,7 +80,9 @@ class __LogicBoxState extends State<_LogicBox> {
 
     /// Sets the load callback in the controller.
     /// It's used to load the component programmatically.
-    widget.controller?._setLoadCallback(load);
+    if (widget.controller != null) {
+      widget.controller!._setLoadCallback(load);
+    }
 
     /// Loads the component from the server when the widget is initialized.
     load();
@@ -116,7 +98,9 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.
   void onError(Exception error) {
-    widget.controller?._triggerError(error);
+    if (widget.controller != null) {
+      widget.controller!._triggerError(error);
+    }
     setState(() => _error = error);
   }
 
@@ -128,9 +112,20 @@ class __LogicBoxState extends State<_LogicBox> {
       _widget = r.treeNodes;
       _isLoaded = true;
     });
-    if (_widget?.children?.length == 1 && widget.fit == null) {
-      context.read<TreeState>().onFitChanged(ComponentFit.autoLayout);
+    if (r.conversionEvents.isNotEmpty) {
+      final worksFromCloud = r.conversionEvents
+          .map((e) => Workflow(e.nodeID, e.trigger, () async {
+                await getIt<SendConversionEventUseCase>()(
+                  SendConversionEventUseCaseParams(
+                    eventID: e.id,
+                    abTestID: r.abTestID,
+                  ),
+                );
+              }))
+          .toList();
+      state.onWorkflowsChanged([...state.workflows, ...worksFromCloud]);
     }
+    state.notify();
   }
 
   @override

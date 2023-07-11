@@ -297,9 +297,6 @@ class ScaffoldAdapter extends WidgetAdapter {
         fill: state.node.getAttributes[DBKeys.fill] as FFill,
         flag: state.node.getAttributes[DBKeys.flag] as bool,
         isBoxed: state.node.getAttributes[DBKeys.isBoxed] as bool,
-        showAppBar: state.node.getAttributes[DBKeys.showAppBar] as bool,
-        showBottomBar: state.node.getAttributes[DBKeys.showBottomBar] as bool,
-        showDrawer: state.node.getAttributes[DBKeys.showDrawer] as bool,
         isScrollable: false,
         isClipped: false,
         bodyExtended: false,
@@ -424,4 +421,24 @@ class VideoAdapter extends WidgetAdapter {
       );
 
   VideoAdapter.create() : this();
+}
+
+/// Component
+@dynamicAdapter
+@NodeKey(NType.component)
+class ComponentAdapter extends WidgetAdapter {
+  const ComponentAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWComponent(
+        key: ValueKey(
+            '${state.node.id} ${state.node.getAttributes[DBKeys.overrides]}'),
+        state: state,
+        componentChildren: state.node.componentChildren,
+      );
+
+  ComponentAdapter.create() : this();
 }

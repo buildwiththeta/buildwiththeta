@@ -21,17 +21,44 @@ class NodeOverrideExecuter extends Equatable {
 
   Override? checkOverride(BuildContext context, WidgetState state,
       bool Function(Override override) condition) {
-    final nodeOverrides = context.read<TreeState>().nodeOverrides;
-    final override = nodeOverrides.firstWhereOrNull(
-      (e) =>
-          e.node == state.node.name ||
+    final treeState = context.read<TreeState>();
+    final nodeOverrides = treeState.nodeOverrides;
+    final override = nodeOverrides.firstWhereOrNull((e) {
+      if (e.component != null) {
+        return e.component == treeState.nodeComponentID &&
+            (e.node == state.node.name ||
+                e.node == state.node.id ||
+                e.node == state.node.stabilID);
+      }
+      return e.node == state.node.name ||
           e.node == state.node.id ||
-          e.node == state.node.stabilID,
-    );
+          e.node == state.node.stabilID;
+    });
     if (override != null && condition(override)) {
       return override;
     }
     return null;
+  }
+
+  Widget? executeBuilder(BuildContext context, CNode node) {
+    final nodeOverrides = context.read<TreeState>().nodeOverrides;
+    final override = nodeOverrides.firstWhereOrNull(
+      (e) =>
+          e.node == node.name || e.node == node.id || e.node == node.stabilID,
+    );
+    if (override?.builder == null) {
+      return null;
+    }
+    return override?.builder?.call(
+      context,
+      node,
+      node.child
+          ?.toWidget(context: context, state: WidgetState(node: node, loop: 0)),
+      node.children
+          ?.map((e) => e.toWidget(
+              context: context, state: WidgetState(node: e, loop: 0)))
+          .toList(),
+    );
   }
 
   FFill executeColor(
@@ -56,7 +83,7 @@ class NodeOverrideExecuter extends Equatable {
       BuildContext context, WidgetState state, String originalImageValue) {
     final override = checkOverride(context, state, overridesImageValue);
     return override?.properties
-            .firstWhereOrNull((e) => e is TextProperty)
+            .firstWhereOrNull((e) => e is ImageProperty)
             ?.value ??
         originalImageValue;
   }

@@ -39,8 +39,11 @@ class $generatedClassName extends CNode {
       final RectProperties? rectProperties,
       final DateTime? updatedAt,
       final PageID? pageID,
-      final NodeID? stabilID, 
+      final NodeID? stabilID,
+      final PageID? componentID,
+      final List<CNode>? componentChildren,
       final bool? isLocked,
+
       })
       : super(
             id: id,
@@ -59,6 +62,8 @@ class $generatedClassName extends CNode {
             updatedAt: updatedAt ?? DateTime.now(),
             pageID: pageID ?? '',
             stabilID: stabilID,
+            componentID: componentID,
+            componentChildren:componentChildren ?? [],
             isLocked: isLocked ?? false,
           );
 
@@ -76,6 +81,8 @@ class $generatedClassName extends CNode {
           DateTime? updatedAt,
           PageID? pageID,
           NodeID? stabilID,
+          PageID? componentID,
+          List<CNode>? componentChildren,
           final bool? isLocked,
         }) =>
       $generatedClassName(
@@ -90,6 +97,8 @@ class $generatedClassName extends CNode {
           rectProperties: rectProperties ?? getRectProperties,
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
+          componentID:componentID ?? this.componentID,
+          componentChildren: componentChildren ?? this.componentChildren,
           isLocked: isLocked ?? this.isLocked,
         );
 
@@ -107,6 +116,8 @@ class $generatedClassName extends CNode {
           DateTime? updatedAt,
           PageID? pageID,
           NodeID? stabilID,
+          PageID? componentID,
+          List<CNode>? componentChildren,
           bool? isLocked,
         }) =>
         $generatedClassName(
@@ -121,6 +132,8 @@ class $generatedClassName extends CNode {
           rectProperties: rectProperties ?? getRectProperties,
           pageID: pageID ?? this.pageID,
           stabilID: stabilID ?? this.stabilID,
+          componentID:componentID ?? this.componentID,
+          componentChildren: componentChildren ?? this.componentChildren,
           isLocked: isLocked ??  this.isLocked,
         );
 
@@ -149,6 +162,7 @@ class $generatedClassName extends CNode {
       childOrder: json['child_order'],
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
+      componentID: json['component_id'],
       isLocked: json['is_locked'],
     );
   }

@@ -8,7 +8,7 @@ Future<void> main() async {
     cacheEnabled: false,
 
     /// Example key
-    anonKey: '',
+    anonKey: 'Theta Key',
   );
 
   runApp(const MyApp());
@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Homepage',
+            'Your component',
 
             controller: _controller,
 
@@ -62,26 +62,33 @@ class _MyAppState extends State<MyApp> {
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error.toString()),
 
-            /// [fit] is how the component should fit the parent.
-            /// It can be [ComponentFit.absolute] or [ComponentFit.autoLayout].
-            fit: ComponentFit.absolute,
-
             /// [overrides] are the properties that can be overriden by the user.
             overrides: [
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
                 'node id',
-              )..setChild(const UIBox('ComponentName')),
+                builder: (context, node, child, children) {
+                  return GestureDetector(
+                    onTap: () {
+                      debugPrint('Tapped!');
+                    },
+                    child: Container(
+                      color: Colors.black,
+                      child: child,
+                    ),
+                  );
+                },
+              ),
 
               Override(
                 'node id',
-              )
-                ..setText('Click me!')
-                ..setColor(Colors.red, 1),
+                text: 'Click me!',
+                color: Colors.blue,
+              ),
 
               Override(
-                'node id 2',
+                'node id',
               )..setChildren([
                   const Text('Click me!'),
                   const Text('Click me!'),
