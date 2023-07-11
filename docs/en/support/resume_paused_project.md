@@ -1,0 +1,23 @@
+---
+title: Resume paused projects
+---
+
+# Resume paused projects
+
+Project paused due to inactivity? No need to worry, it only takes 3 seconds to resume. 
+
+## Tutorial
+
+<YouTube id="ExmMiu-rAVw" />
+
+1. Go inside your paused project from Theta dashboard.
+2. On the top-left corner, click on the name of the project.
+3. Enable 'Public' flag.
+4. Save.
+
+Your project is now accessible via the API.
+
+
+## Why are my projects paused? 
+
+Because we are a small project, and we want to save unused system resources to make the best use of them.
