@@ -61,6 +61,7 @@
       ],
       [
         "Misc.", [
+          ["Resume paused projects", "/support/resume_paused_project"],
           ["FAQ", "/faq"],
           ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
           ["License \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
