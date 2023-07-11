@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:light_logger/light_logger.dart';
+import 'package:playground/src/core/constants/projects.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:uuid/uuid.dart';
 
@@ -15,8 +16,8 @@ class StylesCubit extends Cubit<StylesState> {
   static const _textMapper = TextStylesMapper();
 
   void load(ThemeMode startingTheme) => emit(StylesState.loaded(
-        [],
-        [],
+        defaultColorStyles,
+        defaultTextStyles,
         startingTheme,
       ));
 
