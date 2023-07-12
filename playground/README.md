@@ -1,16 +1,13 @@
-# playground
+# Theta Playground
 
-A new Flutter project.
+<img width="2140" alt="9064F2FC-39C3-4C39-B44C-C3DFDFABE5C6" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/76cbde3b-50c2-4475-b83f-c0e94ffd6a27">
+
+The open-source Theta UI editor. Feel free to see how we made it, contribute to it or just use it for your next project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Run using:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+flutter run
+```
