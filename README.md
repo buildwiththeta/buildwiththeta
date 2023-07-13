@@ -27,7 +27,7 @@ Theta offers several advantages:
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
 - [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
 - Email Support: Ideal for reporting problems with your personal projects.
-- Discord: Ideal for sharing projects and portfolios with the community. Only for invited users.
+- [Discord](https://discord.gg/xNgDkZ2g6w): Ideal for sharing projects and portfolios with the community. Only for invited users.
 
 ## Supported Frameworks
 - [x] Flutter: ready on [pub.dev](https://pub.dev/packages/theta).
@@ -83,5 +83,6 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [🧑‍🏫 Documentation](https://docs.page/buildwiththeta/buildwiththeta/)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
+- [👾 Discord](https://discord.gg/xNgDkZ2g6w)
 
 ![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/banner-email-min.png)
