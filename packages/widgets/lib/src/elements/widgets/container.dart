@@ -21,7 +21,6 @@ class OpenWContainer extends Container {
     required final CNode? child,
     required final FSize width,
     required final FSize height,
-    required final FMargins margins,
     required final FMargins paddings,
     required final FFill fill,
     required final FBorderRadius borderRadius,
@@ -38,10 +37,6 @@ class OpenWContainer extends Container {
             state: context.watch<TreeState>(),
             context: context,
             isWidth: false,
-          ),
-          margin: margins.get(
-            state: context.watch<TreeState>(),
-            context: context,
           ),
           padding: paddings.get(
             state: context.watch<TreeState>(),
