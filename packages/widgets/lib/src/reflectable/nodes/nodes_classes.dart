@@ -43,6 +43,12 @@ class _Column {}
 class _Component {}
 
 @NodeInfo(
+  type: NType.teamComponent,
+  optionalDisplayName: 'Team Component',
+)
+class _TeamComponent {}
+
+@NodeInfo(
   type: NType.row,
   optionalDisplayName: 'Row',
 )

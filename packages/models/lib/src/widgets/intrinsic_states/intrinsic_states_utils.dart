@@ -21,6 +21,7 @@ class IntrinsicStateUtils {
     NType.row: RowIntrinsicStates(),
     NType.scaffold: const ScaffoldIntrinsicStates(),
     NType.component: ComponentIntrinsicStates(),
+    NType.teamComponent: TeamComponentIntrinsicStates(),
     NType.stack: const StackIntrinsicStates(),
     NType.text: TextIntrinsicStates(),
     NType.textField: TextFieldIntrinsicStates(),

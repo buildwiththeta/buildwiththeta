@@ -60,6 +60,21 @@ class ComponentIntrinsicStates extends IntrinsicState {
   ComponentIntrinsicStates.create() : this();
 }
 
+/// Team Component
+@nodeTypeISKey
+@NodeKey(NType.teamComponent)
+class TeamComponentIntrinsicStates extends IntrinsicState {
+  TeamComponentIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/component/',
+          displayName: NodeType.name(NType.teamComponent),
+          type: NType.teamComponent,
+          maxChildren: 0,
+          canHave: ChildrenEnum.none,
+        );
+  TeamComponentIntrinsicStates.create() : this();
+}
+
 /// Container
 @nodeTypeISKey
 @NodeKey(NType.container)

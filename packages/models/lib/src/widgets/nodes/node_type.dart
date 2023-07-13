@@ -9,6 +9,7 @@ class NType {
   static const String button = 'button';
   static const String column = 'column';
   static const String component = 'component';
+  static const String teamComponent = 'teamComponent';
   static const String container = 'container';
   static const String gridView = 'gridView';
   static const String icon = 'icon';
@@ -32,6 +33,7 @@ class NType {
         button,
         column,
         component,
+        teamComponent,
         container,
         gridView,
         icon,

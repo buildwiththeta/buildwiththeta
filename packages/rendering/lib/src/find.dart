@@ -44,8 +44,10 @@ class FindNodeRendering {
   }
 
   CNode? findTopComponent(List<CNode> nodes, NodeID nodeID) {
-    final topComponents =
-        nodes.where((element) => element.type == NType.component).toList();
+    final topComponents = nodes
+        .where((element) => (element.type == NType.component ||
+            element.type == NType.teamComponent))
+        .toList();
     for (final component in topComponents) {
       final result = _findComponentRecursively(component, nodeID);
       if (result != null) {
@@ -61,7 +63,7 @@ class FindNodeRendering {
     }
 
     for (final node in component.componentChildren) {
-      if (node.type == NType.component) {
+      if (node.type == NType.component || node.type == NType.teamComponent) {
         final result = _findComponentRecursively(node, nodeID);
         if (result != null) {
           return result;

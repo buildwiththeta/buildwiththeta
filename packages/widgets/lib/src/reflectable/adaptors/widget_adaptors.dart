@@ -441,3 +441,23 @@ class ComponentAdapter extends WidgetAdapter {
 
   ComponentAdapter.create() : this();
 }
+
+/// Team Component
+@dynamicAdapter
+@NodeKey(NType.teamComponent)
+class TeamComponentAdapter extends WidgetAdapter {
+  const TeamComponentAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWComponent(
+        key: ValueKey(
+            '${state.node.id} ${state.node.getAttributes[DBKeys.overrides]}'),
+        state: state,
+        componentChildren: state.node.componentChildren,
+      );
+
+  TeamComponentAdapter.create() : this();
+}

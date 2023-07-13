@@ -8,6 +8,7 @@ class PageMapper extends Mapper<PageEntity> {
   static const _branchIdKey = 'branch_id';
   static const _nameKey = 'name';
   static const _stabilID = 'stabil_id';
+  static const _sharedTeamID = 'shared_team_id';
 
   /// For a single instance
   @override
@@ -17,6 +18,7 @@ class PageMapper extends Mapper<PageEntity> {
       branchID: json[_branchIdKey],
       name: json[_nameKey] as String,
       stabilID: json[_stabilID],
+      sharedTeamID: json[_sharedTeamID],
     );
   }
 
