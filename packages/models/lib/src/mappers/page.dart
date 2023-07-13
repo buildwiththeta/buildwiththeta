@@ -38,6 +38,7 @@ class PageMapper extends Mapper<PageEntity> {
         _branchIdKey: page.branchID,
         _nameKey: page.name,
         _stabilID: page.stabilID,
+        _sharedTeamID: page.sharedTeamID,
       };
 
   Map<String, dynamic> toJsonWithId(PageEntity page) => {
@@ -45,17 +46,20 @@ class PageMapper extends Mapper<PageEntity> {
         _branchIdKey: page.branchID,
         _nameKey: page.name,
         _stabilID: page.stabilID,
+        _sharedTeamID: page.sharedTeamID,
       };
 
   PageEntity copyWith(final PageEntity e,
           {final String? id,
           final String? branchID,
           final String? name,
-          final String? stabilID}) =>
+          final String? stabilID,
+          final String? sharedTeamID}) =>
       PageEntity(
         id: id ?? e.id,
         branchID: branchID ?? e.branchID,
         name: name ?? e.name,
         stabilID: stabilID ?? e.stabilID,
+        sharedTeamID: sharedTeamID ?? e.sharedTeamID,
       );
 }
