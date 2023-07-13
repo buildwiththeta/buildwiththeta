@@ -1,3 +1,9 @@
+## 0.2.1
+
+- [x] Breaking: ComponentFit will be set into the editor. The parameter is removed from the UIBox.
+- [x] Feat: new rendering system for components.
+- [x] Feat: new override system with builder function and component id field.
+
 ## 0.2.0
 
 - [x] Feat: add UIBoxController.

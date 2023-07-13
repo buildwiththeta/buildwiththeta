@@ -41,9 +41,9 @@ class NodeRendering {
 
   List<CNode> renderComponents(final List<CNode> list, final PageID pageID) {
     final nodes = list.where((element) => element.pageID == pageID).toList();
-    for (var node in nodes) {
-      if (node.type == NType.component) {
-        node.addChildrenToComponent(node.componentID!, list);
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].type == NType.component) {
+        nodes[i] = nodes[i].addChildrenToComponent(nodes[i].componentID!, list);
       }
     }
     return nodes;

@@ -46,13 +46,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
-dependency_overrides:
-  theta_models:
-    path: ../../models
-  theta_rendering:
-    path: ../../rendering
-  theta_open_widgets:
-    path: ../../widgets
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

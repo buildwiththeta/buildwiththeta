@@ -1,3 +1,8 @@
+## 0.2.2
+
+- [x] Feat: components can be added inside other components.
+- [x] Feat: overrides can now point to one component in particular.
+
 ## 0.2.1
 
 - [x] Feat: unused files removed, cutting the 50% of time in code generation.

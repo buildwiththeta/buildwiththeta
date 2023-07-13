@@ -1,6 +1,6 @@
 # [Theta](https://buildwiththeta.com)
 
-## The open source way of designing remote UI
+## The new way of designing remote design systems
 
 Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
@@ -10,6 +10,7 @@ Build your remote design system effortlessly, without writing code. Seamlessly i
 Theta Flutter library.
 
 - Documentation: https://docs.buildwiththeta.com
+- Read ["From classic no-code builders to remote design systems"](https://buildwiththeta.com/blog/remote-design-systems-vs-app-builder)
 
 
 ## What is [Theta](https://buildwiththeta.com)?
@@ -79,7 +80,7 @@ You can display a placeholder widget during loading and an error widget.
 UIBox(
     'Homepage',
     placeholder: CircularProgressIndicator(),
-    errorWidget: (error) => Text(error),
+    errorWidget: (error) => Text(error.toString()),
 )
 ```
 
@@ -123,32 +124,6 @@ UIBox(
 )
 ```
 
-## Component fit modes
-
-- Documentation: [https://docs.buildwiththeta.com/en/studio/component_fit](https://docs.buildwiththeta.com/en/studio/component_fit)
-
-### Absolute
-
-Using the `absolute` fit mode, the component will be rendered with the exact coordinates of the component in the Theta Studio.
-
-```dart
-UIBox(
-    'Component name',
-    fit: ComponentFit.absolute,
-)
-```
-
-### Auto Layout
-
-Using the `autoLayout` fit mode, the component will be rendered with the coordinates of the component in the Theta Studio, but the size will be calculated automatically.
-
-```dart
-UIBox(
-    'Component name',
-    fit: ComponentFit.autoLayout,
-)
-```
-
 
 ## Overrides
 
@@ -160,9 +135,31 @@ You can override each UI block with a Flutter widget by mixing no-code with Flut
 UIBox(
     'Social card',
     overrides: [
-        Override('Post title')
-            ..setText('My beautiful cat')
-            ..setColor(Colors.white, 0.5),
+        // Override a node with a Flutter widget
+        Override(
+            'Button',
+            builder: (context, node, child, children) {
+                return GestureDetector(
+                    onTap: () {
+                        debugPrint('Tapped!');
+                    },
+                    child: Container(
+                        color: Colors.black,
+                        child: child, // You can even use the original child 
+                    ),
+                );
+            },
+        ),
+
+        // Override a node of a component with a custom text and color
+        Override(
+            'Post title',
+            component: 'Component id',
+            text: 'My beautiful cat',
+            color: Colors.white,
+        ),
+
+        // Override a node of a component with a custom image
         Override('Cover')
             ..setImage('https://...'),
     ],
@@ -180,6 +177,7 @@ You can also use the `UIBox` within other `UIBox`es. This provides a very high d
 UIBox(
     'Component name',
     overrides: [
+        // Override the child of an element
         Override('Element id')
             ..setChild(UIBox('Other component')),
     ],
@@ -194,6 +192,7 @@ You can also overwrite the children of an element.
 UIBox(
     'Component name',
     overrides: [
+        // Override the children of an element
         Override('Element name')
             ..setChildren([
                 Text('Child 1'), 
@@ -209,6 +208,9 @@ UIBox(
 
 - ✅ Alpha: experimental. Expect breaking changes.
 - ✅ Closed Beta: ready for conscientious use. Expect some bugs and missing features.
+- ✅ Invite-only Beta: ready to be used in production. Expect some bugs and missing features.
+
+Need an invitation? Ask on [Discord](https://discord.gg/xNgDkZ2g6w) or on [Twitter](https://twitter.com/buildwiththeta) using #buildwiththeta.
 
 ## Compatibility
 
@@ -230,10 +232,13 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 
 ## Resources
 
-- [▶️ Video tutorial](https://www.youtube.com/watch?v=oFed0NIqBZI)
+- [▶️ Video tutorial](https://www.youtube.com/watch?list=TLGGI35MW6OOHycwNzA3MjAyMw&v=u4TmO6f7xpI)
 - [⚡️ Website](https://buildwiththeta.com)
 - [🧑‍🏫 Documentation](https://docs.buildwiththeta.com)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
+- [👾 Discord](https://discord.gg/xNgDkZ2g6w)
+- [📝 Read our blog](https://blog.buildwiththeta.com/blog)
+- [☄️ Releases](https://github.com/buildwiththeta/buildwiththeta/releases)
 
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/logos/Theta_extended_negative-large.svg">
+<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/banner-email-min.png">
