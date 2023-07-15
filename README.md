@@ -1,4 +1,4 @@
-# [Theta](https://buildwiththeta.com)
+# [Build with Theta](https://buildwiththeta.com)
 
 ## The open source way of designing remote UI
 
