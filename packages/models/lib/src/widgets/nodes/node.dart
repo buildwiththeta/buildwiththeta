@@ -82,7 +82,7 @@ abstract class CNode extends Equatable {
         if (child.type == NType.component &&
             !topComponentsIds.contains(child.componentID)) {
           if (!child.componentChildren.contains(currentNode)) {
-            child._addChildrenToComponent(
+            child = child._addChildrenToComponent(
               child,
               child.componentID!,
               children,
