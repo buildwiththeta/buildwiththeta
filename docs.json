@@ -45,6 +45,7 @@
       ],
       [
         "Insights", [
+          ["Insights panel", "/studio/insights_panel"],
           ["Conversion events", "/studio/conversion_events"]
         ]
       ],
