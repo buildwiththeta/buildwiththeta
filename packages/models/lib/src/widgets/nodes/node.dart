@@ -79,10 +79,11 @@ abstract class CNode extends Equatable {
     for (var child in children) {
       if (componentID == child.pageID &&
           componentID == currentNode.componentID) {
-        if (child.type == NType.component &&
+        if ((child.type == NType.component ||
+                child.type == NType.teamComponent) &&
             !topComponentsIds.contains(child.componentID)) {
           if (!child.componentChildren.contains(currentNode)) {
-            child._addChildrenToComponent(
+            child = child._addChildrenToComponent(
               child,
               child.componentID!,
               children,
