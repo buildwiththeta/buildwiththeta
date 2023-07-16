@@ -44,6 +44,11 @@
         ]
       ],
       [
+        "Insights", [
+          ["Conversion events", "studio/conversion_events"]
+        ]
+      ],
+      [
         "Flutter library", [
           ["Theta sample app", "/builder/run_example"],
           ["Compatibility", "/builder/compatibility"],
