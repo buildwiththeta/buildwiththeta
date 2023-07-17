@@ -106,6 +106,19 @@ class ComponentDefaultAttributes extends DefaultAttributesAdapter {
   ComponentDefaultAttributes.create() : this();
 }
 
+/// Team Component
+@dynamicDefaultAttribute
+@NodeKey(NType.teamComponent)
+class TeamComponentDefaultAttributes extends DefaultAttributesAdapter {
+  const TeamComponentDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get =>
+      const <String, dynamic>{DBKeys.overrides: <Override>[]};
+
+  TeamComponentDefaultAttributes.create() : this();
+}
+
 /// Image, Container
 @dynamicDefaultAttribute
 @NodeKey(NType.container)

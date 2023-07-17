@@ -47,5 +47,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
+  build_runner: any
+
 
 flutter:

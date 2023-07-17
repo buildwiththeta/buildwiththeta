@@ -79,7 +79,8 @@ abstract class CNode extends Equatable {
     for (var child in children) {
       if (componentID == child.pageID &&
           componentID == currentNode.componentID) {
-        if (child.type == NType.component &&
+        if ((child.type == NType.component ||
+                child.type == NType.teamComponent) &&
             !topComponentsIds.contains(child.componentID)) {
           if (!child.componentChildren.contains(currentNode)) {
             child = child._addChildrenToComponent(
@@ -98,46 +99,6 @@ abstract class CNode extends Equatable {
 
     return currentNode.copyWith(componentChildren: newComponentChildren);
   }
-
-  // Method to add children to a component node using the component ID.
-  /*void addChildrenToComponent(
-    PageID componentID,
-    List<CNode> children,
-  ) {
-    return _addChildrenToComponent(componentID, children);
-  }
-
-  void _addChildrenToComponent(PageID componentID, List<CNode> children,
-      {Set<PageID>? topComponentsIds}) {
-    topComponentsIds ??= {};
-
-    if (topComponentsIds.isEmpty) {
-      topComponentsIds.add(pageID!);
-    }
-    if (pageID == componentID || topComponentsIds.contains(this.componentID)) {
-      return;
-    }
-
-    topComponentsIds.add(this.componentID!);
-
-    for (var child in children) {
-      if (componentID == child.pageID && componentID == this.componentID) {
-        if (child.type == NType.component &&
-            !topComponentsIds.contains(child.componentID)) {
-          if (!child.componentChildren.contains(this)) {
-            child._addChildrenToComponent(
-              child.componentID!,
-              children,
-              topComponentsIds: topComponentsIds,
-            );
-          }
-        }
-        componentChildren.add(child);
-      }
-    }
-
-    topComponentsIds.remove(this.componentID);
-  }*/
 
   static const defaultRectForMobile = Rect.fromLTWH(0, 0, 150, 150);
   static const defaultRProperties = RectProperties(

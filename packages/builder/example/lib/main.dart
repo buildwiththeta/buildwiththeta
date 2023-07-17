@@ -29,6 +29,8 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _controller.onLoaded(() {
       debugPrint('Loaded!');
+
+      /// Prints the nodes to the console.
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));
@@ -53,7 +55,6 @@ class _MyAppState extends State<MyApp> {
           /// It requires a component [name].
           body: UIBox(
             'Your component',
-
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.

@@ -42,6 +42,7 @@ class _OpenWComponentState extends State<OpenWComponent> {
     const NodeRendering nodeRendering = NodeRendering();
     final widget0 = nodeRendering.renderTree(componentChildren);
     final globalState = context.watch<TreeState>();
+
     return ChangeNotifierProvider(
       create: (_) => globalState.copyWith(
           nodeComponentID: widget.state.node.id,
