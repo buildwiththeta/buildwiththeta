@@ -1,3 +1,7 @@
+## 0.2.3
+
+- [x] Feat: team component library.
+
 ## 0.2.2
 
 - [x] Feat: components can be added inside other components.

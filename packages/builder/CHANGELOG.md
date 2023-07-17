@@ -1,3 +1,7 @@
+## 0.4.0
+
+- [x] Feat: team component libraries added.
+
 ## 0.2.1
 
 - [x] Breaking: ComponentFit will be set into the editor. The parameter is removed from the UIBox.

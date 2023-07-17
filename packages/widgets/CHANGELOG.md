@@ -1,3 +1,11 @@
+## 0.2.6
+
+- [x] Fix: Code generated.
+
+## 0.2.5
+
+- [x] Feat: team component libraries added.
+
 ## 0.2.4
 
 - [x] Feat: component widget added.
