@@ -1,15 +1,14 @@
 import 'package:device_frame/device_frame.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
 import 'package:playground/src/core/constants/generic_devices.dart';
 import 'package:playground/src/dependency_injection/di.dart';
 import 'package:playground/src/presentation/editor/blocs/component_fit/component_fit_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/device_mode/device_mode_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/editor/editor_cubit.dart';
+import 'package:playground/src/presentation/editor/blocs/export_panel/export_panel_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/panels/panels_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/pressed_keys/pressed_keys.dart';
 import 'package:playground/src/presentation/editor/blocs/styles/styles_cubit.dart';
@@ -41,6 +40,7 @@ class EditorConnector extends StatelessWidget {
         BlocProvider(create: (context) => PanelsCubit()),
         BlocProvider(create: (context) => ComponentFitCubit()),
         BlocProvider(create: (context) => PressedKeysCubit()),
+        BlocProvider(create: (context) => ExportPanelCubit()),
       ],
       child: const EditorPage(),
     );

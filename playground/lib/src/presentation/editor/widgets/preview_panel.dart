@@ -1,22 +1,34 @@
 import 'package:code_text_field/code_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playground/src/presentation/editor/blocs/export_panel/export_panel_cubit.dart';
 import 'package:playground/src/presentation/editor/widgets/app_canvas.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:highlight/languages/dart.dart';
 import 'package:flutter_highlight/themes/rainbow.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class PreviewPanel extends StatefulWidget {
+class PreviewPanel extends StatelessWidget {
   const PreviewPanel({super.key});
 
   @override
-  State<PreviewPanel> createState() => _PreviewPanelState();
+  Widget build(BuildContext context) => BlocBuilder<ExportPanelCubit, bool>(
+        builder: (context, state) =>
+            state ? const _PreviewPanel() : const SizedBox.shrink(),
+      );
 }
 
-class _PreviewPanelState extends State<PreviewPanel> {
+class _PreviewPanel extends StatefulWidget {
+  const _PreviewPanel();
+
+  @override
+  State<_PreviewPanel> createState() => _PreviewPanelState();
+}
+
+class _PreviewPanelState extends State<_PreviewPanel> {
   final CodeController controller = CodeController(
     text: '''
 import 'package:flutter/material.dart';
@@ -37,7 +49,7 @@ class RemoteWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
     return Container(
-      width: 450,
+      width: 420,
       margin: EI.smA,
       padding: EI.mdA,
       decoration: BoxDecoration(
@@ -53,7 +65,11 @@ class RemoteWidget extends StatelessWidget {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Gap(Grid.small),
+          const THeadline2('Theta Playground'),
+          const Gap(Grid.medium),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -65,7 +81,7 @@ class RemoteWidget extends StatelessWidget {
                     color: Palette.blue,
                   ),
                   Gap(4),
-                  TParagraph("Write this code"),
+                  TParagraph("Just use this code"),
                 ],
               ),
               BounceForSmallWidgets(
@@ -134,7 +150,7 @@ class RemoteWidget extends StatelessWidget {
                 color: Palette.blue,
               ),
               Gap(4),
-              TParagraph("What you'll see"),
+              TParagraph("You'll see in your app"),
             ],
           ),
           const Gap(Grid.small),

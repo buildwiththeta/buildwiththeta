@@ -21,6 +21,7 @@ version: 1.0.0+1
 scripts:
   gen: "flutter pub run build_runner build --delete-conflicting-outputs"
   run: "flutter run -d chrome"
+  build: "flutter build web --release --no-tree-shake-icons"
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
