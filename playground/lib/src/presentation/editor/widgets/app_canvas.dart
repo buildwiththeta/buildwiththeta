@@ -10,12 +10,14 @@ import 'package:playground/src/presentation/editor/blocs/styles/styles_cubit.dar
 import 'package:playground/src/presentation/editor/widgets/line_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class AppCanvas extends StatelessWidget {
   const AppCanvas({
     super.key,
+    this.forPlay = false,
   });
+
+  final bool forPlay;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class AppCanvas extends StatelessWidget {
           theme: mode == AdaptiveThemeMode.light
               ? ThemeMode.light
               : ThemeMode.dark,
-          forPlay: false,
+          forPlay: forPlay,
           isPage: true,
           params: const [],
           states: const [],
@@ -40,62 +42,45 @@ class AppCanvas extends StatelessWidget {
           config: const ProjectConfigModel(),
           focusedNode: null,
         ),
-        child: TreeGlobalState(
-          onNodeAdded: (node, parent, offset) => context
-              .read<EditorCubit>()
-              .onNodeAdded(
-                  node: node,
-                  parentID: parent.id,
-                  customIndex: parent.children?.length ?? 0,
-                  offset: offset),
-          onNodeChanged: (node, event, deviceType) => context
-              .read<EditorCubit>()
-              .onNodeChanged(node, event, deviceType),
-          onNodeFocused: (node) =>
-              context.read<EditorCubit>().onNodeFocused(node.id),
-          onNodeHovered: (node) =>
-              context.read<EditorCubit>().onNodeHovered(node.id),
-          onRightClick: (e, node) {},
-          child: Center(
-            child: AnimatedPadding(
-              padding: const EdgeInsets.only(top: 16, bottom: 16),
-              curve: Curves.easeInOut,
-              duration: const Duration(milliseconds: 300),
-              child: BlocBuilder<DeviceModeCubit, DeviceModeState>(
-                builder: (context, deviceState) => deviceState.maybeWhen(
-                  desktop: (s) => SizedBox(
-                    width: MediaQuery.of(context).size.width - 300,
-                    child: FittedBox(
-                      child: DeviceFrame(
-                        isFrameVisible: deviceState.maybeWhen(
-                            laptop: (s) => false,
-                            desktop: (s) => false,
-                            orElse: () => true),
-                        device: deviceState.whenOrNull(
-                          desktop: (s) => desktopInfo,
-                          laptop: (s) => laptopInfo,
-                        )!,
-                        screen: const DynamicTreeStateAttributesWidget(),
-                      ),
+        child: Center(
+          child: AnimatedPadding(
+            padding: const EdgeInsets.only(top: 16, bottom: 16),
+            curve: Curves.easeInOut,
+            duration: const Duration(milliseconds: 300),
+            child: BlocBuilder<DeviceModeCubit, DeviceModeState>(
+              builder: (context, deviceState) => deviceState.maybeWhen(
+                desktop: (s) => SizedBox(
+                  width: MediaQuery.of(context).size.width - 300,
+                  child: FittedBox(
+                    child: DeviceFrame(
+                      isFrameVisible: deviceState.maybeWhen(
+                          laptop: (s) => false,
+                          desktop: (s) => false,
+                          orElse: () => true),
+                      device: deviceState.whenOrNull(
+                        desktop: (s) => desktopInfo,
+                        laptop: (s) => laptopInfo,
+                      )!,
+                      screen: const DynamicTreeStateAttributesWidget(),
                     ),
                   ),
-                  orElse: () => DeviceFrame(
-                    orientation: deviceState.maybeWhen(
-                        phone: (s) => Orientation.portrait,
-                        tablet: (s) => Orientation.portrait,
-                        orElse: () => Orientation.landscape),
-                    isFrameVisible: deviceState.maybeWhen(
-                        desktop: (s) => false,
-                        laptop: (s) => false,
-                        orElse: () => true),
-                    device: deviceState.when(
-                      phone: (s) => Devices.ios.iPhone13,
-                      tablet: (s) => Devices.ios.iPadPro11Inches,
-                      laptop: (s) => laptopInfo,
-                      desktop: (s) => desktopInfo,
-                    ),
-                    screen: const DynamicTreeStateAttributesWidget(),
+                ),
+                orElse: () => DeviceFrame(
+                  orientation: deviceState.maybeWhen(
+                      phone: (s) => Orientation.portrait,
+                      tablet: (s) => Orientation.portrait,
+                      orElse: () => Orientation.landscape),
+                  isFrameVisible: deviceState.maybeWhen(
+                      desktop: (s) => false,
+                      laptop: (s) => false,
+                      orElse: () => true),
+                  device: deviceState.when(
+                    phone: (s) => Devices.ios.iPhone13,
+                    tablet: (s) => Devices.ios.iPadPro11Inches,
+                    laptop: (s) => laptopInfo,
+                    desktop: (s) => desktopInfo,
                   ),
+                  screen: const DynamicTreeStateAttributesWidget(),
                 ),
               ),
             ),
@@ -218,7 +203,8 @@ class DynamicTreeStateAttributesWidget extends StatelessWidget {
                         rootNode: editorState.rootNode,
                       ),
                     ),
-                    if (editorState.focusedNode != null)
+                    if (editorState.focusedNode != null &&
+                        !context.watch<TreeState>().forPlay)
                       Stack(
                         children: [
                           ...LineBuilder().buildLines(

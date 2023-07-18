@@ -65,7 +65,7 @@ class _EditorRightBarState extends State<EditorRightBar> {
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
-        width: 350,
+        width: 320,
         margin: const EdgeInsets.all(Grid.small),
         decoration: BoxDecoration(
           color: theme.bgPrimary,
