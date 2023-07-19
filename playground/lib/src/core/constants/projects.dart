@@ -34,7 +34,7 @@ final defaultNodes = [
       parentID: 'a',
       rectProperties: const RectProperties(
         rect: ResponsiveRect(
-          rectPhone: Rect.fromLTWH(20, (844 - 400) / 2, 350, 400),
+          rectPhone: Rect.fromLTWH(20, (844 - 400) / 2, 350, 440),
           rectTablet: null,
           rectDesktop: null,
           rectLaptop: null,
