@@ -49,9 +49,9 @@ class RemoteWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
     return Container(
-      width: 420,
+      width: 360,
       margin: EI.smA,
-      padding: EI.mdA,
+      padding: EI.smA,
       decoration: BoxDecoration(
         color: theme.bgPrimary,
         borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
@@ -68,7 +68,16 @@ class RemoteWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Gap(Grid.small),
-          const THeadline2('Theta Playground'),
+          const CText(
+            'Theta Playground',
+            typography: TextStyle(
+              fontFamily: 'Degular',
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              height: 1.5,
+              letterSpacing: -0.2,
+            ),
+          ),
           const Gap(Grid.medium),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,13 +136,13 @@ class RemoteWidget extends StatelessWidget {
                     controller: controller,
                     readOnly: true,
                     textStyle: GoogleFonts.azeretMono(
-                        fontSize: 14,
+                        fontSize: 12,
                         height: 1.5,
                         fontWeight: FontWeight.w500,
                         color: theme.txtSecondary),
                     lineNumberStyle: LineNumberStyle(
                       textStyle: GoogleFonts.azeretMono(
-                          fontSize: 14, height: 1.5, color: theme.txtPrimary30),
+                          fontSize: 12, height: 1.5, color: theme.txtPrimary30),
                     ),
                     background: theme.bgSecondary,
                   ),
