@@ -39,7 +39,7 @@ class RemoteWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UIBox("Component Name");
+    return UIBox("Social card");
   }
 }''',
     language: dart,
