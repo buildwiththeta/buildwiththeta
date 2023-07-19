@@ -2,7 +2,7 @@
 title: Build with Theta | API Reference - Developer's Guide
 ---
 
-# Developer's Guide - Build with Theta A| Reference API
+# Developer's Guide - Build with Theta | Reference API
 
 ## Introduction
 
