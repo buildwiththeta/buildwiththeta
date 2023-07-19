@@ -2,7 +2,7 @@
 title: Build with Theta | API Reference - Developer's Guide
 ---
 
-# Developer's Guide - Build with Theta | Reference API
+# Developer's Guide - Build with Theta API
 
 ## Introduction
 
@@ -29,7 +29,7 @@ The Build with Theta API uses standard HTTP response codes to indicate the statu
 - **401**: Anon Key missing. Please include the Anon Key in the Authorization header.
 - **403**: Invalid Anon Key. Make sure the provided Anon Key is valid.
 - **404**: The requested resource was not found.
-- **5xx**: Indicates a server error within the Theta API.
+- **5xx**: Indicates a server error within the Build with Theta API.
 
 Refer to the API documentation for detailed information about request parameters and response payloads.
 
