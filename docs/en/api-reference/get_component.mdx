@@ -1,18 +1,18 @@
 ---
-title: Get project styles api
+title: Get component - Build with Theta API
 ---
 
-# Get project styles
+# Get component
 
-To retrieve all the styles (colors, text styles) of a project, you can make a POST request to the 'get_project_styles' endpoint of the Build with Theta API. Here's a sample curl command to do that:
+To retrieve a remote component, you can make a POST request to the 'get_component' endpoint of the Build with Theta API. Here's a sample curl command to do that:
 
 ```bash
-curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_project_styles' \
+curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_component' \
      -H 'Authorization: Bearer eyJhbGciOi...' \
      -H 'Content-Type: application/json' \
      -d $'{
       "session_id": "23a9e8c7-cd8f-4557-...",
-      "title": "Get styles",
+      "title": "Get component",
       "description": "...",
       "properties": { ... },
       "device_info": {
