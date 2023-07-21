@@ -51,6 +51,7 @@
       ],
       [
         "Flutter library", [
+          ["Introduction", "/builder/readme"],
           ["Theta sample app", "/builder/run_example"],
           ["Compatibility", "/builder/compatibility"],
           ["Overrides", "/builder/overrides"],
