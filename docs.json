@@ -58,13 +58,16 @@
         ]
       ],
       [
-        "User & Billing", [
-          ["User deletion", "/support/user_deletion"]
+        "API Reference", [
+          ["Introduction", "/api-reference/introduction"],
+          ["Get project styles", "/api-reference/get_project_styles"],
+          ["Get component", "/api-reference/get_component"]
         ]
       ],
       [
         "Misc.", [
           ["Resume paused projects", "/support/resume_paused_project"],
+          ["User deletion", "/support/user_deletion"],
           ["FAQ", "/faq"],
           ["Changelog", "https://github.com/buildwiththeta/buildwiththeta/releases"],
           ["License \uD83D\uDD17", "https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE"]
