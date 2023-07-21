@@ -113,7 +113,7 @@ final defaultTextStyles = [
     branchID: defaultBranch.id,
     name: 'Headline',
     fontFamily: 'Poppins',
-    fontSize: const FFontSize(size: 32, sizeTablet: 40, sizeDesktop: 48),
+    fontSize: const FFontSize(size: 32, sizeTablet: 40, sizeDesktop: 40),
     fontWeight: const FFontWeight(
       weight: FontWeight.w600,
     ),
