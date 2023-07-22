@@ -1,4 +1,4 @@
-# Flutter Counter app with Theta and Bloc.
+# Flutter counter app with Theta and Bloc.
 
 This project takes up the [official bloc library project](https://github.com/felangel/bloc/tree/master/examples/flutter_counter) with the addition of [Theta](https://github.com/buildwiththeta/buildwiththeta).
 
