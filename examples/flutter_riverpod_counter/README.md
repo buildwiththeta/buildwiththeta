@@ -42,7 +42,7 @@ class Home extends ConsumerWidget {
           Workflow('Increment Button', Trigger.onTap,
               () => ref.read(counterProvider.notifier).increment()),
           Workflow('Decrement Button', Trigger.onTap,
-              () => ref.read(counterProvider.notifier).increment()),
+              () => ref.read(counterProvider.notifier).decrement()),
         ],
       ),
     );
