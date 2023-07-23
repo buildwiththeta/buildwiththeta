@@ -1,6 +1,6 @@
 ## [Build with Theta](https://buildwiththeta.com) CLI
 
-An official Build with Theta CLI.
+Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
 
 ---
 
