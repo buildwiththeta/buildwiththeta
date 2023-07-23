@@ -4,7 +4,7 @@ import 'package:theta_cli/src/dependency_injection/di.dart';
 
 /// {@template authenticate_command}
 ///
-/// `buildwiththeta_cli authenticate`
+/// `theta_cli authenticate`
 /// A [Command] to exemplify a sub command
 /// {@endtemplate}
 class LinkCommand extends Command<int> {

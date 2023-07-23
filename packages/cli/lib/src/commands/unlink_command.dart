@@ -7,7 +7,7 @@ import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
 
 /// {@template authenticate_command}
 ///
-/// `buildwiththeta_cli authenticate`
+/// `theta_cli authenticate`
 /// A [Command] to exemplify a sub command
 /// {@endtemplate}
 class UnlinkCommand extends Command<int> {

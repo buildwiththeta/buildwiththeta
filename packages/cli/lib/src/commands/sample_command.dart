@@ -4,7 +4,7 @@ import 'package:theta_cli/src/data/datasources/directory_service.dart';
 
 /// {@template sample_command}
 ///
-/// `buildwiththeta_cli sample`
+/// `theta_cli sample`
 /// A [Command] to exemplify a sub command
 /// {@endtemplate}
 class SampleCommand extends Command<int> {

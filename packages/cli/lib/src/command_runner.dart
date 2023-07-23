@@ -10,15 +10,15 @@ const executableName = 'theta';
 const packageName = 'theta_cli';
 const description = 'An official Build with Theta CLI.';
 
-/// {@template buildwiththeta_cli_command_runner}
+/// {@template theta_cli_command_runner}
 /// A [CommandRunner] for the CLI.
 ///
 /// ```
-/// $ buildwiththeta_cli --version
+/// $ theta_cli --version
 /// ```
 /// {@endtemplate}
 class BuildwiththetaCliCommandRunner extends CompletionCommandRunner<int> {
-  /// {@macro buildwiththeta_cli_command_runner}
+  /// {@macro theta_cli_command_runner}
   BuildwiththetaCliCommandRunner({
     Logger? logger,
     PubUpdater? pubUpdater,

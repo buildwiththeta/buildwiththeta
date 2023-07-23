@@ -9,7 +9,7 @@ import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
 
 /// {@template preload_command}
 ///
-/// `buildwiththeta_cli preload`
+/// `theta_cli preload`
 /// A [Command] to exemplify a sub command
 /// {@endtemplate}
 class PreloadComponentCommand extends Command<int> {

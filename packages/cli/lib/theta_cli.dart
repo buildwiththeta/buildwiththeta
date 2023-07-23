@@ -1,7 +1,7 @@
-/// buildwiththeta_cli, An official Build with Theta CLI.
+/// theta_cli, Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
 ///
 /// ```sh
-/// # activate buildwiththeta_cli
+/// # activate theta_cli
 /// dart pub global activate theta_cli
 ///
 /// # see usage
