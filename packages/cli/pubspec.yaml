@@ -1,10 +1,20 @@
 name: theta_cli
 description: Theta CLI allows developers to interact with and manage the Theta projcts efficiently.
+
 version: 0.0.1
-publish_to: none
+
+repository: https://github.com/buildwiththeta/buildwiththeta
+homepage: https://buildwiththeta.com
+issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
+documentation: https://docs.buildwiththeta.com
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
+
+scripts:
+  pubget: "flutter pub get"
+  dryrun: "dart pub publish --dry-run"
+  publish: "dart pub publish"
 
 dependencies:
   args: ^2.4.1
