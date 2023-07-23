@@ -1,3 +1,7 @@
+## 0.4.1
+
+- [x] Feat: Overrides support value changes.
+
 ## 0.4.0
 
 - [x] Feat: team component libraries added.

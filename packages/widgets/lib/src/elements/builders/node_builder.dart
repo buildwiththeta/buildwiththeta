@@ -240,16 +240,35 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
     if (!state.forPlay && state.workflows.isEmpty) {
       return widget.child;
     }
-    return MouseRegion(
-      onEnter: (e) => executer.execute(Trigger.onMouseEnter),
-      onExit: (e) => executer.execute(Trigger.onMouseExit),
-      onHover: (e) => executer.execute(Trigger.onHover),
-      child: GestureDetector(
+
+    return maybeListener(maybeGestureDetector(widget.child));
+  }
+
+  Widget maybeListener(Widget child) {
+    if (executer.doesWorkflowExist(Trigger.onMouseEnter) ||
+        executer.doesWorkflowExist(Trigger.onMouseExit) ||
+        executer.doesWorkflowExist(Trigger.onHover)) {
+      return MouseRegion(
+        onEnter: (e) => executer.execute(Trigger.onMouseEnter),
+        onExit: (e) => executer.execute(Trigger.onMouseExit),
+        onHover: (e) => executer.execute(Trigger.onHover),
+        child: child,
+      );
+    }
+    return child;
+  }
+
+  Widget maybeGestureDetector(Widget child) {
+    if (executer.doesWorkflowExist(Trigger.onTap) ||
+        executer.doesWorkflowExist(Trigger.onDoubleTap) ||
+        executer.doesWorkflowExist(Trigger.onLongPress)) {
+      return GestureDetector(
         onTap: () => executer.execute(Trigger.onTap),
         onDoubleTap: () => executer.execute(Trigger.onDoubleTap),
         onLongPress: () => executer.execute(Trigger.onLongPress),
-        child: widget.child,
-      ),
-    );
+        child: child,
+      );
+    }
+    return child;
   }
 }

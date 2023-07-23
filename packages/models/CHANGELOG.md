@@ -1,3 +1,7 @@
+## 0.2.4
+
+- [x] Feat: Overrides can now have value changes.
+
 ## 0.2.3
 
 - [x] Feat: team component library.
