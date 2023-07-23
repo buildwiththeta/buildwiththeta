@@ -11,16 +11,18 @@ curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_project_styles' \
      -H 'Authorization: Bearer eyJhbGciOi...' \
      -H 'Content-Type: application/json' \
      -d $'{
-      "session_id": "23a9e8c7-cd8f-4557-...",
-      "title": "Get styles",
-      "description": "...",
-      "properties": { ... },
-      "device_info": {
-        "os_name": "...",
-        "os_version": "...",
-        "locale": "...",
-        "sdk_version": "...",
-        "sdk_build_number": "..."
+      "log": {
+        "session_id": "23a9e8c7-cd8f-4557-...",
+        "title": "Get styles",
+        "description": "...",
+        "properties": { ... },
+        "device_info": {
+          "os_name": "...",
+          "os_version": "...",
+          "locale": "...",
+          "sdk_version": "...",
+          "sdk_build_number": "..."
+        }
       }
     }'
 ```
