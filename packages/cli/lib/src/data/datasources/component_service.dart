@@ -1,10 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_cli/src/core/constants.dart';
-import 'package:theta_cli/src/data/models/get_page_response.dart';
 import 'package:theta_cli/src/data/models/token.dart';
+import 'package:uuid/uuid.dart';
 
 class ComponentService {
   const ComponentService(
@@ -15,10 +14,7 @@ class ComponentService {
   final ClientToken _clientToken;
   final Client _httpClient;
 
-  static final _analytics = ThetaAnalytics.instance.client;
-
-  Future<GetPageResponseEntity> getComponent(String componentName) async {
-    final log = _analytics.logEvent(title: 'Get component', description: null);
+  Future<String> getComponent(String componentName) async {
     final res = await _httpClient.post(
       Uri.parse('$baseUrl$getComponentPath'),
       headers: {
@@ -27,7 +23,19 @@ class ComponentService {
       },
       body: json.encode({
         'component_name': componentName,
-        if (log.isRight) 'log': {...log.right},
+        'log': {
+          "session_id": Uuid().v1(),
+          "title": "Get component",
+          "description": null,
+          "properties": null,
+          "device_info": {
+            "os_name": null,
+            "os_version": null,
+            "locale": null,
+            "sdk_version": null,
+            "sdk_build_number": null
+          }
+        }
       }),
     );
 
@@ -36,8 +44,6 @@ class ComponentService {
         'Error fetching component, code: ${res.statusCode}, message: ${res.body}',
       );
     }
-    return GetPageResponseEntity.fromJson(
-      json.decode(res.body) as Map<String, dynamic>,
-    );
+    return res.body;
   }
 }

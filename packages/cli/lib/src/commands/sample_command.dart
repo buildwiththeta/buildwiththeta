@@ -1,5 +1,6 @@
 import 'package:args/command_runner.dart';
 import 'package:mason_logger/mason_logger.dart';
+import 'package:theta_cli/src/data/datasources/directory_service.dart';
 
 /// {@template sample_command}
 ///
@@ -7,6 +8,8 @@ import 'package:mason_logger/mason_logger.dart';
 /// A [Command] to exemplify a sub command
 /// {@endtemplate}
 class SampleCommand extends Command<int> {
+  static const directoryService = DirectoryService();
+
   /// {@macro sample_command}
   SampleCommand({
     required Logger logger,
@@ -29,7 +32,12 @@ class SampleCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    var output = 'Which unicorn has a cold? The Achoo-nicorn!';
+    var output = '';
+    try {
+      output = 'File created successfully!';
+    } catch (e) {
+      output = e.toString();
+    }
     if (argResults?['cyan'] == true) {
       output = lightCyan.wrap(output)!;
     }

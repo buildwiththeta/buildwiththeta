@@ -45,6 +45,7 @@ dependencies:
   provider: ^6.0.5
   hive: ^2.2.3
   path_provider: ^2.0.15
+  archive: ^3.3.7
 
 dev_dependencies:
   flutter_test:
