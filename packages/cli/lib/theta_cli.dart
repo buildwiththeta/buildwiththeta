@@ -1,4 +1,4 @@
-/// buildwiththeta_cli, A Very Good Project created by Very Good CLI.
+/// buildwiththeta_cli, An official Build with Theta CLI.
 ///
 /// ```sh
 /// # activate buildwiththeta_cli

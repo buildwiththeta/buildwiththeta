@@ -4,13 +4,11 @@ import 'package:cli_completion/cli_completion.dart';
 import 'package:mason_logger/mason_logger.dart';
 import 'package:pub_updater/pub_updater.dart';
 import 'package:theta_cli/src/commands/commands.dart';
-import 'package:theta_cli/src/commands/link_command.dart';
-import 'package:theta_cli/src/commands/unlink_command.dart';
 import 'package:theta_cli/src/version.dart';
 
-const executableName = 'buildwiththeta_cli';
-const packageName = 'buildwiththeta_cli';
-const description = 'A Very Good Project created by Very Good CLI.';
+const executableName = 'theta';
+const packageName = 'theta_cli';
+const description = 'An official Build with Theta CLI.';
 
 /// {@template buildwiththeta_cli_command_runner}
 /// A [CommandRunner] for the CLI.
@@ -41,10 +39,10 @@ class BuildwiththetaCliCommandRunner extends CompletionCommandRunner<int> {
       );
 
     // Add sub commands
-    addCommand(SampleCommand(logger: _logger));
+    // addCommand(SampleCommand(logger: _logger));
     addCommand(PreloadComponentCommand(logger: _logger));
-    addCommand(LinkCommand(logger: _logger));
-    addCommand(UnlinkCommand(logger: _logger));
+    // addCommand(LinkCommand(logger: _logger));
+    // addCommand(UnlinkCommand(logger: _logger));
     addCommand(UpdateCommand(logger: _logger, pubUpdater: _pubUpdater));
   }
 
