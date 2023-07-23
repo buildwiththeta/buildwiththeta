@@ -14,7 +14,7 @@ class UnlinkCommand extends Command<int> {
   /// {@macro authenticate_command}
   UnlinkCommand({
     required Logger logger,
-  }) : _logger = logger {}
+  }) : _logger = logger;
 
   @override
   String get description => 'Unlink with your project.';
@@ -25,7 +25,8 @@ class UnlinkCommand extends Command<int> {
   final Logger _logger;
 
   final CreatePreLoadFileUseCase createPreLoadFileUseCase =
-      CreatePreLoadFileUseCase(DirectoryRepositoryImpl(DirectoryService()));
+      const CreatePreLoadFileUseCase(
+          DirectoryRepositoryImpl(DirectoryService()));
 
   @override
   Future<int> run() async {

@@ -23,7 +23,7 @@ Future<void> initializeDependencyInjection(String anonKey) async {
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
-    ..registerLazySingleton(() => DirectoryService());
+    ..registerLazySingleton(() => const DirectoryService());
 
   getIt
     ..registerLazySingleton<ComponentRepository>(

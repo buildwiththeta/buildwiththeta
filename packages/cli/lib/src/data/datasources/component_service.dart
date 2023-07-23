@@ -24,7 +24,7 @@ class ComponentService {
       body: json.encode({
         'component_name': componentName,
         'log': {
-          "session_id": Uuid().v1(),
+          "session_id": const Uuid().v1(),
           "title": "Get component",
           "description": null,
           "properties": null,

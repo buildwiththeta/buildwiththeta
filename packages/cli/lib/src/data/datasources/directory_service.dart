@@ -5,7 +5,7 @@ class DirectoryService {
   const DirectoryService();
 
   static final currentDirectory = Directory.current.path;
-  static final assetsDirectory = currentDirectory + '/assets';
+  static final assetsDirectory = '$currentDirectory/assets';
   static const preloadFile = '/theta_preload.json';
 
   String compressString(String json) {
@@ -16,7 +16,7 @@ class DirectoryService {
 
   Future<void> directoryContainsPubspec() async {
     final current =
-        await File(Directory.current.path + '/pubspec.yaml').exists();
+        await File('${Directory.current.path}/pubspec.yaml').exists();
     if (!current) {
       throw Exception(
         'Error: current directory does not contain a pubspec.yaml file',
@@ -30,7 +30,7 @@ class DirectoryService {
   }
 
   Future<bool> checkAssetsDirectory() async =>
-      await Directory(Directory.current.path + '/assets').exists();
+      await Directory('${Directory.current.path}/assets').exists();
 
   Future<void> createAssetsDirectory() async {
     await directoryContainsPubspec();
