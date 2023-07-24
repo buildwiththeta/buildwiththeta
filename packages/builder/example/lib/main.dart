@@ -8,8 +8,7 @@ Future<void> main() async {
     cacheEnabled: false,
 
     /// Example key
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI1NTE1MTU3Ni1jZGFkLTQ2ZGUtYWI3Mi01OGEzNDY1ZjM2NGMiLCJhbm9uX2tleSI6IjE0MzRkZDU5LTAwOWYtNGQ2Zi05OWE5LTQ4N2Y3Yzk1ODZhMCIsImlhdCI6MTY5MDE3NzgyOCwiZXhwIjoxNzIxNzM1NDI4LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.iP6gc0HG3KPvVu8DNy1h2lk_ZvXzOC8EALa08u5Bqic',
+    anonKey: 'Theta Key',
   );
 
   runApp(const MyApp());
