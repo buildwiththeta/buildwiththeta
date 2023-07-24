@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:archive/archive.dart';
 
 const defaultHeaders = {'Content-Type': 'application/json'};
-const baseUrl = 'https://api.buildwiththeta.com/';
+const baseUrl = 'https://api.buildwiththeta.com/functions/v1/';
 const getComponentPath = 'get_component';
 const getStylesPath = 'get_project_styles';
 const sendConversionEventPath = 'add_conversion_log';
