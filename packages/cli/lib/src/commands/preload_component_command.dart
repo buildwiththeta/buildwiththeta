@@ -1,6 +1,7 @@
 import 'package:args/command_runner.dart';
 import 'package:either_dart/either.dart';
-import 'package:mason_logger/mason_logger.dart';
+import 'package:interact/interact.dart';
+import 'package:mason_logger/mason_logger.dart' hide Progress;
 import 'package:theta_cli/src/dependency_injection/di.dart';
 import 'package:theta_cli/src/domain/usecases/base_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
@@ -17,27 +18,10 @@ class PreloadComponentCommand extends Command<int> {
   PreloadComponentCommand({
     required Logger logger,
   }) : _logger = logger {
-    argParser.addFlag(
-      'styles',
-      abbr: 's',
-      help: 'Preload styles.',
-      negatable: false,
-    );
-    argParser.addFlag(
-      'component',
-      abbr: 'c',
-      help: 'Preload a component.',
-      negatable: false,
-    );
     argParser.addOption(
-      'name',
-      abbr: 'n',
-      help: 'Component name to preload.',
-    );
-    argParser.addOption(
-      'key',
+      'anon-key',
       abbr: 'k',
-      help: 'Your anon key.',
+      help: 'Anon key',
       mandatory: true,
     );
   }
@@ -53,51 +37,77 @@ class PreloadComponentCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    if (argResults?['styles'] == true) {
-      return fetchStyles();
-    } else if (argResults?['component'] == true) {
-      return fetchComponent(argResults?['name']);
+    try {
+      if (argResults?['anon-key'] == null) {
+        _logger.err('❗️ Anon key is required. . Use --anon-key YOUR_KEY');
+        return ExitCode.usage.code;
+      }
+    } catch (e) {
+      _logger.err('❗️ Anon key is required. . Use --anon-key YOUR_KEY');
+      return ExitCode.usage.code;
     }
+
+    _logger.info('Welcome to Theta CLI! Before we begin:');
+    List<String> componentsName = [];
+    var confirm = false;
+    do {
+      final componentName = Input(prompt: 'Enter component name').interact();
+      componentsName.add(componentName);
+      confirm = Confirm(
+        prompt: 'Enter a new component name?',
+        defaultValue: false,
+        waitForNewLine: true,
+      ).interact();
+    } while (confirm);
+
+    final length = componentsName.length + 1;
+    final progress = Progress(
+      length: length,
+      size: 0.5,
+      rightPrompt: (current) => ' ${current.toString().padLeft(3)}/$length',
+    ).interact();
+
+    await fetchStyles();
+    progress.increase(1);
+    _logger.info('');
+
+    for (final componentName in componentsName) {
+      await fetchComponent(componentName);
+      progress.increase(1);
+      _logger.info('');
+    }
+
+    progress.done;
+
     return ExitCode.usage.code;
   }
 
-  Future<int> fetchStyles() {
+  Future<void> fetchStyles() {
     _logger.info('🔄 Fetching project styles...');
-    initializeDependencyInjection(argResults?['key']);
+    initializeDependencyInjection(argResults?['anon-key']);
     return getIt<GetStylesUseCase>()(Params.empty).fold((l) {
-      _logger.err('❗️ Error fetching component, message: $l');
-      return ExitCode.cantCreate.code;
-    }, (r) {
-      _logger.success('✅ Component fetched successfully.');
-      return createPreloadFile('styles', r);
+      _logger.err('❗️ Error fetching styles, message: $l');
+      throw Exception('❗️ Error fetching styles, message: $l');
+    }, (r) async {
+      _logger.success('✅ Styles loaded successfully.');
+      await createPreloadFile('styles', r);
     });
   }
 
-  Future<int> fetchComponent(String componentName) {
+  Future<void> fetchComponent(String componentName) {
     _logger.info('🔄 Fetching remote component $componentName...');
-    initializeDependencyInjection(argResults?['key']);
     return getIt<GetComponentUseCase>()(
             GetComponentUseCaseParams(componentName: componentName))
         .fold((l) {
       _logger.err('❗️ Error fetching component, message: $l');
-      return ExitCode.cantCreate.code;
-    }, (r) {
-      _logger.success('✅ Component fetched successfully.');
-      return createPreloadFile(componentName, r);
+      throw Exception('❗️ Error fetching component, message: $l');
+    }, (r) async {
+      _logger.success('✅ Component loaded successfully.');
+      await createPreloadFile(componentName, r);
     });
   }
 
-  Future<int> createPreloadFile(String key, String content) =>
+  Future<void> createPreloadFile(String key, String content) =>
       getIt<CreatePreLoadFileUseCase>()(
-              CreatePreLoadFileUseCaseParams(key: key, content: content))
-          .fold(
-        (l) {
-          _logger.info('❗️ Error creating file, message: $l');
-          return ExitCode.cantCreate.code;
-        },
-        (r) {
-          _logger.success('✅ Preload file created successfully in /assets.');
-          return ExitCode.success.code;
-        },
-      );
+          CreatePreLoadFileUseCaseParams(key: key, content: content));
 }
