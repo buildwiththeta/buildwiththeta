@@ -1,10 +1,9 @@
-# Flutter counter app with Theta and Bloc.
+# Flutter counter app with Theta and Stacked.
 
-This project takes up the [official bloc library project](https://github.com/felangel/bloc/tree/master/examples/flutter_counter) with the addition of [Theta](https://github.com/buildwiththeta/buildwiththeta).
 
 With Theta, the UI of the application can be created visually, and it can be updated instantly.
 
-This app is a basic example of how to create an app using Theta and a widely used state management library such as bloc. It will show you how to link the clicking of remote elements with a state change and changes in the text of the remote component.
+This app is a basic example of how to create an app using Theta and a widely used state management library such as Stacked. It will show you how to link the clicking of remote elements with a state change and changes in the text of the remote component.
 
 ▶️ See the video: https://youtu.be/3gp1N_xvoII
 
