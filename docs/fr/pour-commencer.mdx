@@ -1,0 +1,156 @@
+# Pour commencer
+
+Theta fonctionne entre la plateforme [hosted](https://buildwiththeta.com) et la bibliothèque client. Pour commencer :
+
+- Inscrivez-vous sur [buildwiththeta.com](https://buildwiththeta.com) (une invitation est requise pour la bêta fermée).
+- Créez un nouveau projet et concevez votre première interface.
+- Copiez la page sous le nom que vous souhaitez pour le miroir.
+- Installez [Bibliothèque du client Theta](https://pub.dev/packages/theta) et utilisez `UIBox('name of the page')` pour intégrer la page dans votre application.
+
+## Exigences du système
+
+Theta est une application web qui peut être utilisée à partir d'un navigateur. Pour une expérience optimale, veuillez respecter les exigences du système :
+
+- Il est recommandé de travailler sur un ordinateur de bureau ou un ordinateur portable.
+- Utilisez un écran d'au moins 12 pouces.
+- Il est recommandé d'utiliser Google Chrome (si vous rencontrez des problèmes, essayez de voir si les problèmes persistent sur Chrome).
+- Pour faire du copier-coller dans un projet, autorisez le ClipBoard (une boîte de dialogue apparaîtra à app.buildwiththeta.com).
+
+## Conception de l'interface
+
+- Voir [comment déplacer et redimensionner des éléments](https://docs.page/buildwiththeta/buildwiththeta/en/studio/positioning_and_resizing).
+- Voir [comment définir des contraintes réactives](https://docs.page/buildwiththeta/buildwiththeta/en/studio/constraints).
+
+## Installation de la bibliothèque du client Theta
+
+
+```
+flutter pub add theta
+```
+
+### Initialisation
+
+Initialisez Theta en appelant Theta.initialize avec votre clé anonyme. Veillez à appeler cette méthode à la racine de votre application.
+
+
+```dart
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'thetaKey');
+}
+```
+
+### Enveloppez votre application avec ThetaProvider
+
+Enveloppez votre application avec ThetaProvider pour permettre à n'importe quelle UIBox de recevoir le thème et les styles du projet.
+
+
+```dart
+ThetaProvider(
+    theme: ThemeMode.light,
+    child: MaterialApp(
+        home: // ...
+    ),
+)
+```
+
+### Rendu de l'interface utilisateur à distance
+
+Tout ce que vous avez à faire est d'ajouter un widget UIBox à votre application et de passer le nom du composant en paramètre.
+
+
+```dart
+/// Your app
+return Scaffold(
+    body: Center(
+        child: UIBox('Nom du composant'),
+    ),
+);
+```
+
+### Chargement d'un espace réservé et gestion des erreurs
+
+Vous pouvez afficher un widget d'espace réservé pendant le chargement et un widget d'erreur.
+
+
+```dart
+UIBox(
+    'Homepage',
+    placeholder: CircularProgressIndicator(),
+    errorWidget: (error) => Text(error),
+)
+```
+
+## Ajouter un code personnalisé
+
+Vous souhaitez une interface utilisateur dynamique avec prise en charge des gestes (onTap, doubleTap, etc.) ? Vous pouvez ajouter un code personnalisé, appelé "workflow", basé sur des déclencheurs gestuels.
+
+1. Sélectionner un seul élément de l'interface utilisateur en fonction de son identifiant ou de son nom.
+2. Choisissez le déclencheur pour lequel l'action commencera.
+3. Ajoutez votre code.
+
+
+```dart
+UIBox(
+    'CupertinoAppBar',
+    workflows: [
+        Workflow('Element id', Trigger.onTap, (context) {
+            /// Votre méthode
+        }),
+    ]
+)
+```
+
+## Remplacer les propriétés du bloc
+
+Vous pouvez remplacer chaque bloc d'interface utilisateur par un widget Flutter en mélangeant du no-code avec Flutter.
+
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        Override('Titre du post')
+            ..setText('Mon magnifique chat')
+            ..setColor(Colors.white, 0.5),
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Remplacement de l'enfant
+
+Si, dans le composant sans code, l'élément sur lequel vous souhaitez écraser l'enfant en possède déjà un, celui-ci sera supprimé et remplacé par celui saisi par l'utilisateur via le code.
+
+Vous pouvez également utiliser le site `UIBox` à l'intérieur d'autres sites `UIBox`. Cela permet un très haut degré de personnalisation.
+
+
+```dart
+UIBox(
+    'Nom du composant',
+    overrides: [
+        Override('Element id')
+            ..setChild(UIBox('Autre composant')),
+    ],
+),
+```
+
+### Les enfants sont prioritaires
+
+Vous pouvez également écraser les enfants d'un élément.
+
+
+```dart
+UIBox(
+    'Nom du composant',
+    overrides: [
+        Override('Nom de l'élément')
+            ..setChildren([
+                Text('Enfant 1'), 
+                Text('Enfant 2')
+            ]),
+    ],
+),
+```
