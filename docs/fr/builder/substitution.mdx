@@ -1,0 +1,102 @@
+---
+title: Remplacer les nœuds
+---
+
+![](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/node_overrides_feature.svg)
+
+# Remplacer les nœuds
+
+Vous pouvez remplacer chaque bloc d'interface utilisateur par un widget Flutter en mélangeant le no-code avec Flutter.
+
+## Remplacement des propriétés de base
+
+```dart
+UIBox(
+    'Button',
+    overrides: const [
+        Override(
+            'Label',
+            text: 'Click moi',
+            color: Colors.white,
+        ),
+        Override(
+            'Image', 
+            image: 'https://',
+        ),
+    ],
+),
+```
+
+## Remplacer un nœud
+
+Vous pouvez remplacer un nœud entier dans l'arborescence des composants sans code à l'aide de la fonction de générateur. Avec cette méthode, vous pouvez toujours utiliser les propriétés enfant et enfants du nœud d'origine.
+
+```dart
+UIBox(
+    'Nom du composant',
+    overrides: const [
+        Override(
+            'element id',
+            builder: (context, node, child, children) {
+                return GestureDetector(
+                    onTap: () {
+                        debugPrint('Tapé !');
+                    },
+                    child: Container(
+                        color: Colors.black,
+                        child: child,
+                    ),
+                );
+            },
+        ),
+    ],
+),
+```
+
+## Remplacement enfant
+
+Si dans le composant no-code l'élément auquel vous souhaitez écraser l'enfant en a déjà un,
+il sera supprimé et remplacé par celui entré par l'utilisateur via le code.
+
+Vous pouvez également utiliser `UIBox` dans d'autres `UIBox`es. Cela offre un très haut degré de personnalisation.
+
+```dart
+UIBox(
+    'Nom du composant',
+    overrides: const [
+        Override('Element id', child: UIBox('Autre composant')),
+    ],
+),
+```
+
+## Remplacement des enfants
+
+Vous pouvez également écraser les enfants d'un élément.
+
+```dart
+UIBox(
+    'Nom du composant',
+    overrides: const [
+        Override(
+            'Nom de l'élément',
+            children: [
+                Text('Child 1'), 
+                Text('Child 2'),   
+            ],
+        ),
+    ],
+),
+```
+
+## Modifier les propriétés après l'initialisation du nœud
+
+```dart
+final override = Override('element id');
+override
+    ..setText('Click moi !')
+    ..setColor(Colors.black);
+```
+
+<Warning>Il est recommandé de n'utiliser qu'un seul Override par élément, car seul le premier est pris en compte.</Warning>
+
+<Warning>Si vous essayez accidentellement d'écraser les enfants d'un élément avec un seul enfant, le changement par code sera simplement ignoré.</Warning>
