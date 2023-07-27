@@ -1,0 +1,74 @@
+---
+title: Modes d'ajustement des composants
+---
+
+![auto_layout_features](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/8c23e82c-f38b-40d6-8465-bae01e868f2d)
+
+# Modes d'ajustement des composants
+
+<YouTube id="44THb3YEE-Q" />
+
+## Mode absolu
+
+En activant le **mode absolu** (par défaut sur tous les composants), tous les blocs sont positionnés en fonction de leurs coordonnées absolues (ou alignements réactifs) en fonction de la taille de l'appareil.
+
+Ce mode est utile pour créer des composants complexes à partir de plusieurs widgets sur le même calque, ou pour créer des morceaux de pages.
+
+<Warning>Attention aux coordonnées absolues</Warning>
+
+Parfois, cependant, les éléments avec des positions absolues ne peuvent pas s'intégrer à d'autres widgets Flutter ou à des parties de l'écran plus petites que l'écran entier, car les éléments suivront toujours leurs coordonnées, allant même en dehors de tout widget parent inséré dans les applications via du code.
+
+Voir l'exemple suivant :
+
+- Créez un composant de bouton dans [Theta](https://app.buildwiththeta.com), avec `left : 16`, `right : 16`, `top : 345` et des contraintes horizontales pour `stretch`.
+- Dans votre application, à l'aide de la bibliothèque Theta Flutter, enveloppez votre UIBox dans un conteneur avec `width : 500` et `height : 350`.
+- Exécutez votre application avec `flutter run`.
+
+Le code Flutter :
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.absolute
+  ),
+),
+```
+
+Vous verrez que l'élément absolu sortira du conteneur parent, car il suit toujours les coordonnées supérieures données dans Theta. Comme illustré dans l'image suivante :
+
+![expanded_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/d73e382d-eeba-4fd2-b55f-49715a319edd)
+
+Ce n'est pas bon pour les composants qui doivent s'intégrer dans un contexte Flutter. **Mise en page automatique** peut être utilisée pour résoudre ce problème.
+
+## Mise en page automatique
+
+Le mode **Disposition automatique** (auto layout) permet d'afficher des composants monobloc (constitués par un seul élément au premier niveau) quelle que soit la taille de l'écran, donc sans position absolue. Ceux-ci sont super utiles pour pouvoir créer des widgets qui peuvent être intégrés dans d'autres widgets, donc sans avoir besoin d'une position absolue.
+
+Les alignements d'étirement fonctionneront toujours, cependant, vous permettant de voir comment un bouton pleine largeur s'élargit sur différents appareils.
+
+Essayons maintenant à nouveau l'exemple initial en définissant la mise en page automatique dans le code :
+
+Le code Flutter :
+
+```dart
+Container(
+  width: 500,
+  height: 350,
+  color: Colors.blue45,
+  child: UIBox(
+    'Button', 
+    fit: ComponentFit.autoLayout,
+  ),
+),
+```
+
+![loose_mode](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/73b30e95-5f97-4bcf-a53f-a5d02ac0c403)
+
+Cette fois, le composant est détaché de ses coordonnées absolues et pourra être placé comme un widget Flutter normal.
+
+
+
