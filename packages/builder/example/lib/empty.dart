@@ -6,7 +6,6 @@ import 'package:theta/theta.dart';
 
 Future<void> main() async {
   await Theta.initialize(
-    cacheEnabled: false,
     anonKey: '',
   );
 

@@ -5,8 +5,7 @@ Future<void> main() async {
   /// Initialize Theta instance.
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
-    cacheEnabled: false,
-    preload: true,
+    connectionMode: ConnectionMode.cached,
 
     /// Example key
     anonKey:

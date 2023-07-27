@@ -38,11 +38,16 @@ class ComponentRepositoryImpl implements ComponentRepository {
         return Right(cachedComponent);
       }
       final res = await _componentService.getComponent(componentName);
-      _localComponentService.saveResponse(componentName, res);
+      await _localComponentService.saveResponse(componentName, res);
       return Right(res);
     } catch (e) {
-      _localComponentService.clearCache();
-      return Left(Exception(e.toString()));
+      try {
+        await _localComponentService.clearCache();
+        final res = await _componentService.getComponent(componentName);
+        return Right(res);
+      } catch (e) {
+        return Left(Exception(e.toString()));
+      }
     }
   }
 

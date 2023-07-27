@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:theta/src/client.dart';
+import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
 import 'package:theta/src/data/datasources/local_component_service.dart';
@@ -23,11 +24,11 @@ GetIt get getIt => GetIt.instance;
 Future<void> initializeDependencyInjection(
   String key,
   int cacheExtension,
-  bool cacheEnabled,
-  bool preload,
+  ConnectionMode connectionMode,
   Map<String, dynamic>? customPreloadFile,
 ) async {
-  getIt.registerLazySingleton(() => PreloadFile(preload, customPreloadFile));
+  getIt.registerLazySingleton(() => PreloadFile(
+      connectionMode == ConnectionMode.preloaded, customPreloadFile));
   getIt.registerLazySingleton(() => const NodesParse());
   getIt.registerLazySingleton(() => const ColorStylesMapper());
   getIt.registerLazySingleton(() => const TextStylesMapper());
@@ -37,11 +38,11 @@ Future<void> initializeDependencyInjection(
 
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
-    ..registerLazySingleton(() =>
-        LocalComponentService(getIt(), getIt(), cacheExtension, cacheEnabled))
+    ..registerLazySingleton(() => LocalComponentService(getIt(), getIt(),
+        cacheExtension, connectionMode == ConnectionMode.cached))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
-    ..registerLazySingleton(() =>
-        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled));
+    ..registerLazySingleton(() => LocalStylesService(getIt(), getIt(),
+        cacheExtension, connectionMode == ConnectionMode.cached));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(

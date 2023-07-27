@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
 import 'package:theta/src/data/models/preload_file.dart';
@@ -24,18 +25,21 @@ class LocalStylesService {
 
   Future<GetStylesResponseEntity?> getLocalStyles() async {
     if (!isCacheEnabled) {
+      Logger.printDefault('Cache is not enabled');
       return null;
     }
 
     final box = await getBox();
 
     if (box.get('styles') == null) {
+      Logger.printDefault('Cache doesn\'t contain styles');
       return null;
     }
 
     final cachedJson = json.decode(box.get('styles'));
 
     if (cachedJson == null) {
+      Logger.printDefault('Cached styles are null');
       return null;
     }
 
@@ -45,29 +49,29 @@ class LocalStylesService {
     final now = DateTime.now().millisecondsSinceEpoch;
     final diff = now - createdAt;
     if (diff > 1000 * cacheExtentionInSeconds) {
+      Logger.printDefault('Cache expired');
       return null;
     }
 
     // if the cache is not expired, return it
-    if (cachedJson != null) {
-      return GetStylesResponseEntity.fromJson(cachedJson);
-    }
-    return null;
+    return GetStylesResponseEntity.fromJson(cachedJson);
   }
 
-  void saveResponse(GetStylesResponseEntity getStylesResponseEntity) async {
+  Future<void> saveResponse(
+      GetStylesResponseEntity getStylesResponseEntity) async {
     final box = await getBox();
-    box.put(
+    await box.put(
         'styles',
         json.encode({
           ...getStylesResponseEntity.toJson(),
           'created_at': DateTime.now().millisecondsSinceEpoch,
         }));
+    Logger.printDefault('Styles saved in cache');
   }
 
-  void clearCache() async {
+  Future<void> clearCache() async {
     final box = await getBox();
-    box.clear();
+    await box.clear();
   }
 
   Future<GetStylesResponseEntity> getPreloadedStyles() async {

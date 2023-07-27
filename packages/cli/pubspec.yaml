@@ -1,6 +1,6 @@
 name: theta_cli
 description: Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
-version: 0.0.3
+version: 0.1.1
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
 issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
@@ -13,6 +13,7 @@ executables:
   theta:
 
 scripts:
+  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
   pubget: "flutter pub get"
   dryrun: "dart pub publish --dry-run"
   publish: "dart pub publish"
@@ -23,7 +24,7 @@ dependencies:
   mason_logger: ^0.2.5
   pub_updater: ^0.3.0
   equatable: ^2.0.3
-  either_dart: ^0.4.0
+  either_dart: ^1.0.0
   http: ^1.0.0
   get_it: ^7.6.0
   uuid: ^3.0.7

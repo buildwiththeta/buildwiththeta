@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/data/models/preload_file.dart';
@@ -24,18 +25,21 @@ class LocalComponentService {
 
   Future<GetPageResponseEntity?> getLocalComponent(String componentName) async {
     if (!isCacheEnabled) {
+      Logger.printDefault('Cache is not enabled');
       return null;
     }
 
     final box = await getBox();
 
     if (box.get(componentName) == null) {
+      Logger.printDefault('Cache doesn\'t contain $componentName');
       return null;
     }
 
     final cachedJson = json.decode(box.get(componentName));
 
     if (cachedJson == null) {
+      Logger.printDefault('The cached component is null');
       return null;
     }
 
@@ -44,30 +48,29 @@ class LocalComponentService {
     final now = DateTime.now().millisecondsSinceEpoch;
     final diff = now - createdAt;
     if (diff > 1000 * cacheExtentionInSeconds) {
+      Logger.printDefault('Cache expired');
       return null;
     }
 
     // if the cache is not expired, return it
-    if (cachedJson != null) {
-      return GetPageResponseEntity.fromJson(cachedJson);
-    }
-    return null;
+    return GetPageResponseEntity.fromJson(cachedJson);
   }
 
-  void saveResponse(
+  Future<void> saveResponse(
       String componentName, GetPageResponseEntity pageResponseEntity) async {
     final box = await getBox();
-    box.put(
+    await box.put(
         componentName,
         json.encode({
           ...pageResponseEntity.toJson(),
           'created_at': DateTime.now().millisecondsSinceEpoch,
         }));
+    Logger.printDefault('Component $componentName saved in cache');
   }
 
-  void clearCache() async {
+  Future<void> clearCache() async {
     final box = await getBox();
-    box.clear();
+    await box.clear();
   }
 
   Future<GetPageResponseEntity> getPreloadedComponent(

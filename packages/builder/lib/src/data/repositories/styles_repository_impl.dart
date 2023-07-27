@@ -33,11 +33,16 @@ class StylesRepositoryImpl implements StylesRepository {
         return Right(cachedStyles);
       }
       final res = await _stylesService.fetch();
-      _localStylesService.saveResponse(res);
+     await _localStylesService.saveResponse(res);
       return Right(res);
     } catch (e) {
-      _localStylesService.clearCache();
-      return Left(Exception(e.toString()));
+      try {
+        await _localStylesService.clearCache();
+        final res = await _stylesService.fetch();
+        return Right(res);
+      } catch (e) {
+        return Left(Exception(e.toString()));
+      }
     }
   }
 }
