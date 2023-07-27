@@ -83,8 +83,15 @@ class Theta {
     /// This can cause an increase of consume-based billing.
     bool cacheEnabled = true,
     bool preload = false,
+    Map<String, dynamic>? customPreloadFile,
   }) async {
-    await _instance._init(anonKey, cacheExtension, cacheEnabled, preload);
+    await _instance._init(
+      anonKey,
+      cacheExtension,
+      cacheEnabled,
+      preload,
+      customPreloadFile,
+    );
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
@@ -109,10 +116,20 @@ class Theta {
   }
 
   Future<void> _init(
-      String key, int cacheExtension, bool cacheEnabled, bool preload) async {
+    String key,
+    int cacheExtension,
+    bool cacheEnabled,
+    bool preload,
+    Map<String, dynamic>? customPreloadFile,
+  ) async {
     await _initExternalDependencies();
     await initializeDependencyInjection(
-        key, cacheExtension, cacheEnabled, preload);
+      key,
+      cacheExtension,
+      cacheEnabled,
+      preload,
+      customPreloadFile,
+    );
     await _initializeCore();
     _initialized = true;
   }

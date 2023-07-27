@@ -1,11 +1,22 @@
 import 'dart:convert';
 
+import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_styles_response.dart';
+import 'package:theta/src/data/models/preload_file.dart';
+import 'package:theta/src/data/models/token.dart';
 
 class LocalStylesService {
-  const LocalStylesService(this.cacheExtentionInSeconds, this.isCacheEnabled);
+  const LocalStylesService(
+    this._clientToken,
+    this._preloadFile,
+    this.cacheExtentionInSeconds,
+    this.isCacheEnabled,
+  );
 
+  final ClientToken _clientToken;
+  final PreloadFile _preloadFile;
   final int cacheExtentionInSeconds;
   final bool isCacheEnabled;
 
@@ -57,5 +68,12 @@ class LocalStylesService {
   void clearCache() async {
     final box = await getBox();
     box.clear();
+  }
+
+  Future<GetStylesResponseEntity> getPreloadedStyles() async {
+    final res = _preloadFile.customJson ??
+        jsonDecode(await rootBundle.loadString('assets/theta_preload.json'));
+    return GetStylesResponseEntity.fromJson(
+        jsonDecode(decompressAndDecrypt(_clientToken.key, res['styles'])));
   }
 }

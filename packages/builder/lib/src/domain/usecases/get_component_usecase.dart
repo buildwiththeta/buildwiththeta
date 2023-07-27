@@ -13,13 +13,16 @@ class GetComponentUseCase
   @override
   Future<Either<Exception, GetPageResponseEntity>> call(
           GetComponentUseCaseParams params) =>
-      _componentRepository.getComponent(params.componentName);
+      _componentRepository.getComponent(
+          params.componentName, params.preloadAllowed);
 }
 
 class GetComponentUseCaseParams extends Params {
   const GetComponentUseCaseParams({
     required this.componentName,
+    required this.preloadAllowed,
   });
 
   final String componentName;
+  final bool preloadAllowed;
 }

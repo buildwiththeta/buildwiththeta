@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:encrypt/encrypt.dart';
+
 class DirectoryService {
   const DirectoryService();
 
@@ -12,6 +14,15 @@ class DirectoryService {
     final enCodedJson = utf8.encode(json);
     final gZipJson = gzip.encode(enCodedJson);
     return base64.encode(gZipJson);
+  }
+
+  String encrypt(String anonKey, String value) {
+    final key = Key.fromUtf8(anonKey.split('.')[1].substring(0, 32));
+    final iv = IV.fromLength(16);
+
+    final encrypter = Encrypter(AES(key));
+
+    return encrypter.encrypt(value, iv: iv).base64;
   }
 
   Future<void> directoryContainsPubspec() async {
@@ -39,12 +50,16 @@ class DirectoryService {
     }
   }
 
-  Future<void> writePreloadFile(String key, String content) async {
+  Future<void> writePreloadFile(
+      {required String anonKey,
+      required String jsonKey,
+      required String content}) async {
     await createAssetsDirectory();
     final file = File(assetsDirectory + preloadFile);
     final fileContent = await file.exists() ? await file.readAsString() : '{}';
     final json = jsonDecode(fileContent);
-    json[key] = compressString(content);
+
+    json[jsonKey] = encrypt(anonKey, compressString(content));
     await file.writeAsString(jsonEncode(json));
   }
 }

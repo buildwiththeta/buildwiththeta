@@ -1,8 +1,10 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
+import 'package:theta/src/data/models/preload_file.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
@@ -104,11 +106,20 @@ class __LogicBoxState extends State<_LogicBox> {
   }
 
   /// Loads the component from the server.
-  Future<void> load() async =>
-      await getIt<ThetaClient>().build(widget.componentName).fold(
-            onError,
+  Future<void> load() async {
+    await getIt<ThetaClient>().build(widget.componentName).fold(
+          onError,
+          onLoaded,
+        );
+    if (getIt<PreloadFile>().enabled) {
+      await getIt<ThetaClient>()
+          .build(widget.componentName, preloadAllowed: false)
+          .fold(
+            (l) => Logger.printError(l.toString()),
             onLoaded,
           );
+    }
+  }
 
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.

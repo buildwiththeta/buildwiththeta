@@ -67,12 +67,14 @@ class PreloadComponentCommand extends Command<int> {
       rightPrompt: (current) => ' ${current.toString().padLeft(3)}/$length',
     ).interact();
 
-    await fetchStyles();
+    final anonKey = argResults?['anon-key'];
+
+    await fetchStyles(anonKey);
     progress.increase(1);
     _logger.info('');
 
     for (final componentName in componentsName) {
-      await fetchComponent(componentName);
+      await fetchComponent(anonKey, componentName);
       progress.increase(1);
       _logger.info('');
     }
@@ -82,19 +84,19 @@ class PreloadComponentCommand extends Command<int> {
     return ExitCode.usage.code;
   }
 
-  Future<void> fetchStyles() {
+  Future<void> fetchStyles(String anonKey) {
     _logger.info('🔄 Fetching project styles...');
-    initializeDependencyInjection(argResults?['anon-key']);
+    initializeDependencyInjection(anonKey);
     return getIt<GetStylesUseCase>()(Params.empty).fold((l) {
       _logger.err('❗️ Error fetching styles, message: $l');
       throw Exception('❗️ Error fetching styles, message: $l');
     }, (r) async {
       _logger.success('✅ Styles loaded successfully.');
-      await createPreloadFile('styles', r);
+      await createPreloadFile(anonKey: anonKey, jsonKey: 'styles', content: r);
     });
   }
 
-  Future<void> fetchComponent(String componentName) {
+  Future<void> fetchComponent(String anonKey, String componentName) {
     _logger.info('🔄 Fetching remote component $componentName...');
     return getIt<GetComponentUseCase>()(
             GetComponentUseCaseParams(componentName: componentName))
@@ -103,11 +105,19 @@ class PreloadComponentCommand extends Command<int> {
       throw Exception('❗️ Error fetching component, message: $l');
     }, (r) async {
       _logger.success('✅ Component loaded successfully.');
-      await createPreloadFile(componentName, r);
+      await createPreloadFile(
+          anonKey: anonKey, jsonKey: componentName, content: r);
     });
   }
 
-  Future<void> createPreloadFile(String key, String content) =>
-      getIt<CreatePreLoadFileUseCase>()(
-          CreatePreLoadFileUseCaseParams(key: key, content: content));
+  Future<void> createPreloadFile(
+          {required String anonKey,
+          required String jsonKey,
+          required String content}) =>
+      getIt<CreatePreLoadFileUseCase>()(CreatePreLoadFileUseCaseParams(
+              anonKey: anonKey, jsonKey: jsonKey, content: content))
+          .fold(
+        (l) => _logger.err(l.toString()),
+        (r) => _logger.success('theta_preload.json updated successfully.'),
+      );
 }

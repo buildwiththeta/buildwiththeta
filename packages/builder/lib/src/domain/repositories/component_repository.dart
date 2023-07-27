@@ -4,7 +4,7 @@ import 'package:theta/theta.dart';
 
 abstract class ComponentRepository {
   Future<Either<Exception, GetPageResponseEntity>> getComponent(
-      String componentName);
+      String componentName, bool preloadAllowed);
 
   Future<Either<Exception, void>> sendConversionEvent(ID eventID, ID? abTestID);
 }
