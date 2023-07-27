@@ -32,6 +32,8 @@ class _MyAppState extends State<MyApp> {
       debugPrint('Loaded!');
 
       /// Prints the nodes to the console.
+      debugPrint(_controller.componentID);
+      debugPrint(_controller.componentName);
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));

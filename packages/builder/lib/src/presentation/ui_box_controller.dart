@@ -4,6 +4,9 @@ typedef ErrorCallback = void Function(Exception error);
 typedef LoadedCallback = void Function();
 
 class UIBoxController extends ChangeNotifier {
+  ID? _componentName;
+  ID? _componentID;
+  ID? _abTestID;
   Function()? _onLoadCallback;
   ErrorCallback? _onErrorCallback;
   LoadedCallback? _onLoadedCallback;
@@ -28,6 +31,34 @@ class UIBoxController extends ChangeNotifier {
   /// Use after the component is loaded.
   List<CNode> nodesToList() =>
       getIt<NodeRendering>().renderFlatList(_rootNode!);
+
+  /// Returns the component name.
+  ///
+  /// ❗️ Use after the component is loaded.
+  String get componentName {
+    if (_componentName == null) {
+      throw Exception(
+          'Component name is null. Use after the component is loaded correctly.');
+    }
+    return _componentName!;
+  }
+
+  /// Returns the component ID.
+  ///
+  /// ❗️ Use after the component is loaded.
+  String get componentID {
+    if (_componentID == null) {
+      throw Exception(
+          'Component ID is null. Use after the component is loaded correctly.');
+    }
+    return _componentID!;
+  }
+
+  /// Returns the AB test ID. If the component is not part of an AB test, it
+  /// returns null.
+  ///
+  /// ❗️ Use after the component is loaded.
+  String? get abTestID => _abTestID;
 
   /// Returns a callback when the component has an error.
   void onError(ErrorCallback callback) {
@@ -55,7 +86,15 @@ class UIBoxController extends ChangeNotifier {
   }
 
   /// Triggers the loaded callback from UIBox -> UIBoxController.
-  void _triggerLoaded(CNode node) {
+  void _triggerLoaded(
+    CNode node,
+    String componentName,
+    String componentID,
+    String? abTestID,
+  ) {
+    _componentName = componentName;
+    _componentID = componentID;
+    _abTestID = abTestID;
     _rootNode = node;
     if (_onLoadedCallback != null) {
       _onLoadedCallback!();

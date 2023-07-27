@@ -133,7 +133,12 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Triggers the loaded callback from UIBox -> UIBoxController and sets the
   /// widget.
   void onLoaded(GetPageResponseEntity r) {
-    widget.controller?._triggerLoaded.call(r.treeNodes);
+    widget.controller?._triggerLoaded.call(
+      r.treeNodes,
+      widget.componentName,
+      r.pageID,
+      r.abTestID,
+    );
     setState(() {
       _widget = r.treeNodes;
       _isLoaded = true;
