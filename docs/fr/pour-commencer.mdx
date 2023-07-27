@@ -64,7 +64,7 @@ Tout ce que vous avez à faire est d'ajouter un widget UIBox à votre applicatio
 /// Your app
 return Scaffold(
     body: Center(
-        child: UIBox('Nom du composant'),
+        child: UIBox('Component name'),
     ),
 );
 ```
@@ -96,7 +96,7 @@ UIBox(
     'CupertinoAppBar',
     workflows: [
         Workflow('Element id', Trigger.onTap, (context) {
-            /// Votre méthode
+            /// Your method
         }),
     ]
 )
@@ -111,8 +111,8 @@ Vous pouvez remplacer chaque bloc d'interface utilisateur par un widget Flutter 
 UIBox(
     'Social card',
     overrides: [
-        Override('Titre du post')
-            ..setText('Mon magnifique chat')
+        Override('Post title')
+            ..setText('My beautiful cat')
             ..setColor(Colors.white, 0.5),
         Override('Cover')
             ..setImage('https://...'),
@@ -129,10 +129,10 @@ Vous pouvez également utiliser le site `UIBox` à l'intérieur d'autres sites `
 
 ```dart
 UIBox(
-    'Nom du composant',
+    'Component name',
     overrides: [
         Override('Element id')
-            ..setChild(UIBox('Autre composant')),
+            ..setChild(UIBox('Other component')),
     ],
 ),
 ```
@@ -144,12 +144,12 @@ Vous pouvez également écraser les enfants d'un élément.
 
 ```dart
 UIBox(
-    'Nom du composant',
+    'Component name',
     overrides: [
-        Override('Nom de l'élément')
+        Override('Element name')
             ..setChildren([
-                Text('Enfant 1'), 
-                Text('Enfant 2')
+                Text('Child 1'), 
+                Text('Child 2')
             ]),
     ],
 ),
