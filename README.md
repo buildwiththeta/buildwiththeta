@@ -31,7 +31,7 @@ Theta offers several advantages:
 
 ## Supported Frameworks
 - [x] Flutter: ready on [pub.dev](https://pub.dev/packages/theta).
-- [ ] Swift: Working on it.
+- [ ] Swift: working on it.
 
 ## Status
 - [x] Alpha: Experimental. Under intense development.
@@ -45,7 +45,7 @@ Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to s
 
 In this repository you can find:
 
-- [x] Theta Studio: UI web editor. Available in `/playgroud`.
+- [x] Theta Studio: UI web editor. Available in `/playgroud`. See it in action on [buildwiththeta.com](https://buildwiththeta.com)
 - [x] Theta Flutter library. [Pub.dev](https://pub.dev/packages/theta)
 - [x] Models.
 - [x] Analytics.

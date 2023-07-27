@@ -1,4 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,6 +8,7 @@ import 'package:playground/src/core/app_theme/app_theme.dart';
 import 'package:playground/src/core/enums/devices.dart';
 import 'package:playground/src/presentation/editor/blocs/device_mode/device_mode_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/editor/editor_cubit.dart';
+import 'package:playground/src/presentation/editor/blocs/export_panel/export_panel_cubit.dart';
 import 'package:playground/src/presentation/editor/blocs/styles/styles_cubit.dart';
 import 'package:playground/src/presentation/editor/widgets/device_mode_bar.dart';
 import 'package:playground/src/presentation/editor/widgets/theme_mode_bar.dart';
@@ -80,6 +82,18 @@ class TopBarWidget extends StatelessWidget {
             ),
           ),
           const Spacer(),
+          BlocBuilder<ExportPanelCubit, bool>(
+            builder: (context, state) {
+              return BounceForSmallWidgets(
+                onTap: () => context.read<ExportPanelCubit>().toggle(),
+                child: Icon(
+                  CupertinoIcons.sidebar_right,
+                  color: state ? theme.buttonColor : theme.txtPrimary,
+                ),
+              );
+            },
+          ),
+          const Gap(Grid.medium),
         ],
       ),
     );

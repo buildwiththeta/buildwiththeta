@@ -1,13 +1,13 @@
 ---
-title: Get Project API Token
-description: Discover how to retrieve your project's API token, necessary for connecting your client app to Theta, and the importance of secure token handling.
+title: Get Project API Key
+description: Discover how to retrieve your project's API key, necessary for connecting your client app to Theta, and the importance of secure token handling.
 ---
 
 # Get Project API Token
 
 <YouTube id="vIE4gZZ8ufo"/>
 
-To retrieve the API token from your project, follow the steps below:
+To retrieve the API Anon Key from your project, follow the steps below:
 
 1. **Create a New Project:** Navigate to [app.buildwiththeta.com](https://app.buildwiththeta.com) and create a new project.
 
@@ -19,4 +19,20 @@ To retrieve the API token from your project, follow the steps below:
 
 This anonymous (anon) key is what you'll use to connect your client application to Theta, using our Flutter client library. Ensure you store this anon key securely, preferably in an environment (`.env`) file, to prevent unauthorized access.
 
-Note that client applications can only connect to your project if it is set to 'public'. Make sure you have configured your project visibility accordingly.
+<Warning>Note that client applications can only connect to your project if it is set to 'public'. Make sure you have configured your project visibility accordingly.</Warning>
+
+## Anon Key permissions
+
+Capabilities:
+
+- Read-only access to projects' styles and UI components.
+- Ability to insert new conversion events for tracking basic user actions.
+- Perform SELECT operations to fetch components, styles, conversion events' definitions, and AB test IDs (if present).
+
+Limitations:
+
+- No write permissions for UI components (insert, update, delete actions are not allowed).
+- Restricted from making changes to project structure, settings, or configurations.
+- Designed to ensure data integrity and security.
+
+
