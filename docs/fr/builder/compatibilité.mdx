@@ -1,0 +1,74 @@
+---
+title: Les plates-formes supportées par la librairie Flutter de Theta
+---
+
+# Compatibilité
+
+Plateformes prises en charge par la [Bibliothèque Flutter de Theta](https://pub.dev/packages/theta).
+
+<Warning>Theta est uniquement compatible avec Dart 3.</Warning>
+
+## Plates-formes prises en charge
+
+- [x] Web
+- [x] iOS
+- [x] Android
+- [x] macOS
+- [x] Windows
+
+---
+
+## Configuration
+
+### Web
+
+Aucune configuration n'est requise.
+
+### iOS
+
+Aucune configuration n'est requise.
+
+### Android
+
+> Temps nécessaire à la mise en place : 2 minutes.
+
+<Warning>Theta n'est pas disponible pour les utilisateurs exécutant des SDK Android inférieurs à 19.</Warning>
+
+Étant donné que Theta dépend de `[package_info_plus](https://pub.dev/packages/package_info_plus)`, la `minSdkVersion` doit être au moins égale à 19.
+
+```
+android/app/build.gradle:
+android {
+  defaultConfig {
+    minSdkVersion 19
+  }
+}
+```
+
+De plus, Theta nécessite [une connexion Internet](https://developer.android.com/training/basics/network-ops/connecting).
+
+```
+<manifest xmlns:android...>
+  ...
+  <uses-permission android:name="android.permission.INTERNET" />
+  <application ...
+</manifest>
+```
+
+### macOS
+
+> Temps nécessaire à la mise en place : 1 minute.
+
+Les applications macOS doivent autoriser l'accès au réseau dans les fichiers .entitlements pertinents.
+
+```
+<key>com.apple.security.network.client</key>
+<true/>
+```
+
+En savoir plus sur la [configuration des droits](https://docs.flutter.dev/platform-integration/macos/building#setting-up-entitlements).
+
+### Windows
+
+Aucune configuration n'est requise.
+
