@@ -1,0 +1,46 @@
+---
+title: Contraintes
+description: Gardez les éléments alignés sur des côtés spécifiques ou étirez-les en fonction des tailles d'écran.
+---
+
+# Contraintes d'alignement de l'interface utilisateur
+
+Les contraintes d'alignement de l'interface utilisateur vous permettent de contrôler le positionnement d'un élément dans une mise en page. Vous pouvez définir des options d'alignement pour les axes verticaux et horizontaux. Les trois options disponibles sont `start`, `end` et `stretch`.
+
+<YouTube id="LRhMnuvEg7A" />
+
+## Alignement horizontal
+
+* `Start` : aligne l'élément à gauche du conteneur. L'élément sera positionné en fonction de la valeur de gauche.
+
+* `End` : aligne l'élément à droite du conteneur. Le bord droit de l'élément sera positionné selon la bonne valeur.
+
+* `Stretch` : étire l'élément horizontalement pour remplir la largeur du conteneur, en conservant les valeurs des marges gauche et droite.
+
+## Alignement vertical
+
+* `Start` : aligne l'élément sur le haut du conteneur. L'élément sera positionné en fonction de la valeur supérieure.
+
+* `End` : aligne l'élément sur le bas du conteneur. Le bord inférieur de l'élément sera positionné en fonction de la valeur inférieure.
+
+* `Stretch` : étire l'élément verticalement pour remplir la hauteur du conteneur, en conservant les valeurs des marges supérieure et inférieure.
+
+## Exemples
+
+1. Si vous sélectionnez `start` pour l'alignement vertical et horizontal, l'élément sera positionné dans le coin supérieur gauche, les valeurs supérieure et gauche déterminant la position exacte.
+
+2. Si vous sélectionnez `end` pour l'alignement vertical et horizontal, l'élément sera positionné dans le coin inférieur droit, les valeurs supérieure et gauche déterminant la position exacte.
+
+3. Si vous sélectionnez `étirer` pour l'alignement horizontal, l'élément s'étendra sur toute la largeur de l'écran, sa largeur étant déterminée par les valeurs des marges gauche et droite.
+
+4. Si vous sélectionnez `étirer` pour l'alignement vertical, l'élément s'étendra sur toute la hauteur de l'écran, sa hauteur étant déterminée par les valeurs des marges supérieure et inférieure.
+
+## Remplacer les contraintes pour les tablettes et les ordinateurs de bureau
+
+En plus des paramètres mobiles par défaut, vous pouvez remplacer les contraintes d'alignement pour les écrans plus grands tels que les tablettes et les ordinateurs de bureau. Cela vous permet d'optimiser votre interface utilisateur pour différentes tailles d'écran et de créer un design vraiment réactif.
+
+Pour ce faire, définissez simplement les valeurs d'alignement souhaitées pour les points d'arrêt de la tablette et du bureau dans les paramètres. Cela remplacera les contraintes mobiles par défaut, offrant un comportement d'alignement différent sur ces appareils.
+
+## Supprimer les remplacements
+
+Si vous souhaitez revenir aux paramètres mobiles sur une tablette ou un ordinateur de bureau, vous pouvez facilement le faire en cliquant sur le bouton "Follow Phone Settings". Cela supprimera les contraintes de remplacement, permettant à l'élément de s'aligner en fonction des paramètres mobiles par défaut sur tous les appareils. Cette fonctionnalité offre un moyen flexible d'ajuster vos contraintes d'alignement de l'interface utilisateur en fonction de vos exigences de conception.
