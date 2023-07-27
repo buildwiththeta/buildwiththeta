@@ -17,7 +17,7 @@ part 'ui_box_controller.dart';
 /// - It requires a [placeholder] for the placeholder widget.
 /// - It requires a [errorWidget] for the error widget.
 /// - It takes a [workflows] of type [Workflow] for the workflows.
-class UIBox extends StatelessWidget {
+class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
@@ -36,15 +36,30 @@ class UIBox extends StatelessWidget {
   final List<Override>? overrides;
 
   @override
+  State<UIBox> createState() => _UIBoxState();
+}
+
+class _UIBoxState extends State<UIBox> {
+  @override
+  void initState() {
+    super.initState();
+    for (final override in widget.overrides ?? <Override>[]) {
+      override.assignOnChanged(() {
+        setState(() {});
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
-      workflows: workflows,
-      nodeOverrides: overrides,
+      workflows: widget.workflows,
+      nodeOverrides: widget.overrides,
       child: _LogicBox(
-        componentName,
-        controller: controller,
-        placeholder: placeholder,
-        errorWidget: errorWidget,
+        widget.componentName,
+        controller: widget.controller,
+        placeholder: widget.placeholder,
+        errorWidget: widget.errorWidget,
       ),
     );
   }

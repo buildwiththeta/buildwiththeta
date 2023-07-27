@@ -16,6 +16,14 @@ class WorkflowExecuter extends Equatable {
   @override
   List<Object?> get props => [nodeName, workflows];
 
+  bool doesWorkflowExist(final Trigger trigger) {
+    final workflow = workflows.firstWhereOrNull((element) =>
+        (element.nodeIdenfier == nodeName || element.nodeIdenfier == nodeID) &&
+        element.trigger == trigger);
+    if (workflow == null) return false;
+    return true;
+  }
+
   void execute(final Trigger trigger) {
     final workflow = workflows.firstWhereOrNull((element) =>
         (element.nodeIdenfier == nodeName || element.nodeIdenfier == nodeID) &&

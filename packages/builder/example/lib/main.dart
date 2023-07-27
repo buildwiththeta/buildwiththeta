@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Your component',
+            'Counter View',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.

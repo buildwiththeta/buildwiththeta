@@ -1,3 +1,12 @@
+## 0.2.8
+
+- [x] Fix: ThetaModels updated.
+
+## 0.2.7
+
+- [x] Feat: NodeBuilder has now optional `Listener` and `GestureDetector`.
+- [x] Feat: WorkflowExecuter has now `doesWorkflowExist` method.
+
 ## 0.2.6
 
 - [x] Fix: Code generated.

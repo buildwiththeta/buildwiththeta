@@ -1,26 +1,124 @@
 ---
-title: How to run Flutter's Theta sample app.
+title: How to run Flutter's Build with Theta sample app.
 description: Learn how to run Flutter's Theta sample app to test the official Flutter library.
 ---
 
-# How to run Flutter's Theta sample app
+# How to run Flutter's Build with Theta sample app
 
-To get Theta's example app started in Flutter just go to the example folder inside the builder package. 
-You can then run the following command in your terminal:
+Navigate to [Theta's example app](https://github.com/buildwiththeta/buildwiththeta/blob/main/packages/builder/example/lib/main.dart).
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+  /// Initialize Theta instance.
+  /// You can get an anonymous key at https://app.buildwiththeta.com
+  await Theta.initialize(anonKey: 'Theta Key', cacheEnabled: false);
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _controller = UIBoxController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.onLoaded(() {
+      debugPrint('Loaded!');
+    });
+    _controller.onError((error) => debugPrint(error.toString()));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    /// ThetaProvider is used to provide the project styles to the widgets.
+    return ThetaProvider(
+      theme: ThemeMode.light,
+      child: MaterialApp(
+        home: Scaffold(
+          /// UIBox is used to build the UI. It requires the component name.
+          body: UIBox(
+            'Your component',
+            controller: _controller,
+
+            /// [placeholder] is the widget displayed while the page is loading.
+            placeholder: const CircularProgressIndicator(),
+
+            /// [errorWidget] is the widget displayed if an error occurs.
+            errorWidget: (error) => Text(error.toString()),
+
+            /// [overrides] are the properties that can be overriden by the user.
+            overrides: [
+              /// Override an [element] with a custom widget still having the original [element] child.
+              Override(
+                'node id',
+                builder: (context, node, child, children) {
+                  return GestureDetector(
+                    onTap: () {
+                      debugPrint('Tapped!');
+                    },
+                    child: Container(
+                      color: Colors.black,
+                      child: child,
+                    ),
+                  );
+                },
+              ),
+
+              /// Or override a text element with a custom text value and color.
+              Override(
+                'node id',
+                text: 'Click me!',
+                color: Colors.blue,
+              ),
+            ],
+
+            /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
+            workflows: [
+              Workflow(
+                'node id',
+                Trigger.onTap,
+                () => debugPrint('Tapped!'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Set up the project
+
+1. Add your own Anon Key. You can find it inside your projects at [app.buildwiththeta.com](https://app.buildwiththeta.com).
+2. Change the `name` parameters of the UIBox to the name of the component you want to display.
+
+## Run
 
 ```bash
 flutter run -d chrome
 ```
 
-## Set up the project
-
-1. On line 9, change the placeholder 'thetaKey' to your own anonymous key.
-2. On line 35, change the name of the UIBox to the name of the component you want to display. By default, all the first components of each project are named homepage.
-
 ---
 
 Running it, you will see a blank page with the component created inside Theta. With this demo you can see how it behaves inside a Flutter app, trying responsive modes and trying to mix your own design with custom code through workflows (you will find the examples already written inside main.dart)
 
-<Warning>Caution: in this test project, the cache has been disabled in line 8. It is advisable, however, to keep it always active in your projects to avoid rebuilding the application too many times.</Warning>
+<Warning>Caution: in this test project, the cache has been disabled. It is advisable, however, to keep it always active in your projects to avoid rebuilding the application too many times.</Warning>
 
 Have fun!
