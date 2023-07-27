@@ -16,7 +16,7 @@ UIBox(
     overrides: const [
         Override(
             'Label',
-            text: 'Click moi',
+            text: 'Click me',
             color: Colors.white,
         ),
         Override(
@@ -33,14 +33,14 @@ Vous pouvez remplacer un nœud entier dans l'arborescence des composants sans co
 
 ```dart
 UIBox(
-    'Nom du composant',
+    'Component name',
     overrides: const [
         Override(
             'element id',
             builder: (context, node, child, children) {
                 return GestureDetector(
                     onTap: () {
-                        debugPrint('Tapé !');
+                        debugPrint('Tapped!');
                     },
                     child: Container(
                         color: Colors.black,
@@ -62,9 +62,9 @@ Vous pouvez également utiliser `UIBox` dans d'autres `UIBox`es. Cela offre un t
 
 ```dart
 UIBox(
-    'Nom du composant',
+    'Component name',
     overrides: const [
-        Override('Element id', child: UIBox('Autre composant')),
+        Override('Element id', child: UIBox('Other component')),
     ],
 ),
 ```
@@ -75,10 +75,10 @@ Vous pouvez également écraser les enfants d'un élément.
 
 ```dart
 UIBox(
-    'Nom du composant',
+    'Component name',
     overrides: const [
         Override(
-            'Nom de l'élément',
+            'Element name',
             children: [
                 Text('Child 1'), 
                 Text('Child 2'),   
@@ -93,7 +93,7 @@ UIBox(
 ```dart
 final override = Override('element id');
 override
-    ..setText('Click moi !')
+    ..setText('Click me!')
     ..setColor(Colors.black);
 ```
 
