@@ -23,6 +23,7 @@ class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
+    this.branchName,
     this.controller,
     this.placeholder,
     this.errorWidget,
@@ -31,6 +32,7 @@ class UIBox extends StatefulWidget {
   });
 
   final String componentName;
+  final String? branchName;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -59,6 +61,7 @@ class _UIBoxState extends State<UIBox> {
       nodeOverrides: widget.overrides,
       child: _LogicBox(
         widget.componentName,
+        branchName: widget.branchName,
         controller: widget.controller,
         placeholder: widget.placeholder,
         errorWidget: widget.errorWidget,
@@ -70,12 +73,14 @@ class _UIBoxState extends State<UIBox> {
 class _LogicBox extends StatefulWidget {
   const _LogicBox(
     this.componentName, {
+    this.branchName,
     this.controller,
     this.placeholder,
     this.errorWidget,
   });
 
   final String componentName;
+  final String? branchName;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -107,13 +112,16 @@ class __LogicBoxState extends State<_LogicBox> {
 
   /// Loads the component from the server.
   Future<void> load() async {
-    await getIt<ThetaClient>().build(widget.componentName).fold(
+    await getIt<ThetaClient>()
+        .build(widget.componentName, branchName: widget.branchName)
+        .fold(
           onError,
           onLoaded,
         );
     if (getIt<PreloadFile>().enabled) {
       await getIt<ThetaClient>()
-          .build(widget.componentName, preloadAllowed: false)
+          .build(widget.componentName,
+              branchName: widget.branchName, preloadAllowed: false)
           .fold(
             (l) => Logger.printError(l.toString()),
             onLoaded,

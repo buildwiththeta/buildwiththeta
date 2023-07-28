@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Feat: add support to preloading assets.
+
 ## 0.1.1
 
 * Fix: update command fixed.

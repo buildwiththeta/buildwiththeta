@@ -23,9 +23,9 @@ class LocalComponentService {
 
   Future<Box> getBox() async => await Hive.openBox('component_cache');
 
-  Future<GetPageResponseEntity?> getLocalComponent(String componentName) async {
+  Future<GetPageResponseEntity?> getLocalComponent(
+      String componentName, String? branchName) async {
     if (!isCacheEnabled) {
-      Logger.printDefault('Cache is not enabled');
       return null;
     }
 
@@ -43,6 +43,11 @@ class LocalComponentService {
       return null;
     }
 
+    final savedBranchName = cachedJson['branch_name'] as String?;
+    if (savedBranchName != branchName) {
+      return null;
+    }
+
     // if the cached component is older than [cacheExtentionInSeconds] in seconds, return null
     final createdAt = cachedJson['created_at'];
     final now = DateTime.now().millisecondsSinceEpoch;
@@ -56,13 +61,14 @@ class LocalComponentService {
     return GetPageResponseEntity.fromJson(cachedJson);
   }
 
-  Future<void> saveResponse(
-      String componentName, GetPageResponseEntity pageResponseEntity) async {
+  Future<void> saveResponse(String componentName, String? branchName,
+      GetPageResponseEntity pageResponseEntity) async {
     final box = await getBox();
     await box.put(
         componentName,
         json.encode({
           ...pageResponseEntity.toJson(),
+          'branch_name': branchName,
           'created_at': DateTime.now().millisecondsSinceEpoch,
         }));
     Logger.printDefault('Component $componentName saved in cache');

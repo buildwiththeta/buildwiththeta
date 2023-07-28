@@ -33,6 +33,15 @@ class ConversionEvent extends Equatable {
     return json.map((e) => ConversionEvent.fromJson(e)).toList();
   }
 
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'node_id': nodeID,
+        'project_id': projectID,
+        'trigger': trigger.toString(),
+        'properties': properties,
+        'created_at': createdAt.toIso8601String(),
+      };
+
   @override
   List<Object?> get props => [
         id,

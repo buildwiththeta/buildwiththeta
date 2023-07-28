@@ -14,15 +14,20 @@ class GetComponentUseCase
   Future<Either<Exception, GetPageResponseEntity>> call(
           GetComponentUseCaseParams params) =>
       _componentRepository.getComponent(
-          params.componentName, params.preloadAllowed);
+        params.componentName,
+        params.preloadAllowed,
+        params.branchName,
+      );
 }
 
 class GetComponentUseCaseParams extends Params {
   const GetComponentUseCaseParams({
     required this.componentName,
+    required this.branchName,
     required this.preloadAllowed,
   });
 
   final String componentName;
+  final String? branchName;
   final bool preloadAllowed;
 }

@@ -27,6 +27,7 @@ Future<void> initializeDependencyInjection(
   ConnectionMode connectionMode,
   Map<String, dynamic>? customPreloadFile,
 ) async {
+  final cacheEnabled = connectionMode == ConnectionMode.cached;
   getIt.registerLazySingleton(() => PreloadFile(
       connectionMode == ConnectionMode.preloaded, customPreloadFile));
   getIt.registerLazySingleton(() => const NodesParse());
@@ -38,17 +39,17 @@ Future<void> initializeDependencyInjection(
 
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
-    ..registerLazySingleton(() => LocalComponentService(getIt(), getIt(),
-        cacheExtension, connectionMode == ConnectionMode.cached))
+    ..registerLazySingleton(() =>
+        LocalComponentService(getIt(), getIt(), cacheExtension, cacheEnabled))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
-    ..registerLazySingleton(() => LocalStylesService(getIt(), getIt(),
-        cacheExtension, connectionMode == ConnectionMode.cached));
+    ..registerLazySingleton(() =>
+        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
-        () => ComponentRepositoryImpl(getIt(), getIt(), getIt()))
+        () => ComponentRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled))
     ..registerLazySingleton<StylesRepository>(
-        () => StylesRepositoryImpl(getIt(), getIt(), getIt()));
+        () => StylesRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled));
 
   getIt
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))

@@ -2,33 +2,30 @@
 
 ## The new way of designing remote design systems
 
-Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
+Visually design your remote design system. Integrate it seamlessly into your code base along with your favorite packages, allowing you to instantly update the UI remotely.
 
 ![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
 
 
 Theta Flutter library.
 
-- Documentation: https://docs.buildwiththeta.com
-- Read ["From classic no-code builders to remote design systems"](https://buildwiththeta.com/blog/remote-design-systems-vs-app-builder)
+- Documentation: https://docs.buildwiththeta.com.
+- See examples on [GitHub](https://github.com/buildwiththeta/buildwiththeta/tree/main/examples).
 
 
 ## What is [Theta](https://buildwiththeta.com)?
 
-Theta is a platform designed for rendering dynamic user interfaces seamlessly within your Flutter applications.
+Theta is a platform designed for rendering remote user interfaces seamlessly within your Flutter projects.
 
-- Effortless dynamic UI rendering: Display no-code UIs by eliminating the need to deploy or rebuild the app for each change.
-- Custom code directly from within your app, mixing no-code and code.
-- Test the user interface against various conditions and user properties in real time to help you find the best user experience.
-- Lightweight and secure.
+- **Remote UI**: Visually design your user interface on Theta, and visualize it in apps with instant updates.
+- **No internet connection required**: Preload the remote UIs for offline use.
+- **Mix no-code within your codebase**: Add custom code directly from your existing code, using any library / sdk.
+- **Testable**: Test the user interface with unit tests and integrate your favorite analysis tool to monitor user behavior.
 
-## How it works?
+## Why Theta?
 
-- Design interfaces on Theta (Figma import and AI generative generation support are planned in the future).
-- Add the user interface elements within the app.
-- Update the UI without rebuilding the app.
-
----
+- Use Theta in an existing app to enhance collaboration between designers and devs on your team and increase the ability to update and test your UI through instant updates.
+- Use Theta in a new project to create your design system visually, using it with your favorite packages for the best possible quality.
 
 ## Getting started
 
@@ -42,7 +39,6 @@ import 'package:theta/theta.dart';
 
 Future<void> main() async {
     await Theta.initialize(anonKey: 'thetaKey');
-
     // ...
 }
 ```
@@ -93,7 +89,8 @@ final controller = UIBoxController();
 
 controller.onLoaded(() {
     debugPrint('Loaded!');
-    debugPrint(_controller.nodesToList().toString());
+    debugPrint('Component ID: ${controller.componentID}');
+    debugPrint('Nodes: ${controller.nodesToList()}');
 });
 controller.onError((error) => debugPrint(error.toString()));
 
@@ -105,13 +102,9 @@ UIBox(
 controller.dispose();
 ```
 
-### Add custom code for actions
+### Add custom actions
 
-Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add functions, called 'workflows', based on gesture triggers.
-
-- Select a single UI element based on its id or name.
-- Choose the trigger for which the action will start.
-- Add a method.
+Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add functions, called `workflows`, based on gesture triggers.
 
 ```dart
 UIBox(
@@ -125,7 +118,7 @@ UIBox(
 ```
 
 
-## Overrides
+### Overrides
 
 - Documentation: [https://docs.buildwiththeta.com/en/builder/overrides](https://docs.buildwiththeta.com/en/builder/overrides)
 
@@ -210,7 +203,7 @@ UIBox(
 - ✅ Closed Beta: ready for conscientious use. Expect some bugs and missing features.
 - ✅ Invite-only Beta: ready to be used in production. Expect some bugs and missing features.
 
-Need an invitation? Ask on [Discord](https://discord.gg/xNgDkZ2g6w) or on [Twitter](https://twitter.com/buildwiththeta) using #buildwiththeta.
+Looking for an invitation? Ask on [Twitter](https://twitter.com/intent/tweet?text=Hey%2C%20I%27m%20looking%20for%20an%20invitation%20code%20for%20%40buildwiththeta%2C%20can%20anyone%20help%20me%20please%3F%20).
 
 ## Compatibility
 
@@ -232,9 +225,9 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 
 ## Resources
 
-- [▶️ Video tutorial](https://www.youtube.com/watch?list=TLGGI35MW6OOHycwNzA3MjAyMw&v=u4TmO6f7xpI)
 - [⚡️ Website](https://buildwiththeta.com)
 - [🧑‍🏫 Documentation](https://docs.buildwiththeta.com)
+- [▶️ Youtube](https://www.youtube.com/channel/UCuj5yqb6kx_gXTHXlTGNF0Q)
 - [🐱 GitHub](https://github.com/buildwiththeta/buildwiththeta)
 - [🐦 Twitter](https://twitter.com/buildwiththeta)
 - [👾 Discord](https://discord.gg/xNgDkZ2g6w)

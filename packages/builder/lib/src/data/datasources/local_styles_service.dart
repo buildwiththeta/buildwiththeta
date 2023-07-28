@@ -25,7 +25,6 @@ class LocalStylesService {
 
   Future<GetStylesResponseEntity?> getLocalStyles() async {
     if (!isCacheEnabled) {
-      Logger.printDefault('Cache is not enabled');
       return null;
     }
 
@@ -44,7 +43,6 @@ class LocalStylesService {
     }
 
     // if the cached component is older than [cacheExtentionInSeconds] in seconds, return null
-
     final createdAt = cachedJson['created_at'];
     final now = DateTime.now().millisecondsSinceEpoch;
     final diff = now - createdAt;
