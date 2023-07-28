@@ -23,7 +23,6 @@ Theta est une application web qui peut être utilisée à partir d'un navigateur
 
 ## Installation de la bibliothèque du client Theta
 
-
 ```
 flutter pub add theta
 ```
@@ -31,7 +30,6 @@ flutter pub add theta
 ### Initialisation
 
 Initialisez Theta en appelant Theta.initialize avec votre clé anonyme. Veillez à appeler cette méthode à la racine de votre application.
-
 
 ```dart
 import 'package:theta/theta.dart';
@@ -44,7 +42,6 @@ Future<void> main() async {
 ### Enveloppez votre application avec ThetaProvider
 
 Enveloppez votre application avec ThetaProvider pour permettre à n'importe quelle UIBox de recevoir le thème et les styles du projet.
-
 
 ```dart
 ThetaProvider(
@@ -59,7 +56,6 @@ ThetaProvider(
 
 Tout ce que vous avez à faire est d'ajouter un widget UIBox à votre application et de passer le nom du composant en paramètre.
 
-
 ```dart
 /// Your app
 return Scaffold(
@@ -72,7 +68,6 @@ return Scaffold(
 ### Chargement d'un espace réservé et gestion des erreurs
 
 Vous pouvez afficher un widget d'espace réservé pendant le chargement et un widget d'erreur.
-
 
 ```dart
 UIBox(
@@ -90,7 +85,6 @@ Vous souhaitez une interface utilisateur dynamique avec prise en charge des gest
 2. Choisissez le déclencheur pour lequel l'action commencera.
 3. Ajoutez votre code.
 
-
 ```dart
 UIBox(
     'CupertinoAppBar',
@@ -105,7 +99,6 @@ UIBox(
 ## Remplacer les propriétés du bloc
 
 Vous pouvez remplacer chaque bloc d'interface utilisateur par un widget Flutter en mélangeant du no-code avec Flutter.
-
 
 ```dart
 UIBox(
@@ -122,10 +115,10 @@ UIBox(
 
 ### Remplacement de l'enfant
 
-Si, dans le composant sans code, l'élément sur lequel vous souhaitez écraser l'enfant en possède déjà un, celui-ci sera supprimé et remplacé par celui saisi par l'utilisateur via le code.
+Si dans le composant no-code l'élément auquel vous souhaitez écraser l'enfant en a déjà un,
+il sera supprimé et remplacé par celui entré par l'utilisateur via le code.
 
 Vous pouvez également utiliser le site `UIBox` à l'intérieur d'autres sites `UIBox`. Cela permet un très haut degré de personnalisation.
-
 
 ```dart
 UIBox(
@@ -140,7 +133,6 @@ UIBox(
 ### Les enfants sont prioritaires
 
 Vous pouvez également écraser les enfants d'un élément.
-
 
 ```dart
 UIBox(
