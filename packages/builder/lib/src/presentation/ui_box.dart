@@ -19,11 +19,14 @@ part 'ui_box_controller.dart';
 /// - It requires a [placeholder] for the placeholder widget.
 /// - It requires a [errorWidget] for the error widget.
 /// - It takes a [workflows] of type [Workflow] for the workflows.
+/// - It takes a [overrides] of type [Override] for the node overrides.
+/// - It takes a [branch] name for versioning.ù
+/// - It takes a [controller] of type [UIBoxController] for the controller.
 class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
-    this.branchName,
+    this.branch,
     this.controller,
     this.placeholder,
     this.errorWidget,
@@ -32,7 +35,7 @@ class UIBox extends StatefulWidget {
   });
 
   final String componentName;
-  final String? branchName;
+  final String? branch;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -61,7 +64,7 @@ class _UIBoxState extends State<UIBox> {
       nodeOverrides: widget.overrides,
       child: _LogicBox(
         widget.componentName,
-        branchName: widget.branchName,
+        branchName: widget.branch,
         controller: widget.controller,
         placeholder: widget.placeholder,
         errorWidget: widget.errorWidget,
@@ -145,6 +148,7 @@ class __LogicBoxState extends State<_LogicBox> {
       r.treeNodes,
       widget.componentName,
       r.pageID,
+      widget.branchName,
       r.abTestID,
     );
     setState(() {

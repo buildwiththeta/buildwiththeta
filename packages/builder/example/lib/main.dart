@@ -29,11 +29,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _controller.onLoaded(() {
-      debugPrint('Loaded!');
-
-      /// Prints the nodes to the console.
       debugPrint(_controller.componentID);
-      debugPrint(_controller.componentName);
+      debugPrint(_controller.branch);
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));
@@ -60,7 +57,7 @@ class _MyAppState extends State<MyApp> {
             'Counter View',
             controller: _controller,
 
-            branchName: 'Version 2.0',
+            branch: 'Version 2.0',
 
             /// [placeholder] is the widget displayed while the page is loading.
             placeholder: const CircularProgressIndicator(),

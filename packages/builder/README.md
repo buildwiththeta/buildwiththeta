@@ -60,10 +60,17 @@ ThetaProvider(
 
 Everything you need to do is to add a `UIBox` widget to your app and pass the component name as a parameter.
 
+
+Use `branch` to specify the branch of the component to render. If not specified, the default branch will be used.
+This is useful for testing new features without affecting the production environment or for versioning the component.
+
 ```dart
 return Scaffold(
     body: Center(
-        child: UIBox('Component name'),
+        child: UIBox(
+            'Component name', 
+            branch: '1.0.0',
+        ),
     ),
 );
 ```

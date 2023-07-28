@@ -25,7 +25,7 @@ class ComponentService {
         'component_name': componentName,
         'log': {
           "session_id": const Uuid().v1(),
-          "title": "Get component",
+          "title": "Theta CLI - Get component",
           "description": null,
           "properties": null,
           "device_info": {

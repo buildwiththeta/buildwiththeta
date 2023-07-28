@@ -1,3 +1,8 @@
+## 0.5.1
+
+- [x] Feat: `branch` added to `UIBox`.
+- [x] Feat: `UIBoxController` has now a `branch` property.
+
 ## 0.5.0
 
 - [x] Feat: preload supported.

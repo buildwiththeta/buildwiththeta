@@ -21,7 +21,7 @@ class StylesService {
       body: json.encode({
         'log': {
           "session_id": const Uuid().v1(),
-          "title": "Get component",
+          "title": "Theta ClI - Get styles",
           "description": null,
           "properties": null,
           "device_info": {
