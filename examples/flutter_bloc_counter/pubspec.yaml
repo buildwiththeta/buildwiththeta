@@ -14,6 +14,10 @@ dependencies:
   bloc: ^8.1.0
   flutter_bloc: ^8.1.1
 
+dependency_overrides:
+  theta:
+    path: ../../packages/builder
+
 dev_dependencies:
   bloc_test: ^9.1.0
   flutter_test:
