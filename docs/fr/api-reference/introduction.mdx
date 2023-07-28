@@ -1,0 +1,39 @@
+---
+title: Build with Theta | Référence API - Guide du développeur
+---
+
+# Guide du développeur - l'API Build with Theta
+
+## Introduction
+
+### URL de base
+
+L'API Build with Theta suit les principes de l'architecture **REST**. Pour garantir la sécurité, l'intégrité et la confidentialité des données, toutes les demandes d'API doivent être effectuées via **HTTPS**. Veuillez noter que l'API Build with Theta ne prend pas en charge **HTTP**.
+
+L'URL de base pour toutes les requêtes est :
+
+`https://api.buildwiththeta.com/functions/v1/`
+
+### Authentification
+
+Pour authentifier vos demandes, vous devez inclure un en-tête d'autorisation. La valeur de l'en-tête doit être au format "Bearer Your_Anon_Key". Voici un exemple :
+
+`Authorization: Bearer Your_Anon_Key`
+
+### Codes de réponse
+
+L'API Build with Theta utilise des codes de réponse HTTP standard pour indiquer l'état de vos requêtes.
+
+- **`200`** : La requête a réussi.
+- **`400`** : Paramètres invalides. Veuillez vous assurer que les paramètres fournis sont corrects.
+- **`401`** : Clé Anon manquante. Veuillez inclure la clé Anon dans l'en-tête d'autorisation.
+- **`403`** : Clé anonyme non valide. Assurez-vous que la clé Anon fournie est valide.
+- **`404`** : La ressource demandée est introuvable.
+- **`429`** : Limite de débit dépassée.
+- **`5xx`** : Indique une erreur de serveur dans l'API Build with Theta.
+
+### Limite de débit
+
+Il existe une limite de débit de **10 appels par seconde sur toutes les API**. Si cette limite est dépassée, un code d'erreur de réponse "429" sera reçu.
+
+Pour éviter cela, il est conseillé de diminuer le taux de requêtes en mettant en place un mécanisme de file d'attente ou en réduisant le nombre de requêtes simultanées par seconde. Si vous avez des besoins spécifiques, vous pouvez contacter [support@buildwiththeta.com](support@buildwiththeta.com) pour demander une augmentation de la limite de débit.
