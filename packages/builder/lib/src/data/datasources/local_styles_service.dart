@@ -76,7 +76,7 @@ class LocalStylesService {
 
   Future<GetStylesResponseEntity> getPreloadedStyles() async {
     final res = _preloadFile.customJson ??
-        jsonDecode(await rootBundle.loadString('assets/theta_preload.json'));
+        jsonDecode(await rootBundle.loadString(thetaPreloadFilePath));
     return GetStylesResponseEntity.fromJson(
         jsonDecode(decompressAndDecrypt(_clientToken.key, res['styles'])));
   }

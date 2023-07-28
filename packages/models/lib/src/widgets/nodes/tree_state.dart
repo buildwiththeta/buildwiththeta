@@ -39,6 +39,7 @@ class TreeState with ChangeNotifier {
     this.nodes = const [],
     this.xLines = const [],
     this.yLines = const [],
+    this.isPreloaded = false,
   });
 
   /// Are we in Play Mode?
@@ -97,6 +98,8 @@ class TreeState with ChangeNotifier {
   DeviceType get deviceType => deviceInfo.identifier.type;
 
   NodeID? nodeComponentID;
+
+  bool isPreloaded;
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
@@ -159,6 +162,10 @@ class TreeState with ChangeNotifier {
     this.nodeOverrides = nodeOverrides;
   }
 
+  void onPreloadedFlagChanged(bool preloaded) {
+    isPreloaded = preloaded;
+  }
+
   void notify() {
     notifyListeners();
   }
@@ -184,6 +191,7 @@ class TreeState with ChangeNotifier {
     final List<int>? yLines,
     final ComponentFit? fit,
     final NodeID? nodeComponentID,
+    final bool? preloaded,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -203,6 +211,7 @@ class TreeState with ChangeNotifier {
       yLines: yLines ?? this.yLines,
       fit: fit ?? this.fit,
       nodeComponentID: nodeComponentID ?? this.nodeComponentID,
+      isPreloaded: preloaded ?? isPreloaded,
     );
   }
 }

@@ -1,3 +1,7 @@
+## 0.3.0
+
+- [x] Feat: TreeState has now a `isPreloaded` property.
+
 ## 0.2.4
 
 - [x] Feat: Overrides can now have value changes.

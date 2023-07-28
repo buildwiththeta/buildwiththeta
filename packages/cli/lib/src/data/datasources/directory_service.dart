@@ -2,13 +2,21 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:encrypt/encrypt.dart';
+import 'package:http/http.dart';
+import 'package:mason_logger/mason_logger.dart';
 
 class DirectoryService {
-  const DirectoryService();
+  const DirectoryService(this._client);
 
+  final Client _client;
+
+  static final Logger _logger = Logger();
   static final currentDirectory = Directory.current.path;
   static final assetsDirectory = '$currentDirectory/assets';
+  static final thetaAssetsDirectory = '$assetsDirectory/theta_assets';
   static const preloadFile = '/theta_preload.json';
+  static const defaultImage =
+      'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png';
 
   String compressString(String json) {
     final enCodedJson = utf8.encode(json);
@@ -43,6 +51,9 @@ class DirectoryService {
   Future<bool> checkAssetsDirectory() async =>
       await Directory('${Directory.current.path}/assets').exists();
 
+  Future<bool> checkThetaAssetsDirectory() async =>
+      await Directory('${Directory.current.path}/assets/theta_assets').exists();
+
   Future<void> createAssetsDirectory() async {
     await directoryContainsPubspec();
     if (!(await checkAssetsDirectory())) {
@@ -50,16 +61,44 @@ class DirectoryService {
     }
   }
 
+  Future<void> createThetaAssetsDirectory() async {
+    await directoryContainsPubspec();
+    if (!(await checkThetaAssetsDirectory())) {
+      await Directory(thetaAssetsDirectory).create();
+    }
+  }
+
+  Future<void> createDirectories() async {
+    await createAssetsDirectory();
+    await createThetaAssetsDirectory();
+  }
+
   Future<void> writePreloadFile(
       {required String anonKey,
       required String jsonKey,
       required String content}) async {
-    await createAssetsDirectory();
-    final file = File(assetsDirectory + preloadFile);
+    await createDirectories();
+    final file = File(thetaAssetsDirectory + preloadFile);
     final fileContent = await file.exists() ? await file.readAsString() : '{}';
     final json = jsonDecode(fileContent);
 
     json[jsonKey] = encrypt(anonKey, compressString(content));
     await file.writeAsString(jsonEncode(json));
+  }
+
+  Future<void> preloadImages(Map<String, dynamic> json) async {
+    await createDirectories();
+    final nodes = json['nodes'];
+    for (final node in nodes) {
+      if (node['type'] == 'image') {
+        var url = node['properties']['img']['v'] as String? ?? defaultImage;
+        if (url.isEmpty) url = defaultImage;
+        _logger.info('📥 Preloading image: $url');
+        final res = await _client.get(Uri.parse(url));
+        final file = File(
+            '$thetaAssetsDirectory/${base64.encode(utf8.encode(node['id']))}.${url.split('.').last}');
+        await file.writeAsBytes(res.bodyBytes);
+      }
+    }
   }
 }

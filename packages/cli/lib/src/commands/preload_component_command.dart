@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:args/command_runner.dart';
 import 'package:either_dart/either.dart';
 import 'package:interact/interact.dart';
@@ -7,6 +9,7 @@ import 'package:theta_cli/src/domain/usecases/base_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/preload_images.dart';
 
 /// {@template preload_command}
 ///
@@ -105,6 +108,7 @@ class PreloadComponentCommand extends Command<int> {
       throw Exception('❗️ Error fetching component, message: $l');
     }, (r) async {
       _logger.success('✅ Component loaded successfully.');
+      await preloadImages(r);
       await createPreloadFile(
           anonKey: anonKey, jsonKey: componentName, content: r);
     });
@@ -119,5 +123,12 @@ class PreloadComponentCommand extends Command<int> {
           .fold(
         (l) => _logger.err(l.toString()),
         (r) => _logger.success('theta_preload.json updated successfully.'),
+      );
+
+  Future<void> preloadImages(String content) => getIt<PreloadImagesUseCase>()(
+              PreloadImagesUseCaseParams(json: json.decode(content)))
+          .fold(
+        (l) => _logger.err(l.toString()),
+        (r) => _logger.success('Images preloaded successfully in /assets.'),
       );
 }

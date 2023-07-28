@@ -38,6 +38,12 @@ dependencies:
   theta:
     path: ../
 
+dependency_overrides:
+  theta_models:
+    path: ../../models
+  theta_open_widgets:
+    path: ../../widgets
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -63,7 +69,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/theta_preload.json
+    - assets/theta_assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

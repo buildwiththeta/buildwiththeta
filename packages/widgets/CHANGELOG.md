@@ -1,3 +1,7 @@
+## 0.3.0
+
+- [x] Feat: Image nodes now support local images in preloading mode.
+
 ## 0.2.8
 
 - [x] Fix: ThetaModels updated.

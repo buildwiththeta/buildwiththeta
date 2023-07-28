@@ -5,4 +5,6 @@ abstract class DirectoryRepository {
       {required String anonKey,
       required String jsonKey,
       required String content});
+
+  Future<Either<Exception, void>> preloadImages(Map<String, dynamic> json);
 }
