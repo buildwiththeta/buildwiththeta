@@ -10,7 +10,7 @@ Main code:
 final controller = UIBoxController();
 
 @override
-    void initState() {
+void initState() {
     super.initState();
     controller.onLoaded(() async {
         await widget.analytics.logScreenView(
