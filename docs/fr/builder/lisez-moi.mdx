@@ -1,0 +1,237 @@
+---
+title: Guide du développeur - Démarrage rapide Flutter
+---
+
+# Guide du développeur - Démarrage rapide Flutter
+
+## La nouvelle façon de concevoir des systèmes de conception à distance
+
+Créez votre système de conception à distance sans effort, sans écrire de code. Intégrez-le de manière transparente dans votre base de code aux côtés de vos packages préférés, permettant des mises à jour faciles de l'interface utilisateur sans avoir à reconstruire l'intégralité de l'application.
+
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+
+
+bibliothèque Theta Flutter.
+
+- Documentation : https://docs.buildwiththeta.com
+- Lisez ["From classic no-code builders to remote design systems"](https://buildwiththeta.com/blog/remote-design-systems-vs-app-builder)
+
+
+## Qu'est-ce que [Theta](https://buildwiththeta.com)?
+
+Theta est une plate-forme conçue pour rendre les interfaces utilisateur dynamiques de manière transparente dans vos applications Flutter.
+
+- Rendu d'interface utilisateur dynamique sans effort : affichez des interfaces utilisateur sans code en éliminant le besoin de déployer ou de reconstruire l'application pour chaque modification.
+- Code personnalisé directement depuis votre application, mélangeant no-code et code.
+- Testez l'interface utilisateur par rapport à diverses conditions et propriétés utilisateur en temps réel pour vous aider à trouver la meilleure expérience utilisateur.
+- Léger et sécurisé.
+
+## Comment ça fonctionne?
+
+- Conception d'interfaces sur Theta (l'import Figma et le support de génération générative d'IA sont prévus dans le futur).
+- Ajoutez les éléments de l'interface utilisateur dans l'application.
+- Mettez à jour l'interface utilisateur sans reconstruire l'application.
+
+---
+
+## Commencer
+
+### Initialiser Theta
+
+Initialisez Theta en appelant `Theta.initialize` avec votre clé anonyme.
+Assurez-vous d'appeler cette méthode à la racine de votre application.
+
+```dart
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'thetaKey');
+
+    // ...
+}
+```
+
+### Enveloppez votre application avec ThetaProvider
+
+Enveloppez votre application avec `ThetaProvider` pour permettre à n'importe quelle UIBox de recevoir les styles de thème et de projet.
+    
+```dart
+ThetaProvider(
+    theme: ThemeMode.light,
+    child: MaterialApp(
+        home: // ...
+    ),
+)
+```
+
+### Rendre l'interface utilisateur distante
+
+Tout ce que vous avez à faire est d'ajouter un widget "UIBox" à votre application et de transmettre le nom du composant en tant que paramètre.
+
+```dart
+return Scaffold(
+    body: Center(
+        child: UIBox('Component name'),
+    ),
+);
+```
+
+### Espace réservé de chargement et gestion des erreurs
+
+Vous pouvez afficher un widget d'espace réservé pendant le chargement et un widget d'erreur.
+
+```dart
+UIBox(
+    'Homepage',
+    placeholder: CircularProgressIndicator(),
+    errorWidget: (error) => Text(error.toString()),
+)
+```
+
+### Utiliser un contrôleur
+
+Utilisez un contrôleur pour un meilleur contrôle du composant distant.
+
+```dart
+final controller = UIBoxController();
+
+controller.onLoaded(() {
+    debugPrint('Loaded!');
+    debugPrint(_controller.nodesToList().toString());
+});
+controller.onError((error) => debugPrint(error.toString()));
+
+UIBox(
+    'Feed',
+    controller: controller,
+);
+
+controller.dispose();
+```
+
+### Ajouter un code personnalisé pour les actions
+
+Vous voulez une interface utilisateur dynamique avec prise en charge des gestes (onTap, doubleTap, etc.) ? Vous pouvez ajouter des fonctions, appelées "workflows", basées sur des déclencheurs gestuels.
+
+- Sélectionnez un seul élément d'interface utilisateur en fonction de son identifiant ou de son nom.
+- Choisissez le déclencheur pour lequel l'action va démarrer.
+- Ajouter une méthode.
+
+```dart
+UIBox(
+    'AppBar',
+    workflows: [
+        Workflow('Container s4l3s', Trigger.onTap, () {
+            // Do something
+        }),
+    ],
+)
+```
+
+
+## Remplacements
+
+- Documentation : [https://docs.buildwiththeta.com/en/builder/overrides](https://docs.buildwiththeta.com/en/builder/overrides)
+
+Vous pouvez remplacer chaque bloc d'interface utilisateur par un widget Flutter en mélangeant le no-code avec Flutter.
+
+```dart
+UIBox(
+    'Social card',
+    overrides: [
+        // Override a node with a Flutter widget
+        Override(
+            'Button',
+            builder: (context, node, child, children) {
+                return GestureDetector(
+                    onTap: () {
+                        debugPrint('Tapped!');
+                    },
+                    child: Container(
+                        color: Colors.black,
+                        child: child, // You can even use the original child 
+                    ),
+                );
+            },
+        ),
+
+        // Override a node of a component with a custom text and color
+        Override(
+            'Post title',
+            component: 'Component id',
+            text: 'My beautiful cat',
+            color: Colors.white,
+        ),
+
+        // Override a node of a component with a custom image
+        Override('Cover')
+            ..setImage('https://...'),
+    ],
+),
+```
+
+### Remplacement enfant
+
+Si dans le composant no-code l'élément auquel vous souhaitez écraser l'enfant en a déjà un,
+il sera supprimé et remplacé par celui entré par l'utilisateur via le code.
+
+Vous pouvez également utiliser `UIBox` dans d'autres `UIBox`es. Cela offre un très haut degré de personnalisation.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        // Override the child of an element
+        Override('Element id')
+            ..setChild(UIBox('Other component')),
+    ],
+),
+```
+
+### Priorité enfants
+
+Vous pouvez également écraser les enfants d'un élément.
+
+```dart
+UIBox(
+    'Component name',
+    overrides: [
+        // Override the children of an element
+        Override('Element name')
+            ..setChildren([
+                Text('Child 1'), 
+                Text('Child 2')
+            ]),
+    ],
+),
+```
+
+---
+
+## Statut
+
+- ✅ Alpha : expérimental. Attendez-vous à des changements de rupture.
+- ✅ Bêta fermée : prête pour une utilisation consciencieuse. Attendez-vous à quelques bugs et fonctionnalités manquantes.
+- ✅ Bêta sur invitation uniquement : prête à être utilisée en production. Attendez-vous à quelques bugs et fonctionnalités manquantes.
+
+Besoin d'une invitation ? Demandez sur [Discord](https://discord.gg/xNgDkZ2g6w) ou sur [Twitter](https://twitter.com/buildwiththeta) en utilisant #buildwiththeta.
+
+## Compatibilité
+
+- ✅ Web
+- ✅ Android
+- ✅ iOS
+- ✅ MacOS
+- ✅ Windows
+
+En savoir plus sur la configuration dans la [documentation](https://docs.buildwiththeta.com/en/builder/compatibility).
+
+## Contribuer
+
+Voir [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) pour plus de détails.
+
+## Licence
+
+Les packages Build with Theta sont sous licence Apache License 2.0. Voir [LICENCE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) pour plus de détails.
+
+![https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/covers/banner-email-min.png](https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object /public/theta-assets/covers/banner-email-min.png)
