@@ -75,6 +75,7 @@ Build with Theta packages are licensed under the Apache License 2.0. See [LICENS
 - [it](https://docs.page/buildwiththeta/buildwiththeta/it)
 - [es](https://docs.page/buildwiththeta/buildwiththeta/es)
 - [tr](https://docs.page/buildwiththeta/buildwiththeta/tr)
+- [fr](https://docs.page/buildwiththeta/buildwiththeta/fr)
 
 ## Resources
 
