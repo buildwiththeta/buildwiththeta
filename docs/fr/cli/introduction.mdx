@@ -1,0 +1,49 @@
+---
+title: Theta Cli - Documentation
+---
+
+# Theta CLI
+
+Theta CLI permet de précharger l'interface utilisateur distante pour une utilisation sans connexion Internet.
+
+- ⚠️ Theta CLI est signalé comme « expérimental » et il pourrait y avoir des changements importants à l'avenir.
+
+## Premiers pas 🚀
+
+Activez Theta CLI globalement via :
+
+```sh
+dart pub global activate theta_cli
+```
+
+## Utilisation
+
+Naviguez dans un dossier de votre application Flutter contenant le fichier pubspec.yaml.
+Theta CLI générera un fichier Json dans /assets.
+Le fichier contiendra le code de pré-rendu des styles de projet et des composants choisis par l'utilisateur.
+
+### Styles de projet préchargés – requis
+
+```sh
+$ theta preload --styles --key ANON_KEY
+```
+
+Cela générera le fichier /assets/theta_preload.json contenant une clé 'styles' et sa valeur.
+
+### Précharger un composant spécifique
+
+```sh
+$ theta preload --component --name COMPONENT_NAME --key ANON_KEY
+```
+
+Cette commande ajoutera une clé COMPONENT_NAME et sa valeur au fichier theta_preload.json.
+
+### Autres commandes
+
+```sh
+# Show CLI version
+$ theta --version
+
+# Show usage help
+$ theta --help
+```
