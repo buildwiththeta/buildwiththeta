@@ -6,6 +6,7 @@ typedef LoadedCallback = void Function();
 class UIBoxController extends ChangeNotifier {
   ID? _componentName;
   ID? _componentID;
+  String? _branchName;
   ID? _abTestID;
   Function()? _onLoadCallback;
   ErrorCallback? _onErrorCallback;
@@ -60,6 +61,10 @@ class UIBoxController extends ChangeNotifier {
   /// ❗️ Use after the component is loaded.
   String? get abTestID => _abTestID;
 
+  /// Returns the branch name. If the branch name is not defined, it returns
+  /// null (the component is part of the default branch).
+  String? get branch => _branchName;
+
   /// Returns a callback when the component has an error.
   void onError(ErrorCallback callback) {
     _onErrorCallback = callback;
@@ -90,11 +95,13 @@ class UIBoxController extends ChangeNotifier {
     CNode node,
     String componentName,
     String componentID,
+    String? branchName,
     String? abTestID,
   ) {
     _componentName = componentName;
     _componentID = componentID;
     _abTestID = abTestID;
+    _branchName = branchName;
     _rootNode = node;
     if (_onLoadedCallback != null) {
       _onLoadedCallback!();

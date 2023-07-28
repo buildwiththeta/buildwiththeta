@@ -9,6 +9,8 @@ const getComponentPath = 'get_component';
 const getStylesPath = 'get_project_styles';
 const sendConversionEventPath = 'add_conversion_log';
 
+const thetaPreloadFilePath = 'assets/theta_assets/theta_preload.json';
+
 final gzip = GZipDecoder();
 String decompressAndDecrypt(String anonKey, String encryptedBase64) {
   final key = Key.fromUtf8(anonKey.split('.')[1].substring(0, 32));

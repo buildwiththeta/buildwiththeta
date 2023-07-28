@@ -28,11 +28,16 @@ class ThetaClient {
       _getStylesUseCase(GetStylesUseCaseParams(preloadAllowed: preloadAllowed));
 
   Future<Either<Exception, GetPageResponseEntity>> _fetchComponent(
-          final String componentName, bool preloadAllowed) async =>
+          final String componentName,
+          bool preloadAllowed,
+          String? branchName) async =>
       _getComponentUseCase(GetComponentUseCaseParams(
-          componentName: componentName, preloadAllowed: preloadAllowed));
+        componentName: componentName,
+        preloadAllowed: preloadAllowed,
+        branchName: branchName,
+      ));
 
   Future<Either<Exception, GetPageResponseEntity>> build(String componentName,
-          {bool preloadAllowed = true}) async =>
-      await _fetchComponent(componentName, preloadAllowed);
+          {bool preloadAllowed = true, String? branchName}) async =>
+      await _fetchComponent(componentName, preloadAllowed, branchName);
 }

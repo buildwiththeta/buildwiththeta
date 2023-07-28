@@ -19,11 +19,7 @@ class GetStylesResponseEntity {
       );
 
   Map<String, dynamic> toJson() => {
-        'colors': colorStyles
-            .map((e) => {'id': e.id, ..._colorMapper.toJson(e)})
-            .toList(),
-        'texts': textStyles
-            .map((e) => {'id': e.id, ..._textMapper.toJson(e)})
-            .toList(),
+        'colors': colorStyles.map((e) => _colorMapper.toJsonWithId(e)).toList(),
+        'texts': textStyles.map((e) => _textMapper.toJsonWithId(e)).toList(),
       };
 }

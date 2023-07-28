@@ -25,7 +25,6 @@ class LocalStylesService {
 
   Future<GetStylesResponseEntity?> getLocalStyles() async {
     if (!isCacheEnabled) {
-      Logger.printDefault('Cache is not enabled');
       return null;
     }
 
@@ -44,7 +43,6 @@ class LocalStylesService {
     }
 
     // if the cached component is older than [cacheExtentionInSeconds] in seconds, return null
-
     final createdAt = cachedJson['created_at'];
     final now = DateTime.now().millisecondsSinceEpoch;
     final diff = now - createdAt;
@@ -76,7 +74,7 @@ class LocalStylesService {
 
   Future<GetStylesResponseEntity> getPreloadedStyles() async {
     final res = _preloadFile.customJson ??
-        jsonDecode(await rootBundle.loadString('assets/theta_preload.json'));
+        jsonDecode(await rootBundle.loadString(thetaPreloadFilePath));
     return GetStylesResponseEntity.fromJson(
         jsonDecode(decompressAndDecrypt(_clientToken.key, res['styles'])));
   }

@@ -1,6 +1,6 @@
 name: theta_cli
 description: Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
-version: 0.1.1
+version: 0.2.0
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
 issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
