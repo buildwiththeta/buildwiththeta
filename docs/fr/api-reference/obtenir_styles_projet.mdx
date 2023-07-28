@@ -1,0 +1,41 @@
+---
+title: Obtenir l'API des styles de projet
+---
+
+# Obtenir les styles de projet
+
+Pour récupérer tous les styles (couleurs, styles de texte) d'un projet, vous pouvez faire une requête POST au point de terminaison 'get_project_styles' de l'API Build with Theta. Voici un exemple de commande curl pour le faire :
+
+```bash
+curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_project_styles' \
+     -H 'Authorization: Bearer eyJhbGciOi...' \
+     -H 'Content-Type: application/json' \
+     -d $'{
+      "log": {
+        "session_id": "23a9e8c7-cd8f-4557-...",
+        "title": "Get styles",
+        "description": "...",
+        "properties": { ... },
+        "device_info": {
+          "os_name": "...",
+          "os_version": "...",
+          "locale": "...",
+          "sdk_version": "...",
+          "sdk_build_number": "..."
+        }
+      }
+    }'
+```
+
+## Paramètres du corps
+
+- **session_id**: `uuid`. Un identifiant universel unique (uuid) attribué à une session.
+- **title**: `string`. Chaîne représentant le titre de l'événement. Ce titre sera affiché dans le panneau Insight sous la section Utilisation.
+- **description**: `string`, optional. Une chaîne facultative fournissant une description de l'événement.
+- **properties**: `object`, optional. Un objet facultatif contenant des propriétés supplémentaires liées à l'événement.
+- **device_info**: `object`, optional. Un objet contenant des informations sur le périphérique client.
+  - **os_name**: `string`. Chaîne représentant le nom du système d'exploitation sur la machine cliente.
+  - **os_version**: `string`. Chaîne représentant la version du système d'exploitation de l'appareil client.
+  - **locale**: `string`, optional. Chaîne facultative représentant les paramètres régionaux de l'appareil.
+  - **sdk_version**: `string`. Une chaîne indiquant la version du SDK Theta.
+  - **sdk_build_number**: `string`. Une chaîne indiquant le numéro de build du SDK Theta.
