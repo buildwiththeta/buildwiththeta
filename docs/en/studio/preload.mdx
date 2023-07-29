@@ -38,15 +38,24 @@ This will generate a `theta_preload.json` file containing your UI components.
 
 In your Flutter app's code, initialize Theta with `ConnectionMode.preload`. This mode will enable your app to preload the UI components when it launches, allowing it to function smoothly even without an internet connection.
 
-```dart
-import 'package:theta/theta.dart';
-
-void main() {
-  Theta.initialize(connectionMode: ConnectionMode.preload, anonKey: Env.thetaKey);
-
-  // Your app's remaining code here
-}
-```
+<Tabs
+  groupId="language"
+  values={[
+    { label: 'Flutter', value: 'flutter' },
+  ]}
+>
+  <TabItem value="flutter">
+  ```dart
+  import 'package:theta/theta.dart';
+  
+  void main() {
+    Theta.initialize(connectionMode: ConnectionMode.preload, anonKey: Env.thetaKey);
+  
+    // Your app's remaining code here
+  }
+  ```
+  </TabItem>
+</Tabs>
 
 By setting the connection mode to preload, Theta will fetch locally the UI components when the app starts, ensuring a fast and reliable user experience, even offline.
 
