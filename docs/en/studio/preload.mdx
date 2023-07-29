@@ -18,7 +18,7 @@ assets:
 
 This will allow Theta to access the necessary assets required for preloading.
 
-## Step 2: use Theta CLI to preload components
+## Step 2: Use Theta CLI to preload components
 
 To preload your UI components, you need to use [Theta CLI](https://pub.dev/packages/theta_cli). The CLI enables you to save your design system into a format that can be easily preloaded into your Flutter project.
 
@@ -34,7 +34,7 @@ $ theta preload --anon-key ANON_KEY
 
 This will generate a `theta_preload.json` file containing your UI components.
 
-## Step 3: set ConnectionMode to preload
+## Step 3: Set ConnectionMode to preload
 
 In your Flutter app's code, initialize Theta with `ConnectionMode.preload`. This mode will enable your app to preload the UI components when it launches, allowing it to function smoothly even without an internet connection.
 
