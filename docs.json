@@ -39,6 +39,7 @@
           ["Positioning & resizing", "/studio/positioning_and_resizing"],
           ["Responsive constraints", "/studio/constraints"],
           ["Component fit modes", "/studio/component_fit"],
+          ["Preloading without connection", "/studio/preload"],
           ["Branches", "/studio/branches"],
           ["Get API Token", "/studio/get_project_api"]
         ]
