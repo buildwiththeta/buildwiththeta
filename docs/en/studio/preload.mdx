@@ -1,0 +1,57 @@
+---
+title: Preloading without connection
+description: Find out how to preload UI components for use without an Internet connection.
+---
+
+# Preloading without connection
+
+Theta offers a seamless way to preload your UI components, allowing your Flutter app to function without a network connection. This ensures that your users have a smooth experience, even in offline scenarios. Here's a step-by-step guide on how to achieve preloading without a connection using Theta:
+
+## Step 1: Update pubspec.yaml
+
+In your Flutter project's `pubspec.yaml` file, add the following line under the `assets` section:
+
+```yaml
+assets:
+  - assets/theta_assets/
+```
+
+This will allow Theta to access the necessary assets required for preloading.
+
+## Step 2: use Theta CLI to preload components
+
+To preload your UI components, you need to use [Theta CLI](https://pub.dev/packages/theta_cli). The CLI enables you to save your design system into a format that can be easily preloaded into your Flutter project.
+
+Ensure that you have installed Theta CLI by following the instructions in the [documentation](https://docs.buildwiththeta.com/en/cli/introduction).
+
+Run the following command in your terminal to preload your components:
+
+```sh
+# Preload command
+# -anon-key: Anonymous key for the project
+$ theta preload --anon-key ANON_KEY
+```
+
+This will generate a `theta_preload.json` file containing your UI components.
+
+## Step 3: set ConnectionMode to preload
+
+In your Flutter app's code, initialize Theta with `ConnectionMode.preload`. This mode will enable your app to preload the UI components when it launches, allowing it to function smoothly even without an internet connection.
+
+```dart
+import 'package:theta/theta.dart';
+
+void main() {
+  Theta.initialize(connectionMode: ConnectionMode.preload, anonKey: Env.thetaKey);
+
+  // Your app's remaining code here
+}
+```
+
+By setting the connection mode to preload, Theta will fetch locally the UI components when the app starts, ensuring a fast and reliable user experience, even offline.
+
+## Automatic UI updates ⚡️
+
+Even when the UI is preloaded, Theta remains proactive in keeping your app up-to-date. Upon each app launch, Theta will automatically check for an updated remote UI. This way, you can be certain that your users always have access to the latest and most updated UI, even if they haven't been connected to the internet recently.
+
+Enjoy the benefits of preloading without connection with Theta, making your app responsive and user-friendly in all scenarios! 💫
