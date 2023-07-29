@@ -1,3 +1,7 @@
+## 0.1.4
+
+- [x] Fix: dependency updated.
+
 ## 0.1.3
 
 - [x] Fix: remove http dependency.

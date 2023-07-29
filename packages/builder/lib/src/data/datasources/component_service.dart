@@ -18,7 +18,8 @@ class ComponentService {
 
   static final _analytics = ThetaAnalytics.instance.client;
 
-  Future<GetPageResponseEntity> getComponent(String componentName) async {
+  Future<GetPageResponseEntity> getComponent(
+      String componentName, String? branchName) async {
     final log = _analytics.logEvent(title: 'Get component', description: null);
     final res = await _httpClient.post(
       Uri.parse('$baseUrl$getComponentPath'),
@@ -28,6 +29,7 @@ class ComponentService {
       },
       body: json.encode({
         'component_name': componentName,
+        'branch_name': branchName,
         if (log.isRight) 'log': {...log.right},
       }),
     );

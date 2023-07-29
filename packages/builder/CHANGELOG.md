@@ -1,3 +1,14 @@
+## 0.5.1
+
+- [x] Feat: `branch` added to `UIBox`.
+- [x] Feat: `UIBoxController` has now a `branch` property.
+
+## 0.5.0
+
+- [x] Feat: preload supported.
+- [x] Feat: `ConnectionMode` added.
+- [x] Fix: [#203](https://github.com/buildwiththeta/buildwiththeta/issues/203) local cache loading fixed using `ConnectionMode.cached`.
+
 ## 0.4.1
 
 - [x] Feat: Overrides support value changes.

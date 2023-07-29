@@ -1,8 +1,10 @@
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
+import 'package:theta/src/data/models/preload_file.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
@@ -17,10 +19,14 @@ part 'ui_box_controller.dart';
 /// - It requires a [placeholder] for the placeholder widget.
 /// - It requires a [errorWidget] for the error widget.
 /// - It takes a [workflows] of type [Workflow] for the workflows.
+/// - It takes a [overrides] of type [Override] for the node overrides.
+/// - It takes a [branch] name for versioning.ù
+/// - It takes a [controller] of type [UIBoxController] for the controller.
 class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
+    this.branch,
     this.controller,
     this.placeholder,
     this.errorWidget,
@@ -29,6 +35,7 @@ class UIBox extends StatefulWidget {
   });
 
   final String componentName;
+  final String? branch;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -57,6 +64,7 @@ class _UIBoxState extends State<UIBox> {
       nodeOverrides: widget.overrides,
       child: _LogicBox(
         widget.componentName,
+        branchName: widget.branch,
         controller: widget.controller,
         placeholder: widget.placeholder,
         errorWidget: widget.errorWidget,
@@ -68,12 +76,14 @@ class _UIBoxState extends State<UIBox> {
 class _LogicBox extends StatefulWidget {
   const _LogicBox(
     this.componentName, {
+    this.branchName,
     this.controller,
     this.placeholder,
     this.errorWidget,
   });
 
   final String componentName;
+  final String? branchName;
   final UIBoxController? controller;
   final Widget? placeholder;
   final Widget Function(Exception)? errorWidget;
@@ -104,11 +114,23 @@ class __LogicBoxState extends State<_LogicBox> {
   }
 
   /// Loads the component from the server.
-  Future<void> load() async =>
-      await getIt<ThetaClient>().build(widget.componentName).fold(
-            onError,
+  Future<void> load() async {
+    await getIt<ThetaClient>()
+        .build(widget.componentName, branchName: widget.branchName)
+        .fold(
+          onError,
+          onLoaded,
+        );
+    if (getIt<PreloadFile>().enabled) {
+      await getIt<ThetaClient>()
+          .build(widget.componentName,
+              branchName: widget.branchName, preloadAllowed: false)
+          .fold(
+            (l) => Logger.printError(l.toString()),
             onLoaded,
           );
+    }
+  }
 
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.
@@ -122,7 +144,13 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Triggers the loaded callback from UIBox -> UIBoxController and sets the
   /// widget.
   void onLoaded(GetPageResponseEntity r) {
-    widget.controller?._triggerLoaded.call(r.treeNodes);
+    widget.controller?._triggerLoaded.call(
+      r.treeNodes,
+      widget.componentName,
+      r.pageID,
+      widget.branchName,
+      r.abTestID,
+    );
     setState(() {
       _widget = r.treeNodes;
       _isLoaded = true;

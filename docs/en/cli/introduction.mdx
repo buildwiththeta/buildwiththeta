@@ -4,9 +4,9 @@ title: Theta Cli - Documentation
 
 # Theta CLI
 
-Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
+![https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/docs/theta_cli.jpg](https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/docs/theta_cli.jpg)
 
-- ⚠️ Theta CLI is flagged as 'experimental' and there could be breaking changes in future.
+Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
 
 ## Getting Started 🚀
 
@@ -18,31 +18,24 @@ dart pub global activate theta_cli
 
 ## Usage
 
-Navigate inside a your Flutter app folder containing the pubspec.yaml file.
-Theta CLI will generate a Json file inside /assets.
-The file will contain the pre-rendering code of project styles and components choosed by the user.
-
-### Pre-load project styles - required
-
 ```sh
-$ theta preload --styles --key ANON_KEY
+# Preload command
+# -anon-key: Anonymous key for the project
+$ theta preload --anon-key ANON_KEY
 ```
 
-This will generate the /assets/theta_preload.json file containing a key 'styles' and its value.
+The command preload allows you to preload the remote user interface for use without an Internet connection. It preloads also the images used in the remote user interface.
 
-### Pre-load a specific component
+Run this command inside the root of a Flutter app. The folder must contain a pubspec.yaml file.
 
-```sh
-$ theta preload --component --name COMPONENT_NAME --key ANON_KEY
-```
-
-This command will add a COMPONENT_NAME key and its value to theta_preload.json file.
-
-### Other commands
+### Other commands 
 
 ```sh
 # Show CLI version
 $ theta --version
+
+# Update CLI
+$ theta update
 
 # Show usage help
 $ theta --help

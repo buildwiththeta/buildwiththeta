@@ -1,3 +1,4 @@
+import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
@@ -5,10 +6,10 @@ Future<void> main() async {
   /// Initialize Theta instance.
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
-    cacheEnabled: false,
+    connectionMode: ConnectionMode.continuous,
 
     /// Example key
-    anonKey: 'Theta Key',
+    anonKey: publicKey,
   );
 
   runApp(const MyApp());
@@ -28,9 +29,8 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _controller.onLoaded(() {
-      debugPrint('Loaded!');
-
-      /// Prints the nodes to the console.
+      debugPrint(_controller.componentID);
+      debugPrint(_controller.branch);
       debugPrint(_controller.nodesToList().toString());
     });
     _controller.onError((error) => debugPrint(error.toString()));
@@ -56,6 +56,8 @@ class _MyAppState extends State<MyApp> {
           body: UIBox(
             'Counter View',
             controller: _controller,
+
+            branch: 'Version 2.0',
 
             /// [placeholder] is the widget displayed while the page is loading.
             placeholder: const CircularProgressIndicator(),

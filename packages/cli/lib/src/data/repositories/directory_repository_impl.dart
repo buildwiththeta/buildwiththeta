@@ -11,9 +11,22 @@ class DirectoryRepositoryImpl implements DirectoryRepository {
 
   @override
   Future<Either<Exception, void>> writePreloadFile(
-      String key, String json) async {
+      {required String anonKey,
+      required String jsonKey,
+      required String content}) async {
     try {
-      return Right(await _directoryService.writePreloadFile(key, json));
+      return Right(await _directoryService.writePreloadFile(
+          anonKey: anonKey, jsonKey: jsonKey, content: content));
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Exception, void>> preloadImages(
+      Map<String, dynamic> json) async {
+    try {
+      return Right(await _directoryService.preloadImages(json));
     } catch (e) {
       return Left(Exception(e.toString()));
     }

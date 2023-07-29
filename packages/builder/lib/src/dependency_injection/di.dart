@@ -1,12 +1,13 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:theta/src/client.dart';
+import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
 import 'package:theta/src/data/datasources/local_component_service.dart';
 import 'package:theta/src/data/datasources/local_styles_service.dart';
 import 'package:theta/src/data/models/client_mapper.dart';
-import 'package:theta/src/data/models/preload_flag.dart';
+import 'package:theta/src/data/models/preload_file.dart';
 import 'package:theta/src/data/repositories/component_repository_impl.dart';
 import 'package:theta/src/data/repositories/styles_repository_impl.dart';
 import 'package:theta/src/domain/repositories/component_repository.dart';
@@ -21,8 +22,14 @@ import 'package:theta_rendering/theta_rendering.dart';
 GetIt get getIt => GetIt.instance;
 
 Future<void> initializeDependencyInjection(
-    String key, int cacheExtension, bool cacheEnabled, bool preload) async {
-  getIt.registerLazySingleton(() => PreloadFlag(preload));
+  String key,
+  int cacheExtension,
+  ConnectionMode connectionMode,
+  Map<String, dynamic>? customPreloadFile,
+) async {
+  final cacheEnabled = connectionMode == ConnectionMode.cached;
+  getIt.registerLazySingleton(() => PreloadFile(
+      connectionMode == ConnectionMode.preloaded, customPreloadFile));
   getIt.registerLazySingleton(() => const NodesParse());
   getIt.registerLazySingleton(() => const ColorStylesMapper());
   getIt.registerLazySingleton(() => const TextStylesMapper());
@@ -32,17 +39,17 @@ Future<void> initializeDependencyInjection(
 
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
-    ..registerLazySingleton(
-        () => LocalComponentService(cacheExtension, cacheEnabled))
+    ..registerLazySingleton(() =>
+        LocalComponentService(getIt(), getIt(), cacheExtension, cacheEnabled))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
-    ..registerLazySingleton(
-        () => LocalStylesService(cacheExtension, cacheEnabled));
+    ..registerLazySingleton(() =>
+        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
-        () => ComponentRepositoryImpl(getIt(), getIt()))
+        () => ComponentRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled))
     ..registerLazySingleton<StylesRepository>(
-        () => StylesRepositoryImpl(getIt(), getIt()));
+        () => StylesRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled));
 
   getIt
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))

@@ -58,6 +58,11 @@
         ]
       ],
       [
+        "Theta CLI", [
+          ["Introduction", "/cli/introduction"]
+        ]
+      ],
+      [
         "API Reference", [
           ["Introduction", "/api-reference/introduction"],
           ["Get project styles", "/api-reference/get_project_styles"],

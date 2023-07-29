@@ -36,7 +36,9 @@ class GetPageResponseEntity {
         'page_id': pageID,
         'nodes': getIt<NodeRendering>()
             .renderFlatList(treeNodes)
-            .map((e) => {'id': e.id, ...e.toJson()})
+            .map((e) => e.toJsonWithStabilIdAndPageIdAndId())
             .toList(),
+        'conversion_events': conversionEvents.map((e) => e.toJson()).toList(),
+        'ab_test': abTestID,
       };
 }

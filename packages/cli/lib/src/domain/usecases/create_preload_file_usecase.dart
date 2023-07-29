@@ -12,15 +12,20 @@ class CreatePreLoadFileUseCase
   Future<Either<Exception, void>> call(
     CreatePreLoadFileUseCaseParams params,
   ) =>
-      _directoryRepository.writePreloadFile(params.key, params.content);
+      _directoryRepository.writePreloadFile(
+          anonKey: params.anonKey,
+          jsonKey: params.jsonKey,
+          content: params.content);
 }
 
 class CreatePreLoadFileUseCaseParams extends Params {
   const CreatePreLoadFileUseCaseParams({
-    required this.key,
+    required this.anonKey,
+    required this.jsonKey,
     required this.content,
   });
 
-  final String key;
+  final String anonKey;
+  final String jsonKey;
   final String content;
 }
