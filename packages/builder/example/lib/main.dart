@@ -1,3 +1,4 @@
+import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
@@ -5,8 +6,10 @@ Future<void> main() async {
   /// Initialize Theta instance.
   /// You can get an anonymous key at https://app.buildwiththeta.com
   await Theta.initialize(
-    cacheEnabled: false,
-    anonKey: 'anonKey',
+    connectionMode: ConnectionMode.continuous,
+
+    /// Example key
+    anonKey: publicKey,
   );
 
   runApp(const MyApp());
@@ -20,6 +23,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final _controller = UIBoxController();
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.onLoaded(() {
+      debugPrint(_controller.componentID);
+      debugPrint(_controller.branch);
+      debugPrint(_controller.nodesToList().toString());
+    });
+    _controller.onError((error) => debugPrint(error.toString()));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     /// ThetaProvider is used to provide the project styles to the widgets.
@@ -30,19 +52,18 @@ class _MyAppState extends State<MyApp> {
         home: Scaffold(
           /// UIBox is the main widget.
           /// It's used to build the UI.
-          /// It requires a page [name].
+          /// It requires a component [name].
           body: UIBox(
-            'Homepage',
+            'Counter View',
+            controller: _controller,
+
+            branch: 'Version 2.0',
 
             /// [placeholder] is the widget displayed while the page is loading.
-            placeholder: () => const CircularProgressIndicator(),
+            placeholder: const CircularProgressIndicator(),
 
             /// [errorWidget] is the widget displayed if an error occurs.
-            errorWidget: (error) => Text(error),
-
-            /// [fit] is how the component should fit the parent.
-            /// It can be [ComponentFit.absolute] or [ComponentFit.autoLayout].
-            fit: ComponentFit.absolute,
+            errorWidget: (error) => Text(error.toString()),
 
             /// [overrides] are the properties that can be overriden by the user.
             overrides: [
@@ -50,16 +71,27 @@ class _MyAppState extends State<MyApp> {
               /// Use one Override per node.
               Override(
                 'node id',
-              )..setChild(const UIBox('ComponentName')),
+                builder: (context, node, child, children) {
+                  return GestureDetector(
+                    onTap: () {
+                      debugPrint('Tapped!');
+                    },
+                    child: Container(
+                      color: Colors.black,
+                      child: child,
+                    ),
+                  );
+                },
+              ),
 
               Override(
                 'node id',
-              )
-                ..setText('Click me!')
-                ..setColor(Colors.red, 1),
+                text: 'Click me!',
+                color: Colors.blue,
+              ),
 
               Override(
-                'node id 2',
+                'node id',
               )..setChildren([
                   const Text('Click me!'),
                   const Text('Click me!'),

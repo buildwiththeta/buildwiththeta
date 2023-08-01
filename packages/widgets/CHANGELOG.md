@@ -1,3 +1,45 @@
+## 0.3.0
+
+- [x] Feat: Image nodes now support local images in preloading mode.
+
+## 0.2.8
+
+- [x] Fix: ThetaModels updated.
+
+## 0.2.7
+
+- [x] Feat: NodeBuilder has now optional `Listener` and `GestureDetector`.
+- [x] Feat: WorkflowExecuter has now `doesWorkflowExist` method.
+
+## 0.2.6
+
+- [x] Fix: Code generated.
+
+## 0.2.5
+
+- [x] Feat: team component libraries added.
+
+## 0.2.4
+
+- [x] Feat: component widget added.
+
+## 0.2.3
+
+- [x] Feat: improved performance, cut of > 80% of code generation time.
+
+## 0.2.2
+
+- [x] Feat: add support to models 0.2.0.
+- [x] Fix: unused widgets removed.
+
+## 0.2.1
+
+- [x] Fix: image_network package removed.
+
+## 0.2.0
+
+- [x] Fix: Cors proxy removed from image.
+
 ## 0.1.9
 
 - [x] Feat: Visibility on laptops added.

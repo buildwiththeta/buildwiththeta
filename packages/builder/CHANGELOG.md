@@ -1,3 +1,41 @@
+## 0.5.1
+
+- [x] Feat: `branch` added to `UIBox`.
+- [x] Feat: `UIBoxController` has now a `branch` property.
+
+## 0.5.0
+
+- [x] Feat: preload supported.
+- [x] Feat: `ConnectionMode` added.
+- [x] Fix: [#203](https://github.com/buildwiththeta/buildwiththeta/issues/203) local cache loading fixed using `ConnectionMode.cached`.
+
+## 0.4.1
+
+- [x] Feat: Overrides support value changes.
+
+## 0.4.0
+
+- [x] Feat: team component libraries added.
+
+## 0.2.1
+
+- [x] Breaking: ComponentFit will be set into the editor. The parameter is removed from the UIBox.
+- [x] Feat: new rendering system for components.
+- [x] Feat: new override system with builder function and component id field.
+
+## 0.2.0
+
+- [x] Feat: add UIBoxController.
+- [x] Fix: remove unused dependencies.
+
+## 0.1.9
+
+- [x] Fix: less classes and smaller codebase.
+
+## 0.1.8
+
+- [x] Fix: theta_open_widget 0.2.1.
+
 ## 0.1.7
 
 - [x] Feat: ComponentFit upgraded.

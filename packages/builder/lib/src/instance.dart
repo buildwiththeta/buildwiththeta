@@ -6,12 +6,11 @@ import 'package:hive/hive.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:theta/src/client.dart';
+import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-
-import '../main.reflectable.dart' as theta;
 
 /// Theta instance.
 ///
@@ -40,29 +39,26 @@ class Theta {
 
   /// Initialize the current Theta instance.
   ///
-  /// ---
-  ///
-  /// [anonKey] is the anonymous key used to authenticate the request.
+  /// - `anonKey` is the anonymous key used to authenticate the request.
   /// This key is used to authenticate the request.
   /// Safe to use in client-side applications.
-  /// You can get one at https://app.buildwiththeta.com
-  ///
+  /// You can get one at https://app.buildwiththeta.com.
   /// ❗️ Store the anon key in a safe place like a .env file.
   ///
-  /// ---
+  /// - `connectionMode` is used to define the connection mode.
+  /// Default: continuous
   ///
-  /// [cacheExtension] is the cache extension in seconds.
+  ///   - continuous: Components are fetched from the server at every app launch. 🟡 Recommended during development.
+  ///   - cached: Components are fetched from the server only if the cache is expired. 🟢 Safe to use in production.
+  ///   - preloaded: Immediate loading. Components are retrieved either from a local file or from the server. 🟢 Safe to use in production.
+  ///
+  /// - `customPreloadedJson` is a custom preload json for immediate loading.
+  /// By default Theta will use `/assets/theta_preloading.json` file.
+  /// You can override this file by passing a custom preload json,
+  /// for example from a .env file.
+  ///
+  /// - `cacheExtension` is the cache extension in seconds.
   /// Default: 43200 (12 hours)
-  ///
-  /// ---
-  ///
-  /// [cacheEnabled] is used to enable or disable cache.
-  /// Default: true
-  ///
-  /// If cache is disabled, the cache extension is ignored.
-  /// Use this option only for development purposes.
-  ///
-  /// ---
   ///
   /// 🟡 Any issue? Please, open an issue at https://github.com/buildwiththeta/buildwiththeta/issues
   static Future<Theta> initialize({
@@ -73,19 +69,30 @@ class Theta {
     /// ❗️ Store this key in a safe place like a .env file.
     required String anonKey,
 
+    /// ConnectionMode is used to define the connection mode.
+    /// Default: continuous
+    ///
+    /// - continuous: Components are fetched from the server at every app launch. 🟡 Recommended during development.
+    /// - cached: Components are fetched from the server only if the cache is expired. 🟢 Safe to use in production.
+    /// - preloaded: Immediate loading. Components are retrieved either from a local file or from the server. 🟢 Safe to use in production.
+    ConnectionMode connectionMode = ConnectionMode.continuous,
+
+    /// Custom preload file.
+    /// By default Theta will use /assets/theta_preloading.json file.
+    /// You can override this file by passing a custom preload json,
+    /// for example from a .env file.
+    Map<String, dynamic>? customPreloadedJson,
+
     /// Cache extension in seconds.
     /// Default: 43200 (12 hours)
     int cacheExtension = 43200,
-
-    /// Enable or disable cache.
-    /// Default: true
-    ///
-    /// If cache is disabled, the cache extension is ignored.
-    /// Use this option only for development purposes.
-    /// This can cause an increase of consume-based billing.
-    bool cacheEnabled = true,
   }) async {
-    await _instance._init(anonKey, cacheExtension, cacheEnabled);
+    await _instance._init(
+      anonKey,
+      cacheExtension,
+      connectionMode,
+      customPreloadedJson,
+    );
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
   }
@@ -98,7 +105,6 @@ class Theta {
 
   Future<void> _initExternalDependencies() async {
     await ThetaOpenWidgets.initialize();
-    theta.initializeReflectable();
     await ThetaAnalytics.initialize();
     if (kIsWeb) return;
     final appDocumentDirectory = await getApplicationDocumentsDirectory();
@@ -110,9 +116,19 @@ class Theta {
     await _client.initialize();
   }
 
-  Future<void> _init(String key, int cacheExtension, bool cacheEnabled) async {
+  Future<void> _init(
+    String key,
+    int cacheExtension,
+    ConnectionMode connectionMode,
+    Map<String, dynamic>? customPreloadFile,
+  ) async {
     await _initExternalDependencies();
-    await initializeDependencyInjection(key, cacheExtension, cacheEnabled);
+    await initializeDependencyInjection(
+      key,
+      cacheExtension,
+      connectionMode,
+      customPreloadFile,
+    );
     await _initializeCore();
     _initialized = true;
   }

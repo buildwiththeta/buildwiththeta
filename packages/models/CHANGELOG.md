@@ -1,3 +1,32 @@
+## 0.3.1
+
+- [x] Feat: added `toJson` to ConversionEvent.
+
+## 0.3.0
+
+- [x] Feat: TreeState has now a `isPreloaded` property.
+
+## 0.2.4
+
+- [x] Feat: Overrides can now have value changes.
+
+## 0.2.3
+
+- [x] Feat: team component library.
+
+## 0.2.2
+
+- [x] Feat: components can be added inside other components.
+- [x] Feat: overrides can now point to one component in particular.
+
+## 0.2.1
+
+- [x] Feat: unused files removed, cutting the 50% of time in code generation.
+
+## 0.2.0
+
+- [x] Feat: Add `isLocked` property in nodes.
+
 ## 0.1.9
 
 - [x] Feat: DBKeys.visibleOnLaptop added.

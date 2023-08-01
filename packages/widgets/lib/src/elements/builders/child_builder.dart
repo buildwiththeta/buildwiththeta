@@ -16,7 +16,7 @@ class ChildBuilder extends SingleChildRenderObjectWidget {
                 ? const NodeOverrideExecuter()
                     .executeChild(context, state, const SizedBox.shrink())
                 : NodeBuilder(
-                    node: child,
+                    state: state.copyWith(node: child),
                     onTap: () {
                       TreeGlobalState.onNodeFocused(child);
                     },

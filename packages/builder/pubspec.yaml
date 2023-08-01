@@ -1,7 +1,7 @@
 name: theta
 description: Build remote, dynamic and responsive user interfaces with the Theta Flutter library.
 
-version: 0.1.7
+version: 0.5.1
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -18,6 +18,9 @@ platforms:
 
 scripts:
   gen: "flutter pub run build_runner build --delete-conflicting-outputs"
+  pubget: "flutter pub get"
+  dryrun: "dart pub publish --dry-run"
+  publish: "dart pub publish"
 
 environment:
   sdk: ">=2.17.0 <4.0.0"
@@ -27,32 +30,29 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_analytics: ^0.1.2
-  theta_models: ^0.1.8
-  theta_rendering: ^0.1.1
-  theta_open_widgets: ^0.1.8
+  theta_analytics: ^0.1.4
+  theta_models: ^0.3.1
+  theta_rendering: ^0.1.4
+  theta_open_widgets: ^0.3.0
 
   light_logger: ^0.0.3
 
   device_frame: ^1.0.0
   equatable: ^2.0.3
-  either_dart: ^0.4.0
+  either_dart: ^1.0.0
   http: ^1.0.0
   get_it: ^7.6.0
   provider: ^6.0.5
-  collection: ^1.17.1
   hive: ^2.2.3
-  meta: ^1.9.1
-
-  reflectable: ^4.0.5
   path_provider: ^2.0.15
+  archive: ^3.3.7
+  encrypt: ^5.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
-  
-  build_runner:
-  source_gen:
+  build_runner: any
+
 
 flutter:

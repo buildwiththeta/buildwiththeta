@@ -15,9 +15,6 @@ class OpenWScaffold extends NodeWidget {
     required super.nodeState,
     required this.children,
     required this.fill,
-    required this.showAppBar,
-    required this.showBottomBar,
-    required this.showDrawer,
     required this.isScrollable,
     required this.isClipped,
     required this.bodyExtended,
@@ -28,9 +25,6 @@ class OpenWScaffold extends NodeWidget {
   final List<CNode> children;
   final bool isBoxed;
   final FFill fill;
-  final bool showAppBar;
-  final bool showBottomBar;
-  final bool showDrawer;
   final bool isScrollable;
   final bool isClipped;
   final bool bodyExtended;

@@ -1,0 +1,26 @@
+---
+title: Flutter'ın Theta örnek uygulaması nasıl çalıştırılır
+description: Learn how to run Flutter's Theta sample app to test the official Flutter library.
+---
+
+# Flutter'ın Theta örnek uygulaması nasıl çalıştırılır
+
+Flutter'da Theta'nın örnek uygulamasını başlatmak için oluşturucu paketi içindeki örnek klasöre gitmeniz yeterlidir. Daha sonra terminalinizde aşağıdaki komutu çalıştırabilirsiniz:
+
+```bash
+flutter run -d chrome
+```
+
+## Projeyi ayarla
+
+1. Satır 9'da , 'thetaKey' yer tutucusunu kendi anonim anahtarınızla değiştirin.
+2. Satır 35'de, UIBox'ın adını görüntülemek istediğiniz bileşenin adıyla değiştirin. Varsayılan olarak, her projenin tüm ilk bileşenleri ana sayfa olarak adlandırılır.
+
+---
+
+Çalıştırdığınızda, Theta içinde oluşturulan bileşenle birlikte boş bir sayfa görüntüleyeceksiniz. Bu demo ile Flutter uygulaması içinde nasıl davrandığını görebilir, duyarlı modları deneyebilir ve kendi tasarımınızı özel kodlarla iş akışları aracılığıyla birleştirmeyi deneyebilirsiniz (örnekler zaten main.dart içinde yazılmış olarak bulunacaktır).
+
+
+<Warning>Dikkat: Bu test projesinde, önbellek(cache) 8. satırda devre dışı bırakılmıştır. Ancak, projelerinizde uygulamayı çok fazla yeniden oluşturmaktan kaçınmak için önbelleği her zaman etkin tutmanız önerilir.</Warning>
+
+İyi eğlenceler!

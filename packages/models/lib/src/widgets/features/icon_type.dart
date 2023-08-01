@@ -1,8 +1,4 @@
-// Flutter imports:
-// ignore_for_file: public_member_api_docs
-
 import 'package:enum_to_string/enum_to_string.dart';
-// Flutter imports:
 import 'package:theta_models/src/models/feature.dart';
 import 'package:theta_models/theta_models.dart';
 

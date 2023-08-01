@@ -1,0 +1,30 @@
+name: flutter_bloc_counter
+description: A simple counter app made with Theta and Bloc. The project it taken from the official example of Bloc library.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  theta: ^0.4.1
+  bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+
+dependency_overrides:
+  theta:
+    path: ../../packages/builder
+
+dev_dependencies:
+  bloc_test: ^9.1.0
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+
+flutter:
+  uses-material-design: true

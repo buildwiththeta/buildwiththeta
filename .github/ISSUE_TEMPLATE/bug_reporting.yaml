@@ -8,14 +8,6 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug reporting form! Remember, providing as much detail as possible will make it easier for others to help you resolve the bug. If the bug is not immediately reproducible, it may be necessary to provide more context or a sample code snippet that demonstrates the issue. 
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: true
   - type: dropdown
     id: product
     attributes:
@@ -93,7 +85,7 @@ body:
   - type: textarea
     id: possible-solution
     attributes:
-      label: Additional Context
+      label: Possible Solution
       description: If you have an idea of a potential solution, describe it here. If not, feel free to skip this part.
       placeholder: This is my possibile solution to the issue faced.
     validations:
