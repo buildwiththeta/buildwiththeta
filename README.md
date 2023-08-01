@@ -31,7 +31,7 @@ Theta offers several advantages:
 
 ## Supported Frameworks
 - [x] Flutter: ready on [pub.dev](https://pub.dev/packages/theta).
-- [ ] Swift: working on it.
+- [ ] Swift: work in progress. See [buildwiththeta-swift](https://github.com/buildwiththeta/buildwiththeta-swift)
 
 ## Status
 - [x] Alpha: Experimental. Under intense development.
