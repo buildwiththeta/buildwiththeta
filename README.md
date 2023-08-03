@@ -1,24 +1,3 @@
-# Build with Theta
-
-![Theta](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
-
-Build with Theta is an open-source platform that simplifies the creation and maintenance of remote design systems. It allows you to effortlessly build custom remote UI components and seamlessly integrate them into your Flutter app. With Theta, you can update your UI in real-time from a central cloud, eliminating the need for users to download new app versions.
-
-## Why Theta?
-
-Theta simplifies the creation and maintenance of remote design systems. It allows the user interface of front-end applications on different platforms to be updated in real-time from a central cloud, eliminating the need for users to download a new version. 
-
-Remote design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
-
-Theta offers several advantages:
-
-- **Flexibility and Control:** Theta provides a no-code environment for designing the UI, but it doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
-- **Mixing No-Code and Local Code:** Developers using Theta can override each node with their widgets, leveraging any technology stack. This approach enables a high degree of customization and flexibility, which is usually unavailable with traditional no-code solutions.
-- **Team Collaboration and Version Control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the app, a crucial aspect for maintaining app quality and addressing bugs or issues.
-- **Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions.
-- **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
-- **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
-
 ## Getting Started with Theta
 
 To begin your Theta journey, follow these steps:
@@ -110,11 +89,4 @@ flutter run -d chrome
 
 2. Your app should now be running with the Theta UI component specified in the `UIBox` widget.
 
-Congratulations! You've taken the first steps towards leveraging the power of Theta to create
-
- a unique and customized user experience in your Flutter app. Keep exploring the possibilities, and don't hesitate to consult the Theta documentation for more advanced features and customization options. Happy coding!
-
-## Support
-
-- [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
-- [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
+Congratulations! You've taken the first steps towards leveraging the power of Theta to create a unique and customized user experience in your Flutter app. Keep exploring the possibilities, and don't hesitate to consult the Theta documentation for more advanced features and customization options. Happy coding!
