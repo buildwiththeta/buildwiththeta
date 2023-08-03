@@ -23,6 +23,67 @@ Theta offers several advantages:
 - **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
 - **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
 
+## Getting Started with Theta
+import 'package:flutter/material.dart';
+import 'package:theta/theta.dart';
+
+Future<void> main() async {
+  await Theta.initialize(
+    cacheEnabled: false,
+    anonKey: 'YOUR_ANON_KEY',
+  );
+
+  runApp(
+    const ThetaProvider(
+      theme: ThemeMode.light,
+      child: MaterialApp(
+        title: 'Theta Example App',
+        home: MyApp(),
+      ),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: UIBox(
+        'Homepage', // Component name
+        placeholder: const Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+    );
+  }
+}
+```
+
+2. Replace `'YOUR_ANON_KEY'` with your actual Anon Key.
+
+### Install Theta Client Library
+
+1. Install the Theta client library by running the following command in your Flutter project:
+
+```bash
+flutter pub add theta
+```
+
+### Run Your App
+
+1. Now, you can run your app using the Chrome browser:
+
+```bash
+flutter run -d chrome
+```
+
+2. Your app should now be running with the Theta UI component specified in the `UIBox` widget.
+
+Congratulations! You've taken the first steps towards leveraging the power of Theta to create a unique and customized user experience in your Flutter app. Keep exploring the possibilities, and don't hesitate to consult the Theta documentation for more advanced features and customization options. Happy coding!
+
+
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
 - [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
