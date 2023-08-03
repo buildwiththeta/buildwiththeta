@@ -2,32 +2,32 @@
 
 To begin your Theta journey, follow these steps:
 
-### Sign Up
+### 1.Sign Up
 
 1. To begin your Theta journey, sign up for Theta on the [buildwiththeta.com](https://buildwiththeta.com) website.
 2. Please note that an invite is required during the closed beta phase.
 3. Feel free to join our community on [Discord](https://discord.com/invite/xNgDkZ2g6w) for discussions and support.
 
-### Create a New Project
+### 2.Create a New Project
 
 1. After signing up, create a new project on the Theta platform.
 2. Design your first interface by adding and arranging UI components to your liking.
 
-### Get Your API Key
+### 3.Get Your API Key
 
 1. To interact with your project, you'll need to obtain your API key from the project settings.
 2. Save this API key in a safe place, as you'll need it for the next steps.
 
-### Set Your Anon Key
+### 4.Set Your Anon Key
 
 1. Inside your project at app.buildwiththeta.com, you'll find your Anon Key.
 2. Ensure you add this key to your Flutter project to authenticate your app with Theta.
 
-### Create a New Flutter Project
+### 5.Create a New Flutter Project
 
 1. Now, create a new Flutter project using your favorite IDE.
 
-### Modify `main.dart`
+### 6.Modify `main.dart`
 
 1. Update your `main.dart` with the following code:
 
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
 
 2. Replace `'YOUR_ANON_KEY'` with your actual Anon Key.
 
-### Install Theta Client Library
+### 7.Install Theta Client Library
 
 1. Install the Theta client library by running the following command in your Flutter project:
 
@@ -79,7 +79,7 @@ class MyApp extends StatelessWidget {
 flutter pub add theta
 ```
 
-### Run Your App
+### 8.Run Your App
 
 1. Now, you can run your app using the Chrome browser:
 
