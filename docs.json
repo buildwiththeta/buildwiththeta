@@ -71,6 +71,11 @@
         ]
       ],
       [
+        "Billing", [
+          ["Upgrade plan", "/billing/upgrade_plan"]
+        ]
+      ],
+      [
         "Misc.", [
           ["Resume paused projects", "/support/resume_paused_project"],
           ["User deletion", "/support/user_deletion"],
