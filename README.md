@@ -23,7 +23,7 @@ Theta offers several advantages:
 - **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
 - **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
 
-## Getting started with Theta
+## 🚀 Getting started with Theta
 
 To begin your Theta journey, follow these steps:
 
