@@ -8,6 +8,10 @@ Build your remote design system effortlessly, without writing code. Seamlessly i
 
 - Documentation: https://docs.buildwiththeta.com
 
+### Server-driven UI made easy
+
+<img width="600px" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/c2594691-69a9-45c5-94f7-ea1d808d63bc" />
+
 ## Why Theta?
 
 Theta simplifies the creation and maintenance of remote design systems. It allows the user interface of front-end applications on different platforms to be updated in real time from a central cloud, eliminating the need for users to download a new version. 
