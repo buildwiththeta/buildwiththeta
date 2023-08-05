@@ -49,7 +49,7 @@ To begin your Theta journey, follow these steps:
 
 - [📚 Follow our guide](https://docs.buildwiththeta.com/en/studio/get_project_api)
 
-### 5. Integrate in your codebase
+### 4. Integrate in your codebase
 
 - [📚 Follow our documentation for Flutter](https://pub.dev/packages/theta)
 
