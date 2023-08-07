@@ -22,7 +22,7 @@ class NodeService {
     required final CNode newNode,
     required final NodeID parentID,
     required final PageID pageId,
-    required final int? customIndex,
+    required final double? customIndex,
   }) async {
     final name = NodeType.name(newNode.type);
     return AddNodeResponse(

@@ -171,7 +171,7 @@ abstract class CNode extends Equatable {
   final List<CNode>? children;
 
   /// The index of the node in the parent's children list
-  final int childOrder;
+  final double childOrder;
 
   /// The page id of the node
   final PageID? pageID;
@@ -364,7 +364,7 @@ abstract class CNode extends Equatable {
     List<CNode>? children,
     String? name,
     String? description,
-    int? childOrder,
+    double? childOrder,
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
@@ -383,7 +383,7 @@ abstract class CNode extends Equatable {
     List<CNode>? children,
     String? name,
     String? description,
-    int? childOrder,
+    double? childOrder,
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,

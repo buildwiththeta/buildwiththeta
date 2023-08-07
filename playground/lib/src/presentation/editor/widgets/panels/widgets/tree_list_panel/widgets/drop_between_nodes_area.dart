@@ -12,9 +12,10 @@ class TreeListDropBetweenNodesArea extends StatefulWidget {
   });
 
   final CNode node;
-  final int index;
+  final double index;
   final Function(
-      DragTargetMoveSingleNodeModel event, CNode newParent, int index) onMove;
+          DragTargetMoveSingleNodeModel event, CNode newParent, double index)
+      onMove;
   final Function(CNode newNode, CNode parent) onAdd;
 
   @override

@@ -51,7 +51,7 @@ class TreeListPanel extends StatelessWidget {
                         context.read<EditorCubit>().onNodeAdded(
                               node: node,
                               parentID: parent.id,
-                              customIndex: parent.children?.length,
+                              customIndex: parent.children?.length.toDouble(),
                               offset: null,
                             ),
                     onAddBetween: (node, parent, parentChild) =>

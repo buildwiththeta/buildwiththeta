@@ -20,7 +20,7 @@ class NodeRepositoryImpl implements NodeRepository {
     required final CNode newNode,
     required final NodeID parentID,
     required final PageID pageId,
-    required final int? customIndex,
+    required final double? customIndex,
   }) async {
     try {
       final res = await nodeService.add(

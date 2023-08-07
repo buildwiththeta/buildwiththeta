@@ -31,11 +31,12 @@ class TreeListDraggableElement extends StatefulWidget {
 
   final CNode node;
   final ExpandableController? controller;
-  final int index;
+  final double index;
   final Function(CNode newNode, CNode parent) onAdd;
   final Function(CNode newNode, CNode parent, CNode parentChild) onAddBetween;
   final Function(
-      DragTargetMoveSingleNodeModel event, CNode newParent, int index) onMove;
+          DragTargetMoveSingleNodeModel event, CNode newParent, double index)
+      onMove;
   final Function(NodeID) onNodeFocused;
   final Function(NodeID) onNodeHovered;
   final Function(NodeID) onNodeRemoved;
