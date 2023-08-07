@@ -1,6 +1,6 @@
 # [Theta](https://buildwiththeta.com): streamlined cross-platform server-driven UI
 
-Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
+Build your server-driven design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
 - Documentation: https://docs.buildwiththeta.com
 
