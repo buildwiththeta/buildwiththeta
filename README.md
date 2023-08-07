@@ -9,7 +9,8 @@ You can share the remote user interface on the following platforms using Theta:
 - **iOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
 - **Android** ([Flutter](https://pub.dev/packages/theta))
 - **Web** ([Flutter](https://pub.dev/packages/theta))
-- **macOS** ([Flutter](https://pub.dev/packages/theta))
+- **VisionOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
+- **macOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
 - **Windows** ([Flutter](https://pub.dev/packages/theta))
 
 <img width="600px" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/c2594691-69a9-45c5-94f7-ea1d808d63bc" />
