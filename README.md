@@ -19,13 +19,10 @@ Theta simplifies the creation and maintenance of remote design systems. It allow
 Remote design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
 
 Theta offers several advantages:
-
-- **Flexibility and Control:** Theta provides a no-code environment for designing the UI, but it doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
-- **Mixing No-Code and Local Code:** Developers using Theta can override each node with their widgets, leveraging any technology stack. This approach enables a high degree of customization and flexibility, which is usually unavailable with traditional no-code solutions.
-- **Team Collaboration and Version Control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the app, a crucial aspect for maintaining app quality and addressing bugs or issues.
-- **Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions.
-- **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
-- **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
+- **⚡️ Integrate tonight**: Theta provides a no-code environment for designing the UI that can be integrate directly into your project with SDKs (Flutter, Swift coming soon). Theta doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
+- **🔀 Interoperability with your codebase**: Connect remote UI components with your code. You can embed complex platform-specific widgets like maps, web views, media players, and camera feeds within your remote UI, or add a UIBox() inside an existing custom page to make it dynamic.
+- **🧋 Team collaboration and version control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the your design system components, a crucial aspect for maintaining app quality and addressing bugs or issues.
+- **💫 Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions. Also, because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
 
 ## 🚀 Getting started with Theta
 
