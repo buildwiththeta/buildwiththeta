@@ -29,7 +29,7 @@ Theta offers several advantages:
 - **🧋 Team collaboration and version control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the your design system components, a crucial aspect for maintaining app quality and addressing bugs or issues.
 - **💫 Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions. Also, because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
 
-## 🚀 Integrate tonight
+## Integrate tonight
 
 - **Sign up**
     - To begin your Theta journey, sign up for Theta on the [buildwiththeta.com](https://buildwiththeta.com) website.
