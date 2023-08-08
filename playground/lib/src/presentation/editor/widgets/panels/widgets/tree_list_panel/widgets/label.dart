@@ -29,7 +29,7 @@ class TreeListLabel extends StatefulWidget {
 
   final CNode node;
   final ExpandableController? controller;
-  final int index;
+  final double index;
   final Function(NodeID) onNodeFocused;
   final Function(NodeID) onNodeHovered;
   final Function(NodeID) onNodeRemoved;

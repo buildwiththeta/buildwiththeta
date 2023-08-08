@@ -32,5 +32,5 @@ class AddNodeUseCaseParams extends Params {
   final PageID pageId;
   final CNode newNode;
   final NodeID parentID;
-  final int? customIndex;
+  final double? customIndex;
 }
