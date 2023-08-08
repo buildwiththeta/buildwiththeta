@@ -15,7 +15,7 @@ abstract class NodeRepository {
     required final CNode newNode,
     required final NodeID parentID,
     required final PageID pageId,
-    required final int? customIndex,
+    required final double? customIndex,
   });
 
   /// Add a new node between other nodes

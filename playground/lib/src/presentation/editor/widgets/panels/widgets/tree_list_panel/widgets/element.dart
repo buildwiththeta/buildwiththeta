@@ -21,11 +21,12 @@ class TreeListElement extends StatefulWidget {
   });
 
   final CNode node;
-  final int index;
+  final double index;
   final Function(CNode newNode, CNode parent) onAdd;
   final Function(CNode newNode, CNode parent, CNode parentChild) onAddBetween;
   final Function(
-      DragTargetMoveSingleNodeModel event, CNode newParent, int index) onMove;
+          DragTargetMoveSingleNodeModel event, CNode newParent, double index)
+      onMove;
   final Function(NodeID) onNodeFocused;
   final Function(NodeID) onNodeHovered;
   final Function(NodeID) onNodeRemoved;
@@ -227,7 +228,7 @@ class _ElementState extends State<TreeListElement> {
               ),
             TreeListDropBetweenNodesArea(
               node: widget.node,
-              index: widget.node.children!.length,
+              index: widget.node.children!.length.toDouble(),
               onMove: widget.onMove,
               onAdd: widget.onAdd,
             ),

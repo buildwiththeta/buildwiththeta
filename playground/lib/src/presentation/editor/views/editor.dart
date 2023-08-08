@@ -111,7 +111,7 @@ class _EditorPageState extends State<EditorPage> {
                     .onNodeAdded(
                         node: node,
                         parentID: parent.id,
-                        customIndex: parent.children?.length ?? 0,
+                        customIndex: parent.children?.length.toDouble() ?? 0,
                         offset: offset),
                 onNodeChanged: (node, event, deviceType) => context
                     .read<EditorCubit>()

@@ -1,3 +1,8 @@
+## 0.4.0
+
+- [x] Feat: child_order is a double.
+- [x] Feat: added builder_used in Projects.
+
 ## 0.3.1
 
 - [x] Feat: added `toJson` to ConversionEvent.

@@ -1,68 +1,68 @@
-# [Theta](https://buildwiththeta.com)
+# [Theta](https://buildwiththeta.com): streamlined cross-platform server-driven UI
 
-## The new way of designing remote design systems
+Build your server-driven design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
 
-Visually design your remote design system. Integrate it seamlessly into your code base along with your favorite packages, allowing you to instantly update the UI remotely.
+- Documentation: https://docs.buildwiththeta.com
 
-![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+You can share the remote user interface on the following platforms using Theta:
 
+- **iOS**
+- **Android**
+- **Web**
+- **VisionOS**
+- **macOS**
+- **Windows**
 
-Theta Flutter library.
-
-- Documentation: https://docs.buildwiththeta.com.
-- See examples on [GitHub](https://github.com/buildwiththeta/buildwiththeta/tree/main/examples).
-
-
-## What is [Theta](https://buildwiththeta.com)?
-
-Theta is a platform designed for rendering remote user interfaces seamlessly within your Flutter projects.
-
-- **Remote UI**: Visually design your user interface on Theta, and visualize it in apps with instant updates.
-- **No internet connection required**: Preload the remote UIs for offline use.
-- **Mix no-code within your codebase**: Add custom code directly from your existing code, using any library / sdk.
-- **Testable**: Test the user interface with unit tests and integrate your favorite analysis tool to monitor user behavior.
+<img width="600px" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/c2594691-69a9-45c5-94f7-ea1d808d63bc" />
 
 ## Why Theta?
 
-- Use Theta in an existing app to enhance collaboration between designers and devs on your team and increase the ability to update and test your UI through instant updates.
-- Use Theta in a new project to create your design system visually, using it with your favorite packages for the best possible quality.
+Theta simplifies the creation and maintenance of remote design systems. It allows the user interface of front-end applications on different platforms to be updated in real time from a central cloud, eliminating the need for users to download a new version. 
 
-## Getting started
+### Developers shouldn't hardcode UI components
+
+Server-driven design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
+
+Theta offers several advantages:
+- **⚡️ Integrate tonight**: Theta provides a no-code environment for designing the UI that can be integrate directly into your project with SDKs (Flutter, Swift coming soon). Theta doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
+- **🔀 Interoperability with your codebase**: Connect remote UI components with your code. You can embed complex platform-specific widgets like maps, web views, media players, and camera feeds within your remote UI, or add a UIBox() inside an existing custom page to make it dynamic.
+- **🧋 Team collaboration and version control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the your design system components, a crucial aspect for maintaining app quality and addressing bugs or issues.
+- **💫 Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions. Also, because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
+
+## Integrate tonight
+
+![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
 
 ### Initialize Theta
 
-Initialize Theta by calling `Theta.initialize` with your anonymous key.
-Be sure to call this method at the root of your app.
+1. Initialize Theta by calling `Theta.initialize` with your anonymous key.
+2. Wrap your app with `ThetaProvider` to enable any UIBox to receive the theme and project styles.
 
 ```dart
 import 'package:theta/theta.dart';
 
 Future<void> main() async {
     await Theta.initialize(anonKey: 'thetaKey');
-    // ...
+    
+    runApp(
+        ThetaProvider(
+            theme: ThemeMode.light,
+            child: MaterialApp(
+                home: // ...
+            ),
+        )
+    );
 }
 ```
 
-### Wrap your app with ThetaProvider
-
-Wrap your app with `ThetaProvider` to enable any UIBox to receive the theme and project styles.
-    
-```dart
-ThetaProvider(
-    theme: ThemeMode.light,
-    child: MaterialApp(
-        home: // ...
-    ),
-)
-```
-
-### Render remote UI
+### Display components
 
 Everything you need to do is to add a `UIBox` widget to your app and pass the component name as a parameter.
 
 
 Use `branch` to specify the branch of the component to render. If not specified, the default branch will be used.
-This is useful for testing new features without affecting the production environment or for versioning the component.
+
+> This is useful for testing new features without affecting the production environment or for versioning the component.
 
 ```dart
 return Scaffold(
@@ -109,7 +109,7 @@ UIBox(
 controller.dispose();
 ```
 
-### Add custom actions
+## Interoperability with your code
 
 Want a dynamic UI with gesture support (onTap, doubleTap, etc.)? You can add functions, called `workflows`, based on gesture triggers.
 
@@ -211,14 +211,6 @@ UIBox(
 - ✅ Invite-only Beta: ready to be used in production. Expect some bugs and missing features.
 
 Looking for an invitation? Ask on [Twitter](https://twitter.com/intent/tweet?text=Hey%2C%20I%27m%20looking%20for%20an%20invitation%20code%20for%20%40buildwiththeta%2C%20can%20anyone%20help%20me%20please%3F%20).
-
-## Compatibility
-
-- ✅ Web
-- ✅ Android
-- ✅ iOS
-- ✅ macOS
-- ✅ Windows
 
 Read more about configuration in the [documentation](https://docs.buildwiththeta.com/en/builder/compatibility).
 
