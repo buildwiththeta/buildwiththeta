@@ -1,3 +1,7 @@
+## 0.4.0
+
+- [x] Feat: add support to models 0.4.0 and rendering 1.6.0.
+
 ## 0.3.0
 
 - [x] Feat: Image nodes now support local images in preloading mode.

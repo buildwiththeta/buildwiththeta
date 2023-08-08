@@ -1,3 +1,8 @@
+## 0.5.2
+
+- [x] Feat: add support to models 0.4.0.
+- [x] Feat: add support to widgets 0.4.0.
+
 ## 0.5.1
 
 - [x] Feat: `branch` added to `UIBox`.
