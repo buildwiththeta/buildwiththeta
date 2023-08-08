@@ -129,6 +129,22 @@ class _NodeBuilderState extends State<NodeBuilder> {
               ?.value ??
           '0');
 
+  Widget handleOpenWSpacerWidget(CNode node, Widget child) {
+    if (widget.state.node.type == NType.spacer) {
+      return Expanded(
+        flex: int.tryParse(
+              (widget.state.node.getAttributes[DBKeys.flexValue]
+                          as FTextTypeInput?)
+                      ?.value ??
+                  '1',
+            ) ??
+            1,
+        child: child,
+      );
+    }
+    return child;
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
@@ -139,30 +155,34 @@ class _NodeBuilderState extends State<NodeBuilder> {
     if (override != null) {
       return override;
     }
-    return Visibility(
-      visible: _handleVisibility(state),
-      child: Padding(
-        padding: _handleMargins(state),
-        child: DecoratedBox(
-          decoration: _handleDecorationChange(state.focusedNode),
-          position: DecorationPosition.foreground,
-          child: Transform.rotate(
-            angle: _handleRotation(state),
-            child: Padding(
-              padding: _handlePadding(state),
-              child: GestureDetectorInEditor(
-                node: widget.state.node,
-                onTap: widget.onTap,
-                onPanStart: widget.onPanStart,
-                child: GestureDetectorForPlay(
-                  state: widget.state,
-                  child: handleSlideAnimation(
-                    widget.state.node,
-                    handleScaleAnimation(
+
+    return handleOpenWSpacerWidget(
+      widget.state.node,
+      Visibility(
+        visible: _handleVisibility(state),
+        child: Padding(
+          padding: _handleMargins(state),
+          child: DecoratedBox(
+            decoration: _handleDecorationChange(state.focusedNode),
+            position: DecorationPosition.foreground,
+            child: Transform.rotate(
+              angle: _handleRotation(state),
+              child: Padding(
+                padding: _handlePadding(state),
+                child: GestureDetectorInEditor(
+                  node: widget.state.node,
+                  onTap: widget.onTap,
+                  onPanStart: widget.onPanStart,
+                  child: GestureDetectorForPlay(
+                    state: widget.state,
+                    child: handleSlideAnimation(
                       widget.state.node,
-                      handleFadeInAnimation(
+                      handleScaleAnimation(
                         widget.state.node,
-                        widget.child,
+                        handleFadeInAnimation(
+                          widget.state.node,
+                          widget.child,
+                        ),
                       ),
                     ),
                   ),

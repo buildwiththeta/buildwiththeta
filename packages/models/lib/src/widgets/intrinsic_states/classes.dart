@@ -231,3 +231,16 @@ class VideoIntrinsicStates extends IntrinsicState {
         );
   VideoIntrinsicStates.create() : this();
 }
+
+@nodeTypeISKey
+@NodeKey(NType.spacer)
+class SpacerIntrinsicStates extends IntrinsicState {
+  SpacerIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/freeform/', //TODO : change icon
+          displayName: NodeType.name(NType.spacer),
+          type: NType.spacer,
+          canHave: ChildrenEnum.none,
+        );
+  SpacerIntrinsicStates.create() : this();
+}

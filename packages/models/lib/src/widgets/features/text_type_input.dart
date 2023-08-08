@@ -31,6 +31,7 @@ enum TypeDateTimeFormat {
 @AttributeKey(DBKeys.textStyle)
 @AttributeKey(DBKeys.textStyle2)
 @AttributeKey(DBKeys.value)
+@AttributeKey(DBKeys.flexValue)
 @AttributeKey(DBKeys.rotateX)
 @AttributeKey(DBKeys.rotateY)
 @AttributeKey(DBKeys.rotateZ)

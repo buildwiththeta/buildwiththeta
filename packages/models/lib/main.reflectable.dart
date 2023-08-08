@@ -640,6 +640,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
               const prefix0.AttributeKey(prefix28.DBKeys.textStyle),
               const prefix0.AttributeKey(prefix28.DBKeys.textStyle2),
               const prefix0.AttributeKey(prefix28.DBKeys.value),
+              const prefix0.AttributeKey(prefix28.DBKeys.flexValue),
               const prefix0.AttributeKey(prefix28.DBKeys.rotateX),
               const prefix0.AttributeKey(prefix28.DBKeys.rotateY),
               const prefix0.AttributeKey(prefix28.DBKeys.rotateZ),
@@ -908,10 +909,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix26.IconIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix26.IconIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix26.IconIntrinsicStates.create() : null
+                  () => b ? prefix26.IconIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -960,9 +960,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix26.ListViewIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix26.ListViewIntrinsicStates.create() : null
+                  () => b ? prefix26.ListViewIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix26.ListViewIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1038,9 +1038,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix26.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix26.ScaffoldIntrinsicStates.create() : null
+                  () => b ? prefix26.ScaffoldIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix26.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1063,10 +1063,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix26.StackIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix26.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix26.StackIntrinsicStates.create() : null
+                  () => b ? prefix26.StackIntrinsicStates.create() : null
             },
             -1,
             -1,
@@ -1151,6 +1150,32 @@ final _data = <r.Reflectable, r.ReflectorData>{
               prefix25.nodeTypeISKey,
               const prefix25.NodeKey(prefix29.NType.video)
             ],
+            {}),
+        r.NonGenericClassMirrorImpl(
+            r'SpacerIntrinsicStates',
+            r'.SpacerIntrinsicStates',
+            134217735,
+            16,
+            const prefix25.NodeTypeISKey(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) =>
+                  () => b ? prefix26.SpacerIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix26.SpacerIntrinsicStates.create() : null
+            },
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix25.nodeTypeISKey,
+              const prefix25.NodeKey(prefix29.NType.spacer)
+            ],
             {})
       ],
       null,
@@ -1171,9 +1196,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix26.StackIntrinsicStates,
         prefix26.TextIntrinsicStates,
         prefix26.TextFieldIntrinsicStates,
-        prefix26.VideoIntrinsicStates
+        prefix26.VideoIntrinsicStates,
+        prefix26.SpacerIntrinsicStates
       ],
-      16,
+      17,
       {},
       {},
       null,
@@ -1184,7 +1210,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       null, null, <Type>[prefix25.DynamicIntrinsicState], 1, {}, {}, null, [])
 };
 
-const _memberSymbolMap = null;
+final _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;
