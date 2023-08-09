@@ -461,3 +461,20 @@ class TeamComponentAdapter extends WidgetAdapter {
 
   TeamComponentAdapter.create() : this();
 }
+
+/// Spacer
+@dynamicAdapter
+@NodeKey(NType.spacer)
+class SpacerAdapter extends WidgetAdapter {
+  const SpacerAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSpacer(
+        context: context,
+      );
+
+  SpacerAdapter.create() : this();
+}

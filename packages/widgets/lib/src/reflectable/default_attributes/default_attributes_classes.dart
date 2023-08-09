@@ -392,3 +392,17 @@ class VideoDefaultAttributes extends DefaultAttributesAdapter {
 
   VideoDefaultAttributes.create() : this();
 }
+
+/// Spacer
+@dynamicDefaultAttribute
+@NodeKey(NType.spacer)
+class SpacerDefaultAttribute extends DefaultAttributesAdapter {
+  const SpacerDefaultAttribute();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.flexValue: FTextTypeInput(value: '1'),
+      };
+
+  SpacerDefaultAttribute.create() : this();
+}
