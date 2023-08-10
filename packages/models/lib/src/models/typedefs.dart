@@ -20,3 +20,4 @@ typedef Pages = List<PageEntity>;
 typedef Branches = List<BranchEntity>;
 typedef BranchActionLogs = List<BranchActionLogEntity>;
 typedef BranchJsonLogs = List<BranchJsonLogEntity>;
+typedef Assets = List<AssetEntity>;

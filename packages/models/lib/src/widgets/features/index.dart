@@ -24,3 +24,4 @@ export 'text_direction.dart';
 export 'text_style.dart';
 export 'text_type_input.dart';
 export 'icon_type.dart';
+export 'image_type.dart';
