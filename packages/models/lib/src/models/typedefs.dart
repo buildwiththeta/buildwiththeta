@@ -9,6 +9,7 @@ typedef NodeID = String;
 typedef ID = String;
 typedef BranchActionLogID = String;
 typedef BranchJsonLogID = String;
+typedef AssetID = String;
 typedef DefaultNodeAttributes = Map<String, dynamic>;
 typedef NodeAttributes = Map<String, dynamic>;
 typedef Variables = List<VariableEntity>;

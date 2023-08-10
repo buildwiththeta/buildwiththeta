@@ -2,51 +2,58 @@ import 'package:enum_to_string/enum_to_string.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Mapper for project assets
-class ProjectAssetsMapper extends Mapper<ProjectAssetsEntity> {
-  const ProjectAssetsMapper();
+class AssetMapper extends Mapper<AssetEntity> {
+  const AssetMapper();
 
   static const _idKey = 'id';
   static const _projectIdKey = 'project_id';
   static const _typeKey = 'type';
-  static const _folderNameKey = 'folder_name';
+  static const _fileNameKey = 'file_name';
   static const _urlKey = 'url';
+  static const _createdAtKey = 'created_at';
 
   /// For a single instance
   @override
-  ProjectAssetsEntity fromJson(Map<String, dynamic> json) {
-    return ProjectAssetsEntity(
+  AssetEntity fromJson(Map<String, dynamic> json) {
+    return AssetEntity(
       id: json[_idKey],
       projectID: json[_projectIdKey],
       type: EnumToString.fromString(
-        AssetsType.values,
+        AssetType.values,
         json[_typeKey],
       )!,
-      folderName: json[_folderNameKey],
+      fileName: json[_fileNameKey],
       url: json[_urlKey],
+      createdAt: DateTime.parse(json[_createdAtKey]),
     );
   }
 
   /// Return a json from this instance
   @override
-  Map<String, dynamic> toJson(final ProjectAssetsEntity projectAssets) => {
+  Map<String, dynamic> toJson(final AssetEntity projectAssets) => {
         _idKey: projectAssets.id,
         _projectIdKey: projectAssets.projectID,
         _typeKey: EnumToString.convertToString(projectAssets.type),
-        _folderNameKey: projectAssets.folderName,
+        _fileNameKey: projectAssets.fileName,
         _urlKey: projectAssets.url,
+        _createdAtKey: projectAssets.createdAt.toIso8601String(),
       };
 
-  ProjectAssetsEntity copyWith(final ProjectAssetsEntity e,
-          {final String? id,
-          final String? projectID,
-          final AssetsType? type,
-          final String? folderName,
-          final String? url}) =>
-      ProjectAssetsEntity(
+  AssetEntity copyWith(
+    final AssetEntity e, {
+    final String? id,
+    final String? projectID,
+    final AssetType? type,
+    final String? fileName,
+    final String? url,
+    final DateTime? createdAt,
+  }) =>
+      AssetEntity(
         id: id ?? e.id,
         projectID: projectID ?? e.projectID,
         type: type ?? e.type,
-        folderName: folderName ?? e.folderName,
+        fileName: fileName ?? e.fileName,
         url: url ?? e.url,
+        createdAt: createdAt ?? e.createdAt,
       );
 }

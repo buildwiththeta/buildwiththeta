@@ -9,34 +9,38 @@ import '../enums/index.dart';
 import 'index.dart';
 
 /// Uses a Mapper to serialize/deserialize.
-class ProjectAssetsEntity extends Equatable {
-  const ProjectAssetsEntity({
+class AssetEntity extends Equatable {
+  const AssetEntity({
     required this.id,
     required this.projectID,
     required this.type,
-    required this.folderName,
+    required this.fileName,
     required this.url,
+    required this.createdAt,
   });
 
   final PageID id;
   final ProjectID projectID;
-  final AssetsType type;
-  final String folderName;
+  final AssetType type;
+  final String fileName;
   final String url;
+  final DateTime createdAt;
 
-  ProjectAssetsEntity copyWith({
+  AssetEntity copyWith({
     final String? id,
     final String? projectID,
-    final AssetsType? type,
-    final String? folderName,
+    final AssetType? type,
+    final String? fileName,
     final String? url,
+    final DateTime? createdAt,
   }) =>
-      ProjectAssetsEntity(
+      AssetEntity(
         id: id ?? this.id,
         projectID: projectID ?? this.projectID,
         type: type ?? this.type,
-        folderName: folderName ?? this.folderName,
+        fileName: fileName ?? this.fileName,
         url: url ?? this.url,
+        createdAt: createdAt ?? this.createdAt,
       );
 
   @override
@@ -44,11 +48,12 @@ class ProjectAssetsEntity extends Equatable {
         id,
         projectID,
         type,
-        folderName,
+        fileName,
         url,
+        createdAt,
       ];
 
   @override
   String toString() =>
-      'ProjectAssetsEntity { id: $id, projectID: $projectID, type: $type, folderName: $folderName, url: $url }';
+      'AssetEntity { id: $id, projectID: $projectID, type: $type, fileName: $fileName, url: $url, createdAt: $createdAt}';
 }

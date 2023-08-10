@@ -1,5 +1,6 @@
-enum AssetsType {
+enum AssetType {
   png,
   jpg,
   json,
+  svg,
 }
