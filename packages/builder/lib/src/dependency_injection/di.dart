@@ -3,6 +3,7 @@ import 'package:http/http.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
+import 'package:theta/src/data/datasources/custom_fonts_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
 import 'package:theta/src/data/datasources/local_component_service.dart';
 import 'package:theta/src/data/datasources/local_styles_service.dart';
@@ -43,13 +44,14 @@ Future<void> initializeDependencyInjection(
         LocalComponentService(getIt(), getIt(), cacheExtension, cacheEnabled))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
     ..registerLazySingleton(() =>
-        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled));
+        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled))
+    ..registerLazySingleton(() => CustomFontsService(getIt()));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
         () => ComponentRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled))
-    ..registerLazySingleton<StylesRepository>(
-        () => StylesRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled));
+    ..registerLazySingleton<StylesRepository>(() =>
+        StylesRepositoryImpl(getIt(), getIt(), getIt(), getIt(), cacheEnabled));
 
   getIt
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))

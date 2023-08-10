@@ -40,6 +40,7 @@ class TreeState with ChangeNotifier {
     this.xLines = const [],
     this.yLines = const [],
     this.isPreloaded = false,
+    this.customFonts = const [],
   });
 
   /// Are we in Play Mode?
@@ -100,6 +101,8 @@ class TreeState with ChangeNotifier {
   NodeID? nodeComponentID;
 
   bool isPreloaded;
+
+  List<CustomFontEntity> customFonts;
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
@@ -164,6 +167,10 @@ class TreeState with ChangeNotifier {
 
   void onPreloadedFlagChanged(bool preloaded) {
     isPreloaded = preloaded;
+  }
+
+  void onCustomFontsChanged(List<CustomFontEntity> customFonts) {
+    this.customFonts = customFonts;
   }
 
   void notify() {

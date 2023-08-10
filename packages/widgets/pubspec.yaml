@@ -53,6 +53,10 @@ dependencies:
   source_gen: ^1.2.7
   analyzer: ^5.11.1
 
+dependency_overrides:
+  theta_models:
+    path: ../models
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

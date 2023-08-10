@@ -48,6 +48,14 @@ dependencies:
   archive: ^3.3.7
   encrypt: ^5.0.1
 
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_widgets:
+    path: ../widgets
+  theta_rendering:
+    path: ../rendering
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
