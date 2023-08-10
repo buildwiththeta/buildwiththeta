@@ -1,3 +1,8 @@
+## 0.5.0
+
+- [x] Feat: Spacer widget
+- [x] Feat: Custom fonts
+
 ## 0.4.0
 
 - [x] Feat: add support to models 0.4.0 and rendering 1.6.0.

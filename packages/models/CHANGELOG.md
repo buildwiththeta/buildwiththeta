@@ -1,3 +1,7 @@
+## 0.5.0
+
+- [x] Feat: Custom fonts can be added to the project.
+
 ## 0.4.0
 
 - [x] Feat: child_order is a double.

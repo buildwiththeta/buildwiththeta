@@ -1,7 +1,7 @@
 name: theta
 description: Integrate cross-platform server-driven UI into your app using the Theta Flutter library.
 
-version: 0.5.2
+version: 0.6.0
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -31,9 +31,9 @@ dependencies:
     sdk: flutter
 
   theta_analytics: ^0.1.4
-  theta_models: ^0.4.0
-  theta_rendering: ^0.1.6
-  theta_open_widgets: ^0.4.0
+  theta_models: ^0.5.0
+  theta_rendering: ^0.1.7
+  theta_open_widgets: ^0.5.0
 
   light_logger: ^0.0.3
 
@@ -48,19 +48,10 @@ dependencies:
   archive: ^3.3.7
   encrypt: ^5.0.1
 
-dependency_overrides:
-  theta_models:
-    path: ../models
-  theta_widgets:
-    path: ../widgets
-  theta_rendering:
-    path: ../rendering
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
   build_runner: any
-
 
 flutter:

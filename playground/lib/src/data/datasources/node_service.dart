@@ -30,7 +30,7 @@ class NodeService {
       name: name,
       id: const Uuid().v1(),
       parentID: parentID,
-      childOrder: customIndex,
+      childOrder: customIndex?.toInt(),
     ));
   }
 
