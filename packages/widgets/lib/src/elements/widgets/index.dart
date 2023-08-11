@@ -19,3 +19,4 @@ export 'textfield.dart';
 export 'video.dart';
 export 'component.dart';
 export 'spacer.dart';
+export 'svg_picture.dart';

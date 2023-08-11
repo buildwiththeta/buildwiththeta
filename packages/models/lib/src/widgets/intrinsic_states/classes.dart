@@ -153,6 +153,22 @@ class LottieIntrinsicStates extends IntrinsicState {
   LottieIntrinsicStates.create() : this();
 }
 
+/// SvgPicture
+/// https://pub.dev/packages/flutter_svg
+@nodeTypeISKey
+@NodeKey(NType.svgPicture)
+class SvgPictureIntrinsicStates extends IntrinsicState {
+  SvgPictureIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/image/', //TODO: svg icon
+          displayName: NodeType.name(NType.svgPicture),
+          type: NType.svgPicture,
+          maxChildren: 0,
+          canHave: ChildrenEnum.none,
+        );
+  SvgPictureIntrinsicStates.create() : this();
+}
+
 @nodeTypeISKey
 @NodeKey(NType.row)
 class RowIntrinsicStates extends IntrinsicState {

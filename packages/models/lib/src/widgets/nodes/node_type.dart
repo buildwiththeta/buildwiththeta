@@ -25,6 +25,7 @@ class NType {
   static const String videoPlayer = 'videoPlayer';
   static const String video = 'video';
   static const String spacer = 'spacer';
+  static const String svgPicture = 'svgPicture';
 
   final String name;
   const NType(this.name);
@@ -50,6 +51,7 @@ class NType {
         videoPlayer,
         video,
         spacer,
+        svgPicture,
       ];
 }
 

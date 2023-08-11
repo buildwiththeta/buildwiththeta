@@ -26,7 +26,8 @@ class IntrinsicStateUtils {
     NType.text: TextIntrinsicStates(),
     NType.textField: TextFieldIntrinsicStates(),
     NType.video: VideoIntrinsicStates(),
-    NType.spacer:  SpacerIntrinsicStates(),
+    NType.spacer: SpacerIntrinsicStates(),
+    NType.svgPicture: SvgPictureIntrinsicStates(),
   };
 
   IntrinsicState getStateByType(final NType type) {

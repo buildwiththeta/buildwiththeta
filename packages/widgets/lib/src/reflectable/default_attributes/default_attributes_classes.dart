@@ -275,6 +275,33 @@ class LottieDefaultAttributes extends DefaultAttributesAdapter {
   LottieDefaultAttributes.create() : this();
 }
 
+/// Svg Picture
+@dynamicDefaultAttribute
+@NodeKey(NType.svgPicture)
+class SvgPictureDefaultAttributes extends DefaultAttributesAdapter {
+  const SvgPictureDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.width: FSize(
+          size: 'max',
+          sizeTablet: 'max',
+          sizeDesktop: 'max',
+        ),
+        DBKeys.height: FSize(
+          size: '150',
+          sizeTablet: '150',
+          sizeDesktop: '150',
+        ),
+        DBKeys.image: FTextTypeInput(),
+        DBKeys.boxFit: FBoxFit(
+          value: BoxFit.cover,
+        ),
+      };
+
+  SvgPictureDefaultAttributes.create() : this();
+}
+
 /// Scaffold
 @dynamicDefaultAttribute
 @NodeKey(NType.scaffold)
