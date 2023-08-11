@@ -1,3 +1,7 @@
+## 0.5.1
+
+- [x] Feat: added hoveredNode in TreeState
+
 ## 0.5.0
 
 - [x] Feat: Custom fonts can be added to the project.
