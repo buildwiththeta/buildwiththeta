@@ -14,6 +14,7 @@ curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_component' \
       "log": {
         "session_id": "23a9e8c7-cd8f-4557-...",
         "title": "Get component",
+        "branch_name": "...",
         "description": "...",
         "properties": { ... },
         "device_info": {
@@ -31,6 +32,7 @@ curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_component' \
 
 - **session_id**: `uuid`. A universally unique identifier (uuid) assigned to a session.
 - **title**: `string`. A string representing the title of the event. This title will be displayed inside the Insight panel under the Usage section.
+- **branch_name**: `string`, optional. An optional string proving a branch name. If null, "main" branch will be used.
 - **description**: `string`, optional. An optional string providing a description of the event.
 - **properties**: `object`, optional. An optional object containing additional properties related to the event.
 - **device_info**: `object`, optional. An object containing information about the client device.
