@@ -30,22 +30,23 @@ class NodeBuilder extends StatefulWidget {
 }
 
 class _NodeBuilderState extends State<NodeBuilder> {
-  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) =>
-      (focusNode?.id == widget.state.node.id)
-          ? BoxDecoration(
-              border: Border.all(width: 2, color: Palette.blue),
-            )
-          : (hoverNode?.id == widget.state.node.id)
-              ? (hoverNode?.id == widget.state.node.id &&
-                      (widget.state.node.type == NType.component ||
-                          widget.state.node.type == NType.teamComponent))
-                  ? BoxDecoration(
-                      border: Border.all(width: 2, color: Palette.magenta),
-                    )
-                  : BoxDecoration(
-                      border: Border.all(width: 2, color: Palette.blue),
-                    )
-              : const BoxDecoration();
+  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) {
+    return (focusNode?.id == widget.state.node.id)
+        ? BoxDecoration(
+            border: Border.all(width: 2, color: Palette.blue),
+          )
+        : (hoverNode?.id == widget.state.node.id)
+            ? (hoverNode?.id == widget.state.node.id &&
+                    [NType.component, NType.teamComponent]
+                        .contains(hoverNode?.type))
+                ? BoxDecoration(
+                    border: Border.all(width: 2, color: Palette.magenta),
+                  )
+                : BoxDecoration(
+                    border: Border.all(width: 2, color: Palette.blue),
+                  )
+            : const BoxDecoration();
+  }
 
   EdgeInsets _handleMargins(TreeState state) =>
       (widget.state.node.getAttributes[DBKeys.margins] as FMargins? ??
@@ -178,8 +179,10 @@ class _NodeBuilderState extends State<NodeBuilder> {
           child: Padding(
             padding: _handleMargins(state),
             child: DecoratedBox(
-              decoration:
-                  _handleDecorationChange(state.focusedNode, state.hoveredNode),
+              decoration: _handleDecorationChange(
+                state.hoveredNode,
+                state.focusedNode,
+              ),
               position: DecorationPosition.foreground,
               child: Transform.rotate(
                 angle: _handleRotation(state),

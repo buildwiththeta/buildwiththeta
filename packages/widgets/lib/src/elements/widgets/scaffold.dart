@@ -5,6 +5,7 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -53,9 +54,12 @@ class OpenWScaffold extends NodeWidget {
       builder: (context, _, __) => Stack(
         children: [
           Positioned.fill(
-            child: MouseRegion(
-              onHover: (e) => TreeGlobalState.onNodeHovered(nodeState.node),
-            ),
+            child: MouseRegion(onHover: (e) {
+              final state = context.read<TreeState>();
+              if (state.hoveredNode?.id != nodeState.node.id) {
+                TreeGlobalState.onNodeHovered(nodeState.node);
+              }
+            }),
           ),
           ...widgets,
         ],
