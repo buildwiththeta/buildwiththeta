@@ -14,7 +14,7 @@ class ComponentService {
   final ClientToken _clientToken;
   final Client _httpClient;
 
-  Future<String> getComponent(String componentName) async {
+  Future<String> getComponent(String componentName, String? branchName) async {
     final res = await _httpClient.post(
       Uri.parse('$baseUrl$getComponentPath'),
       headers: {
@@ -23,6 +23,7 @@ class ComponentService {
       },
       body: json.encode({
         'component_name': componentName,
+        'branch_name': branchName,
         'log': {
           "session_id": const Uuid().v1(),
           "title": "Theta CLI - Get component",

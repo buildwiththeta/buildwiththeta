@@ -12,9 +12,11 @@ class ComponentRepositoryImpl implements ComponentRepository {
   @override
   Future<Either<Exception, String>> getComponent(
     String componentName,
+    String? branchName,
   ) async {
     try {
-      return Right(await _componentService.getComponent(componentName));
+      return Right(
+          await _componentService.getComponent(componentName, branchName));
     } catch (e) {
       return Left(Exception(e.toString()));
     }

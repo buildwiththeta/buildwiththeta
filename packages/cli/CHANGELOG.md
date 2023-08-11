@@ -1,3 +1,7 @@
+## 0.3.0
+
+* Feat: add support for fetching components from different branches.
+
 ## 0.2.0
 
 * Feat: add support to preloading assets.

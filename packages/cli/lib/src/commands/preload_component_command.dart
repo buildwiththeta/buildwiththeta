@@ -22,6 +22,12 @@ class PreloadComponentCommand extends Command<int> {
     required Logger logger,
   }) : _logger = logger {
     argParser.addOption(
+      'branch',
+      abbr: 'b',
+      help: 'Branch name. Optional.',
+      mandatory: false,
+    );
+    argParser.addOption(
       'anon-key',
       abbr: 'k',
       help: 'Anon key',
@@ -71,13 +77,14 @@ class PreloadComponentCommand extends Command<int> {
     ).interact();
 
     final anonKey = argResults?['anon-key'];
+    final branch = argResults?['branch'];
 
     await fetchStyles(anonKey);
     progress.increase(1);
     _logger.info('');
 
     for (final componentName in componentsName) {
-      await fetchComponent(anonKey, componentName);
+      await fetchComponent(anonKey, componentName, branch);
       progress.increase(1);
       _logger.info('');
     }
@@ -99,11 +106,13 @@ class PreloadComponentCommand extends Command<int> {
     });
   }
 
-  Future<void> fetchComponent(String anonKey, String componentName) {
+  Future<void> fetchComponent(
+      String anonKey, String componentName, String? branch) {
     _logger.info('🔄 Fetching remote component $componentName...');
-    return getIt<GetComponentUseCase>()(
-            GetComponentUseCaseParams(componentName: componentName))
-        .fold((l) {
+    return getIt<GetComponentUseCase>()(GetComponentUseCaseParams(
+      componentName: componentName,
+      branchName: branch,
+    )).fold((l) {
       _logger.err('❗️ Error fetching component, message: $l');
       throw Exception('❗️ Error fetching component, message: $l');
     }, (r) async {
