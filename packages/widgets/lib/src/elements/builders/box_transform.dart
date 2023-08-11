@@ -64,29 +64,28 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
 
+    final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
+        ? device
+        : Devices.ios.iPhone13;
+    final top =
+        isStartOrStretchAlign(widget.node.verticalAlignment) ? rect.top : null;
+    final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
+        ? deviceForChecks.screenSize.height - rect.bottom
+        : null;
+    final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
+        ? rect.left
+        : null;
+    final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
+        ? deviceForChecks.screenSize.width - rect.right
+        : null;
+    final width =
+        isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
+    final height =
+        isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
+
     if (state.focusedNode?.id != widget.node.id ||
         state.forPlay ||
         widget.node.isLocked == true) {
-      final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
-          ? device
-          : Devices.ios.iPhone13;
-      final top = isStartOrStretchAlign(widget.node.verticalAlignment)
-          ? rect.top
-          : null;
-      final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
-          ? deviceForChecks.screenSize.height - rect.bottom
-          : null;
-      final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
-          ? rect.left
-          : null;
-      final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
-          ? deviceForChecks.screenSize.width - rect.right
-          : null;
-      final width =
-          isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
-      final height =
-          isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
-
       if (state.fit == ComponentFit.autoLayout) {
         return Padding(
           padding: EdgeInsets.only(
@@ -155,14 +154,34 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
         );
       }
     }
-    return _BoxTransformBuilder(node: widget.node);
+    return _BoxTransformBuilder(
+      node: widget.node,
+      screenSize: device.screenSize,
+      top: top,
+      bottom: bottom,
+      left: left,
+      right: right,
+      width: width,
+      height: height,
+    );
   }
 }
 
 class _BoxTransformBuilder extends StatefulWidget {
-  const _BoxTransformBuilder({required this.node});
+  const _BoxTransformBuilder({
+    required this.node,
+    required this.top,
+    required this.screenSize,
+    this.left,
+    this.right,
+    this.bottom,
+    this.width,
+    this.height,
+  });
 
   final CNode node;
+  final double? left, top, right, bottom, width, height;
+  final Size screenSize;
 
   @override
   State<_BoxTransformBuilder> createState() => __BoxTransformBuilderState();
@@ -181,13 +200,48 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   late List<num> anchorAxisHorizontal;
   late List<num> anchorAxisVertical;
 
+  Rect createModifiedRect(Rect rect) {
+    // Start with the original rect values
+    double newLeft = rect.left;
+    double newTop = rect.top;
+    double newRight = rect.right;
+    double newBottom = rect.bottom;
+
+    // Stretched horizontally
+    if (widget.left != null && widget.right != null) {
+      newLeft = widget.left!;
+      newRight = widget.screenSize.width - widget.right!;
+    } else if (widget.left != null && widget.width != null) {
+      newLeft = widget.left!;
+      newRight = widget.left! + widget.width!;
+    } else if (widget.right != null && widget.width != null) {
+      newLeft = widget.screenSize.width - (widget.right! + widget.width!);
+      newRight = widget.screenSize.width - widget.right!;
+    }
+
+    // Stretched vertically
+    if (widget.top != null && widget.bottom != null) {
+      newTop = widget.top!;
+      newBottom = widget.screenSize.height - widget.bottom!;
+    } else if (widget.top != null && widget.height != null) {
+      newTop = widget.top!;
+      newBottom = widget.top! + widget.height!;
+    } else if (widget.bottom != null && widget.height != null) {
+      newTop = widget.screenSize.height - (widget.bottom! + widget.height!);
+      newBottom = widget.screenSize.height - widget.bottom!;
+    }
+
+    return Rect.fromLTRB(newLeft, newTop, newRight, newBottom);
+  }
+
   @override
   void initState() {
     super.initState();
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
     controller
-      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setRect(createModifiedRect(
+          widget.node.rect(state.deviceInfo.identifier.type)))
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
@@ -216,7 +270,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
     controller
-      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setRect(createModifiedRect(
+          widget.node.rect(state.deviceInfo.identifier.type)))
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
