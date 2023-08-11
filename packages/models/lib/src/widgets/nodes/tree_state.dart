@@ -35,6 +35,7 @@ class TreeState with ChangeNotifier {
     required this.nodeOverrides,
     required this.fit,
     this.focusedNode,
+    this.hoveredNode,
     this.nodeComponentID,
     this.nodes = const [],
     this.xLines = const [],
@@ -72,6 +73,7 @@ class TreeState with ChangeNotifier {
 
   /// Focused node
   CNode? focusedNode;
+  CNode? hoveredNode;
 
   /// Nodes
   List<CNode> nodes;
@@ -138,6 +140,10 @@ class TreeState with ChangeNotifier {
 
   void onFocusNodeChanged(CNode? node) {
     focusedNode = node;
+  }
+
+  void onHoverNodeChanged(CNode? node) {
+    hoveredNode = node;
   }
 
   void onNodesChanged(Nodes nodes) {

@@ -54,6 +54,9 @@ class _OpenWComponentState extends State<OpenWComponent> {
             ...widget.state.node.getAttributes[DBKeys.overrides]
           ]),
       child: NodeBuilder(
+        onHover: () {
+          TreeGlobalState.onNodeHovered(widget.state.node);
+        },
         onTap: () {
           TreeGlobalState.onNodeFocused(widget.state.node);
           setState(() {});

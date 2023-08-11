@@ -51,7 +51,14 @@ class OpenWScaffold extends NodeWidget {
         );
       },
       builder: (context, _, __) => Stack(
-        children: widgets,
+        children: [
+          Positioned.fill(
+            child: MouseRegion(
+              onHover: (e) => TreeGlobalState.onNodeHovered(nodeState.node),
+            ),
+          ),
+          ...widgets,
+        ],
       ),
     );
   }

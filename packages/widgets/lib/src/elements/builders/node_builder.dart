@@ -15,6 +15,7 @@ class NodeBuilder extends StatefulWidget {
     required this.onTap,
     required this.onPanStart,
     required this.child,
+    required this.onHover,
   });
 
   final WidgetState state;
@@ -22,18 +23,29 @@ class NodeBuilder extends StatefulWidget {
 
   final Function() onTap;
   final Function() onPanStart;
+  final Function() onHover;
 
   @override
   State<NodeBuilder> createState() => _NodeBuilderState();
 }
 
 class _NodeBuilderState extends State<NodeBuilder> {
-  BoxDecoration _handleDecorationChange(CNode? focusNode) =>
+  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) =>
       (focusNode?.id == widget.state.node.id)
           ? BoxDecoration(
               border: Border.all(width: 2, color: Palette.blue),
             )
-          : const BoxDecoration();
+          : (hoverNode?.id == widget.state.node.id)
+              ? (hoverNode?.id == widget.state.node.id &&
+                      (widget.state.node.type == NType.component ||
+                          widget.state.node.type == NType.teamComponent))
+                  ? BoxDecoration(
+                      border: Border.all(width: 2, color: Palette.magenta),
+                    )
+                  : BoxDecoration(
+                      border: Border.all(width: 2, color: Palette.blue),
+                    )
+              : const BoxDecoration();
 
   EdgeInsets _handleMargins(TreeState state) =>
       (widget.state.node.getAttributes[DBKeys.margins] as FMargins? ??
@@ -158,30 +170,35 @@ class _NodeBuilderState extends State<NodeBuilder> {
 
     return handleOpenWSpacerWidget(
       widget.state.node,
-      Visibility(
-        visible: _handleVisibility(state),
-        child: Padding(
-          padding: _handleMargins(state),
-          child: DecoratedBox(
-            decoration: _handleDecorationChange(state.focusedNode),
-            position: DecorationPosition.foreground,
-            child: Transform.rotate(
-              angle: _handleRotation(state),
-              child: Padding(
-                padding: _handlePadding(state),
-                child: GestureDetectorInEditor(
-                  node: widget.state.node,
-                  onTap: widget.onTap,
-                  onPanStart: widget.onPanStart,
-                  child: GestureDetectorForPlay(
-                    state: widget.state,
-                    child: handleSlideAnimation(
-                      widget.state.node,
-                      handleScaleAnimation(
+      MouseRegion(
+        hitTestBehavior: HitTestBehavior.opaque,
+        onEnter: (e) => widget.onHover.call(),
+        child: Visibility(
+          visible: _handleVisibility(state),
+          child: Padding(
+            padding: _handleMargins(state),
+            child: DecoratedBox(
+              decoration:
+                  _handleDecorationChange(state.focusedNode, state.hoveredNode),
+              position: DecorationPosition.foreground,
+              child: Transform.rotate(
+                angle: _handleRotation(state),
+                child: Padding(
+                  padding: _handlePadding(state),
+                  child: GestureDetectorInEditor(
+                    node: widget.state.node,
+                    onTap: widget.onTap,
+                    onPanStart: widget.onPanStart,
+                    child: GestureDetectorForPlay(
+                      state: widget.state,
+                      child: handleSlideAnimation(
                         widget.state.node,
-                        handleFadeInAnimation(
+                        handleScaleAnimation(
                           widget.state.node,
-                          widget.child,
+                          handleFadeInAnimation(
+                            widget.state.node,
+                            widget.child,
+                          ),
                         ),
                       ),
                     ),
