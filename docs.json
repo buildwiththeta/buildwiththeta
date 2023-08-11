@@ -72,7 +72,8 @@
       ],
       [
         "Billing", [
-          ["Upgrade plan", "/billing/upgrade_plan"]
+          ["Upgrade plan", "/billing/upgrade_plan"],
+          ["Theta AI add-on", "/billing/theta_ai_plan"]
         ]
       ],
       [
