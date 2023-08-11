@@ -144,7 +144,7 @@ class ListViewIntrinsicStates extends IntrinsicState {
 class LottieIntrinsicStates extends IntrinsicState {
   LottieIntrinsicStates()
       : super(
-          nodeIcon: '',
+          nodeIcon: 'nodes/image/', //TODO: lottie icon
           displayName: NodeType.name(NType.lottie),
           type: NType.lottie,
           maxChildren: 0,
