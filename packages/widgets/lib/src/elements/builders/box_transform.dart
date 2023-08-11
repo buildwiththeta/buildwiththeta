@@ -105,6 +105,10 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
             width: width ?? double.infinity,
             height: height ?? double.infinity,
             child: NodeBuilder(
+              onHover: () {
+                TreeGlobalState.onNodeHovered(widget.node);
+                setState(() {});
+              },
               onTap: () {
                 TreeGlobalState.onNodeFocused(widget.node);
                 setState(() {});
@@ -130,6 +134,10 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
           width: width,
           height: height,
           child: NodeBuilder(
+            onHover: () {
+              TreeGlobalState.onNodeHovered(widget.node);
+              setState(() {});
+            },
             onTap: () {
               TreeGlobalState.onNodeFocused(widget.node);
               setState(() {});
@@ -310,6 +318,10 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       onChanged: (rect) => _debouncer.run(() => onChanged(rect)),
       contentBuilder: (_, rect, flip) => IgnorePointer(
         child: NodeBuilder(
+          onHover: () {
+            TreeGlobalState.onNodeHovered(widget.node);
+            setState(() {});
+          },
           onTap: () {
             TreeGlobalState.onNodeFocused(widget.node);
             setState(() {});

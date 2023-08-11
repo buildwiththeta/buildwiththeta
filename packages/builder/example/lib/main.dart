@@ -57,8 +57,6 @@ class _MyAppState extends State<MyApp> {
             'Counter View',
             controller: _controller,
 
-            branch: 'Version 2.0',
-
             /// [placeholder] is the widget displayed while the page is loading.
             placeholder: const CircularProgressIndicator(),
 

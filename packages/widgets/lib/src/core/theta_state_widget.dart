@@ -36,13 +36,14 @@ OnRightClickCallBack _onRightClick;
 
 class TreeGlobalState extends StatefulWidget {
   TreeGlobalState({
+    super.key,
     required this.child,
     required final OnNodeAddedCallBack onNodeAdded,
     required final OnNodeChangedCallBack onNodeChanged,
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
-  }) : super(key: _globalKey) {
+  }) {
     _onNodeAdded = onNodeAdded;
     _onNodeChanged = onNodeChanged;
     _onNodeFocused = onNodeFocused;
@@ -51,8 +52,6 @@ class TreeGlobalState extends StatefulWidget {
   }
 
   final Widget child;
-
-  static final _globalKey = GlobalKey<_TreeGlobalState>();
 
   static void onNodeAdded(
     CNode node,

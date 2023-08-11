@@ -39,23 +39,43 @@ class TetaTextStyles {
       state.colorStyles,
       state.theme,
     );
-    return GoogleFonts.getFont(
-      (model != null) ? model.fontFamily : fontFamily,
-      fontSize: (model != null)
-          ? model.fontSize.get(
-              context,
-              forPlay: forPlay,
-              deviceType: state.deviceType,
-            )
-          : fontSize.get(
-              context,
-              forPlay: forPlay,
-              deviceType: state.deviceType,
-            ),
-      fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
-      color: HexColor(hex).withOpacity(opacity),
-      decoration: textDecoration.textDecoration,
-      fontStyle: fontStyle.value,
-    );
+    final gfonts = GoogleFonts.asMap().entries.map((e) => e.key).toList();
+    return !gfonts.contains(model?.fontFamily ?? fontFamily)
+        ? TextStyle(
+            fontFamily: (model != null) ? model.fontFamily : fontFamily,
+            fontSize: (model != null)
+                ? model.fontSize.get(
+                    context,
+                    forPlay: forPlay,
+                    deviceType: state.deviceType,
+                  )
+                : fontSize.get(
+                    context,
+                    forPlay: forPlay,
+                    deviceType: state.deviceType,
+                  ),
+            fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
+            color: HexColor(hex).withOpacity(opacity),
+            decoration: textDecoration.textDecoration,
+            fontStyle: fontStyle.value,
+          )
+        : GoogleFonts.getFont(
+            (model != null) ? model.fontFamily : fontFamily,
+            fontSize: (model != null)
+                ? model.fontSize.get(
+                    context,
+                    forPlay: forPlay,
+                    deviceType: state.deviceType,
+                  )
+                : fontSize.get(
+                    context,
+                    forPlay: forPlay,
+                    deviceType: state.deviceType,
+                  ),
+            fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
+            color: HexColor(hex).withOpacity(opacity),
+            decoration: textDecoration.textDecoration,
+            fontStyle: fontStyle.value,
+          );
   }
 }

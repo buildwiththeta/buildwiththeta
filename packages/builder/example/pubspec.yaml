@@ -38,6 +38,14 @@ dependencies:
   theta:
     path: ../
 
+dependency_overrides:
+  theta_models:
+    path: ../../models
+  theta_open_widgets:
+    path: ../../widgets
+  theta_rendering:
+    path: ../../rendering
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

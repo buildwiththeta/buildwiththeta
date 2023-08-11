@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta: ^0.4.1
+  theta: any
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^2.3.6
   freezed_annotation: ^2.2.0

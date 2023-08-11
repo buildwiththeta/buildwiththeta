@@ -108,6 +108,9 @@ class NodeOverrideExecuter extends Equatable {
         children
             .map((child) => NodeBuilder(
                   state: state.copyWith(node: child),
+                  onHover: () {
+                    TreeGlobalState.onNodeHovered(child);
+                  },
                   onTap: () {
                     TreeGlobalState.onNodeFocused(child);
                   },

@@ -35,11 +35,13 @@ class TreeState with ChangeNotifier {
     required this.nodeOverrides,
     required this.fit,
     this.focusedNode,
+    this.hoveredNode,
     this.nodeComponentID,
     this.nodes = const [],
     this.xLines = const [],
     this.yLines = const [],
     this.isPreloaded = false,
+    this.customFonts = const [],
   });
 
   /// Are we in Play Mode?
@@ -71,6 +73,7 @@ class TreeState with ChangeNotifier {
 
   /// Focused node
   CNode? focusedNode;
+  CNode? hoveredNode;
 
   /// Nodes
   List<CNode> nodes;
@@ -100,6 +103,8 @@ class TreeState with ChangeNotifier {
   NodeID? nodeComponentID;
 
   bool isPreloaded;
+
+  List<CustomFontEntity> customFonts;
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
@@ -137,6 +142,10 @@ class TreeState with ChangeNotifier {
     focusedNode = node;
   }
 
+  void onHoverNodeChanged(CNode? node) {
+    hoveredNode = node;
+  }
+
   void onNodesChanged(Nodes nodes) {
     this.nodes = nodes;
   }
@@ -164,6 +173,10 @@ class TreeState with ChangeNotifier {
 
   void onPreloadedFlagChanged(bool preloaded) {
     isPreloaded = preloaded;
+  }
+
+  void onCustomFontsChanged(List<CustomFontEntity> customFonts) {
+    this.customFonts = customFonts;
   }
 
   void notify() {

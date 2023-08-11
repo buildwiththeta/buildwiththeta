@@ -1,3 +1,8 @@
+## 0.6.0
+
+- [x] Feat: Custom fonts
+- [x] Feat: Spacer widget
+
 ## 0.5.2
 
 - [x] Feat: add support to models 0.4.0.

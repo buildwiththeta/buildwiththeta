@@ -12,13 +12,16 @@ class GetComponentUseCase
   Future<Either<Exception, String>> call(
     GetComponentUseCaseParams params,
   ) =>
-      _componentRepository.getComponent(params.componentName);
+      _componentRepository.getComponent(
+          params.componentName, params.branchName);
 }
 
 class GetComponentUseCaseParams extends Params {
   const GetComponentUseCaseParams({
     required this.componentName,
+    required this.branchName,
   });
 
   final String componentName;
+  final String? branchName;
 }
