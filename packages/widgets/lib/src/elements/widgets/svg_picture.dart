@@ -17,6 +17,7 @@ class OpenWSvgPicture extends NodeWidget {
     required this.width,
     required this.height,
     required this.boxFit,
+    required this.fill,
   });
 
   /// The image width
@@ -31,12 +32,17 @@ class OpenWSvgPicture extends NodeWidget {
   /// The image boxFit
   final FBoxFit boxFit;
 
+  final FFill fill;
+
   @override
   Widget build(
     final BuildContext context,
     final TreeState state,
     final WidgetState nodeState,
   ) {
+    final color = fill.type == FFillType.none
+        ? null
+        : HexColor(fill.getHexColor(context, state.colorStyles, state.theme));
     final img = image.getImage(
       state: state,
       context: context,
@@ -57,6 +63,7 @@ class OpenWSvgPicture extends NodeWidget {
         context: context,
         isWidth: false,
       ),
+      color: color,
       fit: BoxFit.contain,
     );
   }

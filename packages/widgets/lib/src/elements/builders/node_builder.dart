@@ -30,6 +30,8 @@ class NodeBuilder extends StatefulWidget {
 }
 
 class _NodeBuilderState extends State<NodeBuilder> {
+  bool clickable = true;
+
   BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) {
     return (focusNode?.id == widget.state.node.id)
         ? BoxDecoration(
@@ -173,7 +175,14 @@ class _NodeBuilderState extends State<NodeBuilder> {
       widget.state.node,
       MouseRegion(
         hitTestBehavior: HitTestBehavior.opaque,
-        onEnter: (e) => widget.onHover.call(),
+        onEnter: (e) {
+          if (clickable) {
+            widget.onHover.call();
+          }
+        },
+        onExit: (e) => setState(() {
+          clickable = true;
+        }),
         child: Visibility(
           visible: _handleVisibility(state),
           child: Padding(
@@ -189,9 +198,14 @@ class _NodeBuilderState extends State<NodeBuilder> {
                 child: Padding(
                   padding: _handlePadding(state),
                   child: GestureDetectorInEditor(
+                    key: ValueKey(widget.state.node.id + clickable.toString()),
                     node: widget.state.node,
+                    clickable: clickable,
                     onTap: widget.onTap,
                     onPanStart: widget.onPanStart,
+                    onDoubleTap: () => setState(() {
+                      clickable = false;
+                    }),
                     child: GestureDetectorForPlay(
                       state: widget.state,
                       child: handleSlideAnimation(
@@ -221,14 +235,18 @@ class GestureDetectorInEditor extends StatelessWidget {
     super.key,
     required this.node,
     required this.child,
+    required this.clickable,
     required this.onTap,
     required this.onPanStart,
+    required this.onDoubleTap,
   });
 
   final CNode node;
   final Widget child;
+  final bool clickable;
   final VoidCallback onTap;
   final VoidCallback onPanStart;
+  final VoidCallback onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -236,11 +254,15 @@ class GestureDetectorInEditor extends StatelessWidget {
     if (state.forPlay) {
       return child;
     }
+    if (!clickable) {
+      return child;
+    }
     return Listener(
         onPointerDown: (e) => TreeGlobalState.onRightClick(e, node),
         child: GestureDetector(
           onTap: onTap,
-          onPanStart: (e) => onPanStart,
+          onDoubleTap: onDoubleTap,
+          //onPanStart: (e) => onPanStart,
           child: child,
         ));
   }

@@ -297,6 +297,9 @@ class SvgPictureDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.boxFit: FBoxFit(
           value: BoxFit.cover,
         ),
+        DBKeys.fill: FFill(
+          paletteStyle: 'Text / Primary',
+        ),
       };
 
   SvgPictureDefaultAttributes.create() : this();

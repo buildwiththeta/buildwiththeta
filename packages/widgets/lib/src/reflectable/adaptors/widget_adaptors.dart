@@ -495,6 +495,7 @@ class SvgPictureAdapter extends WidgetAdapter {
         width: state.node.getAttributes[DBKeys.width] as FSize,
         height: state.node.getAttributes[DBKeys.height] as FSize,
         boxFit: state.node.getAttributes[DBKeys.boxFit] as FBoxFit,
+        fill: state.node.getAttributes[DBKeys.fill] as FFill,
       );
 
   SvgPictureAdapter.create() : this();
