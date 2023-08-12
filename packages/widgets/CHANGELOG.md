@@ -1,3 +1,8 @@
+## 0.5.1
+
+- [x] Feat: added hovered feature.
+- [x] Feat: now elements are not moved when selected in no-mobile devices.
+
 ## 0.5.0
 
 - [x] Feat: Spacer widget
