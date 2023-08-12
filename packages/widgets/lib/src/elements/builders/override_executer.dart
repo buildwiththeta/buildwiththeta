@@ -109,13 +109,16 @@ class NodeOverrideExecuter extends Equatable {
             .map((child) => NodeBuilder(
                   state: state.copyWith(node: child),
                   onHover: () {
-                    TreeGlobalState.onNodeHovered(child);
+                    context.read<TreeGlobalState>().onNodeHovered(
+                        child, context.read<TreeState>().deviceType);
                   },
                   onTap: () {
-                    TreeGlobalState.onNodeFocused(child);
+                    context.read<TreeGlobalState>().onNodeFocused(
+                        child, context.read<TreeState>().deviceType);
                   },
                   onPanStart: () {
-                    TreeGlobalState.onNodeFocused(child);
+                    context.read<TreeGlobalState>().onNodeFocused(
+                        child, context.read<TreeState>().deviceType);
                   },
                   child: const NodeOverrideExecuter().executeChild(
                     context,

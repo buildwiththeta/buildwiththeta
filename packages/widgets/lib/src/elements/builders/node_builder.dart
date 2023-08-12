@@ -32,22 +32,26 @@ class NodeBuilder extends StatefulWidget {
 class _NodeBuilderState extends State<NodeBuilder> {
   bool clickable = true;
 
-  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) {
-    return (focusNode?.id == widget.state.node.id)
-        ? BoxDecoration(
-            border: Border.all(width: 2, color: Palette.blue),
-          )
-        : (hoverNode?.id == widget.state.node.id)
-            ? (hoverNode?.id == widget.state.node.id &&
-                    [NType.component, NType.teamComponent]
-                        .contains(hoverNode?.type))
-                ? BoxDecoration(
-                    border: Border.all(width: 2, color: Palette.magenta),
-                  )
-                : BoxDecoration(
-                    border: Border.all(width: 2, color: Palette.blue),
-                  )
-            : const BoxDecoration();
+  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode,
+      bool isDeviceFocused, bool isDeviceHovered) {
+    if (isDeviceFocused && focusNode?.id == widget.state.node.id) {
+      return BoxDecoration(
+        border: Border.all(width: 2, color: Palette.blue),
+      );
+    }
+    if (isDeviceHovered) {
+      if (hoverNode?.id == widget.state.node.id) {
+        if ([NType.component, NType.teamComponent].contains(hoverNode?.type)) {
+          return BoxDecoration(
+            border: Border.all(width: 2, color: Palette.magenta),
+          );
+        }
+        return BoxDecoration(
+          border: Border.all(width: 2, color: Palette.blue),
+        );
+      }
+    }
+    return const BoxDecoration();
   }
 
   EdgeInsets _handleMargins(TreeState state) =>
@@ -191,6 +195,8 @@ class _NodeBuilderState extends State<NodeBuilder> {
               decoration: _handleDecorationChange(
                 state.hoveredNode,
                 state.focusedNode,
+                state.isDeviceCurrentlyFocused,
+                state.isDeviceCurrentlyHovered,
               ),
               position: DecorationPosition.foreground,
               child: Transform.rotate(
@@ -258,7 +264,8 @@ class GestureDetectorInEditor extends StatelessWidget {
       return child;
     }
     return Listener(
-        onPointerDown: (e) => TreeGlobalState.onRightClick(e, node),
+        onPointerDown: (e) =>
+            context.read<TreeGlobalState>().onRightClick(e, node),
         child: GestureDetector(
           onTap: onTap,
           onDoubleTap: onDoubleTap,

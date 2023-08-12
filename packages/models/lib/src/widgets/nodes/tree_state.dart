@@ -42,6 +42,8 @@ class TreeState with ChangeNotifier {
     this.yLines = const [],
     this.isPreloaded = false,
     this.customFonts = const [],
+    this.isDeviceCurrentlyFocused = true,
+    this.isDeviceCurrentlyHovered = true,
   });
 
   /// Are we in Play Mode?
@@ -105,6 +107,17 @@ class TreeState with ChangeNotifier {
   bool isPreloaded;
 
   List<CustomFontEntity> customFonts;
+
+  bool isDeviceCurrentlyFocused;
+  bool isDeviceCurrentlyHovered;
+
+  void onFocusedDeviceChanged(DeviceType device) {
+    isDeviceCurrentlyFocused = device == deviceType;
+  }
+
+  void onHoveredDeviceChanged(DeviceType device) {
+    isDeviceCurrentlyHovered = device == deviceType;
+  }
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
@@ -205,6 +218,8 @@ class TreeState with ChangeNotifier {
     final ComponentFit? fit,
     final NodeID? nodeComponentID,
     final bool? preloaded,
+    final bool? isDeviceCurrentlyFocused,
+    final bool? isDeviceCurrentlyHovered,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -225,6 +240,10 @@ class TreeState with ChangeNotifier {
       fit: fit ?? this.fit,
       nodeComponentID: nodeComponentID ?? this.nodeComponentID,
       isPreloaded: preloaded ?? isPreloaded,
+      isDeviceCurrentlyFocused:
+          isDeviceCurrentlyFocused ?? this.isDeviceCurrentlyFocused,
+      isDeviceCurrentlyHovered:
+          isDeviceCurrentlyHovered ?? this.isDeviceCurrentlyHovered,
     );
   }
 }

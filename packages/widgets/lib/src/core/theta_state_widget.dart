@@ -17,10 +17,12 @@ typedef OnNodeAddedCallBack = void Function(
 
 typedef OnNodeFocusedCallBack = void Function(
   CNode node,
+  DeviceType device,
 )?;
 
 typedef OnNodeHoveredCallBack = void Function(
   CNode node,
+  DeviceType device,
 )?;
 
 typedef OnRightClickCallBack = void Function(
@@ -28,66 +30,63 @@ typedef OnRightClickCallBack = void Function(
   CNode node,
 )?;
 
+typedef OnResizingCallback = void Function(bool value)?;
+
 OnNodeAddedCallBack _onNodeAdded;
 OnNodeChangedCallBack _onNodeChanged;
 OnNodeFocusedCallBack _onNodeFocused;
 OnNodeHoveredCallBack _onNodeHovered;
 OnRightClickCallBack _onRightClick;
+OnResizingCallback _onResizingCallback;
 
-class TreeGlobalState extends StatefulWidget {
+class TreeGlobalState extends ChangeNotifier {
   TreeGlobalState({
-    super.key,
-    required this.child,
     required final OnNodeAddedCallBack onNodeAdded,
     required final OnNodeChangedCallBack onNodeChanged,
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
+    required final OnResizingCallback onResizingCallback,
   }) {
     _onNodeAdded = onNodeAdded;
     _onNodeChanged = onNodeChanged;
     _onNodeFocused = onNodeFocused;
     _onNodeHovered = onNodeHovered;
     _onRightClick = onRightClick;
+    _onResizingCallback = onResizingCallback;
   }
 
-  final Widget child;
-
-  static void onNodeAdded(
+  void onNodeAdded(
     CNode node,
     CNode parent,
     Offset offset,
   ) =>
       _onNodeAdded!.call(node, parent, offset);
 
-  static void onNodeChanged(
+  void onNodeChanged(
     CNode node,
     UITransformResult rect,
     DeviceType deviceType,
   ) =>
       _onNodeChanged!.call(node, rect, deviceType);
 
-  static void onNodeFocused(
+  void onNodeFocused(
     CNode node,
+    DeviceType device,
   ) =>
-      _onNodeFocused!.call(node);
+      _onNodeFocused!.call(node, device);
 
-  static void onNodeHovered(
+  void onNodeHovered(
     CNode node,
+    DeviceType device,
   ) =>
-      _onNodeHovered!.call(node);
+      _onNodeHovered!.call(node, device);
 
-  static void onRightClick(
+  void onRightClick(
     PointerDownEvent e,
     CNode node,
   ) =>
       _onRightClick!.call(e, node);
 
-  @override
-  State<TreeGlobalState> createState() => _TreeGlobalState();
-}
-
-class _TreeGlobalState extends State<TreeGlobalState> {
-  @override
-  Widget build(BuildContext context) => widget.child;
+  void onResizingCallback(bool value) => _onResizingCallback!.call(value);
 }
