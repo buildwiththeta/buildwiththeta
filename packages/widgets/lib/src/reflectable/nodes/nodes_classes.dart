@@ -119,3 +119,9 @@ class _Video {}
   optionalDisplayName: 'Spacer',
 )
 class _Spacer {}
+
+@NodeInfo(
+  type: NType.svgPicture,
+  optionalDisplayName: 'Svg Picture',
+)
+class _SvgPicture {}

@@ -19,4 +19,5 @@ export 'branch_action_log.dart';
 export 'branch_json_log.dart';
 export 'branch_json_file.dart';
 export 'conversion_event.dart';
+export 'asset.dart';
 export 'custom_font.dart';

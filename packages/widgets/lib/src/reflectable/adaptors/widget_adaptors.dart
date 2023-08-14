@@ -478,3 +478,25 @@ class SpacerAdapter extends WidgetAdapter {
 
   SpacerAdapter.create() : this();
 }
+
+/// Svg Picture
+@dynamicAdapter
+@NodeKey(NType.svgPicture)
+class SvgPictureAdapter extends WidgetAdapter {
+  const SvgPictureAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSvgPicture(
+        nodeState: state,
+        image: state.node.getAttributes[DBKeys.image] as FTextTypeInput,
+        width: state.node.getAttributes[DBKeys.width] as FSize,
+        height: state.node.getAttributes[DBKeys.height] as FSize,
+        boxFit: state.node.getAttributes[DBKeys.boxFit] as FBoxFit,
+        fill: state.node.getAttributes[DBKeys.fill] as FFill,
+      );
+
+  SvgPictureAdapter.create() : this();
+}

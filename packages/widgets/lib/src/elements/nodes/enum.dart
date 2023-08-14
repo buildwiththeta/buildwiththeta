@@ -33,6 +33,7 @@ enum NType {
   listViewBuilder('listViewBuilder'),
   listViewSeparated('listViewSeparated'),
   lottie('lottie'),
+  svgPicture('svgPicture'),
   opacity('opacity'),
   outlinedButton('outlinedButton'),
   padding('padding'),

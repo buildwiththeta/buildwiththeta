@@ -1,3 +1,7 @@
+## 0.2.0
+
+- [x] Fix: UI / components improved.
+
 ## 0.1.1
 
 - [x] Fix: dependencies updated.

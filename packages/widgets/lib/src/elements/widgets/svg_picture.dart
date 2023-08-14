@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
 
-/// Returns a Lottie widget
+/// Returns a Svg Picture widget
 /// It wants a [FTextTypeInput] as a tag
 /// It wants a [FSize] as a width
 /// It wants a [FSize] as a height
-/// It wants a [FBoxFit] as a boxFit
 /// It wants a [BuildContext] and a [WidgetState] to get the [FSize] and [FFill] values.
-class OpenWLottie extends NodeWidget {
-  /// Returns a Lottie widget
-  const OpenWLottie({
+class OpenWSvgPicture extends NodeWidget {
+  /// Returns a Svg Picture widget
+  const OpenWSvgPicture({
     super.key,
     required super.nodeState,
     required this.image,
     required this.width,
     required this.height,
     required this.boxFit,
+    required this.fill,
   });
 
   /// The image width
@@ -32,17 +32,27 @@ class OpenWLottie extends NodeWidget {
   /// The image boxFit
   final FBoxFit boxFit;
 
+  final FFill fill;
+
   @override
   Widget build(
     final BuildContext context,
     final TreeState state,
     final WidgetState nodeState,
   ) {
-    return Lottie.network(
-      /// if the image is null, it will return a default image
-      image.value != null
-          ? image.value!
-          : 'https://assets10.lottiefiles.com/packages/lf20_ptplezpy.json',
+    final color = fill.type == FFillType.none
+        ? null
+        : HexColor(fill.getHexColor(context, state.colorStyles, state.theme));
+    final img = image.getImage(
+      state: state,
+      context: context,
+      loop: nodeState.loop,
+    ) as String;
+    var result = img.isNotEmpty
+        ? img
+        : 'https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/logos/Theta_extended_negative.svg';
+    return SvgPicture.network(
+      result,
       width: width.get(
         state: state,
         context: context,
@@ -53,13 +63,9 @@ class OpenWLottie extends NodeWidget {
         context: context,
         isWidth: false,
       ),
+      // ignore: deprecated_member_use
+      color: color,
       fit: BoxFit.contain,
-      errorBuilder: (context, exception, stackTrace) {
-        return Container(
-          color: Colors.transparent,
-          child: const Placeholder(),
-        );
-      },
     );
   }
 }

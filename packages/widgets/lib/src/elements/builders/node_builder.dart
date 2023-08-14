@@ -30,22 +30,28 @@ class NodeBuilder extends StatefulWidget {
 }
 
 class _NodeBuilderState extends State<NodeBuilder> {
-  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode) {
-    return (focusNode?.id == widget.state.node.id)
-        ? BoxDecoration(
-            border: Border.all(width: 2, color: Palette.blue),
-          )
-        : (hoverNode?.id == widget.state.node.id)
-            ? (hoverNode?.id == widget.state.node.id &&
-                    [NType.component, NType.teamComponent]
-                        .contains(hoverNode?.type))
-                ? BoxDecoration(
-                    border: Border.all(width: 2, color: Palette.magenta),
-                  )
-                : BoxDecoration(
-                    border: Border.all(width: 2, color: Palette.blue),
-                  )
-            : const BoxDecoration();
+  bool clickable = true;
+
+  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode,
+      bool isDeviceFocused, bool isDeviceHovered) {
+    if (isDeviceFocused && focusNode?.id == widget.state.node.id) {
+      return BoxDecoration(
+        border: Border.all(width: 2, color: Palette.blue),
+      );
+    }
+    if (isDeviceHovered) {
+      if (hoverNode?.id == widget.state.node.id) {
+        if ([NType.component, NType.teamComponent].contains(hoverNode?.type)) {
+          return BoxDecoration(
+            border: Border.all(width: 2, color: Palette.magenta),
+          );
+        }
+        return BoxDecoration(
+          border: Border.all(width: 2, color: Palette.blue),
+        );
+      }
+    }
+    return const BoxDecoration();
   }
 
   EdgeInsets _handleMargins(TreeState state) =>
@@ -173,7 +179,14 @@ class _NodeBuilderState extends State<NodeBuilder> {
       widget.state.node,
       MouseRegion(
         hitTestBehavior: HitTestBehavior.opaque,
-        onEnter: (e) => widget.onHover.call(),
+        onEnter: (e) {
+          if (clickable) {
+            widget.onHover.call();
+          }
+        },
+        onExit: (e) => setState(() {
+          clickable = true;
+        }),
         child: Visibility(
           visible: _handleVisibility(state),
           child: Padding(
@@ -182,6 +195,8 @@ class _NodeBuilderState extends State<NodeBuilder> {
               decoration: _handleDecorationChange(
                 state.hoveredNode,
                 state.focusedNode,
+                state.isDeviceCurrentlyFocused,
+                state.isDeviceCurrentlyHovered,
               ),
               position: DecorationPosition.foreground,
               child: Transform.rotate(
@@ -189,9 +204,14 @@ class _NodeBuilderState extends State<NodeBuilder> {
                 child: Padding(
                   padding: _handlePadding(state),
                   child: GestureDetectorInEditor(
+                    key: ValueKey(widget.state.node.id + clickable.toString()),
                     node: widget.state.node,
+                    clickable: clickable,
                     onTap: widget.onTap,
                     onPanStart: widget.onPanStart,
+                    onDoubleTap: () => setState(() {
+                      clickable = false;
+                    }),
                     child: GestureDetectorForPlay(
                       state: widget.state,
                       child: handleSlideAnimation(
@@ -221,14 +241,18 @@ class GestureDetectorInEditor extends StatelessWidget {
     super.key,
     required this.node,
     required this.child,
+    required this.clickable,
     required this.onTap,
     required this.onPanStart,
+    required this.onDoubleTap,
   });
 
   final CNode node;
   final Widget child;
+  final bool clickable;
   final VoidCallback onTap;
   final VoidCallback onPanStart;
+  final VoidCallback onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -236,11 +260,16 @@ class GestureDetectorInEditor extends StatelessWidget {
     if (state.forPlay) {
       return child;
     }
+    if (!clickable) {
+      return child;
+    }
     return Listener(
-        onPointerDown: (e) => TreeGlobalState.onRightClick(e, node),
+        onPointerDown: (e) =>
+            context.read<TreeGlobalState>().onRightClick(e, node),
         child: GestureDetector(
           onTap: onTap,
-          onPanStart: (e) => onPanStart,
+          onDoubleTap: onDoubleTap,
+          //onPanStart: (e) => onPanStart,
           child: child,
         ));
   }

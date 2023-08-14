@@ -218,6 +218,8 @@ class FTextTypeInput {
         return value ?? '';
       } else if (deviceType == DeviceType.tablet) {
         return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+      } else if (deviceType == DeviceType.laptop) {
+        return valueLaptop != '' ? valueLaptop ?? value ?? '' : value ?? '';
       } else {
         return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
       }

@@ -45,11 +45,11 @@ class OpenWScaffold extends NodeWidget {
       onAcceptWithDetails: (data) {
         var renderBox = context.findRenderObject() as RenderBox;
         final offsetLocalRelative = renderBox.globalToLocal(data.offset);
-        TreeGlobalState.onNodeAdded(
-          data.data.node,
-          nodeState.node,
-          offsetLocalRelative,
-        );
+        context.read<TreeGlobalState>().onNodeAdded(
+              data.data.node,
+              nodeState.node,
+              offsetLocalRelative,
+            );
       },
       builder: (context, _, __) => Stack(
         children: [
@@ -57,7 +57,9 @@ class OpenWScaffold extends NodeWidget {
             child: MouseRegion(onHover: (e) {
               final state = context.read<TreeState>();
               if (state.hoveredNode?.id != nodeState.node.id) {
-                TreeGlobalState.onNodeHovered(nodeState.node);
+                context
+                    .read<TreeGlobalState>()
+                    .onNodeHovered(nodeState.node, state.deviceType);
               }
             }),
           ),
