@@ -1,3 +1,7 @@
+## 0.6.0
+
+- [x] Feat: support to local assets.
+
 ## 0.5.1
 
 - [x] Feat: added hoveredNode in TreeState

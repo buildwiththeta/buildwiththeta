@@ -1,3 +1,8 @@
+## 0.6.0
+
+- [x] Feat: SVG, Lottie
+- [x] BoxTransform improved
+
 ## 0.5.1
 
 - [x] Feat: added hovered feature.

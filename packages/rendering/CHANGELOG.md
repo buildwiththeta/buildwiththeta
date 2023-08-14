@@ -1,3 +1,7 @@
+## 0.1.8
+
+- [x] Feat: add support to models 0.6.0.
+
 ## 0.1.7
 
 - [x] Feat: add support to models 0.5.0.

@@ -63,6 +63,7 @@ class OpenWSvgPicture extends NodeWidget {
         context: context,
         isWidth: false,
       ),
+      // ignore: deprecated_member_use
       color: color,
       fit: BoxFit.contain,
     );

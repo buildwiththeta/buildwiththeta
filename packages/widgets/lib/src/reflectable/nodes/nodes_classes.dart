@@ -16,7 +16,7 @@ part 'nodes_classes.g.dart';
 /// It is used to generate the file nodes_classes.g.dart
 /// Without this line, reflectable will not detect this file
 /// Uncomment this line when you want to generate the file nodes_classes.g.dart
-///part 'nodes_classes.nodebuilder.g.dart';
+//part 'nodes_classes.nodebuilder.g.dart';
 
 @NodeInfo(
   type: NType.align,
