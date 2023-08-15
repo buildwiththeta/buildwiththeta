@@ -1,3 +1,13 @@
+## 0.6.2
+
+- [x] Feat: docs updated.
+
+## 0.6.1
+
+- [x] Fix: TreGlobalState
+- [x] Feat: Lottie & SVG support
+- [x] Feat: custom font support
+
 ## 0.6.0
 
 - [x] Feat: Custom fonts
