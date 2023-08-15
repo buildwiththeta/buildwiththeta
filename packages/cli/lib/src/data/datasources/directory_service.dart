@@ -101,4 +101,17 @@ class DirectoryService {
       }
     }
   }
+
+  Future<void> preloadFonts(Map<String, dynamic> json) async {
+    if (json['fonts'] == null) return;
+    await createDirectories();
+    final fonts = json['fonts'];
+    for (final font in fonts) {
+      _logger.info('📥 Preloading font: ${font["file_name"]}');
+      final res = await _client.get(Uri.parse(font["public_url"]));
+      final file = File(
+          '$thetaAssetsDirectory/${base64.encode(utf8.encode(font["file_name"]))}.${font["public_url"].split('.').last}');
+      await file.writeAsBytes(res.bodyBytes);
+    }
+  }
 }

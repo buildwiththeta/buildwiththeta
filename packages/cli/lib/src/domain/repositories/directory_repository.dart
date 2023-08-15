@@ -7,4 +7,5 @@ abstract class DirectoryRepository {
       required String content});
 
   Future<Either<Exception, void>> preloadImages(Map<String, dynamic> json);
+  Future<Either<Exception, void>> preloadFonts(Map<String, dynamic> json);
 }

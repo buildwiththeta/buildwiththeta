@@ -9,6 +9,7 @@ import 'package:theta_cli/src/domain/usecases/base_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/preload_fonts.dart';
 import 'package:theta_cli/src/domain/usecases/preload_images.dart';
 
 /// {@template preload_command}
@@ -21,12 +22,6 @@ class PreloadComponentCommand extends Command<int> {
   PreloadComponentCommand({
     required Logger logger,
   }) : _logger = logger {
-    argParser.addOption(
-      'branch',
-      abbr: 'b',
-      help: 'Branch name. Optional.',
-      mandatory: false,
-    );
     argParser.addOption(
       'anon-key',
       abbr: 'k',
@@ -57,6 +52,7 @@ class PreloadComponentCommand extends Command<int> {
     }
 
     _logger.info('Welcome to Theta CLI! Before we begin:');
+    final branch = Input(prompt: 'Enter branch name').interact();
     List<String> componentsName = [];
     var confirm = false;
     do {
@@ -77,7 +73,6 @@ class PreloadComponentCommand extends Command<int> {
     ).interact();
 
     final anonKey = argResults?['anon-key'];
-    final branch = argResults?['branch'];
 
     await fetchStyles(anonKey);
     progress.increase(1);
@@ -102,6 +97,7 @@ class PreloadComponentCommand extends Command<int> {
       throw Exception('❗️ Error fetching styles, message: $l');
     }, (r) async {
       _logger.success('✅ Styles loaded successfully.');
+      await preloadFonts(r);
       await createPreloadFile(anonKey: anonKey, jsonKey: 'styles', content: r);
     });
   }
@@ -139,5 +135,12 @@ class PreloadComponentCommand extends Command<int> {
           .fold(
         (l) => _logger.err(l.toString()),
         (r) => _logger.success('Images preloaded successfully in /assets.'),
+      );
+
+  Future<void> preloadFonts(String content) => getIt<PreloadFontsUseCase>()(
+              PreloadFontsUseCaseParams(json: json.decode(content)))
+          .fold(
+        (l) => _logger.err(l.toString()),
+        (r) => _logger.success('Fonts preloaded successfully in /assets.'),
       );
 }
