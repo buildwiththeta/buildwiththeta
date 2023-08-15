@@ -1,3 +1,7 @@
+## 0.1.9
+
+- [x] Feat: new methods for node ordering.
+
 ## 0.1.8
 
 - [x] Feat: add support to models 0.6.0.
