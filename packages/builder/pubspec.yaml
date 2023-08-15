@@ -31,9 +31,9 @@ dependencies:
     sdk: flutter
 
   theta_analytics: ^0.1.4
-  theta_models: ^0.5.0
+  theta_models: ^0.6.0
   theta_rendering: ^0.1.7
-  theta_open_widgets: ^0.5.0
+  theta_open_widgets: ^0.6.0
 
   light_logger: ^0.0.3
 
@@ -47,6 +47,14 @@ dependencies:
   path_provider: ^2.0.15
   archive: ^3.3.7
   encrypt: ^5.0.1
+
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_open_widgets:
+    path: ../widgets
+  theta_rendering:
+    path: ../rendering
 
 dev_dependencies:
   flutter_test:

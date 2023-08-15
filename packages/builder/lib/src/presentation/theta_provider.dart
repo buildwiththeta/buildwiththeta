@@ -52,12 +52,15 @@ class _ThetaProviderState extends State<ThetaProvider> {
         workflows: [],
         config: const ProjectConfigModel(),
       ),
-      child: TreeGlobalState(
-        onNodeChanged: (_, __, ___) {},
-        onNodeFocused: (_) {},
-        onNodeHovered: (_) {},
-        onNodeAdded: (_, __, ___) {},
-        onRightClick: (_, __) {},
+      child: ChangeNotifierProvider(
+        create: (_) => TreeGlobalState(
+          onResizingCallback: (value) => {},
+          onNodeChanged: (_, __, ___) {},
+          onNodeFocused: (_, __) {},
+          onNodeHovered: (_, __) {},
+          onNodeAdded: (_, __, ___) {},
+          onRightClick: (_, __) {},
+        ),
         child: widget.child,
       ),
     );
