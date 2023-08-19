@@ -191,27 +191,27 @@ class _NodeBuilderState extends State<NodeBuilder> {
           visible: _handleVisibility(state),
           child: Padding(
             padding: _handleMargins(state),
-            child: DecoratedBox(
-              decoration: _handleDecorationChange(
-                state.hoveredNode,
-                state.focusedNode,
-                state.isDeviceCurrentlyFocused,
-                state.isDeviceCurrentlyHovered,
-              ),
-              position: DecorationPosition.foreground,
-              child: Transform.rotate(
-                angle: _handleRotation(state),
-                child: Padding(
-                  padding: _handlePadding(state),
-                  child: GestureDetectorInEditor(
-                    key: ValueKey(widget.state.node.id + clickable.toString()),
-                    node: widget.state.node,
-                    clickable: clickable,
-                    onTap: widget.onTap,
-                    onPanStart: widget.onPanStart,
-                    onDoubleTap: () => setState(() {
-                      clickable = false;
-                    }),
+            child: GestureDetectorInEditor(
+              key: ValueKey(widget.state.node.id + clickable.toString()),
+              node: widget.state.node,
+              clickable: clickable,
+              onTap: widget.onTap,
+              onPanStart: widget.onPanStart,
+              onDoubleTap: () => setState(() {
+                clickable = false;
+              }),
+              child: DecoratedBox(
+                decoration: _handleDecorationChange(
+                  state.hoveredNode,
+                  state.focusedNode,
+                  state.isDeviceCurrentlyFocused,
+                  state.isDeviceCurrentlyHovered,
+                ),
+                position: DecorationPosition.foreground,
+                child: Transform.rotate(
+                  angle: _handleRotation(state),
+                  child: Padding(
+                    padding: _handlePadding(state),
                     child: GestureDetectorForPlay(
                       state: widget.state,
                       child: handleSlideAnimation(

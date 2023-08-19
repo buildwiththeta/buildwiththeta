@@ -35,13 +35,13 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.value: FTextTypeInput(value: 'Click here'),
         DBKeys.width: FSize(
           size: 'max',
-          sizeTablet: 'max',
-          sizeDesktop: 'max',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.height: FSize(
           size: '48',
-          sizeTablet: '48',
-          sizeDesktop: '48',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [8, 8, 8, 8],
@@ -130,43 +130,43 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.minWidth: FSize(
           size: '0',
-          sizeTablet: '0',
-          sizeDesktop: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.maxWidth: FSize(
           size: 'max',
-          sizeTablet: 'max',
-          sizeDesktop: 'max',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.minHeight: FSize(
           size: '0',
-          sizeTablet: '0',
-          sizeDesktop: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.maxHeight: FSize(
           size: '250',
-          sizeTablet: '250',
-          sizeDesktop: '250',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.width: FSize(
           size: '150',
-          sizeTablet: '150',
-          sizeDesktop: '150',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.height: FSize(
           size: '150',
-          sizeTablet: '150',
-          sizeDesktop: '150',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.margins: FMargins(
           margins: [0, 0, 0, 0],
-          marginsTablet: [0, 0, 0, 0],
-          marginsDesktop: [0, 0, 0, 0],
+          marginsTablet: null,
+          marginsDesktop: null,
         ),
         DBKeys.padding: FMargins(
           margins: [0, 0, 0, 0],
-          marginsTablet: [0, 0, 0, 0],
-          marginsDesktop: [0, 0, 0, 0],
+          marginsTablet: null,
+          marginsDesktop: null,
         ),
         DBKeys.borderRadius: FBorderRadius(
           radiusMobile: [0, 0, 0, 0],
@@ -181,8 +181,8 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
           fill: FFill(type: FFillType.none),
           opacity: FSize(
             size: '0',
-            sizeTablet: '0',
-            sizeDesktop: '0',
+            sizeTablet: null,
+            sizeDesktop: null,
           ),
         ),
         DBKeys.fill: FFill(),
@@ -190,8 +190,8 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
           fill: FFill(),
           width: FMargins(
             margins: [0, 0, 0, 0],
-            marginsTablet: [0, 0, 0, 0],
-            marginsDesktop: [0, 0, 0, 0],
+            marginsTablet: null,
+            marginsDesktop: null,
           ),
           style: FBorderStyle(
             value: BorderStyle.none,
@@ -199,6 +199,7 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.image: FTextTypeInput(),
         DBKeys.boxFit: FBoxFit(),
+        DBKeys.align: FAlign(),
       };
 
   BoxDefaultAttributes.create() : this();
@@ -215,8 +216,8 @@ class IconDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.icon: 'plus',
         DBKeys.width: FSize(
           size: '24',
-          sizeTablet: '32',
-          sizeDesktop: '40',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.fill: FFill(),
       };
@@ -256,13 +257,13 @@ class LottieDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.width: FSize(
           size: 'max',
-          sizeTablet: 'max',
-          sizeDesktop: 'max',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.height: FSize(
           size: '150',
-          sizeTablet: '150',
-          sizeDesktop: '150',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.image: FTextTypeInput(
           value: 'https://assets6.lottiefiles.com/packages/lf20_c7mbzzus.json',
@@ -285,13 +286,13 @@ class SvgPictureDefaultAttributes extends DefaultAttributesAdapter {
   Map<String, dynamic> get get => const <String, dynamic>{
         DBKeys.width: FSize(
           size: 'max',
-          sizeTablet: 'max',
-          sizeDesktop: 'max',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.height: FSize(
           size: '150',
-          sizeTablet: '150',
-          sizeDesktop: '150',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.image: FTextTypeInput(),
         DBKeys.boxFit: FBoxFit(
@@ -369,19 +370,19 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.textStyle: FTextStyle(),
         DBKeys.margins: FMargins(
           margins: [16, 8, 16, 8],
-          marginsTablet: [16, 8, 16, 8],
-          marginsDesktop: [16, 8, 16, 8],
+          marginsTablet: null,
+          marginsDesktop: null,
         ),
         DBKeys.padding: FMargins(
           margins: [16, 0, 0, 0],
-          marginsTablet: [16, 0, 0, 0],
-          marginsDesktop: [16, 0, 0, 0],
+          marginsTablet: null,
+          marginsDesktop: null,
         ),
         DBKeys.fill: FFill(),
         DBKeys.width: FSize(
           size: 'max',
-          sizeTablet: 'max',
-          sizeDesktop: 'max',
+          sizeTablet: null,
+          sizeDesktop: null,
         ),
         DBKeys.maxLines: FTextTypeInput(value: ''),
         DBKeys.minLines: FTextTypeInput(value: ''),

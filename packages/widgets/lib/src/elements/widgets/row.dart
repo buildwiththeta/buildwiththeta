@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 // ignore_for_file: public_member_api_docs
 
@@ -29,7 +28,7 @@ class OpenWRow extends Flex {
 
   @override
   RenderFlex createRenderObject(BuildContext context) {
-    return CRenderFlex(
+    return RenderFlex(
       direction: direction,
       mainAxisAlignment: mainAxisAlignment,
       mainAxisSize: mainAxisSize,
