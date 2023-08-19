@@ -3,7 +3,7 @@
     "name": "Example",
     "description": "Example",
     "release_notes": "\n1. \n2.  \n3.",
-    "version": "0.0.10",
+    "version": "0.0.1",
     "os": "macos",
     "installers": [{
       "initializer": "file",
