@@ -7,7 +7,8 @@
     "os": "macos",
     "installers": [{
       "initializer": "file",
-      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/theta-0.0.2.dmg"
+      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/theta-0.0.2.dmg",
+      "close_on_installing": true,
     }]
   },
   {
