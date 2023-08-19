@@ -1,3 +1,8 @@
+## 0.6.4
+
+- [x] Feat: models 0.6.1
+- [x] Feat: default attributes changed.
+
 ## 0.6.3
 
 - [x] Feat: DS to 0.3.0.

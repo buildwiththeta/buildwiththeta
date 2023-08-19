@@ -1,3 +1,7 @@
+## 0.6.1
+
+- [x] Feat: remove required sizes for Tablet and Desktop in FSize.
+
 ## 0.6.0
 
 - [x] Feat: support to local assets.
