@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Example",
+    "description": "Example",
+    "release_notes": "\n1. \n2.  \n3.",
+    "version": "0.0.10",
+    "os": "macos",
+    "installers": [{
+      "initializer": "file",
+      "file_url": "http://localhost:8000/download/flutter-inappupgrade-v0.3.2-beta.dmg"
+    }]
+  }
+]
