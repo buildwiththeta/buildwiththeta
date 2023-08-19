@@ -54,11 +54,11 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Counter View',
+            'SocialCard1',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
-            placeholder: const CircularProgressIndicator(),
+            placeholder: const Center(child: CircularProgressIndicator()),
 
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error.toString()),

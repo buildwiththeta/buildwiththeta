@@ -1,3 +1,8 @@
+
+## 0.6.3
+
+- [x] Hardfix: ChildOrder parsed in double?.
+
 ## 0.6.2
 
 - [x] Feat: docs updated.

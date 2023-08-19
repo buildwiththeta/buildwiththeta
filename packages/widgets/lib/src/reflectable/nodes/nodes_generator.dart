@@ -159,7 +159,7 @@ class $generatedClassName extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null ? (json['child_order'] as num).toDouble() : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],

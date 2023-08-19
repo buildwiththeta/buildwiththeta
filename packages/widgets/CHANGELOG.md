@@ -1,3 +1,11 @@
+## 0.6.2
+
+- [x] Hardfix: ChildOrder parsed in double?.
+
+## 0.6.1
+
+- [x] Hardfix: ChildOrder parsed in double.
+
 ## 0.6.0
 
 - [x] Feat: SVG, Lottie

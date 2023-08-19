@@ -182,7 +182,7 @@ const lightTheme = ThetaTheme(
   txtSecondary: Color(0xFF181818),
   txtTertiary: Color(0xFF222222),
   txtGrey: Color(0xFF444444),
-  buttonColor: Palette.blue,
+  buttonColor: Palette.purple,
   redError: Color(0xFFff3b30),
   titleTextStyle: TextStyle(
     fontFamily: 'Degular',
@@ -252,7 +252,7 @@ const darkTheme = ThetaTheme(
   txtSecondary: Color(0xFFf1f1f1),
   txtTertiary: Color(0xFFe6e6e6),
   txtGrey: Color(0xFFd8d8d8),
-  buttonColor: Palette.blue,
+  buttonColor: Palette.purple,
   redError: Color(0xFFff3b30),
   titleTextStyle: TextStyle(
     fontFamily: 'Degular',

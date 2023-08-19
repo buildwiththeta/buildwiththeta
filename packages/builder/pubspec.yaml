@@ -1,7 +1,7 @@
 name: theta
 description: Prototyping and testing your app in production with UI instant updates. 
 
-version: 0.6.2
+version: 0.6.3
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -33,7 +33,7 @@ dependencies:
   theta_analytics: ^0.1.4
   theta_models: ^0.6.0
   theta_rendering: ^0.1.7
-  theta_open_widgets: ^0.6.0
+  theta_open_widgets: ^0.6.2
 
   light_logger: ^0.0.3
 

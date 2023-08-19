@@ -145,7 +145,9 @@ class AlignOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -299,7 +301,9 @@ class ButtonOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -453,7 +457,9 @@ class ColumnOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -607,7 +613,9 @@ class ComponentOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -762,7 +770,9 @@ class TeamComponentOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -917,7 +927,9 @@ class RowOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1071,7 +1083,9 @@ class ContainerOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1226,7 +1240,9 @@ class ImageOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1380,7 +1396,9 @@ class IconOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1534,7 +1552,9 @@ class ListViewOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1688,7 +1708,9 @@ class LottieOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1842,7 +1864,9 @@ class ScaffoldOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -1996,7 +2020,9 @@ class StackOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -2150,7 +2176,9 @@ class TextOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -2304,7 +2332,9 @@ class TextFieldOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -2459,7 +2489,9 @@ class VideoOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -2613,7 +2645,9 @@ class SpacerOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
@@ -2767,7 +2801,9 @@ class SvgPictureOpenNode extends CNode {
       attributes: attributes,
       rectProperties: rectProperties,
       updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'],
+      childOrder: json['child_order'] != null
+          ? (json['child_order'] as num).toDouble()
+          : null,
       pageID: json['page_id'],
       stabilID: json['stabil_id'],
       componentID: json['component_id'],
