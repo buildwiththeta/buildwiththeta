@@ -123,6 +123,7 @@ class DBKeys {
   static const String autoCorrect = 'autoC';
   static const String obscureText = 'obT';
   static const String selectedItemName = 'sIN';
+  static const String direction = 'dir';
 
   ///calendar v2
   static const String dropdownItem = 'drdI';

@@ -2,7 +2,7 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
-import 'package:meta/meta.dart' as prefix34;
+import 'package:meta/meta.dart' as prefix35;
 import 'package:theta_models/src/widgets/dynamic_attributes_parse.dart'
     as prefix0;
 import 'package:theta_models/src/widgets/features/align.dart' as prefix1;
@@ -16,47 +16,48 @@ import 'package:theta_models/src/widgets/features/condition_type.dart'
     as prefix7;
 import 'package:theta_models/src/widgets/features/cross_axis_alignment.dart'
     as prefix8;
-import 'package:theta_models/src/widgets/features/fill.dart' as prefix9;
-import 'package:theta_models/src/widgets/features/font_size.dart' as prefix10;
-import 'package:theta_models/src/widgets/features/font_style.dart' as prefix11;
-import 'package:theta_models/src/widgets/features/font_weight.dart' as prefix12;
-import 'package:theta_models/src/widgets/features/icon_type.dart' as prefix13;
-import 'package:theta_models/src/widgets/features/image_type.dart' as prefix14;
+import 'package:theta_models/src/widgets/features/direction.dart' as prefix9;
+import 'package:theta_models/src/widgets/features/fill.dart' as prefix10;
+import 'package:theta_models/src/widgets/features/font_size.dart' as prefix11;
+import 'package:theta_models/src/widgets/features/font_style.dart' as prefix12;
+import 'package:theta_models/src/widgets/features/font_weight.dart' as prefix13;
+import 'package:theta_models/src/widgets/features/icon_type.dart' as prefix14;
+import 'package:theta_models/src/widgets/features/image_type.dart' as prefix15;
 import 'package:theta_models/src/widgets/features/keyboard_type.dart'
-    as prefix15;
-import 'package:theta_models/src/widgets/features/main_axis_alignment.dart'
     as prefix16;
-import 'package:theta_models/src/widgets/features/main_axis_size.dart'
+import 'package:theta_models/src/widgets/features/main_axis_alignment.dart'
     as prefix17;
-import 'package:theta_models/src/widgets/features/margins.dart' as prefix18;
-import 'package:theta_models/src/widgets/features/shadow.dart' as prefix19;
-import 'package:theta_models/src/widgets/features/sizes.dart' as prefix20;
-import 'package:theta_models/src/widgets/features/text_align.dart' as prefix21;
+import 'package:theta_models/src/widgets/features/main_axis_size.dart'
+    as prefix18;
+import 'package:theta_models/src/widgets/features/margins.dart' as prefix19;
+import 'package:theta_models/src/widgets/features/shadow.dart' as prefix20;
+import 'package:theta_models/src/widgets/features/sizes.dart' as prefix21;
+import 'package:theta_models/src/widgets/features/text_align.dart' as prefix22;
 import 'package:theta_models/src/widgets/features/text_decoration.dart'
-    as prefix22;
-import 'package:theta_models/src/widgets/features/text_direction.dart'
     as prefix23;
-import 'package:theta_models/src/widgets/features/text_style.dart' as prefix24;
+import 'package:theta_models/src/widgets/features/text_direction.dart'
+    as prefix24;
+import 'package:theta_models/src/widgets/features/text_style.dart' as prefix25;
 import 'package:theta_models/src/widgets/features/text_type_input.dart'
-    as prefix25;
-import 'package:theta_models/src/widgets/intrinsic_states/classes.dart'
-    as prefix27;
-import 'package:theta_models/src/widgets/intrinsic_states/intrinsic_state_parse.dart'
     as prefix26;
-import 'package:theta_models/src/widgets/nodes/key_constants.dart' as prefix35;
-import 'package:theta_models/src/widgets/nodes/node_type.dart' as prefix36;
-import 'package:theta_open_widgets/src/reflectable/adaptors/widget_adapter_annotation.dart'
+import 'package:theta_models/src/widgets/intrinsic_states/classes.dart'
     as prefix28;
-import 'package:theta_open_widgets/src/reflectable/adaptors/widget_adaptors.dart'
+import 'package:theta_models/src/widgets/intrinsic_states/intrinsic_state_parse.dart'
+    as prefix27;
+import 'package:theta_models/src/widgets/nodes/key_constants.dart' as prefix36;
+import 'package:theta_models/src/widgets/nodes/node_type.dart' as prefix37;
+import 'package:theta_open_widgets/src/reflectable/adaptors/widget_adapter_annotation.dart'
     as prefix29;
-import 'package:theta_open_widgets/src/reflectable/default_attributes/default_attributes_annotation.dart'
+import 'package:theta_open_widgets/src/reflectable/adaptors/widget_adaptors.dart'
     as prefix30;
-import 'package:theta_open_widgets/src/reflectable/default_attributes/default_attributes_classes.dart'
+import 'package:theta_open_widgets/src/reflectable/default_attributes/default_attributes_annotation.dart'
     as prefix31;
-import 'package:theta_open_widgets/src/reflectable/nodes/nodes_classes.dart'
-    as prefix33;
-import 'package:theta_open_widgets/src/reflectable/nodes/nodes_parse.dart'
+import 'package:theta_open_widgets/src/reflectable/default_attributes/default_attributes_classes.dart'
     as prefix32;
+import 'package:theta_open_widgets/src/reflectable/nodes/nodes_classes.dart'
+    as prefix34;
+import 'package:theta_open_widgets/src/reflectable/nodes/nodes_parse.dart'
+    as prefix33;
 
 // ignore_for_file: camel_case_types
 // ignore_for_file: implementation_imports
@@ -103,9 +104,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.align)
+              const prefix0.AttributeKey(prefix36.DBKeys.align)
             ],
             {
               r'fromJson': 0,
@@ -133,9 +134,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.blendMode)
+              const prefix0.AttributeKey(prefix36.DBKeys.blendMode)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -155,10 +156,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.borders),
-              const prefix0.AttributeKey(prefix35.DBKeys.activeBorders)
+              const prefix0.AttributeKey(prefix36.DBKeys.borders),
+              const prefix0.AttributeKey(prefix36.DBKeys.activeBorders)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -178,10 +179,10 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.borderRadius),
-              const prefix0.AttributeKey(prefix35.DBKeys.borderRadiusTwo)
+              const prefix0.AttributeKey(prefix36.DBKeys.borderRadius),
+              const prefix0.AttributeKey(prefix36.DBKeys.borderRadiusTwo)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -201,9 +202,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.borderStyle)
+              const prefix0.AttributeKey(prefix36.DBKeys.borderStyle)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -223,9 +224,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.boxFit)
+              const prefix0.AttributeKey(prefix36.DBKeys.boxFit)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -245,9 +246,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.conditionType)
+              const prefix0.AttributeKey(prefix36.DBKeys.conditionType)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -267,14 +268,14 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.crossAxisAlignment)
+              const prefix0.AttributeKey(prefix36.DBKeys.crossAxisAlignment)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FFill',
-            r'.FFill',
+            r'FDirection',
+            r'.FDirection',
             134217735,
             8,
             const prefix0.DynamicAttributeKey(),
@@ -283,10 +284,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             -1,
             {
-              r'fromJson': () => prefix9.FFill.fromJson,
-              r'alignFromJson': () => prefix9.FFill.alignFromJson,
-              r'toCode': () => prefix9.FFill.toCode,
-              r'toCodeTests': () => prefix9.FFill.toCodeTests
+              r'readyForColumn': () => prefix9.FDirection.readyForColumn,
+              r'readyForRow': () => prefix9.FDirection.readyForRow,
+              r'fromJson': () => prefix9.FDirection.fromJson
             },
             {},
             {},
@@ -295,18 +295,44 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[-1],
             const <Object>[
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.bgFill),
-              const prefix0.AttributeKey(prefix35.DBKeys.bgTwoFill),
-              const prefix0.AttributeKey(prefix35.DBKeys.textFill),
-              const prefix0.AttributeKey(prefix35.DBKeys.activeFill),
-              const prefix0.AttributeKey(prefix35.DBKeys.borderFill),
-              const prefix0.AttributeKey(prefix35.DBKeys.enabledBorderColor),
-              const prefix0.AttributeKey(prefix35.DBKeys.focusedBorderColor),
-              const prefix0.AttributeKey(prefix35.DBKeys.cursorColor),
-              const prefix0.AttributeKey(prefix35.DBKeys.hintTextColor),
-              const prefix0.AttributeKey(prefix35.DBKeys.fill),
-              const prefix0.AttributeKey(prefix35.DBKeys.fill2),
-              const prefix0.AttributeKey(prefix35.DBKeys.fill3)
+              const prefix0.AttributeKey(prefix36.DBKeys.direction)
+            ],
+            {r'readyForColumn': 1, r'readyForRow': 1, r'fromJson': 0}),
+        r.NonGenericClassMirrorImpl(
+            r'FFill',
+            r'.FFill',
+            134217735,
+            9,
+            const prefix0.DynamicAttributeKey(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {
+              r'fromJson': () => prefix10.FFill.fromJson,
+              r'alignFromJson': () => prefix10.FFill.alignFromJson,
+              r'toCode': () => prefix10.FFill.toCode,
+              r'toCodeTests': () => prefix10.FFill.toCodeTests
+            },
+            {},
+            {},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix0.dynamicAttributeKey,
+              const prefix0.AttributeKey(prefix36.DBKeys.bgFill),
+              const prefix0.AttributeKey(prefix36.DBKeys.bgTwoFill),
+              const prefix0.AttributeKey(prefix36.DBKeys.textFill),
+              const prefix0.AttributeKey(prefix36.DBKeys.activeFill),
+              const prefix0.AttributeKey(prefix36.DBKeys.borderFill),
+              const prefix0.AttributeKey(prefix36.DBKeys.enabledBorderColor),
+              const prefix0.AttributeKey(prefix36.DBKeys.focusedBorderColor),
+              const prefix0.AttributeKey(prefix36.DBKeys.cursorColor),
+              const prefix0.AttributeKey(prefix36.DBKeys.hintTextColor),
+              const prefix0.AttributeKey(prefix36.DBKeys.fill),
+              const prefix0.AttributeKey(prefix36.DBKeys.fill2),
+              const prefix0.AttributeKey(prefix36.DBKeys.fill3)
             ],
             {
               r'fromJson': 0,
@@ -318,49 +344,27 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'FFontSize',
             r'.FFontSize',
             134217735,
-            9,
-            const prefix0.DynamicAttributeKey(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix10.FFontSize.fromJson},
-            {},
-            {},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix34.immutable,
-              prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.fontSize)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'FFontStyle',
-            r'.FFontStyle',
-            134217735,
             10,
             const prefix0.DynamicAttributeKey(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix11.FFontStyle.fromJson},
+            {r'fromJson': () => prefix11.FFontSize.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.fontStyle)
+              const prefix0.AttributeKey(prefix36.DBKeys.fontSize)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FFontWeight',
-            r'.FFontWeight',
+            r'FFontStyle',
+            r'.FFontStyle',
             134217735,
             11,
             const prefix0.DynamicAttributeKey(),
@@ -368,11 +372,33 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
+            {r'fromJson': () => prefix12.FFontStyle.fromJson},
+            {},
+            {},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix35.immutable,
+              prefix0.dynamicAttributeKey,
+              const prefix0.AttributeKey(prefix36.DBKeys.fontStyle)
+            ],
+            {r'fromJson': 0}),
+        r.NonGenericClassMirrorImpl(
+            r'FFontWeight',
+            r'.FFontWeight',
+            134217735,
+            12,
+            const prefix0.DynamicAttributeKey(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
             {
               r'convertDropDownToValue': () =>
-                  prefix12.FFontWeight.convertDropDownToValue,
-              r'fromJson': () => prefix12.FFontWeight.fromJson,
-              r'getListDropDown': () => prefix12.FFontWeight.getListDropDown
+                  prefix13.FFontWeight.convertDropDownToValue,
+              r'fromJson': () => prefix13.FFontWeight.fromJson,
+              r'getListDropDown': () => prefix13.FFontWeight.getListDropDown
             },
             {},
             {},
@@ -380,9 +406,9 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.fontWeight)
+              const prefix0.AttributeKey(prefix36.DBKeys.fontWeight)
             ],
             {
               r'convertDropDownToValue': 0,
@@ -393,48 +419,26 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'FIconType',
             r'.FIconType',
             134217735,
-            12,
-            const prefix0.DynamicAttributeKey(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix13.FIconType.fromJson},
-            {},
-            {},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.iconType)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'FImageType',
-            r'.FImageType',
-            134217735,
             13,
             const prefix0.DynamicAttributeKey(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix14.FImageType.fromJson},
+            {r'fromJson': () => prefix14.FIconType.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.imageType)
+              const prefix0.AttributeKey(prefix36.DBKeys.iconType)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FKeyboardType',
-            r'.FKeyboardType',
+            r'FImageType',
+            r'.FImageType',
             134217735,
             14,
             const prefix0.DynamicAttributeKey(),
@@ -442,21 +446,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix15.FKeyboardType.fromJson},
+            {r'fromJson': () => prefix15.FImageType.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.keyboardType),
-              prefix34.immutable
+              const prefix0.AttributeKey(prefix36.DBKeys.imageType)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FMainAxisAlignment',
-            r'.FMainAxisAlignment',
+            r'FKeyboardType',
+            r'.FKeyboardType',
             134217735,
             15,
             const prefix0.DynamicAttributeKey(),
@@ -464,21 +468,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix16.FMainAxisAlignment.fromJson},
+            {r'fromJson': () => prefix16.FKeyboardType.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.mainAxisAlignment)
+              const prefix0.AttributeKey(prefix36.DBKeys.keyboardType),
+              prefix35.immutable
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FMainAxisSize',
-            r'.FMainAxisSize',
+            r'FMainAxisAlignment',
+            r'.FMainAxisAlignment',
             134217735,
             16,
             const prefix0.DynamicAttributeKey(),
@@ -486,20 +490,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix17.FMainAxisSize.fromJson},
+            {r'fromJson': () => prefix17.FMainAxisAlignment.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.mainAxisSize)
+              const prefix0.AttributeKey(prefix36.DBKeys.mainAxisAlignment)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FMargins',
-            r'.FMargins',
+            r'FMainAxisSize',
+            r'.FMainAxisSize',
             134217735,
             17,
             const prefix0.DynamicAttributeKey(),
@@ -507,25 +512,20 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {
-              r'fromJson': () => prefix18.FMargins.fromJson,
-              r'convertToCode': () => prefix18.FMargins.convertToCode
-            },
+            {r'fromJson': () => prefix18.FMainAxisSize.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.margins),
-              const prefix0.AttributeKey(prefix35.DBKeys.padding)
+              const prefix0.AttributeKey(prefix36.DBKeys.mainAxisSize)
             ],
-            {r'fromJson': 0, r'convertToCode': 0}),
+            {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FShadow',
-            r'.FShadow',
+            r'FMargins',
+            r'.FMargins',
             134217735,
             18,
             const prefix0.DynamicAttributeKey(),
@@ -533,21 +533,25 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix19.FShadow.fromJson},
+            {
+              r'fromJson': () => prefix19.FMargins.fromJson,
+              r'convertToCode': () => prefix19.FMargins.convertToCode
+            },
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.shadows)
+              const prefix0.AttributeKey(prefix36.DBKeys.margins),
+              const prefix0.AttributeKey(prefix36.DBKeys.padding)
             ],
-            {r'fromJson': 0}),
+            {r'fromJson': 0, r'convertToCode': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FSize',
-            r'.FSize',
+            r'FShadow',
+            r'.FShadow',
             134217735,
             19,
             const prefix0.DynamicAttributeKey(),
@@ -555,11 +559,33 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
+            {r'fromJson': () => prefix20.FShadow.fromJson},
+            {},
+            {},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix35.immutable,
+              prefix0.dynamicAttributeKey,
+              const prefix0.AttributeKey(prefix36.DBKeys.shadows)
+            ],
+            {r'fromJson': 0}),
+        r.NonGenericClassMirrorImpl(
+            r'FSize',
+            r'.FSize',
+            134217735,
+            20,
+            const prefix0.DynamicAttributeKey(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
             {
-              r'ready': () => prefix20.FSize.ready,
-              r'fromJson': () => prefix20.FSize.fromJson,
-              r'convertListToCode': () => prefix20.FSize.convertListToCode,
-              r'convertTypeToCode': () => prefix20.FSize.convertTypeToCode
+              r'ready': () => prefix21.FSize.ready,
+              r'fromJson': () => prefix21.FSize.fromJson,
+              r'convertListToCode': () => prefix21.FSize.convertListToCode,
+              r'convertTypeToCode': () => prefix21.FSize.convertTypeToCode
             },
             {},
             {},
@@ -568,16 +594,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[-1],
             const <Object>[
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.width),
-              const prefix0.AttributeKey(prefix35.DBKeys.widthFactor),
-              const prefix0.AttributeKey(prefix35.DBKeys.minWidth),
-              const prefix0.AttributeKey(prefix35.DBKeys.maxWidth),
-              const prefix0.AttributeKey(prefix35.DBKeys.mainAxisExtend),
-              const prefix0.AttributeKey(prefix35.DBKeys.crossAxisExtend),
-              const prefix0.AttributeKey(prefix35.DBKeys.height),
-              const prefix0.AttributeKey(prefix35.DBKeys.heightFactor),
-              const prefix0.AttributeKey(prefix35.DBKeys.minHeight),
-              const prefix0.AttributeKey(prefix35.DBKeys.maxHeight)
+              const prefix0.AttributeKey(prefix36.DBKeys.width),
+              const prefix0.AttributeKey(prefix36.DBKeys.widthFactor),
+              const prefix0.AttributeKey(prefix36.DBKeys.minWidth),
+              const prefix0.AttributeKey(prefix36.DBKeys.maxWidth),
+              const prefix0.AttributeKey(prefix36.DBKeys.mainAxisExtend),
+              const prefix0.AttributeKey(prefix36.DBKeys.crossAxisExtend),
+              const prefix0.AttributeKey(prefix36.DBKeys.height),
+              const prefix0.AttributeKey(prefix36.DBKeys.heightFactor),
+              const prefix0.AttributeKey(prefix36.DBKeys.minHeight),
+              const prefix0.AttributeKey(prefix36.DBKeys.maxHeight)
             ],
             {
               r'ready': 1,
@@ -589,49 +615,27 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'FTextAlign',
             r'.FTextAlign',
             134217735,
-            20,
-            const prefix0.DynamicAttributeKey(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix21.FTextAlign.fromJson},
-            {},
-            {},
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix34.immutable,
-              prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.textAlign)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'FTextDecoration',
-            r'.FTextDecoration',
-            134217735,
             21,
             const prefix0.DynamicAttributeKey(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix22.FTextDecoration.fromJson},
+            {r'fromJson': () => prefix22.FTextAlign.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.textDecoration)
+              const prefix0.AttributeKey(prefix36.DBKeys.textAlign)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FTextDirection',
-            r'.FTextDirection',
+            r'FTextDecoration',
+            r'.FTextDecoration',
             134217735,
             22,
             const prefix0.DynamicAttributeKey(),
@@ -639,21 +643,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix23.FTextDirection.fromJson},
+            {r'fromJson': () => prefix23.FTextDecoration.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix34.immutable,
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.textDirection)
+              const prefix0.AttributeKey(prefix36.DBKeys.textDecoration)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FTextStyle',
-            r'.FTextStyle',
+            r'FTextDirection',
+            r'.FTextDirection',
             134217735,
             23,
             const prefix0.DynamicAttributeKey(),
@@ -661,21 +665,21 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix24.FTextStyle.fromJson},
+            {r'fromJson': () => prefix24.FTextDirection.fromJson},
             {},
             {},
             -1,
             -1,
             const <int>[-1],
             const <Object>[
+              prefix35.immutable,
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.textStyle),
-              const prefix0.AttributeKey(prefix35.DBKeys.textStyle2)
+              const prefix0.AttributeKey(prefix36.DBKeys.textDirection)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
-            r'FTextTypeInput',
-            r'.FTextTypeInput',
+            r'FTextStyle',
+            r'.FTextStyle',
             134217735,
             24,
             const prefix0.DynamicAttributeKey(),
@@ -683,7 +687,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null,
             null,
             -1,
-            {r'fromJson': () => prefix25.FTextTypeInput.fromJson},
+            {r'fromJson': () => prefix25.FTextStyle.fromJson},
             {},
             {},
             -1,
@@ -691,44 +695,66 @@ final _data = <r.Reflectable, r.ReflectorData>{
             const <int>[-1],
             const <Object>[
               prefix0.dynamicAttributeKey,
-              const prefix0.AttributeKey(prefix35.DBKeys.actionValue),
-              const prefix0.AttributeKey(prefix35.DBKeys.image),
-              const prefix0.AttributeKey(prefix35.DBKeys.textAlign),
-              const prefix0.AttributeKey(prefix35.DBKeys.textDecoration),
-              const prefix0.AttributeKey(prefix35.DBKeys.textStyle),
-              const prefix0.AttributeKey(prefix35.DBKeys.textStyle2),
-              const prefix0.AttributeKey(prefix35.DBKeys.value),
-              const prefix0.AttributeKey(prefix35.DBKeys.flexValue),
-              const prefix0.AttributeKey(prefix35.DBKeys.rotateX),
-              const prefix0.AttributeKey(prefix35.DBKeys.rotateY),
-              const prefix0.AttributeKey(prefix35.DBKeys.rotateZ),
-              const prefix0.AttributeKey(prefix35.DBKeys.tranX),
-              const prefix0.AttributeKey(prefix35.DBKeys.tranY),
-              const prefix0.AttributeKey(prefix35.DBKeys.duration),
-              const prefix0.AttributeKey(prefix35.DBKeys.valueOfCondition),
-              const prefix0.AttributeKey(prefix35.DBKeys.mainAxisSpacing),
-              const prefix0.AttributeKey(prefix35.DBKeys.crossAxisCount),
-              const prefix0.AttributeKey(prefix35.DBKeys.crossAxisSpacing),
-              const prefix0.AttributeKey(prefix35.DBKeys.maxLines),
-              const prefix0.AttributeKey(prefix35.DBKeys.minLines),
-              const prefix0.AttributeKey(prefix35.DBKeys.maxLenght),
-              const prefix0.AttributeKey(prefix35.DBKeys.bordersSize),
-              const prefix0.AttributeKey(prefix35.DBKeys.childAspectRatio),
-              const prefix0.AttributeKey(prefix35.DBKeys.latitude),
-              const prefix0.AttributeKey(prefix35.DBKeys.longitude),
-              const prefix0.AttributeKey(prefix35.DBKeys.labelText),
-              const prefix0.AttributeKey(prefix35.DBKeys.xRotation),
-              const prefix0.AttributeKey(prefix35.DBKeys.yRotation),
-              const prefix0.AttributeKey(prefix35.DBKeys.zRotation),
-              const prefix0.AttributeKey(prefix35.DBKeys.xOffset),
-              const prefix0.AttributeKey(prefix35.DBKeys.yOffset),
-              const prefix0.AttributeKey(prefix35.DBKeys.rotation),
-              const prefix0.AttributeKey(prefix35.DBKeys.xPerspective),
-              const prefix0.AttributeKey(prefix35.DBKeys.yPerspective),
-              const prefix0.AttributeKey(prefix35.DBKeys.zPerspective),
-              const prefix0.AttributeKey(prefix35.DBKeys.xTranslation),
-              const prefix0.AttributeKey(prefix35.DBKeys.yTranslation),
-              const prefix0.AttributeKey(prefix35.DBKeys.selectedItemName)
+              const prefix0.AttributeKey(prefix36.DBKeys.textStyle),
+              const prefix0.AttributeKey(prefix36.DBKeys.textStyle2)
+            ],
+            {r'fromJson': 0}),
+        r.NonGenericClassMirrorImpl(
+            r'FTextTypeInput',
+            r'.FTextTypeInput',
+            134217735,
+            25,
+            const prefix0.DynamicAttributeKey(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {r'fromJson': () => prefix26.FTextTypeInput.fromJson},
+            {},
+            {},
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix0.dynamicAttributeKey,
+              const prefix0.AttributeKey(prefix36.DBKeys.actionValue),
+              const prefix0.AttributeKey(prefix36.DBKeys.image),
+              const prefix0.AttributeKey(prefix36.DBKeys.textAlign),
+              const prefix0.AttributeKey(prefix36.DBKeys.textDecoration),
+              const prefix0.AttributeKey(prefix36.DBKeys.textStyle),
+              const prefix0.AttributeKey(prefix36.DBKeys.textStyle2),
+              const prefix0.AttributeKey(prefix36.DBKeys.value),
+              const prefix0.AttributeKey(prefix36.DBKeys.flexValue),
+              const prefix0.AttributeKey(prefix36.DBKeys.rotateX),
+              const prefix0.AttributeKey(prefix36.DBKeys.rotateY),
+              const prefix0.AttributeKey(prefix36.DBKeys.rotateZ),
+              const prefix0.AttributeKey(prefix36.DBKeys.tranX),
+              const prefix0.AttributeKey(prefix36.DBKeys.tranY),
+              const prefix0.AttributeKey(prefix36.DBKeys.duration),
+              const prefix0.AttributeKey(prefix36.DBKeys.valueOfCondition),
+              const prefix0.AttributeKey(prefix36.DBKeys.mainAxisSpacing),
+              const prefix0.AttributeKey(prefix36.DBKeys.crossAxisCount),
+              const prefix0.AttributeKey(prefix36.DBKeys.crossAxisSpacing),
+              const prefix0.AttributeKey(prefix36.DBKeys.maxLines),
+              const prefix0.AttributeKey(prefix36.DBKeys.minLines),
+              const prefix0.AttributeKey(prefix36.DBKeys.maxLenght),
+              const prefix0.AttributeKey(prefix36.DBKeys.bordersSize),
+              const prefix0.AttributeKey(prefix36.DBKeys.childAspectRatio),
+              const prefix0.AttributeKey(prefix36.DBKeys.latitude),
+              const prefix0.AttributeKey(prefix36.DBKeys.longitude),
+              const prefix0.AttributeKey(prefix36.DBKeys.labelText),
+              const prefix0.AttributeKey(prefix36.DBKeys.xRotation),
+              const prefix0.AttributeKey(prefix36.DBKeys.yRotation),
+              const prefix0.AttributeKey(prefix36.DBKeys.zRotation),
+              const prefix0.AttributeKey(prefix36.DBKeys.xOffset),
+              const prefix0.AttributeKey(prefix36.DBKeys.yOffset),
+              const prefix0.AttributeKey(prefix36.DBKeys.rotation),
+              const prefix0.AttributeKey(prefix36.DBKeys.xPerspective),
+              const prefix0.AttributeKey(prefix36.DBKeys.yPerspective),
+              const prefix0.AttributeKey(prefix36.DBKeys.zPerspective),
+              const prefix0.AttributeKey(prefix36.DBKeys.xTranslation),
+              const prefix0.AttributeKey(prefix36.DBKeys.yTranslation),
+              const prefix0.AttributeKey(prefix36.DBKeys.selectedItemName)
             ],
             {r'fromJson': 0})
       ],
@@ -743,25 +769,26 @@ final _data = <r.Reflectable, r.ReflectorData>{
         prefix6.FBoxFit,
         prefix7.FConditionType,
         prefix8.FCrossAxisAlignment,
-        prefix9.FFill,
-        prefix10.FFontSize,
-        prefix11.FFontStyle,
-        prefix12.FFontWeight,
-        prefix13.FIconType,
-        prefix14.FImageType,
-        prefix15.FKeyboardType,
-        prefix16.FMainAxisAlignment,
-        prefix17.FMainAxisSize,
-        prefix18.FMargins,
-        prefix19.FShadow,
-        prefix20.FSize,
-        prefix21.FTextAlign,
-        prefix22.FTextDecoration,
-        prefix23.FTextDirection,
-        prefix24.FTextStyle,
-        prefix25.FTextTypeInput
+        prefix9.FDirection,
+        prefix10.FFill,
+        prefix11.FFontSize,
+        prefix12.FFontStyle,
+        prefix13.FFontWeight,
+        prefix14.FIconType,
+        prefix15.FImageType,
+        prefix16.FKeyboardType,
+        prefix17.FMainAxisAlignment,
+        prefix18.FMainAxisSize,
+        prefix19.FMargins,
+        prefix20.FShadow,
+        prefix21.FSize,
+        prefix22.FTextAlign,
+        prefix23.FTextDecoration,
+        prefix24.FTextDirection,
+        prefix25.FTextStyle,
+        prefix26.FTextTypeInput
       ],
-      25,
+      26,
       {},
       {},
       null,
@@ -775,14 +802,14 @@ final _data = <r.Reflectable, r.ReflectorData>{
           const [#flagConst, #colorStyles]
         ]
       ]),
-  const prefix26.NodeTypeISKey(): r.ReflectorData(
+  const prefix27.NodeTypeISKey(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'AlignIntrinsicStates',
             r'.AlignIntrinsicStates',
             134217735,
             0,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -790,16 +817,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.AlignIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.AlignIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.AlignIntrinsicStates.create() : null
+                  () => b ? prefix28.AlignIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.align)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.align)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -807,7 +834,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ButtonIntrinsicStates',
             134217735,
             1,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -816,16 +843,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.ButtonIntrinsicStates() : null,
+                  () => b ? prefix28.ButtonIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.ButtonIntrinsicStates.create() : null
+                  () => b ? prefix28.ButtonIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.button)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.button)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -833,7 +860,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ColumnIntrinsicStates',
             134217735,
             2,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -842,16 +869,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.ColumnIntrinsicStates() : null,
+                  () => b ? prefix28.ColumnIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.ColumnIntrinsicStates.create() : null
+                  () => b ? prefix28.ColumnIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.column)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.column)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -859,7 +886,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ComponentIntrinsicStates',
             134217735,
             3,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -868,16 +895,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.ComponentIntrinsicStates() : null,
+                  () => b ? prefix28.ComponentIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.ComponentIntrinsicStates.create() : null
+                  () => b ? prefix28.ComponentIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.component)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.component)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -885,7 +912,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TeamComponentIntrinsicStates',
             134217735,
             4,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -894,16 +921,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.TeamComponentIntrinsicStates() : null,
+                  () => b ? prefix28.TeamComponentIntrinsicStates() : null,
               r'create': (bool b) => () =>
-                  b ? prefix27.TeamComponentIntrinsicStates.create() : null
+                  b ? prefix28.TeamComponentIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.teamComponent)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.teamComponent)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -911,7 +938,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ContainerIntrinsicStates',
             134217735,
             5,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -920,16 +947,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.ContainerIntrinsicStates() : null,
+                  () => b ? prefix28.ContainerIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.ContainerIntrinsicStates.create() : null
+                  () => b ? prefix28.ContainerIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.container)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.container)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -937,7 +964,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.IconIntrinsicStates',
             134217735,
             6,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -945,17 +972,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix27.IconIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.IconIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix27.IconIntrinsicStates.create() : null
+                  () => b ? prefix28.IconIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.icon)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.icon)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -963,7 +989,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ImageIntrinsicStates',
             134217735,
             7,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -971,16 +997,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.ImageIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.ImageIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.ImageIntrinsicStates.create() : null
+                  () => b ? prefix28.ImageIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.image)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.image)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -988,7 +1014,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ListViewIntrinsicStates',
             134217735,
             8,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -997,17 +1023,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix27.ListViewIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix27.ListViewIntrinsicStates.create() : null
+                  () => b ? prefix28.ListViewIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix28.ListViewIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.listView),
-              const prefix26.NodeKey(prefix36.NType.gridView)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.listView),
+              const prefix27.NodeKey(prefix37.NType.gridView)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1015,7 +1041,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.LottieIntrinsicStates',
             134217735,
             9,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1024,16 +1050,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.LottieIntrinsicStates() : null,
+                  () => b ? prefix28.LottieIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.LottieIntrinsicStates.create() : null
+                  () => b ? prefix28.LottieIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.lottie)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.lottie)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1041,7 +1067,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SvgPictureIntrinsicStates',
             134217735,
             10,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1050,16 +1076,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.SvgPictureIntrinsicStates() : null,
+                  () => b ? prefix28.SvgPictureIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.SvgPictureIntrinsicStates.create() : null
+                  () => b ? prefix28.SvgPictureIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.svgPicture)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.svgPicture)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1067,7 +1093,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.RowIntrinsicStates',
             134217735,
             11,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1075,16 +1101,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.RowIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.RowIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.RowIntrinsicStates.create() : null
+                  () => b ? prefix28.RowIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.row)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.row)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1092,7 +1118,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ScaffoldIntrinsicStates',
             134217735,
             12,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1101,16 +1127,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix27.ScaffoldIntrinsicStates() : null,
-              r'create': (bool b) => () =>
-                  b ? const prefix27.ScaffoldIntrinsicStates.create() : null
+                  () => b ? prefix28.ScaffoldIntrinsicStates() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix28.ScaffoldIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.scaffold)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.scaffold)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1118,7 +1144,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.StackIntrinsicStates',
             134217735,
             13,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1126,17 +1152,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix27.StackIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.StackIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? const prefix27.StackIntrinsicStates.create() : null
+                  () => b ? prefix28.StackIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.stack)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.stack)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1144,7 +1169,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextIntrinsicStates',
             134217735,
             14,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1152,16 +1177,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.TextIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.TextIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.TextIntrinsicStates.create() : null
+                  () => b ? prefix28.TextIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.text)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.text)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1169,7 +1194,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextFieldIntrinsicStates',
             134217735,
             15,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1178,16 +1203,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.TextFieldIntrinsicStates() : null,
+                  () => b ? prefix28.TextFieldIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.TextFieldIntrinsicStates.create() : null
+                  () => b ? prefix28.TextFieldIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.textField)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.textField)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1195,7 +1220,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.VideoIntrinsicStates',
             134217735,
             16,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1203,16 +1228,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? prefix27.VideoIntrinsicStates() : null,
+              r'': (bool b) => () => b ? prefix28.VideoIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.VideoIntrinsicStates.create() : null
+                  () => b ? prefix28.VideoIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.video)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.video)
             ],
             {}),
         r.NonGenericClassMirrorImpl(
@@ -1220,7 +1245,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SpacerIntrinsicStates',
             134217735,
             17,
-            const prefix26.NodeTypeISKey(),
+            const prefix27.NodeTypeISKey(),
             const <int>[-1],
             null,
             null,
@@ -1229,40 +1254,40 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? prefix27.SpacerIntrinsicStates() : null,
+                  () => b ? prefix28.SpacerIntrinsicStates() : null,
               r'create': (bool b) =>
-                  () => b ? prefix27.SpacerIntrinsicStates.create() : null
+                  () => b ? prefix28.SpacerIntrinsicStates.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix26.nodeTypeISKey,
-              const prefix26.NodeKey(prefix36.NType.spacer)
+              prefix27.nodeTypeISKey,
+              const prefix27.NodeKey(prefix37.NType.spacer)
             ],
             {})
       ],
       null,
       null,
       <Type>[
-        prefix27.AlignIntrinsicStates,
-        prefix27.ButtonIntrinsicStates,
-        prefix27.ColumnIntrinsicStates,
-        prefix27.ComponentIntrinsicStates,
-        prefix27.TeamComponentIntrinsicStates,
-        prefix27.ContainerIntrinsicStates,
-        prefix27.IconIntrinsicStates,
-        prefix27.ImageIntrinsicStates,
-        prefix27.ListViewIntrinsicStates,
-        prefix27.LottieIntrinsicStates,
-        prefix27.SvgPictureIntrinsicStates,
-        prefix27.RowIntrinsicStates,
-        prefix27.ScaffoldIntrinsicStates,
-        prefix27.StackIntrinsicStates,
-        prefix27.TextIntrinsicStates,
-        prefix27.TextFieldIntrinsicStates,
-        prefix27.VideoIntrinsicStates,
-        prefix27.SpacerIntrinsicStates
+        prefix28.AlignIntrinsicStates,
+        prefix28.ButtonIntrinsicStates,
+        prefix28.ColumnIntrinsicStates,
+        prefix28.ComponentIntrinsicStates,
+        prefix28.TeamComponentIntrinsicStates,
+        prefix28.ContainerIntrinsicStates,
+        prefix28.IconIntrinsicStates,
+        prefix28.ImageIntrinsicStates,
+        prefix28.ListViewIntrinsicStates,
+        prefix28.LottieIntrinsicStates,
+        prefix28.SvgPictureIntrinsicStates,
+        prefix28.RowIntrinsicStates,
+        prefix28.ScaffoldIntrinsicStates,
+        prefix28.StackIntrinsicStates,
+        prefix28.TextIntrinsicStates,
+        prefix28.TextFieldIntrinsicStates,
+        prefix28.VideoIntrinsicStates,
+        prefix28.SpacerIntrinsicStates
       ],
       18,
       {},
@@ -1271,30 +1296,27 @@ final _data = <r.Reflectable, r.ReflectorData>{
       [
         const [0, 0, null]
       ]),
-  const prefix26.IntrinsicStateReflector(): r.ReflectorData(<m.TypeMirror>[],
-      null, null, <Type>[prefix26.DynamicIntrinsicState], 1, {}, {}, null, []),
-  const prefix28.DynamicWidgetAdapterReflector(): r.ReflectorData(
+  const prefix27.IntrinsicStateReflector(): r.ReflectorData(<m.TypeMirror>[],
+      null, null, <Type>[prefix27.DynamicIntrinsicState], 1, {}, {}, null, []),
+  const prefix29.DynamicWidgetAdapterReflector(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'WidgetAdapterParse',
             r'.WidgetAdapterParse',
             134217735,
             0,
-            const prefix28.DynamicWidgetAdapterReflector(),
+            const prefix29.DynamicWidgetAdapterReflector(),
             const <int>[-1],
             null,
             null,
             -1,
             {},
             {},
-            {
-              r'': (bool b) =>
-                  () => b ? const prefix28.WidgetAdapterParse() : null
-            },
+            {r'': (bool b) => () => b ? prefix29.WidgetAdapterParse() : null},
             -1,
             -1,
             const <int>[-1],
-            const <Object>[const prefix28.DynamicWidgetAdapterReflector()],
+            const <Object>[const prefix29.DynamicWidgetAdapterReflector()],
             {
               r'==': 0,
               r'toString': 1,
@@ -1306,7 +1328,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       ],
       null,
       null,
-      <Type>[prefix28.WidgetAdapterParse],
+      <Type>[prefix29.WidgetAdapterParse],
       1,
       {
         r'==': (dynamic instance) => (x) => instance == x,
@@ -1322,14 +1344,14 @@ final _data = <r.Reflectable, r.ReflectorData>{
         const [1, 0, null],
         const [0, 0, null]
       ]),
-  const prefix28.DynamicAdapter(): r.ReflectorData(
+  const prefix29.DynamicAdapter(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'AlignWidgetAdapter',
             r'.AlignWidgetAdapter',
             134217735,
             0,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1337,17 +1359,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.AlignWidgetAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.AlignWidgetAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.AlignWidgetAdapter.create() : null
+                  () => b ? prefix30.AlignWidgetAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.align)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.align)
             ],
             {
               r'==': 1,
@@ -1362,7 +1383,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ButtonAdapter',
             134217735,
             1,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1370,16 +1391,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.ButtonAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ButtonAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ButtonAdapter.create() : null
+                  () => b ? prefix30.ButtonAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.button)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.button)
             ],
             {
               r'==': 1,
@@ -1394,7 +1415,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ColumnAdapter',
             134217735,
             2,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1402,16 +1423,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.ColumnAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ColumnAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ColumnAdapter.create() : null
+                  () => b ? prefix30.ColumnAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.column)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.column)
             ],
             {
               r'==': 1,
@@ -1426,7 +1447,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.BoxAdapter',
             134217735,
             3,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1434,16 +1455,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.BoxAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.BoxAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.BoxAdapter.create() : null
+                  () => b ? prefix30.BoxAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.container)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.container)
             ],
             {
               r'==': 1,
@@ -1458,7 +1479,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.GridViewAdapter',
             134217735,
             4,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1466,17 +1487,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.GridViewAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.GridViewAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.GridViewAdapter.create() : null
+                  () => b ? prefix30.GridViewAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.gridView)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.gridView)
             ],
             {
               r'==': 1,
@@ -1491,7 +1511,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.MaterialIconAdapter',
             134217735,
             5,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1499,17 +1519,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.MaterialIconAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.MaterialIconAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.MaterialIconAdapter.create() : null
+                  () => b ? prefix30.MaterialIconAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.icon)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.icon)
             ],
             {
               r'==': 1,
@@ -1524,7 +1543,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ImageAdapter',
             134217735,
             6,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1532,16 +1551,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.ImageAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ImageAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ImageAdapter.create() : null
+                  () => b ? prefix30.ImageAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.image)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.image)
             ],
             {
               r'==': 1,
@@ -1556,7 +1575,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ListViewAdapter',
             134217735,
             7,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1564,17 +1583,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.ListViewAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ListViewAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ListViewAdapter.create() : null
+                  () => b ? prefix30.ListViewAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.listView)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.listView)
             ],
             {
               r'==': 1,
@@ -1589,7 +1607,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.LottieAdapter',
             134217735,
             8,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1597,16 +1615,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.LottieAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.LottieAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.LottieAdapter.create() : null
+                  () => b ? prefix30.LottieAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.lottie)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.lottie)
             ],
             {
               r'==': 1,
@@ -1621,7 +1639,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.RowAdapter',
             134217735,
             9,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1629,16 +1647,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.RowAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.RowAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.RowAdapter.create() : null
+                  () => b ? prefix30.RowAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.row)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.row)
             ],
             {
               r'==': 1,
@@ -1653,7 +1671,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ScaffoldAdapter',
             134217735,
             10,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1661,17 +1679,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.ScaffoldAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ScaffoldAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ScaffoldAdapter.create() : null
+                  () => b ? prefix30.ScaffoldAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.scaffold)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.scaffold)
             ],
             {
               r'==': 1,
@@ -1686,7 +1703,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.StackAdapter',
             134217735,
             11,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1694,16 +1711,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.StackAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.StackAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.StackAdapter.create() : null
+                  () => b ? prefix30.StackAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.stack)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.stack)
             ],
             {
               r'==': 1,
@@ -1718,7 +1735,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextAdapter',
             134217735,
             12,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1726,16 +1743,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.TextAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.TextAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.TextAdapter.create() : null
+                  () => b ? prefix30.TextAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.text)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.text)
             ],
             {
               r'==': 1,
@@ -1750,7 +1767,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextFieldAdapter',
             134217735,
             13,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1758,17 +1775,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.TextFieldAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.TextFieldAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.TextFieldAdapter.create() : null
+                  () => b ? prefix30.TextFieldAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.textField)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.textField)
             ],
             {
               r'==': 1,
@@ -1783,7 +1799,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.VideoAdapter',
             134217735,
             14,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1791,16 +1807,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.VideoAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.VideoAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.VideoAdapter.create() : null
+                  () => b ? prefix30.VideoAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.video)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.video)
             ],
             {
               r'==': 1,
@@ -1815,7 +1831,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ComponentAdapter',
             134217735,
             15,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1823,17 +1839,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.ComponentAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.ComponentAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.ComponentAdapter.create() : null
+                  () => b ? prefix30.ComponentAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.component)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.component)
             ],
             {
               r'==': 1,
@@ -1848,7 +1863,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TeamComponentAdapter',
             134217735,
             16,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1856,17 +1871,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.TeamComponentAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.TeamComponentAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.TeamComponentAdapter.create() : null
+                  () => b ? prefix30.TeamComponentAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.teamComponent)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.teamComponent)
             ],
             {
               r'==': 1,
@@ -1881,7 +1895,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SpacerAdapter',
             134217735,
             17,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1889,16 +1903,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () => b ? const prefix29.SpacerAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.SpacerAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.SpacerAdapter.create() : null
+                  () => b ? prefix30.SpacerAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.spacer)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.spacer)
             ],
             {
               r'==': 1,
@@ -1913,7 +1927,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SvgPictureAdapter',
             134217735,
             18,
-            const prefix28.DynamicAdapter(),
+            const prefix29.DynamicAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1921,17 +1935,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix29.SvgPictureAdapter() : null,
+              r'': (bool b) => () => b ? prefix30.SvgPictureAdapter() : null,
               r'create': (bool b) =>
-                  () => b ? prefix29.SvgPictureAdapter.create() : null
+                  () => b ? prefix30.SvgPictureAdapter.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix28.dynamicAdapter,
-              const prefix26.NodeKey(prefix36.NType.svgPicture)
+              prefix29.dynamicAdapter,
+              const prefix27.NodeKey(prefix37.NType.svgPicture)
             ],
             {
               r'==': 1,
@@ -1945,25 +1958,25 @@ final _data = <r.Reflectable, r.ReflectorData>{
       null,
       null,
       <Type>[
-        prefix29.AlignWidgetAdapter,
-        prefix29.ButtonAdapter,
-        prefix29.ColumnAdapter,
-        prefix29.BoxAdapter,
-        prefix29.GridViewAdapter,
-        prefix29.MaterialIconAdapter,
-        prefix29.ImageAdapter,
-        prefix29.ListViewAdapter,
-        prefix29.LottieAdapter,
-        prefix29.RowAdapter,
-        prefix29.ScaffoldAdapter,
-        prefix29.StackAdapter,
-        prefix29.TextAdapter,
-        prefix29.TextFieldAdapter,
-        prefix29.VideoAdapter,
-        prefix29.ComponentAdapter,
-        prefix29.TeamComponentAdapter,
-        prefix29.SpacerAdapter,
-        prefix29.SvgPictureAdapter
+        prefix30.AlignWidgetAdapter,
+        prefix30.ButtonAdapter,
+        prefix30.ColumnAdapter,
+        prefix30.BoxAdapter,
+        prefix30.GridViewAdapter,
+        prefix30.MaterialIconAdapter,
+        prefix30.ImageAdapter,
+        prefix30.ListViewAdapter,
+        prefix30.LottieAdapter,
+        prefix30.RowAdapter,
+        prefix30.ScaffoldAdapter,
+        prefix30.StackAdapter,
+        prefix30.TextAdapter,
+        prefix30.TextFieldAdapter,
+        prefix30.VideoAdapter,
+        prefix30.ComponentAdapter,
+        prefix30.TeamComponentAdapter,
+        prefix30.SpacerAdapter,
+        prefix30.SvgPictureAdapter
       ],
       19,
       {
@@ -1984,14 +1997,14 @@ final _data = <r.Reflectable, r.ReflectorData>{
         ],
         const [1, 0, null]
       ]),
-  const prefix30.DynamicDefaultAttributeAdapter(): r.ReflectorData(
+  const prefix31.DynamicDefaultAttributeAdapter(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'AlignWidgetDefaultAttributes',
             r'.AlignWidgetDefaultAttributes',
             134217735,
             0,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -1999,17 +2012,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? const prefix31.AlignWidgetDefaultAttributes() : null,
+              r'': (bool b) =>
+                  () => b ? prefix32.AlignWidgetDefaultAttributes() : null,
               r'create': (bool b) => () =>
-                  b ? prefix31.AlignWidgetDefaultAttributes.create() : null
+                  b ? prefix32.AlignWidgetDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.align)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.align)
             ],
             {
               r'==': 1,
@@ -2024,7 +2037,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ButtonDefaultAttributes',
             134217735,
             1,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2033,16 +2046,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.ButtonDefaultAttributes() : null,
+                  () => b ? prefix32.ButtonDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.ButtonDefaultAttributes.create() : null
+                  () => b ? prefix32.ButtonDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.button)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.button)
             ],
             {
               r'==': 1,
@@ -2053,11 +2066,11 @@ final _data = <r.Reflectable, r.ReflectorData>{
               r'get': 0
             }),
         r.NonGenericClassMirrorImpl(
-            r'FlexDefaultAttributes',
-            r'.FlexDefaultAttributes',
+            r'ColumnDefaultAttributes',
+            r'.ColumnDefaultAttributes',
             134217735,
             2,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2066,17 +2079,48 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.FlexDefaultAttributes() : null,
+                  () => b ? prefix32.ColumnDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.FlexDefaultAttributes.create() : null
+                  () => b ? prefix32.ColumnDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.column),
-              const prefix26.NodeKey(prefix36.NType.row)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.column)
+            ],
+            {
+              r'==': 1,
+              r'toString': 0,
+              r'noSuchMethod': 1,
+              r'hashCode': 0,
+              r'runtimeType': 0,
+              r'get': 0
+            }),
+        r.NonGenericClassMirrorImpl(
+            r'RowDefaultAttributes',
+            r'.RowDefaultAttributes',
+            134217735,
+            3,
+            const prefix31.DynamicDefaultAttributeAdapter(),
+            const <int>[-1],
+            null,
+            null,
+            -1,
+            {},
+            {},
+            {
+              r'': (bool b) => () => b ? prefix32.RowDefaultAttributes() : null,
+              r'create': (bool b) =>
+                  () => b ? prefix32.RowDefaultAttributes.create() : null
+            },
+            -1,
+            -1,
+            const <int>[-1],
+            const <Object>[
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.row)
             ],
             {
               r'==': 1,
@@ -2090,8 +2134,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ComponentDefaultAttributes',
             r'.ComponentDefaultAttributes',
             134217735,
-            3,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            4,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2100,16 +2144,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.ComponentDefaultAttributes() : null,
+                  () => b ? prefix32.ComponentDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.ComponentDefaultAttributes.create() : null
+                  () => b ? prefix32.ComponentDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.component)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.component)
             ],
             {
               r'==': 1,
@@ -2123,8 +2167,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TeamComponentDefaultAttributes',
             r'.TeamComponentDefaultAttributes',
             134217735,
-            4,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            5,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2132,17 +2176,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) => () =>
-                  b ? const prefix31.TeamComponentDefaultAttributes() : null,
+              r'': (bool b) =>
+                  () => b ? prefix32.TeamComponentDefaultAttributes() : null,
               r'create': (bool b) => () =>
-                  b ? prefix31.TeamComponentDefaultAttributes.create() : null
+                  b ? prefix32.TeamComponentDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.teamComponent)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.teamComponent)
             ],
             {
               r'==': 1,
@@ -2156,8 +2200,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'BoxDefaultAttributes',
             r'.BoxDefaultAttributes',
             134217735,
-            5,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            6,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2165,18 +2209,17 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {},
             {
-              r'': (bool b) =>
-                  () => b ? const prefix31.BoxDefaultAttributes() : null,
+              r'': (bool b) => () => b ? prefix32.BoxDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.BoxDefaultAttributes.create() : null
+                  () => b ? prefix32.BoxDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.container),
-              const prefix26.NodeKey(prefix36.NType.image)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.container),
+              const prefix27.NodeKey(prefix37.NType.image)
             ],
             {
               r'==': 1,
@@ -2190,8 +2233,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'IconDefaultAttributes',
             r'.IconDefaultAttributes',
             134217735,
-            6,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            7,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2200,16 +2243,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.IconDefaultAttributes() : null,
+                  () => b ? prefix32.IconDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.IconDefaultAttributes.create() : null
+                  () => b ? prefix32.IconDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.icon)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.icon)
             ],
             {
               r'==': 1,
@@ -2223,8 +2266,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ListViewDefaultAttributes',
             r'.ListViewDefaultAttributes',
             134217735,
-            7,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            8,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2233,16 +2276,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.ListViewDefaultAttributes() : null,
+                  () => b ? prefix32.ListViewDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.ListViewDefaultAttributes.create() : null
+                  () => b ? prefix32.ListViewDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.listView)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.listView)
             ],
             {
               r'==': 1,
@@ -2256,8 +2299,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'LottieDefaultAttributes',
             r'.LottieDefaultAttributes',
             134217735,
-            8,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            9,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2266,16 +2309,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.LottieDefaultAttributes() : null,
+                  () => b ? prefix32.LottieDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.LottieDefaultAttributes.create() : null
+                  () => b ? prefix32.LottieDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.lottie)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.lottie)
             ],
             {
               r'==': 1,
@@ -2289,8 +2332,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'SvgPictureDefaultAttributes',
             r'.SvgPictureDefaultAttributes',
             134217735,
-            9,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            10,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2299,16 +2342,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.SvgPictureDefaultAttributes() : null,
+                  () => b ? prefix32.SvgPictureDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.SvgPictureDefaultAttributes.create() : null
+                  () => b ? prefix32.SvgPictureDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.svgPicture)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.svgPicture)
             ],
             {
               r'==': 1,
@@ -2322,8 +2365,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'ScaffoldDefaultAttributes',
             r'.ScaffoldDefaultAttributes',
             134217735,
-            10,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            11,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2332,16 +2375,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.ScaffoldDefaultAttributes() : null,
+                  () => b ? prefix32.ScaffoldDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.ScaffoldDefaultAttributes.create() : null
+                  () => b ? prefix32.ScaffoldDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.scaffold)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.scaffold)
             ],
             {
               r'==': 1,
@@ -2355,8 +2398,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'StackDefaultAttributes',
             r'.StackDefaultAttributes',
             134217735,
-            11,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            12,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2365,16 +2408,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.StackDefaultAttributes() : null,
+                  () => b ? prefix32.StackDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.StackDefaultAttributes.create() : null
+                  () => b ? prefix32.StackDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.stack)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.stack)
             ],
             {
               r'==': 1,
@@ -2388,8 +2431,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TextDefaultAttributes',
             r'.TextDefaultAttributes',
             134217735,
-            12,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            13,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2398,16 +2441,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.TextDefaultAttributes() : null,
+                  () => b ? prefix32.TextDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.TextDefaultAttributes.create() : null
+                  () => b ? prefix32.TextDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.text)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.text)
             ],
             {
               r'==': 1,
@@ -2421,8 +2464,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'TextFieldDefaultAttributes',
             r'.TextFieldDefaultAttributes',
             134217735,
-            13,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            14,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2431,16 +2474,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.TextFieldDefaultAttributes() : null,
+                  () => b ? prefix32.TextFieldDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.TextFieldDefaultAttributes.create() : null
+                  () => b ? prefix32.TextFieldDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.textField)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.textField)
             ],
             {
               r'==': 1,
@@ -2454,8 +2497,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'VideoDefaultAttributes',
             r'.VideoDefaultAttributes',
             134217735,
-            14,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            15,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2464,16 +2507,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.VideoDefaultAttributes() : null,
+                  () => b ? prefix32.VideoDefaultAttributes() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.VideoDefaultAttributes.create() : null
+                  () => b ? prefix32.VideoDefaultAttributes.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.video)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.video)
             ],
             {
               r'==': 1,
@@ -2487,8 +2530,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'SpacerDefaultAttribute',
             r'.SpacerDefaultAttribute',
             134217735,
-            15,
-            const prefix30.DynamicDefaultAttributeAdapter(),
+            16,
+            const prefix31.DynamicDefaultAttributeAdapter(),
             const <int>[-1],
             null,
             null,
@@ -2497,16 +2540,16 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix31.SpacerDefaultAttribute() : null,
+                  () => b ? prefix32.SpacerDefaultAttribute() : null,
               r'create': (bool b) =>
-                  () => b ? prefix31.SpacerDefaultAttribute.create() : null
+                  () => b ? prefix32.SpacerDefaultAttribute.create() : null
             },
             -1,
             -1,
             const <int>[-1],
             const <Object>[
-              prefix30.dynamicDefaultAttribute,
-              const prefix26.NodeKey(prefix36.NType.spacer)
+              prefix31.dynamicDefaultAttribute,
+              const prefix27.NodeKey(prefix37.NType.spacer)
             ],
             {
               r'==': 1,
@@ -2520,24 +2563,25 @@ final _data = <r.Reflectable, r.ReflectorData>{
       null,
       null,
       <Type>[
-        prefix31.AlignWidgetDefaultAttributes,
-        prefix31.ButtonDefaultAttributes,
-        prefix31.FlexDefaultAttributes,
-        prefix31.ComponentDefaultAttributes,
-        prefix31.TeamComponentDefaultAttributes,
-        prefix31.BoxDefaultAttributes,
-        prefix31.IconDefaultAttributes,
-        prefix31.ListViewDefaultAttributes,
-        prefix31.LottieDefaultAttributes,
-        prefix31.SvgPictureDefaultAttributes,
-        prefix31.ScaffoldDefaultAttributes,
-        prefix31.StackDefaultAttributes,
-        prefix31.TextDefaultAttributes,
-        prefix31.TextFieldDefaultAttributes,
-        prefix31.VideoDefaultAttributes,
-        prefix31.SpacerDefaultAttribute
+        prefix32.AlignWidgetDefaultAttributes,
+        prefix32.ButtonDefaultAttributes,
+        prefix32.ColumnDefaultAttributes,
+        prefix32.RowDefaultAttributes,
+        prefix32.ComponentDefaultAttributes,
+        prefix32.TeamComponentDefaultAttributes,
+        prefix32.BoxDefaultAttributes,
+        prefix32.IconDefaultAttributes,
+        prefix32.ListViewDefaultAttributes,
+        prefix32.LottieDefaultAttributes,
+        prefix32.SvgPictureDefaultAttributes,
+        prefix32.ScaffoldDefaultAttributes,
+        prefix32.StackDefaultAttributes,
+        prefix32.TextDefaultAttributes,
+        prefix32.TextFieldDefaultAttributes,
+        prefix32.VideoDefaultAttributes,
+        prefix32.SpacerDefaultAttribute
       ],
-      16,
+      17,
       {
         r'==': (dynamic instance) => (x) => instance == x,
         r'toString': (dynamic instance) => instance.toString,
@@ -2552,14 +2596,14 @@ final _data = <r.Reflectable, r.ReflectorData>{
         const [0, 0, null],
         const [1, 0, null]
       ]),
-  const prefix30.DynamicDefaultAttributesReflector(): r.ReflectorData(
+  const prefix31.DynamicDefaultAttributesReflector(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'DefaultAttributesParse',
             r'.DefaultAttributesParse',
             134217735,
             0,
-            const prefix30.DynamicDefaultAttributesReflector(),
+            const prefix31.DynamicDefaultAttributesReflector(),
             const <int>[-1],
             null,
             null,
@@ -2568,12 +2612,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             {},
             {
               r'': (bool b) =>
-                  () => b ? const prefix30.DefaultAttributesParse() : null
+                  () => b ? prefix31.DefaultAttributesParse() : null
             },
             -1,
             -1,
             const <int>[-1],
-            const <Object>[const prefix30.DynamicDefaultAttributesReflector()],
+            const <Object>[const prefix31.DynamicDefaultAttributesReflector()],
             {
               r'==': 0,
               r'toString': 1,
@@ -2585,7 +2629,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       ],
       null,
       null,
-      <Type>[prefix30.DefaultAttributesParse],
+      <Type>[prefix31.DefaultAttributesParse],
       1,
       {
         r'==': (dynamic instance) => (x) => instance == x,
@@ -2601,19 +2645,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
         const [1, 0, null],
         const [0, 0, null]
       ]),
-  const prefix32.NodeDeclaration(): r.ReflectorData(
+  const prefix33.NodeDeclaration(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'AlignOpenNode',
             r'.AlignOpenNode',
             134217735,
             0,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.AlignOpenNode.fromJson},
+            {r'fromJson': () => prefix34.AlignOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2633,7 +2677,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.AlignOpenNode(
+                      ? prefix34.AlignOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2655,8 +2699,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.align)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.align)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2664,12 +2708,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ButtonOpenNode',
             134217735,
             1,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ButtonOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ButtonOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2689,7 +2733,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ButtonOpenNode(
+                      ? prefix34.ButtonOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2711,8 +2755,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.button)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.button)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2720,12 +2764,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ColumnOpenNode',
             134217735,
             2,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ColumnOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ColumnOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2745,7 +2789,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ColumnOpenNode(
+                      ? prefix34.ColumnOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2767,8 +2811,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.column)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.column)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2776,12 +2820,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ComponentOpenNode',
             134217735,
             3,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ComponentOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ComponentOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2801,7 +2845,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ComponentOpenNode(
+                      ? prefix34.ComponentOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2823,8 +2867,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.component)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.component)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2832,12 +2876,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TeamComponentOpenNode',
             134217735,
             4,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.TeamComponentOpenNode.fromJson},
+            {r'fromJson': () => prefix34.TeamComponentOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2857,7 +2901,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.TeamComponentOpenNode(
+                      ? prefix34.TeamComponentOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2879,8 +2923,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.teamComponent)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.teamComponent)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2888,12 +2932,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.RowOpenNode',
             134217735,
             5,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.RowOpenNode.fromJson},
+            {r'fromJson': () => prefix34.RowOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2913,7 +2957,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.RowOpenNode(
+                      ? prefix34.RowOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2935,8 +2979,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.row)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.row)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -2944,12 +2988,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ContainerOpenNode',
             134217735,
             6,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ContainerOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ContainerOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -2969,7 +3013,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ContainerOpenNode(
+                      ? prefix34.ContainerOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -2991,8 +3035,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.container)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.container)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3000,12 +3044,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ImageOpenNode',
             134217735,
             7,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ImageOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ImageOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3025,7 +3069,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ImageOpenNode(
+                      ? prefix34.ImageOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3047,8 +3091,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.image)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.image)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3056,12 +3100,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.IconOpenNode',
             134217735,
             8,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.IconOpenNode.fromJson},
+            {r'fromJson': () => prefix34.IconOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3081,7 +3125,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.IconOpenNode(
+                      ? prefix34.IconOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3103,8 +3147,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.icon)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.icon)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3112,12 +3156,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ListViewOpenNode',
             134217735,
             9,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ListViewOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ListViewOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3137,7 +3181,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ListViewOpenNode(
+                      ? prefix34.ListViewOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3159,8 +3203,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.listView)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.listView)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3168,12 +3212,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.LottieOpenNode',
             134217735,
             10,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.LottieOpenNode.fromJson},
+            {r'fromJson': () => prefix34.LottieOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3193,7 +3237,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.LottieOpenNode(
+                      ? prefix34.LottieOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3215,8 +3259,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.lottie)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.lottie)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3224,12 +3268,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.ScaffoldOpenNode',
             134217735,
             11,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.ScaffoldOpenNode.fromJson},
+            {r'fromJson': () => prefix34.ScaffoldOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3249,7 +3293,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.ScaffoldOpenNode(
+                      ? prefix34.ScaffoldOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3271,8 +3315,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.scaffold)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.scaffold)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3280,12 +3324,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.StackOpenNode',
             134217735,
             12,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.StackOpenNode.fromJson},
+            {r'fromJson': () => prefix34.StackOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3305,7 +3349,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.StackOpenNode(
+                      ? prefix34.StackOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3327,8 +3371,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.stack)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.stack)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3336,12 +3380,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextOpenNode',
             134217735,
             13,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.TextOpenNode.fromJson},
+            {r'fromJson': () => prefix34.TextOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3361,7 +3405,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.TextOpenNode(
+                      ? prefix34.TextOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3383,8 +3427,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.text)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.text)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3392,12 +3436,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.TextFieldOpenNode',
             134217735,
             14,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.TextFieldOpenNode.fromJson},
+            {r'fromJson': () => prefix34.TextFieldOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3417,7 +3461,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.TextFieldOpenNode(
+                      ? prefix34.TextFieldOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3439,8 +3483,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.textField)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.textField)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3448,12 +3492,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.VideoOpenNode',
             134217735,
             15,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.VideoOpenNode.fromJson},
+            {r'fromJson': () => prefix34.VideoOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3473,7 +3517,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.VideoOpenNode(
+                      ? prefix34.VideoOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3495,8 +3539,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.video)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.video)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3504,12 +3548,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SpacerOpenNode',
             134217735,
             16,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.SpacerOpenNode.fromJson},
+            {r'fromJson': () => prefix34.SpacerOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3529,7 +3573,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.SpacerOpenNode(
+                      ? prefix34.SpacerOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3551,8 +3595,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.spacer)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.spacer)
             ],
             {r'fromJson': 0}),
         r.NonGenericClassMirrorImpl(
@@ -3560,12 +3604,12 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'.SvgPictureOpenNode',
             134217735,
             17,
-            const prefix32.NodeDeclaration(),
+            const prefix33.NodeDeclaration(),
             const <int>[-1],
             null,
             null,
             -1,
-            {r'fromJson': () => prefix33.SvgPictureOpenNode.fromJson},
+            {r'fromJson': () => prefix34.SvgPictureOpenNode.fromJson},
             {},
             {
               r'': (bool b) => (
@@ -3585,7 +3629,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
                       componentChildren,
                       isLocked}) =>
                   b
-                      ? prefix33.SvgPictureOpenNode(
+                      ? prefix34.SvgPictureOpenNode(
                           attributes: attributes,
                           child: child,
                           childOrder: childOrder,
@@ -3607,1060 +3651,34 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             const <int>[-1],
             const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.svgPicture)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'AlignOpenNode',
-            r'.AlignOpenNode',
-            134217735,
-            18,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.AlignOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.AlignOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.align)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ButtonOpenNode',
-            r'.ButtonOpenNode',
-            134217735,
-            19,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ButtonOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ButtonOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.button)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ColumnOpenNode',
-            r'.ColumnOpenNode',
-            134217735,
-            20,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ColumnOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ColumnOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.column)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ComponentOpenNode',
-            r'.ComponentOpenNode',
-            134217735,
-            21,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ComponentOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ComponentOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.component)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'TeamComponentOpenNode',
-            r'.TeamComponentOpenNode',
-            134217735,
-            22,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.TeamComponentOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.TeamComponentOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.teamComponent)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'RowOpenNode',
-            r'.RowOpenNode',
-            134217735,
-            23,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.RowOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.RowOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.row)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ContainerOpenNode',
-            r'.ContainerOpenNode',
-            134217735,
-            24,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ContainerOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ContainerOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.container)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ImageOpenNode',
-            r'.ImageOpenNode',
-            134217735,
-            25,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ImageOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ImageOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.image)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'IconOpenNode',
-            r'.IconOpenNode',
-            134217735,
-            26,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.IconOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.IconOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.icon)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ListViewOpenNode',
-            r'.ListViewOpenNode',
-            134217735,
-            27,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ListViewOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ListViewOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.listView)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'LottieOpenNode',
-            r'.LottieOpenNode',
-            134217735,
-            28,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.LottieOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.LottieOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.lottie)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'ScaffoldOpenNode',
-            r'.ScaffoldOpenNode',
-            134217735,
-            29,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.ScaffoldOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.ScaffoldOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.scaffold)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'StackOpenNode',
-            r'.StackOpenNode',
-            134217735,
-            30,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.StackOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.StackOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.stack)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'TextOpenNode',
-            r'.TextOpenNode',
-            134217735,
-            31,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.TextOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.TextOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.text)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'TextFieldOpenNode',
-            r'.TextFieldOpenNode',
-            134217735,
-            32,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.TextFieldOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.TextFieldOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.textField)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'VideoOpenNode',
-            r'.VideoOpenNode',
-            134217735,
-            33,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.VideoOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.VideoOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.video)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'SpacerOpenNode',
-            r'.SpacerOpenNode',
-            134217735,
-            34,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.SpacerOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.SpacerOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.spacer)
-            ],
-            {r'fromJson': 0}),
-        r.NonGenericClassMirrorImpl(
-            r'SvgPictureOpenNode',
-            r'.SvgPictureOpenNode',
-            134217735,
-            35,
-            const prefix32.NodeDeclaration(),
-            const <int>[-1],
-            null,
-            null,
-            -1,
-            {r'fromJson': () => prefix33.SvgPictureOpenNode.fromJson},
-            {},
-            {
-              r'': (bool b) => (
-                      {id,
-                      parentID,
-                      child,
-                      children,
-                      name,
-                      description,
-                      childOrder,
-                      attributes,
-                      rectProperties,
-                      updatedAt,
-                      pageID,
-                      stabilID,
-                      componentID,
-                      componentChildren,
-                      isLocked}) =>
-                  b
-                      ? prefix33.SvgPictureOpenNode(
-                          attributes: attributes,
-                          child: child,
-                          childOrder: childOrder,
-                          children: children,
-                          componentChildren: componentChildren,
-                          componentID: componentID,
-                          description: description,
-                          isLocked: isLocked,
-                          name: name,
-                          pageID: pageID,
-                          parentID: parentID,
-                          rectProperties: rectProperties,
-                          stabilID: stabilID,
-                          updatedAt: updatedAt,
-                          id: id)
-                      : null
-            },
-            -1,
-            -1,
-            const <int>[-1],
-            const <Object>[
-              prefix32.nodeDeclaration,
-              const prefix26.NodeKey(prefix36.NType.svgPicture)
+              prefix33.nodeDeclaration,
+              const prefix27.NodeKey(prefix37.NType.svgPicture)
             ],
             {r'fromJson': 0})
       ],
       null,
       null,
       <Type>[
-        prefix33.AlignOpenNode,
-        prefix33.ButtonOpenNode,
-        prefix33.ColumnOpenNode,
-        prefix33.ComponentOpenNode,
-        prefix33.TeamComponentOpenNode,
-        prefix33.RowOpenNode,
-        prefix33.ContainerOpenNode,
-        prefix33.ImageOpenNode,
-        prefix33.IconOpenNode,
-        prefix33.ListViewOpenNode,
-        prefix33.LottieOpenNode,
-        prefix33.ScaffoldOpenNode,
-        prefix33.StackOpenNode,
-        prefix33.TextOpenNode,
-        prefix33.TextFieldOpenNode,
-        prefix33.VideoOpenNode,
-        prefix33.SpacerOpenNode,
-        prefix33.SvgPictureOpenNode,
-        prefix33.AlignOpenNode,
-        prefix33.ButtonOpenNode,
-        prefix33.ColumnOpenNode,
-        prefix33.ComponentOpenNode,
-        prefix33.TeamComponentOpenNode,
-        prefix33.RowOpenNode,
-        prefix33.ContainerOpenNode,
-        prefix33.ImageOpenNode,
-        prefix33.IconOpenNode,
-        prefix33.ListViewOpenNode,
-        prefix33.LottieOpenNode,
-        prefix33.ScaffoldOpenNode,
-        prefix33.StackOpenNode,
-        prefix33.TextOpenNode,
-        prefix33.TextFieldOpenNode,
-        prefix33.VideoOpenNode,
-        prefix33.SpacerOpenNode,
-        prefix33.SvgPictureOpenNode
+        prefix34.AlignOpenNode,
+        prefix34.ButtonOpenNode,
+        prefix34.ColumnOpenNode,
+        prefix34.ComponentOpenNode,
+        prefix34.TeamComponentOpenNode,
+        prefix34.RowOpenNode,
+        prefix34.ContainerOpenNode,
+        prefix34.ImageOpenNode,
+        prefix34.IconOpenNode,
+        prefix34.ListViewOpenNode,
+        prefix34.LottieOpenNode,
+        prefix34.ScaffoldOpenNode,
+        prefix34.StackOpenNode,
+        prefix34.TextOpenNode,
+        prefix34.TextFieldOpenNode,
+        prefix34.VideoOpenNode,
+        prefix34.SpacerOpenNode,
+        prefix34.SvgPictureOpenNode
       ],
-      36,
+      18,
       {},
       {},
       null,
@@ -4688,30 +3706,30 @@ final _data = <r.Reflectable, r.ReflectorData>{
           ]
         ]
       ]),
-  const prefix32.NodeDeclarationReflector(): r.ReflectorData(
+  const prefix33.NodeDeclarationReflector(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'NodesParse',
             r'.NodesParse',
             134217735,
             0,
-            const prefix32.NodeDeclarationReflector(),
+            const prefix33.NodeDeclarationReflector(),
             const <int>[-1],
             null,
             null,
             -1,
             {},
             {},
-            {r'': (bool b) => () => b ? const prefix32.NodesParse() : null},
+            {r'': (bool b) => () => b ? prefix33.NodesParse() : null},
             -1,
             -1,
             const <int>[-1],
-            const <Object>[const prefix32.NodeDeclarationReflector()],
+            const <Object>[const prefix33.NodeDeclarationReflector()],
             {})
       ],
       null,
       null,
-      <Type>[prefix32.NodesParse],
+      <Type>[prefix33.NodesParse],
       1,
       {},
       {},
@@ -4721,7 +3739,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       ])
 };
 
-const _memberSymbolMap = null;
+final _memberSymbolMap = null;
 
 void initializeReflectable() {
   r.data = _data;

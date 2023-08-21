@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
@@ -17,8 +18,13 @@ class OpenWColumn extends Flex {
     required final FMainAxisAlignment mainAxisAlignment,
     required final FCrossAxisAlignment crossAxisAlignment,
     required final FMainAxisSize mainAxisSize,
+    required final FDirection direction,
   }) : super(
-          direction: Axis.vertical,
+          direction: direction.get(
+                state: context.watch<TreeState>(),
+                context: context,
+              ) ??
+              Axis.vertical,
           children: const NodeOverrideExecuter()
               .executeChildren(context, state, children),
           mainAxisAlignment: mainAxisAlignment.value,
