@@ -3,23 +3,11 @@
     "name": "Example",
     "description": "Example",
     "release_notes": "\n1. \n2.  \n3.",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "os": "macos",
     "installers": [{
       "initializer": "file",
-      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-0.6.1.dmg",
-      "close_on_installing": true
-    }]
-  },
-  {
-    "name": "Example",
-    "description": "Example",
-    "release_notes": "\n1. \n2.  \n3.",
-    "version": "0.6.0",
-    "os": "macos",
-    "installers": [{
-      "initializer": "file",
-      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-0.6.0.dmg",
+      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-1.0.0.dmg",
       "close_on_installing": true
     }]
   }
