@@ -8,7 +8,7 @@ import 'package:theta/src/data/models/preload_file.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
-import 'package:theta_models/theta_models.dart';
+import 'package:theta/theta.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
 part 'ui_box_controller.dart';
@@ -103,26 +103,26 @@ class __LogicBoxState extends State<_LogicBox> {
   void initState() {
     super.initState();
 
+    /// Loads the component from the server when the widget is initialized.
+    load();
+
     /// Sets the load callback in the controller.
     /// It's used to load the component programmatically.
     if (widget.controller != null) {
       widget.controller!._setLoadCallback(load);
     }
-
-    /// Loads the component from the server when the widget is initialized.
-    load();
   }
 
   /// Loads the component from the server.
   Future<void> load() async {
-    await getIt<ThetaClient>()
+    getIt<ThetaClient>()
         .build(widget.componentName, branchName: widget.branchName)
         .fold(
           onError,
           onLoaded,
         );
     if (getIt<PreloadFile>().enabled) {
-      await getIt<ThetaClient>()
+      getIt<ThetaClient>()
           .build(widget.componentName,
               branchName: widget.branchName, preloadAllowed: false)
           .fold(
