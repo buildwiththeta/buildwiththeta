@@ -52,6 +52,11 @@ dependencies:
   source_gen: ^1.2.7
   analyzer: ^5.11.1
   flutter_svg: ^2.0.7
+  defer_pointer: ^0.0.2
+
+dependency_overrides: 
+  theta_models:
+    path: ../models
 
 dev_dependencies:
   flutter_test:
