@@ -74,10 +74,10 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
             Positioned.fill(
               child: MouseRegion(onHover: (e) {
                 final state = context.read<TreeState>();
-                if (state.hoveredNode?.id != nodeState.node.id) {
+                if (state.hoveredNode?.id != widget.nodeState.node.id) {
                   context
                       .read<TreeGlobalState>()
-                      .onNodeHovered(nodeState.node, state.deviceType);
+                      .onNodeHovered(widget.nodeState.node, state.deviceType);
                 }
               }),
             ),
