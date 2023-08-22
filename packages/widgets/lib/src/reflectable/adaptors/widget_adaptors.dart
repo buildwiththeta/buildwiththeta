@@ -74,6 +74,7 @@ class ColumnAdapter extends WidgetAdapter {
             as FCrossAxisAlignment,
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
+        direction: state.node.getAttributes[DBKeys.direction] as FDirection,
       );
 
   ColumnAdapter.create() : this();
@@ -274,6 +275,7 @@ class RowAdapter extends WidgetAdapter {
             as FCrossAxisAlignment,
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
+        direction: state.node.getAttributes[DBKeys.direction] as FDirection,
       );
 
   RowAdapter.create() : this();
