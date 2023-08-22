@@ -1,3 +1,4 @@
+import 'package:defer_pointer/defer_pointer.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -177,50 +178,53 @@ class _NodeBuilderState extends State<NodeBuilder> {
 
     return handleOpenWSpacerWidget(
       widget.state.node,
-      MouseRegion(
-        hitTestBehavior: HitTestBehavior.opaque,
-        onEnter: (e) {
-          if (clickable) {
-            widget.onHover.call();
-          }
-        },
-        onExit: (e) => setState(() {
-          clickable = true;
-        }),
-        child: Visibility(
-          visible: _handleVisibility(state),
-          child: Padding(
-            padding: _handleMargins(state),
-            child: GestureDetectorInEditor(
-              key: ValueKey(widget.state.node.id + clickable.toString()),
-              node: widget.state.node,
-              clickable: clickable,
-              onTap: widget.onTap,
-              onPanStart: widget.onPanStart,
-              onDoubleTap: () => setState(() {
-                clickable = false;
-              }),
-              child: DecoratedBox(
-                decoration: _handleDecorationChange(
-                  state.hoveredNode,
-                  state.focusedNode,
-                  state.isDeviceCurrentlyFocused,
-                  state.isDeviceCurrentlyHovered,
-                ),
-                position: DecorationPosition.foreground,
-                child: Transform.rotate(
-                  angle: _handleRotation(state),
-                  child: Padding(
-                    padding: _handlePadding(state),
-                    child: GestureDetectorForPlay(
-                      state: widget.state,
-                      child: handleSlideAnimation(
-                        widget.state.node,
-                        handleScaleAnimation(
+      FlytingNodeOptions(
+        node: widget.state.node,
+        child: MouseRegion(
+          hitTestBehavior: HitTestBehavior.opaque,
+          onEnter: (e) {
+            if (clickable) {
+              widget.onHover.call();
+            }
+          },
+          onExit: (e) => setState(() {
+            clickable = true;
+          }),
+          child: Visibility(
+            visible: _handleVisibility(state),
+            child: Padding(
+              padding: _handleMargins(state),
+              child: GestureDetectorInEditor(
+                key: ValueKey(widget.state.node.id + clickable.toString()),
+                node: widget.state.node,
+                clickable: clickable,
+                onTap: widget.onTap,
+                onPanStart: widget.onPanStart,
+                onDoubleTap: () => setState(() {
+                  clickable = false;
+                }),
+                child: DecoratedBox(
+                  decoration: _handleDecorationChange(
+                    state.hoveredNode,
+                    state.focusedNode,
+                    state.isDeviceCurrentlyFocused,
+                    state.isDeviceCurrentlyHovered,
+                  ),
+                  position: DecorationPosition.foreground,
+                  child: Transform.rotate(
+                    angle: _handleRotation(state),
+                    child: Padding(
+                      padding: _handlePadding(state),
+                      child: GestureDetectorForPlay(
+                        state: widget.state,
+                        child: handleSlideAnimation(
                           widget.state.node,
-                          handleFadeInAnimation(
+                          handleScaleAnimation(
                             widget.state.node,
-                            widget.child,
+                            handleFadeInAnimation(
+                              widget.state.node,
+                              widget.child,
+                            ),
                           ),
                         ),
                       ),
@@ -339,5 +343,68 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
       );
     }
     return child;
+  }
+}
+
+class FlytingNodeOptions extends StatelessWidget {
+  const FlytingNodeOptions({
+    super.key,
+    required this.node,
+    required this.child,
+  });
+
+  final CNode node;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = context.watch<TreeState>();
+    if (state.forPlay) {
+      return child;
+    }
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
+    if (node.id != state.focusedNode?.id) {
+      return child;
+    }
+    if (!state.isDeviceCurrentlyFocused) {
+      return child;
+    }
+    return Stack(
+      clipBehavior: Clip.none,
+      fit: StackFit.passthrough,
+      children: [
+        child,
+        if (state.nodeControls[node.type] != null)
+          Positioned(
+            top: -80,
+            left: 0,
+            right: 0,
+            child: DeferPointer(
+              paintOnTop: true,
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: Center(
+                  child: Container(
+                    padding: EI.mdA,
+                    decoration: BoxDecoration(
+                      color: theme.bgPrimary,
+                      borderRadius: BorderRadius.circular(4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.txtPrimary.withOpacity(0.2),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: state.nodeControls[node.type] ??
+                        state.defaultNodeControls,
+                  ),
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
   }
 }

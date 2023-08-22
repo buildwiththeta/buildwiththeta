@@ -4,6 +4,7 @@
 // Package imports:
 
 // Flutter imports:
+import 'package:defer_pointer/defer_pointer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
@@ -67,20 +68,22 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
               offsetLocalRelative,
             );
       },
-      builder: (context, _, __) => Stack(
-        children: [
-          Positioned.fill(
-            child: MouseRegion(onHover: (e) {
-              final state = context.read<TreeState>();
-              if (state.hoveredNode?.id != widget.nodeState.node.id) {
-                context
-                    .read<TreeGlobalState>()
-                    .onNodeHovered(widget.nodeState.node, state.deviceType);
-              }
-            }),
-          ),
-          ...widgets,
-        ],
+      builder: (context, _, __) => DeferredPointerHandler(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: MouseRegion(onHover: (e) {
+                final state = context.read<TreeState>();
+                if (state.hoveredNode?.id != nodeState.node.id) {
+                  context
+                      .read<TreeGlobalState>()
+                      .onNodeHovered(nodeState.node, state.deviceType);
+                }
+              }),
+            ),
+            ...widgets,
+          ],
+        ),
       ),
     );
   }
