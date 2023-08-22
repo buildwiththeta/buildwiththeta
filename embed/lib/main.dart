@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
@@ -58,7 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Theta.initialize(anonKey: widget.token).then((value) {
+    Theta.initialize(
+        anonKey: widget.token,
+        connectionMode: ConnectionMode.continuous,
+        componentsNames: [widget.name]).then((value) {
       setState(() {
         isLoaded = true;
       });
@@ -69,12 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: !isLoaded
-          ? const Center(
-              child: CupertinoActivityIndicator(),
-            )
+          ? const SizedBox.shrink()
           : ThetaProvider(
               theme: ThemeMode.light,
-              child: UIBox(widget.name),
+              child: UIBox(
+                widget.name,
+                placeholder: const SizedBox.shrink(),
+              ),
             ),
     );
   }
