@@ -13,13 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta: ^0.6.3
-
-dependency_overrides: 
-  theta: 
-    path: ../packages/builder
-  theta_open_widgets: 
-    path: ../packages/widgets
+  theta: ^0.7.0
 
 dev_dependencies:
   flutter_test:

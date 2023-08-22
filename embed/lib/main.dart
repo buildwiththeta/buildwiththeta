@@ -5,7 +5,6 @@ void main() {
   try {
     String name = Uri.base.queryParameters["component_name"]!;
     String token = Uri.base.queryParameters["token"]!;
-    print(token);
     runApp(MyApp(name: name, token: token));
   } catch (e) {
     runApp(const MaterialApp(
@@ -70,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: !isLoaded
           ? const SizedBox.shrink()
           : ThetaProvider(

@@ -1,3 +1,8 @@
+## 0.6.5
+
+- [x] Feat: add direction to Flex.
+- [x] Feat: add flying controls support.
+
 ## 0.6.4
 
 - [x] Feat: models 0.6.1

@@ -1,3 +1,7 @@
+## 0.7.0
+
+- [x] Feat: add direction to Flex
+- [x] Feat: load multi components at once.
 
 ## 0.6.3
 
