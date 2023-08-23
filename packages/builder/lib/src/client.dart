@@ -55,7 +55,11 @@ class ThetaClient {
       ));
 
   Future<Either<Exception, GetPageResponseEntity>> build(String componentName,
-          {bool preloadAllowed = true, String? branchName}) async =>
-      components[componentName] ??
-      await _fetchComponent(componentName, preloadAllowed, branchName);
+      {bool preloadAllowed = true, String? branchName}) async {
+    if (components.containsKey(componentName)) {
+      Logger.printMessage('Component $componentName already loaded');
+      return components[componentName]!;
+    }
+    return await _fetchComponent(componentName, preloadAllowed, branchName);
+  }
 }
