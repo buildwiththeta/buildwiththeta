@@ -54,6 +54,9 @@
         }
       });
     });
+    const serviceWorkerActivation = navigator.serviceWorker.register(
+      "flutter_service_worker.js?v=" + serviceWorkerVersion
+    );
   </script>
 </body>
 </html>
