@@ -10,8 +10,13 @@
 +      fetch("assets/FontManifest.json");
 +      fetch("assets/fonts/MaterialIcons-Regular.otf");
 +      fetch("assets/version.json");
++      fetch("assets/packages/feather_icons/fonts/feather.ttf");
++      fetch("assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf");
++      fetch("assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf");
++      fetch("assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf");
++      fetch("assets/packages/line_icons/lib/assets/fonts/LineIcons.ttf");
++      fetch("assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf");
 +      fetch("/");
-+
 +      return main;
      }
    }
