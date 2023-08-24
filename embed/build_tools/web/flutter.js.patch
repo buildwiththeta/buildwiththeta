@@ -1,6 +1,6 @@
---- flutter.js	2023-08-24 12:48:00
-+++ flutter_new.js	2023-08-24 12:48:26
-@@ -375,7 +375,14 @@
+--- flutter.js	2023-08-24 12:50:32
++++ flutter_new.js	2023-08-24 13:06:45
+@@ -375,7 +375,19 @@
        // Install the `didCreateEngineInitializer` listener where Flutter web expects it to be.
        this.didCreateEngineInitializer =
          entrypointLoader.didCreateEngineInitializer.bind(entrypointLoader);
@@ -16,7 +16,7 @@
 +      fetch("assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf");
 +      fetch("assets/packages/line_icons/lib/assets/fonts/LineIcons.ttf");
 +      fetch("assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf");
-+      fetch("/");
++
 +      return main;
      }
    }
