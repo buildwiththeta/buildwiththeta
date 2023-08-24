@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:theta/theta.dart';
+import 'package:theta/theta.dart' deferred as theta;
 
-void main() {
+Future<void> main() async {
   try {
     String name = Uri.base.queryParameters["component_name"]!;
     String token = Uri.base.queryParameters["token"]!;
@@ -56,14 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Theta.initialize(
-        anonKey: widget.token,
-        connectionMode: ConnectionMode.continuous,
-        componentsNames: [widget.name]).then((value) {
-      setState(() {
-        isLoaded = true;
-      });
-    });
+    theta.loadLibrary().then((value) => theta.Theta.initialize(
+            anonKey: widget.token,
+            connectionMode: theta.ConnectionMode.continuous,
+            componentsNames: [widget.name]).then((value) {
+          setState(() {
+            isLoaded = true;
+          });
+        }));
   }
 
   @override
@@ -72,9 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.transparent,
       body: !isLoaded
           ? const SizedBox.shrink()
-          : ThetaProvider(
+          : theta.ThetaProvider(
               theme: ThemeMode.light,
-              child: UIBox(
+              child: theta.UIBox(
                 widget.name,
                 placeholder: const SizedBox.shrink(),
               ),
