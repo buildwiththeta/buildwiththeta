@@ -75,11 +75,19 @@ class FindNodeRendering {
     return null;
   }
 
-  CNode? findNextNode(CNode parent, CNode? parentChild) {
-    if (parentChild == null || parent.children == null) {
+  CNode? findNextNodeById(CNode parent, String? idToFind) {
+    if (parent.children == null || idToFind == null) {
       return null;
     }
-    int index = parent.children!.indexOf(parentChild);
+
+    int index = -1;
+    for (var i = 0; i < parent.children!.length; i++) {
+      if (parent.children![i].id == idToFind) {
+        index = i;
+        break;
+      }
+    }
+
     if (index != -1 && index < parent.children!.length - 1) {
       return parent.children![index + 1];
     } else {
@@ -95,7 +103,7 @@ class FindNodeRendering {
   }
 
   CNode? findLastNode(CNode parent) {
-    if (parent.children == null) {
+    if (parent.children == null || parent.children!.isEmpty) {
       return null;
     }
     return parent.children![parent.children!.length - 1];
