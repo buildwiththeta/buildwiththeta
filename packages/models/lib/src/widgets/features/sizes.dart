@@ -15,14 +15,10 @@ enum SizeUnit {
 @dynamicAttributeKey
 @AttributeKey(DBKeys.width)
 @AttributeKey(DBKeys.widthFactor)
-@AttributeKey(DBKeys.minWidth)
-@AttributeKey(DBKeys.maxWidth)
 @AttributeKey(DBKeys.mainAxisExtend)
 @AttributeKey(DBKeys.crossAxisExtend)
 @AttributeKey(DBKeys.height)
 @AttributeKey(DBKeys.heightFactor)
-@AttributeKey(DBKeys.minHeight)
-@AttributeKey(DBKeys.maxHeight)
 class FSize extends Equatable {
   const FSize({
     required this.size,

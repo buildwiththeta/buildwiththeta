@@ -12,16 +12,33 @@ class ThetaClient {
   final GetStylesUseCase _getStylesUseCase;
 
   late GetStylesResponseEntity styles;
+  final Map<String, Either<Exception, GetPageResponseEntity>> components = {};
 
-  Future<void> initialize() async => await _fetchStyles().then((res) {
-        res.fold(
-          (l) {
-            Logger.printError('Error fetching styles: $l');
-            throw Exception('Error fetching styles: $l');
-          },
-          (r) => styles = r,
-        );
-      });
+  Future<void> initialize(
+    List<String> componentNames,
+    String? branchName,
+    bool preloadedAllowed,
+  ) async =>
+      await Future.wait([
+        _fetchStyles(preloadAllowed: preloadedAllowed).then((res) {
+          res.fold(
+            (l) {
+              Logger.printError('Error fetching styles: $l');
+              throw Exception('Error fetching styles: $l');
+            },
+            (r) => styles = r,
+          );
+        }),
+        ...componentNames.map(
+          (e) => _fetchComponent(
+            e,
+            preloadedAllowed,
+            branchName,
+          ).then(
+            (res) => components[e] = res,
+          ),
+        )
+      ]);
 
   Future<Either<Exception, GetStylesResponseEntity>> _fetchStyles(
           {bool preloadAllowed = true}) async =>
@@ -38,6 +55,11 @@ class ThetaClient {
       ));
 
   Future<Either<Exception, GetPageResponseEntity>> build(String componentName,
-          {bool preloadAllowed = true, String? branchName}) async =>
-      await _fetchComponent(componentName, preloadAllowed, branchName);
+      {bool preloadAllowed = true, String? branchName}) async {
+    if (components.containsKey(componentName)) {
+      Logger.printMessage('Component $componentName already loaded');
+      return components[componentName]!;
+    }
+    return await _fetchComponent(componentName, preloadAllowed, branchName);
+  }
 }

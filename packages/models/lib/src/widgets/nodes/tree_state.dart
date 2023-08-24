@@ -44,6 +44,8 @@ class TreeState with ChangeNotifier {
     this.customFonts = const [],
     this.isDeviceCurrentlyFocused = true,
     this.isDeviceCurrentlyHovered = true,
+    this.nodeControls = const {},
+    this.defaultNodeControls = const SizedBox.shrink(),
   });
 
   /// Are we in Play Mode?
@@ -110,6 +112,9 @@ class TreeState with ChangeNotifier {
 
   bool isDeviceCurrentlyFocused;
   bool isDeviceCurrentlyHovered;
+
+  Map<String, Widget> nodeControls;
+  Widget defaultNodeControls;
 
   void onFocusedDeviceChanged(DeviceType device) {
     isDeviceCurrentlyFocused = device == deviceType;
@@ -192,6 +197,14 @@ class TreeState with ChangeNotifier {
     this.customFonts = customFonts;
   }
 
+  void onNodeControlsChanged(Map<String, Widget> controls) {
+    nodeControls = controls;
+  }
+
+  void onDefaultNodeControlsChanged(Widget controls) {
+    defaultNodeControls = controls;
+  }
+
   void notify() {
     notifyListeners();
   }
@@ -220,6 +233,8 @@ class TreeState with ChangeNotifier {
     final bool? preloaded,
     final bool? isDeviceCurrentlyFocused,
     final bool? isDeviceCurrentlyHovered,
+    final Map<String, Widget>? nodeControls,
+    final Widget? defaultNodeControls,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -244,6 +259,8 @@ class TreeState with ChangeNotifier {
           isDeviceCurrentlyFocused ?? this.isDeviceCurrentlyFocused,
       isDeviceCurrentlyHovered:
           isDeviceCurrentlyHovered ?? this.isDeviceCurrentlyHovered,
+      nodeControls: nodeControls ?? this.nodeControls,
+      defaultNodeControls: defaultNodeControls ?? this.defaultNodeControls,
     );
   }
 }

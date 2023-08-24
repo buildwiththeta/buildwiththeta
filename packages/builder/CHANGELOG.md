@@ -1,3 +1,15 @@
+## 0.7.2
+
+- [x] Feat: export CustomURLs class.
+
+## 0.7.1
+
+- [x] Feat: allow custom URLs.
+
+## 0.7.0
+
+- [x] Feat: add direction to Flex
+- [x] Feat: load multi components at once.
 
 ## 0.6.3
 

@@ -70,12 +70,11 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
   ButtonDefaultAttributes.create() : this();
 }
 
-/// Column, Row
+/// Column,
 @dynamicDefaultAttribute
 @NodeKey(NType.column)
-@NodeKey(NType.row)
-class FlexDefaultAttributes extends DefaultAttributesAdapter {
-  const FlexDefaultAttributes();
+class ColumnDefaultAttributes extends DefaultAttributesAdapter {
+  const ColumnDefaultAttributes();
 
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
@@ -88,9 +87,39 @@ class FlexDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.mainAxisSize: FMainAxisSize(
           value: MainAxisSize.max,
         ),
+        DBKeys.direction: FDirection(
+          direction: Axis.vertical,
+          directionTablet: Axis.vertical,
+          directionDesktop: Axis.vertical,
+        )
       };
+  ColumnDefaultAttributes.create() : this();
+}
 
-  FlexDefaultAttributes.create() : this();
+/// Row
+@dynamicDefaultAttribute
+@NodeKey(NType.row)
+class RowDefaultAttributes extends DefaultAttributesAdapter {
+  const RowDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.mainAxisAlignment: FMainAxisAlignment(
+          value: MainAxisAlignment.start,
+        ),
+        DBKeys.crossAxisAlignment: FCrossAxisAlignment(
+          value: CrossAxisAlignment.start,
+        ),
+        DBKeys.mainAxisSize: FMainAxisSize(
+          value: MainAxisSize.max,
+        ),
+        DBKeys.direction: FDirection(
+          direction: Axis.horizontal,
+          directionTablet: Axis.horizontal,
+          directionDesktop: Axis.horizontal,
+        )
+      };
+  RowDefaultAttributes.create() : this();
 }
 
 /// Component
@@ -128,26 +157,6 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
 
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.minWidth: FSize(
-          size: '0',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.maxWidth: FSize(
-          size: 'max',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.minHeight: FSize(
-          size: '0',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.maxHeight: FSize(
-          size: '250',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
         DBKeys.width: FSize(
           size: '150',
           sizeTablet: null,

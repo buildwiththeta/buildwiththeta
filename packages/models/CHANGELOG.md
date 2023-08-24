@@ -1,3 +1,8 @@
+## 0.6.2
+
+- [x] Feat: add direction to Flex.
+- [x] Feat: add flying controls.
+
 ## 0.6.1
 
 - [x] Feat: remove required sizes for Tablet and Desktop in FSize.
