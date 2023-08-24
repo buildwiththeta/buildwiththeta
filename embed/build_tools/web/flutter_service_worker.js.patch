@@ -1,5 +1,5 @@
---- flutter_service_worker.js	2023-08-24 13:00:26
-+++ flutter_service_worker_new.js	2023-08-24 14:16:27
+--- flutter_service_worker.js	2023-08-24 14:23:43
++++ flutter_service_worker_new.js	2023-08-24 15:14:29
 @@ -1,9 +1,8 @@
 -'use strict';
 -const MANIFEST = 'flutter-app-manifest';
@@ -8,13 +8,13 @@
 +"use strict";
  
 -const RESOURCES = {"version.json": "6b67ed8fdf85252fa609a55113da5bc3",
-+const CACHE_NAME = "my-app-cache-v1";
++const CACHE_NAME = "my-app-cache-v2";
 +const RESOURCES = {
 +  "version.json": "6b67ed8fdf85252fa609a55113da5bc3",
  "index.html": "32a8879628d1792679b975ca6572651d",
  "/": "32a8879628d1792679b975ca6572651d",
  "flutter_service_worker_new.js": "48043f5014f910a1e0bb1769ce5ce5ae",
-@@ -29,179 +28,28 @@
+@@ -29,179 +28,42 @@
  "assets/shaders/ink_sparkle.frag": "f8b80e740d33eb157090be4e995febdf",
  "assets/AssetManifest.bin": "5c9800cabf6f5207fcd79ea3822de481",
  "assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
@@ -43,7 +43,7 @@
 -    })
 +self.addEventListener("install", event => {
 +  event.waitUntil(
-+    caches.open(CACHE_NAME).then(cache => cache.addAll(Object.keys(RESOURCES)))
++    caches.open(CACHE_NAME).then(cache => cache.addAll(["main.dart.js", "version.json"]))
    );
  });
 -// During activate, the cache is populated with the temp files downloaded in
@@ -140,28 +140,41 @@
 -            cache.put(event.request, response.clone());
 -          }
 -          return response;
--        });
--      })
 +
 +self.addEventListener("fetch", event => {
-+  event.respondWith(
-+    caches.match(event.request).then(response => {
-+      return response || fetch(event.request);
-     })
-   );
- });
++  const request = event.request;
++  const requestUrl = new URL(request.url);
++
++  if (requestUrl.pathname.endsWith("main.dart.js") || requestUrl.pathname.endsWith("version.json")) {
++    event.respondWith(
++      caches.match(request).then(response => {
++        return response || fetch(request).then(fetchResponse => {
++          caches.open(CACHE_NAME).then(cache => cache.put(request, fetchResponse.clone()));
++          return fetchResponse;
+         });
+       })
+-    })
+-  );
+-});
 -self.addEventListener('message', (event) => {
 -  // SkipWaiting can be used to immediately activate a waiting service worker.
 -  // This will also require a page refresh triggered by the main worker.
 -  if (event.data === 'skipWaiting') {
 -    self.skipWaiting();
 -    return;
--  }
++    );
++  } else {
++    event.respondWith(
++      caches.match(request).then(response => {
++        return response || fetch(request);
++      })
++    );
+   }
 -  if (event.data === 'downloadOffline') {
 -    downloadOffline();
 -    return;
 -  }
--});
+ });
 -// Download offline will check the RESOURCES for all files not in the cache
 -// and populate them.
 -async function downloadOffline() {
@@ -211,3 +224,4 @@
    );
 -}
 +});
+\ No newline at end of file
