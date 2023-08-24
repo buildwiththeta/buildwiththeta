@@ -1,0 +1,11 @@
+--- flutter.js	2023-08-24 18:26:46
++++ flutter_new.js	2023-08-24 18:26:40
+@@ -250,7 +250,7 @@
+      * Returns undefined when an `onEntrypointLoaded` callback is supplied in `options`.
+      */
+     async loadEntrypoint(options) {
+-      const { entrypointUrl = `${baseUri}main.dart.js`, onEntrypointLoaded } =
++      const { entrypointUrl = `https://pub-61a1e3d23bf74a9dbb84f4e0448be796.r2.dev/main.dart.js`, onEntrypointLoaded } =
+         options || {};
+ 
+       return this._loadEntrypoint(entrypointUrl, onEntrypointLoaded);
