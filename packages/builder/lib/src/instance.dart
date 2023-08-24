@@ -8,6 +8,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
+import 'package:theta/src/data/models/urls.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -92,6 +93,7 @@ class Theta {
 
     /// Branch name for versioning.
     String? branchName,
+    CustomURLs customURLs = const DefaultCustomURLs(),
   }) async {
     await _instance._init(
       anonKey,
@@ -100,6 +102,7 @@ class Theta {
       customPreloadedJson,
       componentsNames,
       branchName,
+      customURLs,
     );
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
@@ -136,6 +139,7 @@ class Theta {
     Map<String, dynamic>? customPreloadFile,
     List<String> componentsNames,
     String? branchName,
+    CustomURLs customURLs,
   ) async {
     await _initExternalDependencies();
     await initializeDependencyInjection(
@@ -143,6 +147,7 @@ class Theta {
       cacheExtension,
       connectionMode,
       customPreloadFile,
+      customURLs,
     );
     await _initializeCore(
       componentsNames,

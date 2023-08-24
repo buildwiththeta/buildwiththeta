@@ -57,10 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+    const defaultUrl = DefaultCustomURLs();
     Theta.initialize(
-        anonKey: widget.token,
-        connectionMode: ConnectionMode.continuous,
-        componentsNames: [widget.name]).then((value) {
+            anonKey: widget.token,
+            connectionMode: ConnectionMode.continuous,
+            componentsNames: [widget.name],
+            customURLs: CustomURLs(
+                getComponent: "https://getcomponent.andrea-364.workers.dev/",
+                getStyles: defaultUrl.getStyles,
+                sendEvents: defaultUrl.getStyles))
+        .then((value) {
       setState(() {
         isLoaded = true;
       });

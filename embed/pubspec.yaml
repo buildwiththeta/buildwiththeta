@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta: ^0.7.0
+  theta: ^0.7.2
 
 dev_dependencies:
   flutter_test:
