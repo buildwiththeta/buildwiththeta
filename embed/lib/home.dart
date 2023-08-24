@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart' deferred as theta;
 
@@ -32,12 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: !isLoaded
-          ? const SizedBox.shrink()
+          ? const Center(child: CupertinoActivityIndicator())
           : theta.ThetaProvider(
               theme: ThemeMode.light,
               child: theta.UIBox(
                 widget.name,
-                placeholder: const SizedBox.shrink(),
+                placeholder: const Center(child: CupertinoActivityIndicator()),
               ),
             ),
     );
