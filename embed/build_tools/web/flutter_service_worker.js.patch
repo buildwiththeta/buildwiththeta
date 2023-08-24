@@ -1,7 +1,7 @@
---- build/web/flutter_service_worker.js.orig	2023-02-14 05:46:14.641558233 +0800
-+++ build/web/flutter_service_worker.js	2023-02-14 05:48:16.339943489 +0800
-@@ -29,21 +29,6 @@
- "/": "edf4d01f5266c63075af78507efdc906"};
+--- flutter_service_worker.js	2023-08-24 12:50:34
++++ flutter_service_worker_new.js	2023-08-24 12:53:55
+@@ -38,21 +38,6 @@
+ "canvaskit/skwasm.worker.js": "51253d3321b11ddb8d73fa8aa87d3b15"};
  // The application shell files that are downloaded before a service worker can
  // start.
 -const CORE = ["main.dart.js",
@@ -22,20 +22,11 @@
  // During activate, the cache is populated with the temp files downloaded in
  // install. If this service worker is upgrading from one with a saved
  // MANIFEST, then use this to retain unchanged resource files.
-@@ -104,6 +89,7 @@
-     }
-   }());
- });
-+var IN_PROCESSING_REQUESTS = {};
- // The fetch handler redirects requests for RESOURCE files to the service
- // worker cache.
- self.addEventListener("fetch", (event) => {
-@@ -133,12 +119,27 @@
+@@ -142,10 +127,20 @@
        return cache.match(event.request).then((response) => {
          // Either respond with the cached resource, or perform a fetch and
          // lazily populate the cache only if the resource was successfully fetched.
 -        return response || fetch(event.request).then((response) => {
-+
 +        if (response) {
 +          return response;
 +        }
@@ -47,16 +38,10 @@
 +        return fetch(event.request).then((response) => {
            if (response && Boolean(response.ok)) {
 -            cache.put(event.request, response.clone());
-+
-+            cache.put(event.request, response.clone())
-+                .then(() => delete IN_PROCESSING_REQUESTS[key]);
++            cache.put(event.request, response.clone()).then(() => delete IN_PROCESSING_REQUESTS[key]);
            }
 +
 +          IN_PROCESSING_REQUESTS[key] = response.clone();
-+
            return response;
          });
-+
        })
-     })
-   );
