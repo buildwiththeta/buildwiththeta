@@ -5,28 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/theta_models.dart';
 
-enum SizeUnit {
-  pixel,
-  percent,
-  width,
-  height,
-}
-
 @dynamicAttributeKey
-@AttributeKey(DBKeys.width)
-@AttributeKey(DBKeys.widthFactor)
-@AttributeKey(DBKeys.mainAxisExtend)
-@AttributeKey(DBKeys.crossAxisExtend)
-@AttributeKey(DBKeys.height)
-@AttributeKey(DBKeys.heightFactor)
-class FSize extends Equatable {
-  const FSize({
+@AttributeKey(DBKeys.minWidth)
+@AttributeKey(DBKeys.maxWidth)
+@AttributeKey(DBKeys.minHeight)
+@AttributeKey(DBKeys.maxHeight)
+class FSizeRange extends Equatable {
+  const FSizeRange({
     required this.size,
     required this.sizeTablet,
     required this.sizeDesktop,
   });
 
-  final String size;
+  final String? size;
   final String? sizeTablet;
   final String? sizeDesktop;
 
@@ -37,8 +28,8 @@ class FSize extends Equatable {
         sizeDesktop,
       ];
 
-  static FSize ready() =>
-      const FSize(size: '0', sizeTablet: null, sizeDesktop: null);
+  static FSizeRange ready() =>
+      const FSizeRange(size: null, sizeTablet: null, sizeDesktop: null);
 
   double? get({
     required final TreeState state,
@@ -70,8 +61,9 @@ class FSize extends Equatable {
         sizeValue = sizeDesktop ?? size;
       }
     }
-
-    if (sizeValue.toLowerCase() == 'max' ||
+    if (sizeValue == null) {
+      return null;
+    } else if (sizeValue.toLowerCase() == 'max' ||
         sizeValue.toLowerCase() == 'inf' ||
         sizeValue.toLowerCase() == '100%') {
       return double.maxFinite;
@@ -80,8 +72,10 @@ class FSize extends Equatable {
       return null;
     }
     final temp = sizeValue.replaceAll('%', '');
-    final value = double.tryParse(temp) ?? 0;
-    if (sizeValue.contains('%')) {
+    final value = double.tryParse(temp) ?? null;
+    if (value == null) {
+      return null;
+    } else if (sizeValue.contains('%')) {
       if (state.forPlay && !inEditor) {
         if (isWidth) {
           return MediaQuery.of(context).size.width * (value / 100);
@@ -107,19 +101,19 @@ class FSize extends Equatable {
     return value;
   }
 
-  FSize copyWith({
+  FSizeRange copyWith({
     String? size,
     String? sizeTablet,
     String? sizeDesktop,
   }) =>
-      FSize(
+      FSizeRange(
         size: size ?? this.size,
         sizeTablet: sizeTablet ?? this.sizeTablet,
         sizeDesktop: sizeDesktop ?? this.sizeDesktop,
       );
 
-  FSize updateSize(
-    final String newValue,
+  FSizeRange updateSize(
+    final String? newValue,
     final BuildContext context,
     final frame.DeviceType deviceType,
   ) {
@@ -132,16 +126,16 @@ class FSize extends Equatable {
     }
   }
 
-  static FSize fromJson(final Map<String, dynamic> json) {
+  static FSizeRange fromJson(final Map<String, dynamic> json) {
     try {
-      return FSize(
-        size: json['s'] as String,
+      return FSizeRange(
+        size: json['s'] as String?,
         sizeTablet: json['t'] as String?,
         sizeDesktop: json['d'] as String?,
       );
     } catch (e) {
-      Logger.printError('Error in FSize fromJson: $e');
-      return const FSize(size: '16', sizeTablet: null, sizeDesktop: null);
+      Logger.printError('Error in FSizeRange fromJson: $e');
+      return const FSizeRange(size: null, sizeTablet: null, sizeDesktop: null);
     }
   }
 
@@ -161,5 +155,5 @@ class FSize extends Equatable {
   }
 
   @override
-  String toString() => 'FSize { size: $size }';
+  String toString() => 'FSizeRange { size: $size }';
 }

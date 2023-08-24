@@ -47,6 +47,26 @@ abstract class CNode extends Equatable {
       marginsTablet: [0, 0, 0, 0],
       marginsDesktop: [0, 0, 0, 0],
     ),
+    DBKeys.minWidth: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.maxWidth: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.minHeight: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.maxHeight: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
   };
 
   // all the children of the component

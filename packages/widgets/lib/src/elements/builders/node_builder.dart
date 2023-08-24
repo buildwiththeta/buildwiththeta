@@ -116,6 +116,48 @@ class _NodeBuilderState extends State<NodeBuilder> {
               : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
                       as bool? ??
                   true);
+  Widget handleSizeRange(TreeState state, Widget child) {
+    if (widget.state.node.type == NType.scaffold) {
+      return child;
+    }
+    final minWidth =
+        widget.state.node.getAttributes[DBKeys.minWidth] as FSizeRange;
+    final minHeight =
+        widget.state.node.getAttributes[DBKeys.minHeight] as FSizeRange;
+    final maxWidth =
+        widget.state.node.getAttributes[DBKeys.maxWidth] as FSizeRange;
+    final maxHeight =
+        widget.state.node.getAttributes[DBKeys.maxHeight] as FSizeRange;
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: minWidth.get(
+              state: state,
+              context: context,
+              isWidth: true,
+            ) ??
+            0.0,
+        maxWidth: maxWidth.get(
+              state: state,
+              context: context,
+              isWidth: true,
+            ) ??
+            double.infinity,
+        minHeight: minHeight.get(
+              state: state,
+              context: context,
+              isWidth: false,
+            ) ??
+            0.0,
+        maxHeight: maxHeight.get(
+              state: state,
+              context: context,
+              isWidth: false,
+            ) ??
+            double.infinity,
+      ),
+      child: child,
+    );
+  }
 
   Widget handleSlideAnimation(CNode node, Widget child) {
     if (node.getAttributes[DBKeys.slideAnimationEnabled] as bool? ?? false) {
@@ -223,7 +265,10 @@ class _NodeBuilderState extends State<NodeBuilder> {
                             widget.state.node,
                             handleFadeInAnimation(
                               widget.state.node,
-                              widget.child,
+                              handleSizeRange(
+                                state,
+                                widget.child,
+                              ),
                             ),
                           ),
                         ),

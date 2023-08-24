@@ -157,26 +157,6 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
 
   @override
   Map<String, dynamic> get get => const <String, dynamic>{
-        DBKeys.minWidth: FSize(
-          size: '0',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.maxWidth: FSize(
-          size: 'max',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.minHeight: FSize(
-          size: '0',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
-        DBKeys.maxHeight: FSize(
-          size: '250',
-          sizeTablet: null,
-          sizeDesktop: null,
-        ),
         DBKeys.width: FSize(
           size: '150',
           sizeTablet: null,
