@@ -1,0 +1,20 @@
+{
+    "packages/feather_icons/fonts/feather.ttf": [
+        "https://buildwiththeta.net/feather.ttf"
+    ],
+    "packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": [
+        "https://buildwiththeta.net/fa-brands-400.ttf"
+    ],
+    "packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": [
+        "https://buildwiththeta.net/fa-regular-400.ttf"
+    ],
+    "packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": [
+        "https://buildwiththeta.net/fa-solid-900.ttf"
+    ],
+    "packages/line_icons/lib/assets/fonts/LineIcons.ttf": [
+        "https://buildwiththeta.net/LineIcons.ttf"
+    ],
+    "packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": [
+        "https://buildwiththeta.net/materialdesignicons-webfont.ttf"
+    ]
+}
