@@ -1,5 +1,5 @@
---- flutter_service_worker.js	2023-08-25 11:15:05
-+++ flutter_service_worker_new.js	2023-08-25 11:10:00
+--- flutter_service_worker.js	2023-08-25 11:19:40
++++ flutter_service_worker_new.js	2023-08-25 11:19:50
 @@ -3,7 +3,7 @@
  const TEMP = 'flutter-temp-cache';
  const CACHE_NAME = 'flutter-app-cache';
