@@ -1,57 +1,71 @@
 ---
 title: Build with Theta Docs
-description: Theta est un outil open source permettant de rationaliser la création et les tests d'applications avec des interfaces utilisateur dynamiques, sans avoir besoin de reconstruction.
-next: /pour-commencer
-nextTitle: Pour commencer
+description: Theta est un outil open source de prototypage et de tests en production
+next: /getting-started
+nextTitle: Getting started
 ---
 
 # Theta
 
-## La manière open source de concevoir une interface utilisateur distante
-
-> Créez votre système de conception à distance sans effort, sans écrire de code. Intégrez-le de manière transparente dans votre base de code aux côtés de vos packages préférés, permettant des mises à jour faciles de l'interface utilisateur sans avoir à reconstruire l'intégralité de l'application.
+## Prototypage et tests en production
 
 ![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
 
-Theta, un outil hébergé open source, facilite le processus de développement d'applications en permettant des modifications dynamiques de l'interface utilisateur sans nécessiter de reconstruction d'application ou de configurations complexes. Cet outil étendra prochainement le soutien à l'auto-hébergement et au développement local, augmentant encore son accessibilité et sa polyvalence.
+Prototypez et testez des interfaces utilisateur dynamiques avec des mises à jour instantanées en direct. Vous pouvez mettre à jour l'interface utilisateur sans la reconstruire. Vous pouvez directement configurer des tests A/B à distance et voir l'analyse pour améliorer l'UX et les ventes.
 
-Le développement d'applications traditionnelles nécessite souvent des cycles de reconstruction et de déploiement fréquents à chaque changement de code. Bien que certaines solutions existent et soient vraiment bonnes, elles ont souvent une portée limitée. Par exemple, le code push expérimental de Flutter (comme [Shorebird](https://shorebird.dev) pour Android) ne cible que les développeurs experts, tandis que les constructeurs sans code comme [FlutterFlow](https://flutterflow.io) peuvent faire des compromis sur qualité du code tout en nécessitant une programmation supplémentaire pour les fonctionnalités complexes.
+Le développement d’applications traditionnelles nécessite souvent des cycles fréquents de reconstruction et de déploiement à chaque modification de code. Même si certaines solutions existent et sont vraiment bonnes, elles sont souvent limitées dans leur portée. Par exemple, le code push expérimental de Flutter (comme [Shorebird](https://shorebird.dev) pour Android) ne cible que les développeurs experts, tandis que les créateurs sans code comme [FlutterFlow](https://flutterflow.io) peuvent faire des compromis sur qualité du code tout en nécessitant une programmation supplémentaire pour des fonctionnalités complexes.
 
 ## Pourquoi Theta
 
-Conçu pour faciliter la conception rapide de l'interface utilisateur, Theta rationalise la création d'interfaces dynamiques directement dans vos clients d'application. Theta n'est pas un constructeur d'applications sans code. Au lieu de cela, il permet aux développeurs d'intégrer Theta dans leurs flux de travail existants, garantissant une intégration transparente sans compromettre la qualité du code. Avec Theta, vous pouvez concevoir une barre d'application réactive et l'afficher dans une application Flutter en quelques minutes seulement.
+Créer une application Flutter signifie que vous prendrez peu de temps pour la programmer à partir de zéro, mais vous passerez presque tout votre temps à la mettre à jour et à la tester pour améliorer l'UX et les ventes.
 
-Voici quelques-unes des caractéristiques déterminantes de Theta :
+Mais tester et mettre à jour même de petites parties de l'interface utilisateur de notre application (par exemple, les paywalls, les boîtes de dialogue d'actualités ou même la copie de texte) est un mécanisme qui nécessite de mettre la main sur le code et de perdre beaucoup de temps à chaque modification.
 
-### Fonctionnalités disponibles
-- **Positionnement absolu** : éléments de conception avec positionnement absolu, similaire à Figma.
-- **Design réactif** : créez des éléments et des interfaces réactifs.
-- **Intégration Theta** : intégrez Theta dans votre application à l'aide de la bibliothèque Theta Flutter.
-- **Mélange code et sans code** : utilisez des flux de travail pour combiner sans code et code, par exemple, exécutez une méthode lorsqu'un nœud est touché.
-- **Chargement et gestion des erreurs** : gérez efficacement le chargement et la gestion des erreurs dans les widgets distants.
-- **Modes clair et sombre** : prise en charge des thèmes d'interface utilisateur sombres et clairs.
-- **Node Overrides** : Remplacez n'importe quel nœud de votre application.
+C'est fou, c'est pourquoi j'ai créé un outil pour mettre à jour et tester des applications en production en quelques clics. Intégrez Theta pour commencer tout de suite : buildwiththeta.com
 
-### À venir
-- **Collaboration** : Collaborez avec votre équipe.
-- **Partage** : partagez vos conceptions avec un lien public.
-- **États et paramètres** : gérez les états et les paramètres.
+## Les développeurs ne devraient pas coder en dur les composants de l'interface utilisateur
+
+Les systèmes de conception pilotés par serveur se concentrent sur la création d'interfaces utilisateur (UI) dynamiques qui peuvent être mises à jour en temps réel via des API. Au lieu de coder en dur les composants de conception dans l’application, ils sont stockés à distance. Cela permet des mises à jour centrales qui se propagent instantanément sur toutes les instances de l'application, sans qu'il soit nécessaire de télécharger l'utilisateur.
+
+Theta offre plusieurs avantages :
+
+- **⚡️ Intégration rapide :** Theta fournit un éditeur d'interface utilisateur pour concevoir l'interface utilisateur qui peut être intégrée directement dans votre projet avec des SDK. Theta ne limite pas ce que vous pouvez faire avec le reste de votre application. Vous pouvez intégrer des widgets complexes spécifiques à la plate-forme, tels que des cartes, des vues Web, des lecteurs multimédias et des flux de caméra, dans votre interface utilisateur distante, ou ajouter une UIBox() dans une page personnalisée existante pour la rendre dynamique.
+- **🔀 Définissez des tests à distance avec des effets instantanés :** Configurez de nombreux tests A/B sur vos composants d'interface utilisateur pour améliorer l'expérience utilisateur et les ventes de votre application. Tout peut être fait visuellement sur Theta, avec une connexion directe (et un effet) aux applications de vos clients sans perdre de temps.
+- **🧋 Collaboration en équipe et contrôle de version :** Theta fournit des outils pour la collaboration en équipe, les journaux de projet et les branches, facilitant un travail d'équipe efficace dans le développement d'applications. La fonction de contrôle de version permet le suivi et la gestion des différentes versions des composants de votre système de conception, un aspect crucial pour maintenir la qualité de l'application et résoudre les bugs ou problèmes.
+- **💫 Efficacité :** Les systèmes de conception à distance comme Theta permettent de déployer instantanément les mises à jour de conception via l'API, sur toutes les instances de l'application. Cela contourne le cycle traditionnel de mise à jour et de téléchargement de nouvelles versions d’applications. De plus, le système de conception étant centralisé, il garantit une apparence cohérente sur toutes les plates-formes, améliorant ainsi l'expérience utilisateur.
 
 ## Premiers pas avec Theta
 
 Découvrez comment créer un projet d'interface utilisateur dans Theta et diffuser un composant de manière transparente dans votre code.
 
-Notre vidéo d'instruction vous guidera à travers:
+Notre vidéo pédagogique vous guidera à travers :
 
-- Conception d'une barre d'application responsive.
-- Streaming d'un composant d'interface utilisateur directement dans votre code.
+- Conception d'une barre d'applications responsive.
+- Diffusion d'un composant d'interface utilisateur directement dans votre code.
+- Apportez des modifications à l'interface utilisateur sans reconstruire.
 
 <YouTube id="oFed0NIqBZI" />
 
+## Intégrez ce soir
+
+### S'inscrire
+
+- Pour commencer votre voyage Theta, inscrivez-vous à Theta sur le site buildwiththeta.com.
+
+### Obtenez votre clé API
+
+Pour partager votre interface utilisateur distante dans votre projet, vous devrez obtenir votre clé API à partir des paramètres du projet.
+- 📚 Suivez notre guide
+
+### Intégrer dans votre base de code
+
+Utilisez Theta.initialize(anonKey: "") à la racine du projet, puis utilisez UIBox("component name") pour afficher un composant distant dans votre vue.
+- 📚 Suivez notre documentation pour Flutter
+
 ## Dois-je utiliser Theta ?
 
-Theta est un outil permettant d'améliorer l'efficacité de votre processus de développement d'applications, en particulier lorsque vous devez concevoir et intégrer rapidement des composants d'interface utilisateur dynamiques. Il est particulièrement avantageux pour les projets qui nécessitent un mélange de solutions sans code et codées sur mesure.
+Theta est un outil permettant d'améliorer l'efficacité de votre processus de développement d'applications, en particulier lorsque vous devez concevoir et intégrer rapidement des composants d'interface utilisateur dynamiques. Il est particulièrement avantageux pour les projets qui nécessitent une combinaison de solutions sans code et codées sur mesure.
 
-Cependant, si votre projet nécessite des fonctionnalités très spécifiques qui ne relèvent pas des capacités actuelles de Theta, une solution plus personnalisée pourrait être mieux adaptée. Au fur et à mesure que Theta évolue, davantage de fonctionnalités seront disponibles pour répondre à un plus large éventail d'exigences de projet.
+Toutefois, si votre projet nécessite des fonctionnalités très spécifiques qui ne relèvent pas des capacités actuelles de Theta, une solution plus personnalisée pourrait être mieux adaptée. À mesure que Theta continue d'évoluer, davantage de fonctionnalités seront disponibles pour répondre à un plus large éventail d'exigences de projets.
 
-N'oubliez pas que Theta est conçu pour compléter votre workflow de développement existant plutôt que de le remplacer entièrement. Il vaut la peine d'explorer Theta si vous souhaitez réduire le temps consacré à la reconstruction et au déploiement de votre application pour chaque modification de l'interface utilisateur, et si vous appréciez la flexibilité de mélanger le code sans code et le code personnalisé.
+N'oubliez pas que Theta est conçu pour compléter votre flux de développement existant plutôt que de le remplacer entièrement. Cela vaut la peine d'explorer Theta si vous souhaitez réduire le temps consacré à la reconstruction et au déploiement de votre application pour chaque modification de l'interface utilisateur, et si vous appréciez la flexibilité de mélanger du code sans code et du code personnalisé.
