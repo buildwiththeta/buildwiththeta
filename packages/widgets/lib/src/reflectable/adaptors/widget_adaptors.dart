@@ -74,6 +74,7 @@ class ColumnAdapter extends WidgetAdapter {
             as FCrossAxisAlignment,
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
+        direction: state.node.getAttributes[DBKeys.direction] as FDirection,
       );
 
   ColumnAdapter.create() : this();
@@ -274,6 +275,7 @@ class RowAdapter extends WidgetAdapter {
             as FCrossAxisAlignment,
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
+        direction: state.node.getAttributes[DBKeys.direction] as FDirection,
       );
 
   RowAdapter.create() : this();
@@ -460,4 +462,43 @@ class TeamComponentAdapter extends WidgetAdapter {
       );
 
   TeamComponentAdapter.create() : this();
+}
+
+/// Spacer
+@dynamicAdapter
+@NodeKey(NType.spacer)
+class SpacerAdapter extends WidgetAdapter {
+  const SpacerAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSpacer(
+        context: context,
+      );
+
+  SpacerAdapter.create() : this();
+}
+
+/// Svg Picture
+@dynamicAdapter
+@NodeKey(NType.svgPicture)
+class SvgPictureAdapter extends WidgetAdapter {
+  const SvgPictureAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSvgPicture(
+        nodeState: state,
+        image: state.node.getAttributes[DBKeys.image] as FTextTypeInput,
+        width: state.node.getAttributes[DBKeys.width] as FSize,
+        height: state.node.getAttributes[DBKeys.height] as FSize,
+        boxFit: state.node.getAttributes[DBKeys.boxFit] as FBoxFit,
+        fill: state.node.getAttributes[DBKeys.fill] as FFill,
+      );
+
+  SvgPictureAdapter.create() : this();
 }

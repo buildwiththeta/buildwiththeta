@@ -74,4 +74,38 @@ class FindNodeRendering {
     }
     return null;
   }
+
+  CNode? findNextNodeById(CNode parent, String? idToFind) {
+    if (parent.children == null || idToFind == null) {
+      return null;
+    }
+
+    int index = -1;
+    for (var i = 0; i < parent.children!.length; i++) {
+      if (parent.children![i].id == idToFind) {
+        index = i;
+        break;
+      }
+    }
+
+    if (index != -1 && index < parent.children!.length - 1) {
+      return parent.children![index + 1];
+    } else {
+      return null;
+    }
+  }
+
+  CNode? findFirstNode(CNode parent) {
+    if (parent.children == null) {
+      return null;
+    }
+    return parent.children![0];
+  }
+
+  CNode? findLastNode(CNode parent) {
+    if (parent.children == null || parent.children!.isEmpty) {
+      return null;
+    }
+    return parent.children![parent.children!.length - 1];
+  }
 }

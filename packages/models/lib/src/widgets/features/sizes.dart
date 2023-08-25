@@ -15,14 +15,10 @@ enum SizeUnit {
 @dynamicAttributeKey
 @AttributeKey(DBKeys.width)
 @AttributeKey(DBKeys.widthFactor)
-@AttributeKey(DBKeys.minWidth)
-@AttributeKey(DBKeys.maxWidth)
 @AttributeKey(DBKeys.mainAxisExtend)
 @AttributeKey(DBKeys.crossAxisExtend)
 @AttributeKey(DBKeys.height)
 @AttributeKey(DBKeys.heightFactor)
-@AttributeKey(DBKeys.minHeight)
-@AttributeKey(DBKeys.maxHeight)
 class FSize extends Equatable {
   const FSize({
     required this.size,
@@ -31,8 +27,8 @@ class FSize extends Equatable {
   });
 
   final String size;
-  final String sizeTablet;
-  final String sizeDesktop;
+  final String? sizeTablet;
+  final String? sizeDesktop;
 
   @override
   List<Object?> get props => [
@@ -42,7 +38,7 @@ class FSize extends Equatable {
       ];
 
   static FSize ready() =>
-      const FSize(size: '0', sizeTablet: '0', sizeDesktop: '0');
+      const FSize(size: '0', sizeTablet: null, sizeDesktop: null);
 
   double? get({
     required final TreeState state,
@@ -61,17 +57,17 @@ class FSize extends Equatable {
       if (width < 600) {
         sizeValue = size;
       } else if (width < 1000) {
-        sizeValue = sizeTablet;
+        sizeValue = sizeTablet ?? size;
       } else {
-        sizeValue = sizeDesktop;
+        sizeValue = sizeDesktop ?? size;
       }
     } else {
       if (state.deviceType == frame.DeviceType.phone) {
         sizeValue = size;
       } else if (state.deviceType == frame.DeviceType.tablet) {
-        sizeValue = sizeTablet;
+        sizeValue = sizeTablet ?? size;
       } else {
-        sizeValue = sizeDesktop;
+        sizeValue = sizeDesktop ?? size;
       }
     }
 
@@ -139,13 +135,13 @@ class FSize extends Equatable {
   static FSize fromJson(final Map<String, dynamic> json) {
     try {
       return FSize(
-        size: json['s'] as String? ?? '0',
-        sizeTablet: json['t'] as String? ?? json['s'] as String? ?? '0',
-        sizeDesktop: json['d'] as String? ?? json['s'] as String? ?? '0',
+        size: json['s'] as String,
+        sizeTablet: json['t'] as String?,
+        sizeDesktop: json['d'] as String?,
       );
     } catch (e) {
       Logger.printError('Error in FSize fromJson: $e');
-      return const FSize(size: '16', sizeTablet: '16', sizeDesktop: '16');
+      return const FSize(size: '16', sizeTablet: null, sizeDesktop: null);
     }
   }
 
@@ -162,45 +158,6 @@ class FSize extends Equatable {
   static String convertTypeToCode(final SizeUnit? unit) {
     if (unit == SizeUnit.pixel) return 'SizeUnit.pixel';
     return 'SizeUnit.percent';
-  }
-
-  String? toCode({
-    required final BuildContext context,
-    required final bool isWidth,
-  }) {
-    if (_valueToCode(size, isWidth) == _valueToCode(sizeTablet, isWidth) &&
-        _valueToCode(size, isWidth) == _valueToCode(sizeDesktop, isWidth)) {
-      return _valueToCode(size, isWidth);
-    } else {
-      return '''
-getValueForScreenType<double?>(
-  context: context,
-  mobile: ${_valueToCode(size, isWidth)},
-  tablet: ${_valueToCode(sizeTablet, isWidth)},
-  desktop: ${_valueToCode(sizeDesktop, isWidth)},
-)''';
-    }
-  }
-
-  String _valueToCode(final String size, final bool isWidth) {
-    double? value = 0;
-    if (size.toLowerCase() == 'max' ||
-        size.toLowerCase() == 'inf' ||
-        size.toLowerCase() == '100%') {
-      return 'double.maxFinite';
-    } else if (size.toLowerCase() == 'null' || size.toLowerCase() == 'auto') {
-      return 'null';
-    }
-    final temp = size.replaceAll('%', '');
-    value = double.tryParse(temp) ?? 0;
-    if (size.contains('%')) {
-      if (isWidth) {
-        return 'MediaQuery.of(context).size.width * 100 / $value';
-      } else {
-        return 'MediaQuery.of(context).size.height * 100 / $value';
-      }
-    }
-    return '$value';
   }
 
   @override

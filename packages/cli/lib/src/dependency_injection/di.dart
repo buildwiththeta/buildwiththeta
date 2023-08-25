@@ -13,6 +13,7 @@ import 'package:theta_cli/src/domain/repositories/styles_repository.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/preload_fonts.dart';
 import 'package:theta_cli/src/domain/usecases/preload_images.dart';
 
 GetIt get getIt => GetIt.instance;
@@ -38,7 +39,8 @@ Future<void> initializeDependencyInjection(String anonKey) async {
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))
     ..registerLazySingleton(() => GetStylesUseCase(getIt()))
     ..registerLazySingleton(() => CreatePreLoadFileUseCase(getIt()))
-    ..registerLazySingleton(() => PreloadImagesUseCase(getIt()));
+    ..registerLazySingleton(() => PreloadImagesUseCase(getIt()))
+    ..registerLazySingleton(() => PreloadFontsUseCase(getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();

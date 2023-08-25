@@ -1,3 +1,11 @@
+## 0.3.0
+
+- [x] Feat: change to purple as primary color for CTAs.
+
+## 0.2.0
+
+- [x] Fix: UI / components improved.
+
 ## 0.1.1
 
 - [x] Fix: dependencies updated.

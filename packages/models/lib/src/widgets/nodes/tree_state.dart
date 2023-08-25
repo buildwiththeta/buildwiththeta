@@ -35,11 +35,17 @@ class TreeState with ChangeNotifier {
     required this.nodeOverrides,
     required this.fit,
     this.focusedNode,
+    this.hoveredNode,
     this.nodeComponentID,
     this.nodes = const [],
     this.xLines = const [],
     this.yLines = const [],
     this.isPreloaded = false,
+    this.customFonts = const [],
+    this.isDeviceCurrentlyFocused = true,
+    this.isDeviceCurrentlyHovered = true,
+    this.nodeControls = const {},
+    this.defaultNodeControls = const SizedBox.shrink(),
   });
 
   /// Are we in Play Mode?
@@ -71,6 +77,7 @@ class TreeState with ChangeNotifier {
 
   /// Focused node
   CNode? focusedNode;
+  CNode? hoveredNode;
 
   /// Nodes
   List<CNode> nodes;
@@ -100,6 +107,22 @@ class TreeState with ChangeNotifier {
   NodeID? nodeComponentID;
 
   bool isPreloaded;
+
+  List<CustomFontEntity> customFonts;
+
+  bool isDeviceCurrentlyFocused;
+  bool isDeviceCurrentlyHovered;
+
+  Map<String, Widget> nodeControls;
+  Widget defaultNodeControls;
+
+  void onFocusedDeviceChanged(DeviceType device) {
+    isDeviceCurrentlyFocused = device == deviceType;
+  }
+
+  void onHoveredDeviceChanged(DeviceType device) {
+    isDeviceCurrentlyHovered = device == deviceType;
+  }
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
@@ -137,6 +160,10 @@ class TreeState with ChangeNotifier {
     focusedNode = node;
   }
 
+  void onHoverNodeChanged(CNode? node) {
+    hoveredNode = node;
+  }
+
   void onNodesChanged(Nodes nodes) {
     this.nodes = nodes;
   }
@@ -166,6 +193,18 @@ class TreeState with ChangeNotifier {
     isPreloaded = preloaded;
   }
 
+  void onCustomFontsChanged(List<CustomFontEntity> customFonts) {
+    this.customFonts = customFonts;
+  }
+
+  void onNodeControlsChanged(Map<String, Widget> controls) {
+    nodeControls = controls;
+  }
+
+  void onDefaultNodeControlsChanged(Widget controls) {
+    defaultNodeControls = controls;
+  }
+
   void notify() {
     notifyListeners();
   }
@@ -192,6 +231,10 @@ class TreeState with ChangeNotifier {
     final ComponentFit? fit,
     final NodeID? nodeComponentID,
     final bool? preloaded,
+    final bool? isDeviceCurrentlyFocused,
+    final bool? isDeviceCurrentlyHovered,
+    final Map<String, Widget>? nodeControls,
+    final Widget? defaultNodeControls,
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
@@ -212,6 +255,12 @@ class TreeState with ChangeNotifier {
       fit: fit ?? this.fit,
       nodeComponentID: nodeComponentID ?? this.nodeComponentID,
       isPreloaded: preloaded ?? isPreloaded,
+      isDeviceCurrentlyFocused:
+          isDeviceCurrentlyFocused ?? this.isDeviceCurrentlyFocused,
+      isDeviceCurrentlyHovered:
+          isDeviceCurrentlyHovered ?? this.isDeviceCurrentlyHovered,
+      nodeControls: nodeControls ?? this.nodeControls,
+      defaultNodeControls: defaultNodeControls ?? this.defaultNodeControls,
     );
   }
 }

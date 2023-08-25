@@ -8,6 +8,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
+import 'package:theta/src/data/models/urls.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_analytics/theta_analytics.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
@@ -86,12 +87,22 @@ class Theta {
     /// Cache extension in seconds.
     /// Default: 43200 (12 hours)
     int cacheExtension = 43200,
+
+    /// List of components names to load at initialization.
+    List<String> componentsNames = const [],
+
+    /// Branch name for versioning.
+    String? branchName,
+    CustomURLs customURLs = const DefaultCustomURLs(),
   }) async {
     await _instance._init(
       anonKey,
       cacheExtension,
       connectionMode,
       customPreloadedJson,
+      componentsNames,
+      branchName,
+      customURLs,
     );
     Logger.printDefault('Theta init completed $_instance');
     return _instance;
@@ -111,9 +122,14 @@ class Theta {
     Hive.init(appDocumentDirectory.path);
   }
 
-  Future<void> _initializeCore() async {
+  Future<void> _initializeCore(List<String> componentNames, String? branchName,
+      bool preloadedAllowed) async {
     _client = getIt();
-    await _client.initialize();
+    await _client.initialize(
+      componentNames,
+      branchName,
+      preloadedAllowed,
+    );
   }
 
   Future<void> _init(
@@ -121,6 +137,9 @@ class Theta {
     int cacheExtension,
     ConnectionMode connectionMode,
     Map<String, dynamic>? customPreloadFile,
+    List<String> componentsNames,
+    String? branchName,
+    CustomURLs customURLs,
   ) async {
     await _initExternalDependencies();
     await initializeDependencyInjection(
@@ -128,8 +147,13 @@ class Theta {
       cacheExtension,
       connectionMode,
       customPreloadFile,
+      customURLs,
     );
-    await _initializeCore();
+    await _initializeCore(
+      componentsNames,
+      branchName,
+      connectionMode == ConnectionMode.preloaded,
+    );
     _initialized = true;
   }
 

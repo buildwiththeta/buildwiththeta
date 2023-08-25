@@ -71,6 +71,12 @@
         ]
       ],
       [
+        "Billing", [
+          ["Upgrade plan", "/billing/upgrade_plan"],
+          ["Theta AI add-on", "/billing/theta_ai_plan"]
+        ]
+      ],
+      [
         "Misc.", [
           ["Resume paused projects", "/support/resume_paused_project"],
           ["User deletion", "/support/user_deletion"],

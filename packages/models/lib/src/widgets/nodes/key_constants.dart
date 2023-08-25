@@ -55,6 +55,7 @@ class DBKeys {
   static const String action = 'a';
   static const String actionValue = 'aVl';
   static const String image = 'img';
+  static const String imageType = 'imgT';
   static const String value = 'v';
   static const String align = 'al';
   static const String physic = 'ph';
@@ -122,6 +123,7 @@ class DBKeys {
   static const String autoCorrect = 'autoC';
   static const String obscureText = 'obT';
   static const String selectedItemName = 'sIN';
+  static const String direction = 'dir';
 
   ///calendar v2
   static const String dropdownItem = 'drdI';

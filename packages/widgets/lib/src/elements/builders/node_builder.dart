@@ -1,3 +1,4 @@
+import 'package:defer_pointer/defer_pointer.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -15,6 +16,7 @@ class NodeBuilder extends StatefulWidget {
     required this.onTap,
     required this.onPanStart,
     required this.child,
+    required this.onHover,
   });
 
   final WidgetState state;
@@ -22,18 +24,36 @@ class NodeBuilder extends StatefulWidget {
 
   final Function() onTap;
   final Function() onPanStart;
+  final Function() onHover;
 
   @override
   State<NodeBuilder> createState() => _NodeBuilderState();
 }
 
 class _NodeBuilderState extends State<NodeBuilder> {
-  BoxDecoration _handleDecorationChange(CNode? focusNode) =>
-      (focusNode?.id == widget.state.node.id)
-          ? BoxDecoration(
-              border: Border.all(width: 2, color: Palette.blue),
-            )
-          : const BoxDecoration();
+  bool clickable = true;
+
+  BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode,
+      bool isDeviceFocused, bool isDeviceHovered) {
+    if (isDeviceFocused && focusNode?.id == widget.state.node.id) {
+      return BoxDecoration(
+        border: Border.all(width: 2, color: Palette.blue),
+      );
+    }
+    if (isDeviceHovered) {
+      if (hoverNode?.id == widget.state.node.id) {
+        if ([NType.component, NType.teamComponent].contains(hoverNode?.type)) {
+          return BoxDecoration(
+            border: Border.all(width: 2, color: Palette.magenta),
+          );
+        }
+        return BoxDecoration(
+          border: Border.all(width: 2, color: Palette.blue),
+        );
+      }
+    }
+    return const BoxDecoration();
+  }
 
   EdgeInsets _handleMargins(TreeState state) =>
       (widget.state.node.getAttributes[DBKeys.margins] as FMargins? ??
@@ -96,6 +116,48 @@ class _NodeBuilderState extends State<NodeBuilder> {
               : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
                       as bool? ??
                   true);
+  Widget handleSizeRange(TreeState state, Widget child) {
+    if (widget.state.node.type == NType.scaffold) {
+      return child;
+    }
+    final minWidth =
+        widget.state.node.getAttributes[DBKeys.minWidth] as FSizeRange;
+    final minHeight =
+        widget.state.node.getAttributes[DBKeys.minHeight] as FSizeRange;
+    final maxWidth =
+        widget.state.node.getAttributes[DBKeys.maxWidth] as FSizeRange;
+    final maxHeight =
+        widget.state.node.getAttributes[DBKeys.maxHeight] as FSizeRange;
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: minWidth.get(
+              state: state,
+              context: context,
+              isWidth: true,
+            ) ??
+            0.0,
+        maxWidth: maxWidth.get(
+              state: state,
+              context: context,
+              isWidth: true,
+            ) ??
+            double.infinity,
+        minHeight: minHeight.get(
+              state: state,
+              context: context,
+              isWidth: false,
+            ) ??
+            0.0,
+        maxHeight: maxHeight.get(
+              state: state,
+              context: context,
+              isWidth: false,
+            ) ??
+            double.infinity,
+      ),
+      child: child,
+    );
+  }
 
   Widget handleSlideAnimation(CNode node, Widget child) {
     if (node.getAttributes[DBKeys.slideAnimationEnabled] as bool? ?? false) {
@@ -129,6 +191,22 @@ class _NodeBuilderState extends State<NodeBuilder> {
               ?.value ??
           '0');
 
+  Widget handleOpenWSpacerWidget(CNode node, Widget child) {
+    if (widget.state.node.type == NType.spacer) {
+      return Expanded(
+        flex: int.tryParse(
+              (widget.state.node.getAttributes[DBKeys.flexValue]
+                          as FTextTypeInput?)
+                      ?.value ??
+                  '1',
+            ) ??
+            1,
+        child: child,
+      );
+    }
+    return child;
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
@@ -139,30 +217,61 @@ class _NodeBuilderState extends State<NodeBuilder> {
     if (override != null) {
       return override;
     }
-    return Visibility(
-      visible: _handleVisibility(state),
-      child: Padding(
-        padding: _handleMargins(state),
-        child: DecoratedBox(
-          decoration: _handleDecorationChange(state.focusedNode),
-          position: DecorationPosition.foreground,
-          child: Transform.rotate(
-            angle: _handleRotation(state),
+
+    return handleOpenWSpacerWidget(
+      widget.state.node,
+      FlytingNodeOptions(
+        node: widget.state.node,
+        child: MouseRegion(
+          hitTestBehavior: HitTestBehavior.opaque,
+          onEnter: (e) {
+            if (clickable) {
+              widget.onHover.call();
+            }
+          },
+          onExit: (e) => setState(() {
+            clickable = true;
+          }),
+          child: Visibility(
+            visible: _handleVisibility(state),
             child: Padding(
-              padding: _handlePadding(state),
+              padding: _handleMargins(state),
               child: GestureDetectorInEditor(
+                key: ValueKey(widget.state.node.id + clickable.toString()),
                 node: widget.state.node,
+                clickable: clickable,
                 onTap: widget.onTap,
                 onPanStart: widget.onPanStart,
-                child: GestureDetectorForPlay(
-                  state: widget.state,
-                  child: handleSlideAnimation(
-                    widget.state.node,
-                    handleScaleAnimation(
-                      widget.state.node,
-                      handleFadeInAnimation(
-                        widget.state.node,
-                        widget.child,
+                onDoubleTap: () => setState(() {
+                  clickable = false;
+                }),
+                child: DecoratedBox(
+                  decoration: _handleDecorationChange(
+                    state.hoveredNode,
+                    state.focusedNode,
+                    state.isDeviceCurrentlyFocused,
+                    state.isDeviceCurrentlyHovered,
+                  ),
+                  position: DecorationPosition.foreground,
+                  child: Transform.rotate(
+                    angle: _handleRotation(state),
+                    child: Padding(
+                      padding: _handlePadding(state),
+                      child: GestureDetectorForPlay(
+                        state: widget.state,
+                        child: handleSlideAnimation(
+                          widget.state.node,
+                          handleScaleAnimation(
+                            widget.state.node,
+                            handleFadeInAnimation(
+                              widget.state.node,
+                              handleSizeRange(
+                                state,
+                                widget.child,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -181,14 +290,18 @@ class GestureDetectorInEditor extends StatelessWidget {
     super.key,
     required this.node,
     required this.child,
+    required this.clickable,
     required this.onTap,
     required this.onPanStart,
+    required this.onDoubleTap,
   });
 
   final CNode node;
   final Widget child;
+  final bool clickable;
   final VoidCallback onTap;
   final VoidCallback onPanStart;
+  final VoidCallback onDoubleTap;
 
   @override
   Widget build(BuildContext context) {
@@ -196,11 +309,16 @@ class GestureDetectorInEditor extends StatelessWidget {
     if (state.forPlay) {
       return child;
     }
+    if (!clickable) {
+      return child;
+    }
     return Listener(
-        onPointerDown: (e) => TreeGlobalState.onRightClick(e, node),
+        onPointerDown: (e) =>
+            context.read<TreeGlobalState>().onRightClick(e, node),
         child: GestureDetector(
           onTap: onTap,
-          onPanStart: (e) => onPanStart,
+          onDoubleTap: onDoubleTap,
+          //onPanStart: (e) => onPanStart,
           child: child,
         ));
   }
@@ -270,5 +388,68 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
       );
     }
     return child;
+  }
+}
+
+class FlytingNodeOptions extends StatelessWidget {
+  const FlytingNodeOptions({
+    super.key,
+    required this.node,
+    required this.child,
+  });
+
+  final CNode node;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = context.watch<TreeState>();
+    if (state.forPlay) {
+      return child;
+    }
+    final theme = Theme.of(context).extension<ThetaTheme>()!;
+    if (node.id != state.focusedNode?.id) {
+      return child;
+    }
+    if (!state.isDeviceCurrentlyFocused) {
+      return child;
+    }
+    return Stack(
+      clipBehavior: Clip.none,
+      fit: StackFit.passthrough,
+      children: [
+        child,
+        if (state.nodeControls[node.type] != null)
+          Positioned(
+            top: -80,
+            left: 0,
+            right: 0,
+            child: DeferPointer(
+              paintOnTop: true,
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                child: Center(
+                  child: Container(
+                    padding: EI.mdA,
+                    decoration: BoxDecoration(
+                      color: theme.bgPrimary,
+                      borderRadius: BorderRadius.circular(4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.txtPrimary.withOpacity(0.2),
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: state.nodeControls[node.type] ??
+                        state.defaultNodeControls,
+                  ),
+                ),
+              ),
+            ),
+          ),
+      ],
+    );
   }
 }

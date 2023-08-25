@@ -10,6 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
+    componentsNames: ["SocialCard"],
   );
 
   runApp(const MyApp());
@@ -54,13 +55,11 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Counter View',
+            'SocialCard',
             controller: _controller,
 
-            branch: 'Version 2.0',
-
             /// [placeholder] is the widget displayed while the page is loading.
-            placeholder: const CircularProgressIndicator(),
+            placeholder: const Center(child: CircularProgressIndicator()),
 
             /// [errorWidget] is the widget displayed if an error occurs.
             errorWidget: (error) => Text(error.toString()),

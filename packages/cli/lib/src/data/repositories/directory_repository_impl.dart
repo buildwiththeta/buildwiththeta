@@ -31,4 +31,14 @@ class DirectoryRepositoryImpl implements DirectoryRepository {
       return Left(Exception(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Exception, void>> preloadFonts(
+      Map<String, dynamic> json) async {
+    try {
+      return Right(await _directoryService.preloadFonts(json));
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
 }

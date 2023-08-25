@@ -1,3 +1,12 @@
+## 0.4.0
+
+* Feat: add branch name as input.
+* Feat: preload custom fonts.
+
+## 0.3.0
+
+* Feat: add support for fetching components from different branches.
+
 ## 0.2.0
 
 * Feat: add support to preloading assets.

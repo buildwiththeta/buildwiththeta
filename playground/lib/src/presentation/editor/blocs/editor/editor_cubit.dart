@@ -121,7 +121,7 @@ class EditorCubit extends Cubit<EditorState> {
   void onNodeAdded({
     required CNode node,
     required NodeID parentID,
-    required int? customIndex,
+    required double? customIndex,
     required Offset? offset,
     bool isUndoRedo = false,
     VoidCallback? onCompleted,
@@ -159,7 +159,7 @@ class EditorCubit extends Cubit<EditorState> {
     required CNode node,
     required NodeID parentID,
     required CNode parentChild,
-    required int? customIndex,
+    required double? customIndex,
     bool isUndoRedo = false,
   }) =>
       _ifStateLoaded((state) {

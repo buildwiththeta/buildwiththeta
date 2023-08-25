@@ -1,59 +1,69 @@
-# [Build with Theta](https://buildwiththeta.com)
+# [Theta](https://buildwiththeta.com): prototyping and testing in production
 
-## The open source way of designing remote UI
-
-Build your remote design system effortlessly, without writing code. Seamlessly integrate it into your codebase alongside your preferred packages, enabling easy UI updates without the need to rebuild the entire app.
-
-![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+Prototype and test dynamic user interfaces with instant fly-on-air updates. You can update the user interface without rebuilding it. You can directly set up remote A/B tests and see the analysis to improve UX and sales.
 
 - Documentation: https://docs.buildwiththeta.com
 
+You can run UI/UX tests in your app with Theta on the following platforms:
+
+- **iOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
+- **Android** ([Flutter](https://pub.dev/packages/theta))
+- **Web** ([Flutter](https://pub.dev/packages/theta))
+- **VisionOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
+- **macOS** ([Flutter](https://pub.dev/packages/theta), Swift coming soon)
+- **Windows** ([Flutter](https://pub.dev/packages/theta))
+
+<img width="600px" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/c2594691-69a9-45c5-94f7-ea1d808d63bc" />
+
 ## Why Theta?
 
-Theta simplifies the creation and maintenance of remote design systems. It allows the user interface of front-end applications on different platforms to be updated in real time from a central cloud, eliminating the need for users to download a new version. 
+Building a Flutter app means you will take little time to program it from scratch, but you will spend almost all your time updating and testing it to improve UX and sales.
 
-Remote design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
+But testing and updating even small parts of our app's UI (e.g., paywalls, news dialogs, or even text copy) is a mechanism that requires putting hands on code and wasting a lot of time with each change.
+
+This is crazy, which is why I created a tool to update and test apps in production with a few clicks. Integrate Theta to get started right away: buildwiththeta.com
+
+### Developers shouldn't hardcode UI components
+
+Server-driven design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
 
 Theta offers several advantages:
+- **⚡️ Integrate tonight:** Theta provides a UI editor for designing the UI that can be integrate directly into your project with SDKs. Theta doesn’t limit what you can do with the rest of your app. You can embed complex platform-specific widgets like maps, web views, media players, and camera feeds within your remote UI, or add a UIBox() inside an existing custom page to make it dynamic.
+- **🔀 Set tests remotely with instant effects:** Set up numerous A/B tests on your UI components to improve the user experience and sales of your app. Everything can be done visually on Theta, with a direct connection (and effect) to your customers' apps without wasting time.
+- **🧋 Team collaboration and version control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the your design system components, a crucial aspect for maintaining app quality and addressing bugs or issues.
+- **💫 Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions. Also, because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
 
-- **Flexibility and Control:** Theta provides a no-code environment for designing the UI, but it doesn’t limit what you can do with the rest of your app. Developers can implement actions in whatever way they see fit, using the technologies they’re most comfortable with.
-- **Mixing No-Code and Local Code:** Developers using Theta can override each node with their widgets, leveraging any technology stack. This approach enables a high degree of customization and flexibility, which is usually unavailable with traditional no-code solutions.
-- **Team Collaboration and Version Control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the app, a crucial aspect for maintaining app quality and addressing bugs or issues.
-- **Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions.
-- **Consistency:** Because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
-- **Future-Proof:** Remote design systems are not only adaptable to new design trends but also to changes in technology. As your app grows and evolves, you can update your UI without being constrained by a no-code platform’s limitations.
+## Integrate tonight
+
+- **Sign up**
+    - To begin your Theta journey, sign up for Theta on the [buildwiththeta.com](https://buildwiththeta.com) website.
+
+- **Get your API key**
+  - To share your remote UI in your project, you'll need to obtain your API key from the project settings.
+  - [📚 Follow our guide](https://docs.buildwiththeta.com/en/studio/get_project_api)
+
+- **Integrate in your codebase**
+  - Use `Theta.initialize(anonKey: "")` at the root of the project, then use `UIBox("component name")` to display a remote component within your view.
+  - [📚 Follow our documentation for Flutter](https://pub.dev/packages/theta)
 
 ## Support
 - [GitHub Discussions](https://github.com/buildwiththeta/buildwiththeta/discussions): Ideal for general questions, Q&A, product use assistance, best practice discussions.
 - [GitHub Issues](https://github.com/buildwiththeta/buildwiththeta/issues): Ideal for reporting bugs and problems while using Theta
-- Email Support: Ideal for reporting problems with your personal projects.
+- [Email Support](mailto:support@buildwiththeta.com): Ideal for reporting problems with your personal projects.
 - [Discord](https://discord.gg/xNgDkZ2g6w): Ideal for sharing projects and portfolios with the community. Only for invited users.
 
 ## Supported Frameworks
 - [x] Flutter: ready on [pub.dev](https://pub.dev/packages/theta).
-- [ ] Swift: working on it.
+- [ ] Swift: work in progress. See [buildwiththeta-swift](https://github.com/buildwiththeta/buildwiththeta-swift)
 
 ## Status
 - [x] Alpha: Experimental. Under intense development.
 - [x] Closed Beta: Still under development. Except bugs and errors.
+- [x] Invite-only Beta: ready to be used in production. Expect some bugs and missing features.
+
+Looking for an invitation? Ask on [Twitter](https://twitter.com/intent/tweet?text=Hey,%20I%27m%20looking%20for%20an%20invitation%20code%20for%20@buildwiththeta,%20can%20anyone%20help%20me%20please?%20).
 
 Check [Releases](https://github.com/buildwiththeta/buildwiththeta/releases) to see our current status and all updates.
-
-## Architecture
-
-<img src="https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/Architecture-min.jpg" />
-
-In this repository you can find:
-
-- [x] Theta Studio: UI web editor. Available in `/playgroud`. See it in action on [buildwiththeta.com](https://buildwiththeta.com)
-- [x] Theta Flutter library. [Pub.dev](https://pub.dev/packages/theta)
-- [x] Models.
-- [x] Analytics.
-- [x] Rendering.
-- [x] Design System.
-- [x] Widgets.  
-
-All packages, except the one for the Studio, are available at Pub.dev.
 
 ---
 

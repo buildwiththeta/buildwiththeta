@@ -31,6 +31,7 @@ enum TypeDateTimeFormat {
 @AttributeKey(DBKeys.textStyle)
 @AttributeKey(DBKeys.textStyle2)
 @AttributeKey(DBKeys.value)
+@AttributeKey(DBKeys.flexValue)
 @AttributeKey(DBKeys.rotateX)
 @AttributeKey(DBKeys.rotateY)
 @AttributeKey(DBKeys.rotateZ)
@@ -217,6 +218,8 @@ class FTextTypeInput {
         return value ?? '';
       } else if (deviceType == DeviceType.tablet) {
         return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
+      } else if (deviceType == DeviceType.laptop) {
+        return valueLaptop != '' ? valueLaptop ?? value ?? '' : value ?? '';
       } else {
         return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
       }

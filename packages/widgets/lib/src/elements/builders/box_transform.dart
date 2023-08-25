@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
+import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
@@ -64,29 +65,29 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final device = getDeviceInfo(state);
     rect = widget.node.rect(device.identifier.type);
 
+    final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
+        ? device
+        : Devices.ios.iPhone13;
+    final top =
+        isStartOrStretchAlign(widget.node.verticalAlignment) ? rect.top : null;
+    final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
+        ? deviceForChecks.screenSize.height - rect.bottom
+        : null;
+    final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
+        ? rect.left
+        : null;
+    final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
+        ? deviceForChecks.screenSize.width - rect.right
+        : null;
+    final width =
+        isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
+    final height =
+        isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
+
     if (state.focusedNode?.id != widget.node.id ||
         state.forPlay ||
-        widget.node.isLocked == true) {
-      final deviceForChecks = widget.node.doesRectExist(device.identifier.type)
-          ? device
-          : Devices.ios.iPhone13;
-      final top = isStartOrStretchAlign(widget.node.verticalAlignment)
-          ? rect.top
-          : null;
-      final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
-          ? deviceForChecks.screenSize.height - rect.bottom
-          : null;
-      final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
-          ? rect.left
-          : null;
-      final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
-          ? deviceForChecks.screenSize.width - rect.right
-          : null;
-      final width =
-          isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
-      final height =
-          isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
-
+        widget.node.isLocked == true ||
+        !state.isDeviceCurrentlyFocused) {
       if (state.fit == ComponentFit.autoLayout) {
         return Padding(
           padding: EdgeInsets.only(
@@ -105,12 +106,19 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
             width: width ?? double.infinity,
             height: height ?? double.infinity,
             child: NodeBuilder(
+              onHover: () {
+                context.read<TreeGlobalState>().onNodeHovered(
+                    widget.node, context.read<TreeState>().deviceType);
+                setState(() {});
+              },
               onTap: () {
-                TreeGlobalState.onNodeFocused(widget.node);
+                context.read<TreeGlobalState>().onNodeFocused(
+                    widget.node, context.read<TreeState>().deviceType);
                 setState(() {});
               },
               onPanStart: () {
-                TreeGlobalState.onNodeFocused(widget.node);
+                context.read<TreeGlobalState>().onNodeFocused(
+                    widget.node, context.read<TreeState>().deviceType);
                 setState(() {});
               },
               state: WidgetState(node: widget.node, loop: 0),
@@ -130,12 +138,19 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
           width: width,
           height: height,
           child: NodeBuilder(
+            onHover: () {
+              context.read<TreeGlobalState>().onNodeHovered(
+                  widget.node, context.read<TreeState>().deviceType);
+              setState(() {});
+            },
             onTap: () {
-              TreeGlobalState.onNodeFocused(widget.node);
+              context.read<TreeGlobalState>().onNodeFocused(
+                  widget.node, context.read<TreeState>().deviceType);
               setState(() {});
             },
             onPanStart: () {
-              TreeGlobalState.onNodeFocused(widget.node);
+              context.read<TreeGlobalState>().onNodeFocused(
+                  widget.node, context.read<TreeState>().deviceType);
               setState(() {});
             },
             state: WidgetState(node: widget.node, loop: 0),
@@ -147,14 +162,34 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
         );
       }
     }
-    return _BoxTransformBuilder(node: widget.node);
+    return _BoxTransformBuilder(
+      node: widget.node,
+      screenSize: device.screenSize,
+      top: top,
+      bottom: bottom,
+      left: left,
+      right: right,
+      width: width,
+      height: height,
+    );
   }
 }
 
 class _BoxTransformBuilder extends StatefulWidget {
-  const _BoxTransformBuilder({required this.node});
+  const _BoxTransformBuilder({
+    required this.node,
+    required this.top,
+    required this.screenSize,
+    this.left,
+    this.right,
+    this.bottom,
+    this.width,
+    this.height,
+  });
 
   final CNode node;
+  final double? left, top, right, bottom, width, height;
+  final Size screenSize;
 
   @override
   State<_BoxTransformBuilder> createState() => __BoxTransformBuilderState();
@@ -163,6 +198,7 @@ class _BoxTransformBuilder extends StatefulWidget {
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   final controller = TransformableBoxController();
   final _debouncer = Debouncer(milliseconds: 10);
+  Timer? timer;
 
   final int differece = 8;
   late Size canvasSize;
@@ -173,13 +209,49 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   late List<num> anchorAxisHorizontal;
   late List<num> anchorAxisVertical;
 
+  Rect createModifiedRect(Rect rect) {
+    // Start with the original rect values
+    double newLeft = rect.left;
+    double newTop = rect.top;
+    double newRight = rect.right;
+    double newBottom = rect.bottom;
+
+    // Stretched horizontally
+    if (widget.left != null && widget.right != null) {
+      newLeft = widget.left!;
+      newRight = widget.screenSize.width - widget.right!;
+    } else if (widget.left != null && widget.width != null) {
+      newLeft = widget.left!;
+      newRight = widget.left! + widget.width!;
+    } else if (widget.right != null && widget.width != null) {
+      newLeft = widget.screenSize.width - (widget.right! + widget.width!);
+      newRight = widget.screenSize.width - widget.right!;
+    }
+
+    // Stretched vertically
+    if (widget.top != null && widget.bottom != null) {
+      newTop = widget.top!;
+      newBottom = widget.screenSize.height - widget.bottom!;
+    } else if (widget.top != null && widget.height != null) {
+      newTop = widget.top!;
+      newBottom = widget.top! + widget.height!;
+    } else if (widget.bottom != null && widget.height != null) {
+      newTop = widget.screenSize.height - (widget.bottom! + widget.height!);
+      newBottom = widget.screenSize.height - widget.bottom!;
+    }
+
+    return Rect.fromLTRB(newLeft, newTop, newRight, newBottom);
+  }
+
   @override
   void initState() {
     super.initState();
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
+
     controller
-      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setRect(createModifiedRect(
+          widget.node.rect(state.deviceInfo.identifier.type)))
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
@@ -208,7 +280,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     final TreeState state = context.read<TreeState>();
     final device = state.deviceInfo;
     controller
-      ..setRect(widget.node.rect(state.deviceInfo.identifier.type))
+      ..setRect(createModifiedRect(
+          widget.node.rect(state.deviceInfo.identifier.type)))
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
@@ -303,19 +376,68 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     }
   }
 
+  void offsetToResize({bool now = false}) {
+    try {
+      context.read<TreeGlobalState>().onResizingCallback(true);
+      timer?.cancel();
+      if (now) {
+        context.read<TreeGlobalState>().onResizingCallback(false);
+        return;
+      }
+      timer = Timer(const Duration(milliseconds: 200),
+          () => context.read<TreeGlobalState>().onResizingCallback(false));
+    } catch (e) {
+      Logger.printError(e.toString());
+    }
+  }
+
+  Widget _defaultCornerHandleBuilder(
+    BuildContext context,
+    HandlePosition handle,
+  ) =>
+      MouseRegion(
+        onEnter: (e) =>
+            context.read<TreeGlobalState>().onResizingCallback(true),
+        onExit: (e) => offsetToResize(now: true),
+        child: DefaultCornerHandle(handle: handle),
+      );
+
+  /// A default implementation of the side [HandleBuilder] callback.
+  Widget _defaultSideHandleBuilder(
+    BuildContext context,
+    HandlePosition handle,
+  ) =>
+      MouseRegion(
+        onEnter: (e) =>
+            context.read<TreeGlobalState>().onResizingCallback(false),
+        onExit: (e) => offsetToResize(now: true),
+        child: DefaultSideHandle(handle: handle),
+      );
+
   @override
   Widget build(BuildContext context) {
     return TransformableBox(
       controller: controller,
       onChanged: (rect) => _debouncer.run(() => onChanged(rect)),
+      cornerHandleBuilder: _defaultCornerHandleBuilder,
+      sideHandleBuilder: _defaultSideHandleBuilder,
+      onResized: (r) => offsetToResize(),
+      onMoved: (_) => offsetToResize(),
       contentBuilder: (_, rect, flip) => IgnorePointer(
         child: NodeBuilder(
+          onHover: () {
+            context.read<TreeGlobalState>().onNodeHovered(
+                widget.node, context.read<TreeState>().deviceType);
+            setState(() {});
+          },
           onTap: () {
-            TreeGlobalState.onNodeFocused(widget.node);
+            context.read<TreeGlobalState>().onNodeFocused(
+                widget.node, context.read<TreeState>().deviceType);
             setState(() {});
           },
           onPanStart: () {
-            TreeGlobalState.onNodeFocused(widget.node);
+            context.read<TreeGlobalState>().onNodeFocused(
+                widget.node, context.read<TreeState>().deviceType);
             setState(() {});
           },
           state: WidgetState(node: widget.node, loop: 0),
@@ -338,22 +460,22 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     controller
       ..setRect(adjustedRect)
       ..recalculatePosition();
-    TreeGlobalState.onNodeChanged(
-      widget.node,
-      TransformResult(
-        rect: adjustedRect,
-        oldRect: oldRect.rect,
-        delta: oldRect.delta,
-        flip: oldRect.flip,
-        resizeMode: oldRect.resizeMode,
-        rawSize: oldRect.rawSize,
-        minWidthReached: oldRect.minWidthReached,
-        maxWidthReached: oldRect.maxWidthReached,
-        minHeightReached: oldRect.minHeightReached,
-        maxHeightReached: oldRect.maxHeightReached,
-      ),
-      state.deviceInfo.identifier.type,
-    );
+    context.read<TreeGlobalState>().onNodeChanged(
+          widget.node,
+          TransformResult(
+            rect: adjustedRect,
+            oldRect: oldRect.rect,
+            delta: oldRect.delta,
+            flip: oldRect.flip,
+            resizeMode: oldRect.resizeMode,
+            rawSize: oldRect.rawSize,
+            minWidthReached: oldRect.minWidthReached,
+            maxWidthReached: oldRect.maxWidthReached,
+            minHeightReached: oldRect.minHeightReached,
+            maxHeightReached: oldRect.maxHeightReached,
+          ),
+          state.deviceInfo.identifier.type,
+        );
   }
 
   /// This method is used to notify the tree that the node has changed
@@ -362,11 +484,11 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     TransformResult<Rect, Offset, Size> rect,
     TreeState state,
   ) {
-    TreeGlobalState.onNodeChanged(
-      widget.node,
-      rect,
-      state.deviceInfo.identifier.type,
-    );
+    context.read<TreeGlobalState>().onNodeChanged(
+          widget.node,
+          rect,
+          state.deviceInfo.identifier.type,
+        );
     setState(() {});
   }
 }

@@ -1,3 +1,29 @@
+## 0.6.2
+
+- [x] Feat: add direction to Flex.
+- [x] Feat: add flying controls.
+
+## 0.6.1
+
+- [x] Feat: remove required sizes for Tablet and Desktop in FSize.
+
+## 0.6.0
+
+- [x] Feat: support to local assets.
+
+## 0.5.1
+
+- [x] Feat: added hoveredNode in TreeState
+
+## 0.5.0
+
+- [x] Feat: Custom fonts can be added to the project.
+
+## 0.4.0
+
+- [x] Feat: child_order is a double.
+- [x] Feat: added builder_used in Projects.
+
 ## 0.3.1
 
 - [x] Feat: added `toJson` to ConversionEvent.

@@ -113,3 +113,15 @@ class _TextField {}
   optionalDisplayName: 'Video',
 )
 class _Video {}
+
+@NodeInfo(
+  type: NType.spacer,
+  optionalDisplayName: 'Spacer',
+)
+class _Spacer {}
+
+@NodeInfo(
+  type: NType.svgPicture,
+  optionalDisplayName: 'Svg Picture',
+)
+class _SvgPicture {}

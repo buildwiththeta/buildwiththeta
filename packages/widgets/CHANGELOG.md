@@ -1,3 +1,44 @@
+## 0.6.5
+
+- [x] Feat: add direction to Flex.
+- [x] Feat: add flying controls support.
+
+## 0.6.4
+
+- [x] Feat: models 0.6.1
+- [x] Feat: default attributes changed.
+
+## 0.6.3
+
+- [x] Feat: DS to 0.3.0.
+
+## 0.6.2
+
+- [x] Hardfix: ChildOrder parsed in double?.
+
+## 0.6.1
+
+- [x] Hardfix: ChildOrder parsed in double.
+
+## 0.6.0
+
+- [x] Feat: SVG, Lottie
+- [x] BoxTransform improved
+
+## 0.5.1
+
+- [x] Feat: added hovered feature.
+- [x] Feat: now elements are not moved when selected in no-mobile devices.
+
+## 0.5.0
+
+- [x] Feat: Spacer widget
+- [x] Feat: Custom fonts
+
+## 0.4.0
+
+- [x] Feat: add support to models 0.4.0 and rendering 1.6.0.
+
 ## 0.3.0
 
 - [x] Feat: Image nodes now support local images in preloading mode.

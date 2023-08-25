@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
@@ -17,11 +18,17 @@ class ChildBuilder extends SingleChildRenderObjectWidget {
                     .executeChild(context, state, const SizedBox.shrink())
                 : NodeBuilder(
                     state: state.copyWith(node: child),
+                    onHover: () {
+                      context.read<TreeGlobalState>().onNodeHovered(
+                          child, context.read<TreeState>().deviceType);
+                    },
                     onTap: () {
-                      TreeGlobalState.onNodeFocused(child);
+                      context.read<TreeGlobalState>().onNodeFocused(
+                          child, context.read<TreeState>().deviceType);
                     },
                     onPanStart: () {
-                      TreeGlobalState.onNodeFocused(child);
+                      context.read<TreeGlobalState>().onNodeFocused(
+                          child, context.read<TreeState>().deviceType);
                     },
                     child: const NodeOverrideExecuter().executeChild(
                       context,

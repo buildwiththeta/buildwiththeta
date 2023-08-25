@@ -1,3 +1,40 @@
+## 0.7.2
+
+- [x] Feat: export CustomURLs class.
+
+## 0.7.1
+
+- [x] Feat: allow custom URLs.
+
+## 0.7.0
+
+- [x] Feat: add direction to Flex
+- [x] Feat: load multi components at once.
+
+## 0.6.3
+
+- [x] Hardfix: ChildOrder parsed in double?.
+
+## 0.6.2
+
+- [x] Feat: docs updated.
+
+## 0.6.1
+
+- [x] Fix: TreGlobalState
+- [x] Feat: Lottie & SVG support
+- [x] Feat: custom font support
+
+## 0.6.0
+
+- [x] Feat: Custom fonts
+- [x] Feat: Spacer widget
+
+## 0.5.2
+
+- [x] Feat: add support to models 0.4.0.
+- [x] Feat: add support to widgets 0.4.0.
+
 ## 0.5.1
 
 - [x] Feat: `branch` added to `UIBox`.

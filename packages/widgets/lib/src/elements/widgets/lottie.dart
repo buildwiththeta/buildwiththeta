@@ -54,6 +54,12 @@ class OpenWLottie extends NodeWidget {
         isWidth: false,
       ),
       fit: BoxFit.contain,
+      errorBuilder: (context, exception, stackTrace) {
+        return Container(
+          color: Colors.transparent,
+          child: const Placeholder(),
+        );
+      },
     );
   }
 }

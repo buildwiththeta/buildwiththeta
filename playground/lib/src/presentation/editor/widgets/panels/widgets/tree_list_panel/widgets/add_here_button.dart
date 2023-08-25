@@ -16,9 +16,10 @@ class TreeListAddHereButton extends StatefulWidget {
   });
 
   final CNode node;
-  final int index;
+  final double index;
   final Function(
-      DragTargetMoveSingleNodeModel event, CNode newParent, int index) onMove;
+          DragTargetMoveSingleNodeModel event, CNode newParent, double index)
+      onMove;
   final Function(CNode newNode, CNode parent) onAdd;
 
   @override
@@ -108,7 +109,7 @@ class _Label extends StatelessWidget {
   });
 
   final CNode node;
-  final int index;
+  final double index;
 
   @override
   Widget build(BuildContext context) {

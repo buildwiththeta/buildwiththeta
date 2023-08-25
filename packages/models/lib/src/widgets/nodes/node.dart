@@ -47,6 +47,26 @@ abstract class CNode extends Equatable {
       marginsTablet: [0, 0, 0, 0],
       marginsDesktop: [0, 0, 0, 0],
     ),
+    DBKeys.minWidth: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.maxWidth: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.minHeight: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
+    DBKeys.maxHeight: const FSizeRange(
+      size: null,
+      sizeTablet: null,
+      sizeDesktop: null,
+    ),
   };
 
   // all the children of the component
@@ -171,7 +191,7 @@ abstract class CNode extends Equatable {
   final List<CNode>? children;
 
   /// The index of the node in the parent's children list
-  final int childOrder;
+  final double childOrder;
 
   /// The page id of the node
   final PageID? pageID;
@@ -364,7 +384,7 @@ abstract class CNode extends Equatable {
     List<CNode>? children,
     String? name,
     String? description,
-    int? childOrder,
+    double? childOrder,
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,
@@ -383,7 +403,7 @@ abstract class CNode extends Equatable {
     List<CNode>? children,
     String? name,
     String? description,
-    int? childOrder,
+    double? childOrder,
     Map<String, dynamic>? attributes,
     RectProperties? rectProperties,
     DateTime updatedAt,

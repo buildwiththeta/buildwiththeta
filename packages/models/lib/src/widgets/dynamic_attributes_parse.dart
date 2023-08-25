@@ -121,7 +121,6 @@ class DynamicAttributes {
       case DBKeys.flag:
       case DBKeys.isBoxed:
       case DBKeys.isTight:
-      case DBKeys.flexValue:
       case DBKeys.stringDropdown:
       case DBKeys.fontFamily:
       case DBKeys.right:
