@@ -1,15 +1,12 @@
-export 'categories.dart';
+export '../../enums/component_fit.dart';
 export 'children_enum.dart';
-export 'component_fit.dart';
 export 'intrinsic_state.dart';
 export 'key_constants.dart';
 export 'node.dart';
-export 'node_editor.dart';
 export 'node_overrides.dart';
 export 'node_type.dart';
 export 'rect.dart';
 export 'rect_properties.dart';
-export 'suggestion.dart';
 export 'tree_state.dart';
 export 'widget_adapter.dart';
 export 'widget_state.dart';

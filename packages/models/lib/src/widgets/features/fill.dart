@@ -83,19 +83,6 @@ class FFillElement extends Equatable {
 }
 
 /// Class to use solid colors, gradients, images inside Teta
-@dynamicAttributeKey
-@AttributeKey(DBKeys.bgFill)
-@AttributeKey(DBKeys.bgTwoFill)
-@AttributeKey(DBKeys.textFill)
-@AttributeKey(DBKeys.activeFill)
-@AttributeKey(DBKeys.borderFill)
-@AttributeKey(DBKeys.enabledBorderColor)
-@AttributeKey(DBKeys.focusedBorderColor)
-@AttributeKey(DBKeys.cursorColor)
-@AttributeKey(DBKeys.hintTextColor)
-@AttributeKey(DBKeys.fill)
-@AttributeKey(DBKeys.fill2)
-@AttributeKey(DBKeys.fill3)
 class FFill extends Equatable {
   /// Constructor
   const FFill({

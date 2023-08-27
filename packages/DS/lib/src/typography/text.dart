@@ -1,6 +1,18 @@
 // ignore_for_file: public_member_api_docs
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart'
+    show
+        StatelessWidget,
+        Key,
+        Color,
+        TextDecoration,
+        TextStyle,
+        Widget,
+        BuildContext,
+        Text,
+        TextAlign,
+        Theme,
+        TextDirection;
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 import 'package:theta_design_system/theta_design_system.dart';
 
 class CText extends StatelessWidget {

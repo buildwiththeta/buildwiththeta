@@ -5,11 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/theta_models.dart';
 
-@dynamicAttributeKey
-@AttributeKey(DBKeys.minWidth)
-@AttributeKey(DBKeys.maxWidth)
-@AttributeKey(DBKeys.minHeight)
-@AttributeKey(DBKeys.maxHeight)
 class FSizeRange extends Equatable {
   const FSizeRange({
     required this.size,
@@ -72,7 +67,7 @@ class FSizeRange extends Equatable {
       return null;
     }
     final temp = sizeValue.replaceAll('%', '');
-    final value = double.tryParse(temp) ?? null;
+    final value = double.tryParse(temp);
     if (value == null) {
       return null;
     } else if (sizeValue.contains('%')) {

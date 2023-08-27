@@ -2,16 +2,18 @@
 
 import 'package:either_dart/either.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hive/hive.dart';
+import 'package:hive/hive.dart' deferred as hive;
 import 'package:light_logger/light_logger.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:path_provider/path_provider.dart' deferred as path_provider;
 import 'package:theta/src/client.dart';
 import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/data/models/urls.dart';
-import 'package:theta/src/dependency_injection/di.dart';
-import 'package:theta_analytics/theta_analytics.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
+import 'package:theta/src/dependency_injection/di.dart' deferred as get_it;
+import 'package:theta_analytics/theta_analytics.dart'
+    deferred as theta_analytics;
+import 'package:theta_open_widgets/theta_open_widgets.dart'
+    deferred as theta_open_widgets;
 
 /// Theta instance.
 ///
@@ -115,16 +117,25 @@ class Theta {
   late ThetaClient _client;
 
   Future<void> _initExternalDependencies() async {
-    await ThetaOpenWidgets.initialize();
-    await ThetaAnalytics.initialize();
+    await Future.wait([
+      theta_analytics.loadLibrary(),
+      theta_open_widgets.loadLibrary(),
+    ]);
+    await theta_open_widgets.ThetaOpenWidgets.initialize();
+    await theta_analytics.ThetaAnalytics.initialize();
     if (kIsWeb) return;
-    final appDocumentDirectory = await getApplicationDocumentsDirectory();
-    Hive.init(appDocumentDirectory.path);
+    await Future.wait([
+      path_provider.loadLibrary(),
+      hive.loadLibrary(),
+    ]);
+    final appDocumentDirectory =
+        await path_provider.getApplicationDocumentsDirectory();
+    hive.Hive.init(appDocumentDirectory.path);
   }
 
   Future<void> _initializeCore(List<String> componentNames, String? branchName,
       bool preloadedAllowed) async {
-    _client = getIt();
+    _client = get_it.getIt();
     await _client.initialize(
       componentNames,
       branchName,
@@ -142,7 +153,8 @@ class Theta {
     CustomURLs customURLs,
   ) async {
     await _initExternalDependencies();
-    await initializeDependencyInjection(
+    await get_it.loadLibrary();
+    await get_it.initializeDependencyInjection(
       key,
       cacheExtension,
       connectionMode,
@@ -164,7 +176,7 @@ class Theta {
 
   /// Dispose the current Theta instance.
   void dispose() {
-    disposeDependencies();
+    get_it.disposeDependencies();
     _initialized = false;
   }
 }

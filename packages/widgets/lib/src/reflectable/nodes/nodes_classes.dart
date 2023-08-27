@@ -24,11 +24,11 @@ part 'nodes_classes.g.dart';
 )
 class _Align {}
 
-@NodeInfo(
+/*@NodeInfo(
   type: NType.button,
   optionalDisplayName: 'Button',
 )
-class _Button {}
+class _Button {}*/
 
 @NodeInfo(
   type: NType.column,
@@ -102,7 +102,7 @@ class _Stack {}
 )
 class _Text {}
 
-@NodeInfo(
+/*@NodeInfo(
   type: NType.textField,
   optionalDisplayName: 'TextField',
 )
@@ -112,7 +112,7 @@ class _TextField {}
   type: NType.video,
   optionalDisplayName: 'Video',
 )
-class _Video {}
+class _Video {}*/
 
 @NodeInfo(
   type: NType.spacer,

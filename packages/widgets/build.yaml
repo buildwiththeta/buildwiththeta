@@ -22,7 +22,7 @@ targets:
 
 builders:
   node_builder:
-    import: 'package:theta_open_widgets/src/reflectable/nodes/nodes_builder.dart'
+    import: './gen/nodes_builder.dart'
     builder_factories: ['nodeBuilder']
     build_extensions: {'.dart': ['.g.dart']}
     auto_apply: dependents
@@ -34,7 +34,7 @@ builders:
       - "built_value_generator:built_value"
 
   node_builder_part:
-    import: 'package:theta_open_widgets/src/reflectable/nodes/nodes_builder.dart'
+    import: './gen/nodes_builder.dart'
     builder_factories: ['nodeBuilderPart']
     build_extensions: {'.dart': ['.nodebuilder.g.dart']}
     auto_apply: dependents

@@ -31,7 +31,6 @@ class TreeState with ChangeNotifier {
     required this.theme,
     required this.deviceInfo,
     required this.workflows,
-    required this.config,
     required this.nodeOverrides,
     required this.fit,
     this.focusedNode,
@@ -93,12 +92,6 @@ class TreeState with ChangeNotifier {
 
   List<Override> nodeOverrides;
 
-  /// Project config
-  /// This is the config file of the project
-  /// It contains all the properties about the project
-  /// Like keys, integrations, etc.
-  ProjectConfigModel config;
-
   List<int> xLines;
   List<int> yLines;
 
@@ -150,10 +143,6 @@ class TreeState with ChangeNotifier {
 
   void onDeviceChanged(DeviceInfo deviceInfo) {
     this.deviceInfo = deviceInfo;
-  }
-
-  void onConfigChanged(ProjectConfigModel config) {
-    this.config = config;
   }
 
   void onFocusNodeChanged(CNode? node) {
@@ -223,7 +212,6 @@ class TreeState with ChangeNotifier {
     final DeviceInfo? deviceInfo,
     final ThemeMode? theme,
     final List<Workflow>? workflows,
-    final ProjectConfigModel? config,
     final List<Override>? nodeOverrides,
     final Nodes? nodes,
     final List<int>? xLines,
@@ -248,7 +236,6 @@ class TreeState with ChangeNotifier {
       nodeOverrides: nodeOverrides ?? this.nodeOverrides,
       theme: theme ?? this.theme,
       workflows: workflows ?? this.workflows,
-      config: config ?? this.config,
       nodes: nodes ?? this.nodes,
       xLines: xLines ?? this.xLines,
       yLines: yLines ?? this.yLines,

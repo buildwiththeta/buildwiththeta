@@ -5,11 +5,8 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:theta_models/theta_models.dart';
 
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.align)
 class FAlign extends Equatable {
   const FAlign({
     this.align = Alignment.topLeft,

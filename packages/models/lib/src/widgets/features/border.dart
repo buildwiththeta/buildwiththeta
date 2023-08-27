@@ -7,28 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 // Project imports:
 
-/// Example
-Widget toWidget() {
-  return Container(
-    decoration: const BoxDecoration(
-      border: Border(
-        left:
-            BorderSide(width: 0, style: BorderStyle.none, color: Colors.green),
-        top: BorderSide(width: 0, style: BorderStyle.none, color: Colors.green),
-        right:
-            BorderSide(width: 0, style: BorderStyle.none, color: Colors.green),
-        bottom:
-            BorderSide(width: 0, style: BorderStyle.none, color: Colors.green),
-      ),
-    ),
-  );
-}
-
 /// [FBorder] is a set of functions to use [Border] in widgets in Teta
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.borders)
-@AttributeKey(DBKeys.activeBorders)
 class FBorder extends Equatable {
   /// Constructor
   const FBorder({

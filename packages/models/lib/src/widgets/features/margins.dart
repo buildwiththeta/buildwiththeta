@@ -11,9 +11,6 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.margins)
-@AttributeKey(DBKeys.padding)
 class FMargins extends Equatable {
   const FMargins({
     required this.margins,
@@ -71,7 +68,7 @@ class FMargins extends Equatable {
     required final DeviceType deviceType,
   }) {
     if (forPlay) {
-      final width = MediaQuery.of(context).size.width;
+      final width = MediaQuery.sizeOf(context).width;
       if (width < 600) {
         return margins!;
       } else if (width < 1000) {

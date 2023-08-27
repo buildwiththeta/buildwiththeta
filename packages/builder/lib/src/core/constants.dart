@@ -1,21 +1,26 @@
 import 'dart:convert';
 
-import 'package:archive/archive.dart';
-import 'package:encrypt/encrypt.dart';
+import 'package:archive/archive.dart' deferred as archive;
+import 'package:encrypt/encrypt.dart' deferred as encrypt;
 
 const defaultHeaders = {'Content-Type': 'application/json'};
 const sendConversionEventPath = 'add_conversion_log';
 
 const thetaPreloadFilePath = 'assets/theta_assets/theta_preload.json';
 
-final gzip = GZipDecoder();
-String decompressAndDecrypt(String anonKey, String encryptedBase64) {
-  final key = Key.fromUtf8(anonKey.split('.')[1].substring(0, 32));
-  final iv = IV.fromLength(16);
+Future<String> decompressAndDecrypt(
+    String anonKey, String encryptedBase64) async {
+  await Future.wait([
+    archive.loadLibrary(),
+    encrypt.loadLibrary(),
+  ]);
+  final gzip = archive.GZipDecoder();
+  final key = encrypt.Key.fromUtf8(anonKey.split('.')[1].substring(0, 32));
+  final iv = encrypt.IV.fromLength(16);
 
-  final encrypter = Encrypter(AES(key));
+  final encrypter = encrypt.Encrypter(encrypt.AES(key));
 
-  final encryptedValue = Encrypted.fromBase64(encryptedBase64);
+  final encryptedValue = encrypt.Encrypted.fromBase64(encryptedBase64);
   final decryptedValue = encrypter.decrypt(encryptedValue, iv: iv);
 
   final compressedJson = base64.decode(decryptedValue);

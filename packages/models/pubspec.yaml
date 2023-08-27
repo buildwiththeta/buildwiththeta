@@ -8,7 +8,7 @@ issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
 documentation: https://docs.buildwiththeta.com
 
 scripts:
-  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
+  gen: "dart run build_runner build --delete-conflicting-outputs"
   dryrun: "dart pub publish --dry-run"
   publish: "dart pub publish"
 
@@ -26,23 +26,17 @@ dependencies:
   recase: ^4.1.0
   responsive_builder: ^0.7.0
   device_frame: ^1.1.0
-  intl: ^0.18.0
-  transition: ^2.0.2
-  google_fonts: ^5.0.0
-  reflectable: ^4.0.5
-  meta: ^1.9.1
   collection: ^1.17.1
-  uuid: ^3.0.7
 
-  build: ^2.3.1
-  analyzer: ^5.11.1
   freezed_annotation: ^2.2.0
-  source_gen: ^1.2.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
+  build: ^2.3.1
+  analyzer: ^5.11.1
+  source_gen: ^1.2.7
   build_runner: any  
   built_value_generator: any
   freezed: any

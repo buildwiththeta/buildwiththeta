@@ -8,8 +8,6 @@ import 'package:theta_models/src/models/feature.dart';
 import 'package:theta_models/theta_models.dart';
 
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.conditionType)
 class FConditionType extends FeatureWithEnum<ConditionType> {
   const FConditionType({
     super.value = ConditionType.equal,

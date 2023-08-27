@@ -4,11 +4,8 @@
 import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_models/theta_models.dart';
 
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.fontWeight)
 class FFontWeight extends Equatable {
   /// Constructor
   const FFontWeight({

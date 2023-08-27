@@ -9,9 +9,6 @@ import 'package:recase/recase.dart';
 // Project imports:
 import 'package:theta_models/theta_models.dart';
 
-@dynamicAttributeKey
-@AttributeKey(DBKeys.textStyle)
-@AttributeKey(DBKeys.textStyle2)
 class FTextStyle extends Equatable {
   /// Set of funcs to use TextStyle in Teta's widgets
   const FTextStyle({

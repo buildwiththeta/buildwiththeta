@@ -5,11 +5,8 @@ import 'package:enum_to_string/enum_to_string.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:theta_models/src/models/feature.dart';
-import 'package:theta_models/theta_models.dart';
 
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.borderStyle)
 class FBorderStyle extends FeatureWithEnum<BorderStyle> {
   const FBorderStyle({
     super.value = BorderStyle.solid,

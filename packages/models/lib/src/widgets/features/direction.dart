@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/theta_models.dart';
 
-@dynamicAttributeKey
-@AttributeKey(DBKeys.direction)
 class FDirection extends Equatable {
   const FDirection({
     required this.direction,

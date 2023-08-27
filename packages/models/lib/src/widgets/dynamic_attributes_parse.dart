@@ -1,30 +1,6 @@
-import 'package:collection/collection.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
 
-class DynamicAttributeKey extends Reflectable {
-  const DynamicAttributeKey()
-      : super.fromList(const [
-          metadataCapability,
-          staticInvokeCapability,
-        ]);
-}
-
-const dynamicAttributeKey = DynamicAttributeKey();
-
-class AttributeKey {
-  final String key;
-  const AttributeKey(this.key);
-}
-
-class DynamicAttributeReflector extends Reflectable {
-  const DynamicAttributeReflector() : super();
-}
-
-const dynamicAttributeReflector = DynamicAttributeReflector();
-
-@DynamicAttributeReflector()
 class DynamicAttributes {
   const DynamicAttributes();
 
@@ -32,41 +8,96 @@ class DynamicAttributes {
 
   /// fromJson for each class using Reflectable
   dynamic fromJson(final String key, final dynamic value) {
-    try {
-      /// Get all classes with this key
-      final classes = dynamicAttributeKey.annotatedClasses
-          .where((element) => element.metadata
-              .whereType<AttributeKey>()
-              .any((e) => e.key == key))
-          .toList();
-
-      /// Get the class with the same name of the key
-      final targetClass = classes.firstOrNull;
-
-      /// There is no class with this key
-      if (targetClass == null) {
-        /// Try to parse manually the remaining keys
-        final res = manualFromJson(key, value);
-        if (res != null) {
-          return res;
-        }
-        return value;
-      }
-
-      /// Invoke the fromJson method of the class
-      final i = targetClass.invoke('fromJson', [value]);
-      return i;
-    } catch (e) {
-      Logger.printError(
-        'Error in DynamicAttributes, key: $key, value: $value, error: $e',
-      );
+    final res = manualFromJson(key, value);
+    if (res != null) {
+      return res;
     }
+    return value;
   }
 
   ///[value] == [doc[key]]
   dynamic manualFromJson(final String key, final dynamic value) {
     try {
       switch (key) {
+        case DBKeys.align:
+          return FAlign.fromJson(value);
+        case DBKeys.blendMode:
+          return FBlendMode.fromJson(value);
+        case DBKeys.borderRadius:
+          return FBorderRadius.fromJson(value);
+        case DBKeys.borderStyle:
+          return FBorderStyle.fromJson(value);
+        case DBKeys.borders:
+        case DBKeys.activeBorders:
+          return FBorder.fromJson(value);
+        case DBKeys.boxFit:
+          return FBoxFit.fromJson(value);
+        case DBKeys.conditionType:
+          return FConditionType.fromJson(value);
+        case DBKeys.crossAxisAlignment:
+          return FCrossAxisAlignment.fromJson(value);
+        case DBKeys.direction:
+          return FDirection.fromJson(value);
+        case DBKeys.bgFill:
+        case DBKeys.textFill:
+        case DBKeys.activeFill:
+        case DBKeys.borderFill:
+        case DBKeys.fill:
+          return FFill.fromJson(value);
+        case DBKeys.fontSize:
+          return FFontSize.fromJson(value);
+        case DBKeys.fontStyle:
+          return FFontStyle.fromJson(value);
+        case DBKeys.fontWeight:
+          return FFontWeight.fromJson(value);
+        case DBKeys.iconType:
+          return FIconType.fromJson(value);
+        case DBKeys.imageType:
+          return FImageType.fromJson(value);
+        case DBKeys.mainAxisAlignment:
+          return FMainAxisAlignment.fromJson(value);
+        case DBKeys.mainAxisSize:
+          return FMainAxisSize.fromJson(value);
+        case DBKeys.margins:
+        case DBKeys.padding:
+          return FMargins.fromJson(value);
+        case DBKeys.shadows:
+          return FShadow.fromJson(value);
+        case DBKeys.minWidth:
+        case DBKeys.maxWidth:
+        case DBKeys.minHeight:
+        case DBKeys.maxHeight:
+          return FSizeRange.fromJson(value);
+        case DBKeys.width:
+        case DBKeys.widthFactor:
+        case DBKeys.height:
+        case DBKeys.heightFactor:
+          return FSize.fromJson(value);
+        case DBKeys.textAlign:
+          return FTextAlign.fromJson(value);
+        case DBKeys.textDecoration:
+          return FTextDecoration.fromJson(value);
+        case DBKeys.textDirection:
+          return FTextDirection.fromJson(value);
+        case DBKeys.textStyle:
+          return FTextStyle.fromJson(value);
+        case DBKeys.image:
+        case DBKeys.value:
+        case DBKeys.flexValue:
+        case DBKeys.rotateX:
+        case DBKeys.rotateY:
+        case DBKeys.rotateZ:
+        case DBKeys.duration:
+        case DBKeys.mainAxisSpacing:
+        case DBKeys.crossAxisCount:
+        case DBKeys.crossAxisSpacing:
+        case DBKeys.maxLines:
+        case DBKeys.minLines:
+        case DBKeys.maxLenght:
+        case DBKeys.childAspectRatio:
+        case DBKeys.labelText:
+        case DBKeys.rotation:
+          return FTextTypeInput.fromJson(value);
         case DBKeys.overrides:
           {
             return Override.fromJsonList(value ?? []);
@@ -91,7 +122,6 @@ class DynamicAttributes {
             }
             return states;
           }
-
         default:
           return value;
       }
@@ -112,23 +142,11 @@ class DynamicAttributes {
       case DBKeys.faIcon:
       case DBKeys.featherIcon:
       case DBKeys.lineIcon:
-      case DBKeys.isFullWidth:
       case DBKeys.isVertical:
-      case DBKeys.left:
-      case DBKeys.loopVideo:
-      case DBKeys.bottom:
       case DBKeys.componentName:
       case DBKeys.flag:
-      case DBKeys.isBoxed:
-      case DBKeys.isTight:
-      case DBKeys.stringDropdown:
       case DBKeys.fontFamily:
-      case DBKeys.right:
-      case DBKeys.showControls:
-      case DBKeys.startAt:
       case DBKeys.textStyleModel:
-      case DBKeys.top:
-      case DBKeys.isExpandedGap:
       case DBKeys.visibility:
       case DBKeys.visibleOnDesktop:
       case DBKeys.visibleOnMobile:
@@ -137,15 +155,8 @@ class DynamicAttributes {
       case DBKeys.fadeAnimationEnabled:
       case DBKeys.scaleAnimationEnabled:
       case DBKeys.slideAnimationEnabled:
-      case DBKeys.dropdownItem:
-      case DBKeys.showAppBar:
-      case DBKeys.showBottomBar:
-      case DBKeys.showDrawer:
       case DBKeys.isPrimary:
       case DBKeys.showCursor:
-      case DBKeys.autoCorrect:
-      case DBKeys.obscureText:
-      case DBKeys.showBorders:
         return value;
       default:
         return value?.toJson();
