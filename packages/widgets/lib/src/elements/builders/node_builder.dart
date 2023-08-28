@@ -428,6 +428,19 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
     return child;
   }
 
+  Widget maybeBounceForSmallWidgets(Widget child) {
+    final doesBounce = widget.state.node.getAttributes[DBKeys.doesBounce];
+    if (doesBounce == null) {
+      return child;
+    }
+    if (doesBounce == false) {
+      return child;
+    }
+    return BounceForSmallWidgets(
+      child: child,
+    );
+  }
+
   Widget maybeGestureDetector(Widget child) {
     if (executer.doesWorkflowExist(Trigger.onTap) ||
         executer.doesWorkflowExist(Trigger.onDoubleTap) ||

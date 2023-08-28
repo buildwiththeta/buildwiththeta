@@ -1,4 +1,8 @@
-## 0.7.0
+## 0.7.1
+
+- [x] Feat: add 'bounce', 'link' to DBKeys.
+
+## 0.7.0 
 
 - [x] This package was splitted and now lightest.
 - [x] Feat: Remove reflectable dependency.
