@@ -72,17 +72,17 @@ class FMargins extends Equatable {
       if (width < 600) {
         return margins!;
       } else if (width < 1000) {
-        return marginsTablet!;
+        return marginsTablet ?? margins!;
       } else {
-        return marginsDesktop!;
+        return marginsDesktop ?? margins!;
       }
     } else {
       if (deviceType == DeviceType.phone) {
         return margins!;
       } else if (deviceType == DeviceType.tablet) {
-        return marginsTablet!;
+        return marginsTablet ?? margins!;
       } else {
-        return marginsDesktop!;
+        return marginsDesktop ?? margins!;
       }
     }
   }
