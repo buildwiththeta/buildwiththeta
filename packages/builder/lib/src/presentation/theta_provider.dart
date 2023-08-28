@@ -40,8 +40,6 @@ class _ThetaProviderState extends State<ThetaProvider> {
       create: (_) => TreeState(
         nodeOverrides: [],
         forPlay: true,
-        params: [],
-        states: [],
         pageId: '',
         isPage: true,
         fit: ComponentFit.absolute,

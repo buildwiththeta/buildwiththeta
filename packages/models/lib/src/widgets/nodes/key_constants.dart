@@ -96,4 +96,7 @@ class DBKeys {
   static const String isListView = 'isListView';
   static const String componentFit = 'componentFit';
   static const String overrides = 'overrides';
+
+  static const String xTranslation = 'xTrans';
+  static const String yTranslation = 'yTrans';
 }

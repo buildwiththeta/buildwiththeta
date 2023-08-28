@@ -22,8 +22,6 @@ class TreeState with ChangeNotifier {
   /// [fit] is the fit of the component
   TreeState({
     required this.forPlay,
-    required this.params,
-    required this.states,
     required this.pageId,
     required this.isPage,
     required this.colorStyles,
@@ -49,12 +47,6 @@ class TreeState with ChangeNotifier {
 
   /// Are we in Play Mode?
   bool forPlay;
-
-  /// The params of Scaffold
-  List<VariableEntity> params;
-
-  /// The states of Scaffold
-  List<VariableEntity> states;
 
   /// The page id
   PageID pageId;
@@ -119,14 +111,6 @@ class TreeState with ChangeNotifier {
 
   void onPageIDChanged(PageID pageID) {
     pageId = pageID;
-  }
-
-  void onParamsId(Variables params) {
-    this.params = params;
-  }
-
-  void onStatesId(Variables states) {
-    this.states = states;
   }
 
   void onColorsChanged(ColorStyles colors) {
@@ -202,8 +186,6 @@ class TreeState with ChangeNotifier {
     final CNode? node,
     final bool? forPlay,
     final int? loop,
-    final List<VariableEntity>? params,
-    final List<VariableEntity>? states,
     final bool? isVertical,
     final PageID? pageId,
     final bool? isPage,
@@ -226,8 +208,6 @@ class TreeState with ChangeNotifier {
   }) {
     return TreeState(
       forPlay: forPlay ?? this.forPlay,
-      params: params ?? this.params,
-      states: states ?? this.states,
       pageId: pageId ?? this.pageId,
       isPage: isPage ?? this.isPage,
       colorStyles: colorStyles ?? this.colorStyles,

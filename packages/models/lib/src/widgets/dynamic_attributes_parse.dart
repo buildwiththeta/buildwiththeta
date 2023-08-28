@@ -4,8 +4,6 @@ import 'package:theta_models/theta_models.dart';
 class DynamicAttributes {
   const DynamicAttributes();
 
-  static const _varMapper = VariableMapper();
-
   /// fromJson for each class using Reflectable
   dynamic fromJson(final String key, final dynamic value) {
     final res = manualFromJson(key, value);
@@ -101,26 +99,6 @@ class DynamicAttributes {
         case DBKeys.overrides:
           {
             return Override.fromJsonList(value ?? []);
-          }
-        case 'params':
-          {
-            final params = <VariableEntity>[];
-            if (value != null) {
-              for (final e in value as List<Map<String, dynamic>>) {
-                params.add(_varMapper.fromJson(e));
-              }
-            }
-            return params;
-          }
-        case 'states':
-          {
-            final states = <VariableEntity>[];
-            if (value != null) {
-              for (final e in value as List<Map<String, dynamic>>) {
-                states.add(_varMapper.fromJson(e));
-              }
-            }
-            return states;
           }
         default:
           return value;
