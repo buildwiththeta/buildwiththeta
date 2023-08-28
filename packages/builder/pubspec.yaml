@@ -1,7 +1,7 @@
 name: theta
 description: Prototyping and testing your app in production with UI instant updates. 
 
-version: 0.7.2
+version: 0.8.0
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -31,9 +31,9 @@ dependencies:
     sdk: flutter
 
   theta_analytics: ^0.1.4
-  theta_models: ^0.6.2
-  theta_rendering: ^0.1.7
-  theta_open_widgets: ^0.6.5
+  theta_models: ^0.7.0
+  theta_rendering: ^0.2.2
+  theta_open_widgets: ^0.7.0
 
   light_logger: ^0.0.3
 
@@ -47,14 +47,6 @@ dependencies:
   path_provider: ^2.0.15
   archive: ^3.3.7
   encrypt: ^5.0.1
-
-dependency_overrides:
-  theta_models:
-    path: ../models
-  theta_open_widgets:
-    path: ../widgets
-#  theta_rendering:
-#    path: ../rendering
 
 dev_dependencies:
   flutter_test:

@@ -13,15 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta: ^0.7.2
-
-dependency_overrides: 
-  theta: 
-    path: ../packages/builder/
-  theta_models:
-    path: ../packages/models/
-  theta_open_widgets:
-    path: ../packages/widgets/
+  theta:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

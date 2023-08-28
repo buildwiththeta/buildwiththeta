@@ -1,3 +1,10 @@
+## 0.8.0
+
+- [x] Feat: web embed support
+- [x] Feat: remove unused files from dependencies.
+- [x] Feat: new async loading for multiple components.
+- [x] Feat: load components and styles in parallel.
+
 ## 0.7.2
 
 - [x] Feat: export CustomURLs class.

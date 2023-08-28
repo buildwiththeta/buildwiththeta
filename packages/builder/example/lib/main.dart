@@ -10,7 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["SocialCard"],
+    componentsNames: ["PaywallMultiPlan"],
   );
 
   runApp(const MyApp());
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'SocialCard',
+            'PaywallMultiPlan',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
