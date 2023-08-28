@@ -92,6 +92,7 @@ class DBKeys {
 
   static const String iconType = 'icTp';
   static const String cursorType = 'cursorType';
+  static const String link = 'link';
 
   static const String isListView = 'isListView';
   static const String componentFit = 'componentFit';
