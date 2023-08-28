@@ -1,3 +1,11 @@
+## 0.7.2
+
+- [x] Fix: improve support for links, cursors, bounce.
+
+## 0.7.1
+
+- [x] Feat: add support for links, cursors and bounce.
+
 ## 0.7.0
 
 - [x] Fix: remove Reflectable from dependencies.

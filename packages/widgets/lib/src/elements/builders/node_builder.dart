@@ -246,6 +246,19 @@ class _NodeBuilderState extends State<NodeBuilder> {
     return child;
   }
 
+  Widget maybeBounceForSmallWidgets(Widget child) {
+    final doesBounce = widget.state.node.getAttributes[DBKeys.doesBounce];
+    if (doesBounce == null) {
+      return child;
+    }
+    if (doesBounce == false) {
+      return child;
+    }
+    return BounceForLargeWidgets(
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
@@ -294,21 +307,23 @@ class _NodeBuilderState extends State<NodeBuilder> {
                   position: DecorationPosition.foreground,
                   child: _handleCursor(
                     widget.state.node,
-                    Transform.rotate(
-                      angle: _handleRotation(state),
-                      child: Padding(
-                        padding: _handlePadding(state),
-                        child: GestureDetectorForPlay(
-                          state: widget.state,
-                          child: handleSlideAnimation(
-                            widget.state.node,
-                            handleScaleAnimation(
+                    maybeBounceForSmallWidgets(
+                      Transform.rotate(
+                        angle: _handleRotation(state),
+                        child: Padding(
+                          padding: _handlePadding(state),
+                          child: GestureDetectorForPlay(
+                            state: widget.state,
+                            child: handleSlideAnimation(
                               widget.state.node,
-                              handleFadeInAnimation(
+                              handleScaleAnimation(
                                 widget.state.node,
-                                handleSizeRange(
-                                  state,
-                                  widget.child,
+                                handleFadeInAnimation(
+                                  widget.state.node,
+                                  handleSizeRange(
+                                    state,
+                                    widget.child,
+                                  ),
                                 ),
                               ),
                             ),
@@ -428,30 +443,20 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
     return child;
   }
 
-  Widget maybeBounceForSmallWidgets(Widget child) {
-    final doesBounce = widget.state.node.getAttributes[DBKeys.doesBounce];
-    if (doesBounce == null) {
-      return child;
-    }
-    if (doesBounce == false) {
-      return child;
-    }
-    return BounceForSmallWidgets(
-      child: child,
-    );
-  }
-
   Widget maybeGestureDetector(Widget child) {
     if (executer.doesWorkflowExist(Trigger.onTap) ||
         executer.doesWorkflowExist(Trigger.onDoubleTap) ||
         executer.doesWorkflowExist(Trigger.onLongPress) ||
         widget.state.node.getAttributes[DBKeys.link] != null) {
       return GestureDetector(
-        onTap: () {
+        onTap: () async {
           if (executer.doesWorkflowExist(Trigger.onTap)) {
             executer.execute(Trigger.onTap);
+            return;
+          } else {
+            await _handleLink(widget.state.node, child);
+            return;
           }
-          _handleLink(widget.state.node, child);
         },
         onDoubleTap: () => executer.execute(Trigger.onDoubleTap),
         onLongPress: () => executer.execute(Trigger.onLongPress),

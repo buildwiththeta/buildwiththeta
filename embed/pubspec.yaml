@@ -9,11 +9,16 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.1.0 <4.0.0'
 
+scripts:
+  build: 
+    html: flutter build web --release --web-renderer html --no-tree-shake-icons
+    canvas: flutter build web --release --web-renderer canvaskit --no-tree-shake-icons
+
 dependencies:
   flutter:
     sdk: flutter
 
-  theta:
+  theta: 0.8.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,3 +1,7 @@
+## 0.8.1
+
+- [x] Feat: add support for links, cursors and bounce.
+
 ## 0.8.0
 
 - [x] Feat: web embed support
