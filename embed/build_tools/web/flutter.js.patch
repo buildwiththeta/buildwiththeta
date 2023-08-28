@@ -5,7 +5,7 @@
       */
      async loadEntrypoint(options) {
 -      const { entrypointUrl = `${baseUri}main.dart.js`, onEntrypointLoaded } =
-+      const { entrypointUrl = `https://pub-61a1e3d23bf74a9dbb84f4e0448be796.r2.dev/main.dart.js`, onEntrypointLoaded } =
++      const { entrypointUrl = `https://buildwiththeta.net/main.dart.js`, onEntrypointLoaded } =
          options || {};
  
        return this._loadEntrypoint(entrypointUrl, onEntrypointLoaded);

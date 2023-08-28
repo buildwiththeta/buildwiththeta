@@ -3,14 +3,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 Future<void> main() async {
-  await ThetaModels.initialize();
   WidgetsFlutterBinding.ensureInitialized();
-  initializeReflectable();
 
   final json = jsonDecode(
     jsonEncode(

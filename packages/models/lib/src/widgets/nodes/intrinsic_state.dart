@@ -3,7 +3,6 @@
 // Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/src/widgets/nodes/children_enum.dart';
-import 'package:theta_models/src/widgets/nodes/node_type.dart';
 
 // Project imports:
 class IntrinsicState extends Equatable {
@@ -32,14 +31,6 @@ class IntrinsicState extends Equatable {
 
   bool get canHaveChildren => canHave == ChildrenEnum.children;
   bool get canHaveChild => canHave == ChildrenEnum.child;
-
-  static IntrinsicState get basic => const IntrinsicState(
-        nodeIcon: '',
-        displayName: '',
-        type: NType.nil,
-        maxChildren: null,
-        canHave: ChildrenEnum.none,
-      );
 
   @override
   String toString() {

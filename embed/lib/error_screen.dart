@@ -1,4 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        StatelessWidget,
+        BuildContext,
+        Widget,
+        MaterialApp,
+        Scaffold,
+        Center,
+        Text;
 
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({super.key});

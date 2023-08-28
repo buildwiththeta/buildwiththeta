@@ -1,6 +1,14 @@
 import 'package:embed/home.dart' deferred as home;
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart' show CupertinoActivityIndicator;
+import 'package:flutter/material.dart'
+    show
+        StatefulWidget,
+        State,
+        Center,
+        Widget,
+        BuildContext,
+        MaterialApp,
+        ThemeData;
 
 class MyApp extends StatefulWidget {
   const MyApp({
@@ -34,7 +42,6 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: false,
       ),
       home: child,

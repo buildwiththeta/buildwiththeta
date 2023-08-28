@@ -3,8 +3,6 @@ import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Align
-@dynamicAdapter
-@NodeKey(NType.align)
 class AlignWidgetAdapter extends WidgetAdapter {
   const AlignWidgetAdapter();
 
@@ -24,6 +22,7 @@ class AlignWidgetAdapter extends WidgetAdapter {
 }
 
 /// Button
+/*
 @dynamicAdapter
 @NodeKey(NType.button)
 class ButtonAdapter extends WidgetAdapter {
@@ -53,10 +52,9 @@ class ButtonAdapter extends WidgetAdapter {
 
   ButtonAdapter.create() : this();
 }
+*/
 
 /// Column
-@dynamicAdapter
-@NodeKey(NType.column)
 class ColumnAdapter extends WidgetAdapter {
   const ColumnAdapter();
   @override
@@ -81,8 +79,6 @@ class ColumnAdapter extends WidgetAdapter {
 }
 
 /// Container
-@dynamicAdapter
-@NodeKey(NType.container)
 class BoxAdapter extends WidgetAdapter {
   const BoxAdapter();
   @override
@@ -108,8 +104,6 @@ class BoxAdapter extends WidgetAdapter {
 }
 
 /// GridView
-@dynamicAdapter
-@NodeKey(NType.gridView)
 class GridViewAdapter extends WidgetAdapter {
   const GridViewAdapter();
   @override
@@ -137,8 +131,6 @@ class GridViewAdapter extends WidgetAdapter {
 }
 
 /// Material Line
-@dynamicAdapter
-@NodeKey(NType.icon)
 class MaterialIconAdapter extends WidgetAdapter {
   const MaterialIconAdapter();
   @override
@@ -171,8 +163,6 @@ class MaterialIconAdapter extends WidgetAdapter {
 }
 
 /// Image
-@dynamicAdapter
-@NodeKey(NType.image)
 class ImageAdapter extends WidgetAdapter {
   const ImageAdapter();
   @override
@@ -195,8 +185,6 @@ class ImageAdapter extends WidgetAdapter {
 }
 
 /// ListView
-@dynamicAdapter
-@NodeKey(NType.listView)
 class ListViewAdapter extends WidgetAdapter {
   const ListViewAdapter();
   @override
@@ -235,8 +223,6 @@ class ListViewAdapter extends WidgetAdapter {
 }
 
 /// Lottie
-@dynamicAdapter
-@NodeKey(NType.lottie)
 class LottieAdapter extends WidgetAdapter {
   const LottieAdapter();
   @override
@@ -256,8 +242,6 @@ class LottieAdapter extends WidgetAdapter {
 }
 
 /// Row
-@dynamicAdapter
-@NodeKey(NType.row)
 class RowAdapter extends WidgetAdapter {
   const RowAdapter();
   @override
@@ -282,8 +266,6 @@ class RowAdapter extends WidgetAdapter {
 }
 
 /// Scaffold
-@dynamicAdapter
-@NodeKey(NType.scaffold)
 class ScaffoldAdapter extends WidgetAdapter {
   const ScaffoldAdapter();
   @override
@@ -296,19 +278,12 @@ class ScaffoldAdapter extends WidgetAdapter {
         nodeState: state,
         children: state.node.children ?? [],
         fill: state.node.getAttributes[DBKeys.fill] as FFill,
-        flag: state.node.getAttributes[DBKeys.flag] as bool,
-        isBoxed: state.node.getAttributes[DBKeys.isBoxed] as bool,
-        isScrollable: false,
-        isClipped: false,
-        bodyExtended: false,
       );
 
   ScaffoldAdapter.create() : this();
 }
 
 /// Stack
-@dynamicAdapter
-@NodeKey(NType.stack)
 class StackAdapter extends WidgetAdapter {
   const StackAdapter();
   @override
@@ -326,8 +301,6 @@ class StackAdapter extends WidgetAdapter {
 }
 
 /// Text
-@dynamicAdapter
-@NodeKey(NType.text)
 class TextAdapter extends WidgetAdapter {
   const TextAdapter();
   @override
@@ -349,6 +322,7 @@ class TextAdapter extends WidgetAdapter {
 }
 
 /// TextField
+/*
 @dynamicAdapter
 @NodeKey(NType.textField)
 class TextFieldAdapter extends WidgetAdapter {
@@ -422,11 +396,9 @@ class VideoAdapter extends WidgetAdapter {
       );
 
   VideoAdapter.create() : this();
-}
+}*/
 
 /// Component
-@dynamicAdapter
-@NodeKey(NType.component)
 class ComponentAdapter extends WidgetAdapter {
   const ComponentAdapter();
   @override
@@ -445,8 +417,6 @@ class ComponentAdapter extends WidgetAdapter {
 }
 
 /// Team Component
-@dynamicAdapter
-@NodeKey(NType.teamComponent)
 class TeamComponentAdapter extends WidgetAdapter {
   const TeamComponentAdapter();
   @override
@@ -465,8 +435,6 @@ class TeamComponentAdapter extends WidgetAdapter {
 }
 
 /// Spacer
-@dynamicAdapter
-@NodeKey(NType.spacer)
 class SpacerAdapter extends WidgetAdapter {
   const SpacerAdapter();
   @override
@@ -482,8 +450,6 @@ class SpacerAdapter extends WidgetAdapter {
 }
 
 /// Svg Picture
-@dynamicAdapter
-@NodeKey(NType.svgPicture)
 class SvgPictureAdapter extends WidgetAdapter {
   const SvgPictureAdapter();
   @override

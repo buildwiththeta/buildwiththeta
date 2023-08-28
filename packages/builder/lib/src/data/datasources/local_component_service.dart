@@ -83,7 +83,8 @@ class LocalComponentService {
       String componentName) async {
     final res = _preloadFile.customJson ??
         jsonDecode(await rootBundle.loadString(thetaPreloadFilePath));
-    return GetPageResponseEntity.fromJson(
-        jsonDecode(decompressAndDecrypt(_clientToken.key, res[componentName])));
+    final decompress =
+        await decompressAndDecrypt(_clientToken.key, res[componentName]);
+    return GetPageResponseEntity.fromJson(jsonDecode(decompress));
   }
 }

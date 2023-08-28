@@ -40,8 +40,6 @@ class _ThetaProviderState extends State<ThetaProvider> {
       create: (_) => TreeState(
         nodeOverrides: [],
         forPlay: true,
-        params: [],
-        states: [],
         pageId: '',
         isPage: true,
         fit: ComponentFit.absolute,
@@ -50,7 +48,6 @@ class _ThetaProviderState extends State<ThetaProvider> {
         theme: widget.theme ?? ThemeMode.light,
         deviceInfo: Devices.ios.iPhone13,
         workflows: [],
-        config: const ProjectConfigModel(),
       ),
       child: ChangeNotifierProvider(
         create: (_) => TreeGlobalState(

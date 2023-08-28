@@ -1,8 +1,6 @@
 import 'package:theta_models/theta_models.dart';
 
 /// Align
-@nodeTypeISKey
-@NodeKey(NType.align)
 class AlignIntrinsicStates extends IntrinsicState {
   AlignIntrinsicStates()
       : super(
@@ -15,24 +13,7 @@ class AlignIntrinsicStates extends IntrinsicState {
   AlignIntrinsicStates.create() : this();
 }
 
-/// Button
-@nodeTypeISKey
-@NodeKey(NType.button)
-class ButtonIntrinsicStates extends IntrinsicState {
-  ButtonIntrinsicStates()
-      : super(
-          nodeIcon: '',
-          displayName: NodeType.name(NType.button),
-          type: NType.button,
-          maxChildren: 0,
-          canHave: ChildrenEnum.none,
-        );
-  ButtonIntrinsicStates.create() : this();
-}
-
 /// Column
-@nodeTypeISKey
-@NodeKey(NType.column)
 class ColumnIntrinsicStates extends IntrinsicState {
   ColumnIntrinsicStates()
       : super(
@@ -46,8 +27,6 @@ class ColumnIntrinsicStates extends IntrinsicState {
 }
 
 /// Component
-@nodeTypeISKey
-@NodeKey(NType.component)
 class ComponentIntrinsicStates extends IntrinsicState {
   ComponentIntrinsicStates()
       : super(
@@ -61,8 +40,6 @@ class ComponentIntrinsicStates extends IntrinsicState {
 }
 
 /// Team Component
-@nodeTypeISKey
-@NodeKey(NType.teamComponent)
 class TeamComponentIntrinsicStates extends IntrinsicState {
   TeamComponentIntrinsicStates()
       : super(
@@ -76,8 +53,6 @@ class TeamComponentIntrinsicStates extends IntrinsicState {
 }
 
 /// Container
-@nodeTypeISKey
-@NodeKey(NType.container)
 class ContainerIntrinsicStates extends IntrinsicState {
   ContainerIntrinsicStates()
       : super(
@@ -91,8 +66,6 @@ class ContainerIntrinsicStates extends IntrinsicState {
 }
 
 /// Material Icon
-@nodeTypeISKey
-@NodeKey(NType.icon)
 class IconIntrinsicStates extends IntrinsicState {
   const IconIntrinsicStates()
       : super(
@@ -105,8 +78,6 @@ class IconIntrinsicStates extends IntrinsicState {
 }
 
 /// Image
-@nodeTypeISKey
-@NodeKey(NType.image)
 class ImageIntrinsicStates extends IntrinsicState {
   ImageIntrinsicStates()
       : super(
@@ -121,9 +92,6 @@ class ImageIntrinsicStates extends IntrinsicState {
 /// ListView & GridView
 /// https://api.flutter.dev/flutter/widgets/ListView-class.html
 /// https://api.flutter.dev/flutter/widgets/GridView-class.html
-@nodeTypeISKey
-@NodeKey(NType.listView)
-@NodeKey(NType.gridView)
 class ListViewIntrinsicStates extends IntrinsicState {
   const ListViewIntrinsicStates()
       : super(
@@ -139,8 +107,6 @@ class ListViewIntrinsicStates extends IntrinsicState {
 
 /// Lottie
 /// https://pub.dev/packages/lottie
-@nodeTypeISKey
-@NodeKey(NType.lottie)
 class LottieIntrinsicStates extends IntrinsicState {
   LottieIntrinsicStates()
       : super(
@@ -155,8 +121,6 @@ class LottieIntrinsicStates extends IntrinsicState {
 
 /// SvgPicture
 /// https://pub.dev/packages/flutter_svg
-@nodeTypeISKey
-@NodeKey(NType.svgPicture)
 class SvgPictureIntrinsicStates extends IntrinsicState {
   SvgPictureIntrinsicStates()
       : super(
@@ -169,8 +133,6 @@ class SvgPictureIntrinsicStates extends IntrinsicState {
   SvgPictureIntrinsicStates.create() : this();
 }
 
-@nodeTypeISKey
-@NodeKey(NType.row)
 class RowIntrinsicStates extends IntrinsicState {
   RowIntrinsicStates()
       : super(
@@ -183,8 +145,6 @@ class RowIntrinsicStates extends IntrinsicState {
   RowIntrinsicStates.create() : this();
 }
 
-@nodeTypeISKey
-@NodeKey(NType.scaffold)
 class ScaffoldIntrinsicStates extends IntrinsicState {
   const ScaffoldIntrinsicStates()
       : super(
@@ -196,8 +156,6 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
   const ScaffoldIntrinsicStates.create() : this();
 }
 
-@nodeTypeISKey
-@NodeKey(NType.stack)
 class StackIntrinsicStates extends IntrinsicState {
   const StackIntrinsicStates()
       : super(
@@ -209,8 +167,6 @@ class StackIntrinsicStates extends IntrinsicState {
   const StackIntrinsicStates.create() : this();
 }
 
-@nodeTypeISKey
-@NodeKey(NType.text)
 class TextIntrinsicStates extends IntrinsicState {
   TextIntrinsicStates()
       : super(
@@ -222,34 +178,6 @@ class TextIntrinsicStates extends IntrinsicState {
   TextIntrinsicStates.create() : this();
 }
 
-@nodeTypeISKey
-@NodeKey(NType.textField)
-class TextFieldIntrinsicStates extends IntrinsicState {
-  TextFieldIntrinsicStates()
-      : super(
-          nodeIcon: '',
-          displayName: NodeType.name(NType.textField),
-          type: NType.textField,
-          canHave: ChildrenEnum.none,
-        );
-  TextFieldIntrinsicStates.create() : this();
-}
-
-@nodeTypeISKey
-@NodeKey(NType.video)
-class VideoIntrinsicStates extends IntrinsicState {
-  VideoIntrinsicStates()
-      : super(
-          nodeIcon: '',
-          displayName: NodeType.name(NType.video),
-          type: NType.video,
-          canHave: ChildrenEnum.none,
-        );
-  VideoIntrinsicStates.create() : this();
-}
-
-@nodeTypeISKey
-@NodeKey(NType.spacer)
 class SpacerIntrinsicStates extends IntrinsicState {
   SpacerIntrinsicStates()
       : super(

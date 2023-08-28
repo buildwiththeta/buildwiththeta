@@ -1,58 +1,28 @@
-import 'package:collection/collection.dart';
-import 'package:light_logger/light_logger.dart';
-import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
 
-class NodeTypeISKey extends Reflectable {
-  const NodeTypeISKey()
-      : super.fromList(const [
-          metadataCapability,
-          newInstanceCapability,
-        ]);
-}
-
-const nodeTypeISKey = NodeTypeISKey();
-
-class NodeKey {
-  final String key;
-  const NodeKey(this.key);
-}
-
-class IntrinsicStateReflector extends Reflectable {
-  const IntrinsicStateReflector() : super();
-}
-
-const dynamicIntrinsicStateReflector = IntrinsicStateReflector();
-
-@IntrinsicStateReflector()
 class DynamicIntrinsicState {
   const DynamicIntrinsicState();
 
+  static final Map<String, IntrinsicState> _intrinsicStates = {
+    NType.align: AlignIntrinsicStates(),
+    NType.column: ColumnIntrinsicStates(),
+    NType.container: ContainerIntrinsicStates(),
+    NType.icon: const IconIntrinsicStates(),
+    NType.image: ImageIntrinsicStates(),
+    NType.listView: const ListViewIntrinsicStates(),
+    NType.gridView: const ListViewIntrinsicStates(),
+    NType.lottie: LottieIntrinsicStates(),
+    NType.row: RowIntrinsicStates(),
+    NType.scaffold: const ScaffoldIntrinsicStates(),
+    NType.component: ComponentIntrinsicStates(),
+    NType.teamComponent: TeamComponentIntrinsicStates(),
+    NType.stack: const StackIntrinsicStates(),
+    NType.text: TextIntrinsicStates(),
+    NType.spacer: SpacerIntrinsicStates(),
+    NType.svgPicture: SvgPictureIntrinsicStates(),
+  };
+
   IntrinsicState getStateByType(final String type) {
-    try {
-      /// Get all classes with this key
-      final classes = nodeTypeISKey.annotatedClasses
-          .where((element) =>
-              element.metadata.whereType<NodeKey>().any((e) => e.key == type))
-          .toList();
-
-      /// Get the class with the same name of the key
-      final targetClass = classes.firstOrNull;
-      if (targetClass == null) {
-        return IntrinsicState.basic;
-      }
-
-      if (targetClass.isAbstract) {
-        throw ArgumentError('Cannot instantiate an abstract class.');
-      }
-
-      final instance = targetClass.newInstance('create', []) as IntrinsicState;
-      return instance;
-    } catch (e) {
-      Logger.printError(
-        'Error in DynamicIntrinsicState, key: $type error: $e',
-      );
-      return IntrinsicState.basic;
-    }
+    return _intrinsicStates[type]!;
   }
 }

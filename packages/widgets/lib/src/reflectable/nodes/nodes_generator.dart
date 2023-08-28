@@ -24,8 +24,6 @@ class NodeGenerator extends GeneratorForAnnotation<NodeInfo> {
 
     final code = '''
 /// $type
-@nodeDeclaration
-@NodeKey(NType.$type)
 class $generatedClassName extends CNode {
   $generatedClassName(
       {required final NodeID id,

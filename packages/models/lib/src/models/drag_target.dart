@@ -3,7 +3,7 @@
 
 // Package imports:
 import 'package:equatable/equatable.dart';
-import '../widgets/nodes/node.dart';
+import 'package:theta_models/theta_models.dart';
 import 'index.dart';
 
 abstract class DragTargetModel extends Equatable {

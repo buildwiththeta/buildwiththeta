@@ -1,59 +1,32 @@
-import 'package:collection/collection.dart';
-import 'package:light_logger/light_logger.dart';
-import 'package:reflectable/reflectable.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
-class DynamicAdapter extends Reflectable {
-  const DynamicAdapter()
-      : super.fromList(const [
-          metadataCapability,
-          newInstanceCapability,
-          instanceInvokeCapability,
-        ]);
-}
+import './widget_adaptors.dart';
 
-const dynamicAdapter = DynamicAdapter();
-
-class DynamicWidgetAdapterReflector extends Reflectable {
-  const DynamicWidgetAdapterReflector()
-      : super(
-          metadataCapability,
-          newInstanceCapability,
-          instanceInvokeCapability,
-        );
-}
-
-const dynamicWidgetAdapterReflector = DynamicWidgetAdapterReflector();
-
-@DynamicWidgetAdapterReflector()
 class WidgetAdapterParse {
   const WidgetAdapterParse();
 
+  static final elements = {
+    NType.align: const AlignWidgetAdapter(),
+    NType.column: const ColumnAdapter(),
+    NType.container: const BoxAdapter(),
+    NType.gridView: const GridViewAdapter(),
+    NType.icon: const MaterialIconAdapter(),
+    NType.image: const ImageAdapter(),
+    NType.listView: const ListViewAdapter(),
+    NType.lottie: const LottieAdapter(),
+    NType.row: const RowAdapter(),
+    NType.scaffold: const ScaffoldAdapter(),
+    NType.stack: const StackAdapter(),
+    NType.text: const TextAdapter(),
+    NType.component: const ComponentAdapter(),
+    NType.teamComponent: const TeamComponentAdapter(),
+    NType.spacer: const SpacerAdapter(),
+    NType.svgPicture: const SvgPictureAdapter(),
+  };
+
   /// getByType for each class using Reflectable
   dynamic getByType(final String key) {
-    try {
-      /// Get all classes with this key
-      final classes = dynamicAdapter.annotatedClasses
-          .where((element) =>
-              element.metadata.whereType<NodeKey>().any((e) => e.key == key))
-          .toList();
-
-      /// Get the class with the same name of the key
-      final targetClass = classes.firstOrNull;
-      if (targetClass == null) {
-        throw Exception('Cannot find class with key: $key');
-      }
-
-      if (targetClass.isAbstract) {
-        throw Exception('Cannot instantiate an abstract class.');
-      }
-
-      final instance = targetClass.newInstance('create', []) as WidgetAdapter;
-      return instance;
-    } catch (e) {
-      Logger.printError(
-        'Error in WidgetAttributes, key: $key error: $e',
-      );
-    }
+    return elements[key];
   }
 }

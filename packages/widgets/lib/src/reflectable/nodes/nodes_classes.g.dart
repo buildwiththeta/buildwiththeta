@@ -7,8 +7,6 @@ part of 'nodes_classes.dart';
 // **************************************************************************
 
 /// align
-@nodeDeclaration
-@NodeKey(NType.align)
 class AlignOpenNode extends CNode {
   AlignOpenNode({
     required final NodeID id,
@@ -162,165 +160,7 @@ class AlignOpenNode extends CNode {
       'AlignOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
-/// button
-@nodeDeclaration
-@NodeKey(NType.button)
-class ButtonOpenNode extends CNode {
-  ButtonOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final double? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.button,
-          name: name ?? 'Button',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.button),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.button),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.button),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      ButtonOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      ButtonOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.button) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return ButtonOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'] != null
-          ? (json['child_order'] as num).toDouble()
-          : null,
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() => 'ButtonOpenNode { id: $id, name: $name, type: $type }';
-
-  String toStringExtended() =>
-      'ButtonOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
 /// column
-@nodeDeclaration
-@NodeKey(NType.column)
 class ColumnOpenNode extends CNode {
   ColumnOpenNode({
     required final NodeID id,
@@ -475,8 +315,6 @@ class ColumnOpenNode extends CNode {
 }
 
 /// component
-@nodeDeclaration
-@NodeKey(NType.component)
 class ComponentOpenNode extends CNode {
   ComponentOpenNode({
     required final NodeID id,
@@ -632,8 +470,6 @@ class ComponentOpenNode extends CNode {
 }
 
 /// teamComponent
-@nodeDeclaration
-@NodeKey(NType.teamComponent)
 class TeamComponentOpenNode extends CNode {
   TeamComponentOpenNode({
     required final NodeID id,
@@ -789,8 +625,6 @@ class TeamComponentOpenNode extends CNode {
 }
 
 /// row
-@nodeDeclaration
-@NodeKey(NType.row)
 class RowOpenNode extends CNode {
   RowOpenNode({
     required final NodeID id,
@@ -945,8 +779,6 @@ class RowOpenNode extends CNode {
 }
 
 /// container
-@nodeDeclaration
-@NodeKey(NType.container)
 class ContainerOpenNode extends CNode {
   ContainerOpenNode({
     required final NodeID id,
@@ -1102,8 +934,6 @@ class ContainerOpenNode extends CNode {
 }
 
 /// image
-@nodeDeclaration
-@NodeKey(NType.image)
 class ImageOpenNode extends CNode {
   ImageOpenNode({
     required final NodeID id,
@@ -1258,8 +1088,6 @@ class ImageOpenNode extends CNode {
 }
 
 /// icon
-@nodeDeclaration
-@NodeKey(NType.icon)
 class IconOpenNode extends CNode {
   IconOpenNode({
     required final NodeID id,
@@ -1414,8 +1242,6 @@ class IconOpenNode extends CNode {
 }
 
 /// listView
-@nodeDeclaration
-@NodeKey(NType.listView)
 class ListViewOpenNode extends CNode {
   ListViewOpenNode({
     required final NodeID id,
@@ -1570,8 +1396,6 @@ class ListViewOpenNode extends CNode {
 }
 
 /// lottie
-@nodeDeclaration
-@NodeKey(NType.lottie)
 class LottieOpenNode extends CNode {
   LottieOpenNode({
     required final NodeID id,
@@ -1726,8 +1550,6 @@ class LottieOpenNode extends CNode {
 }
 
 /// scaffold
-@nodeDeclaration
-@NodeKey(NType.scaffold)
 class ScaffoldOpenNode extends CNode {
   ScaffoldOpenNode({
     required final NodeID id,
@@ -1882,8 +1704,6 @@ class ScaffoldOpenNode extends CNode {
 }
 
 /// stack
-@nodeDeclaration
-@NodeKey(NType.stack)
 class StackOpenNode extends CNode {
   StackOpenNode({
     required final NodeID id,
@@ -2038,8 +1858,6 @@ class StackOpenNode extends CNode {
 }
 
 /// text
-@nodeDeclaration
-@NodeKey(NType.text)
 class TextOpenNode extends CNode {
   TextOpenNode({
     required final NodeID id,
@@ -2193,322 +2011,7 @@ class TextOpenNode extends CNode {
       'TextOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
 }
 
-/// textField
-@nodeDeclaration
-@NodeKey(NType.textField)
-class TextFieldOpenNode extends CNode {
-  TextFieldOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final double? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.textField,
-          name: name ?? 'TextField',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.textField),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.textField),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.textField),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      TextFieldOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      TextFieldOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.textField) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return TextFieldOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'] != null
-          ? (json['child_order'] as num).toDouble()
-          : null,
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() =>
-      'TextFieldOpenNode { id: $id, name: $name, type: $type }';
-
-  String toStringExtended() =>
-      'TextFieldOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
-/// video
-@nodeDeclaration
-@NodeKey(NType.video)
-class VideoOpenNode extends CNode {
-  VideoOpenNode({
-    required final NodeID id,
-    final NodeID? parentID,
-    final CNode? child,
-    final List<CNode>? children,
-    final String? name,
-    final String? description,
-    final double? childOrder,
-    final Map<String, dynamic>? attributes,
-    final RectProperties? rectProperties,
-    final DateTime? updatedAt,
-    final PageID? pageID,
-    final NodeID? stabilID,
-    final PageID? componentID,
-    final List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) : super(
-          id: id,
-          type: NType.video,
-          name: name ?? 'Video',
-          parentID: parentID,
-          intrinsicState:
-              const DynamicIntrinsicState().getStateByType(NType.video),
-          defaultAttributes:
-              const DefaultAttributesParse().getByType(NType.video),
-          attributes: attributes ?? {},
-          rectProperties: rectProperties ?? CNode.defaultRProperties,
-          adapter: const WidgetAdapterParse().getByType(NType.video),
-          description: description,
-          childOrder: childOrder ?? 0,
-          child: child,
-          children: children,
-          updatedAt: updatedAt ?? DateTime.now(),
-          pageID: pageID ?? '',
-          stabilID: stabilID,
-          componentID: componentID,
-          componentChildren: componentChildren ?? [],
-          isLocked: isLocked ?? false,
-        );
-
-  @override
-  CNode copyWith({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    final bool? isLocked,
-  }) =>
-      VideoOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child ?? this.child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  @override
-  CNode copyWithOutChild({
-    NodeID? id,
-    NodeID? parentID,
-    CNode? child,
-    List<CNode>? children,
-    String? name,
-    String? description,
-    double? childOrder,
-    Map<String, dynamic>? attributes,
-    RectProperties? rectProperties,
-    DateTime? updatedAt,
-    PageID? pageID,
-    NodeID? stabilID,
-    PageID? componentID,
-    List<CNode>? componentChildren,
-    bool? isLocked,
-  }) =>
-      VideoOpenNode(
-        id: id ?? this.id,
-        parentID: parentID ?? this.parentID,
-        child: child,
-        children: children ?? this.children,
-        name: name ?? this.name,
-        description: description ?? this.description,
-        childOrder: childOrder ?? this.childOrder,
-        attributes: attributes ?? getAttributes,
-        rectProperties: rectProperties ?? getRectProperties,
-        pageID: pageID ?? this.pageID,
-        stabilID: stabilID ?? this.stabilID,
-        componentID: componentID ?? this.componentID,
-        componentChildren: componentChildren ?? this.componentChildren,
-        isLocked: isLocked ?? this.isLocked,
-      );
-
-  static fromJson(String widgetType, Map<String, dynamic> json) {
-    if (widgetType != NType.video) {
-      throw Exception('Invalid widget type');
-    }
-
-    final attributes = <String, dynamic>{};
-    if (json['properties'] != null) {
-      for (final entry in (json['properties'] as Map<String, dynamic>)
-          .entries
-          .where((e) => e.value != null)) {
-        attributes[entry.key] =
-            const DynamicAttributes().fromJson(entry.key, entry.value);
-      }
-    }
-
-    final rectProperties = RectProperties.fromJson(json['rect_properties']);
-
-    return VideoOpenNode(
-      id: json['id'],
-      name: json['name'],
-      description: json['description'],
-      parentID: json['parent_id'],
-      attributes: attributes,
-      rectProperties: rectProperties,
-      updatedAt: DateTime.parse(json['updated_at']),
-      childOrder: json['child_order'] != null
-          ? (json['child_order'] as num).toDouble()
-          : null,
-      pageID: json['page_id'],
-      stabilID: json['stabil_id'],
-      componentID: json['component_id'],
-      isLocked: json['is_locked'],
-    );
-  }
-
-  @override
-  String toString() => 'VideoOpenNode { id: $id, name: $name, type: $type }';
-
-  String toStringExtended() =>
-      'VideoOpenNode { id: $id, name: $name, type: $type, parentID: $parentID, attributes: $getAttributes, childOrder: $childOrder, child: $child, children: $children }';
-}
-
 /// spacer
-@nodeDeclaration
-@NodeKey(NType.spacer)
 class SpacerOpenNode extends CNode {
   SpacerOpenNode({
     required final NodeID id,
@@ -2663,8 +2166,6 @@ class SpacerOpenNode extends CNode {
 }
 
 /// svgPicture
-@nodeDeclaration
-@NodeKey(NType.svgPicture)
 class SvgPictureOpenNode extends CNode {
   SvgPictureOpenNode({
     required final NodeID id,

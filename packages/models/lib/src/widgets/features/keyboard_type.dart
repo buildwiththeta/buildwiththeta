@@ -4,11 +4,8 @@
 import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_models/theta_models.dart';
 
 /// Set of funcs to use [KeyboardType] in Teta
-@dynamicAttributeKey
-@AttributeKey(DBKeys.keyboardType)
 @immutable
 class FKeyboardType extends Equatable {
   /// Constructor

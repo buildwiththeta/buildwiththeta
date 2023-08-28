@@ -4,12 +4,9 @@
 import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:theta_models/theta_models.dart';
 
 ///
 @immutable
-@dynamicAttributeKey
-@AttributeKey(DBKeys.textDecoration)
 class FTextDecoration extends Equatable {
   /// Set of funcs to use TextDecoration within Teta
   const FTextDecoration({

@@ -19,7 +19,7 @@ targets:
 
 builders:
   intrinsic_state_builder:
-    import: 'package:theta_models/src/generators/intrinsic_state_builder.dart'
+    import: './gen/generators/intrinsic_state_builder.dart'
     builder_factories: ['intrinsicStateBuilder']
     build_extensions: {'.dart': ['.g.dart']}
     auto_apply: dependents

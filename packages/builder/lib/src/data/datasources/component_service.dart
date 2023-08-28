@@ -11,10 +11,12 @@ class ComponentService {
   const ComponentService(
     this._clientToken,
     this._httpClient,
+    this._customURLs,
   );
 
   final ClientToken _clientToken;
   final Client _httpClient;
+  final CustomURLs _customURLs;
 
   static final _analytics = ThetaAnalytics.instance.client;
 
@@ -22,7 +24,7 @@ class ComponentService {
       String componentName, String? branchName) async {
     final log = _analytics.logEvent(title: 'Get component', description: null);
     final res = await _httpClient.post(
-      Uri.parse('$baseUrl$getComponentPath'),
+      Uri.parse(_customURLs.getComponent),
       headers: {
         'Authorization': 'Bearer ${_clientToken.key}',
         ...defaultHeaders,
@@ -43,7 +45,7 @@ class ComponentService {
 
   Future<void> sendConversionEvent(ID eventID, ID? abTestID) async {
     final res = await _httpClient.post(
-      Uri.parse('$baseUrl$sendConversionEventPath'),
+      Uri.parse(_customURLs.sendEvents),
       headers: {
         'Authorization': 'Bearer ${_clientToken.key}',
         ...defaultHeaders,

@@ -17,21 +17,11 @@ class OpenWScaffold extends StatefulWidget {
     required this.nodeState,
     required this.children,
     required this.fill,
-    required this.isScrollable,
-    required this.isClipped,
-    required this.bodyExtended,
-    required this.isBoxed,
-    required this.flag,
   });
 
   final WidgetState nodeState;
   final List<CNode> children;
-  final bool isBoxed;
   final FFill fill;
-  final bool isScrollable;
-  final bool isClipped;
-  final bool bodyExtended;
-  final bool flag;
 
   @override
   State<OpenWScaffold> createState() => _OpenWScaffoldState();

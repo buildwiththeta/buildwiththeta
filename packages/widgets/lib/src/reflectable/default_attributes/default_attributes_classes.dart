@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 
-import 'index.dart';
-
 abstract class DefaultAttributesAdapter {
   const DefaultAttributesAdapter();
 
@@ -11,8 +9,6 @@ abstract class DefaultAttributesAdapter {
 }
 
 /// Align
-@dynamicDefaultAttribute
-@NodeKey(NType.align)
 class AlignWidgetDefaultAttributes extends DefaultAttributesAdapter {
   const AlignWidgetDefaultAttributes();
 
@@ -25,6 +21,7 @@ class AlignWidgetDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Button
+/*
 @dynamicDefaultAttribute
 @NodeKey(NType.button)
 class ButtonDefaultAttributes extends DefaultAttributesAdapter {
@@ -68,11 +65,9 @@ class ButtonDefaultAttributes extends DefaultAttributesAdapter {
       };
 
   ButtonDefaultAttributes.create() : this();
-}
+}*/
 
 /// Column,
-@dynamicDefaultAttribute
-@NodeKey(NType.column)
 class ColumnDefaultAttributes extends DefaultAttributesAdapter {
   const ColumnDefaultAttributes();
 
@@ -97,8 +92,6 @@ class ColumnDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Row
-@dynamicDefaultAttribute
-@NodeKey(NType.row)
 class RowDefaultAttributes extends DefaultAttributesAdapter {
   const RowDefaultAttributes();
 
@@ -123,8 +116,6 @@ class RowDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Component
-@dynamicDefaultAttribute
-@NodeKey(NType.component)
 class ComponentDefaultAttributes extends DefaultAttributesAdapter {
   const ComponentDefaultAttributes();
 
@@ -136,8 +127,6 @@ class ComponentDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Team Component
-@dynamicDefaultAttribute
-@NodeKey(NType.teamComponent)
 class TeamComponentDefaultAttributes extends DefaultAttributesAdapter {
   const TeamComponentDefaultAttributes();
 
@@ -149,9 +138,6 @@ class TeamComponentDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Image, Container
-@dynamicDefaultAttribute
-@NodeKey(NType.container)
-@NodeKey(NType.image)
 class BoxDefaultAttributes extends DefaultAttributesAdapter {
   const BoxDefaultAttributes();
 
@@ -215,8 +201,6 @@ class BoxDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Icon, all types.
-@dynamicDefaultAttribute
-@NodeKey(NType.icon)
 class IconDefaultAttributes extends DefaultAttributesAdapter {
   const IconDefaultAttributes();
 
@@ -235,8 +219,6 @@ class IconDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// ListView
-@dynamicDefaultAttribute
-@NodeKey(NType.listView)
 class ListViewDefaultAttributes extends DefaultAttributesAdapter {
   const ListViewDefaultAttributes();
 
@@ -257,8 +239,6 @@ class ListViewDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Lottie
-@dynamicDefaultAttribute
-@NodeKey(NType.lottie)
 class LottieDefaultAttributes extends DefaultAttributesAdapter {
   const LottieDefaultAttributes();
 
@@ -286,8 +266,6 @@ class LottieDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Svg Picture
-@dynamicDefaultAttribute
-@NodeKey(NType.svgPicture)
 class SvgPictureDefaultAttributes extends DefaultAttributesAdapter {
   const SvgPictureDefaultAttributes();
 
@@ -316,8 +294,6 @@ class SvgPictureDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Scaffold
-@dynamicDefaultAttribute
-@NodeKey(NType.scaffold)
 class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
   const ScaffoldDefaultAttributes();
 
@@ -327,7 +303,6 @@ class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
           paletteStyle: 'Background / Primary',
         ),
         DBKeys.flag: true,
-        DBKeys.isBoxed: false,
         DBKeys.componentFit: 'absolute',
       };
 
@@ -335,8 +310,6 @@ class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Stack
-@dynamicDefaultAttribute
-@NodeKey(NType.stack)
 class StackDefaultAttributes extends DefaultAttributesAdapter {
   const StackDefaultAttributes();
 
@@ -347,8 +320,6 @@ class StackDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// Text
-@dynamicDefaultAttribute
-@NodeKey(NType.text)
 class TextDefaultAttributes extends DefaultAttributesAdapter {
   const TextDefaultAttributes();
 
@@ -367,6 +338,7 @@ class TextDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// TextField
+/*
 @dynamicDefaultAttribute
 @NodeKey(NType.textField)
 class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
@@ -431,11 +403,9 @@ class VideoDefaultAttributes extends DefaultAttributesAdapter {
       };
 
   VideoDefaultAttributes.create() : this();
-}
+}*/
 
 /// Spacer
-@dynamicDefaultAttribute
-@NodeKey(NType.spacer)
 class SpacerDefaultAttribute extends DefaultAttributesAdapter {
   const SpacerDefaultAttribute();
 

@@ -1,67 +1,12 @@
-import 'package:collection/collection.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Set of func to use text string in Teta's widgets
-enum FTextTypeEnum { text, imageUrl, param, state, combined, languages }
-
-/// Result type of [FTextTypeInput]
-enum ResultTypeEnum {
-  string,
-  dateTime,
-  int,
-  double,
-  bool,
-}
-
-/// Type of [FTextTypeInput] for [ResultTypeEnum.dateTime]
-enum TypeDateTimeFormat {
-  dateWithTime,
-  dateWithoutTime,
-}
+enum FTextTypeEnum { text, imageUrl, combined, languages }
 
 /// Set of func to use text string in Teta's widgets
-@dynamicAttributeKey
-@AttributeKey(DBKeys.actionValue)
-@AttributeKey(DBKeys.image)
-@AttributeKey(DBKeys.textAlign)
-@AttributeKey(DBKeys.textDecoration)
-@AttributeKey(DBKeys.textStyle)
-@AttributeKey(DBKeys.textStyle2)
-@AttributeKey(DBKeys.value)
-@AttributeKey(DBKeys.flexValue)
-@AttributeKey(DBKeys.rotateX)
-@AttributeKey(DBKeys.rotateY)
-@AttributeKey(DBKeys.rotateZ)
-@AttributeKey(DBKeys.tranX)
-@AttributeKey(DBKeys.tranY)
-@AttributeKey(DBKeys.duration)
-@AttributeKey(DBKeys.valueOfCondition)
-@AttributeKey(DBKeys.mainAxisSpacing)
-@AttributeKey(DBKeys.crossAxisCount)
-@AttributeKey(DBKeys.crossAxisSpacing)
-@AttributeKey(DBKeys.maxLines)
-@AttributeKey(DBKeys.minLines)
-@AttributeKey(DBKeys.maxLenght)
-@AttributeKey(DBKeys.bordersSize)
-@AttributeKey(DBKeys.childAspectRatio)
-@AttributeKey(DBKeys.latitude)
-@AttributeKey(DBKeys.longitude)
-@AttributeKey(DBKeys.labelText)
-@AttributeKey(DBKeys.xRotation)
-@AttributeKey(DBKeys.yRotation)
-@AttributeKey(DBKeys.zRotation)
-@AttributeKey(DBKeys.xOffset)
-@AttributeKey(DBKeys.yOffset)
-@AttributeKey(DBKeys.rotation)
-@AttributeKey(DBKeys.xPerspective)
-@AttributeKey(DBKeys.yPerspective)
-@AttributeKey(DBKeys.zPerspective)
-@AttributeKey(DBKeys.xTranslation)
-@AttributeKey(DBKeys.yTranslation)
-@AttributeKey(DBKeys.selectedItemName)
 class FTextTypeInput {
   /// Set of func to use text string in Teta's widgets
   const FTextTypeInput({
@@ -70,15 +15,8 @@ class FTextTypeInput {
     this.valueTablet = '',
     this.valueLaptop = '',
     this.valueDesktop = '',
-    this.paramName,
-    this.stateName,
-    this.datasetSubListData,
-    this.datasetSubMapData,
-    this.datasetLength,
     this.locale,
     this.combination,
-    this.resultType = ResultTypeEnum.string,
-    this.typeDateTimeFormat,
   });
 
   final FTextTypeEnum? type;
@@ -86,15 +24,8 @@ class FTextTypeInput {
   final String? valueTablet;
   final String? valueLaptop;
   final String? valueDesktop;
-  final String? paramName;
-  final String? stateName;
-  final String? datasetLength;
-  final String? datasetSubListData;
-  final String? datasetSubMapData;
   final String? locale;
   final List<FTextTypeInput>? combination;
-  final ResultTypeEnum resultType;
-  final TypeDateTimeFormat? typeDateTimeFormat;
 
   /// Returns value for texts
   String get({
@@ -108,18 +39,6 @@ class FTextTypeInput {
         placeholder: '',
         context: context,
       ).toString();
-
-  String getStateValue(
-    final Variables states,
-  ) {
-    if (type == FTextTypeEnum.state) {
-      final state =
-          states.firstWhereOrNull((final element) => element.name == stateName);
-      return '${state?.get}';
-    } else {
-      return 'null';
-    }
-  }
 
   /// Returns value for images
   dynamic getImage({
@@ -141,20 +60,6 @@ class FTextTypeInput {
     required final BuildContext context,
     required final int loop,
   }) {
-    if (type == FTextTypeEnum.param) {
-      try {
-        final variable = state.params
-            .firstWhereOrNull((final element) => element.name == paramName);
-
-        return variable?.get;
-      } catch (_) {}
-    }
-    if (type == FTextTypeEnum.state) {
-      final variable = state.states
-          .firstWhereOrNull((final element) => element.name == stateName);
-
-      return variable?.get;
-    }
     if (type == FTextTypeEnum.combined) {
       final string = StringBuffer();
       for (final element in combination ?? <FTextTypeInput>[]) {
@@ -245,10 +150,6 @@ class FTextTypeInput {
       valueLaptop: valueLaptop ?? this.valueLaptop,
       valueDesktop: valueDesktop ?? this.valueDesktop,
       type: type ?? this.type,
-      paramName: paramName ?? this.paramName,
-      stateName: stateName ?? this.stateName,
-      datasetSubMapData: datasetSubMapData ?? this.datasetSubMapData,
-      datasetSubListData: datasetSubListData ?? this.datasetSubListData,
       locale: locale ?? this.locale,
       combination: combination ?? this.combination,
     );
@@ -283,11 +184,6 @@ class FTextTypeInput {
         valueTablet: json?['vt'] as String?,
         valueLaptop: json?['vl'] as String?,
         valueDesktop: json?['vd'] as String?,
-        paramName: json?['pN'] as String?,
-        stateName: json?['sN'] as String?,
-        datasetSubListData: json?['dAO'] as String?,
-        datasetSubMapData: json?['dAT'] as String?,
-        datasetLength: json?['dL'] as String?,
         locale: json?['kTrans'] as String?,
         combination: json?['cmb'] != null
             ? (json?['cmb'] as List<dynamic>)
@@ -297,17 +193,6 @@ class FTextTypeInput {
                 )
                 .toList()
             : [],
-        resultType: EnumToString.fromString(
-              ResultTypeEnum.values,
-              json?['rType'] as String? ?? 'string',
-            ) ??
-            ResultTypeEnum.string,
-        typeDateTimeFormat: EnumToString.fromString(
-              TypeDateTimeFormat.values,
-              json?['tDateTime'] as String? ??
-                  EnumToString.convertToString(TypeDateTimeFormat.dateWithTime),
-            ) ??
-            TypeDateTimeFormat.dateWithTime,
       );
     } catch (e) {
       return const FTextTypeInput();
@@ -320,16 +205,7 @@ class FTextTypeInput {
         'vt': valueTablet,
         'vl': valueLaptop,
         'vd': valueDesktop,
-        'pN': paramName,
-        'sN': stateName,
-        'dAO': datasetSubListData,
-        'dAT': datasetSubMapData,
-        'dL': datasetLength,
         'kTrans': locale,
         'cmb': combination?.map((final e) => e.toJson()).toList(),
-        'rType': EnumToString.convertToString(resultType),
-        'tDateTime': typeDateTimeFormat != null
-            ? EnumToString.convertToString(typeDateTimeFormat)
-            : EnumToString.convertToString(TypeDateTimeFormat.dateWithTime),
       }..removeWhere((final String key, final dynamic value) => value == null);
 }

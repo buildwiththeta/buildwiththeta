@@ -5,9 +5,7 @@
 import 'package:recase/recase.dart';
 
 class NType {
-  static const String nil = 'nil';
   static const String align = 'align';
-  static const String button = 'button';
   static const String column = 'column';
   static const String component = 'component';
   static const String teamComponent = 'teamComponent';
@@ -21,9 +19,6 @@ class NType {
   static const String scaffold = 'scaffold';
   static const String stack = 'stack';
   static const String text = 'text';
-  static const String textField = 'textField';
-  static const String videoPlayer = 'videoPlayer';
-  static const String video = 'video';
   static const String spacer = 'spacer';
   static const String svgPicture = 'svgPicture';
 
@@ -31,9 +26,7 @@ class NType {
   const NType(this.name);
 
   static List<String> get values => [
-        nil,
         align,
-        button,
         column,
         component,
         teamComponent,
@@ -47,9 +40,6 @@ class NType {
         scaffold,
         stack,
         text,
-        textField,
-        videoPlayer,
-        video,
         spacer,
         svgPicture,
       ];
