@@ -4,7 +4,7 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
 
-import 'node_annotation_model.dart';
+import 'package:theta_open_widgets/src/reflectable/nodes/node_annotation_model.dart';
 
 class NodeGenerator extends GeneratorForAnnotation<NodeInfo> {
   @override

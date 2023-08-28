@@ -1,3 +1,9 @@
+## 0.7.0
+
+- [x] Fix: remove Reflectable from dependencies.
+- [x] Fix: removed unused files.
+- [x] Feat: add flyings controls support.
+
 ## 0.6.5
 
 - [x] Feat: add direction to Flex.

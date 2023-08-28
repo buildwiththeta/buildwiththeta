@@ -1,3 +1,11 @@
+## 0.2.2
+
+- [x] Feat: add support to models 0.7.0.
+
+## 0.2.0
+
+- [x] Feat: add `findNextNodeById` method in FindNodeRendering.
+
 ## 0.1.9
 
 - [x] Feat: new methods for node ordering.

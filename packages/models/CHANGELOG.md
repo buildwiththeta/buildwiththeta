@@ -1,3 +1,9 @@
+## 0.7.0
+
+- [x] This package was splitted and now lightest.
+- [x] Feat: Remove reflectable dependency.
+- [x] Feat: Remove all models and mappers not used in the builder.
+
 ## 0.6.2
 
 - [x] Feat: add direction to Flex.
