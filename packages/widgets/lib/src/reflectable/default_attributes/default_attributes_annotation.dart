@@ -21,6 +21,7 @@ class DefaultAttributesParse {
     NType.text: const TextDefaultAttributes(),
     NType.spacer: const SpacerDefaultAttribute(),
     NType.svgPicture: const SvgPictureDefaultAttributes(),
+    NType.textField: const TextFieldDefaultAttributes(),
   };
 
   /// getByType for each class using Reflectable

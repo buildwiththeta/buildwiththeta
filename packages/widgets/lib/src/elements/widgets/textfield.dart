@@ -7,15 +7,14 @@ import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/text_style_builder.dart';
 
 class OpenWTextField extends StatefulWidget {
-  /// Returns a TextField widget in Teta
+  // Returns a TextField widget in Theta
   const OpenWTextField({
     super.key,
     required this.state,
+    required this.contentPadding,
     required this.width,
     required this.value,
     required this.labelText,
-    required this.margins,
-    required this.paddings,
     required this.fill,
     required this.textStyle,
     required this.cursorColor,
@@ -35,28 +34,26 @@ class OpenWTextField extends StatefulWidget {
   });
 
   final WidgetState state;
+  final FMargins contentPadding;
   final FTextTypeInput value;
   final FTextTypeInput labelText;
-  final FSize width;
-  final FMargins margins;
-  final FMargins paddings;
-  final FFill fill;
-  final FFill cursorColor;
-  final FFill hintTextColor;
   final FTextTypeInput maxLines;
   final FTextTypeInput minLines;
   final FTextTypeInput maxLenght;
+  final FTextTypeInput bordersSize;
+  final FTextStyle textStyle;
+  final FSize width;
+  final FFill fill;
+  final FFill cursorColor;
+  final FFill hintTextColor;
+  final FFill enabledBorderColor;
+  final FFill focusedBorderColor;
   final FKeyboardType keyboardType;
+  final FBorderRadius borderRadius;
   final bool showCursor;
   final bool autoCorrect;
   final bool obscureText;
-  final FTextStyle textStyle;
-  final FBorderRadius borderRadius;
   final bool showBorders;
-  final FTextTypeInput bordersSize;
-
-  final FFill enabledBorderColor;
-  final FFill focusedBorderColor;
 
   @override
   createState() => _WTextFieldState();
@@ -116,10 +113,6 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
         tempHintOpacity >= 0 && tempHintOpacity <= 1 ? tempHintOpacity : 1.0;
     return Center(
       child: Container(
-        margin: widget.margins.get(
-          context: context,
-          state: state,
-        ),
         decoration: BoxDecoration(
           borderRadius: widget.borderRadius.get(
             context,
@@ -211,7 +204,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
                 hintOpacity,
               ),
             ),
-            contentPadding: widget.paddings.get(
+            contentPadding: widget.contentPadding.get(
               context: context,
               state: state,
             ),

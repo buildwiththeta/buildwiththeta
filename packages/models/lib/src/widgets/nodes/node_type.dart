@@ -21,6 +21,7 @@ class NType {
   static const String text = 'text';
   static const String spacer = 'spacer';
   static const String svgPicture = 'svgPicture';
+  static const String textField = 'textField';
 
   final String name;
   const NType(this.name);
@@ -42,6 +43,7 @@ class NType {
         text,
         spacer,
         svgPicture,
+        textField
       ];
 }
 

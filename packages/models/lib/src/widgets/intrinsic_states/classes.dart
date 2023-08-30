@@ -188,3 +188,14 @@ class SpacerIntrinsicStates extends IntrinsicState {
         );
   SpacerIntrinsicStates.create() : this();
 }
+
+class TextFieldIntrinsicStates extends IntrinsicState {
+  TextFieldIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/text/',//TODO: textField icon
+          displayName: NodeType.name(NType.textField),
+          type: NType.textField,
+          canHave: ChildrenEnum.none,
+        );
+  TextFieldIntrinsicStates.create() : this();
+}

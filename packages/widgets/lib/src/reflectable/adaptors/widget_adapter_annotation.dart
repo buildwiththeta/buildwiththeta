@@ -23,6 +23,7 @@ class WidgetAdapterParse {
     NType.teamComponent: const TeamComponentAdapter(),
     NType.spacer: const SpacerAdapter(),
     NType.svgPicture: const SvgPictureAdapter(),
+    NType.textField: const TextFieldAdapter(),
   };
 
   /// getByType for each class using Reflectable

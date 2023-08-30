@@ -338,9 +338,7 @@ class TextDefaultAttributes extends DefaultAttributesAdapter {
 }
 
 /// TextField
-/*
-@dynamicDefaultAttribute
-@NodeKey(NType.textField)
+
 class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
   const TextFieldDefaultAttributes();
 
@@ -349,12 +347,7 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.value: FTextTypeInput(),
         DBKeys.labelText: FTextTypeInput(value: 'Placeholder'),
         DBKeys.textStyle: FTextStyle(),
-        DBKeys.margins: FMargins(
-          margins: [16, 8, 16, 8],
-          marginsTablet: null,
-          marginsDesktop: null,
-        ),
-        DBKeys.padding: FMargins(
+        DBKeys.contentPadding: FMargins(
           margins: [16, 0, 0, 0],
           marginsTablet: null,
           marginsDesktop: null,
@@ -381,12 +374,18 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.enabledBorderColor: FFill(),
         DBKeys.focusedBorderColor: FFill(),
         DBKeys.cursorColor: FFill(),
-        DBKeys.hintTextColor: FFill(),
+        DBKeys.hintTextColor: FFill(
+          paletteStyle: 'Background / Primary',
+        ),
+        DBKeys.keyboardType: FKeyboardType(
+          type: TextInputType.text,
+        ),
       };
 
   TextFieldDefaultAttributes.create() : this();
 }
 
+/*
 /// Video
 @dynamicDefaultAttribute
 @NodeKey(NType.video)

@@ -102,12 +102,12 @@ class _Stack {}
 )
 class _Text {}
 
-/*@NodeInfo(
+@NodeInfo(
   type: NType.textField,
   optionalDisplayName: 'TextField',
 )
 class _TextField {}
-
+/*
 @NodeInfo(
   type: NType.video,
   optionalDisplayName: 'Video',
