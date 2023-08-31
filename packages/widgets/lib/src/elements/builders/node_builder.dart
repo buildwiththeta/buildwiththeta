@@ -434,9 +434,9 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
         executer.doesWorkflowExist(Trigger.onMouseExit) ||
         executer.doesWorkflowExist(Trigger.onHover)) {
       return MouseRegion(
-        onEnter: (e) => executer.execute(Trigger.onMouseEnter),
-        onExit: (e) => executer.execute(Trigger.onMouseExit),
-        onHover: (e) => executer.execute(Trigger.onHover),
+        onEnter: (e) => executer.execute(Trigger.onMouseEnter, null),
+        onExit: (e) => executer.execute(Trigger.onMouseExit, null),
+        onHover: (e) => executer.execute(Trigger.onHover, null),
         child: child,
       );
     }
@@ -451,15 +451,15 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
       return GestureDetector(
         onTap: () async {
           if (executer.doesWorkflowExist(Trigger.onTap)) {
-            executer.execute(Trigger.onTap);
+            executer.execute(Trigger.onTap, null);
             return;
           } else {
             await _handleLink(widget.state.node, child);
             return;
           }
         },
-        onDoubleTap: () => executer.execute(Trigger.onDoubleTap),
-        onLongPress: () => executer.execute(Trigger.onLongPress),
+        onDoubleTap: () => executer.execute(Trigger.onDoubleTap, null),
+        onLongPress: () => executer.execute(Trigger.onLongPress, null),
         child: child,
       );
     }

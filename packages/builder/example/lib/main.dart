@@ -102,17 +102,17 @@ class _MyAppState extends State<MyApp> {
               Workflow(
                 'node id',
                 Trigger.onMouseEnter,
-                () => debugPrint('Hovered!'),
+                (dynamic) => debugPrint('Hovered!'),
               ),
               Workflow(
                 'node name',
                 Trigger.onMouseExit,
-                () => debugPrint('Not hovered!'),
+                (dynamic) => debugPrint('Not hovered!'),
               ),
               Workflow(
                 'node id',
                 Trigger.onTap,
-                () => debugPrint('Tapped!'),
+                (dynamic) => debugPrint('Tapped!'),
               ),
             ],
           ),

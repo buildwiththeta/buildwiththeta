@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/text_style_builder.dart';
 
+import '../builders/workflow_executer.dart';
+
 class OpenWTextField extends StatefulWidget {
   // Returns a TextField widget in Theta
   const OpenWTextField({
@@ -61,6 +63,17 @@ class OpenWTextField extends StatefulWidget {
 
 class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
   TextEditingController textEditingController = TextEditingController();
+  late WorkflowExecuter executer;
+  @override
+  void initState() {
+    super.initState();
+    final state = context.read<TreeState>();
+    executer = WorkflowExecuter(
+      nodeID: widget.state.node.id,
+      nodeName: widget.state.node.name!,
+      workflows: state.workflows,
+    );
+  }
 
   @override
   FutureOr<void> afterFirstLayout(final BuildContext context) {
@@ -121,6 +134,23 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
           ),
         ),
         child: TextField(
+          onSubmitted: (value) {
+            if (executer.doesWorkflowExist(Trigger.onSubmitted)) {
+              executer.execute(Trigger.onSubmitted, value);
+            }
+          },
+          onEditingComplete: () {
+            if (executer.doesWorkflowExist(Trigger.onEditingComplete)) {
+              executer.execute(
+                  Trigger.onEditingComplete, textEditingController.text);
+            }
+          },
+          onChanged: (value) {
+            if (executer.doesWorkflowExist(Trigger.onChange)) {
+              executer.execute(Trigger.onChange, value);
+            }
+          },
+          keyboardType: widget.keyboardType.type,
           autofocus: true,
           controller: textEditingController,
           decoration: InputDecoration(

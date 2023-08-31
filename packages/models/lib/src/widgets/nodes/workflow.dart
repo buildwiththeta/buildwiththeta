@@ -10,7 +10,7 @@ class Workflow extends Equatable {
 
   final String nodeIdenfier;
   final Trigger trigger;
-  final Function() method;
+  final dynamic Function(dynamic) method;
 
   @override
   List<Object> get props => [nodeIdenfier, trigger, method];
