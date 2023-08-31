@@ -13,7 +13,9 @@ It will also cover setting up Theta, using `UIBox` for dynamic user interfaces, 
 
 ---
 
-## Step 1: Draw a Paywall and its variants visually within Theta
+Step 1
+
+## Draw a Paywall and its variants visually within Theta
 
 To create a paywall, you need to visually design the UI using Theta's design editor. 
 Open your Theta dashboard, create a new project, and design a new component for the paywall and its variants.
@@ -26,7 +28,9 @@ Add buttons, text, and other UI elements to guide the user toward making a purch
 
 ---
 
-## Step 2: Create an A/B test in Theta
+Step 2
+
+## Create an A/B test in Theta
 
 On the left menu, open the A/B test panel.
 Click "Add" and set the following properties:
@@ -42,7 +46,9 @@ Click "Add" and set the following properties:
 
 ---
 
-## Step 2: Create a new Flutter app
+Step 3
+
+## Create a new Flutter app
 
 Run the following command to create a new Flutter app:
 
@@ -54,7 +60,7 @@ This will create a new Flutter project named `theta_quickstart`.
 
 ---
 
-## Step 3: Add Theta as a dependency
+## Step 4: Add Theta as a dependency
 
 Add Theta as a dependency in your `pubspec.yaml` file:
 
@@ -69,7 +75,9 @@ Run `flutter pub get` to fetch the packages.
 
 ---
 
-## Step 4: Initialize Theta
+Step 5
+
+## Initialize Theta
 
 Initialize Theta by calling `Theta.initialize` with your anonymous key. Wrap your Flutter app with `ThetaProvider` to enable theme and project styles.
 
@@ -93,7 +101,9 @@ Future<void> main() async {
 
 ---
 
-## Step 5: Add workflows for user interactions
+Step 6
+
+## Add workflows for user interactions
 
 You can add workflows based on different triggers to perform specific actions.
 
@@ -110,7 +120,9 @@ UIBox(
 
 ---
 
-## Step 6: Add custom analytics
+Step 7
+
+## Add custom analytics
 
 Here is how you can integrate analytics tools to collect data for your A/B tests. Let's assume you are using Firebase Analytics as an example.
 
@@ -155,7 +167,9 @@ UIBox(
 
 ---
 
-## Step 7: Review analytics and iterate
+Step 8
+
+## Review analytics and iterate
 
 Once you've successfully integrated the analytics tool and set up the event logging, the next step is to review the collected data to determine the effectiveness of different UI components.
 
