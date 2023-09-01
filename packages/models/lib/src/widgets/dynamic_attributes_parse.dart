@@ -45,6 +45,12 @@ class DynamicAttributes {
         case DBKeys.hintTextColor:
         case DBKeys.enabledBorderColor:
         case DBKeys.focusedBorderColor:
+        case DBKeys.activeColor:
+        case DBKeys.activeTrackColor:
+        case DBKeys.inactiveThumbColor:
+        case DBKeys.inactiveTrackColor:
+        case DBKeys.focusColor:
+        case DBKeys.hoverColor:
           return FFill.fromJson(value);
         case DBKeys.fontSize:
           return FFontSize.fromJson(value);
@@ -146,6 +152,7 @@ class DynamicAttributes {
       case DBKeys.autoCorrect:
       case DBKeys.obscureText:
       case DBKeys.showBorders:
+      case DBKeys.valueBool:
         return value;
       default:
         return value?.toJson();

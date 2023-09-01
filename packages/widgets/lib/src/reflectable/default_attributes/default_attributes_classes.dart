@@ -415,3 +415,45 @@ class SpacerDefaultAttribute extends DefaultAttributesAdapter {
 
   SpacerDefaultAttribute.create() : this();
 }
+
+/// Switch
+class SwitchDefaultAttributes extends DefaultAttributesAdapter {
+  const SwitchDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.valueBool: false,
+        DBKeys.activeColor: FFill(
+          levels: [
+            FFillElement(color: '0d983c', stop: 0),
+          ],
+        ),
+        DBKeys.activeTrackColor: FFill(
+          levels: [
+            FFillElement(color: '16511b', stop: 0),
+          ],
+        ),
+        DBKeys.inactiveThumbColor: FFill(
+          levels: [
+            FFillElement(color: '0d983c', stop: 0),
+          ],
+        ),
+        DBKeys.inactiveTrackColor: FFill(
+          levels: [
+            FFillElement(color: '16511b', stop: 0),
+          ],
+        ),
+        DBKeys.focusColor: FFill(
+          levels: [
+            FFillElement(color: 'FFFFFF00', stop: 0),
+          ],
+        ),
+        DBKeys.hoverColor: FFill(
+          levels: [
+            FFillElement(color: 'FFFFFF00', stop: 0),
+          ],
+        ),
+      };
+
+  SwitchDefaultAttributes.create() : this();
+}

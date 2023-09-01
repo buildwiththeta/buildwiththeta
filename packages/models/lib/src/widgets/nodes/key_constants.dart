@@ -112,4 +112,12 @@ class DBKeys {
 
   static const String xTranslation = 'xTrans';
   static const String yTranslation = 'yTrans';
+
+  static const String activeColor = 'actClr';
+  static const String activeTrackColor = 'actTrkClr';
+  static const String inactiveThumbColor = 'inactThmClr';
+  static const String inactiveTrackColor = 'inactTrkClr';
+  static const String focusColor = 'focClr';
+  static const String hoverColor = 'hovClr';
+  static const String valueBool = 'vB';
 }

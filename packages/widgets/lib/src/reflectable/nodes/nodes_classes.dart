@@ -125,3 +125,9 @@ class _Spacer {}
   optionalDisplayName: 'Svg Picture',
 )
 class _SvgPicture {}
+
+@NodeInfo(
+  type: NType.switcH,
+  optionalDisplayName: 'Switch',
+)
+class _Switch {}

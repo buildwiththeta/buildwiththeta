@@ -21,6 +21,7 @@ class DynamicIntrinsicState {
     NType.spacer: SpacerIntrinsicStates(),
     NType.svgPicture: SvgPictureIntrinsicStates(),
     NType.textField: TextFieldIntrinsicStates(),
+    NType.switcH: SwitchIntrinsicStates(),
   };
 
   IntrinsicState getStateByType(final String type) {

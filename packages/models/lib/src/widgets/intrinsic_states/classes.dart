@@ -192,10 +192,21 @@ class SpacerIntrinsicStates extends IntrinsicState {
 class TextFieldIntrinsicStates extends IntrinsicState {
   TextFieldIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/text/',//TODO: textField icon
+          nodeIcon: 'nodes/text/', //TODO: textField icon
           displayName: NodeType.name(NType.textField),
           type: NType.textField,
           canHave: ChildrenEnum.none,
         );
   TextFieldIntrinsicStates.create() : this();
+}
+
+class SwitchIntrinsicStates extends IntrinsicState {
+  SwitchIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/text/', //TODO: switcH icon
+          displayName: NodeType.name(NType.switcH),
+          type: NType.switcH,
+          canHave: ChildrenEnum.none,
+        );
+  SwitchIntrinsicStates.create() : this();
 }

@@ -465,3 +465,28 @@ class SvgPictureAdapter extends WidgetAdapter {
 
   SvgPictureAdapter.create() : this();
 }
+
+/// Switch
+class SwitchAdapter extends WidgetAdapter {
+  const SwitchAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSwitch(
+        state: state,
+        value: state.node.getAttributes[DBKeys.valueBool] as bool? ?? false,
+        activeColor: state.node.getAttributes[DBKeys.activeColor] as FFill,
+        activeTrackColor:
+            state.node.getAttributes[DBKeys.activeTrackColor] as FFill,
+        inactiveThumbColor:
+            state.node.getAttributes[DBKeys.inactiveThumbColor] as FFill,
+        inactiveTrackColor:
+            state.node.getAttributes[DBKeys.inactiveTrackColor] as FFill,
+        focusColor: state.node.getAttributes[DBKeys.focusColor] as FFill,
+        hoverColor: state.node.getAttributes[DBKeys.hoverColor] as FFill,
+      );
+
+  SwitchAdapter.create() : this();
+}
