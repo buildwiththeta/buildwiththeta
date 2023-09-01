@@ -24,7 +24,36 @@ This tutorial will guide you through integrating Theta with FlutterFlow for real
 
 # Steps
 
-## Step 1: Create an Initialize Theta Custom Action
+## Step 1: Draw a Paywall and its variants visually within Theta
+
+To create a paywall, you need to visually design the UI using Theta's design editor. 
+Open your Theta dashboard, create a new project, and design a new component for the paywall and its variants.
+
+Add buttons, text, and other UI elements to guide the user toward making a purchase or subscription.
+
+- Remember to rename the component "Paywall".
+
+<YouTube id="oFed0NIqBZI" />
+
+---
+
+## Step 2: Create an A/B test in Theta
+
+On the left menu, open the A/B test panel.
+Click "Add" and set the following properties:
+
+- Test name
+- View A - In our case 'Paywall'
+- View B
+- View C (optional)
+- View D (optional)
+
+<YouTube id="VXAHQERxkm8" />
+
+
+---
+
+## Step 3: Create an Initialize Theta Custom Action
 
 Create a new custom action in FlutterFlow. 
 
@@ -53,7 +82,7 @@ Future<void> initializeTheta() async {
 
 ---
 
-## Step 2: Update main.dart file
+## Step 4: Update main.dart file
 
 <Image width="1440" alt="Screenshot 2023-09-01 at 15 11 20" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/74ebcf25-5d2b-4012-ae84-ac7cd19e7103" />
 
@@ -84,7 +113,7 @@ void main() async {
 
 ---
 
-## Step 3: Create a Custom Widget for importing the remote UI
+## Step 5: Create a Custom Widget for importing the remote UI
 
 <Image width="1440" alt="Screenshot 2023-09-01 at 15 10 12" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/e01be9e2-aa75-4e0e-965f-809b9847373b" />
 
@@ -121,7 +150,7 @@ class RemoteWidget extends StatelessWidget {
 
 ---
 
-## Step 4: Place the Custom Widget in the UI
+## Step 6: Place the Custom Widget in the UI
 
 Now, you can use this custom widget anywhere in your FlutterFlow project. 
 Simply add the RemoteWidget where you need it, and it will render the Theta-controlled UI you defined earlier.
@@ -148,6 +177,45 @@ UIBox(
     ],
 )
 ```
+
+---
+
+## Add custom analytics
+
+Here is how you can integrate analytics tools to collect data for your A/B tests. Let's assume you are using Firebase Analytics as an example.
+
+Modify your UIBox to include the analytics event in the workflow:
+
+```dart
+UIBox(
+    'Your Component Name',
+    controller: controller,
+    branch: 'Optional Branch Name',
+    workflows: [
+        Workflow(
+            'Element ID',
+            Trigger.onTap,
+            () async {
+                await analytics.logEvent(
+                    name: 'element_tapped',
+                    parameters: {
+                        'component': controller.componentName,
+                        'component_id': controller.componentID,
+                        'branch': controller.branch,
+                        'timestamp': DateTime.now().toString(),
+                    }
+                );
+            }
+        ),
+    ],
+)
+```
+
+## Review analytics and iterate
+
+Once you've successfully integrated the analytics tool and set up the event logging, the next step is to review the collected data to determine the effectiveness of different UI components.
+
+Go to your analytics dashboard to view the events. Based on this data, you can make further improvements and continue to A/B test until you find the most effective UI for your app.
 
 ---
 
