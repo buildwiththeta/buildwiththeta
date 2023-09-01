@@ -3,8 +3,7 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart'
-    show getValueForScreenType;
+import 'package:theta_models/src/responsive_builder.dart';
 
 /// [FBorderRadius] is a set of functions to use [BorderRadius]
 /// in widgets in Teta

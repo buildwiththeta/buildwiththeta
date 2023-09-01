@@ -5,8 +5,7 @@ import 'package:enum_to_string/enum_to_string.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:responsive_builder/responsive_builder.dart'
-    show getValueForScreenType;
+import 'package:theta_models/src/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// [FFontSize] is a feature that allows you to change the size of the text

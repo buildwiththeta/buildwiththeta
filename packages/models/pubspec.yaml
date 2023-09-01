@@ -1,6 +1,6 @@
 name: theta_models
 description: A package for the models used in Theta.
-version: 0.7.1
+version: 0.7.3
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -13,7 +13,7 @@ scripts:
   publish: "dart pub publish"
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -24,7 +24,6 @@ dependencies:
   enum_to_string: ^2.0.1
   equatable: ^2.0.5
   recase: ^4.1.0
-  responsive_builder: ^0.7.0
   device_frame: ^1.1.0
   collection: ^1.17.1
 

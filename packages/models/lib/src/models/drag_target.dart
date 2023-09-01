@@ -4,7 +4,6 @@
 // Package imports:
 import 'package:equatable/equatable.dart';
 import 'package:theta_models/theta_models.dart';
-import 'index.dart';
 
 abstract class DragTargetModel extends Equatable {
   const DragTargetModel();

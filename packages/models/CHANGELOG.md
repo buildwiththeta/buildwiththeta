@@ -1,3 +1,12 @@
+## 0.7.3
+
+- [x] Remove unused dependencies.
+
+## 0.7.2
+
+- [x] Dart 2 compatible.
+- [x] Remove unused imports.
+
 ## 0.7.1
 
 - [x] Feat: add 'bounce', 'link' to DBKeys.

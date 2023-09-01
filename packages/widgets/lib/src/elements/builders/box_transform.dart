@@ -9,6 +9,16 @@ import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
+class CoordinatesEntity {
+  const CoordinatesEntity({
+    required this.newTop,
+    required this.newLeft,
+  });
+
+  final double? newTop;
+  final double? newLeft;
+}
+
 class BoxTransformBuilder extends StatefulWidget {
   const BoxTransformBuilder({super.key, required this.node});
 
@@ -309,8 +319,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     super.dispose();
   }
 
-  ({double? newTop, double? newLeft}) getCoordinates(
-      TransformResult<Rect, Offset, Size> rect) {
+  CoordinatesEntity getCoordinates(TransformResult<Rect, Offset, Size> rect) {
     double? newTop;
     double? newLeft;
 
@@ -330,7 +339,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       }
     }
 
-    return (newLeft: newLeft, newTop: newTop);
+    return CoordinatesEntity(newLeft: newLeft, newTop: newTop);
   }
 
   void onChanged(TransformResult<Rect, Offset, Size> rect) {

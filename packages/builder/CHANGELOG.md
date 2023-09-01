@@ -1,3 +1,15 @@
+## 0.8.4
+
+- [x] Feat: Dart 2 compatible.
+
+## 0.8.3
+
+- [x] Fix: path_provider to 2.0.14
+
+## 0.8.2
+
+- [x] Fix: provider to 6.0.4
+
 ## 0.8.1
 
 - [x] Feat: add support for links, cursors and bounce.
