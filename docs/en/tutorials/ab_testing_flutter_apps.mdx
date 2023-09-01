@@ -1,0 +1,180 @@
+---
+title: A/B Testing Flutter apps with Theta
+---
+
+# A/B Testing Flutter apps with Theta: A comprehensive tutorial
+
+This tutorial will guide you through implementing A/B testing in a Flutter app using Theta. 
+It will also cover setting up Theta, using `UIBox` for dynamic user interfaces, collecting user data for A/B testing, and integrating with analytics tools.
+
+## Prerequisites
+- Basic understanding of Flutter development
+- Optional: an analytics tool for tracking events (Firebase Analytics, Mixpanel, Amplitude, etc.)
+
+---
+
+Step 1
+
+## Draw a Paywall and its variants visually within Theta
+
+To create a paywall, you need to visually design the UI using Theta's design editor. 
+Open your Theta dashboard, create a new project, and design a new component for the paywall and its variants.
+
+Add buttons, text, and other UI elements to guide the user toward making a purchase or subscription.
+
+- Remember to rename the component "Paywall".
+
+<YouTube id="oFed0NIqBZI" />
+
+---
+
+Step 2
+
+## Create an A/B test in Theta
+
+On the left menu, open the A/B test panel.
+Click "Add" and set the following properties:
+
+- Test name
+- View A - In our case 'Paywall'
+- View B
+- View C (optional)
+- View D (optional)
+
+<YouTube id="VXAHQERxkm8" />
+
+
+---
+
+Step 3
+
+## Create a new Flutter app
+
+Run the following command to create a new Flutter app:
+
+```bash
+flutter create theta_quickstart
+```
+
+This will create a new Flutter project named `theta_quickstart`.
+
+---
+
+## Step 4: Add Theta as a dependency
+
+Add Theta as a dependency in your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  theta: ^latest_version
+```
+
+Run `flutter pub get` to fetch the packages.
+
+---
+
+Step 5
+
+## Initialize Theta
+
+Initialize Theta by calling `Theta.initialize` with your anonymous key. Wrap your Flutter app with `ThetaProvider` to enable theme and project styles.
+
+```dart
+import 'package:theta/theta.dart';
+import 'package:flutter/material.dart';
+
+Future<void> main() async {
+    await Theta.initialize(anonKey: 'Your Theta Key Here');
+    
+    runApp(
+        ThetaProvider(
+            theme: ThemeMode.light,
+            child: MaterialApp(
+                home: YourHomePage(),
+            ),
+        )
+    );
+}
+```
+
+---
+
+Step 6
+
+## Add workflows for user interactions
+
+You can add workflows based on different triggers to perform specific actions.
+
+```dart
+UIBox(
+    'Your Component Name',
+    workflows: [
+        Workflow('Element ID', Trigger.onTap, () {
+            print('Element tapped');
+        }),
+    ],
+)
+```
+
+---
+
+Step 7
+
+## Add custom analytics
+
+Here is how you can integrate analytics tools to collect data for your A/B tests. Let's assume you are using Firebase Analytics as an example.
+
+First, install your analytics package and import it:
+
+```bash
+import 'package:firebase_analytics/firebase_analytics.dart';
+```
+
+Initialize it:
+
+```dart
+final FirebaseAnalytics analytics = FirebaseAnalytics();
+```
+
+Modify your UIBox to include the analytics event in the workflow:
+
+```dart
+UIBox(
+    'Your Component Name',
+    controller: controller,
+    branch: 'Optional Branch Name',
+    workflows: [
+        Workflow(
+            'Element ID',
+            Trigger.onTap,
+            () async {
+                await analytics.logEvent(
+                    name: 'element_tapped',
+                    parameters: {
+                        'component': controller.componentName,
+                        'component_id': controller.componentID,
+                        'branch': controller.branch,
+                        'timestamp': DateTime.now().toString(),
+                    }
+                );
+            }
+        ),
+    ],
+)
+```
+
+---
+
+Step 8
+
+## Review analytics and iterate
+
+Once you've successfully integrated the analytics tool and set up the event logging, the next step is to review the collected data to determine the effectiveness of different UI components.
+
+Go to your analytics dashboard to view the events. Based on this data, you can make further improvements and continue to A/B test until you find the most effective UI for your app.
+
+---
+
+Congratulations, you've successfully implemented A/B testing in your Flutter app using Theta, along with custom analytics to track user interactions. This will allow you to dynamically update your UI and improve your app based on real-world data!

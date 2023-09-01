@@ -1,7 +1,7 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.7.2
+version: 0.7.4
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -15,16 +15,16 @@ scripts:
   publish: "dart pub publish"
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  theta_models: ^0.7.1
-  theta_design_system: ^0.3.0
-  theta_rendering: ^0.2.2
+  theta_models: ^0.7.2
+  theta_design_system: ^0.3.1
+  theta_rendering: ^0.2.3
 
   light_logger: ^0.0.3
 
@@ -33,7 +33,7 @@ dependencies:
 
   # UI
   equatable: ^2.0.5
-  google_fonts: ^5.0.0
+  google_fonts: ^4.0.3
   feather_icons: ^1.2.0
   material_design_icons_flutter: ^6.0.7096
   font_awesome_flutter_named: ^1.1.1
@@ -48,7 +48,7 @@ dependencies:
   device_frame: ^1.1.0
   flutter_svg: ^2.0.7
   defer_pointer: ^0.0.2
-  url_launcher: ^6.1.12
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:

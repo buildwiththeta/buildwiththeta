@@ -1,3 +1,7 @@
+## 0.3.1
+
+- [x] Dart 2-3 compatible.
+
 ## 0.3.0
 
 - [x] Feat: change to purple as primary color for CTAs.

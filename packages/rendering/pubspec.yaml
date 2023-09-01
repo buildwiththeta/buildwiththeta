@@ -1,7 +1,7 @@
 name: theta_rendering
 description: Rendering package for Theta
 
-version: 0.2.2
+version: 0.2.3
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -14,11 +14,11 @@ scripts:
   publish: "dart pub publish"
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies: 
 
-  theta_models: ^0.7.0
+  theta_models: ^0.7.2
   light_logger: ^0.0.3
   collection: ^1.17.1
 

@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:theta_models/src/responsive_builder.dart';
 import 'package:theta_models/theta_models.dart';
 
 @immutable

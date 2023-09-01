@@ -1,3 +1,11 @@
+## 0.7.4
+
+- [x] Feat: launch_url to 6.1.10.
+
+## 0.7.3
+
+- [x] Feat: Dart 3 compatible.
+
 ## 0.7.2
 
 - [x] Fix: improve support for links, cursors, bounce.

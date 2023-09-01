@@ -1,3 +1,7 @@
+## 0.2.3
+
+- [x] Feat: Dart 2 compatible.
+
 ## 0.2.2
 
 - [x] Feat: add support to models 0.7.0.
