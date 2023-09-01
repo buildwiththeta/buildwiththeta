@@ -134,6 +134,23 @@ Simply add the RemoteWidget where you need it, and it will render the Theta-cont
 
 ---
 
+## Add workflows for user interactions
+
+You can add workflows based on different triggers to perform specific actions.
+
+```dart
+UIBox(
+    'Your Component Name',
+    workflows: [
+        Workflow('Element ID', Trigger.onTap, () {
+            print('Element tapped');
+        }),
+    ],
+)
+```
+
+---
+
 And there you have it! 
 You've just significantly sped up your FlutterFlow development process by integrating Theta. 
 Now you can easily use real-time updates, custom widgets, and advanced analytics functionalities to enhance your app.
