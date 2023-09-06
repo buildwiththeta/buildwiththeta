@@ -1,0 +1,225 @@
+---
+title: Implement an A/B test on your FlutterFlow app in 5 minutes
+description: This tutorial will guide you through integrating Theta with FlutterFlow for real-time updates and faster A/B testing.
+image: https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/docs/thmbnail_flutterflow_tutorial.jpg
+---
+
+# Implement an A/B test on your Flutterflow app in 5 minutes
+
+<Image src="https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/docs/thmbnail_flutterflow_tutorial.jpg" />
+
+FlutterFlow and Theta combined can take your no-code development speed to the next level. 
+This tutorial will guide you through integrating Theta with FlutterFlow for real-time updates and faster A/B testing.
+
+## Advantages of integrating Theta
+
+- **Real-Time UI Changes:** Instantly see the impact of your changes without having to rebuild or redeploy your app.
+- **A/B Tests:** Run experiments to determine the most effective UI elements, all controlled via Theta.
+- **Faster UI Building:** The Theta integration accelerates your UI building process by reducing the need for repeated manual updates.
+
+## Prerequisites
+
+- Basic understanding of Flutter
+- Experience with [FlutterFlow](https://flutterflow.io) [(or the willingness to use Flutter along with our existing Theta tutorial)](https://docs.buildwiththeta.com/en/tutorials/ab_testing_flutter_apps)
+- A Theta account on [buildwiththeta.com](https://buildwiththeta.com)
+
+---
+
+# Steps
+
+## Step 1: Draw the UI and its variants visually within Theta
+
+To create the UI, you need to visually design the UI using Theta's design editor. 
+Open your Theta dashboard, create a new project, and design a new component and its variants.
+
+Add buttons, text, and other UI elements to guide the user toward making a purchase or subscription.
+
+<YouTube id="oFed0NIqBZI" />
+
+---
+
+## Step 2: Create an A/B test in Theta
+
+On the left menu, open the A/B test panel.
+Click "Add" and set the following properties:
+
+- Test name
+- View A - The main component
+- View B
+- View C (optional)
+- View D (optional)
+
+<YouTube id="VXAHQERxkm8" />
+
+
+---
+
+## Step 3: Create an Initialize Theta Custom Action
+
+Create a new custom action in FlutterFlow. 
+
+<Image width="1440" alt="Screenshot 2023-09-01 at 15 10 53" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/b71f5715-7d4c-4d38-b365-7456d7f53816" />
+
+1. Add in Pubspec Dependencies: "theta: ^0.8.4"
+2. Copy the following code into the code editor:
+
+```dart
+// Automatic FlutterFlow imports
+// ... (other imports)
+// DO NOT REMOVE OR MODIFY THE CODE ABOVE!
+
+import 'package:theta/theta.dart';
+
+Future<void> initializeTheta() async {
+  const key = 'your anon key here';
+  await Theta.initialize(
+    anonKey: key,
+    componentsNames: ["Component Name"],
+  );
+}
+```
+
+3. Save the action as "initializeTheta".
+
+---
+
+## Step 4: Update main.dart file
+
+<Image width="1440" alt="Screenshot 2023-09-01 at 15 11 20" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/74ebcf25-5d2b-4012-ae84-ac7cd19e7103" />
+
+1. In the right sidebar go to Initial Actions > Add Custom Action > Choose "initializeTheta"
+2. Your code will look like this with "await actions.initializeTheta();" in it.
+
+```dart
+import '/custom_code/actions/index.dart' as actions;
+// ... (other imports)
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
+
+  // Start initial custom actions code
+  await actions.initializeTheta();
+  // End initial custom actions code
+
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
+}
+```
+
+---
+
+## Step 5: Create a Custom Widget for importing the remote UI
+
+<Image width="1440" alt="Screenshot 2023-09-01 at 15 10 12" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/e01be9e2-aa75-4e0e-965f-809b9847373b" />
+
+Create a new custom widget in FlutterFlow, and copy the following code into it:
+
+```dart
+// Automatic FlutterFlow imports
+// ... (other imports)
+
+// Set your widget name, define your parameter, and then add the
+// boilerplate code using the button on the right!
+
+import 'package:theta/theta.dart';
+
+class RemoteWidget extends StatelessWidget {
+  const RemoteWidget({super.key, required this.width, required this.height});
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: height,
+      child: ThetaProvider(
+        theme: ThemeMode.light,
+        child: UIBox("Component Name"),
+      ),
+    );
+  }
+}
+```
+
+---
+
+## Step 6: Place the Custom Widget in the UI
+
+Now, you can use this custom widget anywhere in your FlutterFlow project. 
+Simply add the RemoteWidget where you need it, and it will render the Theta-controlled UI you defined earlier.
+
+- In the editor:
+<Image width="1440" alt="Screenshot 2023-09-01 at 15 11 33" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/74562b6a-c4de-41b5-82b3-fb460f0c3788" />
+
+- In Test Mode:
+<Image width="1440" alt="Screenshot 2023-09-01 at 15 26 14" src="https://github.com/buildwiththeta/buildwiththeta/assets/49411143/6322cd36-7273-40ba-81ba-b25252de86a1" />
+
+---
+
+## Add workflows for user interactions
+
+You can add workflows based on different triggers to perform specific actions.
+
+```dart
+UIBox(
+    'Your Component Name',
+    workflows: [
+        Workflow('Element ID', Trigger.onTap, () {
+            print('Element tapped');
+        }),
+    ],
+)
+```
+
+---
+
+## Add custom analytics
+
+Here is how you can integrate analytics tools to collect data for your A/B tests. Let's assume you are using Firebase Analytics as an example.
+
+Modify your UIBox to include the analytics event in the workflow:
+
+```dart
+UIBox(
+    'Your Component Name',
+    controller: controller,
+    branch: 'Optional Branch Name',
+    workflows: [
+        Workflow(
+            'Element ID',
+            Trigger.onTap,
+            () async {
+                await analytics.logEvent(
+                    name: 'element_tapped',
+                    parameters: {
+                        'component': controller.componentName,
+                        'component_id': controller.componentID,
+                        'branch': controller.branch,
+                        'timestamp': DateTime.now().toString(),
+                    }
+                );
+            }
+        ),
+    ],
+)
+```
+
+## Review analytics and iterate
+
+Once you've successfully integrated the analytics tool and set up the event logging, the next step is to review the collected data to determine the effectiveness of different UI components.
+
+Go to your analytics dashboard to view the events. Based on this data, you can make further improvements and continue to A/B test until you find the most effective UI for your app.
+
+---
+
+And there you have it! 
+You've just significantly sped up your FlutterFlow development process by integrating Theta. 
+Now you can easily use real-time updates, custom widgets, and advanced analytics functionalities to enhance your app.
