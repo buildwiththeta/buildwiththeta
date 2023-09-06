@@ -10,7 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["PaywallMultiPlan"],
+    componentsNames: ["Paywall"],
   );
 
   runApp(const MyApp());

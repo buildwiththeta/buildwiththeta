@@ -1,7 +1,7 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.7.4
+version: 0.7.5
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -29,7 +29,7 @@ dependencies:
   light_logger: ^0.0.3
 
   # State
-  provider: ^6.0.5
+  provider: ^6.0.4
 
   # UI
   equatable: ^2.0.5
