@@ -35,7 +35,13 @@ class _NodeBuilderState extends State<NodeBuilder> {
   bool clickable = true;
 
   BoxDecoration _handleDecorationChange(CNode? hoverNode, CNode? focusNode,
-      bool isDeviceFocused, bool isDeviceHovered) {
+      List<CNode> focusedNodes, bool isDeviceFocused, bool isDeviceHovered) {
+    if (isDeviceFocused &&
+        focusedNodes.any((element) => element.id == widget.state.node.id)) {
+      return BoxDecoration(
+        border: Border.all(width: 2, color: Palette.blue),
+      );
+    }
     if (isDeviceFocused && focusNode?.id == widget.state.node.id) {
       return BoxDecoration(
         border: Border.all(width: 2, color: Palette.blue),
@@ -301,6 +307,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
                   decoration: _handleDecorationChange(
                     state.hoveredNode,
                     state.focusedNode,
+                    state.focusedNodes,
                     state.isDeviceCurrentlyFocused,
                     state.isDeviceCurrentlyHovered,
                   ),
