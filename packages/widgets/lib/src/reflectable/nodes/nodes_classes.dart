@@ -102,12 +102,12 @@ class _Stack {}
 )
 class _Text {}
 
-/*@NodeInfo(
+@NodeInfo(
   type: NType.textField,
   optionalDisplayName: 'TextField',
 )
 class _TextField {}
-
+/*
 @NodeInfo(
   type: NType.video,
   optionalDisplayName: 'Video',
@@ -125,3 +125,9 @@ class _Spacer {}
   optionalDisplayName: 'Svg Picture',
 )
 class _SvgPicture {}
+
+@NodeInfo(
+  type: NType.switcH,
+  optionalDisplayName: 'Switch',
+)
+class _Switch {}

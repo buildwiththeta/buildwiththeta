@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-/// Set of funcs to use [KeyboardType] in Teta
+/// Set of funcs to use [KeyboardType] in Theta
 @immutable
 class FKeyboardType extends Equatable {
   /// Constructor

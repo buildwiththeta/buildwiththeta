@@ -157,7 +157,7 @@ class __LogicBoxState extends State<_LogicBox> {
     });
     if (r.conversionEvents.isNotEmpty) {
       final worksFromCloud = r.conversionEvents
-          .map((e) => Workflow(e.nodeID, e.trigger, () async {
+          .map((e) => Workflow(e.nodeID, e.trigger, (dynamic) async {
                 await getIt<SendConversionEventUseCase>()(
                   SendConversionEventUseCaseParams(
                     eventID: e.id,
