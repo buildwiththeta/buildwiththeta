@@ -10,7 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["PaywallMultiPlan"],
+    componentsNames: ["AppBar"],
   );
 
   runApp(const MyApp());
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'PaywallMultiPlan',
+            'AppBar',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'node id',
+                '49610277-0c49-4d1f-96bf-51c7542ca6ba',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -110,7 +110,7 @@ class _MyAppState extends State<MyApp> {
                 (dynamic) => debugPrint('Not hovered!'),
               ),
               Workflow(
-                'node id',
+                '49610277-0c49-4d1f-96bf-51c7542ca6ba',
                 Trigger.onTap,
                 (dynamic) => debugPrint('Tapped!'),
               ),

@@ -1,3 +1,7 @@
+## 0.7.5
+
+- [x] Feat: provider to 6.0.4
+
 ## 0.7.4
 
 - [x] Feat: launch_url to 6.1.10.
