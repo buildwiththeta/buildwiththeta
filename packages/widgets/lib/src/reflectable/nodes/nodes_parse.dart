@@ -43,6 +43,10 @@ class NodesParse {
         return SpacerOpenNode.fromJson(widgetType, json);
       case NType.svgPicture:
         return SvgPictureOpenNode.fromJson(widgetType, json);
+      case NType.textField:
+        return TextFieldOpenNode.fromJson(widgetType, json);
+      case NType.switcH:
+        return SwitchOpenNode.fromJson(widgetType, json);
       default:
         throw Exception('Unknown widgetType: $widgetType');
     }

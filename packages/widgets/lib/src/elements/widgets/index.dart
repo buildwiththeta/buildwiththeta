@@ -20,3 +20,4 @@ export 'video.dart';
 export 'component.dart';
 export 'spacer.dart';
 export 'svg_picture.dart';
+export 'switch.dart';

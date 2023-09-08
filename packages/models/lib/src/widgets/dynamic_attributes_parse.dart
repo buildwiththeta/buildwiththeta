@@ -41,6 +41,16 @@ class DynamicAttributes {
         case DBKeys.activeFill:
         case DBKeys.borderFill:
         case DBKeys.fill:
+        case DBKeys.cursorColor:
+        case DBKeys.hintTextColor:
+        case DBKeys.enabledBorderColor:
+        case DBKeys.focusedBorderColor:
+        case DBKeys.activeColor:
+        case DBKeys.activeTrackColor:
+        case DBKeys.inactiveThumbColor:
+        case DBKeys.inactiveTrackColor:
+        case DBKeys.focusColor:
+        case DBKeys.hoverColor:
           return FFill.fromJson(value);
         case DBKeys.fontSize:
           return FFontSize.fromJson(value);
@@ -50,6 +60,8 @@ class DynamicAttributes {
           return FFontWeight.fromJson(value);
         case DBKeys.iconType:
           return FIconType.fromJson(value);
+        case DBKeys.keyboardType:
+          return FKeyboardType.fromJson(value);
         case DBKeys.imageType:
           return FImageType.fromJson(value);
         case DBKeys.mainAxisAlignment:
@@ -58,6 +70,7 @@ class DynamicAttributes {
           return FMainAxisSize.fromJson(value);
         case DBKeys.margins:
         case DBKeys.padding:
+        case DBKeys.contentPadding:
           return FMargins.fromJson(value);
         case DBKeys.shadows:
           return FShadow.fromJson(value);
@@ -95,6 +108,7 @@ class DynamicAttributes {
         case DBKeys.childAspectRatio:
         case DBKeys.labelText:
         case DBKeys.rotation:
+        case DBKeys.bordersSize:
           return FTextTypeInput.fromJson(value);
         case DBKeys.overrides:
           {
@@ -135,6 +149,10 @@ class DynamicAttributes {
       case DBKeys.slideAnimationEnabled:
       case DBKeys.isPrimary:
       case DBKeys.showCursor:
+      case DBKeys.autoCorrect:
+      case DBKeys.obscureText:
+      case DBKeys.showBorders:
+      case DBKeys.valueBool:
         return value;
       default:
         return value?.toJson();
