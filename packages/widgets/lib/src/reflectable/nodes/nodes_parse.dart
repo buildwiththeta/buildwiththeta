@@ -47,6 +47,10 @@ class NodesParse {
         return TextFieldOpenNode.fromJson(widgetType, json);
       case NType.switcH:
         return SwitchOpenNode.fromJson(widgetType, json);
+      case NType.divider:
+        return DividerOpenNode.fromJson(widgetType, json);
+      case NType.verticalDivider:
+        return VerticalDividerOpenNode.fromJson(widgetType, json);
       default:
         throw Exception('Unknown widgetType: $widgetType');
     }

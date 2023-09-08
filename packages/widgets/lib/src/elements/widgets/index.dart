@@ -21,3 +21,5 @@ export 'component.dart';
 export 'spacer.dart';
 export 'svg_picture.dart';
 export 'switch.dart';
+export 'divider.dart';
+export 'vertical_divider.dart';

@@ -131,3 +131,15 @@ class _SvgPicture {}
   optionalDisplayName: 'Switch',
 )
 class _Switch {}
+
+@NodeInfo(
+  type: NType.divider,
+  optionalDisplayName: 'Divider',
+)
+class _Divider {}
+
+@NodeInfo(
+  type: NType.verticalDivider,
+  optionalDisplayName: 'Vertical Divider',
+)
+class _VerticalDivider {}

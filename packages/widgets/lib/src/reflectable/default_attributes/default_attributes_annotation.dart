@@ -23,6 +23,8 @@ class DefaultAttributesParse {
     NType.svgPicture: const SvgPictureDefaultAttributes(),
     NType.textField: const TextFieldDefaultAttributes(),
     NType.switcH: const SwitchDefaultAttributes(),
+    NType.divider: const DividerDefaultAttributes(),
+    NType.verticalDivider: const VerticalDividerDefaultAttributes(),
   };
 
   /// getByType for each class using Reflectable

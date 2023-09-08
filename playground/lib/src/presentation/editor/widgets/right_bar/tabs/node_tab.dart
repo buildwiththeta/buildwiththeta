@@ -91,7 +91,7 @@ class NodeTab extends StatelessWidget {
           ComponentNodeTab(
             focusedNode: focusedNode,
             oldFocusedNode: oldFocusedNode,
-          )
+          ),
       ],
     );
   }

@@ -83,6 +83,9 @@ class DynamicAttributes {
         case DBKeys.widthFactor:
         case DBKeys.height:
         case DBKeys.heightFactor:
+        case DBKeys.thickness:
+        case DBKeys.indent:
+        case DBKeys.endIndent:
           return FSize.fromJson(value);
         case DBKeys.textAlign:
           return FTextAlign.fromJson(value);
@@ -110,6 +113,8 @@ class DynamicAttributes {
         case DBKeys.rotation:
         case DBKeys.bordersSize:
           return FTextTypeInput.fromJson(value);
+        case DBKeys.lineStyle:
+          return FDividerLineStyle.fromJson(value);
         case DBKeys.overrides:
           {
             return Override.fromJsonList(value ?? []);

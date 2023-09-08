@@ -25,6 +25,8 @@ class WidgetAdapterParse {
     NType.svgPicture: const SvgPictureAdapter(),
     NType.textField: const TextFieldAdapter(),
     NType.switcH: const SwitchAdapter(),
+    NType.divider: const DividerAdapter(),
+    NType.verticalDivider: const VerticalDividerAdapter(),
   };
 
   /// getByType for each class using Reflectable

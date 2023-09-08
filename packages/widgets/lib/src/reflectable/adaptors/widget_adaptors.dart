@@ -490,3 +490,47 @@ class SwitchAdapter extends WidgetAdapter {
 
   SwitchAdapter.create() : this();
 }
+
+/// Divider
+class DividerAdapter extends WidgetAdapter {
+  const DividerAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWDivider(
+        context: context,
+        state: state,
+        thickness: state.node.getAttributes[DBKeys.thickness] as FSize,
+        indent: state.node.getAttributes[DBKeys.indent] as FSize,
+        endIndent: state.node.getAttributes[DBKeys.endIndent] as FSize,
+        fill: state.node.getAttributes[DBKeys.fill] as FFill,
+        lineStyle:
+            state.node.getAttributes[DBKeys.lineStyle] as FDividerLineStyle,
+      );
+
+  DividerAdapter.create() : this();
+}
+
+/// VerticalDivider
+class VerticalDividerAdapter extends WidgetAdapter {
+  const VerticalDividerAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWVerticalDivider(
+        context: context,
+        state: state,
+        thickness: state.node.getAttributes[DBKeys.thickness] as FSize,
+        indent: state.node.getAttributes[DBKeys.indent] as FSize,
+        endIndent: state.node.getAttributes[DBKeys.endIndent] as FSize,
+        fill: state.node.getAttributes[DBKeys.fill] as FFill,
+        lineStyle:
+            state.node.getAttributes[DBKeys.lineStyle] as FDividerLineStyle,
+      );
+
+  VerticalDividerAdapter.create() : this();
+}

@@ -210,3 +210,29 @@ class SwitchIntrinsicStates extends IntrinsicState {
         );
   SwitchIntrinsicStates.create() : this();
 }
+
+/// Divider
+/// https://pub.dev/packages/styled_divider
+class DividerIntrinsicStates extends IntrinsicState {
+  DividerIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/text/', //TODO: divider icon
+          displayName: NodeType.name(NType.divider),
+          type: NType.divider,
+          canHave: ChildrenEnum.none,
+        );
+  DividerIntrinsicStates.create() : this();
+}
+
+/// Vertical Divider
+/// https://pub.dev/packages/styled_divider
+class VerticalDividerIntrinsicStates extends IntrinsicState {
+  VerticalDividerIntrinsicStates()
+      : super(
+          nodeIcon: 'nodes/text/', //TODO: verticalDivider icon
+          displayName: NodeType.name(NType.verticalDivider),
+          type: NType.verticalDivider,
+          canHave: ChildrenEnum.none,
+        );
+  VerticalDividerIntrinsicStates.create() : this();
+}

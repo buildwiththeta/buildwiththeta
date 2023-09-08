@@ -457,3 +457,60 @@ class SwitchDefaultAttributes extends DefaultAttributesAdapter {
 
   SwitchDefaultAttributes.create() : this();
 }
+
+/// Divider
+class DividerDefaultAttributes extends DefaultAttributesAdapter {
+  const DividerDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.fill: FFill(),
+        DBKeys.indent: FSize(
+          size: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.endIndent: FSize(
+          size: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.thickness: FSize(
+          size: '1',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.lineStyle: FDividerLineStyle(),
+      };
+
+  DividerDefaultAttributes.create() : this();
+}
+
+/// Vertical Divider
+class VerticalDividerDefaultAttributes extends DefaultAttributesAdapter {
+  const VerticalDividerDefaultAttributes();
+
+  @override
+  Map<String, dynamic> get get => const <String, dynamic>{
+        DBKeys.fill: FFill(),
+
+        DBKeys.indent: FSize(
+          size: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.endIndent: FSize(
+          size: '0',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.thickness: FSize(
+          size: '1',
+          sizeTablet: null,
+          sizeDesktop: null,
+        ),
+        DBKeys.lineStyle: FDividerLineStyle(),
+      };
+
+  VerticalDividerDefaultAttributes.create() : this();
+}

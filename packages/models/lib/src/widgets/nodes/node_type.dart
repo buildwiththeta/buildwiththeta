@@ -23,6 +23,8 @@ class NType {
   static const String svgPicture = 'svgPicture';
   static const String textField = 'textField';
   static const String switcH = 'switcH';
+  static const String divider = 'divider';
+  static const String verticalDivider = 'verticalDivider';
 
   final String name;
   const NType(this.name);
@@ -46,6 +48,8 @@ class NType {
         svgPicture,
         textField,
         switcH,
+        divider,
+        verticalDivider,
       ];
 }
 
