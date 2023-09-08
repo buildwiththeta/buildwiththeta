@@ -24,11 +24,11 @@ class WorkflowExecuter extends Equatable {
     return true;
   }
 
-  void execute(final Trigger trigger) {
+  void execute(final Trigger trigger, final dynamic val) {
     final workflow = workflows.firstWhereOrNull((element) =>
         (element.nodeIdenfier == nodeName || element.nodeIdenfier == nodeID) &&
         element.trigger == trigger);
     if (workflow == null) return;
-    workflow.method.call();
+    workflow.method.call(val);
   }
 }

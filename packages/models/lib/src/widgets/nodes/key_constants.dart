@@ -20,6 +20,7 @@ class DBKeys {
   static const String textStyle = 'txtStl';
   static const String margins = 'm';
   static const String padding = 'p';
+  static const String contentPadding = 'cP';
   static const String width = 'wdh';
   static const String widthFactor = 'wdhFct';
   static const String minWidth = 'miwdh';
@@ -76,7 +77,16 @@ class DBKeys {
   static const String maxLines = 'mxLns';
   static const String minLines = 'mnLns';
   static const String maxLenght = 'mxLng';
+
   static const String showCursor = 'shCrs';
+  static const String autoCorrect = 'aCr';
+  static const String obscureText = 'obTxt';
+  static const String cursorColor = 'crClr';
+  static const String hintTextColor = 'hntClr';
+  static const String enabledBorderColor = 'enBrdClr';
+  static const String focusedBorderColor = 'focBrdClr';
+  static const String bordersSize = 'brdSz';
+  static const String showBorders = 'shBrd';
 
   static const String mainAxisSpacing = 'mAxSpc';
   static const String crossAxisCount = 'cAxCn';
@@ -91,6 +101,7 @@ class DBKeys {
   static const String rotateZ = 'rttZ';
 
   static const String iconType = 'icTp';
+  static const String keyboardType = 'kTp';
   static const String cursorType = 'cursorType';
   static const String link = 'link';
   static const String doesBounce = 'bounce';
@@ -101,4 +112,12 @@ class DBKeys {
 
   static const String xTranslation = 'xTrans';
   static const String yTranslation = 'yTrans';
+
+  static const String activeColor = 'actClr';
+  static const String activeTrackColor = 'actTrkClr';
+  static const String inactiveThumbColor = 'inactThmClr';
+  static const String inactiveTrackColor = 'inactTrkClr';
+  static const String focusColor = 'focClr';
+  static const String hoverColor = 'hovClr';
+  static const String valueBool = 'vB';
 }

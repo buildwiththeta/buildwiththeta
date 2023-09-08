@@ -322,9 +322,6 @@ class TextAdapter extends WidgetAdapter {
 }
 
 /// TextField
-/*
-@dynamicAdapter
-@NodeKey(NType.textField)
 class TextFieldAdapter extends WidgetAdapter {
   const TextFieldAdapter();
   @override
@@ -334,6 +331,8 @@ class TextFieldAdapter extends WidgetAdapter {
   }) =>
       OpenWTextField(
         state: state,
+        contentPadding:
+            state.node.getAttributes[DBKeys.contentPadding] as FMargins,
         value: state.node.getAttributes[DBKeys.value] as FTextTypeInput? ??
             const FTextTypeInput(),
         textStyle: state.node.getAttributes[DBKeys.textStyle] as FTextStyle? ??
@@ -343,8 +342,6 @@ class TextFieldAdapter extends WidgetAdapter {
                 const FTextTypeInput(),
         fill: state.node.getAttributes[DBKeys.fill] as FFill,
         width: state.node.getAttributes[DBKeys.width] as FSize,
-        margins: state.node.getAttributes[DBKeys.margins] as FMargins,
-        paddings: state.node.getAttributes[DBKeys.padding] as FMargins,
         keyboardType:
             state.node.getAttributes[DBKeys.keyboardType] as FKeyboardType,
         borderRadius:
@@ -372,7 +369,7 @@ class TextFieldAdapter extends WidgetAdapter {
 
   TextFieldAdapter.create() : this();
 }
-
+/*
 /// Video
 @dynamicAdapter
 @NodeKey(NType.video)
@@ -467,4 +464,29 @@ class SvgPictureAdapter extends WidgetAdapter {
       );
 
   SvgPictureAdapter.create() : this();
+}
+
+/// Switch
+class SwitchAdapter extends WidgetAdapter {
+  const SwitchAdapter();
+  @override
+  Widget toWidget({
+    required final BuildContext context,
+    required final WidgetState state,
+  }) =>
+      OpenWSwitch(
+        state: state,
+        value: state.node.getAttributes[DBKeys.valueBool] as bool? ?? false,
+        activeColor: state.node.getAttributes[DBKeys.activeColor] as FFill,
+        activeTrackColor:
+            state.node.getAttributes[DBKeys.activeTrackColor] as FFill,
+        inactiveThumbColor:
+            state.node.getAttributes[DBKeys.inactiveThumbColor] as FFill,
+        inactiveTrackColor:
+            state.node.getAttributes[DBKeys.inactiveTrackColor] as FFill,
+        focusColor: state.node.getAttributes[DBKeys.focusColor] as FFill,
+        hoverColor: state.node.getAttributes[DBKeys.hoverColor] as FFill,
+      );
+
+  SwitchAdapter.create() : this();
 }
