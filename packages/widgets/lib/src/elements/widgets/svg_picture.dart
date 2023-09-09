@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Returns a Svg Picture widget
 /// It wants a [FTextTypeInput] as a tag
@@ -42,7 +42,7 @@ class OpenWSvgPicture extends NodeWidget {
   ) {
     final color = fill.type == FFillType.none
         ? null
-        : HexColor(fill.getHexColor(context, state.colorStyles, state.theme));
+        : fill.getColor(context, state.colorStyles, state.theme);
     final img = image.getImage(
       state: state,
       context: context,

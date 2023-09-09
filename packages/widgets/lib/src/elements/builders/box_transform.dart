@@ -6,7 +6,6 @@ import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/src/elements/builders/node_builder.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class CoordinatesEntity {
@@ -115,31 +114,19 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
           child: SizedBox(
             width: width ?? double.infinity,
             height: height ?? double.infinity,
-            child: NodeBuilder(
-              onHover: () {
-                context.read<TreeGlobalState>().onNodeHovered(
-                    widget.node, context.read<TreeState>().deviceType);
-                setState(() {});
-              },
-              onTap: () {
-                context.read<TreeGlobalState>().onNodeFocused(
-                    widget.node, context.read<TreeState>().deviceType);
-                setState(() {});
-              },
-              onPanStart: () {
-                context.read<TreeGlobalState>().onNodeFocused(
-                    widget.node, context.read<TreeState>().deviceType);
-                setState(() {});
-              },
+            child: ChildBuilder(
+              context: context,
               state: WidgetState(node: widget.node, loop: 0),
-              child: widget.node.toWidget(
-                context: context,
-                state: WidgetState(node: widget.node, loop: 0),
-              ),
-            ),
+              child: widget.node,
+            ).build(),
           ),
         );
       } else {
+        final node = ChildBuilder(
+          context: context,
+          state: WidgetState(node: widget.node, loop: 0),
+          child: widget.node,
+        ).build();
         return Positioned(
           top: top,
           bottom: bottom,
@@ -147,28 +134,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
           right: right,
           width: width,
           height: height,
-          child: NodeBuilder(
-            onHover: () {
-              context.read<TreeGlobalState>().onNodeHovered(
-                  widget.node, context.read<TreeState>().deviceType);
-              setState(() {});
-            },
-            onTap: () {
-              context.read<TreeGlobalState>().onNodeFocused(
-                  widget.node, context.read<TreeState>().deviceType);
-              setState(() {});
-            },
-            onPanStart: () {
-              context.read<TreeGlobalState>().onNodeFocused(
-                  widget.node, context.read<TreeState>().deviceType);
-              setState(() {});
-            },
-            state: WidgetState(node: widget.node, loop: 0),
-            child: widget.node.toWidget(
-              context: context,
-              state: WidgetState(node: widget.node, loop: 0),
-            ),
-          ),
+          child: node ?? const SizedBox.shrink(),
         );
       }
     }
@@ -425,6 +391,14 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
 
   @override
   Widget build(BuildContext context) {
+    final child = ChildBuilder(
+      context: context,
+      state: WidgetState(node: widget.node, loop: 0),
+      child: widget.node,
+    ).build();
+    if (child == null) {
+      return const SizedBox.expand();
+    }
     return TransformableBox(
       controller: controller,
       onChanged: (rect) => _debouncer.run(() => onChanged(rect)),
@@ -433,28 +407,7 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       onResized: (r) => offsetToResize(),
       onMoved: (_) => offsetToResize(),
       contentBuilder: (_, rect, flip) => IgnorePointer(
-        child: NodeBuilder(
-          onHover: () {
-            context.read<TreeGlobalState>().onNodeHovered(
-                widget.node, context.read<TreeState>().deviceType);
-            setState(() {});
-          },
-          onTap: () {
-            context.read<TreeGlobalState>().onNodeFocused(
-                widget.node, context.read<TreeState>().deviceType);
-            setState(() {});
-          },
-          onPanStart: () {
-            context.read<TreeGlobalState>().onNodeFocused(
-                widget.node, context.read<TreeState>().deviceType);
-            setState(() {});
-          },
-          state: WidgetState(node: widget.node, loop: 0),
-          child: widget.node.toWidget(
-            context: context,
-            state: WidgetState(node: widget.node, loop: 0),
-          ),
-        ),
+        child: child,
       ),
     );
   }

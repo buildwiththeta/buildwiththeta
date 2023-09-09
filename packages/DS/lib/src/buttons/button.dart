@@ -59,6 +59,7 @@ class ThetaDesignButton extends StatelessWidget {
                         child: CircularProgressIndicator(),
                       )
                     : Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           if (iconWidget != null) ...[
                             Padding(

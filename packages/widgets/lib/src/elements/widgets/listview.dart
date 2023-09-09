@@ -30,21 +30,19 @@ class OpenWListView extends StatelessWidget {
   Widget build(final BuildContext context) {
     final children = const NodeOverrideExecuter()
         .executeChildren(context, state, this.children);
+    if (children.isEmpty) {
+      return const SizedBox();
+    }
     return NotificationListener<ScrollEndNotification>(
-      onNotification: (final scrollEnd) {
-        return true;
-      },
+      onNotification: (final scrollEnd) => true,
       child: ScrollConfiguration(
         behavior: _MyCustomScrollBehavior(),
         child: ListView.builder(
+          padding: const EdgeInsets.all(0),
           reverse: isReverse,
-          addAutomaticKeepAlives: false,
-          addRepaintBoundaries: false,
           scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
-          itemCount: children.isEmpty ? 1 : children.length,
-          itemBuilder: (final context, final index) {
-            return children.isNotEmpty ? children[index] : const SizedBox();
-          },
+          itemCount: children.length,
+          itemBuilder: (_, index) => children[index],
         ),
       ),
     );

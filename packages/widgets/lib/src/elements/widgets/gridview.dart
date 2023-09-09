@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:theta_models/theta_models.dart';
 
 class OpenWGridView extends NodeWidget {
   /// Returns a StaggeredGridView (children: [ ]) in Teta
@@ -53,6 +53,9 @@ class OpenWGridView extends NodeWidget {
     );
     final children = const NodeOverrideExecuter()
         .executeChildren(context, nodeState, this.children);
+    if (children.isEmpty) {
+      return const SizedBox();
+    }
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: int.tryParse(crossAxisCountString) ?? 2,
@@ -63,12 +66,12 @@ class OpenWGridView extends NodeWidget {
             ? double.parse(childAspectRatioString)
             : 1,
       ),
+      padding: const EdgeInsets.all(0),
       shrinkWrap: shrinkWrap,
       primary: isPrimary,
       scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
-      itemCount: children.isEmpty ? 1 : children.length,
-      itemBuilder: (final context, final index) =>
-          children.isNotEmpty ? children[index] : const SizedBox(),
+      itemCount: children.length,
+      itemBuilder: (_, index) => children[index],
     );
   }
 }

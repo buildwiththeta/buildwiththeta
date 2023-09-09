@@ -1,5 +1,4 @@
 import 'package:defer_pointer/defer_pointer.dart';
-import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
@@ -66,8 +65,8 @@ class _NodeBuilderState extends State<NodeBuilder> {
       (widget.state.node.getAttributes[DBKeys.margins] as FMargins? ??
               const FMargins(
                   margins: [0, 0, 0, 0],
-                  marginsTablet: [0, 0, 0, 0],
-                  marginsDesktop: [0, 0, 0, 0]))
+                  marginsTablet: null,
+                  marginsDesktop: null))
           .get(state: state, context: context);
 
   EdgeInsets _handlePadding(TreeState state) {
@@ -79,50 +78,12 @@ class _NodeBuilderState extends State<NodeBuilder> {
       return (widget.state.node.getAttributes[DBKeys.padding] as FMargins? ??
               const FMargins(
                   margins: [0, 0, 0, 0],
-                  marginsTablet: [0, 0, 0, 0],
-                  marginsDesktop: [0, 0, 0, 0]))
+                  marginsTablet: null,
+                  marginsDesktop: null))
           .get(state: state, context: context);
     }
   }
 
-  bool _handleVisibility(TreeState state) {
-    final visibility =
-        widget.state.node.getAttributes[DBKeys.visibility] as bool?;
-    return (visibility == false)
-        ? false
-        : ((visibility ?? true) && state.forPlay)
-            ? _handlePlayVisibility()
-            : _handleNotPlayVisibility(state);
-  }
-
-  bool _handlePlayVisibility() => MediaQuery.of(context).size.width > 1200
-      ? (widget.state.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ??
-          true)
-      : MediaQuery.of(context).size.width > 834
-          ? (widget.state.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ??
-              true)
-          : MediaQuery.of(context).size.width > 600
-              ? (widget.state.node.getAttributes[DBKeys.visibleOnTablet]
-                      as bool? ??
-                  true)
-              : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
-                      as bool? ??
-                  true);
-
-  bool _handleNotPlayVisibility(TreeState state) => state.deviceType ==
-          DeviceType.desktop
-      ? (widget.state.node.getAttributes[DBKeys.visibleOnDesktop] as bool? ??
-          true)
-      : state.deviceType == DeviceType.laptop
-          ? (widget.state.node.getAttributes[DBKeys.visibleOnLaptop] as bool? ??
-              true)
-          : state.deviceType == DeviceType.tablet
-              ? (widget.state.node.getAttributes[DBKeys.visibleOnTablet]
-                      as bool? ??
-                  true)
-              : (widget.state.node.getAttributes[DBKeys.visibleOnMobile]
-                      as bool? ??
-                  true);
   Widget handleSizeRange(TreeState state, Widget child) {
     if (widget.state.node.type == NType.scaffold) {
       return child;
@@ -290,47 +251,44 @@ class _NodeBuilderState extends State<NodeBuilder> {
           onExit: (e) => setState(() {
             clickable = true;
           }),
-          child: Visibility(
-            visible: _handleVisibility(state),
-            child: Padding(
-              padding: _handleMargins(state),
-              child: GestureDetectorInEditor(
-                key: ValueKey(widget.state.node.id + clickable.toString()),
-                node: widget.state.node,
-                clickable: clickable,
-                onTap: widget.onTap,
-                onPanStart: widget.onPanStart,
-                onDoubleTap: () => setState(() {
-                  clickable = false;
-                }),
-                child: DecoratedBox(
-                  decoration: _handleDecorationChange(
-                    state.hoveredNode,
-                    state.focusedNode,
-                    state.focusedNodes,
-                    state.isDeviceCurrentlyFocused,
-                    state.isDeviceCurrentlyHovered,
-                  ),
-                  position: DecorationPosition.foreground,
-                  child: _handleCursor(
-                    widget.state.node,
-                    maybeBounceForSmallWidgets(
-                      Transform.rotate(
-                        angle: _handleRotation(state),
-                        child: Padding(
-                          padding: _handlePadding(state),
-                          child: GestureDetectorForPlay(
-                            state: widget.state,
-                            child: handleSlideAnimation(
+          child: Padding(
+            padding: _handleMargins(state),
+            child: GestureDetectorInEditor(
+              key: ValueKey(widget.state.node.id + clickable.toString()),
+              node: widget.state.node,
+              clickable: clickable,
+              onTap: widget.onTap,
+              onPanStart: widget.onPanStart,
+              onDoubleTap: () => setState(() {
+                clickable = false;
+              }),
+              child: DecoratedBox(
+                decoration: _handleDecorationChange(
+                  state.hoveredNode,
+                  state.focusedNode,
+                  state.focusedNodes,
+                  state.isDeviceCurrentlyFocused,
+                  state.isDeviceCurrentlyHovered,
+                ),
+                position: DecorationPosition.foreground,
+                child: _handleCursor(
+                  widget.state.node,
+                  maybeBounceForSmallWidgets(
+                    Transform.rotate(
+                      angle: _handleRotation(state),
+                      child: Padding(
+                        padding: _handlePadding(state),
+                        child: GestureDetectorForPlay(
+                          state: widget.state,
+                          child: handleSlideAnimation(
+                            widget.state.node,
+                            handleScaleAnimation(
                               widget.state.node,
-                              handleScaleAnimation(
+                              handleFadeInAnimation(
                                 widget.state.node,
-                                handleFadeInAnimation(
-                                  widget.state.node,
-                                  handleSizeRange(
-                                    state,
-                                    widget.child,
-                                  ),
+                                handleSizeRange(
+                                  state,
+                                  widget.child,
                                 ),
                               ),
                             ),

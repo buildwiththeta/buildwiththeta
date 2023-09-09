@@ -177,18 +177,8 @@ class FFill extends Equatable {
     final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
-    FFill fill;
-    if (paletteStyle == null) {
-      fill = FFill(
-        levels: levels,
-        type: type,
-        begin: begin,
-        end: end,
-        center: center,
-        radius: radius,
-        boxFit: boxFit,
-      );
-    } else {
+    FFill fill = this;
+    if (paletteStyle != null) {
       ColorStyleEntity? model;
       for (var element in styles) {
         if (element.id == paletteStyle) model = element;
@@ -201,6 +191,29 @@ class FFill extends Equatable {
           : const FFill().ready(FFillType.solid);
     }
     return fill.levels.first.color.toUpperCase();
+  }
+
+  Color getColor(
+    final BuildContext context,
+    final List<ColorStyleEntity> styles,
+    final ThemeMode themeMode,
+  ) {
+    FFill fill = this;
+    if (paletteStyle != null) {
+      ColorStyleEntity? model;
+      for (var element in styles) {
+        if (element.id == paletteStyle) model = element;
+        if (element.name == paletteStyle) model = element;
+      }
+      fill = (model != null)
+          ? themeMode == ThemeMode.light
+              ? model.light
+              : model.dark
+          : const FFill().ready(FFillType.solid);
+    }
+    final tempOpacity = fill.levels.first.opacity;
+    final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
+    return HexColor(fill.levels.first.color.toUpperCase()).withOpacity(opacity);
   }
 
   /// Set of FFill ready to be used

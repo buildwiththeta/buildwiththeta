@@ -22,12 +22,10 @@ class OpenWFeatherIcon extends Icon {
             context: context,
             isWidth: true,
           ),
-          color: HexColor(
-            fill.getHexColor(
-              context,
-              context.watch<TreeState>().colorStyles,
-              context.watch<TreeState>().theme,
-            ),
+          color: fill.getColor(
+            context,
+            context.watch<TreeState>().colorStyles,
+            context.watch<TreeState>().theme,
           ),
         );
 }

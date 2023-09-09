@@ -69,9 +69,7 @@ class TetaBoxDecoration {
       );
     } else if (fill.paletteStyle != null) {
       return BoxDecoration(
-        color: HexColor(fill
-            .get(context, state.colorStyles, state.theme)
-            .getHexColor(context, state.colorStyles, state.theme)),
+        color: fill.getColor(context, state.colorStyles, state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,

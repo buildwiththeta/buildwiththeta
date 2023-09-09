@@ -39,30 +39,24 @@ class FBorder extends Equatable {
   }) {
     final values =
         width.getList(context, forPlay: forPlay, deviceType: deviceType);
-    final tempOpacity = fill.levels.first.opacity;
-    final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
     return Border(
       left: BorderSide(
-        color: HexColor(fill.getHexColor(context, colorStyles, theme))
-            .withOpacity(opacity),
+        color: fill.getColor(context, colorStyles, theme),
         style: style.value,
         width: values[0],
       ),
       top: BorderSide(
-        color: HexColor(fill.getHexColor(context, colorStyles, theme))
-            .withOpacity(opacity),
+        color: fill.getColor(context, colorStyles, theme),
         style: style.value,
         width: values[1],
       ),
       right: BorderSide(
-        color: HexColor(fill.getHexColor(context, colorStyles, theme))
-            .withOpacity(opacity),
+        color: fill.getColor(context, colorStyles, theme),
         style: style.value,
         width: values[2],
       ),
       bottom: BorderSide(
-        color: HexColor(fill.getHexColor(context, colorStyles, theme))
-            .withOpacity(opacity),
+        color: fill.getColor(context, colorStyles, theme),
         style: style.value,
         width: values[3],
       ),

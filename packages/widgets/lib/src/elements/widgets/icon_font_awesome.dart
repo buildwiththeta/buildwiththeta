@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:font_awesome_flutter_named/font_awesome_flutter_named.dart';
+import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Returns a Icon widget in Teta
@@ -20,12 +20,10 @@ class OpenWFontAwesome extends Icon {
             context: context,
             isWidth: true,
           ),
-          color: HexColor(
-            fill.getHexColor(
-              context,
-              context.watch<TreeState>().colorStyles,
-              context.watch<TreeState>().theme,
-            ),
+          color: fill.getColor(
+            context,
+            context.watch<TreeState>().colorStyles,
+            context.watch<TreeState>().theme,
           ),
         );
 }

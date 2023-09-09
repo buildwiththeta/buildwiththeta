@@ -20,7 +20,8 @@ class OpenWAlign extends Align {
             deviceType: context.watch<TreeState>().deviceType,
           ),
           key: key,
-          child: ChildBuilder(context: context, state: nodeState, child: child),
+          child: ChildBuilder(context: context, state: nodeState, child: child)
+              .build(),
         );
 
   final WidgetState nodeState;

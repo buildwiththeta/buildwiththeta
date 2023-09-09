@@ -54,4 +54,10 @@ dev_dependencies:
   flutter_lints:
   build_runner: any
 
+dependency_overrides: 
+  theta_models:
+    path: ../models
+  theta_open_widgets:
+    path: ../widgets
+
 flutter:

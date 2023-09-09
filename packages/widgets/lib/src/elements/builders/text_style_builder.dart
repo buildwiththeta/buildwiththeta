@@ -32,13 +32,6 @@ class TetaTextStyles {
           state.colorStyles,
           state.theme,
         ));
-    final tempOpacity = finalFill.levels.first.opacity;
-    final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-    final hex = finalFill.getHexColor(
-      context,
-      state.colorStyles,
-      state.theme,
-    );
     final gfonts = GoogleFonts.asMap().entries.map((e) => e.key).toList();
     return !gfonts.contains(model?.fontFamily ?? fontFamily)
         ? TextStyle(
@@ -55,7 +48,11 @@ class TetaTextStyles {
                     deviceType: state.deviceType,
                   ),
             fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
-            color: HexColor(hex).withOpacity(opacity),
+            color: finalFill.getColor(
+              context,
+              state.colorStyles,
+              state.theme,
+            ),
             decoration: textDecoration.textDecoration,
             fontStyle: fontStyle.value,
           )
@@ -73,7 +70,11 @@ class TetaTextStyles {
                     deviceType: state.deviceType,
                   ),
             fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
-            color: HexColor(hex).withOpacity(opacity),
+            color: finalFill.getColor(
+              context,
+              state.colorStyles,
+              state.theme,
+            ),
             decoration: textDecoration.textDecoration,
             fontStyle: fontStyle.value,
           );

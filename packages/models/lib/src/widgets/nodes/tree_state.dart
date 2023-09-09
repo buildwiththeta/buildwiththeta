@@ -106,6 +106,10 @@ class TreeState with ChangeNotifier {
   Map<String, Widget> nodeControls;
   Widget defaultNodeControls;
 
+  void onForPlayChanged(bool value) {
+    forPlay = value;
+  }
+
   void onFocusedDeviceChanged(DeviceType device) {
     isDeviceCurrentlyFocused = device == deviceType;
   }

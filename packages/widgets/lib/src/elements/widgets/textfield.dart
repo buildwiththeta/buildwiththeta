@@ -109,21 +109,6 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
         if (element.name == widget.textStyle.textStyleModel) model = element;
       }
     }
-    final tempOpacity = widget.fill.levels.first.opacity;
-    final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-
-    final tempBorderOpacity = widget.enabledBorderColor.levels.first.opacity;
-    final borderOpacity = tempBorderOpacity >= 0 && tempBorderOpacity <= 1
-        ? tempBorderOpacity
-        : 1.0;
-
-    final tempFocusOpacity = widget.focusedBorderColor.levels.first.opacity;
-    final focusOpacity =
-        tempFocusOpacity >= 0 && tempFocusOpacity <= 1 ? tempFocusOpacity : 1.0;
-
-    final tempHintOpacity = widget.hintTextColor.levels.first.opacity;
-    final hintOpacity =
-        tempHintOpacity >= 0 && tempHintOpacity <= 1 ? tempHintOpacity : 1.0;
     return Center(
       child: Container(
         decoration: BoxDecoration(
@@ -155,17 +140,17 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
           controller: textEditingController,
           decoration: InputDecoration(
             filled: true,
-            fillColor: HexColor(widget.fill.getHexColor(
+            fillColor: widget.fill.getColor(
               context,
               state.colorStyles,
               state.theme,
-            )).withOpacity(opacity),
+            ),
             counterStyle: TextStyle(
-              color: HexColor(widget.fill.getHexColor(
+              color: widget.fill.getColor(
                 context,
                 state.colorStyles,
                 state.theme,
-              )).withOpacity(opacity),
+              ),
             ),
             border: OutlineInputBorder(
               borderRadius: borderRadius,
@@ -173,14 +158,10 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: widget.showBorders
-                    ? HexColor(
-                        widget.enabledBorderColor.getHexColor(
-                          context,
-                          state.colorStyles,
-                          state.theme,
-                        ),
-                      ).withOpacity(
-                        borderOpacity,
+                    ? widget.enabledBorderColor.getColor(
+                        context,
+                        state.colorStyles,
+                        state.theme,
                       )
                     : Colors.transparent,
                 width: double.tryParse(
@@ -197,14 +178,10 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: widget.showBorders
-                    ? HexColor(
-                        widget.focusedBorderColor.getHexColor(
-                          context,
-                          state.colorStyles,
-                          state.theme,
-                        ),
-                      ).withOpacity(
-                        focusOpacity,
+                    ? widget.focusedBorderColor.getColor(
+                        context,
+                        state.colorStyles,
+                        state.theme,
                       )
                     : Colors.transparent,
                 width: double.tryParse(
@@ -224,14 +201,10 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               context: context,
             ),
             hintStyle: TextStyle(
-              color: HexColor(
-                widget.hintTextColor.getHexColor(
-                  context,
-                  state.colorStyles,
-                  state.theme,
-                ),
-              ).withOpacity(
-                hintOpacity,
+              color: widget.hintTextColor.getColor(
+                context,
+                state.colorStyles,
+                state.theme,
               ),
             ),
             contentPadding: widget.contentPadding.get(

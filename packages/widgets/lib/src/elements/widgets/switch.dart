@@ -60,47 +60,35 @@ class _WSwitchState extends State<OpenWSwitch> {
             executer.execute(Trigger.onChange, value);
           }
         },
-        activeColor: HexColor(
-          widget.activeColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        activeColor: widget.activeColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
-        activeTrackColor: HexColor(
-          widget.activeTrackColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        activeTrackColor: widget.activeTrackColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
-        inactiveThumbColor: HexColor(
-          widget.inactiveThumbColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        inactiveThumbColor: widget.inactiveThumbColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
-        inactiveTrackColor: HexColor(
-          widget.inactiveTrackColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        inactiveTrackColor: widget.inactiveTrackColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
-        focusColor: HexColor(
-          widget.focusColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        focusColor: widget.focusColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
-        hoverColor: HexColor(
-          widget.hoverColor.getHexColor(
-            context,
-            state.colorStyles,
-            state.theme,
-          ),
+        hoverColor: widget.hoverColor.getColor(
+          context,
+          state.colorStyles,
+          state.theme,
         ),
       ),
     );

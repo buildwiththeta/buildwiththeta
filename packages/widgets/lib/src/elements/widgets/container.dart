@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/index.dart';
-import 'package:theta_models/theta_models.dart';
 
 /// Returns a Container widget
 /// It requires a [width] and [height] for the width and height properties
@@ -27,7 +27,8 @@ class OpenWContainer extends Container {
     required final FBorder borders,
     required final FShadow shadows,
   }) : super(
-          child: ChildBuilder(context: context, state: state, child: child),
+          child: ChildBuilder(context: context, state: state, child: child)
+              .build(),
           width: width.get(
             state: context.watch<TreeState>(),
             context: context,
