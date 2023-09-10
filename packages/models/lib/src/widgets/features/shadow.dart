@@ -31,7 +31,7 @@ class FShadow extends Equatable {
 
   BoxShadow get(BuildContext context, ColorStyles colors, ThemeMode theme) =>
       BoxShadow(
-        color: HexColor(fill.getHexColor(context, colors, theme))
+        color: HexColor(fill.getHexColor(colors, theme))
             .withOpacity(double.parse(opacity.size)),
         blurRadius: double.parse(blur.value ?? '0'),
         offset: Offset(

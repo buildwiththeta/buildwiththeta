@@ -4,8 +4,6 @@
 import 'package:equatable/equatable.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:recase/recase.dart';
 // Project imports:
 import 'package:theta_models/theta_models.dart';
 
@@ -106,38 +104,6 @@ class FTextStyle extends Equatable {
   ///   fontStyle: FontStyle.normal,
   ///   decoration: TextDecoration.none,
   /// ),
-
-  String toCodeTextStyleOnly(
-      BuildContext context, TextStyles textStyles, ColorStyles colorStyles) {
-    TextStyleEntity? model;
-    if (textStyleModel != null) {
-      for (var element in textStyles) {
-        if (element.name == textStyleModel) model = element;
-      }
-    }
-
-    final rc = ReCase(model?.fontFamily ?? fontFamily);
-    final size = (model?.fontSize ?? fontSize).toCode();
-    final weight = (model?.fontWeight ?? fontWeight).toCode();
-    final style = fontStyle.toCode();
-    final decoration = textDecoration.toCode();
-
-    return '''
-    style: GoogleFonts.${rc.camelCase}(
-      textStyle: TextStyle(
-        ${FFill.toCode(
-      fill,
-      context,
-      colorStyles: colorStyles,
-    )}
-        fontWeight: $weight,
-        fontSize: $size,
-        fontStyle: $style,
-        decoration: $decoration,
-      ),
-    ),
-    ''';
-  }
 
   FTextStyle copyWith({
     FFill? fill,

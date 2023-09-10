@@ -24,21 +24,28 @@ class TextBuilder extends StatelessWidget {
   final FTextStyle textStyle;
 
   @override
-  Widget build(final BuildContext context) {
+  Widget build(BuildContext context) {
     final TreeState state = context.watch<TreeState>();
     final model = state.textStyles.firstWhereOrNull(
         (element) => element.name == textStyle.textStyleModel);
     final maxLinesValue = maxLines?.get(
       loop: nodeState.loop,
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
     );
     var intValue = int.tryParse(maxLinesValue ?? '');
     if (intValue != null && intValue <= 0) {
       intValue = 1;
     }
-    final data = const NodeOverrideExecuter().executeText(context, nodeState,
-        value.get(loop: nodeState.loop, state: state, context: context));
+    final data = const NodeOverrideExecuter().executeText(
+        context,
+        nodeState,
+        value.get(
+            loop: nodeState.loop,
+            deviceType: state.deviceType,
+            forPlay: state.forPlay,
+            context: context));
     return Text(
       data,
       style: TetaTextStyles.get(

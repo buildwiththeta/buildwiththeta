@@ -32,22 +32,26 @@ class OpenWGridView extends NodeWidget {
   Widget build(final BuildContext context, final TreeState state,
       final WidgetState nodeState) {
     final crossAxisCountString = crossAxisCount.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );
     final mainAxisSpacingString = mainAxisSpacing.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );
     final crossAxisSpacingString = crossAxisSpacing.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );
     final childAspectRatioString = childAspectRatio.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );

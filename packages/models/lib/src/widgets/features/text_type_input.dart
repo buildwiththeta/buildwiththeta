@@ -1,7 +1,6 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:theta_models/theta_models.dart';
 
 /// Set of func to use text string in Teta's widgets
 enum FTextTypeEnum { text, imageUrl, combined, languages }
@@ -29,12 +28,14 @@ class FTextTypeInput {
 
   /// Returns value for texts
   String get({
-    required final TreeState state,
+    required final DeviceType deviceType,
+    required final bool forPlay,
     required final BuildContext context,
     required final int loop,
   }) =>
       calc(
-        state: state,
+        deviceType: deviceType,
+        forPlay: forPlay,
         loop: loop,
         placeholder: '',
         context: context,
@@ -42,20 +43,23 @@ class FTextTypeInput {
 
   /// Returns value for images
   dynamic getImage({
-    required final TreeState state,
+    required final DeviceType deviceType,
+    required final bool forPlay,
     required final BuildContext context,
     required final int loop,
   }) =>
       calc(
         loop: loop,
-        state: state,
+        deviceType: deviceType,
+        forPlay: forPlay,
         placeholder: 'https://source.unsplash.com/random',
         context: context,
       );
 
   /// Returns the value calculated based on params, states and dataset
   dynamic calc({
-    required final TreeState state,
+    required final DeviceType deviceType,
+    required final bool forPlay,
     required final String placeholder,
     required final BuildContext context,
     required final int loop,
@@ -66,14 +70,15 @@ class FTextTypeInput {
         string.write(
           element.get(
             loop: loop,
-            state: state,
+            deviceType: deviceType,
+            forPlay: forPlay,
             context: context,
           ),
         );
       }
       return string.toString();
     }
-    if (state.forPlay) {
+    if (forPlay) {
       final width = MediaQuery.of(context).size.width;
       if (width < 600) {
         return value ?? '';
@@ -85,11 +90,11 @@ class FTextTypeInput {
         return valueDesktop != '' ? valueDesktop ?? value ?? '' : value ?? '';
       }
     } else {
-      if (state.deviceType == DeviceType.phone) {
+      if (deviceType == DeviceType.phone) {
         return value ?? '';
-      } else if (state.deviceType == DeviceType.tablet) {
+      } else if (deviceType == DeviceType.tablet) {
         return valueTablet != '' ? valueTablet ?? value ?? '' : value ?? '';
-      } else if (state.deviceType == DeviceType.laptop) {
+      } else if (deviceType == DeviceType.laptop) {
         return valueLaptop != ''
             ? valueLaptop ??
                 (valueDesktop != '' ? valueDesktop : value) ??

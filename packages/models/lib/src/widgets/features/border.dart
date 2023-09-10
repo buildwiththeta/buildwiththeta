@@ -1,7 +1,6 @@
 // Flutter imports:
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
@@ -41,22 +40,22 @@ class FBorder extends Equatable {
         width.getList(context, forPlay: forPlay, deviceType: deviceType);
     return Border(
       left: BorderSide(
-        color: fill.getColor(context, colorStyles, theme),
+        color: fill.getColor(colorStyles, theme),
         style: style.value,
         width: values[0],
       ),
       top: BorderSide(
-        color: fill.getColor(context, colorStyles, theme),
+        color: fill.getColor(colorStyles, theme),
         style: style.value,
         width: values[1],
       ),
       right: BorderSide(
-        color: fill.getColor(context, colorStyles, theme),
+        color: fill.getColor(colorStyles, theme),
         style: style.value,
         width: values[2],
       ),
       bottom: BorderSide(
-        color: fill.getColor(context, colorStyles, theme),
+        color: fill.getColor(colorStyles, theme),
         style: style.value,
         width: values[3],
       ),
@@ -103,44 +102,5 @@ class FBorder extends Equatable {
       width: width ?? this.width,
       style: style ?? this.style,
     );
-  }
-
-  /// Export code String
-  String toCode(
-      final BuildContext context, final List<ColorStyleEntity> colorStyles) {
-    if (listEquals(width.margins, width.marginsTablet ?? width.margins) &&
-        listEquals(width.margins, width.marginsDesktop ?? width.margins)) {
-      return _valueToCode(width.margins!, context, colorStyles);
-    }
-
-    return '''
-getValueForScreenType<Border>(
-  context: context,
-  mobile: ${_valueToCode(width.margins!, context, colorStyles)},
-  tablet: ${_valueToCode(width.marginsTablet ?? width.margins!, context, colorStyles)},
-  desktop: ${_valueToCode(width.marginsDesktop ?? width.margins!, context, colorStyles)},
-)
-''';
-  }
-
-  String _valueToCode(final List<double> values, final BuildContext context,
-      final List<ColorStyleEntity> colorStyles) {
-    final color = FFill.toCode(fill, context, colorStyles: colorStyles);
-    // if (style?.get != BorderStyle.none) return '';
-    if (values.indexWhere((final element) => element != 0) == -1) {
-      return 'null';
-    }
-    return '''
-    Border(
-      left:
-          BorderSide(width: ${values[0]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      top:
-          BorderSide(width: ${values[1]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      right:
-          BorderSide(width: ${values[2]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-      bottom:
-          BorderSide(width: ${values[3]}, ${style.value != BorderStyle.solid ? 'style: ${style.toCode()},' : ''} $color),
-    )
-  ''';
   }
 }

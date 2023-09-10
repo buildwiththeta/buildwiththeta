@@ -79,7 +79,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
   FutureOr<void> afterFirstLayout(final BuildContext context) {
     final state = context.read<TreeState>();
     final valueInput = widget.value.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       loop: widget.state.loop,
       context: context,
     );
@@ -91,7 +92,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
     final state = context.watch<TreeState>();
     if (!state.forPlay) {
       final valueInput = widget.value.get(
-        state: state,
+        deviceType: state.deviceType,
+        forPlay: state.forPlay,
         loop: widget.state.loop,
         context: context,
       );
@@ -141,13 +143,11 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
           decoration: InputDecoration(
             filled: true,
             fillColor: widget.fill.getColor(
-              context,
               state.colorStyles,
               state.theme,
             ),
             counterStyle: TextStyle(
               color: widget.fill.getColor(
-                context,
                 state.colorStyles,
                 state.theme,
               ),
@@ -159,14 +159,14 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               borderSide: BorderSide(
                 color: widget.showBorders
                     ? widget.enabledBorderColor.getColor(
-                        context,
                         state.colorStyles,
                         state.theme,
                       )
                     : Colors.transparent,
                 width: double.tryParse(
                       widget.bordersSize.get(
-                        state: state,
+                        deviceType: state.deviceType,
+                        forPlay: state.forPlay,
                         loop: widget.state.loop,
                         context: context,
                       ),
@@ -179,14 +179,14 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               borderSide: BorderSide(
                 color: widget.showBorders
                     ? widget.focusedBorderColor.getColor(
-                        context,
                         state.colorStyles,
                         state.theme,
                       )
                     : Colors.transparent,
                 width: double.tryParse(
                       widget.bordersSize.get(
-                        state: state,
+                        deviceType: state.deviceType,
+                        forPlay: state.forPlay,
                         loop: widget.state.loop,
                         context: context,
                       ),
@@ -196,13 +196,13 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               borderRadius: borderRadius,
             ),
             hintText: widget.labelText.get(
-              state: state,
+              deviceType: state.deviceType,
+              forPlay: state.forPlay,
               loop: widget.state.loop,
               context: context,
             ),
             hintStyle: TextStyle(
               color: widget.hintTextColor.getColor(
-                context,
                 state.colorStyles,
                 state.theme,
               ),
@@ -230,14 +230,16 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
           obscureText: widget.obscureText,
           maxLength: int.tryParse(
             widget.maxLenght.get(
-              state: state,
+              deviceType: state.deviceType,
+              forPlay: state.forPlay,
               loop: widget.state.loop,
               context: context,
             ),
           ),
           maxLines: int.tryParse(
                 widget.maxLines.get(
-                  state: state,
+                  deviceType: state.deviceType,
+                  forPlay: state.forPlay,
                   loop: widget.state.loop,
                   context: context,
                 ),
@@ -245,7 +247,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               1,
           minLines: int.tryParse(
             widget.minLines.get(
-              state: state,
+              deviceType: state.deviceType,
+              forPlay: state.forPlay,
               loop: widget.state.loop,
               context: context,
             ),

@@ -49,7 +49,6 @@ class TetaTextStyles {
                   ),
             fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
             color: finalFill.getColor(
-              context,
               state.colorStyles,
               state.theme,
             ),
@@ -71,7 +70,6 @@ class TetaTextStyles {
                   ),
             fontWeight: (model != null) ? model.fontWeight.get : fontWeight.get,
             color: finalFill.getColor(
-              context,
               state.colorStyles,
               state.theme,
             ),

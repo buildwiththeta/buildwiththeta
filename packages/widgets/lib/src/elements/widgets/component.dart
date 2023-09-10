@@ -3,7 +3,6 @@
 
 // Package imports:
 
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
@@ -26,7 +25,7 @@ class OpenWComponent extends StatefulWidget {
 }
 
 class _OpenWComponentState extends State<OpenWComponent> {
-  late List<CNode> componentChildren;
+  List<CNode> componentChildren = [];
 
   @override
   void initState() {
@@ -37,7 +36,7 @@ class _OpenWComponentState extends State<OpenWComponent> {
   @override
   Widget build(BuildContext context) {
     if (componentChildren.isEmpty) {
-      return const Placeholder();
+      return const SizedBox.shrink();
     }
     const NodeRendering nodeRendering = NodeRendering();
     final widget0 = nodeRendering.renderTree(componentChildren);
@@ -53,27 +52,32 @@ class _OpenWComponentState extends State<OpenWComponent> {
             ...globalState.nodeOverrides,
             ...widget.state.node.getAttributes[DBKeys.overrides]
           ]),
-      child: NodeBuilder(
-        onHover: () {
-          context.read<TreeGlobalState>().onNodeHovered(
-              widget.state.node, context.read<TreeState>().deviceType);
-        },
+      child: GestureDetector(
         onTap: () {
-          context.read<TreeGlobalState>().onNodeFocused(
-              widget.state.node, context.read<TreeState>().deviceType);
-          setState(() {});
+          //* MISSING IMPLEMENTATION OF DOUBLE CLICK FOR CHANGING PAGE
         },
-        onPanStart: () {
-          context.read<TreeGlobalState>().onNodeFocused(
-              widget.state.node, context.read<TreeState>().deviceType);
-          setState(() {});
-        },
-        state: widget.state,
-        child: IgnorePointer(
-          ignoring: !globalState.forPlay,
-          child: widget0.toWidget(
-            context: context,
-            state: WidgetState(node: widget0, loop: 0),
+        child: NodeBuilder(
+          onHover: () {
+            context.read<TreeGlobalState>().onNodeHovered(
+                widget.state.node, context.read<TreeState>().deviceType);
+          },
+          onTap: () {
+            context.read<TreeGlobalState>().onNodeFocused(
+                widget.state.node, context.read<TreeState>().deviceType);
+            setState(() {});
+          },
+          onPanStart: () {
+            context.read<TreeGlobalState>().onNodeFocused(
+                widget.state.node, context.read<TreeState>().deviceType);
+            setState(() {});
+          },
+          state: widget.state,
+          child: IgnorePointer(
+            ignoring: !globalState.forPlay,
+            child: widget0.toWidget(
+              context: context,
+              state: WidgetState(node: widget0, loop: 0),
+            ),
           ),
         ),
       ),

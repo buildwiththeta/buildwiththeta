@@ -43,7 +43,8 @@ class _WTextState extends State<OpenWText> with AfterLayoutMixin {
 
     /// Set the text controller to the value
     _controller.text = widget.value.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       loop: widget.state.loop,
       context: context,
     );

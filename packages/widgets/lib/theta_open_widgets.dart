@@ -11,14 +11,12 @@ export './src/reflectable/index.dart';
 class ThetaOpenWidgets {
   static final ThetaOpenWidgets _instance = ThetaOpenWidgets._();
 
-  static ThetaOpenWidgets get I => instance;
-
   static ThetaOpenWidgets get instance => _instance;
 
   ThetaOpenWidgets._();
 
   static Future<void> initialize() async {
     await theta_models.loadLibrary();
-    await theta_models.ThetaModels.initialize();
+    theta_models.ThetaModels.initialize();
   }
 }

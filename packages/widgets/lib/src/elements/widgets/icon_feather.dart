@@ -23,7 +23,6 @@ class OpenWFeatherIcon extends Icon {
             isWidth: true,
           ),
           color: fill.getColor(
-            context,
             context.watch<TreeState>().colorStyles,
             context.watch<TreeState>().theme,
           ),

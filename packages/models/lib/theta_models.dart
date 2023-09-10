@@ -16,13 +16,11 @@ export './src/widgets/nodes/index.dart';
 class ThetaModels {
   static final ThetaModels _instance = ThetaModels._internal();
 
-  static ThetaModels get I => instance;
-
   static ThetaModels get instance => _instance;
 
   ThetaModels._internal();
 
-  static Future<void> initialize() async {
+  static void initialize() {
     try {
       WidgetsFlutterBinding.ensureInitialized();
     } catch (e) {

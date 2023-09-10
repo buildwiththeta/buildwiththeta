@@ -47,6 +47,15 @@ class FFillElement extends Equatable {
   /// [int] value for gradients
   final double stop;
 
+  Color getLevelColor(
+    final List<ColorStyleEntity> styles,
+    final ThemeMode themeMode,
+  ) {
+    final tempOpacity = this.opacity;
+    final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
+    return HexColor(this.color.toUpperCase()).withOpacity(opacity);
+  }
+
   @override
   List<Object?> get props => [
         color,
@@ -173,7 +182,6 @@ class FFill extends Equatable {
   /// Includes PaletteStyle checks.
   /// String is uppercased.
   String getHexColor(
-    final BuildContext context,
     final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
@@ -194,7 +202,6 @@ class FFill extends Equatable {
   }
 
   Color getColor(
-    final BuildContext context,
     final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
@@ -415,122 +422,6 @@ class FFill extends Equatable {
     if (type == FFillType.image) return 'FFillType.image';
     if (type == FFillType.none) return 'FFillType.none';
     return 'null';
-  }
-
-  static String? toCode(
-    final FFill fill,
-    final BuildContext context, {
-    final bool? flagConst,
-    required final List<ColorStyleEntity> colorStyles,
-  }) {
-    ColorStyleEntity? currentPaletteElement;
-
-    for (final e in colorStyles) {
-      if (e.id == fill.paletteStyle || e.name == fill.paletteStyle) {
-        currentPaletteElement = e;
-      }
-    }
-
-    if (fill.type == FFillType.none) return null;
-
-    if (fill.paletteStyle != null) {
-      if (currentPaletteElement != null) {
-        return "color: BlocProvider.of<ThemeCubit>(context).getColor('${currentPaletteElement.name}'),";
-      } else {
-        return 'color: Colors.black,';
-      }
-    }
-
-    if (fill.type == FFillType.solid) {
-      final tempOpacity = fill.levels.first.opacity;
-      final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-      return 'color: ${flagConst ?? false ? 'const' : ''} Color(0xFF${fill.getHexColor(context, colorStyles, ThemeMode.light)}).withOpacity($opacity),';
-    }
-    if (fill.type == FFillType.linearGradient) {
-      return '''
-      gradient: LinearGradient(
-        begin: ${fill.begin},
-        end: ${fill.end},
-        colors: <Color>${fill.levels.map((final e) {
-        final tempOpacity = e.opacity;
-        final opacity =
-            tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-        return 'Color(0xFF${e.color.toUpperCase()}).withOpacity($opacity)';
-      }).toList()},
-        stops: ${fill.levels.map((final e) => e.stop).toList()},
-      ),''';
-    }
-    if (fill.type == FFillType.radialGradient) {
-      return '''
-      gradient: RadialGradient(
-        center: ${fill.center},
-        radius: ${fill.radius},
-        colors: <Color>${fill.levels.map((final e) {
-        final tempOpacity = e.opacity;
-        final opacity =
-            tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-        return 'Color(0xFF${e.color.toUpperCase()}).withOpacity($opacity)';
-      }).toList()},
-        stops: ${fill.levels.map((final e) => e.stop).toList()},
-      ),''';
-    }
-    if (fill.type == FFillType.image) {
-      return '''
-        image: DecorationImage(
-          image: NetworkImage(${fill.levels.first.color}), 
-          fit: ${fill.boxFit!.toCode()}
-        )
-      ''';
-    }
-    return null;
-  }
-
-  static String? toCodeTests(
-    final FFill fill,
-  ) {
-    if (fill.type == FFillType.none) return null;
-    if (fill.type == FFillType.solid) {
-      final tempOpacity = fill.levels.first.opacity;
-      final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-      return 'color: Color(0xFF${fill.levels.first.color}).withOpacity($opacity),';
-    }
-    if (fill.type == FFillType.linearGradient) {
-      return '''
-      gradient: LinearGradient(
-        begin: ${fill.begin},
-        end: ${fill.end},
-        colors: <Color>${fill.levels.map((final e) {
-        final tempOpacity = e.opacity;
-        final opacity =
-            tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-        return 'Color(0xFF${e.color.toUpperCase()}).withOpacity($opacity)';
-      }).toList()},
-        stops: ${fill.levels.map((final e) => e.stop).toList()},
-      ),''';
-    }
-    if (fill.type == FFillType.radialGradient) {
-      return '''
-      gradient: RadialGradient(
-        center: ${fill.center},
-        radius: ${fill.radius},
-        colors: <Color>${fill.levels.map((final e) {
-        final tempOpacity = e.opacity;
-        final opacity =
-            tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-        return 'Color(0xFF${e.color.toUpperCase()}).withOpacity($opacity)';
-      }).toList()},
-        stops: ${fill.levels.map((final e) => e.stop).toList()},
-      ),''';
-    }
-    if (fill.type == FFillType.image) {
-      return '''
-        image: DecorationImage(
-          image: NetworkImage('${fill.levels.first.color}'), 
-          fit: ${fill.boxFit!.toCode()}
-        ),
-      ''';
-    }
-    return null;
   }
 
   @override

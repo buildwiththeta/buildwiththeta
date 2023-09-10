@@ -37,7 +37,8 @@ class OpenWImage extends StatelessWidget {
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
     final img = image.getImage(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     ) as String;

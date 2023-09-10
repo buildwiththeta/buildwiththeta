@@ -37,14 +37,16 @@ class OpenWCondition extends NodeWidget {
 
     /// Get the first firstValue to compare
     final firstValue = firstValueToCompare.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );
 
     /// Get the second firstValue to compare
     final secondValue = secondValueToCompare.get(
-      state: state,
+      deviceType: state.deviceType,
+      forPlay: state.forPlay,
       context: context,
       loop: nodeState.loop,
     );
