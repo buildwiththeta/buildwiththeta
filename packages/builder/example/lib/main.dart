@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                '49610277-0c49-4d1f-96bf-51c7542ca6ba',
+                '',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                'node id',
+                'b7f70796-1638-45a0-881a-fbbe914e60fb',
                 text: 'Click me!',
                 color: Colors.blue,
               ),
@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> {
             /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
             workflows: [
               Workflow(
-                'node id',
+                'b7f70796-1638-45a0-881a-fbbe914e60fb',
                 Trigger.onMouseEnter,
                 (dynamic) => debugPrint('Hovered!'),
               ),
@@ -110,7 +110,7 @@ class _MyAppState extends State<MyApp> {
                 (dynamic) => debugPrint('Not hovered!'),
               ),
               Workflow(
-                '49610277-0c49-4d1f-96bf-51c7542ca6ba',
+                'node id',
                 Trigger.onTap,
                 (dynamic) => debugPrint('Tapped!'),
               ),
