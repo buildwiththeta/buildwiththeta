@@ -1,3 +1,7 @@
+## 0.7.4
+
+- [x] - Update Workflow with an optional callback value (for onChange, etc.)
+
 ## 0.7.3
 
 - [x] Remove unused dependencies.

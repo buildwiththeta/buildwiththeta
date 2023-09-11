@@ -1,3 +1,7 @@
+## 0.8.5
+
+- [x] Feat: callback value in Workflows.
+
 ## 0.8.4
 
 - [x] Feat: Dart 2 compatible.

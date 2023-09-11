@@ -10,7 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["AppBar"],
+    componentsNames: ["Disney"],
   );
 
   runApp(const MyApp());
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'AppBar',
+            'Disney',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                'b7f70796-1638-45a0-881a-fbbe914e60fb',
+                'node id',
                 text: 'Click me!',
                 color: Colors.blue,
               ),
@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> {
             /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
             workflows: [
               Workflow(
-                'b7f70796-1638-45a0-881a-fbbe914e60fb',
+                'node id',
                 Trigger.onMouseEnter,
                 (dynamic) => debugPrint('Hovered!'),
               ),

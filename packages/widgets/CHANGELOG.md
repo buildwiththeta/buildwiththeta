@@ -1,3 +1,8 @@
+## 0.7.6
+
+- [x] Feat: models to 0.7.4
+- [x] Feat: new TextBuilder
+
 ## 0.7.5
 
 - [x] Feat: provider to 6.0.4

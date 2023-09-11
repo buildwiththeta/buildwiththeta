@@ -1,3 +1,7 @@
+## 0.3.2
+
+- [x] Fix primary button and textfield height
+
 ## 0.3.1
 
 - [x] Dart 2-3 compatible.
