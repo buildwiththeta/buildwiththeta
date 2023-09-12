@@ -42,7 +42,7 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
       return state.deviceInfo;
     }
     final screenSize = MediaQuery.of(context).size;
-    if (screenSize.width <= Devices.ios.iPhone13ProMax.screenSize.width) {
+    if (screenSize.width <= 400) {
       return Devices.ios.iPhone13;
     } else if (screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
