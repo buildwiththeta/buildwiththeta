@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
-import 'package:theta_open_widgets/src/elements/widgets/cta/index.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/elements/widgets/cta/index.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 enum SocialButtonType {
   apple,
@@ -46,12 +46,16 @@ class OpenWSocialButton extends NodeWidget {
       width: width.get(
         context: context,
         isWidth: true,
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
       ),
       height: height.get(
         context: context,
         isWidth: false,
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
       ),
       child: Builder(
         builder: (final BuildContext context) {

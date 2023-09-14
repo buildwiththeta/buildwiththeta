@@ -86,7 +86,12 @@ class ColumnDefaultAttributes extends DefaultAttributesAdapter {
           direction: Axis.vertical,
           directionTablet: Axis.vertical,
           directionDesktop: Axis.vertical,
-        )
+        ),
+        DBKeys.spacing: FSize(
+          size: '16',
+          sizeTablet: '',
+          sizeDesktop: '',
+        ),
       };
   ColumnDefaultAttributes.create() : this();
 }
@@ -110,7 +115,12 @@ class RowDefaultAttributes extends DefaultAttributesAdapter {
           direction: Axis.horizontal,
           directionTablet: Axis.horizontal,
           directionDesktop: Axis.horizontal,
-        )
+        ),
+        DBKeys.spacing: FSize(
+          size: '16',
+          sizeTablet: '',
+          sizeDesktop: '',
+        ),
       };
   RowDefaultAttributes.create() : this();
 }

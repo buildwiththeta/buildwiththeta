@@ -3,7 +3,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
-import 'package:theta_models/theta_models.dart';
 
 enum SizeUnit {
   pixel,
@@ -34,7 +33,9 @@ class FSize extends Equatable {
       const FSize(size: '0', sizeTablet: null, sizeDesktop: null);
 
   double? get({
-    required final TreeState state,
+    required final bool forPlay,
+    required final frame.DeviceType deviceType,
+    required final frame.DeviceInfo deviceInfo,
     required final BuildContext context,
     required final bool isWidth,
   }) {
@@ -45,7 +46,7 @@ class FSize extends Equatable {
         inEditor = true;
       }
     }
-    if (state.forPlay && !inEditor) {
+    if (forPlay && !inEditor) {
       final width = MediaQuery.of(context).size.width;
       if (width < 600) {
         sizeValue = size;
@@ -55,9 +56,9 @@ class FSize extends Equatable {
         sizeValue = sizeDesktop ?? size;
       }
     } else {
-      if (state.deviceType == frame.DeviceType.phone) {
+      if (deviceType == frame.DeviceType.phone) {
         sizeValue = size;
-      } else if (state.deviceType == frame.DeviceType.tablet) {
+      } else if (deviceType == frame.DeviceType.tablet) {
         sizeValue = sizeTablet ?? size;
       } else {
         sizeValue = sizeDesktop ?? size;
@@ -75,7 +76,7 @@ class FSize extends Equatable {
     final temp = sizeValue.replaceAll('%', '');
     final value = double.tryParse(temp) ?? 0;
     if (sizeValue.contains('%')) {
-      if (state.forPlay && !inEditor) {
+      if (forPlay && !inEditor) {
         if (isWidth) {
           return MediaQuery.of(context).size.width * (value / 100);
         } else {
@@ -83,16 +84,16 @@ class FSize extends Equatable {
         }
       } else {
         if (isWidth) {
-          final side = state.deviceType != frame.DeviceType.phone &&
-                  state.deviceType != frame.DeviceType.tablet
+          final side = deviceType != frame.DeviceType.phone &&
+                  deviceType != frame.DeviceType.tablet
               ? 1920
-              : state.deviceInfo.screenSize.width;
+              : deviceInfo.screenSize.width;
           return side * (value / 100);
         } else {
-          final side = state.deviceType != frame.DeviceType.phone &&
-                  state.deviceType != frame.DeviceType.tablet
+          final side = deviceType != frame.DeviceType.phone &&
+                  deviceType != frame.DeviceType.tablet
               ? 1080
-              : state.deviceInfo.screenSize.height;
+              : deviceInfo.screenSize.height;
           return side * (value / 100);
         }
       }

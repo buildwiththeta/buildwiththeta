@@ -18,7 +18,9 @@ class OpenWFeatherIcon extends Icon {
   }) : super(
           FeatherIconsMap[icon],
           size: width.get(
-            state: context.watch<TreeState>(),
+            forPlay: context.watch<TreeState>().forPlay,
+            deviceType: context.watch<TreeState>().deviceType,
+            deviceInfo: context.watch<TreeState>().deviceInfo,
             context: context,
             isWidth: true,
           ),

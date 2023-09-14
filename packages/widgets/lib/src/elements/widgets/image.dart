@@ -68,12 +68,16 @@ class OpenWImage extends StatelessWidget {
         ],
       ),
       width: width.get(
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
         context: context,
         isWidth: true,
       ),
       height: height.get(
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
         context: context,
         isWidth: false,
       ),

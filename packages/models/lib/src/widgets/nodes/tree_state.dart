@@ -44,10 +44,14 @@ class TreeState with ChangeNotifier {
     this.isDeviceCurrentlyHovered = true,
     this.nodeControls = const {},
     this.defaultNodeControls = const SizedBox.shrink(),
+    this.devMode = false,
   });
 
   /// Are we in Play Mode?
   bool forPlay;
+
+  /// Are we in Dev Mode?
+  bool devMode;
 
   /// The page id
   PageID pageId;
@@ -108,6 +112,10 @@ class TreeState with ChangeNotifier {
 
   void onForPlayChanged(bool value) {
     forPlay = value;
+  }
+
+  void onDevModeChanged(bool value) {
+    devMode = value;
   }
 
   void onFocusedDeviceChanged(DeviceType device) {

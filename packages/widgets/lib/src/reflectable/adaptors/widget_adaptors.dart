@@ -73,6 +73,8 @@ class ColumnAdapter extends WidgetAdapter {
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
         direction: state.node.getAttributes[DBKeys.direction] as FDirection,
+        spacing: state.node.getAttributes[DBKeys.spacing] as FSize? ??
+            const FSize(size: '0', sizeTablet: '', sizeDesktop: ''),
       );
 
   ColumnAdapter.create() : this();
@@ -260,6 +262,8 @@ class RowAdapter extends WidgetAdapter {
         mainAxisSize:
             state.node.getAttributes[DBKeys.mainAxisSize] as FMainAxisSize,
         direction: state.node.getAttributes[DBKeys.direction] as FDirection,
+        spacing: state.node.getAttributes[DBKeys.spacing] as FSize? ??
+            const FSize(size: '0', sizeTablet: '', sizeDesktop: ''),
       );
 
   RowAdapter.create() : this();

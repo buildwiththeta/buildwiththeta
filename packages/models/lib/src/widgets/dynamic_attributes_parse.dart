@@ -83,6 +83,7 @@ class DynamicAttributes {
         case DBKeys.widthFactor:
         case DBKeys.height:
         case DBKeys.heightFactor:
+        case DBKeys.spacing:
           return FSize.fromJson(value);
         case DBKeys.textAlign:
           return FTextAlign.fromJson(value);

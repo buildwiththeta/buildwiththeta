@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 /// Returns a Lottie widget
 /// It wants a [FTextTypeInput] as a tag
@@ -44,12 +44,16 @@ class OpenWLottie extends NodeWidget {
           ? image.value!
           : 'https://assets10.lottiefiles.com/packages/lf20_ptplezpy.json',
       width: width.get(
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
         context: context,
         isWidth: true,
       ),
       height: height.get(
-        state: state,
+        forPlay: state.forPlay,
+        deviceType: state.deviceType,
+        deviceInfo: state.deviceInfo,
         context: context,
         isWidth: false,
       ),

@@ -1,5 +1,6 @@
 // Flutter imports:
 
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -19,14 +20,66 @@ class OpenWColumn extends Flex {
     required final FCrossAxisAlignment crossAxisAlignment,
     required final FMainAxisSize mainAxisSize,
     required final FDirection direction,
+    required final FSize spacing,
   }) : super(
           direction: direction.get(
                 state: context.watch<TreeState>(),
                 context: context,
               ) ??
               Axis.vertical,
-          children: const NodeOverrideExecuter()
-              .executeChildren(context, state, children),
+          children: spacing.get(
+                      forPlay: context.watch<TreeState>().forPlay,
+                      deviceType: context.watch<TreeState>().deviceType,
+                      deviceInfo: context.watch<TreeState>().deviceInfo,
+                      context: context,
+                      isWidth: false) !=
+                  null
+              ? const NodeOverrideExecuter()
+                  .executeChildren(context, state, children)
+                  .mapIndexed((index, e) {
+                  if (index == 0) {
+                    return e;
+                  } else if (index == children.length) {
+                    return e;
+                  } else if (index == children.length - 1) {
+                    final state = context.watch<TreeState>();
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        top: spacing.get(
+                                forPlay: state.forPlay,
+                                deviceType: state.deviceType,
+                                deviceInfo: state.deviceInfo,
+                                context: context,
+                                isWidth: false) ??
+                            0,
+                        bottom: spacing.get(
+                                forPlay: state.forPlay,
+                                deviceType: state.deviceType,
+                                deviceInfo: state.deviceInfo,
+                                context: context,
+                                isWidth: false) ??
+                            0,
+                      ),
+                      child: e,
+                    );
+                  } else {
+                    final state = context.watch<TreeState>();
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        top: spacing.get(
+                                forPlay: state.forPlay,
+                                deviceType: state.deviceType,
+                                deviceInfo: state.deviceInfo,
+                                context: context,
+                                isWidth: false) ??
+                            0,
+                      ),
+                      child: e,
+                    );
+                  }
+                }).toList()
+              : const NodeOverrideExecuter()
+                  .executeChildren(context, state, children),
           mainAxisAlignment: mainAxisAlignment.value,
           crossAxisAlignment: crossAxisAlignment.value,
           mainAxisSize: mainAxisSize.value,

@@ -1,5 +1,5 @@
 {
-  "name": "Theta",
+  "name": "Theta - Figma to Code",
   "version": "1.0.0",
   "description": "Your Figma Plugin",
   "main": "code.js",
@@ -10,9 +10,7 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "@figma/plugin-typings": "*",
+    "@figma/plugin-typings": "^1.76.0",
     "typescript": "*"
-  },
-  "dependencies": {
   }
 }

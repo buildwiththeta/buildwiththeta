@@ -496,6 +496,9 @@ class FlytingNodeOptions extends StatelessWidget {
     if (state.forPlay) {
       return child;
     }
+    if (state.devMode) {
+      return child;
+    }
     final theme = Theme.of(context).extension<ThetaTheme>()!;
     if (node.id != state.focusedNode?.id) {
       return child;
@@ -511,8 +514,6 @@ class FlytingNodeOptions extends StatelessWidget {
         if (state.nodeControls[node.type] != null)
           Positioned(
             top: -80,
-            left: 0,
-            right: 0,
             child: DeferPointer(
               paintOnTop: true,
               child: GestureDetector(
@@ -525,7 +526,7 @@ class FlytingNodeOptions extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       boxShadow: [
                         BoxShadow(
-                          color: theme.txtPrimary.withOpacity(0.2),
+                          color: Colors.black.withOpacity(0.2),
                           blurRadius: 4,
                           offset: const Offset(0, 2),
                         ),

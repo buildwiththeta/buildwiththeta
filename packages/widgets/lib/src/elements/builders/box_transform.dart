@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
+import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
@@ -359,11 +360,31 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         context.read<TreeGlobalState>().onResizingCallback(false);
         return;
       }
-      timer = Timer(const Duration(milliseconds: 200),
+      timer = Timer(const Duration(milliseconds: 300),
           () => context.read<TreeGlobalState>().onResizingCallback(false));
     } catch (e) {
       Logger.printError(e.toString());
     }
+  }
+
+  Decoration getCornerHandleDecoration() {
+    return BoxDecoration(
+      color: Colors.white,
+      border: Border.all(
+        color: Theme.of(context).colorScheme.primary,
+        width: 2,
+      ),
+    );
+  }
+
+  Decoration getSideHandleDecoration() {
+    return BoxDecoration(
+      color: Colors.white,
+      border: Border.all(
+        color: Palette.purple,
+        width: 2,
+      ),
+    );
   }
 
   Widget _defaultCornerHandleBuilder(
@@ -373,8 +394,11 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       MouseRegion(
         onEnter: (e) =>
             context.read<TreeGlobalState>().onResizingCallback(true),
-        onExit: (e) => offsetToResize(now: true),
-        child: DefaultCornerHandle(handle: handle),
+        onExit: (e) => offsetToResize(now: false),
+        child: DefaultCornerHandle(
+          decoration: getCornerHandleDecoration(),
+          handle: handle,
+        ),
       );
 
   /// A default implementation of the side [HandleBuilder] callback.
@@ -385,8 +409,8 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       MouseRegion(
         onEnter: (e) =>
             context.read<TreeGlobalState>().onResizingCallback(false),
-        onExit: (e) => offsetToResize(now: true),
-        child: DefaultSideHandle(handle: handle),
+        onExit: (e) => offsetToResize(now: false),
+        child: const SizedBox.shrink(),
       );
 
   @override
@@ -406,8 +430,19 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       sideHandleBuilder: _defaultSideHandleBuilder,
       onResized: (r) => offsetToResize(),
       onMoved: (_) => offsetToResize(),
-      contentBuilder: (_, rect, flip) => IgnorePointer(
-        child: child,
+      contentBuilder: (_, rect, flip) => ResizableBorderRadius(
+        node: widget.node,
+        onPanStart: () {
+          controller.resizable = false;
+          controller.movable = false;
+        },
+        onPanEnd: () {
+          controller.resizable = true;
+          controller.movable = true;
+        },
+        child: IgnorePointer(
+          child: child,
+        ),
       ),
     );
   }
@@ -464,5 +499,180 @@ class Debouncer {
   run(VoidCallback action) {
     _timer?.cancel();
     _timer = Timer(Duration(milliseconds: milliseconds), action);
+  }
+}
+
+class ResizableBorderRadius extends StatefulWidget {
+  const ResizableBorderRadius({
+    super.key,
+    required this.node,
+    required this.child,
+    required this.onPanStart,
+    required this.onPanEnd,
+  });
+
+  final CNode node;
+  final Widget child;
+  final Function() onPanStart;
+  final Function() onPanEnd;
+
+  @override
+  _ResizableBorderRadiusState createState() => _ResizableBorderRadiusState();
+}
+
+class _ResizableBorderRadiusState extends State<ResizableBorderRadius> {
+  bool isAvailable = false;
+  bool isVisible = false;
+  bool isDragging = false;
+  bool isLabelVisible = false;
+  double borderRadius = 20.0;
+
+  @override
+  void initState() {
+    super.initState();
+    if ([NType.container, NType.image].contains(widget.node.type)) {
+      isAvailable = true;
+      final nodeBorderRadius =
+          widget.node.getAttributes[DBKeys.borderRadius] as FBorderRadius?;
+      if (nodeBorderRadius == null) {
+        isAvailable = false;
+        return;
+      }
+      final state = context.read<TreeState>();
+      borderRadius = nodeBorderRadius
+          .get(context, forPlay: state.forPlay, deviceType: state.deviceType)
+          .topLeft
+          .x;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!isAvailable) {
+      return widget.child;
+    }
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isVisible = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          isVisible = false;
+        });
+        if (!isDragging) {
+          widget.onPanEnd();
+        }
+      },
+      child: GestureDetector(
+        onPanStart: (e) {
+          widget.onPanStart();
+          setState(() {
+            isDragging = true;
+            isLabelVisible = true;
+          });
+        },
+        onPanUpdate: (details) {
+          setState(() {
+            borderRadius += details.delta.dx;
+            if (borderRadius < 0) borderRadius = 0;
+          });
+          final fBordeRadius =
+              widget.node.getAttributes[DBKeys.borderRadius] as FBorderRadius?;
+          if (fBordeRadius == null) {
+            return;
+          }
+          final state = context.read<TreeState>();
+          final newFBorderRadius = fBordeRadius.copyWith(
+            radiusMobile: state.deviceType == DeviceType.phone
+                ? [borderRadius, borderRadius, borderRadius, borderRadius]
+                : null,
+            radiusTablet: state.deviceType == DeviceType.tablet
+                ? [borderRadius, borderRadius, borderRadius, borderRadius]
+                : null,
+            radiusDesktop: state.deviceType == DeviceType.laptop ||
+                    state.deviceType == DeviceType.desktop
+                ? [borderRadius, borderRadius, borderRadius, borderRadius]
+                : null,
+          );
+          final oldNode = widget.node.copyWith();
+          widget.node.setAttribute(DBKeys.borderRadius, newFBorderRadius);
+          context
+              .read<TreeGlobalState>()
+              .onNodeAttributesUpdated(widget.node, oldNode);
+        },
+        onPanEnd: (e) {
+          widget.onPanEnd();
+          setState(() {
+            isLabelVisible = false;
+          });
+        },
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Positioned.fill(child: widget.child),
+            if (isLabelVisible)
+              Positioned(
+                top: -25,
+                child: Center(
+                  child: Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Palette.purple,
+                    ),
+                    child: TDetailLabel('Radius ${borderRadius.floor()}',
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+            // Top-left corner
+            if (isVisible) ...[
+              Positioned(
+                top: 12,
+                left: 12,
+                child: iconIndicator(true),
+              ),
+              // Top-right corner
+              Positioned(
+                top: 12,
+                right: 12,
+                child: iconIndicator(false),
+              ),
+              // Bottom-left corner
+              Positioned(
+                bottom: 12,
+                left: 12,
+                child: iconIndicator(false),
+              ),
+              // Bottom-right corner
+              Positioned(
+                bottom: 12,
+                right: 12,
+                child: iconIndicator(true),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget iconIndicator(bool isLeft) {
+    return MouseRegion(
+      cursor: isLeft
+          ? SystemMouseCursors.resizeUpLeftDownRight
+          : SystemMouseCursors.resizeUpRightDownLeft,
+      child: Container(
+        width: 12,
+        height: 12,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(width: 2, color: Palette.purple),
+          color: Colors.white,
+        ),
+      ),
+    );
   }
 }

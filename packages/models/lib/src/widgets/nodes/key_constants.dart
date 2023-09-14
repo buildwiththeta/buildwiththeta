@@ -7,6 +7,7 @@ class DBKeys {
   static const String attributes = 'attributes';
   static const String name = 'name';
   static const String type = 'type';
+  static const String spacing = 'spacing';
 
   // Attribute keys
   static const String isFullWidth = 'sFW';
