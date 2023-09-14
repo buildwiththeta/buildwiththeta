@@ -57,6 +57,7 @@ class _ThetaProviderState extends State<ThetaProvider> {
           onNodeHovered: (_, __) {},
           onNodeAdded: (_, __, ___) {},
           onRightClick: (_, __) {},
+          onComponentPageChange: (_) {},
         ),
         child: widget.child,
       ),
