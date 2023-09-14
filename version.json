@@ -58,17 +58,5 @@
       "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-1.2.3.dmg",
       "close_on_installing": true
     }]
-  },
-  {
-    "name": "Theta",
-    "description": "",
-    "release_notes": "",
-    "version": "1.2.4",
-    "os": "macos",
-    "installers": [{
-      "initializer": "file",
-      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-1.2.4.dmg",
-      "close_on_installing": true
-    }]
   }
 ]
