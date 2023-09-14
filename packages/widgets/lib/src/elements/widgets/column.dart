@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
+import 'package:theta_open_widgets/src/core/spacing_widgets.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
 // ignore_for_file: public_member_api_docs
@@ -32,7 +33,8 @@ class OpenWColumn extends Flex {
                       deviceType: context.watch<TreeState>().deviceType,
                       deviceInfo: context.watch<TreeState>().deviceInfo,
                       context: context,
-                      isWidth: false) !=
+                      isWidth: _getDirection(direction, context) ==
+                          Axis.horizontal) !=
                   null
               ? const NodeOverrideExecuter()
                   .executeChildren(context, state, children)
@@ -43,37 +45,30 @@ class OpenWColumn extends Flex {
                     return e;
                   } else if (index == children.length - 1) {
                     final state = context.watch<TreeState>();
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        top: spacing.get(
-                                forPlay: state.forPlay,
-                                deviceType: state.deviceType,
-                                deviceInfo: state.deviceInfo,
-                                context: context,
-                                isWidth: false) ??
-                            0,
-                        bottom: spacing.get(
-                                forPlay: state.forPlay,
-                                deviceType: state.deviceType,
-                                deviceInfo: state.deviceInfo,
-                                context: context,
-                                isWidth: false) ??
-                            0,
-                      ),
+                    return SpacingMiddleWidget(
+                      spacing: spacing.get(
+                              forPlay: state.forPlay,
+                              deviceType: state.deviceType,
+                              deviceInfo: state.deviceInfo,
+                              context: context,
+                              isWidth: _getDirection(direction, context) ==
+                                  Axis.horizontal) ??
+                          0,
+                      direction: _getDirection(direction, context),
                       child: e,
                     );
                   } else {
                     final state = context.watch<TreeState>();
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        top: spacing.get(
-                                forPlay: state.forPlay,
-                                deviceType: state.deviceType,
-                                deviceInfo: state.deviceInfo,
-                                context: context,
-                                isWidth: false) ??
-                            0,
-                      ),
+                    return SpacingLastWidget(
+                      spacing: spacing.get(
+                              forPlay: state.forPlay,
+                              deviceType: state.deviceType,
+                              deviceInfo: state.deviceInfo,
+                              context: context,
+                              isWidth: _getDirection(direction, context) ==
+                                  Axis.horizontal) ??
+                          0,
+                      direction: _getDirection(direction, context),
                       child: e,
                     );
                   }
@@ -84,6 +79,14 @@ class OpenWColumn extends Flex {
           crossAxisAlignment: crossAxisAlignment.value,
           mainAxisSize: mainAxisSize.value,
         );
+
+  static Axis _getDirection(FDirection direction, BuildContext context) {
+    return direction.get(
+          state: context.watch<TreeState>(),
+          context: context,
+        ) ??
+        Axis.vertical;
+  }
 
   @override
   RenderFlex createRenderObject(BuildContext context) {

@@ -1,3 +1,7 @@
+## 0.7.6
+
+- [x] - Add DBKeys.spacing.
+
 ## 0.7.5
 
 - [x] - Add layer and background blur effects.

@@ -1,3 +1,7 @@
+## 0.7.8
+
+- [x] - Add spacing in Columns and Rows.
+
 ## 0.7.7
 
 - [x] - Add layer and background blur effects.
