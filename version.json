@@ -63,7 +63,7 @@
     "name": "Theta",
     "description": "",
     "release_notes": "",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "os": "macos",
     "installers": [{
       "initializer": "file",
