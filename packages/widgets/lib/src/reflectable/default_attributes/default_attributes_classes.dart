@@ -88,7 +88,7 @@ class ColumnDefaultAttributes extends DefaultAttributesAdapter {
           directionDesktop: Axis.vertical,
         ),
         DBKeys.spacing: FSize(
-          size: '16',
+          size: '0',
           sizeTablet: '',
           sizeDesktop: '',
         ),
@@ -117,7 +117,7 @@ class RowDefaultAttributes extends DefaultAttributesAdapter {
           directionDesktop: Axis.horizontal,
         ),
         DBKeys.spacing: FSize(
-          size: '16',
+          size: '0',
           sizeTablet: '',
           sizeDesktop: '',
         ),

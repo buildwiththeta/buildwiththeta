@@ -1,3 +1,7 @@
+## 0.7.9
+
+- [x] - Fix the spacing in existing Flex widgets.
+
 ## 0.7.8
 
 - [x] - Add spacing in Columns and Rows.
