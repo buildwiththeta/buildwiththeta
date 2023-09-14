@@ -39,6 +39,9 @@ class OpenWColumn extends Flex {
               ? const NodeOverrideExecuter()
                   .executeChildren(context, state, children)
                   .mapIndexed((index, e) {
+                  if (children[index].type == NType.spacer) {
+                    return e;
+                  }
                   if (index == 0) {
                     return e;
                   } else if (index == children.length) {

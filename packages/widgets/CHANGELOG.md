@@ -1,3 +1,7 @@
+## 0.7.10
+
+- [x] - Fix: spacing blocked spacer widgets. 
+
 ## 0.7.9
 
 - [x] - Fix the spacing in existing Flex widgets.
