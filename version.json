@@ -82,5 +82,17 @@
       "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-1.2.5.dmg",
       "close_on_installing": true
     }]
+  },
+  {
+    "name": "Theta",
+    "description": "",
+    "release_notes": "",
+    "version": "1.2.6",
+    "os": "macos",
+    "installers": [{
+      "initializer": "file",
+      "file_url": "https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/versions/theta-1.2.6.dmg",
+      "close_on_installing": true
+    }]
   }
 ]
