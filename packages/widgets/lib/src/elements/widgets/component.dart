@@ -54,9 +54,11 @@ class _OpenWComponentState extends State<OpenWComponent> {
           ]),
       child: GestureDetector(
         onLongPress: () {
-          context
-              .read<TreeGlobalState>()
-              .onComponentPageChange(widget.state.node);
+          if (widget.state.node.type == NType.component) {
+            context
+                .read<TreeGlobalState>()
+                .onComponentPageChange(widget.state.node);
+          }
           setState(() {});
         },
         child: NodeBuilder(
