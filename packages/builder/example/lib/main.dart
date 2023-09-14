@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                     },
                     child: Container(
                       color: Colors.black,
-                      child: const UIBox(''),
+                      child: child,
                     ),
                   );
                 },

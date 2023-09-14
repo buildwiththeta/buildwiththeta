@@ -12,10 +12,8 @@ class CustomURLs {
 
 class DefaultCustomURLs extends CustomURLs {
   const DefaultCustomURLs({
-    super.getComponent =
-        'https://api.buildwiththeta.com/functions/v1/get_component',
-    super.getStyles =
-        'https://api.buildwiththeta.com/functions/v1/get_project_styles',
+    super.getComponent = 'https://component.api.buildwiththeta.net',
+    super.getStyles = 'https://styles.api.buildwiththeta.net',
     super.sendEvents =
         'https://api.buildwiththeta.com/functions/v1/add_conversion_log',
   });

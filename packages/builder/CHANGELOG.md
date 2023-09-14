@@ -1,3 +1,7 @@
+## 0.8.6
+
+- [x] - Add layer and background blur effects.
+
 ## 0.8.5
 
 - [x] Feat: callback value in Workflows.
