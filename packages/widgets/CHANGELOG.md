@@ -1,3 +1,7 @@
+## 0.7.7
+
+- [x] - Add layer and background blur effects.
+
 ## 0.7.6
 
 - [x] Feat: models to 0.7.4

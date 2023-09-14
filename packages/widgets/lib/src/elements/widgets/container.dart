@@ -59,5 +59,6 @@ class OpenWContainer extends Container {
             shadow: shadows,
             borders: borders,
           ),
+          clipBehavior: Clip.none,
         );
 }

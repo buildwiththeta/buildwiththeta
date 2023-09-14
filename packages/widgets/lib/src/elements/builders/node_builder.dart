@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:defer_pointer/defer_pointer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -226,6 +228,48 @@ class _NodeBuilderState extends State<NodeBuilder> {
     );
   }
 
+  Widget backgroundBlur(TreeState state, CNode node, Widget child) {
+    final blur = node.getAttributes[DBKeys.backgroundBlur] as double?;
+    if (blur == null) {
+      return child;
+    }
+    if (blur == 0) {
+      return child;
+    }
+    final borderRadius =
+        node.getAttributes[DBKeys.borderRadius] as FBorderRadius?;
+    if (borderRadius != null) {
+      return ClipRRect(
+        borderRadius: borderRadius.get(context,
+            forPlay: state.forPlay, deviceType: state.deviceType),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
+          child: child,
+        ),
+      );
+    }
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
+        child: child,
+      ),
+    );
+  }
+
+  Widget layerBlur(CNode node, Widget child) {
+    final blur = node.getAttributes[DBKeys.layerBlur] as double?;
+    if (blur == null) {
+      return child;
+    }
+    if (blur == 0) {
+      return child;
+    }
+    return ImageFiltered(
+      imageFilter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),
+      child: child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
@@ -288,7 +332,11 @@ class _NodeBuilderState extends State<NodeBuilder> {
                                 widget.state.node,
                                 handleSizeRange(
                                   state,
-                                  widget.child,
+                                  backgroundBlur(
+                                    state,
+                                    widget.state.node,
+                                    layerBlur(widget.state.node, widget.child),
+                                  ),
                                 ),
                               ),
                             ),

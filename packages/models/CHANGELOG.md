@@ -1,3 +1,7 @@
+## 0.7.5
+
+- [x] - Add layer and background blur effects.
+
 ## 0.7.4
 
 - [x] - Update Workflow with an optional callback value (for onChange, etc.)

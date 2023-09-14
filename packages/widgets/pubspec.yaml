@@ -1,7 +1,7 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.7.6
+version: 0.7.7
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -22,7 +22,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_models: ^0.7.2
+  theta_models: ^0.7.5
   theta_design_system: ^0.3.1
   theta_rendering: ^0.2.3
   light_logger: ^0.0.3

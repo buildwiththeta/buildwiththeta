@@ -10,7 +10,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["Disney"],
+    componentsNames: ["Untitled 1"],
   );
 
   runApp(const MyApp());
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Disney',
+            'Untitled 1',
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                '',
+                'fe16cbb0-00c3-477e-894c-dee188d31956',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                     },
                     child: Container(
                       color: Colors.black,
-                      child: child,
+                      child: const UIBox(''),
                     ),
                   );
                 },

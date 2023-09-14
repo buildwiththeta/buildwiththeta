@@ -106,6 +106,9 @@ class DBKeys {
   static const String link = 'link';
   static const String doesBounce = 'bounce';
 
+  static const String layerBlur = 'lBlur';
+  static const String backgroundBlur = 'bBlur';
+
   static const String isListView = 'isListView';
   static const String componentFit = 'componentFit';
   static const String overrides = 'overrides';
