@@ -14,18 +14,21 @@ class SpacingMiddleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (spacing == 0) {
+      return child;
+    }
     return direction == Axis.vertical
         ? Padding(
             padding: EdgeInsets.only(
-              top: spacing,
-              bottom: spacing,
+              top: spacing / 2,
+              bottom: spacing / 2,
             ),
             child: child,
           )
         : Padding(
             padding: EdgeInsets.only(
-              left: spacing,
-              right: spacing,
+              left: spacing / 2,
+              right: spacing / 2,
             ),
             child: child,
           );
@@ -46,16 +49,19 @@ class SpacingLastWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (spacing == 0) {
+      return child;
+    }
     return direction == Axis.vertical
         ? Padding(
             padding: EdgeInsets.only(
-              top: spacing,
+              top: spacing / 2,
             ),
             child: child,
           )
         : Padding(
             padding: EdgeInsets.only(
-              left: spacing,
+              left: spacing / 2,
             ),
             child: child,
           );

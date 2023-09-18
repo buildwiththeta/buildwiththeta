@@ -15,14 +15,14 @@ class FFontSize extends Equatable {
   const FFontSize({
     this.size = 16,
     this.unit = SizeUnit.pixel,
-    this.sizeTablet = 16,
-    this.sizeDesktop = 16,
+    this.sizeTablet,
+    this.sizeDesktop,
   });
 
   /// Value of [size] of [FFontSize]
   final double size;
-  final double sizeTablet;
-  final double sizeDesktop;
+  final double? sizeTablet;
+  final double? sizeDesktop;
 
   final SizeUnit unit;
 
@@ -51,9 +51,9 @@ class FFontSize extends Equatable {
       if (deviceType == frame.DeviceType.phone) {
         return size;
       } else if (deviceType == frame.DeviceType.tablet) {
-        return sizeTablet;
+        return sizeTablet ?? size;
       } else {
-        return sizeDesktop;
+        return sizeDesktop ?? size;
       }
     }
   }
@@ -73,16 +73,16 @@ class FFontSize extends Equatable {
   static FFontSize fromJson(final dynamic json) {
     try {
       var sizeMobile = 16.0;
-      var sizeTablet = 16.0;
-      var sizeDesktop = 24.0;
+      double? sizeTablet;
+      double? sizeDesktop;
       if (double.tryParse('$json') != null) {
         sizeMobile = double.tryParse('$json') ?? 16;
-        sizeTablet = sizeMobile;
-        sizeDesktop = sizeMobile;
+        sizeTablet;
+        sizeDesktop;
       } else {
         sizeMobile = double.parse('${json['s']}');
-        sizeTablet = double.tryParse('${json['st']}') ?? sizeMobile;
-        sizeDesktop = double.tryParse('${json['sd']}') ?? sizeMobile;
+        sizeTablet = double.tryParse('${json['st']}');
+        sizeDesktop = double.tryParse('${json['sd']}');
       }
       return FFontSize(
         size: sizeMobile,
@@ -113,24 +113,5 @@ class FFontSize extends Equatable {
       sizeTablet: sizeTablet ?? this.sizeTablet,
       sizeDesktop: sizeDesktop ?? this.sizeDesktop,
     );
-  }
-
-  /// Returns double for code
-  String toCode() {
-    if (size == sizeTablet && size == sizeDesktop) {
-      return _valueToCode(size);
-    }
-
-    return '''
-getValueForScreenType<double>(
-  context: context,
-  mobile: ${_valueToCode(size)},
-  tablet: ${_valueToCode(sizeTablet)},
-  desktop: ${_valueToCode(sizeDesktop)},
-)''';
-  }
-
-  String _valueToCode(final double size) {
-    return size.toString();
   }
 }

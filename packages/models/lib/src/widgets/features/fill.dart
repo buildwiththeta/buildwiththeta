@@ -53,7 +53,7 @@ class FFillElement extends Equatable {
   ) {
     final tempOpacity = this.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-    return HexColor(this.color.toUpperCase()).withOpacity(opacity);
+    return HexColor(color.toUpperCase()).withOpacity(opacity);
   }
 
   @override
@@ -153,6 +153,29 @@ class FFill extends Equatable {
       } else {
         return const FFill().ready(FFillType.solid);
       }
+    }
+  }
+
+  Gradient? getGradient(
+    final List<ColorStyleEntity> styles,
+    final ThemeMode themeMode,
+  ) {
+    if (type == FFillType.linearGradient) {
+      return LinearGradient(
+        begin: begin ?? Alignment.topCenter,
+        end: end ?? Alignment.bottomCenter,
+        colors: levels.map((e) => e.getLevelColor(styles, themeMode)).toList(),
+        stops: levels.map((e) => e.stop).toList(),
+      );
+    } else if (type == FFillType.radialGradient) {
+      return RadialGradient(
+        center: center ?? Alignment.center,
+        radius: radius ?? 1,
+        colors: levels.map((e) => e.getLevelColor(styles, themeMode)).toList(),
+        stops: levels.map((e) => e.stop).toList(),
+      );
+    } else {
+      return null;
     }
   }
 

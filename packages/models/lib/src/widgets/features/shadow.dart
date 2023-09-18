@@ -29,16 +29,23 @@ class FShadow extends Equatable {
         opacity,
       ];
 
-  BoxShadow get(BuildContext context, ColorStyles colors, ThemeMode theme) =>
-      BoxShadow(
-        color: HexColor(fill.getHexColor(colors, theme))
-            .withOpacity(double.parse(opacity.size)),
-        blurRadius: double.parse(blur.value ?? '0'),
-        offset: Offset(
-          double.parse(x.value ?? '0'),
-          double.parse(y.value ?? '0'),
-        ),
-      );
+  BoxShadow get(BuildContext context, ColorStyles colors, ThemeMode theme) {
+    var opacityValue = double.tryParse(opacity.size) ?? 1;
+    if (opacityValue < 0) {
+      opacityValue = 0;
+    } else if (opacityValue > 1) {
+      opacityValue = 1;
+    }
+    return BoxShadow(
+      color:
+          HexColor(fill.getHexColor(colors, theme)).withOpacity(opacityValue),
+      blurRadius: double.parse(blur.value ?? '0'),
+      offset: Offset(
+        double.parse(x.value ?? '0'),
+        double.parse(y.value ?? '0'),
+      ),
+    );
+  }
 
   FShadow copyWith({
     FTextTypeInput? x,

@@ -1,11 +1,9 @@
 // Flutter imports:
 
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/src/core/spacing_widgets.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 
 // ignore_for_file: public_member_api_docs
@@ -28,56 +26,16 @@ class OpenWColumn extends Flex {
                 context: context,
               ) ??
               Axis.vertical,
-          children: spacing.get(
-                      forPlay: context.watch<TreeState>().forPlay,
-                      deviceType: context.watch<TreeState>().deviceType,
-                      deviceInfo: context.watch<TreeState>().deviceInfo,
-                      context: context,
-                      isWidth: _getDirection(direction, context) ==
-                          Axis.horizontal) !=
-                  null
-              ? const NodeOverrideExecuter()
-                  .executeChildren(context, state, children)
-                  .mapIndexed((index, e) {
-                  if (children[index].type == NType.spacer) {
-                    return e;
-                  }
-                  if (index == 0) {
-                    return e;
-                  } else if (index == children.length) {
-                    return e;
-                  } else if (index == children.length - 1) {
-                    final state = context.watch<TreeState>();
-                    return SpacingMiddleWidget(
-                      spacing: spacing.get(
-                              forPlay: state.forPlay,
-                              deviceType: state.deviceType,
-                              deviceInfo: state.deviceInfo,
-                              context: context,
-                              isWidth: _getDirection(direction, context) ==
-                                  Axis.horizontal) ??
-                          0,
-                      direction: _getDirection(direction, context),
-                      child: e,
-                    );
-                  } else {
-                    final state = context.watch<TreeState>();
-                    return SpacingLastWidget(
-                      spacing: spacing.get(
-                              forPlay: state.forPlay,
-                              deviceType: state.deviceType,
-                              deviceInfo: state.deviceInfo,
-                              context: context,
-                              isWidth: _getDirection(direction, context) ==
-                                  Axis.horizontal) ??
-                          0,
-                      direction: _getDirection(direction, context),
-                      child: e,
-                    );
-                  }
-                }).toList()
-              : const NodeOverrideExecuter()
+          children: _getChildren(
+              const NodeOverrideExecuter()
                   .executeChildren(context, state, children),
+              spacing.get(
+                  forPlay: context.watch<TreeState>().forPlay,
+                  deviceType: context.watch<TreeState>().deviceType,
+                  deviceInfo: context.watch<TreeState>().deviceInfo,
+                  context: context,
+                  isWidth:
+                      _getDirection(direction, context) == Axis.horizontal)),
           mainAxisAlignment: mainAxisAlignment.value,
           crossAxisAlignment: crossAxisAlignment.value,
           mainAxisSize: mainAxisSize.value,
@@ -89,6 +47,24 @@ class OpenWColumn extends Flex {
           context: context,
         ) ??
         Axis.vertical;
+  }
+
+  static List<Widget> _getChildren(List<Widget> children, double? spacing) {
+    if (spacing == null) {
+      return children;
+    }
+    final List<Widget> result = [];
+    for (var i = 0; i < children.length; i++) {
+      if (i == children.length - 1) {
+        result.add(children[i]);
+      } else {
+        result.add(children[i]);
+        result.add(SizedBox(
+          height: spacing,
+        ));
+      }
+    }
+    return result;
   }
 
   @override

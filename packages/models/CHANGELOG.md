@@ -1,3 +1,7 @@
+## 0.7.7
+
+- [x] - Add DBKeys.smoothness.
+
 ## 0.7.6
 
 - [x] - Add DBKeys.spacing.

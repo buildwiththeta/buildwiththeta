@@ -8,8 +8,11 @@ class DBKeys {
   static const String name = 'name';
   static const String type = 'type';
   static const String spacing = 'spacing';
+  static const String smoothness = 'smoothness';
 
   // Attribute keys
+  static const String isMask = 'isMask';
+  static const String isExpanded = 'isExpanded';
   static const String isFullWidth = 'sFW';
   static const String direction = 'dir';
   static const String fontSize = 'fSz';

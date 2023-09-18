@@ -12,12 +12,12 @@ class FBorderRadius extends Equatable {
   /// Constructor
   const FBorderRadius({
     required this.radiusMobile,
-    required this.radiusTablet,
-    required this.radiusDesktop,
+    this.radiusTablet,
+    this.radiusDesktop,
   });
 
   /// The value of [FBorderRadius], used to display BorderRadius
-  final List<double>? radiusMobile;
+  final List<double> radiusMobile;
   final List<double>? radiusTablet;
   final List<double>? radiusDesktop;
 
@@ -38,45 +38,45 @@ class FBorderRadius extends Equatable {
       return getValueForScreenType(
         context: context,
         mobile: BorderRadius.only(
-          topLeft: Radius.circular(radiusMobile![0]),
-          topRight: Radius.circular(radiusMobile![1]),
-          bottomRight: Radius.circular(radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusMobile![3]),
+          topLeft: Radius.circular(radiusMobile[0]),
+          topRight: Radius.circular(radiusMobile[1]),
+          bottomRight: Radius.circular(radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusMobile[3]),
         ),
         tablet: BorderRadius.only(
-          topLeft: Radius.circular(radiusTablet?[0] ?? radiusMobile![0]),
-          topRight: Radius.circular(radiusTablet?[1] ?? radiusMobile![1]),
-          bottomRight: Radius.circular(radiusTablet?[2] ?? radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusTablet?[3] ?? radiusMobile![3]),
+          topLeft: Radius.circular(radiusTablet?[0] ?? radiusMobile[0]),
+          topRight: Radius.circular(radiusTablet?[1] ?? radiusMobile[1]),
+          bottomRight: Radius.circular(radiusTablet?[2] ?? radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusTablet?[3] ?? radiusMobile[3]),
         ),
         desktop: BorderRadius.only(
-          topLeft: Radius.circular(radiusDesktop?[0] ?? radiusMobile![0]),
-          topRight: Radius.circular(radiusDesktop?[1] ?? radiusMobile![1]),
-          bottomRight: Radius.circular(radiusDesktop?[2] ?? radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusDesktop?[3] ?? radiusMobile![3]),
+          topLeft: Radius.circular(radiusDesktop?[0] ?? radiusMobile[0]),
+          topRight: Radius.circular(radiusDesktop?[1] ?? radiusMobile[1]),
+          bottomRight: Radius.circular(radiusDesktop?[2] ?? radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusDesktop?[3] ?? radiusMobile[3]),
         ),
       );
     } else {
       if (deviceType == DeviceType.phone) {
         return BorderRadius.only(
-          topLeft: Radius.circular(radiusMobile![0]),
-          topRight: Radius.circular(radiusMobile![1]),
-          bottomRight: Radius.circular(radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusMobile![3]),
+          topLeft: Radius.circular(radiusMobile[0]),
+          topRight: Radius.circular(radiusMobile[1]),
+          bottomRight: Radius.circular(radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusMobile[3]),
         );
       } else if (deviceType == DeviceType.tablet) {
         return BorderRadius.only(
-          topLeft: Radius.circular(radiusTablet?[0] ?? radiusMobile![0]),
-          topRight: Radius.circular(radiusTablet?[1] ?? radiusMobile![1]),
-          bottomRight: Radius.circular(radiusTablet?[2] ?? radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusTablet?[3] ?? radiusMobile![3]),
+          topLeft: Radius.circular(radiusTablet?[0] ?? radiusMobile[0]),
+          topRight: Radius.circular(radiusTablet?[1] ?? radiusMobile[1]),
+          bottomRight: Radius.circular(radiusTablet?[2] ?? radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusTablet?[3] ?? radiusMobile[3]),
         );
       } else {
         return BorderRadius.only(
-          topLeft: Radius.circular(radiusDesktop?[0] ?? radiusMobile![0]),
-          topRight: Radius.circular(radiusDesktop?[1] ?? radiusMobile![1]),
-          bottomRight: Radius.circular(radiusDesktop?[2] ?? radiusMobile![2]),
-          bottomLeft: Radius.circular(radiusDesktop?[3] ?? radiusMobile![3]),
+          topLeft: Radius.circular(radiusDesktop?[0] ?? radiusMobile[0]),
+          topRight: Radius.circular(radiusDesktop?[1] ?? radiusMobile[1]),
+          bottomRight: Radius.circular(radiusDesktop?[2] ?? radiusMobile[2]),
+          bottomLeft: Radius.circular(radiusDesktop?[3] ?? radiusMobile[3]),
         );
       }
     }
@@ -88,8 +88,8 @@ class FBorderRadius extends Equatable {
       final value = json.map((final dynamic e) => double.parse('$e')).toList();
       return FBorderRadius(
         radiusMobile: value,
-        radiusTablet: value,
-        radiusDesktop: value,
+        radiusTablet: null,
+        radiusDesktop: null,
       );
     } else {
       return FBorderRadius(
@@ -114,9 +114,9 @@ class FBorderRadius extends Equatable {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'm': radiusMobile,
-      if (radiusTablet != null) 't': radiusTablet,
-      if (radiusDesktop != null) 'd': radiusDesktop,
-    }..removeWhere((key, value) => value == null);
+      't': radiusTablet,
+      'd': radiusDesktop,
+    };
   }
 
   /// Change the value of [value] (List<double>)

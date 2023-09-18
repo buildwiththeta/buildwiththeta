@@ -19,8 +19,6 @@ class DynamicAttributes {
       switch (key) {
         case DBKeys.align:
           return FAlign.fromJson(value);
-        case DBKeys.blendMode:
-          return FBlendMode.fromJson(value);
         case DBKeys.borderRadius:
           return FBorderRadius.fromJson(value);
         case DBKeys.borderStyle:

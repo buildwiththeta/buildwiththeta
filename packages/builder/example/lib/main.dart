@@ -2,6 +2,8 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
+const componentName = "Paywall";
+
 Future<void> main() async {
   /// Initialize Theta instance.
   /// You can get an anonymous key at https://app.buildwiththeta.com
@@ -10,7 +12,7 @@ Future<void> main() async {
 
     /// Example key
     anonKey: publicKey,
-    componentsNames: ["Untitled 1"],
+    componentsNames: [componentName],
   );
 
   runApp(const MyApp());
@@ -55,7 +57,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            'Untitled 1',
+            componentName,
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
@@ -69,7 +71,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'fe16cbb0-00c3-477e-894c-dee188d31956',
+                'node id',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -85,7 +87,7 @@ class _MyAppState extends State<MyApp> {
 
               Override(
                 'node id',
-                text: 'Click me!',
+                text: 'prova',
                 color: Colors.blue,
               ),
 
@@ -105,7 +107,7 @@ class _MyAppState extends State<MyApp> {
                 (dynamic) => debugPrint('Hovered!'),
               ),
               Workflow(
-                'node name',
+                'node id',
                 Trigger.onMouseExit,
                 (dynamic) => debugPrint('Not hovered!'),
               ),

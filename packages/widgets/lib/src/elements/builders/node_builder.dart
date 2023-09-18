@@ -1,14 +1,16 @@
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:defer_pointer/defer_pointer.dart';
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_design_system/theta_design_system.dart';
 import 'package:theta_models/theta_models.dart';
-import 'package:theta_open_widgets/src/core/theta_state_widget.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/builders/workflow_executer.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class NodeBuilder extends StatefulWidget {
@@ -199,14 +201,32 @@ class _NodeBuilderState extends State<NodeBuilder> {
     );
   }
 
-  Widget handleOpenWSpacerWidget(CNode node, Widget child) {
+  Widget handleOpenWSpacerWidget(CNode node, TreeState state, Widget child) {
+    final state = context.read<TreeState>();
+    final parent =
+        state.nodes.firstWhereOrNull((element) => element.id == node.parentID);
+    if (![NType.column, NType.row].contains(parent?.type)) {
+      return child;
+    }
     if (widget.state.node.type == NType.spacer) {
       return Expanded(
         flex: int.tryParse(
               (widget.state.node.getAttributes[DBKeys.flexValue]
                           as FTextTypeInput?)
                       ?.value ??
-                  '1',
+                  '',
+            ) ??
+            1,
+        child: child,
+      );
+    }
+    if (node.getAttributes[DBKeys.isExpanded] as bool? ?? false) {
+      return Expanded(
+        flex: int.tryParse(
+              (widget.state.node.getAttributes[DBKeys.flexValue]
+                          as FTextTypeInput?)
+                      ?.value ??
+                  '',
             ) ??
             1,
         child: child,
@@ -270,6 +290,30 @@ class _NodeBuilderState extends State<NodeBuilder> {
     );
   }
 
+  Widget _handleMask(CNode node, TreeState state,
+      {required Widget ifNotMasked, required Widget ifMasked}) {
+    final isMask = node.getAttributes[DBKeys.isMask] as bool? ?? false;
+    if (!isMask) return ifNotMasked;
+    final blendModeString = node.getAttributes[DBKeys.blendMode] as String?;
+    final blendMode =
+        EnumToString.fromString(BlendMode.values, blendModeString ?? '');
+    final fill = node.getAttributes[DBKeys.fill] as FFill?;
+    if (fill == null) {
+      return ifNotMasked;
+    }
+    final gradient = fill.getGradient(state.colorStyles, state.theme);
+    if (gradient == null) {
+      return ifNotMasked;
+    }
+    return ShaderMask(
+      blendMode: blendMode ?? BlendMode.dstOut,
+      shaderCallback: (Rect bounds) {
+        return gradient.createShader(bounds);
+      },
+      child: ifMasked,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();
@@ -283,6 +327,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
 
     return handleOpenWSpacerWidget(
       widget.state.node,
+      state,
       FlytingNodeOptions(
         node: widget.state.node,
         child: MouseRegion(
@@ -332,10 +377,30 @@ class _NodeBuilderState extends State<NodeBuilder> {
                                 widget.state.node,
                                 handleSizeRange(
                                   state,
-                                  backgroundBlur(
-                                    state,
+                                  _handleMask(
                                     widget.state.node,
-                                    layerBlur(widget.state.node, widget.child),
+                                    state,
+                                    ifNotMasked: backgroundBlur(
+                                      state,
+                                      widget.state.node,
+                                      layerBlur(
+                                          widget.state.node, widget.child),
+                                    ),
+                                    ifMasked: backgroundBlur(
+                                      state,
+                                      widget.state.node,
+                                      layerBlur(
+                                        widget.state.node,
+                                        ChildBuilder(
+                                              context: context,
+                                              state: widget.state.copyWith(
+                                                node: widget.state.node.child,
+                                              ),
+                                              child: widget.state.node.child,
+                                            ).build() ??
+                                            const SizedBox.shrink(),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),

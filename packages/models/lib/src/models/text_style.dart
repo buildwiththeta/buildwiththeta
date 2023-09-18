@@ -44,5 +44,5 @@ class TextStyleEntity extends Equatable {
 
   @override
   String toString() =>
-      'TextStyleModel { id: $id, stabilID:$stabilID, channel_id: $branchID, name: $name, font_family: $fontFamily, font_size: ${fontSize.toCode()},font_weight ${fontWeight.toCode()} }';
+      'TextStyleModel { id: $id, stabilID:$stabilID, channel_id: $branchID, name: $name, font_family: $fontFamily, font_size: $fontSize,font_weight ${fontWeight.toCode()} }';
 }

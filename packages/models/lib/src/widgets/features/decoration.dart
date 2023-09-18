@@ -37,19 +37,7 @@ class TetaBoxDecoration {
       );
     } else if (fill.type == FFillType.linearGradient) {
       return BoxDecoration(
-        gradient: LinearGradient(
-          colors: fill.levels.map(
-            (final e) {
-              final tempOpacity = e.opacity;
-              final opacity =
-                  tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-              return HexColor(e.color).withOpacity(opacity);
-            },
-          ).toList(),
-          begin: fill.begin!,
-          end: fill.end!,
-          stops: fill.levels.map((final e) => e.stop).toList(),
-        ),
+        gradient: fill.getGradient(state.colorStyles, state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -89,19 +77,7 @@ class TetaBoxDecoration {
       );
     } else if (fill.type == FFillType.radialGradient) {
       return BoxDecoration(
-        gradient: RadialGradient(
-          colors: fill.levels.map(
-            (final e) {
-              final tempOpacity = e.opacity;
-              final opacity =
-                  tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
-              return HexColor(e.color).withOpacity(opacity);
-            },
-          ).toList(),
-          center: fill.center!,
-          radius: fill.radius!,
-          stops: fill.levels.map((final e) => e.stop).toList(),
-        ),
+        gradient: fill.getGradient(state.colorStyles, state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,

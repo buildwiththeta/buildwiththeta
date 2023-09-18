@@ -14,11 +14,11 @@ import 'package:theta_models/theta_models.dart';
 class FMargins extends Equatable {
   const FMargins({
     required this.margins,
-    required this.marginsTablet,
-    required this.marginsDesktop,
+    this.marginsTablet,
+    this.marginsDesktop,
   });
 
-  final List<double>? margins;
+  final List<double> margins;
   final List<double>? marginsTablet;
   final List<double>? marginsDesktop;
 
@@ -47,17 +47,17 @@ class FMargins extends Equatable {
     if (state.forPlay) {
       return getValueForScreenType<EdgeInsets>(
         context: context,
-        mobile: _getValue(context, values: margins!),
-        tablet: _getValue(context, values: marginsTablet ?? margins!),
-        desktop: _getValue(context, values: marginsDesktop ?? margins!),
+        mobile: _getValue(context, values: margins),
+        tablet: _getValue(context, values: marginsTablet ?? margins),
+        desktop: _getValue(context, values: marginsDesktop ?? margins),
       );
     } else {
       if (state.deviceType == DeviceType.phone) {
-        return _getValue(context, values: margins!);
+        return _getValue(context, values: margins);
       } else if (state.deviceType == DeviceType.tablet) {
-        return _getValue(context, values: marginsTablet ?? margins!);
+        return _getValue(context, values: marginsTablet ?? margins);
       } else {
-        return _getValue(context, values: marginsDesktop ?? margins!);
+        return _getValue(context, values: marginsDesktop ?? margins);
       }
     }
   }
@@ -70,19 +70,19 @@ class FMargins extends Equatable {
     if (forPlay) {
       final width = MediaQuery.sizeOf(context).width;
       if (width < 600) {
-        return margins!;
+        return margins;
       } else if (width < 1000) {
-        return marginsTablet ?? margins!;
+        return marginsTablet ?? margins;
       } else {
-        return marginsDesktop ?? margins!;
+        return marginsDesktop ?? margins;
       }
     } else {
       if (deviceType == DeviceType.phone) {
-        return margins!;
+        return margins;
       } else if (deviceType == DeviceType.tablet) {
-        return marginsTablet ?? margins!;
+        return marginsTablet ?? margins;
       } else {
-        return marginsDesktop ?? margins!;
+        return marginsDesktop ?? margins;
       }
     }
   }
@@ -92,8 +92,8 @@ class FMargins extends Equatable {
       final value = json.map((dynamic e) => double.parse('$e')).toList();
       return FMargins(
         margins: value,
-        marginsTablet: value,
-        marginsDesktop: value,
+        marginsTablet: null,
+        marginsDesktop: null,
       );
     }
     try {
@@ -101,19 +101,23 @@ class FMargins extends Equatable {
         margins: (json['m'] as List<dynamic>? ?? [0, 0, 0, 0])
             .map((dynamic e) => double.parse('$e'))
             .toList(),
-        marginsTablet: (json['t'] as List<dynamic>? ?? [0, 0, 0, 0])
-            .map((dynamic e) => double.parse('$e'))
-            .toList(),
-        marginsDesktop: (json['d'] as List<dynamic>? ?? [0, 0, 0, 0])
-            .map((dynamic e) => double.parse('$e'))
-            .toList(),
+        marginsTablet: json['t'] != null
+            ? (json['t'] as List<dynamic>)
+                .map((dynamic e) => double.parse('$e'))
+                .toList()
+            : null,
+        marginsDesktop: json['d'] != null
+            ? (json['d'] as List<dynamic>)
+                .map((dynamic e) => double.parse('$e'))
+                .toList()
+            : null,
       );
     } catch (e) {
       Logger.printError('Error converting FMargins, error: $e');
       return const FMargins(
         margins: [0, 0, 0, 0],
-        marginsTablet: [0, 0, 0, 0],
-        marginsDesktop: [0, 0, 0, 0],
+        marginsTablet: null,
+        marginsDesktop: null,
       );
     }
   }
@@ -178,33 +182,33 @@ class FMargins extends Equatable {
 
     if (listEquals(margins, marginsTablet ?? margins) &&
         listEquals(margins, marginsDesktop ?? margins)) {
-      return valueToCode(margins!);
+      return valueToCode(margins);
     }
 
     return '''
 getValueForScreenType<EdgeInsets>(
   context: context,
-  mobile: ${valueToCode(margins!)},
-  tablet: ${valueToCode(marginsTablet ?? margins!)},
-  desktop: ${valueToCode(marginsDesktop ?? margins!)},
+  mobile: ${valueToCode(margins)},
+  tablet: ${valueToCode(marginsTablet ?? margins)},
+  desktop: ${valueToCode(marginsDesktop ?? margins)},
 )''';
   }
 
   String toCodeForTests() {
-    final left = margins![0];
-    final top = margins![1];
-    final right = margins![2];
-    final bottom = margins![3];
+    final left = margins[0];
+    final top = margins[1];
+    final right = margins[2];
+    final bottom = margins[3];
 
     if (left == 0 && top == 0 && right == 0 && bottom == 0) {
       return 'EdgeInsets.zero';
     }
     return '''
     const EdgeInsets.only(
-      ${left != 0 ? "left: ${margins![0].abs()}," : ""}
-      ${top != 0 ? "top: ${margins![1].abs()}," : ""}
-      ${right != 0 ? "right: ${margins![2].abs()}," : ""}
-      ${bottom != 0 ? "bottom: ${margins![3].abs()}," : ""}
+      ${left != 0 ? "left: ${margins[0].abs()}," : ""}
+      ${top != 0 ? "top: ${margins[1].abs()}," : ""}
+      ${right != 0 ? "right: ${margins[2].abs()}," : ""}
+      ${bottom != 0 ? "bottom: ${margins[3].abs()}," : ""}
     )''';
   }
 }
