@@ -39,6 +39,7 @@ class OpenWListView extends StatelessWidget {
         behavior: _MyCustomScrollBehavior(),
         child: ListView.builder(
           padding: const EdgeInsets.all(0),
+          shrinkWrap: true,
           reverse: isReverse,
           scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
           itemCount: children.length,

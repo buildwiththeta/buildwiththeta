@@ -11,6 +11,7 @@ import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/override_executer.dart';
 import 'package:theta_open_widgets/src/elements/builders/workflow_executer.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
+import 'package:theta_rendering/theta_rendering.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class NodeBuilder extends StatefulWidget {
@@ -203,9 +204,16 @@ class _NodeBuilderState extends State<NodeBuilder> {
 
   Widget handleOpenWSpacerWidget(CNode node, TreeState state, Widget child) {
     final state = context.read<TreeState>();
+    final parents = const FindNodeRendering().findParentsOfElement(
+      flatList: state.nodes,
+      element: node,
+    );
     final parent =
-        state.nodes.firstWhereOrNull((element) => element.id == node.parentID);
+        parents.firstWhereOrNull((element) => element.id == node.parentID);
     if (![NType.column, NType.row].contains(parent?.type)) {
+      return child;
+    }
+    if (parents.indexWhere((element) => element.type == NType.listView) != -1) {
       return child;
     }
     if (widget.state.node.type == NType.spacer) {
