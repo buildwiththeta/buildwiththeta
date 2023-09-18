@@ -53,8 +53,13 @@ class _OpenWComponentState extends State<OpenWComponent> {
             ...widget.state.node.getAttributes[DBKeys.overrides]
           ]),
       child: GestureDetector(
-        onTap: () {
-          //* MISSING IMPLEMENTATION OF DOUBLE CLICK FOR CHANGING PAGE
+        onLongPress: () {
+          if (widget.state.node.type == NType.component) {
+            context
+                .read<TreeGlobalState>()
+                .onComponentPageChange(widget.state.node);
+          }
+          setState(() {});
         },
         child: NodeBuilder(
           onHover: () {

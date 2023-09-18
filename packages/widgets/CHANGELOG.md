@@ -1,3 +1,8 @@
+## 0.7.12
+
+- [x] - Feat: Blur 
+- [x] - Feat: onPageChanged callback.  
+
 ## 0.7.11
 
 - [x] - Fix: spacing in Flex widgets.
