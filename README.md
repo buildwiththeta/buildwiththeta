@@ -1,4 +1,4 @@
-# [Theta](https://buildwiththeta.com): prototyping and testing in production
+# [Theta](https://buildwiththeta.com): UI injection for Flutter apps
 
 Prototype and test dynamic user interfaces with instant fly-on-air updates. You can update the user interface without rebuilding it. You can directly set up remote A/B tests and see the analysis to improve UX and sales.
 
