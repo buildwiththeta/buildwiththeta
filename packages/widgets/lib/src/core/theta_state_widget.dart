@@ -57,8 +57,8 @@ class TreeGlobalState extends ChangeNotifier {
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
-    required final OnComponentPageChange onComponentPageChange,
     required final OnResizingCallback onResizingCallback,
+    final OnComponentPageChange onComponentPageChange,
     final OnNodeAttributesUpdatedChangedCallBack? onNodeAttributesUpdated,
   }) {
     _onNodeAdded = onNodeAdded;
@@ -76,43 +76,43 @@ class TreeGlobalState extends ChangeNotifier {
     CNode parent,
     Offset offset,
   ) =>
-      _onNodeAdded!.call(node, parent, offset);
+      _onNodeAdded?.call(node, parent, offset);
 
   void onNodeChanged(
     CNode node,
     UITransformResult rect,
     DeviceType deviceType,
   ) =>
-      _onNodeChanged!.call(node, rect, deviceType);
+      _onNodeChanged?.call(node, rect, deviceType);
 
   void onNodeAttributesUpdated(
     CNode node,
     CNode oldNode,
   ) =>
-      _onNodeAttributesUpdated!.call(node, oldNode);
+      _onNodeAttributesUpdated?.call(node, oldNode);
 
   void onNodeFocused(
     CNode node,
     DeviceType device,
   ) =>
-      _onNodeFocused!.call(node, device);
+      _onNodeFocused?.call(node, device);
 
   void onNodeHovered(
     CNode node,
     DeviceType device,
   ) =>
-      _onNodeHovered!.call(node, device);
+      _onNodeHovered?.call(node, device);
 
   void onRightClick(
     PointerDownEvent e,
     CNode node,
   ) =>
-      _onRightClick!.call(e, node);
+      _onRightClick?.call(e, node);
 
   void onComponentPageChange(
     CNode node,
   ) =>
-      _onComponentPageChange!.call(
+      _onComponentPageChange?.call(
         node,
       );
 

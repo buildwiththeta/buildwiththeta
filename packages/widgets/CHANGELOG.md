@@ -1,3 +1,7 @@
+## 0.7.11
+
+- [x] - Feat: onPageChanged callback.  
+
 ## 0.7.10
 
 - [x] - Fix: spacing blocked spacer widgets. 
