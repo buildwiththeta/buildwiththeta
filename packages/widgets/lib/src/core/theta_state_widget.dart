@@ -35,6 +35,10 @@ typedef OnRightClickCallBack = void Function(
   CNode node,
 )?;
 
+typedef OnComponentPageChange = void Function(
+  CNode node,
+)?;
+
 typedef OnResizingCallback = void Function(bool value)?;
 
 OnNodeAddedCallBack _onNodeAdded;
@@ -42,6 +46,7 @@ OnNodeChangedCallBack _onNodeChanged;
 OnNodeFocusedCallBack _onNodeFocused;
 OnNodeHoveredCallBack _onNodeHovered;
 OnRightClickCallBack _onRightClick;
+OnComponentPageChange _onComponentPageChange;
 OnResizingCallback _onResizingCallback;
 OnNodeAttributesUpdatedChangedCallBack _onNodeAttributesUpdated;
 
@@ -52,6 +57,7 @@ class TreeGlobalState extends ChangeNotifier {
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
+    required final OnComponentPageChange onComponentPageChange,
     required final OnResizingCallback onResizingCallback,
     final OnNodeAttributesUpdatedChangedCallBack? onNodeAttributesUpdated,
   }) {
@@ -60,6 +66,7 @@ class TreeGlobalState extends ChangeNotifier {
     _onNodeFocused = onNodeFocused;
     _onNodeHovered = onNodeHovered;
     _onRightClick = onRightClick;
+    _onComponentPageChange = onComponentPageChange;
     _onResizingCallback = onResizingCallback;
     _onNodeAttributesUpdated = onNodeAttributesUpdated;
   }
@@ -101,6 +108,13 @@ class TreeGlobalState extends ChangeNotifier {
     CNode node,
   ) =>
       _onRightClick!.call(e, node);
+
+  void onComponentPageChange(
+    CNode node,
+  ) =>
+      _onComponentPageChange!.call(
+        node,
+      );
 
   void onResizingCallback(bool value) => _onResizingCallback!.call(value);
 }
