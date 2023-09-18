@@ -1,3 +1,11 @@
+## 0.8.7
+
+- [x] Feat: Layer and background blur
+- [x] Feat: BlendModes
+- [x] Feat: Masks
+- [x] Feat: Textfield
+- [x] Feat: Switch
+
 ## 0.8.6
 
 - [x] - Add layer and background blur effects.
