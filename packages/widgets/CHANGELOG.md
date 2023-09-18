@@ -1,6 +1,6 @@
 ## 0.7.12
 
-- [x] - Feat: Blur 
+- [x] - Feat: Blur, masks, and blend modes.
 - [x] - Feat: onPageChanged callback.  
 
 ## 0.7.11
