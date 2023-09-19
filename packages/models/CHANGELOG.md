@@ -1,3 +1,7 @@
+## 0.7.8
+
+- [x] - Feat: add DBKeys.isMask.
+
 ## 0.7.7
 
 - [x] - Add DBKeys.smoothness.
