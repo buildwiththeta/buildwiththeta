@@ -57,10 +57,10 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
               child: AnimatedContainer(
                 margin: const EdgeInsets.symmetric(vertical: 4),
                 padding: const EdgeInsets.only(
-                  left: 16,
-                  top: 10,
+                  left: 8,
+                  top: 4,
                   right: 8,
-                  bottom: 10,
+                  bottom: 4,
                 ),
                 decoration: BoxDecoration(
                   borderRadius:
@@ -78,6 +78,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         if (widget.icon != null)
                           Icon(
@@ -87,8 +88,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                                 ? Colors.white
                                 : theme.txtPrimary,
                           ),
-                        if (widget.icon != null)
-                          const SizedBox(width: Grid.medium),
+                        if (widget.icon != null) const SizedBox(width: 8),
                         Expanded(
                           flex: 5,
                           child: TDetailLabel(

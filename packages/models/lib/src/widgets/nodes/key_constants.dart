@@ -81,6 +81,8 @@ class DBKeys {
   static const String maxLines = 'mxLns';
   static const String minLines = 'mnLns';
   static const String maxLenght = 'mxLng';
+  static const String letterSpacing = 'lttScng';
+  static const String lineSpacing = 'lnSp';
 
   static const String showCursor = 'shCrs';
   static const String autoCorrect = 'aCr';
