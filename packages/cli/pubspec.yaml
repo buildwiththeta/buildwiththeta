@@ -30,6 +30,7 @@ dependencies:
   uuid: ^3.0.7
   interact: ^2.2.0
   encrypt: ^5.0.1
+  recase: ^4.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.2

@@ -1,4 +1,5 @@
 import 'package:example/constants.dart';
+import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
@@ -57,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            componentName,
+            UIBoxAssets.socialCard.name,
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.
@@ -86,7 +87,7 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                'node id',
+                UIBoxAssets.socialCard.title.name,
                 text: 'prova',
                 color: Colors.blue,
               ),

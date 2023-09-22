@@ -10,6 +10,37 @@ class DirectoryRepositoryImpl implements DirectoryRepository {
   final DirectoryService _directoryService;
 
   @override
+  Future<Either<Exception, void>> writeConfigFile(
+      {required String jsonKey, required String content}) async {
+    try {
+      return Right(await _directoryService.writeConfigurationFile(
+          jsonKey: jsonKey, content: content));
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Exception, String>> readConfigFile(
+      {required String jsonKey}) async {
+    try {
+      return Right(await _directoryService.readConfigurationFile(jsonKey));
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Exception, void>> writeNamesFile(
+      {required String content}) async {
+    try {
+      return Right(await _directoryService.writeNamesFile(content));
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
   Future<Either<Exception, void>> writePreloadFile(
       {required String anonKey,
       required String jsonKey,

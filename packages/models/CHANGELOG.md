@@ -1,3 +1,8 @@
+## 0.8.0
+
+- [x] Feat: add DBKeys.letterSpacing and DBKeys.lineSpacing.
+- [x] Fix: FSizeRange doesn't need default values anymore.
+
 ## 0.7.8
 
 - [x] - Feat: add DBKeys.isMask.

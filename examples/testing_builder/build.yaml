@@ -1,0 +1,40 @@
+
+targets:
+  $default:
+    builders:
+      testing_exported_code|node_builder_part:
+        generate_for:
+          - lib/main.dart
+        options:
+          formatted: true
+      testing_exported_code|node_builder:
+        generate_for:
+          - lib/main.dart
+        options:
+          formatted: true
+
+builders:
+  node_builder:
+    import: './lib/gen/nodes_builder.dart'
+    builder_factories: ['nodeBuilder']
+    build_extensions: {'.dart': ['.g.dart']}
+    auto_apply: dependents
+    runs_before: 
+      - "source_gen|combining_builder"
+      - "reflectable|reflectable_builder"
+      - "reflectable|reflectable"
+      - "flutter_gen_runner|flutter_gen_runner"
+      - "built_value_generator:built_value"
+
+  node_builder_part:
+    import: './lib/gen/nodes_builder.dart'
+    builder_factories: ['nodeBuilderPart']
+    build_extensions: {'.dart': ['.nodebuilder.g.dart']}
+    auto_apply: dependents
+    runs_before: 
+      - "source_gen|combining_builder"
+      - "reflectable|reflectable_builder"
+      - "reflectable|reflectable"
+      - "flutter_gen_runner|flutter_gen_runner"
+      - "built_value_generator|built_value"
+      - "theta_open_widgets|node_builder"

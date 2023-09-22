@@ -174,12 +174,11 @@ class _BoxTransformBuilder extends StatefulWidget {
 
 class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   final controller = TransformableBoxController();
-  final _debouncer = Debouncer(milliseconds: 10);
+  final _debouncer = Debouncer(milliseconds: 1);
   Timer? timer;
 
-  final int differece = 8;
+  final int difference = 8;
   late Size canvasSize;
-  double x = 0, y = 0;
   bool showLeft = false;
 
   late List<Offset> anchorPoints;
@@ -291,18 +290,22 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     double? newLeft;
 
     for (final axis in anchorAxisHorizontal) {
-      if ((rect.rect.top - axis).abs() < differece) {
+      if ((rect.rect.top - axis).abs() < difference) {
         newTop = axis.toDouble();
-      } else if ((rect.rect.bottom - axis).abs() < differece) {
+        break;
+      } else if ((rect.rect.bottom - axis).abs() < difference) {
         newTop = axis - rect.rect.height;
+        break;
       }
     }
 
     for (final axis in anchorAxisVertical) {
-      if ((rect.rect.left - axis).abs() < differece) {
+      if ((rect.rect.left - axis).abs() < difference) {
         newLeft = axis.toDouble();
-      } else if ((rect.rect.right - axis).abs() < differece) {
+        break;
+      } else if ((rect.rect.right - axis).abs() < difference) {
         newLeft = axis - rect.rect.width;
+        break;
       }
     }
 
@@ -317,38 +320,43 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       rect.rect.top + rectSize.height / 2,
     );
 
+    double minDistance = double.infinity;
+    Offset nearestAnchor = Offset.zero;
+
     for (final point in anchorPoints) {
-      final double distance = (point - rectCenterPosition).distance;
-      if (distance < differece) {
-        final centeredRect = Rect.fromCenter(
-          center: point,
-          width: rect.rect.width,
-          height: rect.rect.height,
-        );
-        controller
-          ..setRect(centeredRect)
-          ..recalculatePosition();
-        adjustAndNotify(centeredRect, rect, state);
-        return;
+      final distance = (point - rectCenterPosition).distance;
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestAnchor = point;
       }
     }
 
-    double? newTop;
-    double? newLeft;
-    final res = getCoordinates(rect);
-    newTop = res.newTop;
-    newLeft = res.newLeft;
-
-    if (newTop != null || newLeft != null) {
-      final adjustedRect = Rect.fromLTWH(
-        newLeft ?? rect.rect.left,
-        newTop ?? rect.rect.top,
-        rect.rect.width,
-        rect.rect.height,
+    if (minDistance < difference) {
+      final centeredRect = Rect.fromCenter(
+        center: nearestAnchor,
+        width: rect.rect.width,
+        height: rect.rect.height,
       );
-      adjustAndNotify(adjustedRect, rect, state);
+      controller
+        ..setRect(centeredRect)
+        ..recalculatePosition();
+      adjustAndNotify(centeredRect, rect, state);
     } else {
-      setStateAndNotify(rect, state);
+      final res = getCoordinates(rect);
+      final newTop = res.newTop;
+      final newLeft = res.newLeft;
+
+      if (newTop != null || newLeft != null) {
+        final adjustedRect = Rect.fromLTWH(
+          newLeft ?? rect.rect.left,
+          newTop ?? rect.rect.top,
+          rect.rect.width,
+          rect.rect.height,
+        );
+        adjustAndNotify(adjustedRect, rect, state);
+      } else {
+        setStateAndNotify(rect, state);
+      }
     }
   }
 

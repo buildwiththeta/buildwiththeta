@@ -4,6 +4,7 @@ import 'package:args/command_runner.dart';
 import 'package:either_dart/either.dart';
 import 'package:interact/interact.dart';
 import 'package:mason_logger/mason_logger.dart' hide Progress;
+import 'package:theta_cli/src/core/constants.dart';
 import 'package:theta_cli/src/dependency_injection/di.dart';
 import 'package:theta_cli/src/domain/usecases/base_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
@@ -26,7 +27,7 @@ class PreloadComponentCommand extends Command<int> {
       'anon-key',
       abbr: 'k',
       help: 'Anon key',
-      mandatory: true,
+      mandatory: false,
     );
   }
 
@@ -41,16 +42,6 @@ class PreloadComponentCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    try {
-      if (argResults?['anon-key'] == null) {
-        _logger.err('❗️ Anon key is required. . Use --anon-key YOUR_KEY');
-        return ExitCode.usage.code;
-      }
-    } catch (e) {
-      _logger.err('❗️ Anon key is required. . Use --anon-key YOUR_KEY');
-      return ExitCode.usage.code;
-    }
-
     _logger.info('Welcome to Theta CLI! Before we begin:');
     final branch = Input(prompt: 'Enter branch name').interact();
     List<String> componentsName = [];
@@ -72,7 +63,10 @@ class PreloadComponentCommand extends Command<int> {
       rightPrompt: (current) => ' ${current.toString().padLeft(3)}/$length',
     ).interact();
 
-    final anonKey = argResults?['anon-key'];
+    await initializeDependencyInjection('');
+    final anonKey = argResults?['anon-key'] ?? await readToken();
+    await disposeDependencies();
+    await initializeDependencyInjection(anonKey);
 
     await fetchStyles(anonKey);
     progress.increase(1);
@@ -91,7 +85,6 @@ class PreloadComponentCommand extends Command<int> {
 
   Future<void> fetchStyles(String anonKey) {
     _logger.info('🔄 Fetching project styles...');
-    initializeDependencyInjection(anonKey);
     return getIt<GetStylesUseCase>()(Params.empty).fold((l) {
       _logger.err('❗️ Error fetching styles, message: $l');
       throw Exception('❗️ Error fetching styles, message: $l');

@@ -18,10 +18,50 @@ class DirectoryService {
   static const defaultImage =
       'https://fftefqqvfkkewuokofds.supabase.co/storage/v1/object/public/theta-assets/cover-min.png';
 
+  Future<bool> checkSystemTemoDirectory() async =>
+      await Directory.systemTemp.exists();
+
+  Future<void> writeConfigurationFile(
+      {required String jsonKey, required String content}) async {
+    if (await checkSystemTemoDirectory()) {
+      final file = File('${Directory.systemTemp.path}/$preloadFile');
+      final fileContent =
+          await file.exists() ? await file.readAsString() : '{}';
+      final json = jsonDecode(fileContent);
+
+      json[jsonKey] = compressString(content);
+      await file.writeAsString(jsonEncode(json));
+    }
+  }
+
+  Future<String> readConfigurationFile(String jsonKey) async {
+    if (await checkSystemTemoDirectory()) {
+      final file = File('${Directory.systemTemp.path}/$preloadFile');
+      final fileContent =
+          await file.exists() ? await file.readAsString() : '{}';
+      final json = jsonDecode(fileContent);
+
+      return decompressString(json[jsonKey]);
+    }
+    return '';
+  }
+
+  Future<void> writeNamesFile(String content) async {
+    final file = File('${Directory.current.path}/lib/theta_names.dart');
+    await file.writeAsString(content);
+    _logger.info('📝 theta_names.dart updated successfully.');
+  }
+
   String compressString(String json) {
     final enCodedJson = utf8.encode(json);
     final gZipJson = gzip.encode(enCodedJson);
     return base64.encode(gZipJson);
+  }
+
+  String decompressString(String content) {
+    final decodedJson = base64.decode(content);
+    final decodedGZipJson = gzip.decode(decodedJson);
+    return utf8.decode(decodedGZipJson);
   }
 
   String encrypt(String anonKey, String value) {

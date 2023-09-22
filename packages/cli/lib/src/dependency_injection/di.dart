@@ -10,11 +10,14 @@ import 'package:theta_cli/src/data/repositories/styles_repository_impl.dart';
 import 'package:theta_cli/src/domain/repositories/component_repository.dart';
 import 'package:theta_cli/src/domain/repositories/directory_repository.dart';
 import 'package:theta_cli/src/domain/repositories/styles_repository.dart';
+import 'package:theta_cli/src/domain/usecases/create_config_file_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/create_names_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/preload_fonts.dart';
 import 'package:theta_cli/src/domain/usecases/preload_images.dart';
+import 'package:theta_cli/src/domain/usecases/read_config_file_usecase.dart';
 
 GetIt get getIt => GetIt.instance;
 
@@ -36,11 +39,21 @@ Future<void> initializeDependencyInjection(String anonKey) async {
         () => DirectoryRepositoryImpl(getIt()));
 
   getIt
-    ..registerLazySingleton(() => GetComponentUseCase(getIt()))
-    ..registerLazySingleton(() => GetStylesUseCase(getIt()))
-    ..registerLazySingleton(() => CreatePreLoadFileUseCase(getIt()))
-    ..registerLazySingleton(() => PreloadImagesUseCase(getIt()))
-    ..registerLazySingleton(() => PreloadFontsUseCase(getIt()));
+    ..registerLazySingleton<GetComponentUseCase>(
+        () => GetComponentUseCase(getIt()))
+    ..registerLazySingleton<GetStylesUseCase>(() => GetStylesUseCase(getIt()))
+    ..registerLazySingleton<CreatePreLoadFileUseCase>(
+        () => CreatePreLoadFileUseCase(getIt()))
+    ..registerLazySingleton<PreloadImagesUseCase>(
+        () => PreloadImagesUseCase(getIt()))
+    ..registerLazySingleton<PreloadFontsUseCase>(
+        () => PreloadFontsUseCase(getIt()))
+    ..registerLazySingleton<CreateConfigFileUseCase>(
+        () => CreateConfigFileUseCase(getIt()))
+    ..registerLazySingleton<ReadConfigFileUseCase>(
+        () => ReadConfigFileUseCase(getIt()))
+    ..registerLazySingleton<CreateNamesFileUseCase>(
+        () => CreateNamesFileUseCase(getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();
