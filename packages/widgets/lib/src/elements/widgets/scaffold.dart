@@ -41,12 +41,17 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
   @override
   Widget build(final BuildContext context) {
     final state = context.watch<TreeState>();
-    final widgets =
-        widget.children.map((final e) => BoxTransformBuilder(node: e)).toList();
     if (state.forPlay) {
-      return Stack(
-        children: widgets,
-      );
+      return LayoutBuilder(builder: (context, constraints) {
+        return Stack(
+          children: widget.children
+              .map((final e) => BoxTransformBuilder(
+                  node: e,
+                  screenSize:
+                      Size(constraints.maxWidth, constraints.maxHeight)))
+              .toList(),
+        );
+      });
     }
     return DragTarget<DragTargetSingleNodeModel>(
       onAcceptWithDetails: (data) {
@@ -59,21 +64,28 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
             );
       },
       builder: (context, _, __) => DeferredPointerHandler(
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: MouseRegion(onHover: (e) {
-                final state = context.read<TreeState>();
-                if (state.hoveredNode?.id != widget.nodeState.node.id) {
-                  context
-                      .read<TreeGlobalState>()
-                      .onNodeHovered(widget.nodeState.node, state.deviceType);
-                }
-              }),
-            ),
-            ...widgets,
-          ],
-        ),
+        child: LayoutBuilder(builder: (context, constraints) {
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: MouseRegion(onHover: (e) {
+                  final state = context.read<TreeState>();
+                  if (state.hoveredNode?.id != widget.nodeState.node.id) {
+                    context
+                        .read<TreeGlobalState>()
+                        .onNodeHovered(widget.nodeState.node, state.deviceType);
+                  }
+                }),
+              ),
+              ...widget.children
+                  .map((final e) => BoxTransformBuilder(
+                      node: e,
+                      screenSize:
+                          Size(constraints.maxWidth, constraints.maxHeight)))
+                  .toList(),
+            ],
+          );
+        }),
       ),
     );
   }

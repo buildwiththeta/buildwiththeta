@@ -2,7 +2,7 @@ import 'package:example/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-const componentName = "Paywall";
+const componentName = "Disney";
 
 Future<void> main() async {
   /// Initialize Theta instance.

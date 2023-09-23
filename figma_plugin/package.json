@@ -10,7 +10,15 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "@figma/plugin-typings": "^1.76.0",
+    "@figma/plugin-typings": "^1.77.0",
+    "@types/base-64": "^1.0.0",
+    "@types/node-gzip": "^1.1.0",
+    "@types/utf8": "^3.0.1",
     "typescript": "*"
+  },
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "node-gzip": "^1.1.2",
+    "utf8": "^3.0.0"
   }
 }

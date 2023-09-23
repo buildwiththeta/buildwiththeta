@@ -1,4 +1,4 @@
-//const gzip = require('node-gzip');
+
 
 // This plugin will open a window to prompt the user to enter a number, and
 // it will then create that many rectangles on the screen.
@@ -23,9 +23,13 @@ figma.ui.onmessage = async msg => {
 
     //const compressed = btoa(await gzip(JSON.stringify(cnodes)));
 
+    /*const jsonString = JSON.stringify(cnodes);
+    var bytes = utf8.encode(jsonString);
+    var encoded = base64.encode(bytes);*/
+
     figma.ui.postMessage({pluginMessage: {
       type: "copy_text",
-      content: JSON.stringify(cnodes),
+      content: JSON.stringify(cnodes), //await gzip.gzip(encoded),
     }});
   }
 
