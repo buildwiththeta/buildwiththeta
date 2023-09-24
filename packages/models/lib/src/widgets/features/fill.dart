@@ -409,10 +409,13 @@ class FFill extends Equatable {
     if (json[key] == 'tC') return Alignment.topCenter;
     if (json[key] == 'tL') return Alignment.topLeft;
     if (json[key] == 'tR') return Alignment.topRight;
+    try {
+      return Alignment(json[key][0], json[key][1]);
+    } catch (_) {}
     return null;
   }
 
-  String? alignToJson(final Alignment? value) {
+  dynamic alignToJson(final Alignment? value) {
     if (value == Alignment.bottomCenter) return 'bC';
     if (value == Alignment.bottomLeft) return 'bL';
     if (value == Alignment.bottomRight) return 'bR';
@@ -422,7 +425,8 @@ class FFill extends Equatable {
     if (value == Alignment.topCenter) return 'tC';
     if (value == Alignment.topLeft) return 'tL';
     if (value == Alignment.topRight) return 'tR';
-    return null;
+    if (value == null) return null;
+    return [value.x, value.y];
   }
 
   String alignToCode(final Alignment? value) {
