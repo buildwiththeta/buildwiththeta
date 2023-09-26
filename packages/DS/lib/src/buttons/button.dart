@@ -14,7 +14,6 @@ class ThetaDesignButton extends StatelessWidget {
     this.isTransparent = false,
     this.primaryColor,
     this.isLoading = false,
-    this.iconWidget,
   });
 
   /// Primary Color
@@ -38,9 +37,6 @@ class ThetaDesignButton extends StatelessWidget {
   /// If true, the button will be showing CircularProgressIndicator, default is false
   final bool? isLoading;
 
-  /// Icon widget
-  final Widget? iconWidget;
-
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
@@ -58,19 +54,8 @@ class ThetaDesignButton extends StatelessWidget {
                         height: 20,
                         child: CircularProgressIndicator(),
                       )
-                    : Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (iconWidget != null) ...[
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: iconWidget!,
-                            ),
-                          ],
-                          TDetailLabel(
-                            label,
-                          ),
-                        ],
+                    : TDetailLabel(
+                        label,
                       ),
               ),
             )
@@ -87,19 +72,9 @@ class ThetaDesignButton extends StatelessWidget {
                         height: 20,
                         child: CircularProgressIndicator(),
                       )
-                    : Row(
-                        children: [
-                          if (iconWidget != null) ...[
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: iconWidget!,
-                            ),
-                          ],
-                          TDetailLabel(
-                            label,
-                            color: isPrimary ? Colors.white : theme.txtPrimary,
-                          ),
-                        ],
+                    : TDetailLabel(
+                        label,
+                        color: isPrimary ? Colors.white : theme.txtPrimary,
                       ),
               ),
             ),

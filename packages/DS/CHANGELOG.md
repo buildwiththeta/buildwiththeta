@@ -1,3 +1,7 @@
+## 0.3.4
+
+- [x] Feat: fix button layout
+
 ## 0.3.3
 
 - [x] Feat: ThetaDesignButtonIcon redesigned.

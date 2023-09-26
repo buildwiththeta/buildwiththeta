@@ -20,9 +20,16 @@ class CoordinatesEntity {
 }
 
 class BoxTransformBuilder extends StatefulWidget {
-  const BoxTransformBuilder({super.key, required this.node});
+  const BoxTransformBuilder({
+    super.key,
+    required this.node,
+    required this.screenSize,
+    this.inStack = false,
+  });
 
   final CNode node;
+  final bool inStack;
+  final Size screenSize;
 
   @override
   State<BoxTransformBuilder> createState() => _BoxTransformBuilderState();
@@ -40,30 +47,31 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
 
   DeviceInfo getDeviceInfo(TreeState state) {
     if (!state.forPlay) {
-      return state.deviceInfo;
+      return state.deviceInfo.copyWith(screenSize: widget.screenSize);
     }
-    final screenSize = MediaQuery.of(context).size;
-    if (screenSize.width <= 400) {
-      return Devices.ios.iPhone13;
-    } else if (screenSize.width <=
+    if (widget.screenSize.width <= 400) {
+      return Devices.ios.iPhone13.copyWith(screenSize: widget.screenSize);
+    } else if (widget.screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
-      return Devices.ios.iPadPro11Inches;
-    } else if (screenSize.width <=
+      return Devices.ios.iPadPro11Inches
+          .copyWith(screenSize: widget.screenSize);
+    } else if (widget.screenSize.width <=
         Devices.ios.iPadPro11Inches.screenSize.width) {
-      return Devices.ios.iPadPro11Inches;
+      return Devices.ios.iPadPro11Inches
+          .copyWith(screenSize: widget.screenSize);
     } else {
       return DeviceInfo.genericDesktopMonitor(
         platform: TargetPlatform.macOS,
         id: 'theta-desktop',
         name: 'Generic Desktop',
-        screenSize: const Size(1920, 1080),
+        screenSize: widget.screenSize,
         windowPosition: Rect.fromCenter(
           center: const Offset(
             1920 * 0.5,
             1080 * 0.5,
           ),
-          width: 1920,
-          height: 1080,
+          width: widget.screenSize.width,
+          height: widget.screenSize.height,
         ),
       );
     }
@@ -93,6 +101,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
         isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
     final height =
         isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
+
+    Logger.printWarning(
+        '${widget.node.type}: Parent size: ${widget.screenSize}, top: $top, left: $left, bottom: $bottom, right: $right, width: $width, height: $height');
 
     if (state.focusedNode?.id != widget.node.id ||
         state.forPlay ||
@@ -223,7 +234,6 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   void initState() {
     super.initState();
     final TreeState state = context.read<TreeState>();
-    final device = state.deviceInfo;
 
     controller
       ..setRect(createModifiedRect(
@@ -231,11 +241,11 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
-        device.screenSize.width,
-        device.screenSize.height,
+        widget.screenSize.width,
+        widget.screenSize.height,
       ));
 
-    canvasSize = state.deviceInfo.screenSize;
+    canvasSize = widget.screenSize;
     anchorPoints = [
       canvasSize.center(Offset.zero),
     ];
@@ -254,18 +264,17 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     super.didUpdateWidget(oldWidget);
 
     final TreeState state = context.read<TreeState>();
-    final device = state.deviceInfo;
     controller
       ..setRect(createModifiedRect(
           widget.node.rect(state.deviceInfo.identifier.type)))
       ..setClampingRect(Rect.fromLTWH(
         0,
         0,
-        device.screenSize.width,
-        device.screenSize.height,
+        widget.screenSize.width,
+        widget.screenSize.height,
       ));
 
-    canvasSize = state.deviceInfo.screenSize;
+    canvasSize = widget.screenSize;
     anchorPoints = [
       canvasSize.center(Offset.zero),
     ];
