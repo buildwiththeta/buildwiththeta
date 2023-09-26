@@ -65,9 +65,9 @@ class FAlign extends Equatable {
   }
 
   Map<String, dynamic> toJson() => {
-        'm': convertValueToJson(align!),
-        't': convertValueToJson(alignTablet ?? align!),
-        'd': convertValueToJson(alignDesktop ?? align!),
+        'm': convertValueToJson(align),
+        't': convertValueToJson(alignTablet ?? align),
+        'd': convertValueToJson(alignDesktop ?? align),
       };
 
   FAlign clone() => FAlign(
@@ -87,7 +87,7 @@ class FAlign extends Equatable {
         alignDesktop: alignDesktop ?? this.alignDesktop,
       );
 
-  static Alignment convertJsonToValue(final String key) {
+  static Alignment? convertJsonToValue(final String key) {
     switch (key) {
       case 'tL':
         return Alignment.topLeft;
@@ -108,7 +108,7 @@ class FAlign extends Equatable {
       case 'bR':
         return Alignment.bottomRight;
       default:
-        return Alignment.topLeft;
+        return null;
     }
   }
 
@@ -138,8 +138,8 @@ class FAlign extends Equatable {
     return align;
   }
 
-  static String convertValueToJson(final Alignment value) {
-    var result = 'tL';
+  static String? convertValueToJson(final Alignment? value) {
+    String? result;
     if (value == Alignment.topCenter) result = 'tC';
     if (value == Alignment.topRight) result = 'tR';
     if (value == Alignment.centerLeft) result = 'cL';

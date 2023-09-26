@@ -36,19 +36,17 @@ class TetaTextStyles {
         ));
     final gfonts = GoogleFonts.asMap().entries.map((e) => e.key).toList();
     final letterSpacing0 = double.tryParse(letterSpacing.get(
-          deviceType: state.deviceType,
-          forPlay: forPlay,
-          context: context,
-          loop: 0,
-        )) ??
-        1;
+      deviceType: state.deviceType,
+      forPlay: forPlay,
+      context: context,
+      loop: 0,
+    ));
     final lineHeight = double.tryParse(lineSpacing.get(
-          deviceType: state.deviceType,
-          forPlay: forPlay,
-          context: context,
-          loop: 0,
-        )) ??
-        1;
+      deviceType: state.deviceType,
+      forPlay: forPlay,
+      context: context,
+      loop: 0,
+    ));
     return !gfonts.contains(model?.fontFamily ?? fontFamily)
         ? TextStyle(
             fontFamily: (model != null) ? model.fontFamily : fontFamily,

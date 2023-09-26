@@ -47,7 +47,7 @@ class OpenWContainer extends Container {
             state: context.watch<TreeState>(),
             context: context,
           ),
-          decoration: TetaBoxDecoration.get(
+          decoration: ThetaBoxDecoration.get(
             state: context.watch<TreeState>(),
             context: context,
             fill: const NodeOverrideExecuter().executeColor(
