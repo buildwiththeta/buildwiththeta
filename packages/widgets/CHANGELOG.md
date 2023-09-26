@@ -1,3 +1,11 @@
+## 0.8.2
+
+- [x] Fix: remove debug logs.
+
+## 0.8.1
+
+- [x] Fix: BoxTransformBuilder with negative margins.
+
 ## 0.8.0
 
 - [x] Feat: add _handleAlignment to manage alignment for any node.

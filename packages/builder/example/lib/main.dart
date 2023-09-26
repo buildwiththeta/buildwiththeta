@@ -3,7 +3,7 @@ import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-const componentName = "SocialCard";
+const componentName = "Disney";
 
 Future<void> main() async {
   /// Initialize Theta instance.

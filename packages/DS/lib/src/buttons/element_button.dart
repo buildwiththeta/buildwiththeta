@@ -11,6 +11,7 @@ class ThetaDesignElementButton extends StatefulWidget {
     this.subtitle,
     this.icon,
     this.tooltip,
+    this.height,
   }) : super(key: key);
 
   final bool isSelected;
@@ -18,6 +19,7 @@ class ThetaDesignElementButton extends StatefulWidget {
   final String? subtitle;
   final IconData? icon;
   final String? tooltip;
+  final double? height;
   final Function()? onTap;
   final Function()? onDoubleTap;
 
@@ -62,6 +64,8 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                   right: 8,
                   bottom: 4,
                 ),
+                height: widget.height,
+                alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
@@ -76,6 +80,7 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                 curve: Curves.easeInOutCubic,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -89,14 +94,11 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                                 : theme.txtPrimary,
                           ),
                         if (widget.icon != null) const SizedBox(width: 8),
-                        Expanded(
-                          flex: 5,
-                          child: TDetailLabel(
-                            widget.title,
-                            color: widget.isSelected
-                                ? Colors.white
-                                : theme.txtPrimary,
-                          ),
+                        TDetailLabel(
+                          widget.title,
+                          color: widget.isSelected
+                              ? Colors.white
+                              : theme.txtPrimary,
                         ),
                       ],
                     ),

@@ -89,21 +89,22 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     final top =
         isStartOrStretchAlign(widget.node.verticalAlignment) ? rect.top : null;
     final bottom = isEndOrStretchAlign(widget.node.verticalAlignment)
-        ? deviceForChecks.screenSize.height - rect.bottom
+        ? (deviceForChecks.screenSize.height - rect.bottom < 0)
+            ? 0.0
+            : deviceForChecks.screenSize.height - rect.bottom
         : null;
     final left = isStartOrStretchAlign(widget.node.horizontalAlignment)
         ? rect.left
         : null;
     final right = isEndOrStretchAlign(widget.node.horizontalAlignment)
-        ? deviceForChecks.screenSize.width - rect.right
+        ? deviceForChecks.screenSize.width - rect.right < 0
+            ? 0.0
+            : deviceForChecks.screenSize.width - rect.right
         : null;
     final width =
         isStretchAlign(widget.node.horizontalAlignment) ? null : rect.width;
     final height =
         isStretchAlign(widget.node.verticalAlignment) ? null : rect.height;
-
-    Logger.printWarning(
-        '${widget.node.type}: Parent size: ${widget.screenSize}, top: $top, left: $left, bottom: $bottom, right: $right, width: $width, height: $height');
 
     if (state.focusedNode?.id != widget.node.id ||
         state.forPlay ||
@@ -116,7 +117,9 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
                   !isStretchAlign(widget.node.verticalAlignment) ? 0 : top ?? 0,
               bottom: !isStretchAlign(widget.node.verticalAlignment)
                   ? 0
-                  : bottom ?? 0,
+                  : (bottom ?? 0) < 0
+                      ? 0
+                      : bottom ?? 0,
               left: !isStretchAlign(widget.node.horizontalAlignment)
                   ? 0
                   : left ?? 0,

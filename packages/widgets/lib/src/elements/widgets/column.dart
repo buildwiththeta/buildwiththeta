@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/core/spacing_widgets.dart';
@@ -48,15 +47,12 @@ class OpenWColumn extends Flex {
 
   static double? getSpacing(
       FSize spacing, FDirection direction, BuildContext context) {
-    Logger.printWarning(
-        'spacing in column: ${spacing.size} ${spacing.sizeTablet} ${spacing.sizeDesktop}');
     final sp = spacing.get(
         forPlay: context.watch<TreeState>().forPlay,
         deviceType: context.watch<TreeState>().deviceType,
         deviceInfo: context.watch<TreeState>().deviceInfo,
         context: context,
         isWidth: _getDirection(direction, context) == Axis.horizontal);
-    Logger.printWarning('final spacing: $sp');
     return sp;
   }
 
