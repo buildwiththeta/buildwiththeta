@@ -358,7 +358,7 @@ class TextFieldDefaultAttributes extends DefaultAttributesAdapter {
         DBKeys.labelText: FTextTypeInput(value: 'Placeholder'),
         DBKeys.textStyle: FTextStyle(),
         DBKeys.contentPadding: FMargins(
-          margins: [16, 0, 0, 0],
+          margins: [16, 16, 16, 16],
           marginsTablet: null,
           marginsDesktop: null,
         ),
