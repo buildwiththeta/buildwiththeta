@@ -155,6 +155,7 @@ class __LogicBoxState extends State<_LogicBox> {
       _widget = r.treeNodes;
       _isLoaded = true;
     });
+    state.onNodesChanged(r.nodes);
     if (r.conversionEvents.isNotEmpty) {
       final worksFromCloud = r.conversionEvents
           .map((e) => Workflow(e.nodeID, e.trigger, (dynamic) async {

@@ -1,7 +1,10 @@
 ## 0.8.0
 
 - [x] Feat: add DBKeys.letterSpacing and DBKeys.lineSpacing.
+- [x] Feat: add DBKeys.nodeAlignment
 - [x] Fix: FSizeRange doesn't need default values anymore.
+- [x] Fix: FAlign fixed.
+- [x] Fix: fSize fixed in responsive design starting from phone.
 
 ## 0.7.8
 

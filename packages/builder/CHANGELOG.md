@@ -1,3 +1,9 @@
+## 0.9.0
+
+- [x] Feat: Fill overlay layers.
+- [x] Feat: return list of nodes.
+- [x] Fix: spacing.
+
 ## 0.8.7
 
 - [x] Feat: Layer and background blur

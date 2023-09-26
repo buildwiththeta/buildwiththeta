@@ -1,3 +1,9 @@
+## 0.8.0
+
+- [x] Feat: add _handleAlignment to manage alignment for any node.
+- [x] Feat: add overlays for Containers.
+- [x] Fix: spacing between elements in Flex widgets.
+
 ## 0.7.12
 
 - [x] - Feat: Blur, masks, and blend modes.

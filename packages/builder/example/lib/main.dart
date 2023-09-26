@@ -3,7 +3,7 @@ import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-const componentName = "Disney";
+const componentName = "SocialCard";
 
 Future<void> main() async {
   /// Initialize Theta instance.
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
           /// It's used to build the UI.
           /// It requires a component [name].
           body: UIBox(
-            UIBoxAssets.socialCard.name,
+            componentName,
             controller: _controller,
 
             /// [placeholder] is the widget displayed while the page is loading.

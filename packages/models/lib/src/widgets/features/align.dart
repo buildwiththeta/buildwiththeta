@@ -57,11 +57,15 @@ class FAlign extends Equatable {
   }
 
   static FAlign fromJson(final dynamic json) {
-    return FAlign(
-      align: convertJsonToValue(json['m']),
-      alignTablet: convertDropDownToValue(json['t'] ?? json['m'] ?? ''),
-      alignDesktop: convertDropDownToValue(json['d'] ?? json['m'] ?? ''),
-    );
+    try {
+      return FAlign(
+        align: convertJsonToValue(json['m']),
+        alignTablet: convertDropDownToValue(json['t'] ?? json['m'] ?? ''),
+        alignDesktop: convertDropDownToValue(json['d'] ?? json['m'] ?? ''),
+      );
+    } catch (e) {
+      return const FAlign();
+    }
   }
 
   Map<String, dynamic> toJson() => {
