@@ -1,3 +1,7 @@
+## 0.8.1
+
+- [x] Feat: new icons in IntrinsicState.
+
 ## 0.8.0
 
 - [x] Feat: add DBKeys.letterSpacing and DBKeys.lineSpacing.

@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'node id',
+                '',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {

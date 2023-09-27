@@ -4,7 +4,7 @@ import 'package:theta_models/theta_models.dart';
 class AlignIntrinsicStates extends IntrinsicState {
   AlignIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/align/',
+          nodeIcon: 'nodes/align.svg',
           displayName: NodeType.name(NType.align),
           type: NType.align,
           maxChildren: 1,
@@ -17,7 +17,7 @@ class AlignIntrinsicStates extends IntrinsicState {
 class ColumnIntrinsicStates extends IntrinsicState {
   ColumnIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/column/',
+          nodeIcon: 'nodes/column.svg',
           displayName: NodeType.name(NType.column),
           type: NType.column,
           maxChildren: null,
@@ -30,7 +30,7 @@ class ColumnIntrinsicStates extends IntrinsicState {
 class ComponentIntrinsicStates extends IntrinsicState {
   ComponentIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/component/',
+          nodeIcon: 'nodes/component.svg',
           displayName: NodeType.name(NType.component),
           type: NType.component,
           maxChildren: 0,
@@ -43,7 +43,7 @@ class ComponentIntrinsicStates extends IntrinsicState {
 class TeamComponentIntrinsicStates extends IntrinsicState {
   TeamComponentIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/component/',
+          nodeIcon: 'nodes/component.svg',
           displayName: NodeType.name(NType.teamComponent),
           type: NType.teamComponent,
           maxChildren: 0,
@@ -54,22 +54,22 @@ class TeamComponentIntrinsicStates extends IntrinsicState {
 
 /// Container
 class ContainerIntrinsicStates extends IntrinsicState {
-  ContainerIntrinsicStates()
+  const ContainerIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/container/',
-          displayName: NodeType.name(NType.container),
+          nodeIcon: 'nodes/container.svg',
+          displayName: 'Container',
           type: NType.container,
           maxChildren: 1,
           canHave: ChildrenEnum.child,
         );
-  ContainerIntrinsicStates.create() : this();
+  const ContainerIntrinsicStates.create() : this();
 }
 
 /// Material Icon
 class IconIntrinsicStates extends IntrinsicState {
   const IconIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/icon/',
+          nodeIcon: 'nodes/icon.svg',
           displayName: 'Material Icon',
           type: NType.icon,
           canHave: ChildrenEnum.none,
@@ -81,7 +81,7 @@ class IconIntrinsicStates extends IntrinsicState {
 class ImageIntrinsicStates extends IntrinsicState {
   ImageIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/image/',
+          nodeIcon: 'nodes/image.svg',
           displayName: NodeType.name(NType.image),
           type: NType.image,
           canHave: ChildrenEnum.none,
@@ -95,7 +95,7 @@ class ImageIntrinsicStates extends IntrinsicState {
 class ListViewIntrinsicStates extends IntrinsicState {
   const ListViewIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/collection/',
+          nodeIcon: 'nodes/collection.svg',
           displayName: 'Collection',
           type: NType.listView,
           maxChildren: null,
@@ -110,7 +110,7 @@ class ListViewIntrinsicStates extends IntrinsicState {
 class LottieIntrinsicStates extends IntrinsicState {
   LottieIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/image/', //TODO: lottie icon
+          nodeIcon: 'nodes/lottie.svg', //TODO: lottie icon
           displayName: NodeType.name(NType.lottie),
           type: NType.lottie,
           maxChildren: 0,
@@ -122,21 +122,21 @@ class LottieIntrinsicStates extends IntrinsicState {
 /// SvgPicture
 /// https://pub.dev/packages/flutter_svg
 class SvgPictureIntrinsicStates extends IntrinsicState {
-  SvgPictureIntrinsicStates()
+  const SvgPictureIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/image/', //TODO: svg icon
-          displayName: NodeType.name(NType.svgPicture),
+          nodeIcon: 'nodes/svg.svg', //TODO: svg icon
+          displayName: 'SVG',
           type: NType.svgPicture,
           maxChildren: 0,
           canHave: ChildrenEnum.none,
         );
-  SvgPictureIntrinsicStates.create() : this();
+  const SvgPictureIntrinsicStates.create() : this();
 }
 
 class RowIntrinsicStates extends IntrinsicState {
   RowIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/row/',
+          nodeIcon: 'nodes/row.svg',
           displayName: NodeType.name(NType.row),
           type: NType.row,
           maxChildren: null,
@@ -148,7 +148,7 @@ class RowIntrinsicStates extends IntrinsicState {
 class ScaffoldIntrinsicStates extends IntrinsicState {
   const ScaffoldIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/component/',
+          nodeIcon: 'nodes/component.svg',
           displayName: 'Component',
           type: NType.scaffold,
           canHave: ChildrenEnum.children,
@@ -159,7 +159,7 @@ class ScaffoldIntrinsicStates extends IntrinsicState {
 class StackIntrinsicStates extends IntrinsicState {
   const StackIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/freeform/',
+          nodeIcon: 'nodes/freeform.svg',
           displayName: 'Freeform',
           type: NType.stack,
           canHave: ChildrenEnum.children,
@@ -170,7 +170,7 @@ class StackIntrinsicStates extends IntrinsicState {
 class TextIntrinsicStates extends IntrinsicState {
   TextIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/text/',
+          nodeIcon: 'nodes/text.svg',
           displayName: NodeType.name(NType.text),
           type: NType.text,
           canHave: ChildrenEnum.none,
@@ -181,7 +181,7 @@ class TextIntrinsicStates extends IntrinsicState {
 class SpacerIntrinsicStates extends IntrinsicState {
   SpacerIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/freeform/', //TODO : change icon
+          nodeIcon: 'nodes/spacer.svg', //TODO : change icon
           displayName: NodeType.name(NType.spacer),
           type: NType.spacer,
           canHave: ChildrenEnum.none,
@@ -192,7 +192,7 @@ class SpacerIntrinsicStates extends IntrinsicState {
 class TextFieldIntrinsicStates extends IntrinsicState {
   TextFieldIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/text/', //TODO: textField icon
+          nodeIcon: 'nodes/textfield.svg', //TODO: textField icon
           displayName: NodeType.name(NType.textField),
           type: NType.textField,
           canHave: ChildrenEnum.none,
@@ -203,7 +203,7 @@ class TextFieldIntrinsicStates extends IntrinsicState {
 class SwitchIntrinsicStates extends IntrinsicState {
   SwitchIntrinsicStates()
       : super(
-          nodeIcon: 'nodes/text/', //TODO: switcH icon
+          nodeIcon: 'nodes/switch.svg', //TODO: switcH icon
           displayName: NodeType.name(NType.switcH),
           type: NType.switcH,
           canHave: ChildrenEnum.none,
