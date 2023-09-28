@@ -265,7 +265,6 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
   @override
   void didUpdateWidget(_BoxTransformBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
-
     final TreeState state = context.read<TreeState>();
     controller
       ..setRect(createModifiedRect(
@@ -474,6 +473,9 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
     TransformResult<Rect, Offset, Size> oldRect,
     TreeState state,
   ) {
+    /// auto resizing text type must be equal Fixed Size when width or height is changed
+    changeAutoResizingTextType(adjustedRect, state);
+
     controller
       ..setRect(adjustedRect)
       ..recalculatePosition();
@@ -495,12 +497,47 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         );
   }
 
+  /// when on change function trigger,
+  /// this mean that the width or height of the node is changed
+  /// so we need to check if the node is auto resizing text type
+  /// and if it is, we need to change it to fixed size
+  void changeAutoResizingTextType(
+    Rect rect,
+    TreeState state,
+  ) {
+    if (widget.node.type == NType.text &&
+        (rect.width !=
+                widget.node.getRectProperties.rect
+                    .getByDeviceType(state.deviceType)
+                    .width ||
+            rect.height !=
+                widget.node.getRectProperties.rect
+                    .getByDeviceType(state.deviceType)
+                    .height)) {
+      /// auto resizing text type must be equal Fixed Size when width or height is changed
+      final autoResizingText =
+          widget.node.getAttributes[DBKeys.autoResizingText] ??
+              const FAutoResizingText();
+      if (autoResizingText.value != AutoResizingTextType.fixedSize) {
+        widget.node
+            .setAttribute(DBKeys.autoResizingText, const FAutoResizingText());
+        final oldNode = widget.node.copyWith();
+        context
+            .read<TreeGlobalState>()
+            .onNodeAttributesUpdated(widget.node, oldNode);
+      }
+    }
+  }
+
   /// This method is used to notify the tree that the node has changed
   /// without changing its position.
   void setStateAndNotify(
     TransformResult<Rect, Offset, Size> rect,
     TreeState state,
   ) {
+    /// auto resizing text type must be equal Fixed Size when width or height is changed
+    changeAutoResizingTextType(rect.rect, state);
+
     context.read<TreeGlobalState>().onNodeChanged(
           widget.node,
           rect,
