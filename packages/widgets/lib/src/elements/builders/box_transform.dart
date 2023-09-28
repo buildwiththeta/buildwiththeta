@@ -522,9 +522,11 @@ class __BoxTransformBuilderState extends State<_BoxTransformBuilder> {
         widget.node
             .setAttribute(DBKeys.autoResizingText, const FAutoResizingText());
         final oldNode = widget.node.copyWith();
-        context
-            .read<TreeGlobalState>()
-            .onNodeAttributesUpdated(widget.node, oldNode);
+        context.read<TreeGlobalState>().onNodeAttributesUpdated(
+              widget.node,
+              oldNode,
+              isUndoRedo: true,
+            );
       }
     }
   }
