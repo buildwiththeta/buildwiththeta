@@ -229,6 +229,19 @@ abstract class CNode extends Equatable {
           rect: getRectProperties.rect
               .copyWithNewRectByDeviceType(deviceType, rect));
 
+  RectProperties setRectForMultipleDevices(Map<DeviceType, Rect> rectMap) {
+    RectProperties newRectProperties = getRectProperties;
+
+    rectMap.forEach((deviceType, rect) {
+      newRectProperties = newRectProperties.copyWith(
+        rect: newRectProperties.rect
+            .copyWithNewRectByDeviceType(deviceType, rect),
+      );
+    });
+
+    return newRectProperties;
+  }
+
   RectProperties resetRect(DeviceType deviceType) => getRectProperties.copyWith(
       rect: getRectProperties.rect.copyWithResettingRect(deviceType));
 

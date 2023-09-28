@@ -342,6 +342,7 @@ class TextDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.isFullWidth: false,
         DBKeys.maxLines: FTextTypeInput(value: ''),
+        DBKeys.autoResizingText: FAutoResizingText()
       };
 
   TextDefaultAttributes.create() : this();

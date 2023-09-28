@@ -110,6 +110,8 @@ class DynamicAttributes {
         case DBKeys.rotation:
         case DBKeys.bordersSize:
           return FTextTypeInput.fromJson(value);
+        case DBKeys.autoResizingText:
+          return FAutoResizingText.fromJson(value);
         case DBKeys.overrides:
           {
             return Override.fromJsonList(value ?? []);

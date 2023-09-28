@@ -131,4 +131,5 @@ class DBKeys {
   static const String focusColor = 'focClr';
   static const String hoverColor = 'hovClr';
   static const String valueBool = 'vB';
+  static const String autoResizingText = 'autoRsTxt';
 }

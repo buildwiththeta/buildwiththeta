@@ -27,3 +27,4 @@ export 'icon_type.dart';
 export 'image_type.dart';
 export 'direction.dart';
 export 'size_range.dart';
+export 'auto_resizing_text.dart';

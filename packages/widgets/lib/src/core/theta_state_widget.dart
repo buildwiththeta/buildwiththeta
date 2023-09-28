@@ -12,6 +12,7 @@ typedef OnNodeChangedCallBack = void Function(
 typedef OnNodeAttributesUpdatedChangedCallBack = void Function(
   CNode node,
   CNode oldNode,
+  bool isUndoRedo,
 )?;
 
 typedef OnNodeAddedCallBack = void Function(
@@ -87,9 +88,10 @@ class TreeGlobalState extends ChangeNotifier {
 
   void onNodeAttributesUpdated(
     CNode node,
-    CNode oldNode,
-  ) =>
-      _onNodeAttributesUpdated?.call(node, oldNode);
+    CNode oldNode, {
+    bool isUndoRedo = false,
+  }) =>
+      _onNodeAttributesUpdated?.call(node, oldNode, isUndoRedo);
 
   void onNodeFocused(
     CNode node,
