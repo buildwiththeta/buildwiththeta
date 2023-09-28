@@ -18,10 +18,27 @@ dart pub global activate theta_cli
 
 ## Usage
 
+### Link the CLI to your project.
+
 ```sh
-# Preload command
-# -anon-key: Anonymous key for the project
-$ theta preload -anon-key ANON_KEY
+$ theta link -anon-key ANON_KEY
+```
+
+### Retrieve the names and ids of the nodes.
+
+Avoid writing strings into the code. Instead, you can retrieve
+all the names and ids of the nodes in the project and use them safely.
+
+```sh
+$ theta load-names
+```
+
+### Preload components
+
+Preload your files for `Preloaded` connection mode.
+
+```sh
+$ theta preload
 ```
 
 The command `preload` allows you to preload the remote user interface for use without an Internet connection.

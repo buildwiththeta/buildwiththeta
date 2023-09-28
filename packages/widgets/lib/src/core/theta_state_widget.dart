@@ -9,6 +9,10 @@ typedef OnNodeChangedCallBack = void Function(
   DeviceType deviceType,
 )?;
 
+typedef OnNodeGeneralUpdatedCallBack = void Function(
+  CNode node,
+)?;
+
 typedef OnNodeAttributesUpdatedChangedCallBack = void Function(
   CNode node,
   CNode oldNode,
@@ -49,6 +53,7 @@ OnRightClickCallBack _onRightClick;
 OnComponentPageChange _onComponentPageChange;
 OnResizingCallback _onResizingCallback;
 OnNodeAttributesUpdatedChangedCallBack _onNodeAttributesUpdated;
+OnNodeGeneralUpdatedCallBack _onNodeGeneralUpdated;
 
 class TreeGlobalState extends ChangeNotifier {
   TreeGlobalState({
@@ -60,6 +65,7 @@ class TreeGlobalState extends ChangeNotifier {
     required final OnResizingCallback onResizingCallback,
     final OnComponentPageChange onComponentPageChange,
     final OnNodeAttributesUpdatedChangedCallBack? onNodeAttributesUpdated,
+    final OnNodeGeneralUpdatedCallBack onNodeGeneralUpdated,
   }) {
     _onNodeAdded = onNodeAdded;
     _onNodeChanged = onNodeChanged;
@@ -69,6 +75,7 @@ class TreeGlobalState extends ChangeNotifier {
     _onComponentPageChange = onComponentPageChange;
     _onResizingCallback = onResizingCallback;
     _onNodeAttributesUpdated = onNodeAttributesUpdated;
+    _onNodeGeneralUpdated = onNodeGeneralUpdated;
   }
 
   void onNodeAdded(
@@ -113,6 +120,13 @@ class TreeGlobalState extends ChangeNotifier {
     CNode node,
   ) =>
       _onComponentPageChange?.call(
+        node,
+      );
+
+  void onNodeGeneralUpdated(
+    CNode node,
+  ) =>
+      _onNodeGeneralUpdated?.call(
         node,
       );
 

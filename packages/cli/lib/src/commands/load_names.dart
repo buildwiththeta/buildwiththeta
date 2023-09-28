@@ -34,7 +34,7 @@ class LoadNamesCommand extends Command<int> {
       'Fetch a component from the remote server and add it to the preload file.';
 
   @override
-  String get name => 'load';
+  String get name => 'load-names';
 
   final Logger _logger;
 

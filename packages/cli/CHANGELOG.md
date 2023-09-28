@@ -1,3 +1,8 @@
+## 0.4.1
+
+* Feat: command `link` to link a project locally to the cli.
+* Feat: command `load` to fetch all nodes id and name from a project.
+
 ## 0.4.0
 
 * Feat: add branch name as input.

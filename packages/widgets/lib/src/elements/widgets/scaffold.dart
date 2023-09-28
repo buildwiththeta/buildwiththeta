@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
+import 'package:theta_open_widgets/src/elements/builders/multi_node_box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 
 class OpenWScaffold extends StatefulWidget {
@@ -64,8 +65,8 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
             );
       },
       builder: (context, _, __) => DeferredPointerHandler(
-        child: LayoutBuilder(builder: (context, constraints) {
-          return Stack(
+        child: LayoutBuilder(
+          builder: (context, constraints) => Stack(
             children: [
               Positioned.fill(
                 child: MouseRegion(onHover: (e) {
@@ -83,9 +84,16 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
                       screenSize:
                           Size(constraints.maxWidth, constraints.maxHeight)))
                   .toList(),
+              if (state.focusedNodes.isNotEmpty)
+                MultiNodeBoxTransformBuilder(
+                  key: ValueKey(
+                      'MultiNodeBoxTransformBuilder ${state.focusedNodes.length}'),
+                  nodes: state.focusedNodes,
+                  screenSize: Size(constraints.maxWidth, constraints.maxHeight),
+                )
             ],
-          );
-        }),
+          ),
+        ),
       ),
     );
   }
