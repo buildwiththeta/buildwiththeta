@@ -1,3 +1,8 @@
+## 0.8.2
+
+- [x] Feat: add FAutoResizingText.
+- [x] Feat: add DBKeys.autoResizingText.
+
 ## 0.8.1
 
 - [x] Feat: new icons in IntrinsicState.

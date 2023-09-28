@@ -1,3 +1,7 @@
+## 0.8.3
+
+- [x] Feat: add changeAutoResizingTextType for auto resizing text.
+
 ## 0.8.2
 
 - [x] Fix: remove debug logs.
