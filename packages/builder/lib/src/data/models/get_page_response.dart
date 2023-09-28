@@ -6,12 +6,14 @@ import 'package:theta_rendering/theta_rendering.dart';
 class GetPageResponseEntity {
   GetPageResponseEntity({
     required this.pageID,
+    required this.nodes,
     required this.treeNodes,
     this.conversionEvents = const [],
     this.abTestID,
   });
 
   final String pageID;
+  final List<CNode> nodes;
   final CNode treeNodes;
   final List<ConversionEvent> conversionEvents;
   final ID? abTestID;
@@ -24,6 +26,7 @@ class GetPageResponseEntity {
 
     return GetPageResponseEntity(
       pageID: json['page_id'],
+      nodes: nodes,
       treeNodes: getIt<NodeRendering>().renderTree(
           getIt<NodeRendering>().renderComponents(nodes, json['page_id'])),
       conversionEvents:

@@ -59,9 +59,10 @@ class FSize extends Equatable {
       if (deviceType == frame.DeviceType.phone) {
         sizeValue = size;
       } else if (deviceType == frame.DeviceType.tablet) {
-        sizeValue = sizeTablet ?? size;
+        sizeValue = sizeTablet?.isNotEmpty ?? false ? sizeTablet ?? size : size;
       } else {
-        sizeValue = sizeDesktop ?? size;
+        sizeValue =
+            sizeDesktop?.isNotEmpty ?? false ? sizeDesktop ?? size : size;
       }
     }
 

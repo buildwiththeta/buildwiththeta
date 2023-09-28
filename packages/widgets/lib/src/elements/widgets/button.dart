@@ -65,7 +65,7 @@ class OpenWButton extends NodeWidget {
             isWidth: false,
           ),
           child: DecoratedBox(
-            decoration: TetaBoxDecoration.get(
+            decoration: ThetaBoxDecoration.get(
               state: state,
               context: context,
               fill: fill.get(context, state.colorStyles, state.theme),

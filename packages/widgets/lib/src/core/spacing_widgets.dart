@@ -1,69 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:theta_design_system/theta_design_system.dart';
+import 'package:theta_models/theta_models.dart';
 
 class SpacingMiddleWidget extends StatelessWidget {
   const SpacingMiddleWidget({
     super.key,
-    required this.direction,
+    required this.parent,
     required this.spacing,
-    required this.child,
+    required this.direction,
   });
 
+  final CNode parent;
   final Axis direction;
   final double spacing;
-  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    if (spacing == 0) {
-      return child;
+    final state = context.read<TreeState>();
+    if (state.forPlay) {
+      return SizedBox.square(
+        dimension: spacing,
+      );
+    } else {
+      if (state.focusedNode?.id != parent.id) {
+        return SizedBox.square(
+          dimension: spacing,
+        );
+      }
+      if (direction == Axis.horizontal) {
+        return Center(
+          child: SizedBox(
+            width: spacing,
+            child: FractionallySizedBox(
+              widthFactor: 1,
+              heightFactor: 0.25,
+              child: Center(
+                child: Container(
+                  width: 2,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Palette.magenta,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      }
+      return Center(
+        child: SizedBox(
+          height: spacing,
+          child: FractionallySizedBox(
+            widthFactor: 0.25,
+            heightFactor: 1,
+            child: Center(
+              child: Container(
+                width: double.infinity,
+                height: 2,
+                decoration: BoxDecoration(
+                  color: Palette.magenta,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
     }
-    return direction == Axis.vertical
-        ? Padding(
-            padding: EdgeInsets.only(
-              top: spacing / 2,
-              bottom: spacing / 2,
-            ),
-            child: child,
-          )
-        : Padding(
-            padding: EdgeInsets.only(
-              left: spacing / 2,
-              right: spacing / 2,
-            ),
-            child: child,
-          );
-  }
-}
-
-class SpacingLastWidget extends StatelessWidget {
-  const SpacingLastWidget({
-    super.key,
-    required this.direction,
-    required this.spacing,
-    required this.child,
-  });
-
-  final Axis direction;
-  final double spacing;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    if (spacing == 0) {
-      return child;
-    }
-    return direction == Axis.vertical
-        ? Padding(
-            padding: EdgeInsets.only(
-              top: spacing / 2,
-            ),
-            child: child,
-          )
-        : Padding(
-            padding: EdgeInsets.only(
-              left: spacing / 2,
-            ),
-            child: child,
-          );
   }
 }

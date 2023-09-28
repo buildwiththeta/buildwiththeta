@@ -298,7 +298,43 @@ class _NodeBuilderState extends State<NodeBuilder> {
     );
   }
 
-  Widget _handleMask(CNode node, TreeState state,
+  Widget getOverlays(TreeState treeState, WidgetState state, Widget child) {
+    final overlays = state.node.getAttributes[DBKeys.overlays] as List<FFill>?;
+    if (overlays == null) {
+      return child;
+    }
+    if (overlays.isEmpty) {
+      return child;
+    }
+    var overlayWidget = child;
+    final borderRadius =
+        state.node.getAttributes[DBKeys.borderRadius] as FBorderRadius?;
+    for (final overlay in overlays.reversed) {
+      overlayWidget = DecoratedBox(
+        decoration: ThetaBoxDecoration.get(
+          state: treeState,
+          context: context,
+          fill: const NodeOverrideExecuter().executeColor(
+            context,
+            state,
+            overlay.get(
+              context,
+              treeState.colorStyles,
+              treeState.theme,
+            ),
+          ),
+          borderRadius: borderRadius,
+          shadow: null,
+          borders: null,
+        ),
+        position: DecorationPosition.foreground,
+        child: overlayWidget,
+      );
+    }
+    return overlayWidget;
+  }
+
+  Widget _handleMask(CNode node,
       {required Widget ifNotMasked, required Widget ifMasked}) {
     final isMask = node.getAttributes[DBKeys.isMask] as bool? ?? false;
     if (!isMask) return ifNotMasked;
@@ -309,7 +345,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
     if (fill == null) {
       return ifNotMasked;
     }
-    final gradient = fill.getGradient(state.colorStyles, state.theme);
+    final gradient = fill.getGradient();
     if (gradient == null) {
       return ifNotMasked;
     }
@@ -319,6 +355,17 @@ class _NodeBuilderState extends State<NodeBuilder> {
         return gradient.createShader(bounds);
       },
       child: ifMasked,
+    );
+  }
+
+  Widget _handleAlignment(TreeState state, CNode node, Widget child) {
+    final alignment = node.getAttributes[DBKeys.nodeAlignment] as FAlign?;
+    if (alignment == null) {
+      return child;
+    }
+    return Align(
+      alignment: alignment.get(context, forPlay: state.forPlay),
+      child: child,
     );
   }
 
@@ -348,65 +395,77 @@ class _NodeBuilderState extends State<NodeBuilder> {
           onExit: (e) => setState(() {
             clickable = true;
           }),
-          child: Padding(
-            padding: _handleMargins(state),
-            child: GestureDetectorInEditor(
-              key: ValueKey(widget.state.node.id + clickable.toString()),
-              node: widget.state.node,
-              clickable: clickable,
-              onTap: widget.onTap,
-              onPanStart: widget.onPanStart,
-              onDoubleTap: () => setState(() {
-                clickable = false;
-              }),
-              child: DecoratedBox(
-                decoration: _handleDecorationChange(
-                  state.hoveredNode,
-                  state.focusedNode,
-                  state.focusedNodes,
-                  state.isDeviceCurrentlyFocused,
-                  state.isDeviceCurrentlyHovered,
-                ),
-                position: DecorationPosition.foreground,
-                child: _handleCursor(
-                  widget.state.node,
-                  maybeBounceForSmallWidgets(
-                    Transform.rotate(
-                      angle: _handleRotation(state),
-                      child: Padding(
-                        padding: _handlePadding(state),
-                        child: GestureDetectorForPlay(
-                          state: widget.state,
-                          child: handleSlideAnimation(
-                            widget.state.node,
-                            handleScaleAnimation(
+          child: _handleAlignment(
+            state,
+            widget.state.node,
+            Padding(
+              padding: _handleMargins(state),
+              child: GestureDetectorInEditor(
+                key: ValueKey(widget.state.node.id + clickable.toString()),
+                node: widget.state.node,
+                clickable: clickable,
+                onTap: widget.onTap,
+                onPanStart: widget.onPanStart,
+                onDoubleTap: () => setState(() {
+                  clickable = false;
+                }),
+                child: DecoratedBox(
+                  decoration: _handleDecorationChange(
+                    state.hoveredNode,
+                    state.focusedNode,
+                    state.focusedNodes,
+                    state.isDeviceCurrentlyFocused,
+                    state.isDeviceCurrentlyHovered,
+                  ),
+                  position: DecorationPosition.foreground,
+                  child: _handleCursor(
+                    widget.state.node,
+                    maybeBounceForSmallWidgets(
+                      Transform.rotate(
+                        angle: _handleRotation(state),
+                        child: Padding(
+                          padding: _handlePadding(state),
+                          child: GestureDetectorForPlay(
+                            state: widget.state,
+                            child: handleSlideAnimation(
                               widget.state.node,
-                              handleFadeInAnimation(
+                              handleScaleAnimation(
                                 widget.state.node,
-                                handleSizeRange(
-                                  state,
-                                  _handleMask(
-                                    widget.state.node,
+                                handleFadeInAnimation(
+                                  widget.state.node,
+                                  handleSizeRange(
                                     state,
-                                    ifNotMasked: backgroundBlur(
-                                      state,
+                                    _handleMask(
                                       widget.state.node,
-                                      layerBlur(
-                                          widget.state.node, widget.child),
-                                    ),
-                                    ifMasked: backgroundBlur(
-                                      state,
-                                      widget.state.node,
-                                      layerBlur(
+                                      ifNotMasked: backgroundBlur(
+                                        state,
                                         widget.state.node,
-                                        ChildBuilder(
-                                              context: context,
-                                              state: widget.state.copyWith(
-                                                node: widget.state.node.child,
-                                              ),
-                                              child: widget.state.node.child,
-                                            ).build() ??
-                                            const SizedBox.shrink(),
+                                        layerBlur(
+                                          widget.state.node,
+                                          getOverlays(state, widget.state,
+                                              widget.child),
+                                        ),
+                                      ),
+                                      ifMasked: backgroundBlur(
+                                        state,
+                                        widget.state.node,
+                                        layerBlur(
+                                          widget.state.node,
+                                          getOverlays(
+                                            state,
+                                            widget.state,
+                                            ChildBuilder(
+                                                  context: context,
+                                                  state: widget.state.copyWith(
+                                                    node:
+                                                        widget.state.node.child,
+                                                  ),
+                                                  child:
+                                                      widget.state.node.child,
+                                                ).build() ??
+                                                const SizedBox.shrink(),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),

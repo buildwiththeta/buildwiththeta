@@ -24,6 +24,8 @@ class FTextStyle extends Equatable {
     this.fontStyle = const FFontStyle(),
     this.textStyleModel,
     this.textDirection = const FTextDirection(),
+    this.letterSpacing = const FTextTypeInput(),
+    this.lineSpacing = const FTextTypeInput(),
   });
 
   final FFill fill;
@@ -35,6 +37,8 @@ class FTextStyle extends Equatable {
   final FFontStyle fontStyle;
   final String? textStyleModel;
   final FTextDirection textDirection;
+  final FTextTypeInput letterSpacing;
+  final FTextTypeInput lineSpacing;
 
   @override
   List<Object?> get props => [
@@ -47,6 +51,8 @@ class FTextStyle extends Equatable {
         fontStyle,
         textStyleModel,
         textDirection,
+        letterSpacing,
+        lineSpacing,
       ];
 
   static FTextStyle fromJson(final Map<String, dynamic> doc) {
@@ -79,6 +85,12 @@ class FTextStyle extends Equatable {
           ? FTextDirection.fromJson(doc[DBKeys.textDirection] as String)
           : const FTextDirection(),
       textStyleModel: doc[DBKeys.textStyleModel] as String?,
+      letterSpacing: doc[DBKeys.letterSpacing] != null
+          ? FTextTypeInput.fromJson(doc[DBKeys.letterSpacing])
+          : const FTextTypeInput(),
+      lineSpacing: doc[DBKeys.lineSpacing] != null
+          ? FTextTypeInput.fromJson(doc[DBKeys.lineSpacing])
+          : const FTextTypeInput(),
     );
   }
 
@@ -92,6 +104,8 @@ class FTextStyle extends Equatable {
         DBKeys.fontStyle: fontStyle.toJson(),
         DBKeys.textDirection: textDirection.toJson(),
         DBKeys.textStyleModel: textStyleModel,
+        DBKeys.letterSpacing: letterSpacing.toJson(),
+        DBKeys.lineSpacing: lineSpacing.toJson(),
       };
 
   /// Returns style (TextStyle) only
@@ -115,6 +129,8 @@ class FTextStyle extends Equatable {
     FFontStyle? fontStyle,
     FTextDirection? textDirection,
     String? textStyleModel,
+    FTextTypeInput? letterSpacing,
+    FTextTypeInput? lineSpacing,
   }) {
     return FTextStyle(
       fill: fill ?? this.fill,
@@ -126,6 +142,8 @@ class FTextStyle extends Equatable {
       fontStyle: fontStyle ?? this.fontStyle,
       textDirection: textDirection ?? this.textDirection,
       textStyleModel: textStyleModel ?? this.textStyleModel,
+      letterSpacing: letterSpacing ?? this.letterSpacing,
+      lineSpacing: lineSpacing ?? this.lineSpacing,
     );
   }
 
@@ -140,6 +158,8 @@ class FTextStyle extends Equatable {
       fontStyle: fontStyle,
       textDirection: textDirection,
       textStyleModel: null,
+      letterSpacing: letterSpacing,
+      lineSpacing: lineSpacing,
     );
   }
 }
@@ -154,6 +174,8 @@ Widget example() {
       fontFamily: '',
       fontStyle: FontStyle.normal,
       decoration: TextDecoration.none,
+      letterSpacing: 1,
+      height: 1,
     ),
     textAlign: TextAlign.center,
   );

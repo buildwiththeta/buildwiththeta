@@ -1,4 +1,5 @@
 import 'package:example/constants.dart';
+import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
@@ -71,7 +72,7 @@ class _MyAppState extends State<MyApp> {
               /// [Override] requires a [node] identifier and a list of [props].
               /// Use one Override per node.
               Override(
-                'node id',
+                '',
                 builder: (context, node, child, children) {
                   return GestureDetector(
                     onTap: () {
@@ -86,7 +87,7 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                'node id',
+                UIBoxAssets.socialCard.title.name,
                 text: 'prova',
                 color: Colors.blue,
               ),

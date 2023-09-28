@@ -36,7 +36,7 @@ class EditorLeftBar extends StatelessWidget {
         children: [
           BlocBuilder<PanelsCubit, PanelsState>(
             builder: (context, state) => EditorLeftBarMenuItem(
-              label: 'Blocks',
+              label: 'Elements',
               icon: CupertinoIcons.square_on_square,
               isSelected: state.whenOrNull(add: () => true) == true,
               onSelected: () =>

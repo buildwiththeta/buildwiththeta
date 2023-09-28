@@ -224,6 +224,8 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             fontWeight: widget.textStyle.fontWeight,
             textDecoration: widget.textStyle.textDecoration,
             fontStyle: widget.textStyle.fontStyle,
+            lineSpacing: widget.textStyle.lineSpacing,
+            letterSpacing: widget.textStyle.letterSpacing,
           ),
           textAlign: widget.textStyle.textAlign.value,
           autocorrect: widget.autoCorrect,

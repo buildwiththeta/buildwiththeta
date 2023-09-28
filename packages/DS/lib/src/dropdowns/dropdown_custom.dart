@@ -25,84 +25,35 @@ class ThetaDesignDropdownCustom<Value> extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context).extension<ThetaTheme>()!;
-    return HoverWidget(
-      hoverChild: Container(
-        padding: const EdgeInsets.all(1),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [Palette.yellow, Palette.magenta]),
-          borderRadius: BorderRadius.all(Radius.circular(Grid.small)),
-        ),
-        child: Container(
-          height: height ?? 32,
-          padding: EI.smH,
-          decoration: BoxDecoration(
-            color: theme.bgPrimary,
-            borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
-          ),
-          alignment: Alignment.centerLeft,
-          child: Theme(
-            data: Theme.of(context).copyWith(
-              canvasColor: theme.bgSecondary,
-            ),
-            child: DropdownButton<Value>(
-              underline: const SizedBox(),
-              value: value,
-              items: items
-                  .map((final DropdownCustomMenuItem<Value> customMenuItem) {
-                return DropdownMenuItem<Value>(
-                  value: customMenuItem.value,
-                  child: customMenuItem,
-                );
-              }).toList(),
-              onChanged: onChange,
-              isExpanded: expanded ?? false,
-              isDense: isDense ?? true,
-              icon: Icon(
-                CupertinoIcons.chevron_up,
-                color: theme.txtPrimary,
-                size: 16,
-              ),
-            ),
-          ),
-        ),
+    return Container(
+      height: height ?? 32,
+      padding: EI.smH,
+      decoration: BoxDecoration(
+        color: theme.bgTertiary,
+        borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
       ),
-      child: Container(
-        padding: const EdgeInsets.all(1),
-        decoration: BoxDecoration(
-          color: theme.txtPrimary30,
-          borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
+      alignment: Alignment.centerLeft,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: theme.bgSecondary,
         ),
-        child: Container(
-          height: height ?? 32,
-          padding: EI.smH,
-          decoration: BoxDecoration(
-            color: theme.bgPrimary,
-            borderRadius: const BorderRadius.all(Radius.circular(Grid.small)),
-          ),
-          alignment: Alignment.centerLeft,
-          child: Theme(
-            data: Theme.of(context).copyWith(
-              canvasColor: theme.bgSecondary,
-            ),
-            child: DropdownButton<Value>(
-              underline: const SizedBox(),
-              value: value,
-              items: items
-                  .map((final DropdownCustomMenuItem<Value> customMenuItem) {
-                return DropdownMenuItem<Value>(
-                  value: customMenuItem.value,
-                  child: customMenuItem,
-                );
-              }).toList(),
-              onChanged: onChange,
-              isExpanded: expanded ?? false,
-              isDense: isDense ?? true,
-              icon: Icon(
-                CupertinoIcons.chevron_down,
-                color: theme.txtPrimary,
-                size: 16,
-              ),
-            ),
+        child: DropdownButton<Value>(
+          underline: const SizedBox(),
+          value: value,
+          items:
+              items.map((final DropdownCustomMenuItem<Value> customMenuItem) {
+            return DropdownMenuItem<Value>(
+              value: customMenuItem.value,
+              child: customMenuItem,
+            );
+          }).toList(),
+          onChanged: onChange,
+          isExpanded: expanded ?? false,
+          isDense: isDense ?? true,
+          icon: Icon(
+            CupertinoIcons.chevron_down,
+            color: theme.txtPrimary,
+            size: 16,
           ),
         ),
       ),

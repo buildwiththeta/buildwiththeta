@@ -47,10 +47,7 @@ class FFillElement extends Equatable {
   /// [int] value for gradients
   final double stop;
 
-  Color getLevelColor(
-    final List<ColorStyleEntity> styles,
-    final ThemeMode themeMode,
-  ) {
+  Color getLevelColor() {
     final tempOpacity = this.opacity;
     final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
     return HexColor(color.toUpperCase()).withOpacity(opacity);
@@ -156,22 +153,19 @@ class FFill extends Equatable {
     }
   }
 
-  Gradient? getGradient(
-    final List<ColorStyleEntity> styles,
-    final ThemeMode themeMode,
-  ) {
+  Gradient? getGradient() {
     if (type == FFillType.linearGradient) {
       return LinearGradient(
         begin: begin ?? Alignment.topCenter,
         end: end ?? Alignment.bottomCenter,
-        colors: levels.map((e) => e.getLevelColor(styles, themeMode)).toList(),
+        colors: levels.map((e) => e.getLevelColor()).toList(),
         stops: levels.map((e) => e.stop).toList(),
       );
     } else if (type == FFillType.radialGradient) {
       return RadialGradient(
         center: center ?? Alignment.center,
         radius: radius ?? 1,
-        colors: levels.map((e) => e.getLevelColor(styles, themeMode)).toList(),
+        colors: levels.map((e) => e.getLevelColor()).toList(),
         stops: levels.map((e) => e.stop).toList(),
       );
     } else {
@@ -314,6 +308,10 @@ class FFill extends Equatable {
     }
   }
 
+  static List<FFill> listFromJson(List<dynamic> json) {
+    return json.map((e) => fromJson(e as Map<String, dynamic>)).toList();
+  }
+
   static FFill fromJson(final Map<String, dynamic> json) {
     if (json['color'] != null) {
       return FFill(
@@ -409,10 +407,13 @@ class FFill extends Equatable {
     if (json[key] == 'tC') return Alignment.topCenter;
     if (json[key] == 'tL') return Alignment.topLeft;
     if (json[key] == 'tR') return Alignment.topRight;
+    try {
+      return Alignment(json[key][0], json[key][1]);
+    } catch (_) {}
     return null;
   }
 
-  String? alignToJson(final Alignment? value) {
+  dynamic alignToJson(final Alignment? value) {
     if (value == Alignment.bottomCenter) return 'bC';
     if (value == Alignment.bottomLeft) return 'bL';
     if (value == Alignment.bottomRight) return 'bR';
@@ -422,7 +423,8 @@ class FFill extends Equatable {
     if (value == Alignment.topCenter) return 'tC';
     if (value == Alignment.topLeft) return 'tL';
     if (value == Alignment.topRight) return 'tR';
-    return null;
+    if (value == null) return null;
+    return [value.x, value.y];
   }
 
   String alignToCode(final Alignment? value) {

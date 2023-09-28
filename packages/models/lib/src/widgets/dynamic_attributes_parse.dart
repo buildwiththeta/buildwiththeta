@@ -18,7 +18,8 @@ class DynamicAttributes {
     try {
       switch (key) {
         case DBKeys.align:
-          return FAlign.fromJson(value);
+        case DBKeys.nodeAlignment:
+          return value != null ? FAlign.fromJson(value) : null;
         case DBKeys.borderRadius:
           return FBorderRadius.fromJson(value);
         case DBKeys.borderStyle:
@@ -113,6 +114,10 @@ class DynamicAttributes {
           {
             return Override.fromJsonList(value ?? []);
           }
+        case DBKeys.overlays:
+          {
+            return FFill.listFromJson(value ?? []);
+          }
         default:
           return value;
       }
@@ -153,6 +158,14 @@ class DynamicAttributes {
       case DBKeys.showBorders:
       case DBKeys.valueBool:
         return value;
+      case DBKeys.overlays:
+        {
+          List<dynamic> res = [];
+          for (final e in value as List<dynamic>) {
+            res.add(e.toJson());
+          }
+          return res;
+        }
       default:
         return value?.toJson();
     }

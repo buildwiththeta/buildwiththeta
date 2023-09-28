@@ -1,7 +1,7 @@
 name: theta_rendering
 description: Rendering package for Theta
 
-version: 0.2.3
+version: 0.2.4
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -18,7 +18,7 @@ environment:
 
 dependencies: 
 
-  theta_models: ^0.7.2
+  theta_models: ^0.8.0
   light_logger: ^0.0.3
   collection: ^1.17.1
 

@@ -44,7 +44,7 @@ class ThetaDesignButton extends StatelessWidget {
       button: true,
       child: isTransparent ?? false
           ? SizedBox(
-              height: 40,
+              height: height ?? 40,
               child: CupertinoButton(
                 padding: const EdgeInsets.symmetric(horizontal: Grid.medium),
                 onPressed: () => onTap.call(),
@@ -60,7 +60,7 @@ class ThetaDesignButton extends StatelessWidget {
               ),
             )
           : SizedBox(
-              height: 40,
+              height: height ?? 40,
               child: CupertinoButton(
                 color: primaryColor ??
                     (isPrimary ? theme.buttonColor : theme.bgGrey),

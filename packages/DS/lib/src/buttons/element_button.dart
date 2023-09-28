@@ -11,6 +11,7 @@ class ThetaDesignElementButton extends StatefulWidget {
     this.subtitle,
     this.icon,
     this.tooltip,
+    this.height,
   }) : super(key: key);
 
   final bool isSelected;
@@ -18,6 +19,7 @@ class ThetaDesignElementButton extends StatefulWidget {
   final String? subtitle;
   final IconData? icon;
   final String? tooltip;
+  final double? height;
   final Function()? onTap;
   final Function()? onDoubleTap;
 
@@ -57,11 +59,13 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
               child: AnimatedContainer(
                 margin: const EdgeInsets.symmetric(vertical: 4),
                 padding: const EdgeInsets.only(
-                  left: 16,
-                  top: 10,
+                  left: 8,
+                  top: 4,
                   right: 8,
-                  bottom: 10,
+                  bottom: 4,
                 ),
+                height: widget.height,
+                alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   borderRadius:
                       const BorderRadius.all(Radius.circular(Grid.small)),
@@ -76,8 +80,10 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                 curve: Curves.easeInOutCubic,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         if (widget.icon != null)
                           Icon(
@@ -87,16 +93,12 @@ class _ElementButtonState extends State<ThetaDesignElementButton> {
                                 ? Colors.white
                                 : theme.txtPrimary,
                           ),
-                        if (widget.icon != null)
-                          const SizedBox(width: Grid.medium),
-                        Expanded(
-                          flex: 5,
-                          child: TDetailLabel(
-                            widget.title,
-                            color: widget.isSelected
-                                ? Colors.white
-                                : theme.txtPrimary,
-                          ),
+                        if (widget.icon != null) const SizedBox(width: 8),
+                        TDetailLabel(
+                          widget.title,
+                          color: widget.isSelected
+                              ? Colors.white
+                              : theme.txtPrimary,
                         ),
                       ],
                     ),

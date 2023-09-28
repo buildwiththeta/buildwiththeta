@@ -7,9 +7,9 @@ import 'package:theta_models/theta_models.dart';
 
 class FSizeRange extends Equatable {
   const FSizeRange({
-    required this.size,
-    required this.sizeTablet,
-    required this.sizeDesktop,
+    this.size,
+    this.sizeTablet,
+    this.sizeDesktop,
   });
 
   final String? size;

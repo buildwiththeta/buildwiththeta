@@ -60,6 +60,8 @@ class TextBuilder extends StatelessWidget {
         fontWeight: textStyle.fontWeight,
         textDecoration: textStyle.textDecoration,
         fontStyle: textStyle.fontStyle,
+        lineSpacing: textStyle.lineSpacing,
+        letterSpacing: textStyle.letterSpacing,
       ),
       textAlign: textStyle.textAlign.value,
       maxLines: intValue,

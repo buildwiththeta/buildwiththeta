@@ -21,6 +21,8 @@ class TetaTextStyles {
     required final FFontWeight fontWeight,
     required final FTextDecoration textDecoration,
     required final FFontStyle fontStyle,
+    required final FTextTypeInput letterSpacing,
+    required final FTextTypeInput lineSpacing,
     required final bool forPlay,
     final TextStyleEntity? model,
   }) {
@@ -33,6 +35,18 @@ class TetaTextStyles {
           state.theme,
         ));
     final gfonts = GoogleFonts.asMap().entries.map((e) => e.key).toList();
+    final letterSpacing0 = double.tryParse(letterSpacing.get(
+      deviceType: state.deviceType,
+      forPlay: forPlay,
+      context: context,
+      loop: 0,
+    ));
+    final lineHeight = double.tryParse(lineSpacing.get(
+      deviceType: state.deviceType,
+      forPlay: forPlay,
+      context: context,
+      loop: 0,
+    ));
     return !gfonts.contains(model?.fontFamily ?? fontFamily)
         ? TextStyle(
             fontFamily: (model != null) ? model.fontFamily : fontFamily,
@@ -54,6 +68,8 @@ class TetaTextStyles {
             ),
             decoration: textDecoration.textDecoration,
             fontStyle: fontStyle.value,
+            height: lineHeight,
+            letterSpacing: letterSpacing0,
           )
         : GoogleFonts.getFont(
             (model != null) ? model.fontFamily : fontFamily,
@@ -75,6 +91,8 @@ class TetaTextStyles {
             ),
             decoration: textDecoration.textDecoration,
             fontStyle: fontStyle.value,
+            height: lineHeight,
+            letterSpacing: letterSpacing0,
           );
   }
 }

@@ -11,6 +11,7 @@ class DBKeys {
   static const String smoothness = 'smoothness';
 
   // Attribute keys
+  static const String overlays = 'overlays';
   static const String isMask = 'isMask';
   static const String isExpanded = 'isExpanded';
   static const String isFullWidth = 'sFW';
@@ -52,6 +53,7 @@ class DBKeys {
   static const String imageType = 'imgT';
   static const String value = 'v';
   static const String align = 'al';
+  static const String nodeAlignment = 'alignment';
   static const String physic = 'ph';
   static const String textStyleModel = 'txtSM';
   static const String componentName = 'cmp';
@@ -81,6 +83,8 @@ class DBKeys {
   static const String maxLines = 'mxLns';
   static const String minLines = 'mnLns';
   static const String maxLenght = 'mxLng';
+  static const String letterSpacing = 'lttScng';
+  static const String lineSpacing = 'lnSp';
 
   static const String showCursor = 'shCrs';
   static const String autoCorrect = 'aCr';

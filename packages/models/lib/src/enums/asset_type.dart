@@ -3,4 +3,5 @@ enum AssetType {
   jpg,
   json,
   svg,
+  webp,
 }

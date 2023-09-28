@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Class made to facilitate the creation of BoxDecoration for widgets
-class TetaBoxDecoration {
+class ThetaBoxDecoration {
   /// Get a [BoxDecoration]
   static BoxDecoration get({
     required final TreeState state,
@@ -14,10 +14,8 @@ class TetaBoxDecoration {
     final FFill? borderFill,
   }) {
     if (fill.type == FFillType.solid) {
-      final tempOpacity = fill.levels.first.opacity;
-      final opacity = tempOpacity >= 0 && tempOpacity <= 1 ? tempOpacity : 1.0;
       return BoxDecoration(
-        color: HexColor(fill.levels.first.color).withOpacity(opacity),
+        color: fill.getColor(state.colorStyles, state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -37,7 +35,7 @@ class TetaBoxDecoration {
       );
     } else if (fill.type == FFillType.linearGradient) {
       return BoxDecoration(
-        gradient: fill.getGradient(state.colorStyles, state.theme),
+        gradient: fill.getGradient(),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -77,7 +75,7 @@ class TetaBoxDecoration {
       );
     } else if (fill.type == FFillType.radialGradient) {
       return BoxDecoration(
-        gradient: fill.getGradient(state.colorStyles, state.theme),
+        gradient: fill.getGradient(),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,

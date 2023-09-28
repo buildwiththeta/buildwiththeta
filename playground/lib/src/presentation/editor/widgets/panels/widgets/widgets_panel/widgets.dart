@@ -80,7 +80,7 @@ class _WidgetsPanelState extends State<_WidgetsPanel> {
                 size: 16,
               ),
               Gap(Grid.small),
-              TParagraph('Blocks'),
+              TParagraph('Elements'),
             ],
           ),
           const Gap(Grid.small),

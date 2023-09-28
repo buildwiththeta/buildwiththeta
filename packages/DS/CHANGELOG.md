@@ -1,3 +1,11 @@
+## 0.3.6
+
+- [x] Feat: fix ThetaDesignElementButton.
+
+## 0.3.5
+
+- [x] Feat: ThetaTextField has a drag system.
+
 ## 0.3.4
 
 - [x] Feat: fix button layout

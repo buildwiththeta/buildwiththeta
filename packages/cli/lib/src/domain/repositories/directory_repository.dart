@@ -1,6 +1,13 @@
 import 'package:either_dart/either.dart';
 
 abstract class DirectoryRepository {
+  Future<Either<Exception, void>> writeConfigFile(
+      {required String jsonKey, required String content});
+
+  Future<Either<Exception, String>> readConfigFile({required String jsonKey});
+
+  Future<Either<Exception, void>> writeNamesFile({required String content});
+
   Future<Either<Exception, void>> writePreloadFile(
       {required String anonKey,
       required String jsonKey,
