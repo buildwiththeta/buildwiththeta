@@ -257,7 +257,8 @@ class _NodeBuilderState extends State<NodeBuilder> {
   }
 
   Widget backgroundBlur(TreeState state, CNode node, Widget child) {
-    final blur = node.getAttributes[DBKeys.backgroundBlur] as double?;
+    final blur =
+        (node.getAttributes[DBKeys.backgroundBlur] as num?)?.toDouble();
     if (blur == null) {
       return child;
     }
@@ -285,7 +286,7 @@ class _NodeBuilderState extends State<NodeBuilder> {
   }
 
   Widget layerBlur(CNode node, Widget child) {
-    final blur = node.getAttributes[DBKeys.layerBlur] as double?;
+    final blur = (node.getAttributes[DBKeys.layerBlur] as num?)?.toDouble();
     if (blur == null) {
       return child;
     }
