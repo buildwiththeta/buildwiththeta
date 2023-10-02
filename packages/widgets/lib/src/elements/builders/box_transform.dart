@@ -109,7 +109,8 @@ class _BoxTransformBuilderState extends State<BoxTransformBuilder> {
     if (state.focusedNode?.id != widget.node.id ||
         state.forPlay ||
         widget.node.isLocked == true ||
-        !state.isDeviceCurrentlyFocused) {
+        !state.isDeviceCurrentlyFocused ||
+        state.focusedNodes.any((element) => element.id == widget.node.id)) {
       if (state.fit == ComponentFit.autoLayout) {
         return Padding(
           padding: EdgeInsets.only(
