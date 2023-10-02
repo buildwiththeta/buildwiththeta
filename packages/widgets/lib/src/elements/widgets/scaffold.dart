@@ -88,17 +88,17 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
                   }
                 }),
               ),
+              if (focusedNodes.isNotEmpty)
+                MultiBoxTransformBuilder(
+                  nodes: focusedNodes,
+                  screenSize: Size(constraints.maxWidth, constraints.maxHeight),
+                ),
               ...unfocusedNodes
                   .map((final e) => BoxTransformBuilder(
                       node: e,
                       screenSize:
                           Size(constraints.maxWidth, constraints.maxHeight)))
                   .toList(),
-              if (focusedNodes.isNotEmpty)
-                MultiBoxTransformBuilder(
-                  nodes: focusedNodes,
-                  screenSize: Size(constraints.maxWidth, constraints.maxHeight),
-                )
             ],
           );
         }),
