@@ -1,3 +1,11 @@
+## 0.8.5
+
+- [x] Fix: BoxTransformBuilder with real devices' sizes.
+
+## 0.8.4
+
+- [x] Fix: negative blur values in macOS.
+
 ## 0.8.3
 
 - [x] Feat: add changeAutoResizingTextType for auto resizing text.

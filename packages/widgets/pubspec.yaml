@@ -1,7 +1,7 @@
 name: theta_open_widgets
 description: Package with all the widgets used in Theta
 
-version: 0.8.3
+version: 0.8.5
 
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
@@ -48,6 +48,10 @@ dependencies:
   flutter_svg: ^2.0.7
   defer_pointer: ^0.0.2
   url_launcher: ^6.1.10
+
+dependency_overrides: 
+  theta_models:
+    path: ../models
 
 dev_dependencies:
   flutter_test:

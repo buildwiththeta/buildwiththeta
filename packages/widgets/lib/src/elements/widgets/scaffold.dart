@@ -11,6 +11,7 @@ import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
 import 'package:theta_open_widgets/src/elements/builders/multi_box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
+import 'package:device_frame/device_frame.dart';
 
 class OpenWScaffold extends StatefulWidget {
   const OpenWScaffold({
@@ -39,21 +40,46 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
             : ComponentFit.autoLayout);
   }
 
+  ThemeData _theme(BuildContext context, TreeState treeState) {
+    final density = [
+      DeviceType.desktop,
+      DeviceType.laptop,
+    ].contains(treeState.deviceType)
+        ? VisualDensity.compact
+        : null;
+    return Theme.of(context).copyWith(
+      platform: treeState.deviceInfo.identifier.platform,
+      visualDensity: density,
+    );
+  }
+
   @override
   Widget build(final BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     final state = context.watch<TreeState>();
     if (state.forPlay) {
       return LayoutBuilder(builder: (context, constraints) {
-        return Stack(
-          children: widget.children
-              .map((final e) => BoxTransformBuilder(
-                  node: e,
-                  screenSize:
-                      Size(constraints.maxWidth, constraints.maxHeight)))
-              .toList(),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            size: Size(constraints.maxWidth, constraints.maxHeight),
+            devicePixelRatio: state.deviceInfo.pixelRatio,
+            textScaleFactor: 1,
+          ),
+          child: Theme(
+            data: _theme(context, state),
+            child: Stack(
+              children: widget.children
+                  .map((final e) => BoxTransformBuilder(
+                      node: e,
+                      screenSize:
+                          Size(constraints.maxWidth, constraints.maxHeight)))
+                  .toList(),
+            ),
+          ),
         );
       });
     }
+
     final focusedNodes = widget.children
         .where((element) => state.focusedNodes
             .any((focusedNode) => focusedNode.id == element.id))
@@ -76,30 +102,36 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
       },
       builder: (context, _, __) => DeferredPointerHandler(
         child: LayoutBuilder(builder: (context, constraints) {
-          return Stack(
-            children: [
-              Positioned.fill(
-                child: MouseRegion(onHover: (e) {
-                  final state = context.read<TreeState>();
-                  if (state.hoveredNode?.id != widget.nodeState.node.id) {
-                    context
-                        .read<TreeGlobalState>()
-                        .onNodeHovered(widget.nodeState.node, state.deviceType);
-                  }
-                }),
-              ),
-              if (focusedNodes.isNotEmpty)
-                MultiBoxTransformBuilder(
-                  nodes: focusedNodes,
-                  screenSize: Size(constraints.maxWidth, constraints.maxHeight),
+          return MediaQuery(
+            data: mediaQuery.copyWith(
+              size: Size(constraints.maxWidth, constraints.maxHeight),
+              textScaleFactor: 1,
+            ),
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: MouseRegion(onHover: (e) {
+                    final state = context.read<TreeState>();
+                    if (state.hoveredNode?.id != widget.nodeState.node.id) {
+                      context.read<TreeGlobalState>().onNodeHovered(
+                          widget.nodeState.node, state.deviceType);
+                    }
+                  }),
                 ),
-              ...unfocusedNodes
-                  .map((final e) => BoxTransformBuilder(
-                      node: e,
-                      screenSize:
-                          Size(constraints.maxWidth, constraints.maxHeight)))
-                  .toList(),
-            ],
+                if (focusedNodes.isNotEmpty)
+                  MultiBoxTransformBuilder(
+                    nodes: focusedNodes,
+                    screenSize:
+                        Size(constraints.maxWidth, constraints.maxHeight),
+                  ),
+                ...unfocusedNodes
+                    .map((final e) => BoxTransformBuilder(
+                        node: e,
+                        screenSize:
+                            Size(constraints.maxWidth, constraints.maxHeight)))
+                    .toList(),
+              ],
+            ),
           );
         }),
       ),

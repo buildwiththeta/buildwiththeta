@@ -1,8 +1,8 @@
 import 'package:device_frame/device_frame.dart' as frame;
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
+import 'package:theta_models/src/responsive_builder.dart';
 
 enum SizeUnit {
   pixel,
@@ -40,21 +40,13 @@ class FSize extends Equatable {
     required final bool isWidth,
   }) {
     String? sizeValue;
-    var inEditor = false;
-    if (kIsWeb) {
-      if (Uri.base.toString().contains('/editor/')) {
-        inEditor = true;
-      }
-    }
-    if (forPlay && !inEditor) {
-      final width = MediaQuery.of(context).size.width;
-      if (width < 600) {
-        sizeValue = size;
-      } else if (width < 1000) {
-        sizeValue = sizeTablet ?? size;
-      } else {
-        sizeValue = sizeDesktop ?? size;
-      }
+    if (forPlay) {
+      sizeValue = getValueForScreenType<String>(
+        context: context,
+        mobile: size,
+        tablet: sizeTablet ?? size,
+        desktop: sizeDesktop ?? size,
+      );
     } else {
       if (deviceType == frame.DeviceType.phone) {
         sizeValue = size;
@@ -77,7 +69,7 @@ class FSize extends Equatable {
     final temp = sizeValue.replaceAll('%', '');
     final value = double.tryParse(temp) ?? 0;
     if (sizeValue.contains('%')) {
-      if (forPlay && !inEditor) {
+      if (forPlay) {
         if (isWidth) {
           return MediaQuery.of(context).size.width * (value / 100);
         } else {

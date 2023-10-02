@@ -13,10 +13,13 @@ DeviceType getDeviceType(Size size) {
   }
 
   // Replaces the defaults with the user defined definitions
+  if (deviceWidth >= 1200) {
+    return DeviceType.desktop;
+  }
 
   // If no user defined definitions are passed through use the defaults
-  if (deviceWidth >= 950) {
-    return DeviceType.desktop;
+  if (deviceWidth >= 900) {
+    return DeviceType.laptop;
   }
 
   if (deviceWidth >= 600) {
@@ -39,8 +42,11 @@ T getValueForScreenType<T>({
   if (deviceScreenType == DeviceType.desktop) {
     // If we have supplied the desktop layout then display that
     if (desktop != null) return desktop;
-    // If no desktop layout is supplied we want to check if we have the size below it and display that
-    if (tablet != null) return tablet;
+  }
+
+  if (deviceScreenType == DeviceType.laptop) {
+    // If we have supplied the desktop layout then display that
+    if (desktop != null) return desktop;
   }
 
   if (deviceScreenType == DeviceType.tablet) {
