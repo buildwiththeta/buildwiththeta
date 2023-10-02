@@ -53,29 +53,38 @@ class _MultiBoxTransformBuilderState extends State<MultiBoxTransformBuilder> {
     if (!state.forPlay) {
       return state.deviceInfo.copyWith(screenSize: widget.screenSize);
     }
-    if (widget.screenSize.width <= 400) {
-      return Devices.ios.iPhone13.copyWith(screenSize: widget.screenSize);
-    } else if (widget.screenSize.width <=
-        Devices.ios.iPadPro11Inches.screenSize.width) {
-      return Devices.ios.iPadPro11Inches
-          .copyWith(screenSize: widget.screenSize);
-    } else if (widget.screenSize.width <=
-        Devices.ios.iPadPro11Inches.screenSize.width) {
-      return Devices.ios.iPadPro11Inches
-          .copyWith(screenSize: widget.screenSize);
+    if (widget.screenSize.width < 600) {
+      return Devices.ios.iPhone13;
+    } else if (widget.screenSize.width < 900) {
+      return Devices.ios.iPadPro11Inches;
+    } else if (widget.screenSize.width < 1200) {
+      return DeviceInfo.genericLaptop(
+        platform: TargetPlatform.macOS,
+        id: 'theta-laptop',
+        name: 'Generic Laptop',
+        screenSize: const Size(1200, 802),
+        windowPosition: Rect.fromCenter(
+          center: const Offset(
+            1200 * 0.5,
+            802 * 0.5,
+          ),
+          width: 1200,
+          height: 802,
+        ),
+      );
     } else {
       return DeviceInfo.genericDesktopMonitor(
         platform: TargetPlatform.macOS,
         id: 'theta-desktop',
         name: 'Generic Desktop',
-        screenSize: widget.screenSize,
+        screenSize: const Size(1920, 1080),
         windowPosition: Rect.fromCenter(
           center: const Offset(
             1920 * 0.5,
             1080 * 0.5,
           ),
-          width: widget.screenSize.width,
-          height: widget.screenSize.height,
+          width: 1920,
+          height: 1080,
         ),
       );
     }
