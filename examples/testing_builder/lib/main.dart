@@ -29,8 +29,6 @@ class Paywall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: UIBox('Disney Paywall'),
-    );
+    return const Scaffold(body: UIBox('Nome pagina', customJson: {}));
   }
 }

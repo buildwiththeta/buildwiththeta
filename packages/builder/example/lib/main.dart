@@ -3,7 +3,7 @@ import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-const componentName = "Disney";
+final componentName = UIBoxAssets.blossomXZ9.name;
 
 Future<void> main() async {
   /// Initialize Theta instance.
@@ -87,7 +87,7 @@ class _MyAppState extends State<MyApp> {
               ),
 
               Override(
-                UIBoxAssets.socialCard.title.name,
+                'node id',
                 text: 'prova',
                 color: Colors.blue,
               ),

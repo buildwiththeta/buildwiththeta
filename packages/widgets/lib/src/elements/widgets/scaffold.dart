@@ -5,6 +5,7 @@
 
 // Flutter imports:
 import 'package:defer_pointer/defer_pointer.dart';
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
@@ -38,21 +39,46 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
             : ComponentFit.autoLayout);
   }
 
+  ThemeData _theme(BuildContext context, TreeState treeState) {
+    final density = [
+      DeviceType.desktop,
+      DeviceType.laptop,
+    ].contains(treeState.deviceType)
+        ? VisualDensity.compact
+        : null;
+    return Theme.of(context).copyWith(
+      platform: treeState.deviceInfo.identifier.platform,
+      visualDensity: density,
+    );
+  }
+
   @override
   Widget build(final BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
     final state = context.watch<TreeState>();
     if (state.forPlay) {
       return LayoutBuilder(builder: (context, constraints) {
-        return Stack(
-          children: widget.children
-              .map((final e) => BoxTransformBuilder(
-                  node: e,
-                  screenSize:
-                      Size(constraints.maxWidth, constraints.maxHeight)))
-              .toList(),
+        return MediaQuery(
+          data: mediaQuery.copyWith(
+            size: Size(constraints.maxWidth, constraints.maxHeight),
+            devicePixelRatio: state.deviceInfo.pixelRatio,
+            textScaleFactor: 1,
+          ),
+          child: Theme(
+            data: _theme(context, state),
+            child: Stack(
+              children: widget.children
+                  .map((final e) => BoxTransformBuilder(
+                      node: e,
+                      screenSize:
+                          Size(constraints.maxWidth, constraints.maxHeight)))
+                  .toList(),
+            ),
+          ),
         );
       });
     }
+
     return DragTarget<DragTargetSingleNodeModel>(
       onAcceptWithDetails: (data) {
         var renderBox = context.findRenderObject() as RenderBox;
@@ -65,25 +91,30 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
       },
       builder: (context, _, __) => DeferredPointerHandler(
         child: LayoutBuilder(builder: (context, constraints) {
-          return Stack(
-            children: [
-              Positioned.fill(
-                child: MouseRegion(onHover: (e) {
-                  final state = context.read<TreeState>();
-                  if (state.hoveredNode?.id != widget.nodeState.node.id) {
-                    context
-                        .read<TreeGlobalState>()
-                        .onNodeHovered(widget.nodeState.node, state.deviceType);
-                  }
-                }),
-              ),
-              ...widget.children
-                  .map((final e) => BoxTransformBuilder(
-                      node: e,
-                      screenSize:
-                          Size(constraints.maxWidth, constraints.maxHeight)))
-                  .toList(),
-            ],
+          return MediaQuery(
+            data: mediaQuery.copyWith(
+              size: Size(constraints.maxWidth, constraints.maxHeight),
+              textScaleFactor: 1,
+            ),
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: MouseRegion(onHover: (e) {
+                    final state = context.read<TreeState>();
+                    if (state.hoveredNode?.id != widget.nodeState.node.id) {
+                      context.read<TreeGlobalState>().onNodeHovered(
+                          widget.nodeState.node, state.deviceType);
+                    }
+                  }),
+                ),
+                ...widget.children
+                    .map((final e) => BoxTransformBuilder(
+                        node: e,
+                        screenSize:
+                            Size(constraints.maxWidth, constraints.maxHeight)))
+                    .toList(),
+              ],
+            ),
           );
         }),
       ),
