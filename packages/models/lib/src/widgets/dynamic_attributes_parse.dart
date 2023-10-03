@@ -1,4 +1,5 @@
 import 'package:light_logger/light_logger.dart';
+import 'package:theta_models/src/models/variable.dart';
 import 'package:theta_models/theta_models.dart';
 
 class DynamicAttributes {
@@ -120,6 +121,10 @@ class DynamicAttributes {
           {
             return FFill.listFromJson(value ?? []);
           }
+        case DBKeys.variables:
+          {
+            return VariableEntity.fromJsonList(value ?? []);
+          }
         default:
           return value;
       }
@@ -135,6 +140,12 @@ class DynamicAttributes {
       case DBKeys.overrides:
         {
           return (value as List<Override>).map((e) => e.toJson()).toList();
+        }
+      case DBKeys.variables:
+        {
+          return (value as List<VariableEntity>)
+              .map((e) => e.toJson())
+              .toList();
         }
       case DBKeys.icon:
       case DBKeys.faIcon:

@@ -53,11 +53,7 @@ class OpenWContainer extends Container {
             fill: const NodeOverrideExecuter().executeColor(
               context,
               state,
-              fill.get(
-                context,
-                context.watch<TreeState>().colorStyles,
-                context.watch<TreeState>().theme,
-              ),
+              fill,
             ),
             borderRadius: borderRadius,
             shadow: shadows,

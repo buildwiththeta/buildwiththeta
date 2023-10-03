@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:either_dart/either.dart';
 import 'package:flutter/material.dart';
 import 'package:light_logger/light_logger.dart';
@@ -48,20 +49,20 @@ class UIBox extends StatefulWidget {
 
 class _UIBoxState extends State<UIBox> {
   @override
-  void initState() {
-    super.initState();
-    for (final override in widget.overrides ?? <Override>[]) {
-      override.assignOnChanged(() {
-        setState(() {});
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return LocalNotifierProvider(
       workflows: widget.workflows,
-      nodeOverrides: widget.overrides,
+      nodeOverrides: widget.overrides != null
+          ? widget.overrides!
+              .map((e) => e
+                ..assignOnChanged(() {
+                  if (mounted) {
+                    setState(() {});
+                  }
+                }))
+              .whereNotNull()
+              .toList()
+          : null,
       child: _LogicBox(
         widget.componentName,
         branchName: widget.branch,

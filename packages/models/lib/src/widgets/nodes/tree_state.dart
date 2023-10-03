@@ -45,6 +45,7 @@ class TreeState with ChangeNotifier {
     this.nodeControls = const {},
     this.defaultNodeControls = const SizedBox.shrink(),
     this.devMode = false,
+    this.variables = const [],
   });
 
   /// Are we in Play Mode?
@@ -109,6 +110,8 @@ class TreeState with ChangeNotifier {
 
   Map<String, Widget> nodeControls;
   Widget defaultNodeControls;
+
+  List<VariableEntity> variables;
 
   void onForPlayChanged(bool value) {
     forPlay = value;
@@ -197,6 +200,14 @@ class TreeState with ChangeNotifier {
 
   void onDefaultNodeControlsChanged(Widget controls) {
     defaultNodeControls = controls;
+  }
+
+  void onVariablesChanged(List<VariableEntity> variables) {
+    this.variables = variables;
+  }
+
+  void onVariableChanged(int index, VariableEntity variable) {
+    variables[index] = variable;
   }
 
   void notify() {

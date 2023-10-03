@@ -26,6 +26,18 @@ class LocalNotifierProvider extends StatelessWidget {
         nodeOverrides: nodeOverrides,
         preloaded: isPreloaded,
       ),
+      builder: (context, child) {
+        final localState = context.watch<TreeState>();
+        if (workflows != null) {
+          localState.onWorkflowsChanged(workflows!);
+        }
+        if (nodeOverrides != null) {
+          localState.onOverridesChanged(nodeOverrides!);
+        }
+        localState.onPreloadedFlagChanged(isPreloaded);
+        localState.onThemeChanged(globalState.theme);
+        return child ?? const SizedBox.shrink();
+      },
       child: child,
     );
   }

@@ -42,7 +42,10 @@ class OpenWSvgPicture extends NodeWidget {
   ) {
     final color = fill.type == FFillType.none
         ? null
-        : fill.getColor(state.colorStyles, state.theme);
+        : fill.getColor(
+            state.variables.whereType<ColorVariableEntity>().toList(),
+            state.colorStyles,
+            state.theme);
     final img = image.getImage(
       deviceType: state.deviceType,
       forPlay: state.forPlay,

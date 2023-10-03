@@ -1,3 +1,7 @@
+## 0.8.3
+
+- [x] Fix: adapt PlayMode to EditorMode in FSize, FRangeSize, FFontSize.
+
 ## 0.8.2
 
 - [x] Feat: add FAutoResizingText.

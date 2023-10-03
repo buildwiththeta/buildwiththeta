@@ -2,6 +2,7 @@
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:theta_models/src/models/variable.dart';
 // Package imports:
 import 'package:theta_models/theta_models.dart';
 // Project imports:
@@ -33,6 +34,7 @@ class FBorder extends Equatable {
     final BuildContext context, {
     required final bool forPlay,
     required final DeviceType deviceType,
+    required final List<ColorVariableEntity> colorVariables,
     required final List<ColorStyleEntity> colorStyles,
     required final ThemeMode theme,
   }) {
@@ -40,22 +42,22 @@ class FBorder extends Equatable {
         width.getList(context, forPlay: forPlay, deviceType: deviceType);
     return Border(
       left: BorderSide(
-        color: fill.getColor(colorStyles, theme),
+        color: fill.getColor(colorVariables, colorStyles, theme),
         style: style.value,
         width: values[0],
       ),
       top: BorderSide(
-        color: fill.getColor(colorStyles, theme),
+        color: fill.getColor(colorVariables, colorStyles, theme),
         style: style.value,
         width: values[1],
       ),
       right: BorderSide(
-        color: fill.getColor(colorStyles, theme),
+        color: fill.getColor(colorVariables, colorStyles, theme),
         style: style.value,
         width: values[2],
       ),
       bottom: BorderSide(
-        color: fill.getColor(colorStyles, theme),
+        color: fill.getColor(colorVariables, colorStyles, theme),
         style: style.value,
         width: values[3],
       ),

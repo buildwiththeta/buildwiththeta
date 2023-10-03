@@ -1,9 +1,8 @@
 import 'package:example/constants.dart';
-import 'package:example/theta_names.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-final componentName = UIBoxAssets.blossomXZ9.name;
+const componentName = 'Homepage';
 
 Future<void> main() async {
   /// Initialize Theta instance.
@@ -57,65 +56,74 @@ class _MyAppState extends State<MyApp> {
           /// UIBox is the main widget.
           /// It's used to build the UI.
           /// It requires a component [name].
-          body: UIBox(
-            componentName,
-            controller: _controller,
+          body: Row(
+            children: [
+              const Expanded(child: UIBox(componentName)),
+              const SizedBox.square(dimension: 8),
+              SizedBox(
+                width: 100,
+                child: UIBox(
+                  componentName,
+                  controller: _controller,
 
-            /// [placeholder] is the widget displayed while the page is loading.
-            placeholder: const Center(child: CircularProgressIndicator()),
+                  /// [placeholder] is the widget displayed while the page is loading.
+                  placeholder: const Center(child: CircularProgressIndicator()),
 
-            /// [errorWidget] is the widget displayed if an error occurs.
-            errorWidget: (error) => Text(error.toString()),
+                  /// [errorWidget] is the widget displayed if an error occurs.
+                  errorWidget: (error) => Text(error.toString()),
 
-            /// [overrides] are the properties that can be overriden by the user.
-            overrides: [
-              /// [Override] requires a [node] identifier and a list of [props].
-              /// Use one Override per node.
-              Override(
-                '',
-                builder: (context, node, child, children) {
-                  return GestureDetector(
-                    onTap: () {
-                      debugPrint('Tapped!');
-                    },
-                    child: Container(
-                      color: Colors.black,
-                      child: child,
+                  /// [overrides] are the properties that can be overriden by the user.
+                  overrides: [
+                    /// [Override] requires a [node] identifier and a list of [props].
+                    /// Use one Override per node.
+                    Override(
+                      'node id',
+                      builder: (context, node, child, children) {
+                        return GestureDetector(
+                          onTap: () {
+                            debugPrint('Tapped!');
+                          },
+                          child: Container(
+                            color: Colors.black,
+                            child: child,
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
 
-              Override(
-                'node id',
-                text: 'prova',
-                color: Colors.blue,
-              ),
+                    Override(
+                      'node id',
+                      text: 'prova',
+                      color: Colors.blue,
+                    ),
 
-              Override(
-                'node id',
-              )..setChildren([
-                  const Text('Click me!'),
-                  const Text('Click me!'),
-                ]),
-            ],
+                    Override(
+                      'node id',
+                    )..setChildren([
+                        const Text('Click me!'),
+                        const Text('Click me!'),
+                      ]),
+                  ],
 
-            /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
-            workflows: [
-              Workflow(
-                'node id',
-                Trigger.onMouseEnter,
-                (dynamic) => debugPrint('Hovered!'),
-              ),
-              Workflow(
-                'node id',
-                Trigger.onMouseExit,
-                (dynamic) => debugPrint('Not hovered!'),
-              ),
-              Workflow(
-                'node id',
-                Trigger.onTap,
-                (dynamic) => debugPrint('Tapped!'),
+                  /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
+                  workflows: [
+                    Workflow(
+                      'node id',
+                      Trigger.onMouseEnter,
+                      (dynamic) => debugPrint('Hovered!'),
+                    ),
+                    Workflow(
+                      'node id',
+                      Trigger.onMouseExit,
+                      (dynamic) => debugPrint('Not hovered!'),
+                    ),
+                    Workflow(
+                      'node id',
+                      Trigger.onTap,
+                      (dynamic) => debugPrint('Tapped!'),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

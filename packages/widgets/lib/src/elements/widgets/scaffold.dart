@@ -37,6 +37,10 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
         widget.nodeState.node.getAttributes[DBKeys.componentFit] == "absolute"
             ? ComponentFit.absolute
             : ComponentFit.autoLayout);
+    if (widget.nodeState.node.getAttributes[DBKeys.variables] != null) {
+      state.onVariablesChanged(
+          widget.nodeState.node.getAttributes[DBKeys.variables]);
+    }
   }
 
   ThemeData _theme(BuildContext context, TreeState treeState) {

@@ -20,6 +20,10 @@ class NodeOverrideExecuter extends Equatable {
       override.properties.any((e) => e.property == NodeProperties.textData);
   bool overridesImageValue(Override override) =>
       override.properties.any((e) => e.property == NodeProperties.imageData);
+  bool overridesIconValue(Override override) =>
+      override.properties.any((e) => e.property == NodeProperties.iconData);
+  bool overridesColorValue(Override override) =>
+      override.properties.any((e) => e.property == NodeProperties.fill);
 
   Override? checkOverride(BuildContext context, WidgetState state,
       bool Function(Override override) condition) {
@@ -65,7 +69,7 @@ class NodeOverrideExecuter extends Equatable {
 
   FFill executeColor(
       BuildContext context, WidgetState state, FFill originalFill) {
-    final override = checkOverride(context, state, overridesTextValue);
+    final override = checkOverride(context, state, overridesColorValue);
     return override?.properties
             .firstWhereOrNull((e) => e is FillProperty)
             ?.value ??
@@ -88,6 +92,15 @@ class NodeOverrideExecuter extends Equatable {
             .firstWhereOrNull((e) => e is ImageProperty)
             ?.value ??
         originalImageValue;
+  }
+
+  IconData executeIcon(
+      BuildContext context, WidgetState state, IconData? originalIconValue) {
+    final override = checkOverride(context, state, overridesIconValue);
+    return override?.properties
+            .firstWhereOrNull((e) => e is IconProperty)
+            ?.value ??
+        originalIconValue;
   }
 
   Widget executeChild(BuildContext context, WidgetState state, Widget child) {

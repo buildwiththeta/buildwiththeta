@@ -565,6 +565,8 @@ class _GestureDetectorForPlayState extends State<GestureDetectorForPlay> {
     }
   }
 
+  Future<void> _handleChangeVariableText(String varName, String text) async {}
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<TreeState>();

@@ -143,11 +143,13 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
           decoration: InputDecoration(
             filled: true,
             fillColor: widget.fill.getColor(
+              state.variables.whereType<ColorVariableEntity>().toList(),
               state.colorStyles,
               state.theme,
             ),
             counterStyle: TextStyle(
               color: widget.fill.getColor(
+                state.variables.whereType<ColorVariableEntity>().toList(),
                 state.colorStyles,
                 state.theme,
               ),
@@ -159,6 +161,9 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               borderSide: BorderSide(
                 color: widget.showBorders
                     ? widget.enabledBorderColor.getColor(
+                        state.variables
+                            .whereType<ColorVariableEntity>()
+                            .toList(),
                         state.colorStyles,
                         state.theme,
                       )
@@ -179,6 +184,9 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
               borderSide: BorderSide(
                 color: widget.showBorders
                     ? widget.focusedBorderColor.getColor(
+                        state.variables
+                            .whereType<ColorVariableEntity>()
+                            .toList(),
                         state.colorStyles,
                         state.theme,
                       )
@@ -203,6 +211,7 @@ class _WTextFieldState extends State<OpenWTextField> with AfterLayoutMixin {
             ),
             hintStyle: TextStyle(
               color: widget.hintTextColor.getColor(
+                state.variables.whereType<ColorVariableEntity>().toList(),
                 state.colorStyles,
                 state.theme,
               ),

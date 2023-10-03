@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theta_models/src/models/variable.dart';
 import 'package:theta_models/theta_models.dart';
 
 /// Class made to facilitate the creation of BoxDecoration for widgets
@@ -15,7 +16,10 @@ class ThetaBoxDecoration {
   }) {
     if (fill.type == FFillType.solid) {
       return BoxDecoration(
-        color: fill.getColor(state.colorStyles, state.theme),
+        color: fill.getColor(
+            state.variables.whereType<ColorVariableEntity>().toList(),
+            state.colorStyles,
+            state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -29,6 +33,8 @@ class ThetaBoxDecoration {
           context,
           forPlay: true,
           theme: state.theme,
+          colorVariables:
+              state.variables.whereType<ColorVariableEntity>().toList(),
           colorStyles: state.colorStyles,
           deviceType: state.deviceType,
         ),
@@ -49,13 +55,18 @@ class ThetaBoxDecoration {
           context,
           forPlay: true,
           theme: state.theme,
+          colorVariables:
+              state.variables.whereType<ColorVariableEntity>().toList(),
           colorStyles: state.colorStyles,
           deviceType: state.deviceType,
         ),
       );
     } else if (fill.paletteStyle != null) {
       return BoxDecoration(
-        color: fill.getColor(state.colorStyles, state.theme),
+        color: fill.getColor(
+            state.variables.whereType<ColorVariableEntity>().toList(),
+            state.colorStyles,
+            state.theme),
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -69,6 +80,8 @@ class ThetaBoxDecoration {
           context,
           forPlay: true,
           theme: state.theme,
+          colorVariables:
+              state.variables.whereType<ColorVariableEntity>().toList(),
           colorStyles: state.colorStyles,
           deviceType: state.deviceType,
         ),
@@ -89,6 +102,8 @@ class ThetaBoxDecoration {
           context,
           forPlay: true,
           theme: state.theme,
+          colorVariables:
+              state.variables.whereType<ColorVariableEntity>().toList(),
           colorStyles: state.colorStyles,
           deviceType: state.deviceType,
         ),
@@ -97,6 +112,13 @@ class ThetaBoxDecoration {
     //fill.type -> none
     else {
       return BoxDecoration(
+        color: fill.type != FFillType.none
+            ? fill.getColor(
+                state.variables.whereType<ColorVariableEntity>().toList(),
+                state.colorStyles,
+                state.theme,
+              )
+            : null,
         borderRadius: borderRadius?.get(
           context,
           forPlay: state.forPlay,
@@ -110,6 +132,8 @@ class ThetaBoxDecoration {
           context,
           forPlay: true,
           theme: state.theme,
+          colorVariables:
+              state.variables.whereType<ColorVariableEntity>().toList(),
           colorStyles: state.colorStyles,
           deviceType: state.deviceType,
         ),

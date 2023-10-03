@@ -47,6 +47,7 @@ class DBKeys {
   static const String shadows = 'shd';
   static const String borders = 'brd';
   static const String activeBorders = 'abrd';
+  static const String variables = 'vars';
   static const String flag = 'f';
   static const String flexValue = 'flexValue';
   static const String image = 'img';

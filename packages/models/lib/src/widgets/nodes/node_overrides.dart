@@ -11,6 +11,7 @@ enum NodeProperties {
   textData,
   imageData,
   fill,
+  iconData,
 }
 
 /// A class that represents a node override.
@@ -24,19 +25,23 @@ class Override {
     final Color? color,
     final String? image,
     final String? text,
+    final IconData? icon,
     this.onChanged,
   }) {
     if (props != null) {
       properties.addAll(props);
     }
     if (color != null) {
-      setColor(color, 1.0);
+      setColor(color);
     }
     if (image != null) {
       setImage(image);
     }
     if (text != null) {
       setText(text);
+    }
+    if (icon != null) {
+      setIcon(icon);
     }
   }
 
@@ -91,16 +96,33 @@ class Override {
     onChanged?.call();
   }
 
-  void setColor(Color color, double opacity) {
+  void setIcon(IconData data) {
+    final existingPropertyIndex = properties
+        .indexWhere((element) => element.property == NodeProperties.iconData);
+    if (existingPropertyIndex >= 0) {
+      properties[existingPropertyIndex] = IconProperty(iconData: data);
+    } else {
+      properties.add(IconProperty(iconData: data));
+    }
+    onChanged?.call();
+  }
+
+  void setColor(Color? color) {
     final existingPropertyIndex = properties
         .indexWhere((element) => element.property == NodeProperties.fill);
+    if (color == null) {
+      if (existingPropertyIndex >= 0) {
+        properties.removeAt(existingPropertyIndex);
+      }
+      return;
+    }
     if (existingPropertyIndex >= 0) {
       properties[existingPropertyIndex] = FillProperty(
           fill: FFill(levels: [
         FFillElement(
             color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
             stop: 0,
-            opacity: opacity)
+            opacity: color.opacity)
       ]));
     } else {
       properties.add(FillProperty(
@@ -108,7 +130,7 @@ class Override {
         FFillElement(
             color: color.value.toRadixString(16).padLeft(6, '0').toUpperCase(),
             stop: 0,
-            opacity: opacity)
+            opacity: color.opacity)
       ])));
     }
     onChanged?.call();
@@ -133,9 +155,8 @@ class Override {
           break;
         case 'fill':
           final fill = property['value'] as Map<String, dynamic>;
-          override.setColor(
-              Color(int.parse(fill['color'] as String, radix: 16)),
-              fill['opacity'] as double);
+          override.setColor(Color(int.parse(fill['color'] as String, radix: 16))
+              .withOpacity(fill['opacity'] as double));
           break;
         default:
           break;
@@ -218,6 +239,17 @@ class ImageProperty extends NodeProperty {
   }) : super(NodeProperties.imageData, imageData);
 
   final String imageData;
+
+  @override
+  List<Object> get props => [property, value];
+}
+
+class IconProperty extends NodeProperty {
+  const IconProperty({
+    required this.iconData,
+  }) : super(NodeProperties.iconData, iconData);
+
+  final IconData iconData;
 
   @override
   List<Object> get props => [property, value];

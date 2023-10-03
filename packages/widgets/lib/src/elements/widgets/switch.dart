@@ -61,26 +61,32 @@ class _WSwitchState extends State<OpenWSwitch> {
           }
         },
         activeColor: widget.activeColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),
         activeTrackColor: widget.activeTrackColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),
         inactiveThumbColor: widget.inactiveThumbColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),
         inactiveTrackColor: widget.inactiveTrackColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),
         focusColor: widget.focusColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),
         hoverColor: widget.hoverColor.getColor(
+          state.variables.whereType<ColorVariableEntity>().toList(),
           state.colorStyles,
           state.theme,
         ),

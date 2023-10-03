@@ -314,6 +314,7 @@ class ScaffoldDefaultAttributes extends DefaultAttributesAdapter {
         ),
         DBKeys.flag: true,
         DBKeys.componentFit: 'absolute',
+        DBKeys.variables: <VariableEntity>[],
       };
 
   ScaffoldDefaultAttributes.create() : this();

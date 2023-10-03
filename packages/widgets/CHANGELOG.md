@@ -1,3 +1,7 @@
+## 0.8.6
+
+- [x] Feat: improve NodeBuilder and BoxTransform.
+
 ## 0.8.5
 
 - [x] Fix: BoxTransformBuilder with real devices' sizes.

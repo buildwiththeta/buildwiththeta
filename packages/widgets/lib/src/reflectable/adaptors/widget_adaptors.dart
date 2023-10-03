@@ -143,6 +143,7 @@ class MaterialIconAdapter extends WidgetAdapter {
       state.node.getAttributes[DBKeys.featherIcon] != null
           ? OpenWFeatherIcon(
               context: context,
+              nodeState: state,
               width: state.node.getAttributes[DBKeys.width] as FSize,
               icon: state.node.getAttributes[DBKeys.featherIcon] ?? 'plus',
               fill: state.node.getAttributes[DBKeys.fill] as FFill,
@@ -150,12 +151,14 @@ class MaterialIconAdapter extends WidgetAdapter {
           : state.node.getAttributes[DBKeys.faIcon] != null
               ? OpenWFontAwesome(
                   context: context,
+                  nodeState: state,
                   width: state.node.getAttributes[DBKeys.width] as FSize,
                   icon: state.node.getAttributes[DBKeys.faIcon] ?? 'plus',
                   fill: state.node.getAttributes[DBKeys.fill] as FFill,
                 )
               : OpenWIcon(
                   context: context,
+                  nodeState: state,
                   width: state.node.getAttributes[DBKeys.width] as FSize,
                   icon: state.node.getAttributes[DBKeys.icon] ?? 'plus',
                   fill: state.node.getAttributes[DBKeys.fill] as FFill,

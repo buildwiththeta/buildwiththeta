@@ -2,8 +2,10 @@
 // ignore_for_file: public_member_api_docs, unrelated_type_equality_checks, lines_longer_than_80_chars
 
 // Flutter imports:
+import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:theta_models/src/models/variable.dart';
 // Project imports:
 import 'package:theta_models/theta_models.dart';
 
@@ -26,6 +28,8 @@ enum FFillType {
 
   /// None
   none,
+
+  variable,
 }
 
 /// Make easier including colors, gradients and images in Teta
@@ -100,6 +104,7 @@ class FFill extends Equatable {
     this.boxFit,
     this.paletteStyle,
     this.levels = const [FFillElement(color: '000000', stop: 0)],
+    this.variableName,
   });
 
   final List<FFillElement> levels;
@@ -110,6 +115,7 @@ class FFill extends Equatable {
   final double? radius;
   final FBoxFit? boxFit;
   final String? paletteStyle;
+  final String? variableName;
 
   @override
   List<Object?> get props => [
@@ -219,10 +225,17 @@ class FFill extends Equatable {
   }
 
   Color getColor(
+    final List<ColorVariableEntity> variables,
     final List<ColorStyleEntity> styles,
     final ThemeMode themeMode,
   ) {
     FFill fill = this;
+    if (fill.type == FFillType.variable) {
+      final color = variables
+          .firstWhereOrNull((element) => element.name == variableName)
+          ?.value;
+      if (color != null) return color;
+    }
     if (paletteStyle != null) {
       ColorStyleEntity? model;
       for (var element in styles) {

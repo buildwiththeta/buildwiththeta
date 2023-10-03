@@ -17,6 +17,11 @@ class ThetaProvider extends StatefulWidget {
   final ThemeMode? theme;
   final Widget child;
 
+  static void onThemeChanged(BuildContext context, ThemeMode mode) =>
+      context.read<TreeState>()
+        ..onThemeChanged(mode)
+        ..notify();
+
   @override
   State<ThetaProvider> createState() => _ThetaProviderState();
 }
