@@ -8,6 +8,10 @@ typedef OnNodeChangedCallBack = void Function(
   UITransformResult rect,
   DeviceType deviceType,
 )?;
+typedef OnNodesChangedCallBack = void Function(
+  Map<CNode, UITransformResult> rectMapNode,
+  DeviceType deviceType,
+)?;
 
 typedef OnNodeAttributesUpdatedChangedCallBack = void Function(
   CNode node,
@@ -44,6 +48,7 @@ typedef OnResizingCallback = void Function(bool value)?;
 
 OnNodeAddedCallBack _onNodeAdded;
 OnNodeChangedCallBack _onNodeChanged;
+OnNodesChangedCallBack _onNodesChanged;
 OnNodeFocusedCallBack _onNodeFocused;
 OnNodeHoveredCallBack _onNodeHovered;
 OnRightClickCallBack _onRightClick;
@@ -59,11 +64,13 @@ class TreeGlobalState extends ChangeNotifier {
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
     required final OnResizingCallback onResizingCallback,
+    final OnNodesChangedCallBack onNodesChanged,
     final OnComponentPageChange onComponentPageChange,
     final OnNodeAttributesUpdatedChangedCallBack? onNodeAttributesUpdated,
   }) {
     _onNodeAdded = onNodeAdded;
     _onNodeChanged = onNodeChanged;
+    _onNodesChanged = onNodesChanged;
     _onNodeFocused = onNodeFocused;
     _onNodeHovered = onNodeHovered;
     _onRightClick = onRightClick;
@@ -85,6 +92,12 @@ class TreeGlobalState extends ChangeNotifier {
     DeviceType deviceType,
   ) =>
       _onNodeChanged?.call(node, rect, deviceType);
+
+  void onNodesChanged(
+    Map<CNode, UITransformResult> rectMapNode,
+    DeviceType deviceType,
+  ) =>
+      _onNodesChanged?.call(rectMapNode, deviceType);
 
   void onNodeAttributesUpdated(
     CNode node,

@@ -5,12 +5,13 @@
 
 // Flutter imports:
 import 'package:defer_pointer/defer_pointer.dart';
-import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/src/elements/builders/box_transform.dart';
+import 'package:theta_open_widgets/src/elements/builders/multi_box_transform.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
+import 'package:device_frame/device_frame.dart';
 
 class OpenWScaffold extends StatefulWidget {
   const OpenWScaffold({
@@ -83,6 +84,16 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
       });
     }
 
+    final focusedNodes = widget.children
+        .where((element) => state.focusedNodes
+            .any((focusedNode) => focusedNode.id == element.id))
+        .toList();
+    final unfocusedNodes = widget.children
+        .where((element) =>
+            state.focusedNodes
+                .any((focusedNode) => focusedNode.id == element.id) ==
+            false)
+        .toList();
     return DragTarget<DragTargetSingleNodeModel>(
       onAcceptWithDetails: (data) {
         var renderBox = context.findRenderObject() as RenderBox;
@@ -111,7 +122,13 @@ class _OpenWScaffoldState extends State<OpenWScaffold> {
                     }
                   }),
                 ),
-                ...widget.children
+                if (focusedNodes.isNotEmpty)
+                  MultiBoxTransformBuilder(
+                    nodes: focusedNodes,
+                    screenSize:
+                        Size(constraints.maxWidth, constraints.maxHeight),
+                  ),
+                ...unfocusedNodes
                     .map((final e) => BoxTransformBuilder(
                         node: e,
                         screenSize:
