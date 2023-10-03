@@ -1,3 +1,8 @@
+## 0.9.1
+
+- [x] Feat: add onThemeChanged in ThetaProvider for switching theme.
+- [x] Feat: support for newest theta_models and theta_open_widgets versions.
+
 ## 0.9.0
 
 - [x] Feat: Fill overlay layers.

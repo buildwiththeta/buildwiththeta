@@ -1,3 +1,8 @@
+## 0.8.7
+
+- [x] Feat: add OnNodesChanges callback in TreeGlobalState.
+- [x] Feat: working for Variables support.
+
 ## 0.8.6
 
 - [x] Feat: improve NodeBuilder and BoxTransform.

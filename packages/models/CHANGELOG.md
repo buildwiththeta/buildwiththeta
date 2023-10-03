@@ -1,3 +1,7 @@
+## 0.8.4
+
+- [x] Feat: add DBKeys.variables and VariableEntity.
+
 ## 0.8.3
 
 - [x] Fix: adapt PlayMode to EditorMode in FSize, FRangeSize, FFontSize.
