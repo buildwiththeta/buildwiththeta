@@ -53,7 +53,6 @@ class _ThetaProviderState extends State<ThetaProvider> {
         create: (_) => TreeGlobalState(
           onResizingCallback: (value) => {},
           onNodeChanged: (_, __, ___) {},
-          onNodesChanged: (_, __) {},
           onNodeFocused: (_, __) {},
           onNodeHovered: (_, __) {},
           onNodeAdded: (_, __, ___) {},

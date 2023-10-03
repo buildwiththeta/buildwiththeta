@@ -60,11 +60,11 @@ class TreeGlobalState extends ChangeNotifier {
   TreeGlobalState({
     required final OnNodeAddedCallBack onNodeAdded,
     required final OnNodeChangedCallBack onNodeChanged,
-    required final OnNodesChangedCallBack onNodesChanged,
     required final OnNodeFocusedCallBack onNodeFocused,
     required final OnNodeHoveredCallBack onNodeHovered,
     required final OnRightClickCallBack onRightClick,
     required final OnResizingCallback onResizingCallback,
+    final OnNodesChangedCallBack onNodesChanged,
     final OnComponentPageChange onComponentPageChange,
     final OnNodeAttributesUpdatedChangedCallBack? onNodeAttributesUpdated,
   }) {
