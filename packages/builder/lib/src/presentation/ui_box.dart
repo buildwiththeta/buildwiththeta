@@ -5,7 +5,6 @@ import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
 import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
-import 'package:theta/src/data/models/preload_file.dart';
 import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta/src/domain/usecases/send_conversion_event.dart';
 import 'package:theta/src/presentation/local_notifier_provider.dart';
@@ -27,6 +26,8 @@ class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
+    this.isLive = false,
+    this.preloadedJson,
     this.branch,
     this.controller,
     this.placeholder,
@@ -36,6 +37,8 @@ class UIBox extends StatefulWidget {
   });
 
   final String componentName;
+  final bool isLive;
+  final Map<String, dynamic>? preloadedJson;
   final String? branch;
   final UIBoxController? controller;
   final Widget? placeholder;
@@ -65,6 +68,8 @@ class _UIBoxState extends State<UIBox> {
           : null,
       child: _LogicBox(
         widget.componentName,
+        isLive: widget.isLive,
+        preloadedJson: widget.preloadedJson,
         branchName: widget.branch,
         controller: widget.controller,
         placeholder: widget.placeholder,
@@ -77,6 +82,8 @@ class _UIBoxState extends State<UIBox> {
 class _LogicBox extends StatefulWidget {
   const _LogicBox(
     this.componentName, {
+    this.isLive = false,
+    this.preloadedJson,
     this.branchName,
     this.controller,
     this.placeholder,
@@ -84,6 +91,8 @@ class _LogicBox extends StatefulWidget {
   });
 
   final String componentName;
+  final bool isLive;
+  final Map<String, dynamic>? preloadedJson;
   final String? branchName;
   final UIBoxController? controller;
   final Widget? placeholder;
@@ -117,20 +126,29 @@ class __LogicBoxState extends State<_LogicBox> {
   /// Loads the component from the server.
   Future<void> load() async {
     getIt<ThetaClient>()
-        .build(widget.componentName, branchName: widget.branchName)
+        .build(
+          widget.componentName,
+          branchName: widget.branchName,
+          preloadAllowed: true,
+        )
         .fold(
           onError,
           onLoaded,
-        );
-    if (getIt<PreloadFile>().enabled) {
-      getIt<ThetaClient>()
-          .build(widget.componentName,
-              branchName: widget.branchName, preloadAllowed: false)
-          .fold(
-            (l) => Logger.printError(l.toString()),
-            onLoaded,
-          );
-    }
+        )
+        .then((value) {
+      if (widget.isLive) {
+        getIt<ThetaClient>()
+            .build(
+              widget.componentName,
+              branchName: widget.branchName,
+              preloadAllowed: false,
+            )
+            .fold(
+              (l) => Logger.printError(l.toString()),
+              onLoaded,
+            );
+      }
+    });
   }
 
   /// Triggers the error callback from UIBox -> UIBoxController and sets the

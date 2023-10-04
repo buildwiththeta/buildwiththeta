@@ -3,18 +3,23 @@ import 'package:http/http.dart';
 import 'package:theta_cli/src/data/datasources/component_service.dart';
 import 'package:theta_cli/src/data/datasources/directory_service.dart';
 import 'package:theta_cli/src/data/datasources/get_styles_service.dart';
+import 'package:theta_cli/src/data/datasources/page_service.dart';
 import 'package:theta_cli/src/data/models/token.dart';
 import 'package:theta_cli/src/data/repositories/component_repository_impl.dart';
 import 'package:theta_cli/src/data/repositories/directory_repository_impl.dart';
+import 'package:theta_cli/src/data/repositories/page_repository_impl.dart';
 import 'package:theta_cli/src/data/repositories/styles_repository_impl.dart';
 import 'package:theta_cli/src/domain/repositories/component_repository.dart';
 import 'package:theta_cli/src/domain/repositories/directory_repository.dart';
+import 'package:theta_cli/src/domain/repositories/page_repository.dart';
 import 'package:theta_cli/src/domain/repositories/styles_repository.dart';
 import 'package:theta_cli/src/domain/usecases/create_config_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_names_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/create_preload_file_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/delete_config_file_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_component_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/get_styles_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/load_pages_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/preload_fonts.dart';
 import 'package:theta_cli/src/domain/usecases/preload_images.dart';
 import 'package:theta_cli/src/domain/usecases/read_config_file_usecase.dart';
@@ -28,7 +33,8 @@ Future<void> initializeDependencyInjection(String anonKey) async {
   getIt
     ..registerLazySingleton(() => ComponentService(getIt(), getIt()))
     ..registerLazySingleton(() => StylesService(getIt(), getIt()))
-    ..registerLazySingleton(() => DirectoryService(getIt()));
+    ..registerLazySingleton(() => DirectoryService(getIt()))
+    ..registerLazySingleton(() => PageService(getIt(), getIt()));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
@@ -36,7 +42,8 @@ Future<void> initializeDependencyInjection(String anonKey) async {
     ..registerLazySingleton<StylesRepository>(
         () => StylesRepositoryImpl(getIt()))
     ..registerLazySingleton<DirectoryRepository>(
-        () => DirectoryRepositoryImpl(getIt()));
+        () => DirectoryRepositoryImpl(getIt()))
+    ..registerLazySingleton<PageRepository>(() => PageRepositoryImpl(getIt()));
 
   getIt
     ..registerLazySingleton<GetComponentUseCase>(
@@ -53,7 +60,10 @@ Future<void> initializeDependencyInjection(String anonKey) async {
     ..registerLazySingleton<ReadConfigFileUseCase>(
         () => ReadConfigFileUseCase(getIt()))
     ..registerLazySingleton<CreateNamesFileUseCase>(
-        () => CreateNamesFileUseCase(getIt()));
+        () => CreateNamesFileUseCase(getIt()))
+    ..registerLazySingleton<DeleteConfigFileUseCase>(
+        () => DeleteConfigFileUseCase(getIt()))
+    ..registerLazySingleton<LoadPagesUseCase>(() => LoadPagesUseCase(getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();

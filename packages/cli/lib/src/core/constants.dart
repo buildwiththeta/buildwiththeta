@@ -3,8 +3,9 @@ import 'package:theta_cli/src/domain/usecases/read_config_file_usecase.dart';
 
 const defaultHeaders = {'Content-Type': 'application/json'};
 const baseUrl = 'https://api.buildwiththeta.com/functions/v1/';
-const getComponentPath = 'get_component';
-const getStylesPath = 'get_project_styles';
+const getComponentApiUrl = 'https://component.api.buildwiththeta.net';
+const getStylesApiUrl = 'https://styles.api.buildwiththeta.net';
+const getPagesApiUrl = '${baseUrl}get_pages';
 
 Future<String> readToken() {
   return getIt<ReadConfigFileUseCase>()(

@@ -13,7 +13,7 @@ class StylesService {
 
   Future<String> fetch() async {
     final res = await _httpClient.post(
-      Uri.parse('$baseUrl$getStylesPath'),
+      Uri.parse(getStylesApiUrl),
       headers: {
         'Authorization': 'Bearer ${_clientToken.key}',
         ...defaultHeaders

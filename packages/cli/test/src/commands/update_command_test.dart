@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:pub_updater/pub_updater.dart';
 import 'package:test/test.dart';
 import 'package:theta_cli/src/command_runner.dart';
-import 'package:theta_cli/src/commands/commands.dart';
+import 'package:theta_cli/src/commands/index.dart';
 import 'package:theta_cli/src/version.dart';
 
 class _MockLogger extends Mock implements Logger {}

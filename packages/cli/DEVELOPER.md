@@ -1,3 +1,9 @@
+## Run locally
+
+```sh
+dart pub global activate --source path .
+```
+
 ## Running Tests with coverage 🧪
 
 To run all unit tests use the following command:

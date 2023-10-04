@@ -31,10 +31,22 @@ class DirectoryRepositoryImpl implements DirectoryRepository {
   }
 
   @override
-  Future<Either<Exception, void>> writeNamesFile(
-      {required String content}) async {
+  Future<Either<Exception, void>> deleteConfigFile() async {
     try {
-      return Right(await _directoryService.writeNamesFile(content));
+      await _directoryService.deleteConfigurationFile();
+      return const Right(null);
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Exception, void>> writeNamesFile({
+    required String content,
+    required String fileName,
+  }) async {
+    try {
+      return Right(await _directoryService.writeNamesFile(content, fileName));
     } catch (e) {
       return Left(Exception(e.toString()));
     }

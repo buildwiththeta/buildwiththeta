@@ -3,10 +3,9 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:theta_cli/src/core/constants.dart';
 import 'package:theta_cli/src/data/models/token.dart';
-import 'package:uuid/uuid.dart';
 
-class ComponentService {
-  const ComponentService(
+class PageService {
+  const PageService(
     this._clientToken,
     this._httpClient,
   );
@@ -14,29 +13,16 @@ class ComponentService {
   final ClientToken _clientToken;
   final Client _httpClient;
 
-  Future<String> getComponent(String componentName, String? branchName) async {
+  Future<List<String>> getPagesNames(String branchName) async {
+    print(_clientToken.key);
     final res = await _httpClient.post(
-      Uri.parse(getComponentApiUrl),
+      Uri.parse(getPagesApiUrl),
       headers: {
         'Authorization': 'Bearer ${_clientToken.key}',
         ...defaultHeaders,
       },
       body: json.encode({
-        'component_name': componentName,
         'branch_name': branchName,
-        'log': {
-          "session_id": const Uuid().v1(),
-          "title": "Theta CLI - Get component",
-          "description": null,
-          "properties": null,
-          "device_info": {
-            "os_name": null,
-            "os_version": null,
-            "locale": null,
-            "sdk_version": null,
-            "sdk_build_number": null
-          }
-        }
       }),
     );
 
@@ -45,6 +31,7 @@ class ComponentService {
         'Error fetching component, code: ${res.statusCode}, message: ${res.body}',
       );
     }
-    return res.body;
+    final data = json.decode(res.body);
+    return List.from(data['pages'] as List<dynamic>);
   }
 }

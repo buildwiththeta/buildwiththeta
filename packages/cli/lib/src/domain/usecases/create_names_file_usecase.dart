@@ -12,13 +12,18 @@ class CreateNamesFileUseCase
   Future<Either<Exception, void>> call(
     CreateNamesFileUseCaseParams params,
   ) =>
-      _directoryRepository.writeNamesFile(content: params.content);
+      _directoryRepository.writeNamesFile(
+        content: params.content,
+        fileName: params.fileName,
+      );
 }
 
 class CreateNamesFileUseCaseParams extends Params {
   const CreateNamesFileUseCaseParams({
     required this.content,
+    required this.fileName,
   });
 
   final String content;
+  final String fileName;
 }

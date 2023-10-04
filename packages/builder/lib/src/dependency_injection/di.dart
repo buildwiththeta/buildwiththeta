@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
 import 'package:theta/src/client.dart';
-import 'package:theta/src/core/connection_mode.dart';
 import 'package:theta/src/data/datasources/component_service.dart';
 import 'package:theta/src/data/datasources/custom_fonts_service.dart';
 import 'package:theta/src/data/datasources/get_styles.dart.dart';
@@ -26,13 +25,11 @@ GetIt get getIt => GetIt.instance;
 Future<void> initializeDependencyInjection(
   String key,
   int cacheExtension,
-  ConnectionMode connectionMode,
-  Map<String, dynamic>? customPreloadFile,
+  Map<String, dynamic>? preloadedJson,
   CustomURLs customURLs,
 ) async {
-  final cacheEnabled = connectionMode == ConnectionMode.cached;
-  getIt.registerLazySingleton(() => PreloadFile(
-      connectionMode == ConnectionMode.preloaded, customPreloadFile));
+  getIt.registerLazySingleton(
+      () => PreloadFile(preloadedJson != null, preloadedJson));
   getIt.registerLazySingleton(() => const NodesParse());
   getIt.registerLazySingleton(() => const ColorStylesMapper());
   getIt.registerLazySingleton(() => const TextStylesMapper());
@@ -43,18 +40,18 @@ Future<void> initializeDependencyInjection(
   getIt
     ..registerLazySingleton(
         () => ComponentService(getIt(), getIt(), customURLs))
-    ..registerLazySingleton(() =>
-        LocalComponentService(getIt(), getIt(), cacheExtension, cacheEnabled))
+    ..registerLazySingleton(
+        () => LocalComponentService(getIt(), getIt(), cacheExtension))
     ..registerLazySingleton(() => StylesService(getIt(), getIt(), customURLs))
-    ..registerLazySingleton(() =>
-        LocalStylesService(getIt(), getIt(), cacheExtension, cacheEnabled))
+    ..registerLazySingleton(
+        () => LocalStylesService(getIt(), getIt(), cacheExtension))
     ..registerLazySingleton(() => CustomFontsService(getIt()));
 
   getIt
     ..registerLazySingleton<ComponentRepository>(
-        () => ComponentRepositoryImpl(getIt(), getIt(), getIt(), cacheEnabled))
-    ..registerLazySingleton<StylesRepository>(() =>
-        StylesRepositoryImpl(getIt(), getIt(), getIt(), getIt(), cacheEnabled));
+        () => ComponentRepositoryImpl(getIt(), getIt(), getIt()))
+    ..registerLazySingleton<StylesRepository>(
+        () => StylesRepositoryImpl(getIt(), getIt(), getIt(), getIt()));
 
   getIt
     ..registerLazySingleton(() => GetComponentUseCase(getIt()))

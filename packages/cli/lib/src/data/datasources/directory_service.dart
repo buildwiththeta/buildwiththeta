@@ -24,7 +24,7 @@ class DirectoryService {
   Future<void> writeConfigurationFile(
       {required String jsonKey, required String content}) async {
     if (await checkSystemTemoDirectory()) {
-      final file = File('${Directory.systemTemp.path}/$preloadFile');
+      final file = File('${Directory.systemTemp.path}/theta_config.json');
       final fileContent =
           await file.exists() ? await file.readAsString() : '{}';
       final json = jsonDecode(fileContent);
@@ -36,7 +36,7 @@ class DirectoryService {
 
   Future<String> readConfigurationFile(String jsonKey) async {
     if (await checkSystemTemoDirectory()) {
-      final file = File('${Directory.systemTemp.path}/$preloadFile');
+      final file = File('${Directory.systemTemp.path}/theta_config.json');
       final fileContent =
           await file.exists() ? await file.readAsString() : '{}';
       final json = jsonDecode(fileContent);
@@ -46,10 +46,19 @@ class DirectoryService {
     return '';
   }
 
-  Future<void> writeNamesFile(String content) async {
-    final file = File('${Directory.current.path}/lib/theta_names.dart');
+  Future<void> deleteConfigurationFile() async {
+    if (await checkSystemTemoDirectory()) {
+      final file = File('${Directory.systemTemp.path}/theta_config.json');
+      if (await file.exists()) {
+        await file.delete();
+      }
+    }
+  }
+
+  Future<void> writeNamesFile(String content, String fileName) async {
+    final file = File('${Directory.current.path}/lib/$fileName');
     await file.writeAsString(content);
-    _logger.info('📝 theta_names.dart updated successfully.');
+    _logger.info('📝 $fileName updated successfully.');
   }
 
   String compressString(String json) {
