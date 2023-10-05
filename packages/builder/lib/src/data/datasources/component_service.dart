@@ -5,7 +5,6 @@ import 'package:theta/src/core/constants.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
 import 'package:theta/src/data/models/token.dart';
 import 'package:theta/theta.dart';
-import 'package:theta_analytics/theta_analytics.dart';
 
 class ComponentService {
   const ComponentService(
@@ -18,11 +17,8 @@ class ComponentService {
   final Client _httpClient;
   final CustomURLs _customURLs;
 
-  static final _analytics = ThetaAnalytics.instance.client;
-
   Future<GetPageResponseEntity> getComponent(
       String componentName, String? branchName) async {
-    final log = _analytics.logEvent(title: 'Get component', description: null);
     final res = await _httpClient.post(
       Uri.parse(_customURLs.getComponent),
       headers: {
@@ -32,7 +28,6 @@ class ComponentService {
       body: json.encode({
         'component_name': componentName,
         'branch_name': branchName,
-        if (log.isRight) 'log': {...log.right},
       }),
     );
 
@@ -41,23 +36,5 @@ class ComponentService {
           'Error fetching component, code: ${res.statusCode}, message: ${res.body}');
     }
     return GetPageResponseEntity.fromJson(json.decode(res.body));
-  }
-
-  Future<void> sendConversionEvent(ID eventID, ID? abTestID) async {
-    final res = await _httpClient.post(
-      Uri.parse(_customURLs.sendEvents),
-      headers: {
-        'Authorization': 'Bearer ${_clientToken.key}',
-        ...defaultHeaders,
-      },
-      body: json.encode({
-        'event_id': eventID,
-        'ab_test_id': abTestID,
-      }),
-    );
-    if (res.statusCode != 200) {
-      throw Exception(
-          'Error send a conversion event, code: ${res.statusCode}, message: ${res.body}');
-    }
   }
 }

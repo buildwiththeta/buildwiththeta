@@ -1,20 +1,11 @@
-import 'package:example/constants.dart';
+import 'package:example/theta_ui_widgets.g.dart';
 import 'package:flutter/material.dart';
 import 'package:theta/theta.dart';
 
-const componentName = 'Homepage';
+final date = DateTime.now();
 
-Future<void> main() async {
-  /// Initialize Theta instance.
-  /// You can get an anonymous key at https://app.buildwiththeta.com
-  await Theta.initialize(
-    connectionMode: ConnectionMode.continuous,
-
-    /// Example key
-    anonKey: publicKey,
-    componentsNames: [componentName],
-  );
-
+void main() async {
+  await initializeThetaClient();
   runApp(const MyApp());
 }
 
@@ -31,12 +22,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _controller.onLoaded(() {
-      debugPrint(_controller.componentID);
-      debugPrint(_controller.branch);
-      debugPrint(_controller.nodesToList().toString());
+    Future.delayed(const Duration(seconds: 5), () {
+      _controller.changeTheme(ThemeMode.dark);
     });
-    _controller.onError((error) => debugPrint(error.toString()));
   }
 
   @override
@@ -49,84 +37,15 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     /// ThetaProvider is used to provide the project styles to the widgets.
     /// It's required to use Theta widgets.
-    return ThetaProvider(
-      theme: ThemeMode.light,
-      child: MaterialApp(
-        home: Scaffold(
-          /// UIBox is the main widget.
-          /// It's used to build the UI.
-          /// It requires a component [name].
-          body: Row(
-            children: [
-              const Expanded(child: UIBox(componentName)),
-              const SizedBox.square(dimension: 8),
-              SizedBox(
-                width: 100,
-                child: UIBox(
-                  componentName,
-                  controller: _controller,
-
-                  /// [placeholder] is the widget displayed while the page is loading.
-                  placeholder: const Center(child: CircularProgressIndicator()),
-
-                  /// [errorWidget] is the widget displayed if an error occurs.
-                  errorWidget: (error) => Text(error.toString()),
-
-                  /// [overrides] are the properties that can be overriden by the user.
-                  overrides: [
-                    /// [Override] requires a [node] identifier and a list of [props].
-                    /// Use one Override per node.
-                    Override(
-                      'node id',
-                      builder: (context, node, child, children) {
-                        return GestureDetector(
-                          onTap: () {
-                            debugPrint('Tapped!');
-                          },
-                          child: Container(
-                            color: Colors.black,
-                            child: child,
-                          ),
-                        );
-                      },
-                    ),
-
-                    Override(
-                      'node id',
-                      text: 'prova',
-                      color: Colors.blue,
-                    ),
-
-                    Override(
-                      'node id',
-                    )..setChildren([
-                        const Text('Click me!'),
-                        const Text('Click me!'),
-                      ]),
-                  ],
-
-                  /// [workflows] are the workflows that can be triggered by the user, mixing no-code and code.
-                  workflows: [
-                    Workflow(
-                      'node id',
-                      Trigger.onMouseEnter,
-                      (dynamic) => debugPrint('Hovered!'),
-                    ),
-                    Workflow(
-                      'node id',
-                      Trigger.onMouseExit,
-                      (dynamic) => debugPrint('Not hovered!'),
-                    ),
-                    Workflow(
-                      'node id',
-                      Trigger.onTap,
-                      (dynamic) => debugPrint('Tapped!'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+    return MaterialApp(
+      home: Scaffold(
+        /// UIBox is the main widget.
+        /// It's used to build the UI.
+        /// It requires a component [name].
+        body: PaywallTeamWidget(
+          initialTheme: ThemeMode.light,
+          controller: _controller,
+          isLive: false,
         ),
       ),
     );

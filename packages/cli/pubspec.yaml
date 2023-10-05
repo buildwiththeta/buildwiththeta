@@ -1,6 +1,6 @@
 name: theta_cli
 description: Theta CLI allows the remote user interface to be preloaded for use without an Internet connection.
-version: 0.4.0
+version: 0.5.0
 repository: https://github.com/buildwiththeta/buildwiththeta
 homepage: https://buildwiththeta.com
 issue_tracker: https://github.com/buildwiththeta/buildwiththeta/issues
@@ -31,7 +31,8 @@ dependencies:
   interact: ^2.2.0
   encrypt: ^5.0.1
   recase: ^4.1.0
-  theta: ^0.8.3
+  diacritic: ^0.1.4
+  yaml: ^3.1.2
 
 dev_dependencies:
   flutter_lints: ^2.0.2

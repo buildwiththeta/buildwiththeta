@@ -84,4 +84,13 @@ class DirectoryRepositoryImpl implements DirectoryRepository {
       return Left(Exception(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Exception, bool>> writeIfThetaIsInPubspec() async {
+    try {
+      return Right(await _directoryService.writeIfThetaIsInPubspec());
+    } catch (e) {
+      return Left(Exception(e.toString()));
+    }
+  }
 }

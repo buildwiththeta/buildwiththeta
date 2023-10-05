@@ -1,14 +1,10 @@
 import 'package:collection/collection.dart';
-import 'package:either_dart/either.dart';
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:provider/provider.dart';
-import 'package:theta/src/client.dart';
 import 'package:theta/src/data/models/get_page_response.dart';
-import 'package:theta/src/dependency_injection/di.dart';
-import 'package:theta/src/domain/usecases/send_conversion_event.dart';
-import 'package:theta/src/presentation/local_notifier_provider.dart';
 import 'package:theta/theta.dart';
+import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
 
 part 'ui_box_controller.dart';
@@ -26,6 +22,8 @@ class UIBox extends StatefulWidget {
   const UIBox(
     this.componentName, {
     super.key,
+    required this.theme,
+    this.client,
     this.isLive = false,
     this.preloadedJson,
     this.branch,
@@ -37,6 +35,8 @@ class UIBox extends StatefulWidget {
   });
 
   final String componentName;
+  final ThemeMode theme;
+  final ThetaClient? client;
   final bool isLive;
   final Map<String, dynamic>? preloadedJson;
   final String? branch;
@@ -46,6 +46,11 @@ class UIBox extends StatefulWidget {
   final List<Workflow>? workflows;
   final List<Override>? overrides;
 
+  static void onThemeChanged(BuildContext context, ThemeMode mode) =>
+      context.read<TreeState>()
+        ..onThemeChanged(mode)
+        ..notify();
+
   @override
   State<UIBox> createState() => _UIBoxState();
 }
@@ -53,27 +58,52 @@ class UIBox extends StatefulWidget {
 class _UIBoxState extends State<UIBox> {
   @override
   Widget build(BuildContext context) {
-    return LocalNotifierProvider(
-      workflows: widget.workflows,
-      nodeOverrides: widget.overrides != null
-          ? widget.overrides!
-              .map((e) => e
-                ..assignOnChanged(() {
-                  if (mounted) {
-                    setState(() {});
-                  }
-                }))
-              .whereNotNull()
-              .toList()
-          : null,
-      child: _LogicBox(
-        widget.componentName,
-        isLive: widget.isLive,
-        preloadedJson: widget.preloadedJson,
-        branchName: widget.branch,
-        controller: widget.controller,
-        placeholder: widget.placeholder,
-        errorWidget: widget.errorWidget,
+    return ChangeNotifierProvider(
+      create: (_) => TreeState(
+        forPlay: true,
+        pageId: '',
+        isPage: true,
+        colorStyles: widget.client?.styles?.colorStyles ?? [],
+        textStyles: widget.client?.styles?.textStyles ?? [],
+        fit: ComponentFit.absolute,
+        deviceInfo: Devices.ios.iPhone13,
+        theme: widget.theme,
+        workflows: widget.workflows ?? [],
+        nodeOverrides: widget.overrides != null
+            ? widget.overrides!
+                .map((e) => e
+                  ..assignOnChanged(() {
+                    if (mounted) {
+                      setState(() {});
+                    }
+                  }))
+                .whereNotNull()
+                .toList()
+            : [],
+      ),
+      builder: (context, child) {
+        return child ?? const SizedBox.shrink();
+      },
+      child: ChangeNotifierProvider(
+        create: (_) => TreeGlobalState(
+          onResizingCallback: (value) => {},
+          onNodeChanged: (_, __, ___) {},
+          onNodeFocused: (_, __) {},
+          onNodeHovered: (_, __) {},
+          onNodeAdded: (_, __, ___) {},
+          onRightClick: (_, __) {},
+          onComponentPageChange: (_) {},
+        ),
+        child: _LogicBox(
+          widget.componentName,
+          client: widget.client,
+          isLive: widget.isLive,
+          preloadedJson: widget.preloadedJson,
+          branchName: widget.branch,
+          controller: widget.controller,
+          placeholder: widget.placeholder,
+          errorWidget: widget.errorWidget,
+        ),
       ),
     );
   }
@@ -83,6 +113,7 @@ class _LogicBox extends StatefulWidget {
   const _LogicBox(
     this.componentName, {
     this.isLive = false,
+    this.client,
     this.preloadedJson,
     this.branchName,
     this.controller,
@@ -91,6 +122,7 @@ class _LogicBox extends StatefulWidget {
   });
 
   final String componentName;
+  final ThetaClient? client;
   final bool isLive;
   final Map<String, dynamic>? preloadedJson;
   final String? branchName;
@@ -99,10 +131,10 @@ class _LogicBox extends StatefulWidget {
   final Widget Function(Exception)? errorWidget;
 
   @override
-  State<_LogicBox> createState() => __LogicBoxState();
+  State<_LogicBox> createState() => _LogicBoxState();
 }
 
-class __LogicBoxState extends State<_LogicBox> {
+class _LogicBoxState extends State<_LogicBox> {
   CNode? _widget;
   Exception? _error;
   bool _isLoaded = false;
@@ -114,46 +146,33 @@ class __LogicBoxState extends State<_LogicBox> {
     super.initState();
 
     /// Loads the component from the server when the widget is initialized.
-    load();
+    _load();
 
     /// Sets the load callback in the controller.
     /// It's used to load the component programmatically.
     if (widget.controller != null) {
-      widget.controller!._setLoadCallback(load);
+      widget.controller!._setLoadCallback(_load);
+      widget.controller!._setThemeChangeCallback(_onThemeChanged);
     }
   }
 
   /// Loads the component from the server.
-  Future<void> load() async {
-    getIt<ThetaClient>()
-        .build(
-          widget.componentName,
-          branchName: widget.branchName,
-          preloadAllowed: true,
-        )
-        .fold(
-          onError,
-          onLoaded,
-        )
-        .then((value) {
-      if (widget.isLive) {
-        getIt<ThetaClient>()
-            .build(
-              widget.componentName,
-              branchName: widget.branchName,
-              preloadAllowed: false,
-            )
-            .fold(
-              (l) => Logger.printError(l.toString()),
-              onLoaded,
-            );
-      }
-    });
-  }
+  void _load() => (widget.client ?? ThetaClient(''))
+      .build(
+        widget.componentName,
+        branchName: widget.branchName,
+        preloadAllowed: !widget.isLive,
+      )
+      .then(
+        (res) => res.fold(
+          _onError,
+          _onLoaded,
+        ),
+      );
 
   /// Triggers the error callback from UIBox -> UIBoxController and sets the
   /// error in the state.
-  void onError(Exception error) {
+  void _onError(Exception error) {
     if (widget.controller != null) {
       widget.controller!._triggerError(error);
     }
@@ -162,7 +181,7 @@ class __LogicBoxState extends State<_LogicBox> {
 
   /// Triggers the loaded callback from UIBox -> UIBoxController and sets the
   /// widget.
-  void onLoaded(GetPageResponseEntity r) {
+  void _onLoaded(GetPageResponseEntity r) {
     widget.controller?._triggerLoaded.call(
       r.treeNodes,
       widget.componentName,
@@ -174,21 +193,15 @@ class __LogicBoxState extends State<_LogicBox> {
       _widget = r.treeNodes;
       _isLoaded = true;
     });
+
     state.onNodesChanged(r.nodes);
-    if (r.conversionEvents.isNotEmpty) {
-      final worksFromCloud = r.conversionEvents
-          .map((e) => Workflow(e.nodeID, e.trigger, (dynamic) async {
-                await getIt<SendConversionEventUseCase>()(
-                  SendConversionEventUseCaseParams(
-                    eventID: e.id,
-                    abTestID: r.abTestID,
-                  ),
-                );
-              }))
-          .toList();
-      state.onWorkflowsChanged([...state.workflows, ...worksFromCloud]);
-    }
     state.notify();
+  }
+
+  void _onThemeChanged(ThemeMode mode) {
+    state.onThemeChanged(mode);
+    state.notify();
+    setState(() {});
   }
 
   @override

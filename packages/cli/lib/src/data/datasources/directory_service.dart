@@ -92,6 +92,17 @@ class DirectoryService {
     }
   }
 
+  Future<File> getPubspec() async {
+    await directoryContainsPubspec();
+    return File('${Directory.current.path}/pubspec.yaml');
+  }
+
+  Future<bool> writeIfThetaIsInPubspec() async {
+    final pubspec = await getPubspec();
+    final content = await pubspec.readAsString();
+    return content.contains('theta:');
+  }
+
   Future<String> retrieveExistingPreloadFile() async {
     final existingFile = File(assetsDirectory + preloadFile);
     return existingFile.readAsString();

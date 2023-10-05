@@ -1,3 +1,7 @@
+## 0.10.0
+
+- [x] Feat: delete Theta singleton, make UIBox flexible and independent.
+
 ## 0.9.1
 
 - [x] Feat: add onThemeChanged in ThetaProvider for switching theme.

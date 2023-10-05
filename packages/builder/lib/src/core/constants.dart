@@ -4,8 +4,6 @@ import 'package:archive/archive.dart' deferred as archive;
 import 'package:encrypt/encrypt.dart' deferred as encrypt;
 
 const defaultHeaders = {'Content-Type': 'application/json'};
-const sendConversionEventPath = 'add_conversion_log';
-
 const thetaPreloadFilePath = 'assets/theta_assets/theta_preload.json';
 
 Future<String> decompressAndDecrypt(

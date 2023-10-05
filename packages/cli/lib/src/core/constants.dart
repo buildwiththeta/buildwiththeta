@@ -1,3 +1,4 @@
+import 'package:diacritic/diacritic.dart';
 import 'package:theta_cli/src/dependency_injection/di.dart';
 import 'package:theta_cli/src/domain/usecases/read_config_file_usecase.dart';
 
@@ -18,4 +19,30 @@ Future<String> readToken() {
       (r) => r,
     ),
   );
+}
+
+String cleanName(String originalName) {
+  return removeDiacritics(originalName)
+      .trim()
+      .replaceAll('+', '')
+      .replaceAll('.', '')
+      .replaceAll('/', '')
+      .replaceAll(r'$', '')
+      .replaceAll('€', '')
+      .replaceAll('%', '')
+      .replaceAll('&', '')
+      .replaceAll('£', '')
+      .replaceAll('=', '')
+      .replaceAll(r'"', '')
+      .replaceAll('\'', '')
+      .replaceAll('?', '')
+      .replaceAll('!', '')
+      .replaceAll('*', '')
+      .replaceAll('(', '')
+      .replaceAll(')', '')
+      .replaceAll('{', '')
+      .replaceAll('}', '')
+      .replaceAll('[', '')
+      .replaceAll(']', '')
+      .replaceAll('|', '');
 }

@@ -23,6 +23,7 @@ import 'package:theta_cli/src/domain/usecases/load_pages_usecase.dart';
 import 'package:theta_cli/src/domain/usecases/preload_fonts.dart';
 import 'package:theta_cli/src/domain/usecases/preload_images.dart';
 import 'package:theta_cli/src/domain/usecases/read_config_file_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/write_theta_assets_path.dart';
 
 GetIt get getIt => GetIt.instance;
 
@@ -63,7 +64,9 @@ Future<void> initializeDependencyInjection(String anonKey) async {
         () => CreateNamesFileUseCase(getIt()))
     ..registerLazySingleton<DeleteConfigFileUseCase>(
         () => DeleteConfigFileUseCase(getIt()))
-    ..registerLazySingleton<LoadPagesUseCase>(() => LoadPagesUseCase(getIt()));
+    ..registerLazySingleton<LoadPagesUseCase>(() => LoadPagesUseCase(getIt()))
+    ..registerLazySingleton<WritePubspectThetaAssetsPathUseCase>(
+        () => WritePubspectThetaAssetsPathUseCase(getIt()));
 }
 
 Future<void> disposeDependencies() async => await getIt.reset();

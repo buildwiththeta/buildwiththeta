@@ -1,4 +1,3 @@
-import 'package:theta/src/dependency_injection/di.dart';
 import 'package:theta_models/theta_models.dart';
 import 'package:theta_open_widgets/theta_open_widgets.dart';
 import 'package:theta_rendering/theta_rendering.dart';
@@ -18,17 +17,20 @@ class GetPageResponseEntity {
   final List<ConversionEvent> conversionEvents;
   final ID? abTestID;
 
+  static const NodesParse _nodesParse = NodesParse();
+  static const NodeRendering _nodeRendering = NodeRendering();
+
   static GetPageResponseEntity fromJson(Map<String, dynamic> json) {
     final nodes = (json['nodes'] as List<dynamic>)
-        .map((e) => getIt<NodesParse>().fromJson(e['type'], e))
+        .map((e) => _nodesParse.fromJson(e['type'], e))
         .whereType<CNode>()
         .toList();
 
     return GetPageResponseEntity(
       pageID: json['page_id'],
       nodes: nodes,
-      treeNodes: getIt<NodeRendering>().renderTree(
-          getIt<NodeRendering>().renderComponents(nodes, json['page_id'])),
+      treeNodes: _nodeRendering
+          .renderTree(_nodeRendering.renderComponents(nodes, json['page_id'])),
       conversionEvents:
           ConversionEvent.fromJsonList(json['conversion_events'] ?? []),
       abTestID: json['ab_test'],
@@ -37,7 +39,7 @@ class GetPageResponseEntity {
 
   Map<String, dynamic> toJson() => {
         'page_id': pageID,
-        'nodes': getIt<NodeRendering>()
+        'nodes': _nodeRendering
             .renderFlatList(treeNodes)
             .map((e) => e.toJsonWithStabilIdAndPageIdAndId())
             .toList(),

@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
-import 'package:light_logger/light_logger.dart';
 import 'package:theta/theta.dart';
 
 class CustomFontsService {
@@ -25,6 +24,5 @@ class CustomFontsService {
     final fontLoader = FontLoader(customFont.name)
       ..addFont(_loadByteData(res.bodyBytes));
     await fontLoader.load();
-    Logger.printMessage('Font ${customFont.name} loaded');
   }
 }

@@ -17,8 +17,6 @@ platforms:
   windows:
 
 scripts:
-  gen: "flutter pub run build_runner build --delete-conflicting-outputs"
-  pubget: "flutter pub get"
   dryrun: "dart pub publish --dry-run"
   publish: "dart pub publish"
 
@@ -30,7 +28,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  theta_analytics: ^0.1.4
   theta_models: ^0.8.4
   theta_rendering: ^0.2.4
   theta_open_widgets: ^0.8.7
@@ -43,8 +40,6 @@ dependencies:
   http: ^0.13.0
   get_it: ^7.6.0
   provider: ^6.0.4
-  hive: ^2.2.3
-  path_provider: ^2.0.14
   archive: ^3.3.7
   encrypt: ^5.0.1
   collection: ^1.15.0
@@ -53,6 +48,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints:
-  build_runner: any
 
 flutter:

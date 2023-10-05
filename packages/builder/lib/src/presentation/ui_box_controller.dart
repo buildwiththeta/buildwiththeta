@@ -4,11 +4,14 @@ typedef ErrorCallback = void Function(Exception error);
 typedef LoadedCallback = void Function();
 
 class UIBoxController extends ChangeNotifier {
+  static const NodeRendering _nodeRendering = NodeRendering();
+
   ID? _componentName;
   ID? _componentID;
   String? _branchName;
   ID? _abTestID;
   Function()? _onLoadCallback;
+  Function(ThemeMode)? _onThemeChangeCallback;
   ErrorCallback? _onErrorCallback;
   LoadedCallback? _onLoadedCallback;
   CNode? _rootNode;
@@ -17,6 +20,11 @@ class UIBoxController extends ChangeNotifier {
   /// It's used to load the component programmatically.
   void load() {
     _onLoadCallback?.call();
+    notifyListeners();
+  }
+
+  void changeTheme(ThemeMode mode) {
+    _onThemeChangeCallback?.call(mode);
     notifyListeners();
   }
 
@@ -30,8 +38,7 @@ class UIBoxController extends ChangeNotifier {
   /// If the component is not loaded, it returns an empty list.
   ///
   /// Use after the component is loaded.
-  List<CNode> nodesToList() =>
-      getIt<NodeRendering>().renderFlatList(_rootNode!);
+  List<CNode> nodesToList() => _nodeRendering.renderFlatList(_rootNode!);
 
   /// Returns the component name.
   ///
@@ -78,8 +85,14 @@ class UIBoxController extends ChangeNotifier {
   }
 
   /// Sets the load callback from UIBox -> UIBoxController.
-  void _setLoadCallback(Future<void> Function() callback) {
+  void _setLoadCallback(void Function() callback) {
     _onLoadCallback = callback;
+    notifyListeners();
+  }
+
+  /// Sets the switch theme function.
+  void _setThemeChangeCallback(void Function(ThemeMode) callback) {
+    _onThemeChangeCallback = callback;
     notifyListeners();
   }
 

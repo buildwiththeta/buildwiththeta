@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:either_dart/either.dart';
 import 'package:interact/interact.dart';
 import 'package:mason_logger/mason_logger.dart' hide Progress;
 import 'package:theta_cli/src/commands/functions/load_names_functions.dart';
@@ -10,6 +11,8 @@ import 'package:theta_cli/src/commands/functions/load_widgets_functions.dart';
 import 'package:theta_cli/src/commands/functions/write_load_file_functions.dart';
 import 'package:theta_cli/src/core/constants.dart';
 import 'package:theta_cli/src/dependency_injection/di.dart';
+import 'package:theta_cli/src/domain/usecases/base_usecase.dart';
+import 'package:theta_cli/src/domain/usecases/write_theta_assets_path.dart';
 
 /// {@template preload_command}
 ///
@@ -58,6 +61,13 @@ class GenCommand extends Command<int> {
   }
 
   Future<void> installThetaDependency() async {
+    final res = await getIt<WritePubspectThetaAssetsPathUseCase>()(Params.empty)
+        .fold((l) => false, (r) => r);
+
+    if (res) {
+      return;
+    }
+
     // The command you want to run
     var command =
         'flutter pub add theta'; // Example: list files in the current directory
@@ -101,6 +111,8 @@ class GenCommand extends Command<int> {
       rightPrompt: (current) => ' ${current.toString().padLeft(3)}/$length',
     ).interact();
 
+    await _loadNamesFunctions.fetchStyles(anonKey);
+
     final componentsAssets = <String, dynamic>{};
     for (final componentName in pagesName) {
       componentsAssets.addAll(await _loadNamesFunctions.fetchComponent(
@@ -113,11 +125,11 @@ class GenCommand extends Command<int> {
     }
 
     final namesData = _loadNamesFunctions.writeNamesFile(componentsAssets);
-    _writeNamesFileFunctions.writeFile(namesData, 'theta_ui_assets.dart');
+    _writeNamesFileFunctions.writeFile(namesData, 'theta_ui_assets.g.dart');
 
     final widgetsData =
-        _loadWidgetsFunctions.writeWidgetsFile(componentsAssets);
-    _writeNamesFileFunctions.writeFile(widgetsData, 'theta_ui_widgets.dart');
+        _loadWidgetsFunctions.writeWidgetsFile(componentsAssets, anonKey);
+    _writeNamesFileFunctions.writeFile(widgetsData, 'theta_ui_widgets.g.dart');
     progress.done;
   }
 }
