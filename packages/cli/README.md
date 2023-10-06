@@ -10,28 +10,30 @@ Theta CLI allows the remote user interface to be preloaded for use without an In
 
 ## Getting Started 🚀
 
-Activate Theta CLI globally via:
+Install Theta CLI.
 
 ```sh
-dart pub global activate theta_cli
+$ dart pub global activate theta_cli
 ```
 
-## Usage
+Link a project by its key.
 
 ```sh
-# Preload command
-# -anon-key: Anonymous key for the project
-$ theta preload -anon-key ANON_KEY
+$ theta link -k <anon key>
 ```
 
-The command `preload` allows you to preload the remote user interface for use without an Internet connection.
-It preloads also the images used in the remote user interface.
+You can generate files from design by running:
 
-Run this command inside the root of a Flutter app. The folder must contain a `pubspec.yaml` file.
+```sh
+$ theta gen
+```
 
 ### Other commands
 
 ```sh
+# Unlink a project
+$ theta unlink
+
 # Show CLI version
 $ theta --version
 

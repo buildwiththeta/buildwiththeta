@@ -1,4 +1,7 @@
+## 0.5.0
 
+* Feat: add 'gen' command.
+* Feat: add 'unlink' command.
 
 ## 0.4.0
 
