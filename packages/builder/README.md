@@ -19,8 +19,8 @@
 
 > Design to Flutter in 1 command.
 
-- 🦄 Why? Hardcoding the entire UI is an expensive task. Convert your design into Flutter with 1 command.
-- 👥 Who? Developers and teams who want to build UIs faster visually.
+- **🦄 Why?** Manually coding the entire UI can be time-consuming and costly. Transform your design into Flutter with just one command.
+- **👥 Who?** Individual developers and teams aiming for quicker and more visual UI development.
 
 ## 🧙 Design to Flutter
 
@@ -71,15 +71,22 @@ PaywallWidget(
 )
 ```
 
-Before running your app, write at the root of your app:
+**🟡 Before running your app:** 
+
+1. Initialize ThetaClient instance for your project. Write at the root of your app:
 
 ```dart
 await initializeThetaClient();
 ```
 
-This will initialize Theta for your project.
+2. Add the path in the pubspec.yaml file to theta_assets folder, to access the widget data:
 
-**Congrats, you have now your UI 🥳**
+```yaml
+assets: 
+    - assets/theta_assets/
+```
+
+### **Congrats, you have now your UI 🥳**
 
 ## 🔴 Live widgets
 
@@ -96,7 +103,7 @@ PaywallWidget(
 
 By making it live, you can set A/B testing from Theta's editor or update its content in real-time.
 
-## Learn more
+## Learn more
 
 - Controllers
 - Placeholder and error widget
