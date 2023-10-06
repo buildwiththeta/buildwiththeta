@@ -7,37 +7,12 @@ title: Get component - Build with Theta API
 To retrieve a remote component, you can make a POST request to the 'get_component' endpoint of the Build with Theta API. Here's a sample curl command to do that:
 
 ```bash
-curl -X POST 'https://api.buildwiththeta.com/functions/v1/get_component' \
+curl -X POST 'https://component.api.buildwiththeta.net' \
      -H 'Authorization: Bearer eyJhbGciOi...' \
      -H 'Content-Type: application/json' \
      -d $'{
-      "log": {
-        "session_id": "23a9e8c7-cd8f-4557-...",
-        "title": "Get component",
-        "branch_name": "...",
-        "description": "...",
-        "properties": { ... },
-        "device_info": {
-          "os_name": "...",
-          "os_version": "...",
-          "locale": "...",
-          "sdk_version": "...",
-          "sdk_build_number": "..."
-        }
-      }
+      "title": "Get component",
+      "branch_name": "...",
+      "component_name": "...",
     }'
 ```
-
-## Body Parameters
-
-- **session_id**: `uuid`. A universally unique identifier (uuid) assigned to a session.
-- **title**: `string`. A string representing the title of the event. This title will be displayed inside the Insight panel under the Usage section.
-- **branch_name**: `string`, optional. An optional string proving a branch name. If null, "main" branch will be used.
-- **description**: `string`, optional. An optional string providing a description of the event.
-- **properties**: `object`, optional. An optional object containing additional properties related to the event.
-- **device_info**: `object`, optional. An object containing information about the client device.
-  - **os_name**: `string`. A string representing the name of the operating system on the client device.
-  - **os_version**: `string`. A string representing the OS version of the client device.
-  - **locale**: `string`, optional. An optional string representing the locale of the device.
-  - **sdk_version**: `string`. A string indicating the Theta SDK version.
-  - **sdk_build_number**: `string`. A string indicating the Theta SDK build number.
