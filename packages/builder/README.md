@@ -103,13 +103,6 @@ PaywallWidget(
 
 By making it live, you can set A/B testing from Theta's editor or update its content in real-time.
 
-## Learn more
-
-- Controllers
-- Placeholder and error widget
-- Overrides
-- Workflows
-
 ---
 
 ### Contributing
