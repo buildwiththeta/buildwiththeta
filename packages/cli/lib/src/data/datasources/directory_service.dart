@@ -74,7 +74,7 @@ class DirectoryService {
   }
 
   String encrypt(String anonKey, String value) {
-    final key = Key.fromUtf8(anonKey.split('.')[1].substring(0, 32));
+    final key = Key.fromUtf8(anonKey.substring(0, 32));
     final iv = IV.fromLength(16);
 
     final encrypter = Encrypter(AES(key));

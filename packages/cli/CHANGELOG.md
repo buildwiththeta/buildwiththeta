@@ -1,3 +1,11 @@
+## 0.5.2
+
+* Fix: CLI version.
+
+## 0.5.1
+
+* Feat: improve encrypt method.
+
 ## 0.5.0
 
 * Feat: add 'gen' command.

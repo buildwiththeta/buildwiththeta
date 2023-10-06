@@ -1,3 +1,11 @@
+## 0.10.2
+
+- [x] Feat: improve decrypt method.
+
+## 0.10.1
+
+- [x] Feat: update docs.
+
 ## 0.10.0
 
 - [x] Feat: delete Theta singleton, make UIBox flexible and independent.

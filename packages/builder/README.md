@@ -11,7 +11,7 @@
   <a href="https://docs.buildwiththeta.com/en/getting-started">Get started</a> •
   <a href="https://docs.buildwiththeta.com">Documentation</a> •
   <a href="https://github.com/buildwiththeta/buildwiththeta/tree/main/examples/">Examples</a> •
-  <a href="https://discord.gg/XGXrGEk4c6">Community & Support</a> •
+  <a href="https://discord.gg/zz9fAwqNHf">Community & Support</a> •
   <a href="https://buildwiththeta.com">Website</a>
 </p>
 
