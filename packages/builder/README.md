@@ -22,29 +22,31 @@
 - 🦄 Why? Hardcoding the entire UI is an expensive task. Convert your design into Flutter with 1 command.
 - 👥 Who? Developers and teams who want to build UIs faster visually.
 
-## Design to Flutter
+## 🧙 Design to Flutter
 
 *Tree steps:*
 
-1. **Design your UI within our UI editor.**
+1. **Build your UI with Theta.**
 
 - 🔗 [Website](https://buildwiththeta.com)
 
 ![Theta Studio](https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/covers/263726701.jpg)
 
-2. **Go in your Flutter project, and then open the terminal:**
+2. **Navigate to a Flutter project, and open the terminal:**
+
+Install Theta CLI.
 
 ```sh
-$ dart pub active ...
+$ dart pub global activate theta_cli
 ```
 
-Link your project to the CLI
+Link a project by its key.
 
 ```sh
 $ theta link -k <anon key>
 ```
 
-Then you can generate your files by running:
+You can generate files from design by running:
 
 ```sh
 $ theta gen
@@ -52,12 +54,16 @@ $ theta gen
 
 3. **Use the generated UI widgets:**
 
-Theta will generate the files in:
-- lib
-    - theta_ui_assets.g.dart
-    - theta_ui_widgets.g.dart
+> Theta will generate the following files
+> - /assets
+>    - /theta_assets
+>        - theta_preload.json
+>        - ... all the media
+> - /lib
+>    - theta_ui_assets.g.dart
+>    - theta_ui_widgets.g.dart
 
-And you can use them freely as normal widgets:
+You can use them as normal widgets:
 
 ```dart
 PaywallWidget(
@@ -75,11 +81,11 @@ This will initialize Theta for your project.
 
 **Congrats, you have now your UI 🥳**
 
-## Fly-on-air widgets
+## 🔴 Live widgets
 
 There is an option for fetching widgets from the back-end in runtime.
 
-You can easily active it by setting `isLive: true` on any widget.
+You can easily active it by setting `isLive: true`.
 
 ```dart
 PaywallWidget(
@@ -89,6 +95,13 @@ PaywallWidget(
 ```
 
 By making it live, you can set A/B testing from Theta's editor or update its content in real-time.
+
+## Learn more
+
+- Controllers
+- Placeholder and error widget
+- Overrides
+- Workflows
 
 ---
 
