@@ -1,72 +1,122 @@
 ---
-title: Build with Theta Docs
-description: Theta is an open source tool to prototyping and testing in production
+title: Theta - Design to Flutter - Docs
+description: Design to Flutter
 next: /getting-started
 nextTitle: Getting started
 ---
 
+![Banner](https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/logos/banner_theta_flutter_colors.jpg)
+
+<p align="center">
+  <a href="https://pub.dev/packages/theta"><img src="https://img.shields.io/pub/v/theta?label=pub.dev&logo=dart" alt="pub"></a>
+  <a href="https://github.com/buildwiththeta/buildwiththeta"><img src="https://img.shields.io/github/stars/buildwiththeta/buildwiththeta?logo=github" alt="github"></a>
+  <a href="https://discord.gg/XGXrGEk4c6"><img src="https://img.shields.io/discord/1110506355728584714?logo=discord" alt="discord"></a>
+  <a href="https://github.com/buildwiththeta/buildwiththeta"><img src="https://img.shields.io/github/contributors/buildwiththeta/buildwiththeta?logo=github" alt="contributors"></a>
+</p>
+
+<p align="center">
+  <a href="https://docs.buildwiththeta.com/en/getting-started">Get started</a> •
+  <a href="https://docs.buildwiththeta.com">Documentation</a> •
+  <a href="https://github.com/buildwiththeta/buildwiththeta/tree/main/examples/">Examples</a> •
+  <a href="https://discord.gg/zz9fAwqNHf">Community & Support</a> •
+  <a href="https://buildwiththeta.com">Website</a>
+</p>
+
 # Theta
 
-## Prototyping and testing in production
+> Design to Flutter in 1 command.
 
-![Theta_extended_negative-large 12](https://github.com/buildwiththeta/buildwiththeta/assets/49411143/ec0a50fc-e946-4750-95c5-1af84776f461)
+- **🦄 Why?** Manually coding the entire UI can be time-consuming and costly. Transform your design into Flutter with just one command.
+- **👥 Who?** Individual developers and teams aiming for quicker and more visual UI development.
 
-Prototype and test dynamic user interfaces with instant fly-on-air updates. You can update the user interface without rebuilding it. You can directly set up remote A/B tests and see the analysis to improve UX and sales.
+## 🧙 Design to Flutter
 
-Traditional app development often necessitates frequent rebuilding and deployment cycles with every code change. Although some solutions exist and are really good, they are often limited in scope. For instance, Flutter's experimental push code (like [Shorebird](https://shorebird.dev) for Android) only targets expert developers, while no-code builders like [FlutterFlow](https://flutterflow.io) may compromise on code quality while still necessitating additional programming for complex features.
+*Tree steps:*
 
-## Why Theta
+1. **Build your UI with Theta.**
 
-Building a Flutter app means you will take little time to program it from scratch, but you will spend almost all your time updating and testing it to improve UX and sales.
+- 🔗 [Website](https://buildwiththeta.com)
 
-But testing and updating even small parts of our app's UI (e.g., paywalls, news dialogs, or even text copy) is a mechanism that requires putting hands on code and wasting a lot of time with each change.
+![Theta Studio](https://api.buildwiththeta.com/storage/v1/object/public/theta-assets/covers/263726701.jpg)
 
-This is crazy, which is why I created a tool to update and test apps in production with a few clicks. Integrate Theta to get started right away: buildwiththeta.com
+2. **Navigate to a Flutter project, and open the terminal:**
 
-## Developers shouldn't hardcode UI components
+Install Theta CLI.
 
-Server-driven design systems focus on creating dynamic user interfaces (UIs) that can be updated in real-time via APIs. Instead of hardcoding design components into the app, they are stored remotely. This allows central updates that are propagated instantly across all instances of the app, without the need for user downloads.
+```sh
+$ dart pub global activate theta_cli
+```
 
-Theta offers several advantages:
+Link a project by its key.
 
-- **⚡️ Fast integration:** Theta provides a UI editor for designing the UI that can be integrate directly into your project with SDKs. Theta doesn’t limit what you can do with the rest of your app. You can embed complex platform-specific widgets like maps, web views, media players, and camera feeds within your remote UI, or add a UIBox() inside an existing custom page to make it dynamic.
-- **🔀 Set tests remotely with instant effects:** Set up numerous A/B tests on your UI components to improve the user experience and sales of your app. Everything can be done visually on Theta, with a direct connection (and effect) to your customers' apps without wasting time.
-- **🧋 Team collaboration and version control:** Theta provides tools for team collaboration, project logs, and branches, facilitating efficient teamwork in app development. The version control feature allows tracking and management of different versions of the your design system components, a crucial aspect for maintaining app quality and addressing bugs or issues.
-- **💫 Efficiency:** Remote design systems like Theta allow for design updates to be rolled out instantly via API, across all instances of the app. This bypasses the traditional cycle of updating and downloading new app versions. Also, because the design system is centralized, it ensures a consistent look and feel across all platforms, enhancing the user experience.
+```sh
+$ theta link -k <anon key>
+```
 
-## Getting Started with Theta
+You can generate files from design by running:
 
-Discover how to create a UI project in Theta and stream a component seamlessly within your code.
+```sh
+$ theta gen
+```
 
-Our instructional video will guide you through:
+3. **Use the generated UI widgets:**
 
-- Designing a responsive app bar.
-- Streaming a UI component directly into your code.
-- Make UI changes without rebuilding.
+> Theta will generate the following files
+> - /assets
+>    - /theta_assets
+>        - theta_preload.json
+>        - ... all the media
+> - /lib
+>    - theta_ui_assets.g.dart
+>    - theta_ui_widgets.g.dart
 
-<YouTube id="oFed0NIqBZI" />
+You can use them as normal widgets:
 
-## Integrate tonight
+```dart
+PaywallWidget(
+    initialTheme: ThemeMode.light,
+)
+```
 
-### Sign up
+**🟡 Before running your app:** 
 
-- To begin your Theta journey, sign up for Theta on the buildwiththeta.com website.
+1. Initialize ThetaClient instance for your project. Write at the root of your app:
 
-### Get your API key
+```dart
+await initializeThetaClient();
+```
 
-To share your remote UI in your project, you'll need to obtain your API key from the project settings.
-- 📚 Follow our guide
+2. Add the path in the pubspec.yaml file to theta_assets folder, to access the widget data:
 
-### Integrate in your codebase
+```yaml
+assets: 
+    - assets/theta_assets/
+```
 
-Use Theta.initialize(anonKey: "") at the root of the project, then use UIBox("component name") to display a remote component within your view.
-- 📚 Follow our documentation for Flutter
+### **Congrats, you have now your UI 🥳**
 
-## Should I use Theta?
+## 🔴 Live widgets
 
-Theta is a tool for enhancing the efficiency of your app development process, especially when you need to rapidly design and integrate dynamic UI components. It is particularly beneficial for projects that require a mix of no-code and custom-coded solutions. 
+There is an option for fetching widgets from the back-end in runtime.
 
-However, if your project requires highly specific features that fall outside of Theta's current capabilities, a more custom solution might be a better fit. As Theta continues to evolve, more features will become available to accommodate a broader range of project requirements. 
+You can easily active it by setting `isLive: true`.
 
-Remember, Theta is designed to complement your existing development workflow rather than replacing it entirely. It is worth exploring Theta if you want to reduce the time spent on rebuilding and deploying your app for every UI change, and if you value the flexibility of mixing no-code and custom code.
+```dart
+PaywallWidget(
+    initialTheme: ThemeMode.light,
+    isLive: true,
+)
+```
+
+By making it live, you can set A/B testing from Theta's editor or update its content in real-time.
+
+---
+
+### Contributing
+
+See [CONTRIBUTING.md](https://github.com/buildwiththeta/buildwiththeta/blob/main/CONTRIBUTING.md) for details.
+
+### License
+
+Theta is licensed under the Apache License 2.0. See [LICENSE](https://github.com/buildwiththeta/buildwiththeta/blob/main/LICENSE) for details.
 
