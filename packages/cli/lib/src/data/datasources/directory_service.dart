@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:encrypt/encrypt.dart';
 import 'package:http/http.dart';
 import 'package:mason_logger/mason_logger.dart';
 
@@ -73,15 +72,6 @@ class DirectoryService {
     return utf8.decode(decodedGZipJson);
   }
 
-  String encrypt(String anonKey, String value) {
-    final key = Key.fromUtf8(anonKey.substring(0, 32));
-    final iv = IV.fromLength(16);
-
-    final encrypter = Encrypter(AES(key));
-
-    return encrypter.encrypt(value, iv: iv).base64;
-  }
-
   Future<void> directoryContainsPubspec() async {
     final current =
         await File('${Directory.current.path}/pubspec.yaml').exists();
@@ -142,7 +132,7 @@ class DirectoryService {
     final fileContent = await file.exists() ? await file.readAsString() : '{}';
     final json = jsonDecode(fileContent);
 
-    json[jsonKey] = encrypt(anonKey, compressString(content));
+    json[jsonKey] = compressString(content);
     await file.writeAsString(jsonEncode(json));
   }
 

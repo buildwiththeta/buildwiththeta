@@ -1,3 +1,15 @@
+## 0.5.5
+
+* Feat: improve compression method in 'theta gen'
+
+## 0.5.4
+
+* Fix: CLI version.
+
+## 0.5.3
+
+* Feat: improve encrypt method.
+
 ## 0.5.2
 
 * Fix: CLI version.

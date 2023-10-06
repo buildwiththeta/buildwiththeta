@@ -2,7 +2,7 @@
     import 'package:theta/theta.dart';
     import './theta_ui_assets.g.dart';
 
-    final _client = ThetaClient('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3NGQ3N2Q3Zi1iOWYyLTQ0YzItYTEzYS0zODY3NDUyNzU4OGEiLCJhbm9uX2tleSI6IjE0MzRkZDU5LTAwOWYtNGQ2Zi05OWE5LTQ4N2Y3Yzk1ODZhMCIsImlhdCI6MTY5NjUxMTMzOCwiZXhwIjoxNzI4MDY4OTM4LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.XC60K6nHWhVMzC55wtGps0Ynk7JXp8yqmgv8TGqRSz0');
+    final _client = ThetaClient('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZWYiOiI3NGQ3N2Q3Zi1iOWYyLTQ0YzItYTEzYS0zODY3NDUyNzU4OGEiLCJhbm9uX2tleSI6IjE0MzRkZDU5LTAwOWYtNGQ2Zi05OWE5LTQ4N2Y3Yzk1ODZhMCIsImlhdCI6MTY5NjU4NjY3NiwiZXhwIjoxNzI4MTQ0Mjc2LCJpc3MiOiJodHRwczovL2J1aWxkd2l0aHRoZXRhLmNvbSJ9.0IdY96MCqnrXbJyaMSfHRi-zBBjmBeGYbKz0Q6B2yeE');
 
     Future<void> initializeThetaClient() async {
       return await _client.initialize();
