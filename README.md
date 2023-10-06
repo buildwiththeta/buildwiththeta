@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://pub.dev/packages/theta"><img src="https://img.shields.io/pub/v/theta?label=pub.dev&logo=dart" alt="pub"></a>
   <a href="https://github.com/buildwiththeta/buildwiththeta"><img src="https://img.shields.io/github/stars/buildwiththeta/buildwiththeta?logo=github" alt="github"></a>
-  <a href="https://discord.gg/XGXrGEk4c6"><img src="https://img.shields.io/discord/1110506355728584714?logo=discord" alt="discord"></a>
+  <a href="https://discord.gg/zz9fAwqNHf"><img src="https://img.shields.io/discord/1110506355728584714?logo=discord" alt="discord"></a>
   <a href="https://github.com/buildwiththeta/buildwiththeta"><img src="https://img.shields.io/github/contributors/buildwiththeta/buildwiththeta?logo=github" alt="contributors"></a>
 </p>
 
