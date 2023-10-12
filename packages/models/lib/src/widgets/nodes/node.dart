@@ -39,13 +39,13 @@ abstract class CNode extends Equatable {
   final Map<String, dynamic> _globalDefaultAttributes = {
     DBKeys.padding: const FMargins(
       margins: [0, 0, 0, 0],
-      marginsTablet: [0, 0, 0, 0],
-      marginsDesktop: [0, 0, 0, 0],
+      marginsTablet: null,
+      marginsDesktop: null,
     ),
     DBKeys.margins: const FMargins(
       margins: [0, 0, 0, 0],
-      marginsTablet: [0, 0, 0, 0],
-      marginsDesktop: [0, 0, 0, 0],
+      marginsTablet: null,
+      marginsDesktop: null,
     ),
     DBKeys.minWidth: const FSizeRange(
       size: null,

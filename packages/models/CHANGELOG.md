@@ -1,3 +1,7 @@
+## 0.8.5
+
+* Fix: _globalDefaultAttributes without default margins & padding for desktop & tablet.
+
 ## 0.8.4
 
 - [x] Feat: add DBKeys.variables and VariableEntity.

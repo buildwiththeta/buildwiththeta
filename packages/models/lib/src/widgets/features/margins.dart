@@ -4,7 +4,6 @@
 // Flutter imports:
 import 'package:device_frame/device_frame.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:light_logger/light_logger.dart';
 import 'package:theta_models/src/responsive_builder.dart';
@@ -156,59 +155,5 @@ class FMargins extends Equatable {
     } else {
       return copyWith(marginsDesktop: value).toJson();
     }
-  }
-
-  static String convertToCode(final List<double>? list) {
-    return '["${list?[0]}","${list?[1]}","${list?[2]}","${list?[3]}"]';
-  }
-
-  String toCode(final BuildContext context) {
-    String valueToCode(final List<double> margins) {
-      final left = margins[0];
-      final top = margins[1];
-      final right = margins[2];
-      final bottom = margins[3];
-      if (left == 0 && top == 0 && right == 0 && bottom == 0) {
-        return 'EdgeInsets.zero';
-      }
-      return '''
-    const EdgeInsets.only(
-      ${left != 0 ? "left: ${margins[0].abs()}," : ""}
-      ${top != 0 ? "top: ${margins[1].abs()}," : ""}
-      ${right != 0 ? "right: ${margins[2].abs()}," : ""}
-      ${bottom != 0 ? "bottom: ${margins[3].abs()}," : ""}
-    )''';
-    }
-
-    if (listEquals(margins, marginsTablet ?? margins) &&
-        listEquals(margins, marginsDesktop ?? margins)) {
-      return valueToCode(margins);
-    }
-
-    return '''
-getValueForScreenType<EdgeInsets>(
-  context: context,
-  mobile: ${valueToCode(margins)},
-  tablet: ${valueToCode(marginsTablet ?? margins)},
-  desktop: ${valueToCode(marginsDesktop ?? margins)},
-)''';
-  }
-
-  String toCodeForTests() {
-    final left = margins[0];
-    final top = margins[1];
-    final right = margins[2];
-    final bottom = margins[3];
-
-    if (left == 0 && top == 0 && right == 0 && bottom == 0) {
-      return 'EdgeInsets.zero';
-    }
-    return '''
-    const EdgeInsets.only(
-      ${left != 0 ? "left: ${margins[0].abs()}," : ""}
-      ${top != 0 ? "top: ${margins[1].abs()}," : ""}
-      ${right != 0 ? "right: ${margins[2].abs()}," : ""}
-      ${bottom != 0 ? "bottom: ${margins[3].abs()}," : ""}
-    )''';
   }
 }

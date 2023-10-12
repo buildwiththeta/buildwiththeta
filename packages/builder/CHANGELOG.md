@@ -1,6 +1,6 @@
 ## 0.10.2
 
-- [x] Feat: improve decrypt method.
+- [x] Feat: improve decompress method.
 
 ## 0.10.1
 

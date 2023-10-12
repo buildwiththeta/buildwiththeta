@@ -1,3 +1,9 @@
+## 0.8.8
+
+* Feat: display margins and padding visually in the editor.
+* Feat: OpenWContainer has now width & height set null if parent is Scaffold.
+* Fix: fixed an infinite width error in SpacingMiddleWidget.
+
 ## 0.8.7
 
 - [x] Feat: add OnNodesChanges callback in TreeGlobalState.

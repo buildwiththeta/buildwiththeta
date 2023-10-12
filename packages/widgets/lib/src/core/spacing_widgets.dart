@@ -23,6 +23,9 @@ class SpacingMiddleWidget extends StatelessWidget {
         dimension: spacing,
       );
     } else {
+      if (spacing == 0) {
+        return const SizedBox.shrink();
+      }
       if (state.focusedNode?.id != parent.id) {
         return SizedBox.square(
           dimension: spacing,

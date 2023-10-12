@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:theta_models/theta_models.dart';
@@ -29,20 +30,24 @@ class OpenWContainer extends Container {
   }) : super(
           child: ChildBuilder(context: context, state: state, child: child)
               .build(),
-          width: width.get(
-            forPlay: context.watch<TreeState>().forPlay,
-            deviceType: context.watch<TreeState>().deviceType,
-            deviceInfo: context.watch<TreeState>().deviceInfo,
-            context: context,
-            isWidth: true,
-          ),
-          height: height.get(
-            forPlay: context.watch<TreeState>().forPlay,
-            deviceType: context.watch<TreeState>().deviceType,
-            deviceInfo: context.watch<TreeState>().deviceInfo,
-            context: context,
-            isWidth: false,
-          ),
+          width: isParentOfScaffold(state, context.watch<TreeState>())
+              ? null
+              : width.get(
+                  forPlay: context.watch<TreeState>().forPlay,
+                  deviceType: context.watch<TreeState>().deviceType,
+                  deviceInfo: context.watch<TreeState>().deviceInfo,
+                  context: context,
+                  isWidth: true,
+                ),
+          height: isParentOfScaffold(state, context.watch<TreeState>())
+              ? null
+              : height.get(
+                  forPlay: context.watch<TreeState>().forPlay,
+                  deviceType: context.watch<TreeState>().deviceType,
+                  deviceInfo: context.watch<TreeState>().deviceInfo,
+                  context: context,
+                  isWidth: false,
+                ),
           padding: paddings.get(
             state: context.watch<TreeState>(),
             context: context,
@@ -61,4 +66,11 @@ class OpenWContainer extends Container {
           ),
           clipBehavior: Clip.none,
         );
+
+  static bool isParentOfScaffold(WidgetState nodeState, TreeState state) {
+    final parent = state.nodes
+        .firstWhereOrNull((element) => element.id == nodeState.node.parentID);
+    if (parent == null) return false;
+    return parent.type == NType.scaffold;
+  }
 }
