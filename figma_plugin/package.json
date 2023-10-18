@@ -4,7 +4,7 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "webpack",
     "watch": "npm run build -- --watch"
   },
   "author": "",
@@ -14,7 +14,10 @@
     "@types/base-64": "^1.0.0",
     "@types/node-gzip": "^1.1.0",
     "@types/utf8": "^3.0.1",
-    "typescript": "*"
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "base-64": "^1.0.0",

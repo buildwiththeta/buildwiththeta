@@ -2,11 +2,12 @@
   "name": "Theta",
   "id": "1278483255595107989",
   "api": "1.0.0",
-  "main": "code.js",
+  "main": "dist/code.js",
   "capabilities": [],
   "enableProposedApi": false,
   "editorType": [
-    "figma"
+    "figma",
+    "figjam"
   ],
   "ui": "ui.html",
   "networkAccess": {

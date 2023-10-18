@@ -48,6 +48,13 @@ dependencies:
   flutter_svg: ^2.0.7
   defer_pointer: ^0.0.2
   url_launcher: ^6.1.10
+dependency_overrides:
+  theta_models:
+    path: ../models
+  theta_rendering:
+    path: ../rendering
+  theta_design_system:
+    path: ../DS
 
 dev_dependencies:
   flutter_test:
