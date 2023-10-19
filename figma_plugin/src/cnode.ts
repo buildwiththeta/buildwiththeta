@@ -14,6 +14,7 @@ import { toSpacingBetweenItems } from "./attributes/spacing_between_items";
 import { toAxisAlignment } from "./attributes/axis_alignment";
 import { toTextValue } from "./attributes/text_value";
 import { toTextStyle } from "./attributes/text_style";
+import { toMaxLines } from "./attributes/max_lines";
 export class CNode {
   id: string;
   name: string;
@@ -59,7 +60,11 @@ export class CNode {
     const nodeType = this.type;
     if (nodeType === "text") {
       ///Text
-      return { ...toTextValue(node), ...toTextStyle(node) };
+      return {
+        ...toTextValue(node),
+        ...toTextStyle(node),
+        ...toMaxLines(node)
+      };
     } else if (nodeType === "container") {
       ///Container
       return { ...toFFill(node), ...toBorderRadius(node) };

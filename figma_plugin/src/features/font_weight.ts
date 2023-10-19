@@ -38,21 +38,21 @@ export class FFontWeight {
 
   static createFontWeightFromValue(value: number): FFontWeight {
     let fontWeight: FontWeight;
-    if (value < 100) {
+    if (value <= 100) {
       fontWeight = FontWeight.w100;
-    } else if (value < 200) {
+    } else if (value <= 200) {
       fontWeight = FontWeight.w200;
-    } else if (value < 300) {
+    } else if (value <= 300) {
       fontWeight = FontWeight.w300;
-    } else if (value < 400) {
+    } else if (value <= 400) {
       fontWeight = FontWeight.w400;
-    } else if (value < 500) {
+    } else if (value <= 500) {
       fontWeight = FontWeight.w500;
-    } else if (value < 600) {
+    } else if (value <= 600) {
       fontWeight = FontWeight.w600;
-    } else if (value < 700) {
+    } else if (value <= 700) {
       fontWeight = FontWeight.w700;
-    } else if (value < 800) {
+    } else if (value <= 800) {
       fontWeight = FontWeight.w800;
     } else {
       fontWeight = FontWeight.w900;

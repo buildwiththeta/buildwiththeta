@@ -6,7 +6,6 @@ import { FFontWeight } from "../features/font_weight";
 import { FTextDecoration, TextDecoration } from "../features/text_decoration";
 import { FTextAlign, TextAlign } from "../features/text_align";
 import { FFontStyle } from "../features/font_style";
-import { FTextDirection, TextDirection } from "../features/text_direction";
 import { FTextTypeInput } from "../features/text_type_input";
 import { FontStyle } from "../features/font_style";
 import { SizeUnit } from "../features/size";
