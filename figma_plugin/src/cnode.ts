@@ -19,6 +19,8 @@ export class CNode {
   parent_id: string | undefined;
   properties: Object;
   rect_properties: Object;
+  child_order: number;
+  updated_at: string;
 
   constructor(node: SceneNode, parentNode: boolean) {
     this.id = node.id;
@@ -32,6 +34,8 @@ export class CNode {
     this.rect_properties = {
       ...toRect(node.x, node.y, node.width, node.height, parentNode)
     };
+    this.child_order = node.parent?.children.indexOf(node) || 0;
+    this.updated_at = new Date().toISOString();
   }
 
   ///global attributes for all nodes
