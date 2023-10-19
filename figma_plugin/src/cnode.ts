@@ -15,6 +15,7 @@ import { toAxisAlignment } from "./attributes/axis_alignment";
 import { toTextValue } from "./attributes/text_value";
 import { toTextStyle } from "./attributes/text_style";
 import { toMaxLines } from "./attributes/max_lines";
+import { toBoxShadow } from "./attributes/box_shadow";
 export class CNode {
   id: string;
   name: string;
@@ -67,7 +68,11 @@ export class CNode {
       };
     } else if (nodeType === "container") {
       ///Container
-      return { ...toFFill(node), ...toBorderRadius(node) };
+      return {
+        ...toFFill(node),
+        ...toBorderRadius(node),
+        ...toBoxShadow(node)
+      };
     } else if (nodeType === "column" || nodeType === "row") {
       ///Row or Column
       return {
