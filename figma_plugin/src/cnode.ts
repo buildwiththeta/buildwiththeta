@@ -17,19 +17,19 @@ export class CNode {
   name: string;
   type: string;
   parent_id: string | undefined;
-  attributes: Object;
-  rect_props: Object;
+  properties: Object;
+  rect_properties: Object;
 
   constructor(node: SceneNode, parentNode: boolean) {
     this.id = node.id;
     this.name = node.name;
     this.type = toType(node);
     this.parent_id = parentNode ? undefined : node.parent?.id;
-    this.attributes = {
+    this.properties = {
       ...this.toGlobalAttributes(node),
       ...this.toTypeAttributes(node)
     };
-    this.rect_props = {
+    this.rect_properties = {
       ...toRect(node.x, node.y, node.width, node.height, parentNode)
     };
   }
