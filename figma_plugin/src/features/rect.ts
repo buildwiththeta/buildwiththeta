@@ -1,4 +1,3 @@
-
 export class Rect {
   public left: number;
   public top: number;
@@ -100,6 +99,7 @@ export class ResponsiveRect {
     };
   }
 }
+
 enum ResponsiveAlignment {
   start,
   end,
@@ -148,8 +148,8 @@ export class RectProperties {
       resizable: this.resizable,
       movable: this.movable,
       hideHandlesWhenNotResizable: this.hideHandlesWhenNotResizable,
-      vertical_align: this.verticalAlign,
-      horizontal_align: this.horizontalAlign
+      vertical_align: ResponsiveAlignment[this.verticalAlign || 0],
+      horizontal_align: ResponsiveAlignment[this.horizontalAlign || 0]
     };
   }
 }

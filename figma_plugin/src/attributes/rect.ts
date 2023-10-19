@@ -13,7 +13,7 @@ export function toRect(
       null,
       null
     )
-  );
+  ).toJson();
 }
 
 function calculateRect(
