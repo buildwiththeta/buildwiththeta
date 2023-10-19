@@ -21,3 +21,10 @@ export class FSize {
     };
   }
 }
+
+export enum SizeUnit {
+  pixel,
+  percent,
+  width,
+  height
+}

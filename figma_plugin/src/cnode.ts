@@ -12,6 +12,8 @@ import { toFFill } from "./attributes/fill";
 import { toBorderRadius } from "./attributes/border_radius";
 import { toSpacingBetweenItems } from "./attributes/spacing_between_items";
 import { toAxisAlignment } from "./attributes/axis_alignment";
+import { toTextValue } from "./attributes/text_value";
+import { toTextStyle } from "./attributes/text_style";
 export class CNode {
   id: string;
   name: string;
@@ -57,7 +59,7 @@ export class CNode {
     const nodeType = this.type;
     if (nodeType === "text") {
       ///Text
-      return { ...toFFill(node) };
+      return { ...toTextValue(node), ...toTextStyle(node) };
     } else if (nodeType === "container") {
       ///Container
       return { ...toFFill(node), ...toBorderRadius(node) };
