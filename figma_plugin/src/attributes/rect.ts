@@ -23,15 +23,8 @@ function calculateRect(
   height: number,
   parentNode: boolean
 ) {
-  const finalX = x < 0 && parentNode ? 0 : x;
-  const finalY = y < 0 && parentNode ? 0 : y;
   if (!parentNode) {
-    return Rect.fromLTRB(finalX, finalY, finalX + width, finalY + height);
+    return Rect.fromLTWH(0, 0, width, height);
   }
-  return Rect.fromLTRB(
-    finalX,
-    finalY,
-    390 - (finalX + width),
-    844 - (finalY + height)
-  );
+  return Rect.fromLTWH(0, 0, width, height);
 }

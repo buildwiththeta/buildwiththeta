@@ -10,27 +10,13 @@ export class Rect {
     this.right = right;
     this.bottom = bottom;
   }
-
   static fromLTWH(
     left: number,
     top: number,
     width: number,
     height: number
   ): Rect {
-    const right = left + width;
-    const bottom = top + height;
-    return new Rect(left, top, right, bottom);
-  }
-
-  static fromRBWH(
-    right: number,
-    bottom: number,
-    width: number,
-    height: number
-  ): Rect {
-    const left = right - width;
-    const top = bottom - height;
-    return new Rect(left, top, right, bottom);
+    return new Rect(left, top, left + width, top + height);
   }
 
   static fromLTRB(
